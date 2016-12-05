@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Loading Events</name>
+    <events>
+        <event-block sid="487580043278326">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="383662561195685" type="System" />
+            </conditions>
+            <actions>
+                <action id="1" name="Set playback time" sid="969410057183294" type="LoadingVideo">
+                    <param id="0" name="Time">24</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block disabled="1" sid="144410681964741">
+            <conditions>
+                <condition id="-8" name="Compare two values" sid="603001163995209" type="System">
+                    <param id="0" name="First value">loadingprogress</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Second value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="882556847378797" type="System">
+                    <param id="0" name="Layout">Main Menu</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="399171819645039">
+            <conditions>
+                <condition id="2" name="Has ended" sid="615031831947974" type="LoadingVideo" />
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="240406389754983" type="System">
+                    <param id="0" name="Layout">Main Menu</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

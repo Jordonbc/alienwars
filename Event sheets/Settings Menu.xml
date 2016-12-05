@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Settings Menu</name>
+    <events>
+        <event-block sid="877893070356298">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="924955388441991" type="System" />
+            </conditions>
+            <actions>
+                <action id="3" name="Set value" sid="590248520391674" type="MasterSoundBar">
+                    <param id="0" name="Value">int(Audio.MasterVolume)</param>
+                </action>
+                <action id="3" name="Set value" sid="516968278446018" type="MusicSoundBar">
+                    <param id="0" name="Value">int(Audio.Volume(&quot;MainMenuMusic&quot;))</param>
+                </action>
+                <action id="0" name="Set selection" sid="698427170934070" type="UpscaleQualityListbox">
+                    <param id="0" name="Index">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="292200291677790">
+            <conditions>
+                <condition id="2" name="On changed" sid="116818096769655" type="MasterSoundBar" />
+            </conditions>
+            <actions>
+                <action id="10" name="Set master volume" sid="937705002726422" type="Audio">
+                    <param id="0" name="dB">int(MasterSoundBar.Value)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="179987397990844">
+            <conditions>
+                <condition id="2" name="On changed" sid="529463352864946" type="MusicSoundBar" />
+            </conditions>
+            <actions>
+                <action id="3" name="Set volume" sid="971861697089136" type="Audio">
+                    <param id="0" name="Tag">&quot;MainMenuMusic&quot;</param>
+                    <param id="1" name="dB">int(MusicSoundBar.Value)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="846052522756737">
+            <conditions>
+                <condition id="1" name="On selection changed" sid="354250409084670" type="UpscaleQualityListbox" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="670188115715605">
+                    <conditions>
+                        <condition id="0" name="Compare selection" sid="573719306726947" type="UpscaleQualityListbox">
+                            <param id="0" name="Comparison">0</param>
+                            <param id="1" name="Index">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-40" name="Set fullscreen scaling" sid="544950865722327" type="System">
+                            <param id="0" name="Fullscreen scaling">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="474008683320245">
+                    <conditions>
+                        <condition id="0" name="Compare selection" sid="994487472061880" type="UpscaleQualityListbox">
+                            <param id="0" name="Comparison">0</param>
+                            <param id="1" name="Index">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-40" name="Set fullscreen scaling" sid="692646355888390" type="System">
+                            <param id="0" name="Fullscreen scaling">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>

@@ -1,0 +1,303 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2project>
+    <name>Alien Wars</name>
+    <description></description>
+    <version>1.0.0.0</version>
+    <author>Jordon Brooks</author>
+    <author-email>Jordonbc@hotmail.co.uk</author-email>
+    <author-website>https://jordonbc.github.io</author-website>
+    <app-id>io.github.jordonbc.AlienWars</app-id>
+    <unique-id>2o4via63bu0g3</unique-id>
+    <saved-with-version>23900</saved-with-version>
+    <used-plugins>
+        <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
+        <plugin author="Scirra" id="Browser" version="1">Browser</plugin>
+        <plugin author="Scirra" id="Function" version="1">Function</plugin>
+        <plugin author="Scirra" id="List" version="1">List</plugin>
+        <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
+        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Text" version="1">Text</plugin>
+        <plugin author="Scirra" id="sliderbar" version="1">Slider bar</plugin>
+        <plugin author="Scirra" id="video" version="1">Video</plugin>
+    </used-plugins>
+    <used-behaviors />
+    <used-effects>
+        <effect author="Scirra" id="glowhorizontal">Glow Horizontal</effect>
+        <effect author="Scirra" id="glowvertical">Glow Vertical</effect>
+        <effect author="Danguafer/Silexars" id="pulse">Pulse</effect>
+    </used-effects>
+    <configurations>
+        <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
+    </configurations>
+    <window-size>
+        <width>1280</width>
+        <height>720</height>
+    </window-size>
+    <pixel-rounding>0</pixel-rounding>
+    <preview-effects>1</preview-effects>
+    <first-layout>Main Menu</first-layout>
+    <use-loader-layout>0</use-loader-layout>
+    <configuration-settings>
+        <prop name="Clear background">Yes</prop>
+        <prop name="Downscaling">Medium quality</prop>
+        <prop name="Enable WebGL">On</prop>
+        <prop name="Fullscreen in browser">Letterbox scale</prop>
+        <prop name="Fullscreen scaling">High quality</prop>
+        <prop name="Loader style">Progress bar &amp; logo</prop>
+        <prop name="Orientations">Any</prop>
+        <prop name="Pause on unfocus">Yes</prop>
+        <prop name="Physics engine">Box2D asm.js</prop>
+        <prop name="Preload sounds">Yes</prop>
+        <prop name="Preview browser">Chrome</prop>
+        <prop name="Sampling">Linear</prop>
+        <prop name="Use high-DPI display">Yes</prop>
+    </configuration-settings>
+    <object-folder>
+        <object-folder name="Buttons">
+            <object-type name="Button" sid="584967664289443">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="741092340785894" speed="0">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.510204" original-source="E:\Software\Construct 2\freebundle\Sprites\UI elements\Base pack\blue_button02.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.511111" original-source="E:\Software\Construct 2\freebundle\Sprites\UI elements\Base pack\blue_button03.png" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="UpscaleQualityListbox" sid="757775316178213">
+                <plugin id="List" />
+            </object-type>
+        </object-folder>
+        <object-folder name="Text">
+            <object-type name="CreditsButtonText" sid="987185213327943">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="PlayButtonText" sid="593391462758347">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="QuitButtonText" sid="971201185744856">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="SettingsButtonText" sid="612195552797613">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="TitleText" sid="897166422865435">
+                <plugin id="Text" />
+                <effects>
+                    <effect-type name="Pulse">
+                        <effect id="pulse" />
+                    </effect-type>
+                    <effect-type name="GlowVertical">
+                        <effect id="glowvertical" />
+                    </effect-type>
+                    <effect-type name="GlowHorizontal">
+                        <effect id="glowhorizontal" />
+                    </effect-type>
+                </effects>
+            </object-type>
+            <object-type name="SettingsMenuTitleText" sid="994427429284400">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="MasterSoundBarText" sid="448144511183350">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="MusicCreditsText" sid="519139574354016">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="MusicSoundBarText" sid="136965861650801">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="CreditsTitleText" sid="843298887735213">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="FeatureUnavailableText" sid="183655065565862">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="PlayTitleText" sid="621512271099904">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="UpscaleQualityText" sid="732458869924326">
+                <plugin id="Text" />
+            </object-type>
+        </object-folder>
+        <object-folder name="Videos">
+            <object-type name="MainMenuVideo" sid="679916228430960">
+                <plugin id="video" />
+            </object-type>
+            <object-type name="LoadingVideo" sid="890391631155020">
+                <plugin id="video" />
+            </object-type>
+        </object-folder>
+        <object-folder name="Intergrations">
+            <object-type name="Audio" sid="156296086548152">
+                <plugin id="Audio" />
+            </object-type>
+            <object-type name="Mouse" sid="377145541952307">
+                <plugin id="Mouse" />
+            </object-type>
+            <object-type name="Function" sid="520424225427235">
+                <plugin id="Function" />
+            </object-type>
+            <object-type name="Browser" sid="197373338401167">
+                <plugin id="Browser" />
+            </object-type>
+        </object-folder>
+        <object-folder name="Backgrounds">
+            <object-type name="MenuBackground" sid="562637304899072">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="895525082583206" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+        </object-folder>
+        <object-folder name="Settings">
+            <object-type name="MasterSoundBar" sid="296326276283547">
+                <plugin id="sliderbar" />
+            </object-type>
+            <object-type name="MusicSoundBar" sid="385066265029369">
+                <plugin id="sliderbar" />
+            </object-type>
+        </object-folder>
+        <object-folder name="Objects">
+            <object-type name="Player" sid="775285204150088">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="666810576614864" speed="5">
+                        <frame duration="1" hotspotX="0.501458" hotspotY="0.501305" original-source="D:\College\Level 3\Graphics\Alien Wars\Player.png">
+                            <collision-poly>
+                                <point x="0.390671" y="0.349869" />
+                                <point x="0.498542" y="0.148825" />
+                                <point x="0.635568" y="0.326371" />
+                                <point x="0.921283" y="0.498695" />
+                                <point x="0.889213" y="0.900783" />
+                                <point x="0.498542" y="0.921671" />
+                                <point x="0.134111" y="0.879896" />
+                                <point x="0.0962099" y="0.498695" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Cursor" sid="493406556374796">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="200995296118119" speed="5">
+                        <frame duration="1" hotspotX="0.484848" hotspotY="0.451613" original-source="D:\College\Level 3\Graphics\Alien Wars\Player.png">
+                            <collision-poly>
+                                <point x="0.378832" y="0.296639" />
+                                <point x="0.483435" y="0.0891097" />
+                                <point x="0.616308" y="0.272383" />
+                                <point x="0.893365" y="0.450266" />
+                                <point x="0.862267" y="0.865324" />
+                                <point x="0.483435" y="0.886886" />
+                                <point x="0.130047" y="0.843764" />
+                                <point x="0.0932944" y="0.450266" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+        </object-folder>
+        <object-type name="LoadingTitleText" sid="149190345186834">
+            <plugin id="Text" />
+            <effects>
+                <effect-type name="GlowHorizontal">
+                    <effect id="glowhorizontal" />
+                </effect-type>
+                <effect-type name="GlowVertical">
+                    <effect id="glowvertical" />
+                </effect-type>
+            </effects>
+        </object-type>
+    </object-folder>
+    <families>
+        <family name="AllText" plugin-id="Text" sid="760463930764342">
+            <members>
+                <member>CreditsButtonText</member>
+                <member>CreditsTitleText</member>
+                <member>FeatureUnavailableText</member>
+                <member>MasterSoundBarText</member>
+                <member>MusicCreditsText</member>
+                <member>MusicSoundBarText</member>
+                <member>PlayButtonText</member>
+                <member>PlayTitleText</member>
+                <member>QuitButtonText</member>
+                <member>SettingsButtonText</member>
+                <member>SettingsMenuTitleText</member>
+            </members>
+        </family>
+        <family name="ButtonText" plugin-id="Text" sid="455207575529761">
+            <members>
+                <member>CreditsButtonText</member>
+                <member>PlayButtonText</member>
+                <member>QuitButtonText</member>
+                <member>SettingsButtonText</member>
+            </members>
+        </family>
+        <family name="AllTitleText" plugin-id="Text" sid="811197225495572">
+            <members>
+                <member>CreditsTitleText</member>
+                <member>PlayTitleText</member>
+                <member>SettingsMenuTitleText</member>
+            </members>
+            <effects>
+                <effect-type name="GlowHorizontal">
+                    <effect id="glowhorizontal" />
+                </effect-type>
+                <effect-type name="GlowVertical">
+                    <effect id="glowvertical" />
+                </effect-type>
+            </effects>
+        </family>
+    </families>
+    <layout-folder>
+        <layout>Main Menu.xml</layout>
+        <layout>Loading.xml</layout>
+    </layout-folder>
+    <event-folder>
+        <event-sheet>Main Menu Events.xml</event-sheet>
+        <event-sheet>Settings Menu.xml</event-sheet>
+        <event-sheet>Loading Events.xml</event-sheet>
+    </event-folder>
+    <global-instances>
+        <global-instance type="Audio" uid="2">
+            <properties>
+                <timescale-audio>Off</timescale-audio>
+                <saveload>All</saveload>
+                <play-in-background>No</play-in-background>
+                <positioned-audio></positioned-audio>
+                <panning-model>HRTF</panning-model>
+                <distance-model>Inverse</distance-model>
+                <listener-z-height>600</listener-z-height>
+                <reference-distance>600</reference-distance>
+                <maximum-distance>10000</maximum-distance>
+                <roll-off-factor>1</roll-off-factor>
+            </properties>
+        </global-instance>
+        <global-instance type="Mouse" uid="11" />
+        <global-instance type="Function" uid="18" />
+        <global-instance type="Browser" uid="23" />
+    </global-instances>
+    <sounds-folder />
+    <music-folder>
+        <file name="The_Freeharmonic_Orchestra_-_08_-_Unconquered_Sun.m4a" />
+        <file name="The_Freeharmonic_Orchestra_-_08_-_Unconquered_Sun.ogg" />
+    </music-folder>
+    <files-folder>
+        <file-folder name="Icons">
+            <file name="icon-16.png" />
+            <file name="icon-32.png" />
+            <file name="icon-114.png" />
+            <file name="icon-128.png" />
+            <file name="icon-256.png" />
+            <file name="loading-logo.png" />
+        </file-folder>
+        <file-folder name="Videos">
+            <file name="MainMenuBackground.mp4" />
+            <file name="LoadingVideo.mp4" />
+            <file name="MainMenuBackground.ogv" />
+            <file name="MainMenuBackground.webm" />
+        </file-folder>
+    </files-folder>
+</c2project>
