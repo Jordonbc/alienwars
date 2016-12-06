@@ -1,5 +1,5 @@
 ﻿{
-	"version": 1481042031,
+	"version": 1481051633,
 	"fileList": [
 		"data.js",
 		"c2runtime.js",
@@ -9,7 +9,6 @@
 		"images/player-sheet0.png",
 		"images/cursor-sheet0.png",
 		"images/title-sheet0.png",
-		"images/background-sheet0.png",
 		"media/the_freeharmonic_orchestra_-_08_-_unconquered_sun.m4a",
 		"media/the_freeharmonic_orchestra_-_08_-_unconquered_sun.ogg",
 		"icon-16.png",
@@ -18,9 +17,9 @@
 		"icon-128.png",
 		"icon-256.png",
 		"loading-logo.png",
-		"mainmenubackground.mp4",
 		"loadingvideo.mp4",
 		"mainmenubackground.ogv",
-		"mainmenubackground.webm"
+		"mainmenubackground.webm",
+		"mainmenubackground.mp4"
 	]
 }
