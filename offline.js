@@ -1,5 +1,5 @@
 ﻿{
-	"version": 1481052230,
+	"version": 1481054217,
 	"fileList": [
 		"data.js",
 		"c2runtime.js",
@@ -18,8 +18,6 @@
 		"icon-256.png",
 		"loading-logo.png",
 		"loadingvideo.mp4",
-		"mainmenubackground.ogv",
-		"mainmenubackground.webm",
 		"mainmenubackground.mp4"
 	]
 }
