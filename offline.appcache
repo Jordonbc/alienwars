@@ -1,5 +1,5 @@
 ﻿CACHE MANIFEST
-#1481140902
+#1481153118
 data.js
 c2runtime.js
 jquery-2.1.1.min.js
@@ -17,9 +17,10 @@ icon-114.png
 icon-128.png
 icon-256.png
 loading-logo.png
-mainmenubackground.mp4
-mainmenubackground.ogv
-mainmenubackground.webm
 loadingvideo.mp4
+mainmenubackground-hq.mp4
+mainmenubackground-lq.mp4
+mainmenubackground-lq.ogv
+mainmenubackground-lq.webm
 NETWORK:
 *
