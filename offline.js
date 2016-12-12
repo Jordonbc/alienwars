@@ -1,15 +1,15 @@
 ﻿{
-	"version": 1481235303,
+	"version": 1481544604,
 	"fileList": [
 		"data.js",
 		"c2runtime.js",
 		"jquery-2.1.1.min.js",
 		"images/button-sheet0.png",
 		"images/menubackground-sheet0.png",
+		"images/background-sheet0.png",
 		"images/player-sheet0.png",
 		"images/cursor-sheet0.png",
 		"images/title-sheet0.png",
-		"images/background-sheet0.png",
 		"media/the_freeharmonic_orchestra_-_08_-_unconquered_sun.m4a",
 		"media/the_freeharmonic_orchestra_-_08_-_unconquered_sun.ogg",
 		"icon-16.png",
