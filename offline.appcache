@@ -1,5 +1,5 @@
 ﻿CACHE MANIFEST
-#1481638497
+#1481667844
 data.js
 c2runtime.js
 jquery-2.1.1.min.js
@@ -23,7 +23,9 @@ mainmenubackground-hq.mp4
 mainmenubackground-lq.mp4
 mainmenubackground-lq.ogv
 mainmenubackground-lq.webm
-singleplayeropening.mp4
-singleplayerbackgroundvideo.mp4
+c2mp-net.js
+c2mp-peer.js
+c2mp.js
+waker.js
 NETWORK:
 *
