@@ -1,0 +1,780 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Functions</name>
+    <events>
+        <include>Globals</include>
+        <comment>Resets all buttons to the button size</comment>
+        <event-block sid="209981594952787">
+            <conditions>
+                <condition id="0" name="On function" sid="696478683491300" type="Function">
+                    <param id="0" name="Name">&quot;resetButtonSize&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-7" name="Set size" sid="157613824515096" type="PlayButtonText">
+                    <param id="0" name="Width">Button.Width</param>
+                    <param id="1" name="Height">Button.Height</param>
+                </action>
+                <action id="-7" name="Set size" sid="113107249494691" type="SettingsButtonText">
+                    <param id="0" name="Width">Button.Width</param>
+                    <param id="1" name="Height">Button.Height</param>
+                </action>
+                <action id="-7" name="Set size" sid="565582331887232" type="CreditsButtonText">
+                    <param id="0" name="Width">Button.Width</param>
+                    <param id="1" name="Height">Button.Height</param>
+                </action>
+                <action id="-7" name="Set size" sid="587147324190782" type="QuitButtonText">
+                    <param id="0" name="Width">Button.Width</param>
+                    <param id="1" name="Height">Button.Height</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>Refreshes the video</comment>
+        <event-block sid="498070431549892">
+            <conditions>
+                <condition id="0" name="On function" sid="807554462442047" type="Function">
+                    <param id="0" name="Name">&quot;refreshMainMenuVideo&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="5" name="Check item exists" sid="139277299370165" type="LocalStorage">
+                    <param id="0" name="Key">&quot;VideoQuality&quot;</param>
+                </action>
+                <action id="2" name="Set looping" sid="744526744599440" type="MainMenuVideo">
+                    <param id="0" name="Mode">1</param>
+                </action>
+                <action id="-16" name="Wait" sid="284246713572572" type="System">
+                    <param id="0" name="Seconds">0</param>
+                </action>
+                <action id="0" name="Set source" sid="343729827367665" type="MainMenuVideo">
+                    <param id="0" name="WebM source">&quot;&quot;</param>
+                    <param id="1" name="Ogg Theora source">&quot;&quot;</param>
+                    <param id="2" name="H.264 source">&quot;https://cdn.rawgit.com/Jordonbc/alienwars/gh-pages/mainmenubackground-&quot;&amp;VideoQuality&amp;&quot;.mp4&quot;</param>
+                </action>
+                <action id="-16" name="Wait" sid="681801989969544" type="System">
+                    <param id="0" name="Seconds">0</param>
+                </action>
+                <action id="6" name="Play" sid="412570540019915" type="MainMenuVideo" />
+            </actions>
+            <sub-events>
+                <comment>Sets video for NW.js and Win10 App</comment>
+                <event-block any="1" sid="897623411143504">
+                    <conditions>
+                        <condition id="-32" name="Is on platform" sid="418424376685370" type="System">
+                            <param id="0" name="Platform">13</param>
+                        </condition>
+                        <condition id="-32" name="Is on platform" sid="806806035440141" type="System">
+                            <param id="0" name="Platform">10</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set source" sid="942773772966733" type="MainMenuVideo">
+                            <param id="0" name="WebM source">&quot;&quot;</param>
+                            <param id="1" name="Ogg Theora source">&quot;&quot;</param>
+                            <param id="2" name="H.264 source">&quot;MainMenuBackground-HQ.mp4&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <comment>Sets layout to mobile version</comment>
+        <event-block sid="954513038657534">
+            <conditions>
+                <condition id="0" name="On function" sid="351310100059669" type="Function">
+                    <param id="0" name="Name">&quot;setMobile&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="360578078090268">
+                    <conditions>
+                        <condition id="-4" name="Trigger once while true" sid="265528899530616" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="3" name="Set enabled" sid="798205096629608" type="FullscreenCheckbox">
+                            <param id="0" name="Mode">0</param>
+                        </action>
+                        <action id="18" name="Lock orientation" sid="499635382790748" type="Browser">
+                            <param id="0" name="Orientation">1</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="294412303482870" type="MenuBackground">
+                            <param id="0" name="X">LayoutWidth/2</param>
+                            <param id="1" name="Y">LayoutHeight-400</param>
+                        </action>
+                        <action id="-6" name="Set height" sid="547324131780924" type="MenuBackground">
+                            <param id="0" name="Height">MenuBackground.Height-100</param>
+                        </action>
+                        <action id="-5" name="Set width" sid="348305339813575" type="MenuBackground">
+                            <param id="0" name="Width">MenuBackground.Width+200</param>
+                        </action>
+                        <action id="-1" name="Set X" sid="380729778409592" type="AllTitleText">
+                            <param id="0" name="X">LayoutWidth/2</param>
+                        </action>
+                        <action id="-1" name="Set X" sid="564039423157805" type="MenuDescriptionText">
+                            <param id="0" name="X">LayoutWidth/2</param>
+                        </action>
+                        <action id="-1" name="Set X" sid="597187697179321" type="MasterSoundBarText">
+                            <param id="0" name="X">LayoutWidth/3</param>
+                        </action>
+                        <action id="-1" name="Set X" sid="849463318102324" type="MusicSoundBarText">
+                            <param id="0" name="X">LayoutWidth/3</param>
+                        </action>
+                        <action id="-1" name="Set X" sid="503870497971656" type="UpscaleQualityText">
+                            <param id="0" name="X">LayoutWidth/3</param>
+                        </action>
+                        <action id="-1" name="Set X" sid="576116868210846" type="VideoQualityText">
+                            <param id="0" name="X">LayoutWidth/3</param>
+                        </action>
+                        <action id="-1" name="Set X" sid="309363826859398" type="VideoQualityList">
+                            <param id="0" name="X">LayoutWidth/2</param>
+                        </action>
+                        <action id="-1" name="Set X" sid="836701636397491" type="UpscaleQualityListbox">
+                            <param id="0" name="X">LayoutWidth/2</param>
+                        </action>
+                        <action id="-1" name="Set X" sid="816628133178030" type="MasterSoundBar">
+                            <param id="0" name="X">LayoutWidth/2</param>
+                        </action>
+                        <action id="-1" name="Set X" sid="364632629679262" type="MusicSoundBar">
+                            <param id="0" name="X">LayoutWidth/2</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="110984973165094" type="System">
+                            <param id="0" name="Seconds">0</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <comment>Sets the mobile position of the quit button</comment>
+                        <event-block sid="320179745520833">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="924897761294688" type="Button">
+                                    <param id="0" name="Unique ID">8</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Set position" sid="450153226345995" type="QuitButtonText">
+                                    <param id="0" name="X">Button.X</param>
+                                    <param id="1" name="Y">Button.Y</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>Sets the mobile position of the credits button</comment>
+                        <event-block sid="224542074355983">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="580524809871435" type="Button">
+                                    <param id="0" name="Unique ID">7</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Set position" sid="184531260262635" type="Button">
+                                    <param id="0" name="X">QuitButtonText.X +MobileButtonSpacing</param>
+                                    <param id="1" name="Y">QuitButtonText.Y</param>
+                                </action>
+                                <action id="-3" name="Set position" sid="131413360447250" type="CreditsButtonText">
+                                    <param id="0" name="X">Button.X</param>
+                                    <param id="1" name="Y">Button.Y</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>Sets the mobile position of the settings button</comment>
+                        <event-block sid="128449522552357">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="869359926654979" type="Button">
+                                    <param id="0" name="Unique ID">5</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Set position" sid="851108909687999" type="Button">
+                                    <param id="0" name="X">CreditsButtonText.X +MobileButtonSpacing</param>
+                                    <param id="1" name="Y">QuitButtonText.Y</param>
+                                </action>
+                                <action id="-3" name="Set position" sid="705258735192072" type="SettingsButtonText">
+                                    <param id="0" name="X">Button.X</param>
+                                    <param id="1" name="Y">Button.Y</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>Sets the mobile position of the play button</comment>
+                        <event-block sid="646505736680973">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="359062080928358" type="Button">
+                                    <param id="0" name="Unique ID">3</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Set position" sid="419511630376717" type="Button">
+                                    <param id="0" name="X">SettingsButtonText.X +MobileButtonSpacing</param>
+                                    <param id="1" name="Y">QuitButtonText.Y</param>
+                                </action>
+                                <action id="-3" name="Set position" sid="425541078719869" type="PlayButtonText">
+                                    <param id="0" name="X">Button.X</param>
+                                    <param id="1" name="Y">Button.Y</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>Sets the mobile position of the apply button</comment>
+                        <event-block sid="800706944567622">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="888570770317791" type="Button">
+                                    <param id="0" name="Unique ID">38</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Set position" sid="932759814417869" type="Button">
+                                    <param id="0" name="X">LayoutWidth/2</param>
+                                    <param id="1" name="Y">540</param>
+                                </action>
+                                <action id="-3" name="Set position" sid="530420259769733" type="ApplySettingsButtonText">
+                                    <param id="0" name="X">Button.X</param>
+                                    <param id="1" name="Y">Button.Y</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <comment>Hides all the menus</comment>
+        <event-block sid="265620542555016">
+            <conditions>
+                <condition id="0" name="On function" sid="191504362058678" type="Function">
+                    <param id="0" name="Name">&quot;HideAll&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-4" name="Set layer visible" sid="476856195508547" type="System">
+                    <param id="0" name="Layer">3</param>
+                    <param id="1" name="Visibility">1</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="867072226024387" type="System">
+                    <param id="0" name="Layer">4</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="996542307581513" type="System">
+                    <param id="0" name="Layer">5</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="736252284934381" type="System">
+                    <param id="0" name="Layer">6</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="207550298387943" type="System">
+                    <param id="0" name="Layer">7</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="270733350145243" type="System">
+                    <param id="0" name="Layer">8</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="243691574566333" type="System">
+                    <param id="0" name="Layer">9</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="124123104854448" type="System">
+                    <param id="0" name="Layer">10</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
+                <action id="3" name="Set font size" sid="146627029704909" type="ButtonText">
+                    <param id="0" name="Size (pt)">18</param>
+                </action>
+            </actions>
+            <sub-events>
+                <comment>Resets button size</comment>
+                <event-block sid="649571429581119">
+                    <conditions>
+                        <condition id="-11" name="For Each" sid="136808977835876" type="System">
+                            <param id="0" name="Object">Button</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="9" name="Set scale" sid="468696911130343" type="Button">
+                            <param id="0" name="Scale">1</param>
+                        </action>
+                        <action id="-7" name="Set size" sid="260821982651152" type="ButtonText">
+                            <param id="0" name="Width">Button.Width</param>
+                            <param id="1" name="Height">Button.Height</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <comment>Show the settings menu</comment>
+        <event-block sid="344310123308357">
+            <conditions>
+                <condition id="0" name="On function" sid="988957092111371" type="Function">
+                    <param id="0" name="Name">&quot;ShowSettings&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-4" name="Set layer visible" sid="682479633283410" type="System">
+                    <param id="0" name="Layer">3</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="549120077926797" type="System">
+                    <param id="0" name="Layer">4</param>
+                    <param id="1" name="Visibility">1</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="994343494092642" type="System">
+                    <param id="0" name="Layer">5</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="169758926028290" type="System">
+                    <param id="0" name="Layer">6</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="419590652717104" type="System">
+                    <param id="0" name="Layer">7</param>
+                    <param id="1" name="Visibility">1</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="479541241830210" type="System">
+                    <param id="0" name="Layer">8</param>
+                    <param id="1" name="Visibility">1</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="290088652610402" type="System">
+                    <param id="0" name="Layer">9</param>
+                    <param id="1" name="Visibility">1</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="879965480064571" type="System">
+                    <param id="0" name="Layer">10</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
+                <action id="3" name="Set value" sid="910376743615252" type="MasterSoundBar">
+                    <param id="0" name="Value">int(Audio.MasterVolume)</param>
+                </action>
+                <action id="3" name="Set value" sid="454000472928680" type="MusicSoundBar">
+                    <param id="0" name="Value">int(Audio.Volume(&quot;MainMenuMusic&quot;))</param>
+                </action>
+            </actions>
+            <sub-events>
+                <comment>Resets the Settings</comment>
+                <event-block sid="132356765481544">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="360307217567032" type="System">
+                            <param id="0" name="Variable">UpscaleQuality</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">uppercase(&quot;LQ&quot;)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set selection" sid="242114134343490" type="UpscaleQualityListbox">
+                            <param id="0" name="Index">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="214588760350296">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="134726987615368" type="System">
+                            <param id="0" name="Variable">UpscaleQuality</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">uppercase(&quot;HQ&quot;)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set selection" sid="370591094262121" type="UpscaleQualityListbox">
+                            <param id="0" name="Index">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="353021544530835">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="827887329527696" type="System">
+                            <param id="0" name="Variable">VideoQuality</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">uppercase(&quot;LQ&quot;)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set selection" sid="193673925034204" type="VideoQualityList">
+                            <param id="0" name="Index">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="807834957231139">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="583253219036807" type="System">
+                            <param id="0" name="Variable">VideoQuality</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">uppercase(&quot;HQ&quot;)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set selection" sid="792873370578024" type="VideoQualityList">
+                            <param id="0" name="Index">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <comment>Show the credits menu</comment>
+        <event-block sid="824628762119117">
+            <conditions>
+                <condition id="0" name="On function" sid="414778081117971" type="Function">
+                    <param id="0" name="Name">&quot;ShowCredits&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-4" name="Set layer visible" sid="511428479625188" type="System">
+                    <param id="0" name="Layer">3</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="864128384938611" type="System">
+                    <param id="0" name="Layer">4</param>
+                    <param id="1" name="Visibility">1</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="854293277282437" type="System">
+                    <param id="0" name="Layer">5</param>
+                    <param id="1" name="Visibility">1</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="754149876823976" type="System">
+                    <param id="0" name="Layer">6</param>
+                    <param id="1" name="Visibility">1</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="564566742068618" type="System">
+                    <param id="0" name="Layer">7</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="314273002554894" type="System">
+                    <param id="0" name="Layer">8</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="721601037321999" type="System">
+                    <param id="0" name="Layer">9</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="851174919202971" type="System">
+                    <param id="0" name="Layer">10</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>Show the play menu</comment>
+        <event-block sid="306389073734261">
+            <conditions>
+                <condition id="0" name="On function" sid="934336498977426" type="Function">
+                    <param id="0" name="Name">&quot;ShowPlay&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-4" name="Set layer visible" sid="460453047146965" type="System">
+                    <param id="0" name="Layer">3</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="452359526481156" type="System">
+                    <param id="0" name="Layer">4</param>
+                    <param id="1" name="Visibility">1</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="448694654540152" type="System">
+                    <param id="0" name="Layer">5</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="219888211938171" type="System">
+                    <param id="0" name="Layer">6</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="153371557580749" type="System">
+                    <param id="0" name="Layer">7</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="959425210854518" type="System">
+                    <param id="0" name="Layer">8</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="785622675024314" type="System">
+                    <param id="0" name="Layer">9</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="228548588532800" type="System">
+                    <param id="0" name="Layer">10</param>
+                    <param id="1" name="Visibility">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="" inactive="1" sid="238010268391644" title="FADEOUT">
+            <sub-events>
+                <event-block sid="867496694705028">
+                    <conditions>
+                        <condition id="-10" name="Compare opacity" sid="542318392667180" type="FadeIn">
+                            <param id="0" name="Comparison">2</param>
+                            <param id="1" name="Opacity">100</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="915956393655006">
+                            <conditions>
+                                <condition id="-6" name="Every X seconds" sid="180592980813652" type="System">
+                                    <param id="0" name="Interval (seconds)">0.001</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Set opacity" sid="721216692904809" type="FadeIn">
+                                    <param id="0" name="Opacity">int(FadeIn.Opacity+2)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="419166245690498">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="883360011044884" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Set opacity" sid="725132113770740" type="FadeIn">
+                            <param id="0" name="Opacity">100</param>
+                        </action>
+                        <action id="-12" name="Set group active" sid="316503460059036" type="System">
+                            <param id="0" name="Group name">&quot;FADEOUT&quot;</param>
+                            <param id="1" name="State">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" inactive="1" sid="564933518736218" title="FADEIN">
+            <sub-events>
+                <event-block sid="316189193932426">
+                    <conditions>
+                        <condition id="-10" name="Compare opacity" sid="579654723913986" type="FadeIn">
+                            <param id="0" name="Comparison">4</param>
+                            <param id="1" name="Opacity">0</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="546063643558426">
+                            <conditions>
+                                <condition id="-6" name="Every X seconds" sid="241583381853535" type="System">
+                                    <param id="0" name="Interval (seconds)">0.001</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Set opacity" sid="699600783712913" type="FadeIn">
+                                    <param id="0" name="Opacity">int(FadeIn.Opacity-2)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="102929717180562">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="967926892261839" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Set opacity" sid="904361371544982" type="FadeIn">
+                            <param id="0" name="Opacity">0</param>
+                        </action>
+                        <action id="-12" name="Set group active" sid="876271904505147" type="System">
+                            <param id="0" name="Group name">&quot;FADEIN&quot;</param>
+                            <param id="1" name="State">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="637261994531361">
+            <conditions>
+                <condition id="0" name="On function" sid="669513384121678" type="Function">
+                    <param id="0" name="Name">&quot;Show Singleplayer&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-4" name="Set layer visible" sid="751797210206868" type="System">
+                    <param id="0" name="Layer">12</param>
+                    <param id="1" name="Visibility">1</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="550783464074747" type="System">
+                    <param id="0" name="Layer">13</param>
+                    <param id="1" name="Visibility">1</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="904302850879924" type="System">
+                    <param id="0" name="Layer">14</param>
+                    <param id="1" name="Visibility">1</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="221976950257125" type="System">
+                    <param id="0" name="Layer">15</param>
+                    <param id="1" name="Visibility">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="484355917736138">
+            <conditions>
+                <condition id="0" name="On function" sid="331252939172978" type="Function">
+                    <param id="0" name="Name">&quot;Hide Singleplayer&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-4" name="Set layer visible" sid="473553494365757" type="System">
+                    <param id="0" name="Layer">12</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="605944587356833" type="System">
+                    <param id="0" name="Layer">13</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="487399674831579" type="System">
+                    <param id="0" name="Layer">14</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="152413814775527" type="System">
+                    <param id="0" name="Layer">15</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="358869274966753">
+            <conditions>
+                <condition id="0" name="On function" sid="345641385721615" type="Function">
+                    <param id="0" name="Name">&quot;Enable Singleplayer Blur&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-30" name="Set layer effect enabled" sid="968167356442118" type="System">
+                    <param id="0" name="Layer">0</param>
+                    <param id="1" name="Mode">1</param>
+                    <param id="2" name="Effect">&quot;BlurHorizontal&quot;</param>
+                </action>
+                <action id="-30" name="Set layer effect enabled" sid="279947451913932" type="System">
+                    <param id="0" name="Layer">0</param>
+                    <param id="1" name="Mode">1</param>
+                    <param id="2" name="Effect">&quot;BlurVertical&quot;</param>
+                </action>
+                <action id="-30" name="Set layer effect enabled" sid="842155642776948" type="System">
+                    <param id="0" name="Layer">1</param>
+                    <param id="1" name="Mode">1</param>
+                    <param id="2" name="Effect">&quot;BlurHorizontal&quot;</param>
+                </action>
+                <action id="-30" name="Set layer effect enabled" sid="451985863498787" type="System">
+                    <param id="0" name="Layer">1</param>
+                    <param id="1" name="Mode">1</param>
+                    <param id="2" name="Effect">&quot;BlurVertical&quot;</param>
+                </action>
+                <action id="-30" name="Set layer effect enabled" sid="918746814771745" type="System">
+                    <param id="0" name="Layer">2</param>
+                    <param id="1" name="Mode">1</param>
+                    <param id="2" name="Effect">&quot;BlurHorizontal&quot;</param>
+                </action>
+                <action id="-30" name="Set layer effect enabled" sid="955870106713329" type="System">
+                    <param id="0" name="Layer">2</param>
+                    <param id="1" name="Mode">1</param>
+                    <param id="2" name="Effect">&quot;BlurVertical&quot;</param>
+                </action>
+                <action id="-30" name="Set layer effect enabled" sid="721040073954201" type="System">
+                    <param id="0" name="Layer">3</param>
+                    <param id="1" name="Mode">1</param>
+                    <param id="2" name="Effect">&quot;BlurHorizontal&quot;</param>
+                </action>
+                <action id="-30" name="Set layer effect enabled" sid="633276580457619" type="System">
+                    <param id="0" name="Layer">3</param>
+                    <param id="1" name="Mode">1</param>
+                    <param id="2" name="Effect">&quot;BlurVertical&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="917589973528487">
+            <conditions>
+                <condition id="0" name="On function" sid="109847566514714" type="Function">
+                    <param id="0" name="Name">&quot;Disable Singleplayer Blur&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-30" name="Set layer effect enabled" sid="874108747392889" type="System">
+                    <param id="0" name="Layer">0</param>
+                    <param id="1" name="Mode">0</param>
+                    <param id="2" name="Effect">&quot;BlurHorizontal&quot;</param>
+                </action>
+                <action id="-30" name="Set layer effect enabled" sid="196043913968005" type="System">
+                    <param id="0" name="Layer">0</param>
+                    <param id="1" name="Mode">0</param>
+                    <param id="2" name="Effect">&quot;BlurVertical&quot;</param>
+                </action>
+                <action id="-30" name="Set layer effect enabled" sid="509380332440292" type="System">
+                    <param id="0" name="Layer">1</param>
+                    <param id="1" name="Mode">0</param>
+                    <param id="2" name="Effect">&quot;BlurHorizontal&quot;</param>
+                </action>
+                <action id="-30" name="Set layer effect enabled" sid="325628455082566" type="System">
+                    <param id="0" name="Layer">1</param>
+                    <param id="1" name="Mode">0</param>
+                    <param id="2" name="Effect">&quot;BlurVertical&quot;</param>
+                </action>
+                <action id="-30" name="Set layer effect enabled" sid="144558744294559" type="System">
+                    <param id="0" name="Layer">2</param>
+                    <param id="1" name="Mode">0</param>
+                    <param id="2" name="Effect">&quot;BlurHorizontal&quot;</param>
+                </action>
+                <action id="-30" name="Set layer effect enabled" sid="123052516290611" type="System">
+                    <param id="0" name="Layer">2</param>
+                    <param id="1" name="Mode">0</param>
+                    <param id="2" name="Effect">&quot;BlurVertical&quot;</param>
+                </action>
+                <action id="-30" name="Set layer effect enabled" sid="467906861896704" type="System">
+                    <param id="0" name="Layer">3</param>
+                    <param id="1" name="Mode">0</param>
+                    <param id="2" name="Effect">&quot;BlurHorizontal&quot;</param>
+                </action>
+                <action id="-30" name="Set layer effect enabled" sid="168717235592818" type="System">
+                    <param id="0" name="Layer">3</param>
+                    <param id="1" name="Mode">0</param>
+                    <param id="2" name="Effect">&quot;BlurVertical&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="573203023792520">
+            <conditions>
+                <condition id="0" name="On function" sid="690011882003675" type="Function">
+                    <param id="0" name="Name">&quot;Show Multiplayer&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-4" name="Set layer visible" sid="372501997883622" type="System">
+                    <param id="0" name="Layer">12</param>
+                    <param id="1" name="Visibility">1</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="217717670347223" type="System">
+                    <param id="0" name="Layer">16</param>
+                    <param id="1" name="Visibility">1</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="898018993992353" type="System">
+                    <param id="0" name="Layer">17</param>
+                    <param id="1" name="Visibility">1</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="120617053948726" type="System">
+                    <param id="0" name="Layer">18</param>
+                    <param id="1" name="Visibility">1</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="762242162274469" type="System">
+                    <param id="0" name="Layer">19</param>
+                    <param id="1" name="Visibility">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="374804064701932">
+            <conditions>
+                <condition id="0" name="On function" sid="488313147124363" type="Function">
+                    <param id="0" name="Name">&quot;Hide Multiplayer&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-4" name="Set layer visible" sid="335613751790880" type="System">
+                    <param id="0" name="Layer">12</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="165898372276418" type="System">
+                    <param id="0" name="Layer">16</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="732532406355343" type="System">
+                    <param id="0" name="Layer">17</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="834349553104507" type="System">
+                    <param id="0" name="Layer">18</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="750872157059750" type="System">
+                    <param id="0" name="Layer">19</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

@@ -3,39 +3,75 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Loading Events</name>
     <events>
+        <include>Globals</include>
+        <include>Storage</include>
+        <comment>Play the loading video</comment>
         <event-block sid="487580043278326">
             <conditions>
                 <condition id="-2" name="On start of layout" sid="383662561195685" type="System" />
             </conditions>
             <actions>
-                <action id="1" name="Set playback time" sid="969410057183294" type="LoadingVideo">
-                    <param id="0" name="Time">24</param>
+                <action id="2" name="Set looping" sid="969410057183294" type="LoadingVideo">
+                    <param id="0" name="Mode">1</param>
                 </action>
             </actions>
+            <sub-events>
+                <event-block sid="377635507867447">
+                    <conditions>
+                        <condition id="-32" name="Is on platform" sid="975989015748454" type="System">
+                            <param id="0" name="Platform">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set source" sid="579834814577212" type="LoadingVideo">
+                            <param id="0" name="WebM source">&quot;&quot;</param>
+                            <param id="1" name="Ogg Theora source">&quot;&quot;</param>
+                            <param id="2" name="H.264 source">&quot;https://cdn.rawgit.com/Jordonbc/alienwars/gh-pages/loadingvideo.mp4&quot;</param>
+                        </action>
+                        <action id="6" name="Play" sid="537687423951572" type="LoadingVideo" />
+                    </actions>
+                </event-block>
+                <comment>Mobile devices cannot load the video</comment>
+                <event-block sid="178991277459687">
+                    <conditions>
+                        <condition id="-20" name="Is on mobile device" sid="415208739587641" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="214384848951311" type="LoadingVideo" />
+                        <action id="18" name="Lock orientation" sid="750799968456469" type="Browser">
+                            <param id="0" name="Orientation">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
         </event-block>
-        <event-block disabled="1" sid="144410681964741">
+        <comment>When loading is complete go to the main menu</comment>
+        <event-block sid="144410681964741">
             <conditions>
-                <condition id="-8" name="Compare two values" sid="603001163995209" type="System">
-                    <param id="0" name="First value">loadingprogress</param>
-                    <param id="1" name="Comparison">0</param>
-                    <param id="2" name="Second value">1</param>
-                </condition>
+                <condition id="-1" name="Every tick" sid="287165088894734" type="System" />
             </conditions>
             <actions>
-                <action id="-2" name="Go to layout" sid="882556847378797" type="System">
-                    <param id="0" name="Layout">Main Menu</param>
+                <action id="0" name="Set text" sid="568560140034370" type="LoadingTitleText">
+                    <param id="0" name="Text">&quot;LOADING - &quot; &amp; int(loadingprogress*100)&amp;&quot;%&quot;</param>
                 </action>
             </actions>
-        </event-block>
-        <event-block sid="399171819645039">
-            <conditions>
-                <condition id="2" name="Has ended" sid="615031831947974" type="LoadingVideo" />
-            </conditions>
-            <actions>
-                <action id="-2" name="Go to layout" sid="240406389754983" type="System">
-                    <param id="0" name="Layout">Main Menu</param>
-                </action>
-            </actions>
+            <sub-events>
+                <event-block sid="647963303425128">
+                    <conditions>
+                        <condition id="-25" name="On loader layout complete" sid="514810622229646" type="System" />
+                        <condition id="-8" name="Compare two values" sid="603001163995209" type="System">
+                            <param id="0" name="First value">loadingprogress</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="882556847378797" type="System">
+                            <param id="0" name="Layout">Main Menu</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
         </event-block>
     </events>
 </c2eventsheet>

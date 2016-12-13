@@ -1,0 +1,713 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Main Menu Buttons</name>
+    <events>
+        <include>Globals</include>
+        <include>Functions</include>
+        <comment>Quit button logic</comment>
+        <event-block any="1" sid="970016541139717">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="796759723529446" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">QuitButtonText</param>
+                </condition>
+                <condition id="17" name="On tap object" sid="696566457288918" type="Touch">
+                    <param id="0" name="Object">QuitButtonText</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="977760135777926">
+                    <conditions>
+                        <condition id="-9" name="Layer is visible" sid="759758326709756" type="System">
+                            <param id="0" name="Layer">1</param>
+                        </condition>
+                        <condition id="-9" inverted="1" name="Layer is visible" sid="573169589832775" type="System">
+                            <param id="0" name="Layer">13</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="843497710571100">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="241905838921567" type="Button">
+                                    <param id="0" name="Unique ID">8</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-7" name="Set size" sid="953610081219159" type="QuitButtonText">
+                                    <param id="0" name="Width">Button.Width</param>
+                                    <param id="1" name="Height">Button.Height</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block any="1" sid="896127071890242">
+                            <conditions>
+                                <condition id="-32" name="Is on platform" sid="256744522516408" type="System">
+                                    <param id="0" name="Platform">10</param>
+                                </condition>
+                                <condition id="-32" name="Is on platform" sid="654992983641056" type="System">
+                                    <param id="0" name="Platform">13</param>
+                                </condition>
+                                <condition id="-20" name="Is on mobile device" sid="310885004274394" type="System" />
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="949260396464831">
+                                    <conditions>
+                                        <condition id="-32" inverted="1" name="Is on platform" sid="702080757109631" type="System">
+                                            <param id="0" name="Platform">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="1" name="Close" sid="215439887686949" type="Browser" />
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <comment>Button Animation</comment>
+        <event-block any="1" sid="386137364567063">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="965135306183655" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">Button</param>
+                </condition>
+                <condition id="17" name="On tap object" sid="400933920685829" type="Touch">
+                    <param id="0" name="Object">Button</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="5" name="Set frame" sid="311638827285398" type="Button">
+                    <param id="0" name="Frame number">1</param>
+                </action>
+                <action id="-16" name="Wait" sid="811973188688641" type="System">
+                    <param id="0" name="Seconds">0.2</param>
+                </action>
+                <action id="5" name="Set frame" sid="616193852663299" type="Button">
+                    <param id="0" name="Frame number">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>Settings button Logic</comment>
+        <event-block any="1" sid="808756457342675">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="862832619987164" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">SettingsButtonText</param>
+                </condition>
+                <condition id="17" name="On tap object" sid="421840958780574" type="Touch">
+                    <param id="0" name="Object">SettingsButtonText</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="420942529472265">
+                    <conditions>
+                        <condition id="-9" name="Layer is visible" sid="550606801308711" type="System">
+                            <param id="0" name="Layer">1</param>
+                        </condition>
+                        <condition id="-9" inverted="1" name="Layer is visible" sid="793539434021475" type="System">
+                            <param id="0" name="Layer">13</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="100648152924250">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="770310486717850" type="Button">
+                                    <param id="0" name="Unique ID">5</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="3" name="Set font size" sid="516558455897526" type="ButtonText">
+                                    <param id="0" name="Size (pt)">18</param>
+                                </action>
+                                <action id="-7" name="Set size" sid="774174049515212" type="SettingsButtonText">
+                                    <param id="0" name="Width">Button.Width</param>
+                                    <param id="1" name="Height">Button.Height</param>
+                                </action>
+                                <action id="-3" name="Set position" sid="370067877331349" type="SettingsButtonText">
+                                    <param id="0" name="X">Button.X</param>
+                                    <param id="1" name="Y">Button.Y</param>
+                                </action>
+                                <action id="3" name="Set font size" sid="331314401133241" type="SettingsButtonText">
+                                    <param id="0" name="Size (pt)">28</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="950568455420197">
+                            <conditions>
+                                <condition id="-9" inverted="1" name="Layer is visible" sid="346092014257573" type="System">
+                                    <param id="0" name="Layer">8</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="366118075821915" type="Function">
+                                    <param id="0" name="Name">&quot;ShowSettings&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="146624672387563">
+                                    <conditions>
+                                        <condition id="-11" name="For Each" sid="411548558811278" type="System">
+                                            <param id="0" name="Object">Button</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="9" name="Set scale" sid="676204242558386" type="Button">
+                                            <param id="0" name="Scale">1</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="689807224656216">
+                                            <conditions>
+                                                <condition id="-14" name="Pick by unique ID" sid="829011527926993" type="Button">
+                                                    <param id="0" name="Unique ID">5</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="9" name="Set scale" sid="221086377732609" type="Button">
+                                                    <param id="0" name="Scale">1.2</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="492351442383258">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="499053064508604" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="270824571639651" type="Function">
+                                    <param id="0" name="Name">&quot;HideAll&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <comment>Credits button Logic</comment>
+        <event-block any="1" sid="663448023310899">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="475874321868074" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">CreditsButtonText</param>
+                </condition>
+                <condition id="17" name="On tap object" sid="590664699609743" type="Touch">
+                    <param id="0" name="Object">CreditsButtonText</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="792536408711367">
+                    <conditions>
+                        <condition id="-9" name="Layer is visible" sid="440442724104900" type="System">
+                            <param id="0" name="Layer">1</param>
+                        </condition>
+                        <condition id="-9" inverted="1" name="Layer is visible" sid="866858403688265" type="System">
+                            <param id="0" name="Layer">13</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="558882534671213">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="958835291086676" type="Button">
+                                    <param id="0" name="Unique ID">7</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="3" name="Set font size" sid="522216116840411" type="ButtonText">
+                                    <param id="0" name="Size (pt)">18</param>
+                                </action>
+                                <action id="-7" name="Set size" sid="997489725517258" type="CreditsButtonText">
+                                    <param id="0" name="Width">Button.Width</param>
+                                    <param id="1" name="Height">Button.Height</param>
+                                </action>
+                                <action id="-3" name="Set position" sid="132651744544221" type="CreditsButtonText">
+                                    <param id="0" name="X">Button.X</param>
+                                    <param id="1" name="Y">Button.Y</param>
+                                </action>
+                                <action id="3" name="Set font size" sid="989648878632912" type="CreditsButtonText">
+                                    <param id="0" name="Size (pt)">28</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="720442029385091">
+                            <conditions>
+                                <condition id="-9" inverted="1" name="Layer is visible" sid="757634996720888" type="System">
+                                    <param id="0" name="Layer">6</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="538308227443394" type="Function">
+                                    <param id="0" name="Name">&quot;ShowCredits&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="497414592826188">
+                                    <conditions>
+                                        <condition id="-11" name="For Each" sid="738453914017357" type="System">
+                                            <param id="0" name="Object">Button</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="9" name="Set scale" sid="324646577858273" type="Button">
+                                            <param id="0" name="Scale">1</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="390732481246717">
+                                            <conditions>
+                                                <condition id="-14" name="Pick by unique ID" sid="448317875422479" type="Button">
+                                                    <param id="0" name="Unique ID">7</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="9" name="Set scale" sid="234796855934836" type="Button">
+                                                    <param id="0" name="Scale">1.2</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="787453607967798">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="393233849127050" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="246861109601950" type="Function">
+                                    <param id="0" name="Name">&quot;HideAll&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <comment>Play button Logic</comment>
+        <event-block any="1" sid="898426032785791">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="913479558064148" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">PlayButtonText</param>
+                </condition>
+                <condition id="17" name="On tap object" sid="866353431571470" type="Touch">
+                    <param id="0" name="Object">PlayButtonText</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="431905997896471">
+                    <conditions>
+                        <condition id="-9" name="Layer is visible" sid="614772542185906" type="System">
+                            <param id="0" name="Layer">1</param>
+                        </condition>
+                        <condition id="-9" inverted="1" name="Layer is visible" sid="112533163358509" type="System">
+                            <param id="0" name="Layer">13</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="518495688328389">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="354138485742271" type="Button">
+                                    <param id="0" name="Unique ID">3</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="3" name="Set font size" sid="608957464909661" type="ButtonText">
+                                    <param id="0" name="Size (pt)">18</param>
+                                </action>
+                                <action id="-7" name="Set size" sid="963246292107648" type="PlayButtonText">
+                                    <param id="0" name="Width">Button.Width</param>
+                                    <param id="1" name="Height">Button.Height</param>
+                                </action>
+                                <action id="-3" name="Set position" sid="903964515651023" type="PlayButtonText">
+                                    <param id="0" name="X">Button.X</param>
+                                    <param id="1" name="Y">Button.Y</param>
+                                </action>
+                                <action id="3" name="Set font size" sid="327390067661074" type="PlayButtonText">
+                                    <param id="0" name="Size (pt)">28</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="973318612607028">
+                            <conditions>
+                                <condition id="-9" inverted="1" name="Layer is visible" sid="496771555469773" type="System">
+                                    <param id="0" name="Layer">10</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="367873469243199" type="Function">
+                                    <param id="0" name="Name">&quot;ShowPlay&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="752891018376890">
+                                    <conditions>
+                                        <condition id="-11" name="For Each" sid="803692156566975" type="System">
+                                            <param id="0" name="Object">Button</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="9" name="Set scale" sid="169592241738177" type="Button">
+                                            <param id="0" name="Scale">1</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="230229999333543">
+                                            <conditions>
+                                                <condition id="-14" name="Pick by unique ID" sid="702807270306353" type="Button">
+                                                    <param id="0" name="Unique ID">3</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="9" name="Set scale" sid="483569229024753" type="Button">
+                                                    <param id="0" name="Scale">1.2</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="985901593040383">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="676757249549464" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="772433998322172" type="Function">
+                                    <param id="0" name="Name">&quot;HideAll&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block any="1" sid="747584839845074">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="900407215579701" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">SingleplayerButtonText</param>
+                </condition>
+                <condition id="17" name="On tap object" sid="730485252369423" type="Touch">
+                    <param id="0" name="Object">SingleplayerButtonText</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="405406686157097">
+                    <conditions>
+                        <condition id="-9" name="Layer is visible" sid="421215403073663" type="System">
+                            <param id="0" name="Layer">10</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="502471697160844" type="Function">
+                            <param id="0" name="Name">&quot;HideAll&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="0" name="Call function" sid="318111713357268" type="Function">
+                            <param id="0" name="Name">&quot;Enable Singleplayer Blur&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="0" name="Call function" sid="367761874490890" type="Function">
+                            <param id="0" name="Name">&quot;Show Singleplayer&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="938152243534813">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="940725158292296" type="Button">
+                                    <param id="0" name="Unique ID">21</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="9" name="Set scale" sid="490340571212080" type="Button">
+                                    <param id="0" name="Scale">1.2</param>
+                                </action>
+                                <action id="3" name="Set font size" sid="945005624739948" type="SingleplayerButtonText">
+                                    <param id="0" name="Size (pt)">22</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="545317495119221" type="System">
+                                    <param id="0" name="Seconds">0.2</param>
+                                </action>
+                                <action id="9" name="Set scale" sid="493819729942320" type="Button">
+                                    <param id="0" name="Scale">1</param>
+                                </action>
+                                <action id="3" name="Set font size" sid="591290400110698" type="SingleplayerButtonText">
+                                    <param id="0" name="Size (pt)">18</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block any="1" sid="432940798623162">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="254885269246128" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">BackButtonText</param>
+                </condition>
+                <condition id="17" name="On tap object" sid="341363941561543" type="Touch">
+                    <param id="0" name="Object">BackButtonText</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="160783245370011">
+                    <conditions>
+                        <condition id="-9" name="Layer is visible" sid="918834977800970" type="System">
+                            <param id="0" name="Layer">13</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="737005391925198" type="Function">
+                            <param id="0" name="Name">&quot;Disable Singleplayer Blur&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="0" name="Call function" sid="112731166327864" type="Function">
+                            <param id="0" name="Name">&quot;Hide Singleplayer&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="412893411004854">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="773398358637375" type="Button">
+                                    <param id="0" name="Unique ID">21</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="9" name="Set scale" sid="622532513735169" type="Button">
+                                    <param id="0" name="Scale">1.2</param>
+                                </action>
+                                <action id="3" name="Set font size" sid="645104985868248" type="SingleplayerButtonText">
+                                    <param id="0" name="Size (pt)">22</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="604804712576632" type="System">
+                                    <param id="0" name="Seconds">0.2</param>
+                                </action>
+                                <action id="9" name="Set scale" sid="747113462040848" type="Button">
+                                    <param id="0" name="Scale">1</param>
+                                </action>
+                                <action id="3" name="Set font size" sid="808124284905492" type="SingleplayerButtonText">
+                                    <param id="0" name="Size (pt)">18</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block any="1" sid="532335071242634">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="685942282970403" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">MultiplayerButtonTest</param>
+                </condition>
+                <condition id="17" name="On tap object" sid="106981931840065" type="Touch">
+                    <param id="0" name="Object">MultiplayerButtonTest</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="449342166772732">
+                    <conditions>
+                        <condition id="-9" name="Layer is visible" sid="233978972456692" type="System">
+                            <param id="0" name="Layer">10</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="684603502690866" type="Function">
+                            <param id="0" name="Name">&quot;HideAll&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="0" name="Call function" sid="292156995456804" type="Function">
+                            <param id="0" name="Name">&quot;Enable Singleplayer Blur&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="0" name="Call function" sid="146912483484897" type="Function">
+                            <param id="0" name="Name">&quot;Show Multiplayer&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="814087050875152">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="851095292580668" type="Button">
+                                    <param id="0" name="Unique ID">42</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="9" name="Set scale" sid="840596478679414" type="Button">
+                                    <param id="0" name="Scale">1.2</param>
+                                </action>
+                                <action id="3" name="Set font size" sid="308759532608690" type="SingleplayerButtonText">
+                                    <param id="0" name="Size (pt)">22</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="560577158688939" type="System">
+                                    <param id="0" name="Seconds">0.2</param>
+                                </action>
+                                <action id="9" name="Set scale" sid="361950805464880" type="Button">
+                                    <param id="0" name="Scale">1</param>
+                                </action>
+                                <action id="3" name="Set font size" sid="737191599868721" type="SingleplayerButtonText">
+                                    <param id="0" name="Size (pt)">18</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block any="1" sid="389433314312472">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="756923259407024" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">MPBackButtonText</param>
+                </condition>
+                <condition id="17" name="On tap object" sid="965800305688503" type="Touch">
+                    <param id="0" name="Object">MPBackButtonText</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="880075369063961">
+                    <conditions>
+                        <condition id="-9" name="Layer is visible" sid="181125251521784" type="System">
+                            <param id="0" name="Layer">16</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="255454764618146" type="Function">
+                            <param id="0" name="Name">&quot;Hide Multiplayer&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="0" name="Call function" sid="203049026386718" type="Function">
+                            <param id="0" name="Name">&quot;Disable Singleplayer Blur&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="591453313599909">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="898709096597230" type="Button">
+                                    <param id="0" name="Unique ID">59</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="9" name="Set scale" sid="652495241110941" type="Button">
+                                    <param id="0" name="Scale">1.2</param>
+                                </action>
+                                <action id="3" name="Set font size" sid="929802195899926" type="SingleplayerButtonText">
+                                    <param id="0" name="Size (pt)">22</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="459356233476837" type="System">
+                                    <param id="0" name="Seconds">0.2</param>
+                                </action>
+                                <action id="9" name="Set scale" sid="331515501736003" type="Button">
+                                    <param id="0" name="Scale">1</param>
+                                </action>
+                                <action id="3" name="Set font size" sid="797288217800278" type="SingleplayerButtonText">
+                                    <param id="0" name="Size (pt)">18</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block any="1" sid="702184906177314">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="911796963029467" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">MPGoText</param>
+                </condition>
+                <condition id="17" name="On tap object" sid="685973852360028" type="Touch">
+                    <param id="0" name="Object">MPGoText</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="449640384628225">
+                    <conditions>
+                        <condition id="-9" name="Layer is visible" sid="529434810223814" type="System">
+                            <param id="0" name="Layer">16</param>
+                        </condition>
+                        <condition id="0" inverted="1" name="Compare text" sid="539540262008321" type="MPUsernameBox">
+                            <param id="0" name="Text">&quot;&quot;</param>
+                            <param id="1" name="Case">0</param>
+                        </condition>
+                        <condition id="12" name="Supports multiplayer" sid="630033982706575" type="Multiplayer" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="775284983310248" type="System">
+                            <param id="0" name="Variable">MP_USERNAME</param>
+                            <param id="1" name="Value">MPUsernameBox.Text</param>
+                        </action>
+                        <action id="-2" name="Go to layout" sid="894343654233128" type="System">
+                            <param id="0" name="Layout">Multiplayer</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="815250632923905">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="832119803095762" type="Button">
+                                    <param id="0" name="Unique ID">61</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="9" name="Set scale" sid="982590835594387" type="Button">
+                                    <param id="0" name="Scale">1.2</param>
+                                </action>
+                                <action id="3" name="Set font size" sid="735201079241592" type="SingleplayerButtonText">
+                                    <param id="0" name="Size (pt)">22</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="954956926140473" type="System">
+                                    <param id="0" name="Seconds">0.2</param>
+                                </action>
+                                <action id="9" name="Set scale" sid="974916635186243" type="Button">
+                                    <param id="0" name="Scale">1</param>
+                                </action>
+                                <action id="3" name="Set font size" sid="926734447981313" type="SingleplayerButtonText">
+                                    <param id="0" name="Size (pt)">18</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>

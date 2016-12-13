@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <c2project>
     <name>Alien Wars</name>
-    <description></description>
+    <description>Destroy the  Aliens</description>
     <version>1.0.0.0</version>
     <author>Jordon Brooks</author>
     <author-email>Jordonbc@hotmail.co.uk</author-email>
@@ -12,19 +12,31 @@
     <used-plugins>
         <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
         <plugin author="Scirra" id="Browser" version="1">Browser</plugin>
+        <plugin author="Scirra" id="Button" version="1">Button</plugin>
         <plugin author="Scirra" id="Function" version="1">Function</plugin>
+        <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
         <plugin author="Scirra" id="List" version="1">List</plugin>
+        <plugin author="Scirra" id="LocalStorage" version="1">Local storage</plugin>
         <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
+        <plugin author="Scirra" id="Multiplayer" version="1">Multiplayer</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
+        <plugin author="Scirra" id="TextBox" version="1">Text box</plugin>
+        <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
+        <plugin author="Scirra" id="gamepad" version="1">Gamepad</plugin>
         <plugin author="Scirra" id="sliderbar" version="1">Slider bar</plugin>
         <plugin author="Scirra" id="video" version="1">Video</plugin>
     </used-plugins>
-    <used-behaviors />
+    <used-behaviors>
+        <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
+        <behavior author="Scirra" id="solid" version="1">Solid</behavior>
+    </used-behaviors>
     <used-effects>
+        <effect author="Scirra" id="blurhorizontal">Blur Horizontal</effect>
+        <effect author="Scirra" id="blurvertical">Blur Vertical</effect>
         <effect author="Scirra" id="glowhorizontal">Glow Horizontal</effect>
         <effect author="Scirra" id="glowvertical">Glow Vertical</effect>
-        <effect author="Danguafer/Silexars" id="pulse">Pulse</effect>
+        <effect author="Scirra" id="setcolor">Set color</effect>
     </used-effects>
     <configurations>
         <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
@@ -33,19 +45,19 @@
         <width>1280</width>
         <height>720</height>
     </window-size>
-    <pixel-rounding>0</pixel-rounding>
-    <preview-effects>1</preview-effects>
-    <first-layout>Main Menu</first-layout>
-    <use-loader-layout>0</use-loader-layout>
+    <pixel-rounding>1</pixel-rounding>
+    <preview-effects>0</preview-effects>
+    <first-layout>Loading</first-layout>
+    <use-loader-layout>1</use-loader-layout>
     <configuration-settings>
         <prop name="Clear background">Yes</prop>
-        <prop name="Downscaling">Medium quality</prop>
+        <prop name="Downscaling">Low quality</prop>
         <prop name="Enable WebGL">On</prop>
         <prop name="Fullscreen in browser">Letterbox scale</prop>
         <prop name="Fullscreen scaling">High quality</prop>
         <prop name="Loader style">Progress bar &amp; logo</prop>
-        <prop name="Orientations">Any</prop>
-        <prop name="Pause on unfocus">Yes</prop>
+        <prop name="Orientations">Landscape</prop>
+        <prop name="Pause on unfocus">No</prop>
         <prop name="Physics engine">Box2D asm.js</prop>
         <prop name="Preload sounds">Yes</prop>
         <prop name="Preview browser">Chrome</prop>
@@ -56,6 +68,11 @@
         <object-folder name="Buttons">
             <object-type name="Button" sid="584967664289443">
                 <plugin id="Sprite" />
+                <effects>
+                    <effect-type name="DISABLED">
+                        <effect id="setcolor" />
+                    </effect-type>
+                </effects>
                 <animation-folder>
                     <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="741092340785894" speed="0">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.510204" original-source="E:\Software\Construct 2\freebundle\Sprites\UI elements\Base pack\blue_button02.png" />
@@ -63,67 +80,100 @@
                     </animation>
                 </animation-folder>
             </object-type>
-            <object-type name="UpscaleQualityListbox" sid="757775316178213">
-                <plugin id="List" />
-            </object-type>
         </object-folder>
         <object-folder name="Text">
-            <object-type name="CreditsButtonText" sid="987185213327943">
-                <plugin id="Text" />
-            </object-type>
-            <object-type name="PlayButtonText" sid="593391462758347">
-                <plugin id="Text" />
-            </object-type>
-            <object-type name="QuitButtonText" sid="971201185744856">
-                <plugin id="Text" />
-            </object-type>
-            <object-type name="SettingsButtonText" sid="612195552797613">
-                <plugin id="Text" />
-            </object-type>
-            <object-type name="TitleText" sid="897166422865435">
-                <plugin id="Text" />
-                <effects>
-                    <effect-type name="Pulse">
-                        <effect id="pulse" />
-                    </effect-type>
-                    <effect-type name="GlowVertical">
-                        <effect id="glowvertical" />
-                    </effect-type>
-                    <effect-type name="GlowHorizontal">
-                        <effect id="glowhorizontal" />
-                    </effect-type>
-                </effects>
-            </object-type>
-            <object-type name="SettingsMenuTitleText" sid="994427429284400">
-                <plugin id="Text" />
-            </object-type>
-            <object-type name="MasterSoundBarText" sid="448144511183350">
-                <plugin id="Text" />
-            </object-type>
-            <object-type name="MusicCreditsText" sid="519139574354016">
-                <plugin id="Text" />
-            </object-type>
-            <object-type name="MusicSoundBarText" sid="136965861650801">
-                <plugin id="Text" />
-            </object-type>
-            <object-type name="CreditsTitleText" sid="843298887735213">
-                <plugin id="Text" />
-            </object-type>
-            <object-type name="FeatureUnavailableText" sid="183655065565862">
-                <plugin id="Text" />
-            </object-type>
-            <object-type name="PlayTitleText" sid="621512271099904">
-                <plugin id="Text" />
-            </object-type>
-            <object-type name="UpscaleQualityText" sid="732458869924326">
-                <plugin id="Text" />
-            </object-type>
+            <object-folder name="Button Text">
+                <object-type name="ApplySettingsButtonText" sid="324039994812566">
+                    <plugin id="Text" />
+                </object-type>
+                <object-type name="BackButtonText" sid="124748426127714">
+                    <plugin id="Text" />
+                </object-type>
+                <object-type name="CreditsButtonText" sid="987185213327943">
+                    <plugin id="Text" />
+                </object-type>
+                <object-type name="EasyButtonText" sid="606003086869809">
+                    <plugin id="Text" />
+                </object-type>
+                <object-type name="HardButtonText" sid="967801627297206">
+                    <plugin id="Text" />
+                </object-type>
+                <object-type name="MediumButtonText" sid="387319364351104">
+                    <plugin id="Text" />
+                </object-type>
+                <object-type name="MultiplayerButtonTest" sid="527346251716718">
+                    <plugin id="Text" />
+                </object-type>
+                <object-type name="PlayButtonText" sid="593391462758347">
+                    <plugin id="Text" />
+                </object-type>
+                <object-type name="SettingsButtonText" sid="612195552797613">
+                    <plugin id="Text" />
+                </object-type>
+                <object-type name="QuitButtonText" sid="971201185744856">
+                    <plugin id="Text" />
+                </object-type>
+                <object-type name="SingleplayerButtonText" sid="306146794304015">
+                    <plugin id="Text" />
+                </object-type>
+            </object-folder>
+            <object-folder name="Title Text">
+                <object-type name="CreditsTitleText" sid="843298887735213">
+                    <plugin id="Text" />
+                </object-type>
+                <object-type name="LoadingTitleText" sid="149190345186834">
+                    <plugin id="Text" />
+                    <effects>
+                        <effect-type name="GlowHorizontal">
+                            <effect id="glowhorizontal" />
+                        </effect-type>
+                        <effect-type name="GlowVertical">
+                            <effect id="glowvertical" />
+                        </effect-type>
+                    </effects>
+                </object-type>
+                <object-type name="PlayTitleText" sid="621512271099904">
+                    <plugin id="Text" />
+                </object-type>
+                <object-type name="SettingsMenuTitleText" sid="994427429284400">
+                    <plugin id="Text" />
+                </object-type>
+                <object-type name="SingleplayerTitleText" sid="492256606802606">
+                    <plugin id="Text" />
+                </object-type>
+            </object-folder>
+            <object-folder name="Description Text">
+                <object-type name="FeatureUnavailableText" sid="183655065565862">
+                    <plugin id="Text" />
+                </object-type>
+                <object-type name="MasterSoundBarText" sid="448144511183350">
+                    <plugin id="Text" />
+                </object-type>
+                <object-type name="MusicSoundBarText" sid="136965861650801">
+                    <plugin id="Text" />
+                </object-type>
+                <object-type name="MusicCreditsText" sid="519139574354016">
+                    <plugin id="Text" />
+                </object-type>
+                <object-type name="UpscaleQualityText" sid="732458869924326">
+                    <plugin id="Text" />
+                </object-type>
+                <object-type name="VideoQualityText" sid="728839427754750">
+                    <plugin id="Text" />
+                </object-type>
+            </object-folder>
         </object-folder>
         <object-folder name="Videos">
             <object-type name="MainMenuVideo" sid="679916228430960">
                 <plugin id="video" />
             </object-type>
             <object-type name="LoadingVideo" sid="890391631155020">
+                <plugin id="video" />
+            </object-type>
+            <object-type name="SingleplayerBackgroundVideo" sid="810196851345006">
+                <plugin id="video" />
+            </object-type>
+            <object-type name="SingleplayerOpeningVideo" sid="950603439152776">
                 <plugin id="video" />
             </object-type>
         </object-folder>
@@ -140,12 +190,47 @@
             <object-type name="Browser" sid="197373338401167">
                 <plugin id="Browser" />
             </object-type>
+            <object-type name="Gamepad" sid="342530095195853">
+                <plugin id="gamepad" />
+            </object-type>
+            <object-type name="Keyboard" sid="783837852095417">
+                <plugin id="Keyboard" />
+            </object-type>
+            <object-type name="Touch" sid="768069623347120">
+                <plugin id="Touch" />
+            </object-type>
+            <object-type name="LocalStorage" sid="203360802220902">
+                <plugin id="LocalStorage" />
+            </object-type>
         </object-folder>
         <object-folder name="Backgrounds">
             <object-type name="MenuBackground" sid="562637304899072">
                 <plugin id="Sprite" />
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="895525082583206" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\College\Level 3\Graphics\Main Menu done.png">
+                            <collision-poly>
+                                <point x="0.00546875" y="0.00546875" />
+                                <point x="0.992969" y="0.00703125" />
+                                <point x="0.99375" y="0.99375" />
+                                <point x="0.00625" y="0.99375" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Background" sid="509635501805138">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="662755418398555" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Jordon\Downloads\processed_file_2016-12-06-21-08-56\o_eaa3a349dfda5a68-0.jpg" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="FadeIn" sid="861834756544611">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="282002215765301" speed="5">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     </animation>
                 </animation-folder>
@@ -158,22 +243,40 @@
             <object-type name="MusicSoundBar" sid="385066265029369">
                 <plugin id="sliderbar" />
             </object-type>
+            <object-type name="VideoQualityList" sid="554340782834597">
+                <plugin id="List" />
+            </object-type>
+            <object-type name="UpscaleQualityListbox" sid="757775316178213">
+                <plugin id="List" />
+            </object-type>
         </object-folder>
         <object-folder name="Objects">
             <object-type name="Player" sid="775285204150088">
                 <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="MPID" sid="645992651351077" type="string" />
+                    <instance-variable name="Inputs" sid="846007730790941" type="number" />
+                </instance-variables>
+                <behaviors>
+                    <behavior-type name="8Direction" sid="578437888382124">
+                        <behavior id="EightDir" />
+                    </behavior-type>
+                    <behavior-type name="Solid" sid="840489795982294">
+                        <behavior id="solid" />
+                    </behavior-type>
+                </behaviors>
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="666810576614864" speed="5">
-                        <frame duration="1" hotspotX="0.501458" hotspotY="0.501305" original-source="D:\College\Level 3\Graphics\Alien Wars\Player.png">
+                        <frame duration="1" hotspotX="0.498695" hotspotY="0.501458" original-source="D:\College\Level 3\Graphics\Alien Wars\Player.png">
                             <collision-poly>
-                                <point x="0.390671" y="0.349869" />
-                                <point x="0.498542" y="0.148825" />
-                                <point x="0.635568" y="0.326371" />
-                                <point x="0.921283" y="0.498695" />
-                                <point x="0.889213" y="0.900783" />
-                                <point x="0.498542" y="0.921671" />
-                                <point x="0.134111" y="0.879896" />
-                                <point x="0.0962099" y="0.498695" />
+                                <point x="0.650131" y="0.390671" />
+                                <point x="0.851175" y="0.498542" />
+                                <point x="0.673629" y="0.635568" />
+                                <point x="0.501305" y="0.921283" />
+                                <point x="0.099217" y="0.889213" />
+                                <point x="0.078329" y="0.498542" />
+                                <point x="0.120104" y="0.134111" />
+                                <point x="0.501305" y="0.0962099" />
                             </collision-poly>
                         </frame>
                     </animation>
@@ -198,26 +301,67 @@
                     </animation>
                 </animation-folder>
             </object-type>
+            <object-type name="Title" sid="664850035557590">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="449500476032870" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\College\Level 3\Graphics\Alien Wars\Alien Wars Text.png">
+                            <collision-poly>
+                                <point x="0.0257812" y="0.217105" />
+                                <point x="0.991406" y="0.0723684" />
+                                <point x="0.991406" y="0.927632" />
+                                <point x="0" y="1" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
         </object-folder>
-        <object-type name="LoadingTitleText" sid="149190345186834">
+        <object-type name="Multiplayer" sid="436072568837400">
+            <plugin id="Multiplayer" />
+        </object-type>
+        <object-type name="FullscreenText" sid="372092559612825">
             <plugin id="Text" />
-            <effects>
-                <effect-type name="GlowHorizontal">
-                    <effect id="glowhorizontal" />
-                </effect-type>
-                <effect-type name="GlowVertical">
-                    <effect id="glowvertical" />
-                </effect-type>
-            </effects>
+        </object-type>
+        <object-type name="FullscreenCheckbox" sid="809958908039456">
+            <plugin id="Button" />
+        </object-type>
+        <object-type name="PlayerUsernameText" sid="653971169003553">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="MultiplayerTitleText" sid="394818905486520">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="MPUsernameBox" sid="792049402982854">
+            <plugin id="TextBox" />
+        </object-type>
+        <object-type name="MPBackButtonText" sid="707729468605601">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="MPGoText" sid="606383209136921">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="MPSupportText" sid="209975839790491">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="StatusBox" sid="852931461204569">
+            <plugin id="TextBox" />
         </object-type>
     </object-folder>
     <families>
         <family name="AllText" plugin-id="Text" sid="760463930764342">
             <members>
+                <member>ApplySettingsButtonText</member>
+                <member>BackButtonText</member>
                 <member>CreditsButtonText</member>
                 <member>CreditsTitleText</member>
+                <member>EasyButtonText</member>
                 <member>FeatureUnavailableText</member>
+                <member>HardButtonText</member>
+                <member>LoadingTitleText</member>
                 <member>MasterSoundBarText</member>
+                <member>MediumButtonText</member>
+                <member>MultiplayerButtonTest</member>
                 <member>MusicCreditsText</member>
                 <member>MusicSoundBarText</member>
                 <member>PlayButtonText</member>
@@ -225,14 +369,25 @@
                 <member>QuitButtonText</member>
                 <member>SettingsButtonText</member>
                 <member>SettingsMenuTitleText</member>
+                <member>SingleplayerButtonText</member>
+                <member>SingleplayerTitleText</member>
+                <member>UpscaleQualityText</member>
+                <member>VideoQualityText</member>
             </members>
         </family>
         <family name="ButtonText" plugin-id="Text" sid="455207575529761">
             <members>
+                <member>ApplySettingsButtonText</member>
+                <member>BackButtonText</member>
                 <member>CreditsButtonText</member>
+                <member>EasyButtonText</member>
+                <member>HardButtonText</member>
+                <member>MediumButtonText</member>
+                <member>MultiplayerButtonTest</member>
                 <member>PlayButtonText</member>
                 <member>QuitButtonText</member>
                 <member>SettingsButtonText</member>
+                <member>SingleplayerButtonText</member>
             </members>
         </family>
         <family name="AllTitleText" plugin-id="Text" sid="811197225495572">
@@ -240,6 +395,7 @@
                 <member>CreditsTitleText</member>
                 <member>PlayTitleText</member>
                 <member>SettingsMenuTitleText</member>
+                <member>SingleplayerTitleText</member>
             </members>
             <effects>
                 <effect-type name="GlowHorizontal">
@@ -250,15 +406,43 @@
                 </effect-type>
             </effects>
         </family>
+        <family name="MenuDescriptionText" plugin-id="Text" sid="896428122419930">
+            <members>
+                <member>FeatureUnavailableText</member>
+                <member>MasterSoundBarText</member>
+                <member>MusicCreditsText</member>
+                <member>MusicSoundBarText</member>
+                <member>UpscaleQualityText</member>
+                <member>VideoQualityText</member>
+            </members>
+        </family>
     </families>
     <layout-folder>
-        <layout>Main Menu.xml</layout>
-        <layout>Loading.xml</layout>
+        <layout-folder name="Menus">
+            <layout>Main Menu.xml</layout>
+            <layout>Loading.xml</layout>
+        </layout-folder>
+        <layout-folder name="Multiplayer">
+            <layout>Multiplayer.xml</layout>
+        </layout-folder>
     </layout-folder>
     <event-folder>
-        <event-sheet>Main Menu Events.xml</event-sheet>
-        <event-sheet>Settings Menu.xml</event-sheet>
-        <event-sheet>Loading Events.xml</event-sheet>
+        <event-folder name="Main Menu">
+            <event-sheet>Functions.xml</event-sheet>
+            <event-sheet>Globals.xml</event-sheet>
+            <event-sheet>Main Menu Buttons.xml</event-sheet>
+            <event-sheet>Main Menu Events.xml</event-sheet>
+            <event-sheet>Settings Menu.xml</event-sheet>
+            <event-sheet>Storage.xml</event-sheet>
+            <event-sheet>Title.xml</event-sheet>
+        </event-folder>
+        <event-folder name="Loading">
+            <event-sheet>Loading Events.xml</event-sheet>
+        </event-folder>
+        <event-folder name="Multiplayer">
+            <event-sheet>Multiplayer Events.xml</event-sheet>
+            <event-sheet>MP.xml</event-sheet>
+        </event-folder>
     </event-folder>
     <global-instances>
         <global-instance type="Audio" uid="2">
@@ -278,6 +462,19 @@
         <global-instance type="Mouse" uid="11" />
         <global-instance type="Function" uid="18" />
         <global-instance type="Browser" uid="23" />
+        <global-instance type="Touch" uid="30">
+            <properties>
+                <use-mouse-input>No</use-mouse-input>
+            </properties>
+        </global-instance>
+        <global-instance type="Keyboard" uid="31" />
+        <global-instance type="Gamepad" uid="32">
+            <properties>
+                <analog-deadzone>25</analog-deadzone>
+            </properties>
+        </global-instance>
+        <global-instance type="LocalStorage" uid="36" />
+        <global-instance type="Multiplayer" uid="39" />
     </global-instances>
     <sounds-folder />
     <music-folder>
@@ -294,10 +491,11 @@
             <file name="loading-logo.png" />
         </file-folder>
         <file-folder name="Videos">
-            <file name="MainMenuBackground.mp4" />
             <file name="LoadingVideo.mp4" />
-            <file name="MainMenuBackground.ogv" />
-            <file name="MainMenuBackground.webm" />
+            <file name="mainmenubackground-HQ.mp4" />
+            <file name="mainmenubackground-LQ.mp4" />
+            <file name="mainmenubackground-LQ.ogv" />
+            <file name="mainmenubackground-LQ.webm" />
         </file-folder>
     </files-folder>
 </c2project>

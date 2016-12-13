@@ -1,0 +1,319 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Storage</name>
+    <events>
+        <comment>At start of game check local storage for settings</comment>
+        <event-block sid="436741180326239">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="639819216055061" type="System" />
+            </conditions>
+            <actions>
+                <action id="5" name="Check item exists" sid="521847610466486" type="LocalStorage">
+                    <param id="0" name="Key">&quot;MasterSound&quot;</param>
+                </action>
+                <action id="5" name="Check item exists" sid="565449094885460" type="LocalStorage">
+                    <param id="0" name="Key">&quot;MusicSound&quot;</param>
+                </action>
+                <action id="5" name="Check item exists" sid="668682522127688" type="LocalStorage">
+                    <param id="0" name="Key">&quot;UpscaleQuality&quot;</param>
+                </action>
+                <action id="5" name="Check item exists" sid="833322989454594" type="LocalStorage">
+                    <param id="0" name="Key">&quot;VideoQuality&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="" sid="318209688799877" title="Exists">
+            <sub-events>
+                <comment>If Master Sound exists</comment>
+                <event-block sid="585500324161231">
+                    <conditions>
+                        <condition id="9" name="On item exists" sid="171408552022407" type="LocalStorage">
+                            <param id="0" name="Key">&quot;MasterSound&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="1" name="Get item" sid="638949461263459" type="LocalStorage">
+                            <param id="0" name="Key">&quot;MasterSound&quot;</param>
+                        </action>
+                        <action id="14" name="Log" sid="134983118514438" type="Browser">
+                            <param id="0" name="Type">0</param>
+                            <param id="1" name="Message">&quot;Getting Local Storage MasterSound&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>If Music Sound exists</comment>
+                <event-block sid="273055993117809">
+                    <conditions>
+                        <condition id="9" name="On item exists" sid="636090319699763" type="LocalStorage">
+                            <param id="0" name="Key">&quot;MusicSound&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="1" name="Get item" sid="874624818826514" type="LocalStorage">
+                            <param id="0" name="Key">&quot;MusicSound&quot;</param>
+                        </action>
+                        <action id="14" name="Log" sid="833278811256772" type="Browser">
+                            <param id="0" name="Type">0</param>
+                            <param id="1" name="Message">&quot;Getting Local Storage MusicSound&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>If Upscale Quality exists</comment>
+                <event-block sid="318878823598025">
+                    <conditions>
+                        <condition id="9" name="On item exists" sid="363774780571299" type="LocalStorage">
+                            <param id="0" name="Key">&quot;UpscaleQuality&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="1" name="Get item" sid="865799332100690" type="LocalStorage">
+                            <param id="0" name="Key">&quot;UpscaleQuality&quot;</param>
+                        </action>
+                        <action id="14" name="Log" sid="961533727783263" type="Browser">
+                            <param id="0" name="Type">0</param>
+                            <param id="1" name="Message">&quot;Getting Local Storage UpscaleQuality&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>If Video Quality exists</comment>
+                <event-block sid="211880238106540">
+                    <conditions>
+                        <condition id="9" name="On item exists" sid="981288146023570" type="LocalStorage">
+                            <param id="0" name="Key">&quot;VideoQuality&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="1" name="Get item" sid="519032763143251" type="LocalStorage">
+                            <param id="0" name="Key">&quot;VideoQuality&quot;</param>
+                        </action>
+                        <action id="14" name="Log" sid="205689454019628" type="Browser">
+                            <param id="0" name="Type">0</param>
+                            <param id="1" name="Message">&quot;Getting Local Storage VideoQuality&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="892538156247705" title="Missing">
+            <sub-events>
+                <comment>If Master sound is missing</comment>
+                <event-block sid="418752610374261">
+                    <conditions>
+                        <condition id="10" name="On item missing" sid="808790487466670" type="LocalStorage">
+                            <param id="0" name="Key">&quot;MasterSound&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set item" sid="518462240148939" type="LocalStorage">
+                            <param id="0" name="Key">&quot;MasterSound&quot;</param>
+                            <param id="1" name="Value">Audio.MasterVolume</param>
+                        </action>
+                        <action id="14" name="Log" sid="104441736107537" type="Browser">
+                            <param id="0" name="Type">0</param>
+                            <param id="1" name="Message">&quot;Setting Local Storage MasterSound to: &quot;&amp;LocalStorage.ItemValue</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>If Music sound is missing</comment>
+                <event-block sid="676071868160473">
+                    <conditions>
+                        <condition id="10" name="On item missing" sid="485638974966888" type="LocalStorage">
+                            <param id="0" name="Key">&quot;MusicSound&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set item" sid="953367648865185" type="LocalStorage">
+                            <param id="0" name="Key">&quot;MusicSound&quot;</param>
+                            <param id="1" name="Value">Audio.Volume(&quot;MainMenuMusic&quot;)</param>
+                        </action>
+                        <action id="14" name="Log" sid="554686934930669" type="Browser">
+                            <param id="0" name="Type">0</param>
+                            <param id="1" name="Message">&quot;Setting Local Storage MusicSound to: &quot;&amp;LocalStorage.ItemValue</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>If Upscale Quality is missing</comment>
+                <event-block sid="172319620176038">
+                    <conditions>
+                        <condition id="10" name="On item missing" sid="224828651354886" type="LocalStorage">
+                            <param id="0" name="Key">&quot;UpscaleQuality&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set item" sid="716731897369609" type="LocalStorage">
+                            <param id="0" name="Key">&quot;UpscaleQuality&quot;</param>
+                            <param id="1" name="Value">uppercase(UpscaleQuality)</param>
+                        </action>
+                        <action id="14" name="Log" sid="853451183711908" type="Browser">
+                            <param id="0" name="Type">0</param>
+                            <param id="1" name="Message">&quot;Setting Local Storage UpscaleQuality to: &quot;&amp;LocalStorage.ItemValue</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>If Video Quality is missing</comment>
+                <event-block sid="529861827842344">
+                    <conditions>
+                        <condition id="10" name="On item missing" sid="956197023694438" type="LocalStorage">
+                            <param id="0" name="Key">&quot;VideoQuality&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set item" sid="923366578985979" type="LocalStorage">
+                            <param id="0" name="Key">&quot;VideoQuality&quot;</param>
+                            <param id="1" name="Value">uppercase(VideoQuality)</param>
+                        </action>
+                        <action id="14" name="Log" sid="792584948841992" type="Browser">
+                            <param id="0" name="Type">0</param>
+                            <param id="1" name="Message">&quot;Setting Local Storage VideoQuality to: &quot;&amp;LocalStorage.ItemValue</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="941389255348365" title="Get">
+            <sub-events>
+                <comment>Get the Master Sound level from local storage</comment>
+                <event-block sid="333182047715639">
+                    <conditions>
+                        <condition id="1" name="On item get" sid="195241944904099" type="LocalStorage">
+                            <param id="0" name="Key">&quot;MasterSound&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="10" name="Set master volume" sid="111244587854523" type="Audio">
+                            <param id="0" name="dB">LocalStorage.ItemValue</param>
+                        </action>
+                        <action id="14" name="Log" sid="876490458567939" type="Browser">
+                            <param id="0" name="Type">0</param>
+                            <param id="1" name="Message">&quot;Setting Master Volume to: &quot;&amp;LocalStorage.ItemValue</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Get the Music Sound level from local storage</comment>
+                <event-block sid="229072744487163">
+                    <conditions>
+                        <condition id="1" name="On item get" sid="597035099997329" type="LocalStorage">
+                            <param id="0" name="Key">&quot;MusicSound&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="3" name="Set volume" sid="812139864861111" type="Audio">
+                            <param id="0" name="Tag">&quot;MainMenuMusic&quot;</param>
+                            <param id="1" name="dB">LocalStorage.ItemValue</param>
+                        </action>
+                        <action id="14" name="Log" sid="231467142185111" type="Browser">
+                            <param id="0" name="Type">0</param>
+                            <param id="1" name="Message">&quot;Setting Music Volume to: &quot;&amp;LocalStorage.ItemValue</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Get the Upscale Quality level from local storage</comment>
+                <event-block sid="595039408884325">
+                    <conditions>
+                        <condition id="1" name="On item get" sid="486137542711748" type="LocalStorage">
+                            <param id="0" name="Key">&quot;UpscaleQuality&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="774831842394899" type="System">
+                            <param id="0" name="Variable">UpscaleQuality</param>
+                            <param id="1" name="Value">uppercase(LocalStorage.ItemValue)</param>
+                        </action>
+                        <action id="14" name="Log" sid="876996514301123" type="Browser">
+                            <param id="0" name="Type">0</param>
+                            <param id="1" name="Message">&quot;Setting UpscaleQuality to: &quot;&amp;LocalStorage.ItemValue</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="136337061840278">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="510900163042114" type="System">
+                                    <param id="0" name="Variable">UpscaleQuality</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">uppercase(&quot;LQ&quot;)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-40" name="Set fullscreen scaling" sid="483064276275974" type="System">
+                                    <param id="0" name="Fullscreen scaling">0</param>
+                                </action>
+                                <action id="-47" name="Set pixel rounding" sid="705086367552315" type="System">
+                                    <param id="0" name="Mode">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="996862713857557">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="732903844966759" type="System">
+                                    <param id="0" name="Variable">UpscaleQuality</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">uppercase(&quot;HQ&quot;)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-40" name="Set fullscreen scaling" sid="955053013364581" type="System">
+                                    <param id="0" name="Fullscreen scaling">1</param>
+                                </action>
+                                <action id="-47" name="Set pixel rounding" sid="648460551613828" type="System">
+                                    <param id="0" name="Mode">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Get the Video Quality level from local storage</comment>
+                <event-block sid="253200626754281">
+                    <conditions>
+                        <condition id="1" name="On item get" sid="401720571670628" type="LocalStorage">
+                            <param id="0" name="Key">&quot;VideoQuality&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="660167221605319" type="System">
+                            <param id="0" name="Variable">VideoQuality</param>
+                            <param id="1" name="Value">uppercase(LocalStorage.ItemValue)</param>
+                        </action>
+                        <action id="14" name="Log" sid="414580429955161" type="Browser">
+                            <param id="0" name="Type">0</param>
+                            <param id="1" name="Message">&quot;Setting VideoQuality to: &quot;&amp;LocalStorage.ItemValue</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block any="1" sid="220415280893641">
+                            <conditions>
+                                <condition id="-32" name="Is on platform" sid="819495520618745" type="System">
+                                    <param id="0" name="Platform">13</param>
+                                </condition>
+                                <condition id="-32" name="Is on platform" sid="691033361879136" type="System">
+                                    <param id="0" name="Platform">10</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set source" sid="309709070641753" type="MainMenuVideo">
+                                    <param id="0" name="WebM source">&quot;&quot;</param>
+                                    <param id="1" name="Ogg Theora source">&quot;&quot;</param>
+                                    <param id="2" name="H.264 source">&quot;MainMenuBackground-HQ.mp4&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block any="1" sid="454809462459233">
+                            <conditions>
+                                <condition id="-32" name="Is on platform" sid="831658289828772" type="System">
+                                    <param id="0" name="Platform">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set source" sid="828417818022235" type="MainMenuVideo">
+                                    <param id="0" name="WebM source">&quot;&quot;</param>
+                                    <param id="1" name="Ogg Theora source">&quot;&quot;</param>
+                                    <param id="2" name="H.264 source">&quot;https://cdn.rawgit.com/Jordonbc/alienwars/gh-pages/mainmenubackground-&quot;&amp;VideoQuality&amp;&quot;.mp4&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

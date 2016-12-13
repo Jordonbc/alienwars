@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Multiplayer Events</name>
+    <events>
+        <include>MP</include>
+        <event-block sid="155010132976759">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="291218408133950" type="System" />
+            </conditions>
+            <actions>
+                <action id="-3" name="Set position" sid="198104668406471" type="PlayerUsernameText">
+                    <param id="0" name="X">Player.X</param>
+                    <param id="1" name="Y">Player.Y-80</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

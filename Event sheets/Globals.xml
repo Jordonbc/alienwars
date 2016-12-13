@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Globals</name>
+    <events>
+        <variable constant="0" name="MP_USERNAME" sid="935545513331999" static="0" type="text"></variable>
+        <variable comment="LQ (Low Quality)  or HQ (High Quality)" constant="0" name="UpscaleQuality" sid="103882498459293" static="0" type="text">HQ</variable>
+        <variable comment="LQ (Low Quality)  or HQ (High Quality)" constant="0" name="VideoQuality" sid="913375351660569" static="0" type="text">LQ</variable>
+        <variable comment="The Space between the buttons in mobile version" constant="0" name="MobileButtonSpacing" sid="132149266579844" static="0" type="number">300</variable>
+        <variable comment="The current size of the title" constant="0" name="TitleScale" sid="769267226489413" static="0" type="number">0.8</variable>
+        <variable comment="How much to add to the title each tick" constant="0" name="TitleAdd" sid="620345288775101" static="0" type="number">0.005</variable>
+    </events>
+</c2eventsheet>

@@ -3,74 +3,210 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Settings Menu</name>
     <events>
-        <event-block sid="877893070356298">
+        <comment>Sets mobile settings</comment>
+        <event-block sid="679095566683328">
             <conditions>
-                <condition id="-2" name="On start of layout" sid="924955388441991" type="System" />
+                <condition id="-20" name="Is on mobile device" sid="972262056096420" type="System" />
             </conditions>
             <actions>
-                <action id="3" name="Set value" sid="590248520391674" type="MasterSoundBar">
-                    <param id="0" name="Value">int(Audio.MasterVolume)</param>
+                <action id="3" name="Set enabled" sid="505999792423052" type="VideoQualityList">
+                    <param id="0" name="Mode">0</param>
                 </action>
-                <action id="3" name="Set value" sid="516968278446018" type="MusicSoundBar">
-                    <param id="0" name="Value">int(Audio.Volume(&quot;MainMenuMusic&quot;))</param>
-                </action>
-                <action id="0" name="Set selection" sid="698427170934070" type="UpscaleQualityListbox">
-                    <param id="0" name="Index">1</param>
+                <action id="4" name="Set font color" sid="923050262172099" type="VideoQualityText">
+                    <param id="0" name="Color">rgb(109, 109, 109)</param>
                 </action>
             </actions>
         </event-block>
-        <event-block sid="292200291677790">
+        <comment>Apply button pressed</comment>
+        <event-block any="1" sid="959784184298064">
             <conditions>
-                <condition id="2" name="On changed" sid="116818096769655" type="MasterSoundBar" />
+                <condition id="6" name="On object clicked" sid="382122028096645" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">ApplySettingsButtonText</param>
+                </condition>
+                <condition id="17" name="On tap object" sid="879863192539618" type="Touch">
+                    <param id="0" name="Object">ApplySettingsButtonText</param>
+                </condition>
             </conditions>
             <actions>
+                <action id="0" name="Set item" sid="641601755213589" type="LocalStorage">
+                    <param id="0" name="Key">&quot;MasterSound&quot;</param>
+                    <param id="1" name="Value">int(MasterSoundBar.Value)</param>
+                </action>
                 <action id="10" name="Set master volume" sid="937705002726422" type="Audio">
                     <param id="0" name="dB">int(MasterSoundBar.Value)</param>
                 </action>
-            </actions>
-        </event-block>
-        <event-block sid="179987397990844">
-            <conditions>
-                <condition id="2" name="On changed" sid="529463352864946" type="MusicSoundBar" />
-            </conditions>
-            <actions>
+                <action id="0" name="Set item" sid="725661900243038" type="LocalStorage">
+                    <param id="0" name="Key">&quot;MusicSound&quot;</param>
+                    <param id="1" name="Value">int(MusicSoundBar.Value)</param>
+                </action>
                 <action id="3" name="Set volume" sid="971861697089136" type="Audio">
                     <param id="0" name="Tag">&quot;MainMenuMusic&quot;</param>
                     <param id="1" name="dB">int(MusicSoundBar.Value)</param>
                 </action>
             </actions>
-        </event-block>
-        <event-block sid="846052522756737">
-            <conditions>
-                <condition id="1" name="On selection changed" sid="354250409084670" type="UpscaleQualityListbox" />
-            </conditions>
-            <actions />
             <sub-events>
-                <event-block sid="670188115715605">
+                <comment>Animates the Apply button</comment>
+                <event-block sid="492490144265341">
                     <conditions>
-                        <condition id="0" name="Compare selection" sid="573719306726947" type="UpscaleQualityListbox">
-                            <param id="0" name="Comparison">0</param>
-                            <param id="1" name="Index">0</param>
+                        <condition id="-9" name="Layer is visible" sid="925345317961446" type="System">
+                            <param id="0" name="Layer">7</param>
                         </condition>
                     </conditions>
-                    <actions>
-                        <action id="-40" name="Set fullscreen scaling" sid="544950865722327" type="System">
-                            <param id="0" name="Fullscreen scaling">0</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="474008683320245">
-                    <conditions>
-                        <condition id="0" name="Compare selection" sid="994487472061880" type="UpscaleQualityListbox">
-                            <param id="0" name="Comparison">0</param>
-                            <param id="1" name="Index">1</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-40" name="Set fullscreen scaling" sid="692646355888390" type="System">
-                            <param id="0" name="Fullscreen scaling">1</param>
-                        </action>
-                    </actions>
+                    <actions />
+                    <sub-events>
+                        <event-group description="" sid="161978824000408" title="Fullscreen">
+                            <sub-events>
+                                <event-block sid="102242320914193">
+                                    <conditions>
+                                        <condition id="1" inverted="1" name="Is checked" sid="268835713783243" type="FullscreenCheckbox" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="11" name="Cancel fullscreen" sid="213979319371244" type="Browser" />
+                                    </actions>
+                                </event-block>
+                                <event-block sid="947071181255626">
+                                    <conditions>
+                                        <condition id="1" name="Is checked" sid="445560418579274" type="FullscreenCheckbox" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="10" name="Request fullscreen" sid="990283232936656" type="Browser">
+                                            <param id="0" name="Mode">3</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-group>
+                        <event-group description="" sid="128818968835783" title="Upscale Quality">
+                            <sub-events>
+                                <event-block sid="618771449740794">
+                                    <conditions>
+                                        <condition id="0" name="Compare selection" sid="400290802670845" type="UpscaleQualityListbox">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Index">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-40" name="Set fullscreen scaling" sid="284570137897261" type="System">
+                                            <param id="0" name="Fullscreen scaling">0</param>
+                                        </action>
+                                        <action id="-47" name="Set pixel rounding" sid="818628111067731" type="System">
+                                            <param id="0" name="Mode">0</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="438249840576177" type="System">
+                                            <param id="0" name="Variable">UpscaleQuality</param>
+                                            <param id="1" name="Value">uppercase(&quot;LQ&quot;)</param>
+                                        </action>
+                                        <action id="0" name="Set item" sid="557119789441954" type="LocalStorage">
+                                            <param id="0" name="Key">&quot;UpscaleQuality&quot;</param>
+                                            <param id="1" name="Value">Uppercase(&quot;LQ&quot;)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="818292969218582">
+                                    <conditions>
+                                        <condition id="0" name="Compare selection" sid="215117016911345" type="UpscaleQualityListbox">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Index">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-40" name="Set fullscreen scaling" sid="906833571202539" type="System">
+                                            <param id="0" name="Fullscreen scaling">1</param>
+                                        </action>
+                                        <action id="-47" name="Set pixel rounding" sid="201863854504381" type="System">
+                                            <param id="0" name="Mode">1</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="657959724942499" type="System">
+                                            <param id="0" name="Variable">UpscaleQuality</param>
+                                            <param id="1" name="Value">uppercase(&quot;HQ&quot;)</param>
+                                        </action>
+                                        <action id="0" name="Set item" sid="179890418058087" type="LocalStorage">
+                                            <param id="0" name="Key">&quot;UpscaleQuality&quot;</param>
+                                            <param id="1" name="Value">Uppercase(&quot;HQ&quot;)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-group>
+                        <event-group description="" sid="647519955588959" title="Video Quality">
+                            <sub-events>
+                                <event-block sid="471059032845829">
+                                    <conditions>
+                                        <condition id="0" name="Compare selection" sid="707637039248361" type="VideoQualityList">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Index">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="804919044811848" type="System">
+                                            <param id="0" name="Variable">VideoQuality</param>
+                                            <param id="1" name="Value">uppercase(&quot;LQ&quot;)</param>
+                                        </action>
+                                        <action id="0" name="Set item" sid="576944549352018" type="LocalStorage">
+                                            <param id="0" name="Key">&quot;VideoQuality&quot;</param>
+                                            <param id="1" name="Value">Uppercase(&quot;LQ&quot;)</param>
+                                        </action>
+                                        <action id="0" name="Set source" sid="827637160706659" type="MainMenuVideo">
+                                            <param id="0" name="WebM source">&quot;&quot;</param>
+                                            <param id="1" name="Ogg Theora source">&quot;&quot;</param>
+                                            <param id="2" name="H.264 source">&quot;https://cdn.rawgit.com/Jordonbc/alienwars/gh-pages/mainmenubackground-&quot;&amp;VideoQuality&amp;&quot;.mp4&quot;</param>
+                                        </action>
+                                        <action id="6" name="Play" sid="481314964639007" type="MainMenuVideo" />
+                                    </actions>
+                                </event-block>
+                                <event-block sid="474008683320245">
+                                    <conditions>
+                                        <condition id="0" name="Compare selection" sid="994487472061880" type="VideoQualityList">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Index">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="675833830961377" type="System">
+                                            <param id="0" name="Variable">VideoQuality</param>
+                                            <param id="1" name="Value">uppercase(&quot;HQ&quot;)</param>
+                                        </action>
+                                        <action id="0" name="Set item" sid="571847067790097" type="LocalStorage">
+                                            <param id="0" name="Key">&quot;VideoQuality&quot;</param>
+                                            <param id="1" name="Value">Uppercase(&quot;HQ&quot;)</param>
+                                        </action>
+                                        <action id="0" name="Set source" sid="634490685900489" type="MainMenuVideo">
+                                            <param id="0" name="WebM source">&quot;&quot;</param>
+                                            <param id="1" name="Ogg Theora source">&quot;&quot;</param>
+                                            <param id="2" name="H.264 source">&quot;https://cdn.rawgit.com/Jordonbc/alienwars/gh-pages/mainmenubackground-&quot;&amp;VideoQuality&amp;&quot;.mp4&quot;</param>
+                                        </action>
+                                        <action id="6" name="Play" sid="614166593321257" type="MainMenuVideo" />
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-group>
+                        <event-block sid="249671825034748">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="814426244543836" type="Button">
+                                    <param id="0" name="Unique ID">38</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="9" name="Set scale" sid="548523481286984" type="Button">
+                                    <param id="0" name="Scale">1.2</param>
+                                </action>
+                                <action id="3" name="Set font size" sid="900154529925036" type="ApplySettingsButtonText">
+                                    <param id="0" name="Size (pt)">22</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="181554276373736" type="System">
+                                    <param id="0" name="Seconds">0.2</param>
+                                </action>
+                                <action id="9" name="Set scale" sid="118116643066553" type="Button">
+                                    <param id="0" name="Scale">1</param>
+                                </action>
+                                <action id="3" name="Set font size" sid="861127063684760" type="ApplySettingsButtonText">
+                                    <param id="0" name="Size (pt)">18</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
             </sub-events>
         </event-block>

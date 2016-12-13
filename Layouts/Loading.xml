@@ -15,7 +15,7 @@
     <layers>
         <layer name="Video" sid="646960683364867">
             <initially-visible>1</initially-visible>
-            <background-color>255,255,255</background-color>
+            <background-color>0,0,0</background-color>
             <transparent>0</transparent>
             <parallax>
                 <x>1</x>
@@ -99,10 +99,10 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>641</x>
-                        <y>358</y>
+                        <y>360</y>
                         <z>0</z>
-                        <width>486</width>
-                        <height>157</height>
+                        <width>1280</width>
+                        <height>720</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
