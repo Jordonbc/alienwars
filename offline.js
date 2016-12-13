@@ -1,5 +1,5 @@
 ﻿{
-	"version": 1481544604,
+	"version": 1481625102,
 	"fileList": [
 		"data.js",
 		"c2runtime.js",
@@ -22,6 +22,8 @@
 		"mainmenubackground-hq.mp4",
 		"mainmenubackground-lq.mp4",
 		"mainmenubackground-lq.ogv",
-		"mainmenubackground-lq.webm"
+		"mainmenubackground-lq.webm",
+		"singleplayeropening.mp4",
+		"singleplayerbackgroundvideo.mp4"
 	]
 }
