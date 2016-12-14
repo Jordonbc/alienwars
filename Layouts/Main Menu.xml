@@ -666,7 +666,7 @@
                 </instance>
                 <instance type="UpscaleQualityListbox" uid="27">
                     <properties>
-                        <items>Low Quality - 720p only; High Quality - native resolution</items>
+                        <items>POTATO (360p);ULTRA LOW (480p);LOW (720p);MEDIUM (1080p);HIGH (2k);ULTRA (4k);SUPER COMPUTER (8k);NATIVE (YOUR MONITOR)</items>
                         <tooltip></tooltip>
                         <initial-visibility>Visible</initial-visibility>
                         <enabled>Yes</enabled>
@@ -1175,7 +1175,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="MultiplayerButtonTest" uid="42">
+                <instance type="MultiplayerButtonText" uid="42">
                     <properties>
                         <text>MULTIPLAYER</text>
                         <initial-visibility>Visible</initial-visibility>
@@ -1651,7 +1651,7 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>642</x>
-                        <y>564</y>
+                        <y>549</y>
                         <z>0</z>
                         <width>190</width>
                         <height>49</height>
@@ -1682,7 +1682,7 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>642</x>
-                        <y>477</y>
+                        <y>394</y>
                         <z>0</z>
                         <width>190</width>
                         <height>49</height>
@@ -1728,7 +1728,7 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>641</x>
-                        <y>562</y>
+                        <y>547</y>
                         <z>0</z>
                         <width>188</width>
                         <height>47</height>
@@ -1755,7 +1755,7 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>642</x>
-                        <y>476</y>
+                        <y>393</y>
                         <z>0</z>
                         <width>190</width>
                         <height>48</height>
@@ -1801,10 +1801,10 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>569</x>
-                        <y>338</y>
+                        <x>523</x>
+                        <y>231.5</y>
                         <z>0</z>
-                        <width>172</width>
+                        <width>234</width>
                         <height>45</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
@@ -1831,6 +1831,33 @@
                         <z>0</z>
                         <width>481</width>
                         <height>37</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="MPUsernameTipText" uid="66">
+                    <properties>
+                        <text>Min Chars: 4</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Arial,-16,400,0</font>
+                        <color>0,255,255</color>
+                        <horizontal-alignment>Center</horizontal-alignment>
+                        <vertical-alignment>Center</vertical-alignment>
+                        <hotspot>Center</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>640</x>
+                        <y>294</y>
+                        <z>0</z>
+                        <width>233</width>
+                        <height>33</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
@@ -1869,6 +1896,18 @@
                         <wrapping>Word</wrapping>
                         <line-height>0</line-height>
                     </properties>
+                    <effect-instances>
+                        <effect-instance type="GlowHorizontal">
+                            <parameters>
+                                <intensity>1</intensity>
+                            </parameters>
+                        </effect-instance>
+                        <effect-instance type="GlowVertical">
+                            <parameters>
+                                <intensity>1</intensity>
+                            </parameters>
+                        </effect-instance>
+                    </effect-instances>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>

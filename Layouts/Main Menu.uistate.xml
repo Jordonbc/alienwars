@@ -4,11 +4,11 @@
 It is entirely optional and the project will load without it.  If you are placing the project under source control,
 you probably do not want to add any .uistate.xml files to the repository.-->
     <camera>
-        <position-x>648.363</position-x>
-        <position-y>346.444</position-y>
-        <position-z>100</position-z>
-        <lookat-x>648.363</lookat-x>
-        <lookat-y>346.444</lookat-y>
+        <position-x>620.519</position-x>
+        <position-y>371.444</position-y>
+        <position-z>110</position-z>
+        <lookat-x>620.519</lookat-x>
+        <lookat-y>371.444</lookat-y>
         <lookat-z>0</lookat-z>
     </camera>
     <snap-to-grid>0</snap-to-grid>
@@ -23,27 +23,27 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <property expanded="0" name="Margins" />
         <property expanded="1" name="Effects" />
     </properties>
-    <active-layer name="Multiplayer UI" />
+    <active-layer name="Settings Buttons" />
     <layers>
         <layer locked="1" name="Video" parallax-in-editor="0" visible="1" />
         <layer locked="1" name="Buttons" parallax-in-editor="0" visible="1" />
         <layer locked="1" name="Button Text" parallax-in-editor="0" visible="1" />
-        <layer locked="1" name="Title" parallax-in-editor="0" visible="1" />
-        <layer locked="1" name="Menu Background" parallax-in-editor="0" visible="0" />
+        <layer locked="1" name="Title" parallax-in-editor="0" visible="0" />
+        <layer locked="1" name="Menu Background" parallax-in-editor="0" visible="1" />
         <layer locked="1" name="Credits Buttons" parallax-in-editor="0" visible="0" />
         <layer locked="1" name="Credits Text" parallax-in-editor="0" visible="0" />
-        <layer locked="1" name="Settings Buttons" parallax-in-editor="0" visible="0" />
-        <layer locked="1" name="Settings Text" parallax-in-editor="0" visible="0" />
-        <layer locked="1" name="Settings UI" parallax-in-editor="0" visible="0" />
+        <layer locked="0" name="Settings Buttons" parallax-in-editor="0" visible="1" />
+        <layer locked="1" name="Settings Text" parallax-in-editor="0" visible="1" />
+        <layer locked="1" name="Settings UI" parallax-in-editor="0" visible="1" />
         <layer locked="1" name="Play" parallax-in-editor="0" visible="0" />
         <layer locked="1" name="Fade In" parallax-in-editor="0" visible="0" />
-        <layer locked="1" name="Small Menu" parallax-in-editor="0" visible="1" />
+        <layer locked="1" name="Small Menu" parallax-in-editor="0" visible="0" />
         <layer locked="1" name="Singleplayer Buttons" parallax-in-editor="0" visible="0" />
         <layer locked="1" name="Singleplayer Button Text" parallax-in-editor="0" visible="0" />
         <layer locked="1" name="Singleplayer Title" parallax-in-editor="0" visible="0" />
-        <layer locked="1" name="Multiplayer Buttons" parallax-in-editor="0" visible="1" />
-        <layer locked="1" name="Multiplayer Button Text" parallax-in-editor="0" visible="1" />
-        <layer locked="1" name="Multiplayer UI" parallax-in-editor="0" visible="1" />
-        <layer locked="1" name="Multiplayer Title" parallax-in-editor="0" visible="1" />
+        <layer locked="1" name="Multiplayer Buttons" parallax-in-editor="0" visible="0" />
+        <layer locked="1" name="Multiplayer Button Text" parallax-in-editor="0" visible="0" />
+        <layer locked="1" name="Multiplayer UI" parallax-in-editor="0" visible="0" />
+        <layer locked="1" name="Multiplayer Title" parallax-in-editor="0" visible="0" />
     </layers>
 </c2uistate>

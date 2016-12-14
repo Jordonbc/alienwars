@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>GLOBAL EVENTS</name>
+    <events>
+        <event-group description="" sid="950944789674305" title="QUALITY">
+            <sub-events>
+                <event-block sid="947075631210053">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="903158997333202" type="System" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="555091317783951">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="959120954787920" type="System">
+                                    <param id="0" name="Variable">UpscaleQuality</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">uppercase(&quot;POTATO&quot;)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-40" name="Set fullscreen scaling" sid="123093684280813" type="System">
+                                    <param id="0" name="Fullscreen scaling">0</param>
+                                </action>
+                                <action id="-47" name="Set pixel rounding" sid="875012126880133" type="System">
+                                    <param id="0" name="Mode">0</param>
+                                </action>
+                                <action id="-28" name="Set canvas size" sid="849875392393190" type="System">
+                                    <param id="0" name="Width">640</param>
+                                    <param id="1" name="Height">360</param>
+                                </action>
+                                <action id="-20" name="Set layout scale" sid="724735828710400" type="System">
+                                    <param id="0" name="Scale">0.5</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="470514123254734">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="702357925591747" type="System">
+                                    <param id="0" name="Variable">UpscaleQuality</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">uppercase(&quot;ULTRA LOW&quot;)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-40" name="Set fullscreen scaling" sid="587546730735574" type="System">
+                                    <param id="0" name="Fullscreen scaling">0</param>
+                                </action>
+                                <action id="-47" name="Set pixel rounding" sid="187845984395515" type="System">
+                                    <param id="0" name="Mode">0</param>
+                                </action>
+                                <action id="-28" name="Set canvas size" sid="253998127189186" type="System">
+                                    <param id="0" name="Width">854</param>
+                                    <param id="1" name="Height">480</param>
+                                </action>
+                                <action id="-20" name="Set layout scale" sid="269991803244994" type="System">
+                                    <param id="0" name="Scale">0.665</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="623787918381324">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="851052504384086" type="System">
+                                    <param id="0" name="Variable">UpscaleQuality</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">uppercase(&quot;LOW&quot;)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-40" name="Set fullscreen scaling" sid="147801703649999" type="System">
+                                    <param id="0" name="Fullscreen scaling">0</param>
+                                </action>
+                                <action id="-28" name="Set canvas size" sid="893218455037052" type="System">
+                                    <param id="0" name="Width">1280</param>
+                                    <param id="1" name="Height">720</param>
+                                </action>
+                                <action id="-20" name="Set layout scale" sid="912344040909160" type="System">
+                                    <param id="0" name="Scale">1</param>
+                                </action>
+                                <action id="-47" name="Set pixel rounding" sid="591576170607694" type="System">
+                                    <param id="0" name="Mode">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="103814340093651">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="880428181573874" type="System">
+                                    <param id="0" name="Variable">UpscaleQuality</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">uppercase(&quot;MEDIUM&quot;)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-40" name="Set fullscreen scaling" sid="734800498155498" type="System">
+                                    <param id="0" name="Fullscreen scaling">1</param>
+                                </action>
+                                <action id="-28" name="Set canvas size" sid="574818686834008" type="System">
+                                    <param id="0" name="Width">1920</param>
+                                    <param id="1" name="Height">1080</param>
+                                </action>
+                                <action id="-20" name="Set layout scale" sid="253760338445416" type="System">
+                                    <param id="0" name="Scale">1.5</param>
+                                </action>
+                                <action id="-47" name="Set pixel rounding" sid="182867813429043" type="System">
+                                    <param id="0" name="Mode">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="463381897276415">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="509844152129764" type="System">
+                                    <param id="0" name="Variable">UpscaleQuality</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">uppercase(&quot;HIGH&quot;)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-40" name="Set fullscreen scaling" sid="589772132067981" type="System">
+                                    <param id="0" name="Fullscreen scaling">1</param>
+                                </action>
+                                <action id="-28" name="Set canvas size" sid="200612550011470" type="System">
+                                    <param id="0" name="Width">2560</param>
+                                    <param id="1" name="Height">1440</param>
+                                </action>
+                                <action id="-20" name="Set layout scale" sid="591154627944539" type="System">
+                                    <param id="0" name="Scale">2</param>
+                                </action>
+                                <action id="-47" name="Set pixel rounding" sid="602307264998931" type="System">
+                                    <param id="0" name="Mode">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="831367081237448">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="104682293812305" type="System">
+                                    <param id="0" name="Variable">UpscaleQuality</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">uppercase(&quot;ULTRA&quot;)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-40" name="Set fullscreen scaling" sid="539249468114908" type="System">
+                                    <param id="0" name="Fullscreen scaling">1</param>
+                                </action>
+                                <action id="-28" name="Set canvas size" sid="498082478617482" type="System">
+                                    <param id="0" name="Width">3840</param>
+                                    <param id="1" name="Height">2160</param>
+                                </action>
+                                <action id="-20" name="Set layout scale" sid="669688989586242" type="System">
+                                    <param id="0" name="Scale">3</param>
+                                </action>
+                                <action id="-47" name="Set pixel rounding" sid="519359289491474" type="System">
+                                    <param id="0" name="Mode">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="202748241392641">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="542221168226657" type="System">
+                                    <param id="0" name="Variable">UpscaleQuality</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">uppercase(&quot;SUPER COMPUTER&quot;)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-40" name="Set fullscreen scaling" sid="891660242518840" type="System">
+                                    <param id="0" name="Fullscreen scaling">1</param>
+                                </action>
+                                <action id="-28" name="Set canvas size" sid="395138718892168" type="System">
+                                    <param id="0" name="Width">7680</param>
+                                    <param id="1" name="Height">4320</param>
+                                </action>
+                                <action id="-20" name="Set layout scale" sid="872863048742780" type="System">
+                                    <param id="0" name="Scale">6</param>
+                                </action>
+                                <action id="-47" name="Set pixel rounding" sid="510756929931334" type="System">
+                                    <param id="0" name="Mode">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="890333163788883">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="523009834998247" type="System">
+                                    <param id="0" name="Variable">UpscaleQuality</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">uppercase(&quot;NATIVE&quot;)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-40" name="Set fullscreen scaling" sid="276116288215475" type="System">
+                                    <param id="0" name="Fullscreen scaling">1</param>
+                                </action>
+                                <action id="-28" name="Set canvas size" sid="114073893625085" type="System">
+                                    <param id="0" name="Width">Browser.ScreenWidth</param>
+                                    <param id="1" name="Height">Browser.ScreenHeight</param>
+                                </action>
+                                <action id="-20" name="Set layout scale" sid="395782216568942" type="System">
+                                    <param id="0" name="Scale">Browser.ScreenHeight/720</param>
+                                </action>
+                                <action id="-47" name="Set pixel rounding" sid="257160306112591" type="System">
+                                    <param id="0" name="Mode">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

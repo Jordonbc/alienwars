@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Main Menu Events</name>
     <events>
+        <include>GLOBAL EVENTS</include>
         <include>Title</include>
         <include>Main Menu Buttons</include>
         <include>Functions</include>
@@ -48,6 +49,47 @@
                     <param id="1" name="State">1</param>
                 </action>
             </actions>
+            <sub-events>
+                <event-block sid="821837962851496">
+                    <conditions>
+                        <condition id="-14" name="Pick by unique ID" sid="639531805927581" type="Button">
+                            <param id="0" name="Unique ID">53</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-27" name="Set effect enabled" sid="192108473080710" type="Button">
+                            <param id="0" name="Mode">1</param>
+                            <param id="1" name="Effect">&quot;DISABLED&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="445902719029476">
+                    <conditions>
+                        <condition id="-14" name="Pick by unique ID" sid="397623800429579" type="Button">
+                            <param id="0" name="Unique ID">52</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-27" name="Set effect enabled" sid="495495827951765" type="Button">
+                            <param id="0" name="Mode">1</param>
+                            <param id="1" name="Effect">&quot;DISABLED&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="507892482015611">
+                    <conditions>
+                        <condition id="-14" name="Pick by unique ID" sid="765051329142788" type="Button">
+                            <param id="0" name="Unique ID">51</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-27" name="Set effect enabled" sid="164406921746317" type="Button">
+                            <param id="0" name="Mode">1</param>
+                            <param id="1" name="Effect">&quot;DISABLED&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
         </event-block>
         <comment>Sets the mobile version</comment>
         <event-block sid="896024543040107">
@@ -182,6 +224,52 @@
                     <param id="0" name="Mode">0</param>
                 </action>
             </actions>
+        </event-block>
+        <event-block sid="309636086632204">
+            <conditions>
+                <condition id="-8" name="Compare two values" sid="202304678791898" type="System">
+                    <param id="0" name="First value">len(MPUsernameBox.Text)</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Second value">4</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="459087226104163">
+                    <conditions>
+                        <condition id="-14" name="Pick by unique ID" sid="703745842213982" type="Button">
+                            <param id="0" name="Unique ID">61</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-27" name="Set effect enabled" sid="561131752279383" type="Button">
+                            <param id="0" name="Mode">0</param>
+                            <param id="1" name="Effect">&quot;DISABLED&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="198051051933299">
+            <conditions>
+                <condition id="-22" name="Else" sid="305530732752574" type="System" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="498213984580617">
+                    <conditions>
+                        <condition id="-14" name="Pick by unique ID" sid="240508713682700" type="Button">
+                            <param id="0" name="Unique ID">61</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-27" name="Set effect enabled" sid="131865984348673" type="Button">
+                            <param id="0" name="Mode">1</param>
+                            <param id="1" name="Effect">&quot;DISABLED&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
         </event-block>
     </events>
 </c2eventsheet>

@@ -28,7 +28,9 @@
         <plugin author="Scirra" id="video" version="1">Video</plugin>
     </used-plugins>
     <used-behaviors>
+        <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
         <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
+        <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
         <behavior author="Scirra" id="solid" version="1">Solid</behavior>
     </used-behaviors>
     <used-effects>
@@ -51,7 +53,7 @@
     <use-loader-layout>1</use-loader-layout>
     <configuration-settings>
         <prop name="Clear background">Yes</prop>
-        <prop name="Downscaling">Low quality</prop>
+        <prop name="Downscaling">Medium quality</prop>
         <prop name="Enable WebGL">On</prop>
         <prop name="Fullscreen in browser">Letterbox scale</prop>
         <prop name="Fullscreen scaling">High quality</prop>
@@ -101,7 +103,7 @@
                 <object-type name="MediumButtonText" sid="387319364351104">
                     <plugin id="Text" />
                 </object-type>
-                <object-type name="MultiplayerButtonTest" sid="527346251716718">
+                <object-type name="MultiplayerButtonText" sid="527346251716718">
                     <plugin id="Text" />
                 </object-type>
                 <object-type name="PlayButtonText" sid="593391462758347">
@@ -116,6 +118,12 @@
                 <object-type name="SingleplayerButtonText" sid="306146794304015">
                     <plugin id="Text" />
                 </object-type>
+                <object-type name="MPBackButtonText" sid="707729468605601">
+                    <plugin id="Text" />
+                </object-type>
+                <object-type name="MPGoText" sid="606383209136921">
+                    <plugin id="Text" />
+                </object-type>
             </object-folder>
             <object-folder name="Title Text">
                 <object-type name="CreditsTitleText" sid="843298887735213">
@@ -123,14 +131,6 @@
                 </object-type>
                 <object-type name="LoadingTitleText" sid="149190345186834">
                     <plugin id="Text" />
-                    <effects>
-                        <effect-type name="GlowHorizontal">
-                            <effect id="glowhorizontal" />
-                        </effect-type>
-                        <effect-type name="GlowVertical">
-                            <effect id="glowvertical" />
-                        </effect-type>
-                    </effects>
                 </object-type>
                 <object-type name="PlayTitleText" sid="621512271099904">
                     <plugin id="Text" />
@@ -139,6 +139,9 @@
                     <plugin id="Text" />
                 </object-type>
                 <object-type name="SingleplayerTitleText" sid="492256606802606">
+                    <plugin id="Text" />
+                </object-type>
+                <object-type name="MultiplayerTitleText" sid="394818905486520">
                     <plugin id="Text" />
                 </object-type>
             </object-folder>
@@ -159,6 +162,15 @@
                     <plugin id="Text" />
                 </object-type>
                 <object-type name="VideoQualityText" sid="728839427754750">
+                    <plugin id="Text" />
+                </object-type>
+                <object-type name="FullscreenText" sid="372092559612825">
+                    <plugin id="Text" />
+                </object-type>
+                <object-type name="MPSupportText" sid="209975839790491">
+                    <plugin id="Text" />
+                </object-type>
+                <object-type name="MPUsernameTipText" sid="167097877254457">
                     <plugin id="Text" />
                 </object-type>
             </object-folder>
@@ -249,6 +261,12 @@
             <object-type name="UpscaleQualityListbox" sid="757775316178213">
                 <plugin id="List" />
             </object-type>
+            <object-type name="FullscreenCheckbox" sid="809958908039456">
+                <plugin id="Button" />
+            </object-type>
+            <object-type name="MPUsernameBox" sid="792049402982854">
+                <plugin id="TextBox" />
+            </object-type>
         </object-folder>
         <object-folder name="Objects">
             <object-type name="Player" sid="775285204150088">
@@ -256,6 +274,8 @@
                 <instance-variables>
                     <instance-variable name="MPID" sid="645992651351077" type="string" />
                     <instance-variable name="Inputs" sid="846007730790941" type="number" />
+                    <instance-variable name="LookX" sid="376624345496254" type="number" />
+                    <instance-variable name="LookY" sid="883849907184873" type="number" />
                 </instance-variables>
                 <behaviors>
                     <behavior-type name="8Direction" sid="578437888382124">
@@ -263,6 +283,9 @@
                     </behavior-type>
                     <behavior-type name="Solid" sid="840489795982294">
                         <behavior id="solid" />
+                    </behavior-type>
+                    <behavior-type name="BoundToLayout" sid="528924442609074">
+                        <behavior id="bound" />
                     </behavior-type>
                 </behaviors>
                 <animation-folder>
@@ -316,36 +339,63 @@
                     </animation>
                 </animation-folder>
             </object-type>
+            <object-type name="Lazer" sid="792362336614513">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Bullet" sid="809944171312026">
+                        <behavior id="Bullet" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="977046410550339" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0.538462" original-source="E:\Software\Construct 2\freebundle\Sprites\Space shooter\Lasers\laserBlue12.png">
+                            <collision-poly>
+                                <point x="0.964912" y="0.153846" />
+                                <point x="1" y="0.461538" />
+                                <point x="0.964912" y="0.846154" />
+                                <point x="0.508772" y="1" />
+                                <point x="0.0350877" y="0.846154" />
+                                <point x="0" y="0.461538" />
+                                <point x="0.0350877" y="0.153846" />
+                                <point x="0.508772" y="0" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Arrow" sid="945566805555063">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="536742975933736" speed="5">
+                        <frame duration="1" hotspotX="0.512821" hotspotY="0.516129" original-source="E:\Software\Construct 2\freebundle\Sprites\UI elements\Base pack\blue_sliderRight.png">
+                            <collision-poly>
+                                <point x="0.025641" y="0.0322581" />
+                                <point x="0.487179" y="0" />
+                                <point x="0.846154" y="0.193548" />
+                                <point x="1" y="0.483871" />
+                                <point x="0.794872" y="0.741935" />
+                                <point x="0.487179" y="0.903226" />
+                                <point x="0.0769231" y="0.903226" />
+                                <point x="0" y="0.483871" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
         </object-folder>
-        <object-type name="Multiplayer" sid="436072568837400">
-            <plugin id="Multiplayer" />
-        </object-type>
-        <object-type name="FullscreenText" sid="372092559612825">
+        <object-folder name="Multiplayer">
+            <object-type name="Multiplayer" sid="436072568837400">
+                <plugin id="Multiplayer" />
+            </object-type>
+            <object-type name="StatusBox" sid="852931461204569">
+                <plugin id="TextBox" />
+            </object-type>
+            <object-type name="PlayerUsernameText" sid="653971169003553">
+                <plugin id="Text" />
+            </object-type>
+        </object-folder>
+        <object-type name="ImportantText" sid="513706899562443">
             <plugin id="Text" />
-        </object-type>
-        <object-type name="FullscreenCheckbox" sid="809958908039456">
-            <plugin id="Button" />
-        </object-type>
-        <object-type name="PlayerUsernameText" sid="653971169003553">
-            <plugin id="Text" />
-        </object-type>
-        <object-type name="MultiplayerTitleText" sid="394818905486520">
-            <plugin id="Text" />
-        </object-type>
-        <object-type name="MPUsernameBox" sid="792049402982854">
-            <plugin id="TextBox" />
-        </object-type>
-        <object-type name="MPBackButtonText" sid="707729468605601">
-            <plugin id="Text" />
-        </object-type>
-        <object-type name="MPGoText" sid="606383209136921">
-            <plugin id="Text" />
-        </object-type>
-        <object-type name="MPSupportText" sid="209975839790491">
-            <plugin id="Text" />
-        </object-type>
-        <object-type name="StatusBox" sid="852931461204569">
-            <plugin id="TextBox" />
         </object-type>
     </object-folder>
     <families>
@@ -357,14 +407,20 @@
                 <member>CreditsTitleText</member>
                 <member>EasyButtonText</member>
                 <member>FeatureUnavailableText</member>
+                <member>FullscreenText</member>
                 <member>HardButtonText</member>
                 <member>LoadingTitleText</member>
                 <member>MasterSoundBarText</member>
                 <member>MediumButtonText</member>
-                <member>MultiplayerButtonTest</member>
+                <member>MPBackButtonText</member>
+                <member>MPGoText</member>
+                <member>MPSupportText</member>
+                <member>MultiplayerButtonText</member>
+                <member>MultiplayerTitleText</member>
                 <member>MusicCreditsText</member>
                 <member>MusicSoundBarText</member>
                 <member>PlayButtonText</member>
+                <member>PlayerUsernameText</member>
                 <member>PlayTitleText</member>
                 <member>QuitButtonText</member>
                 <member>SettingsButtonText</member>
@@ -383,16 +439,20 @@
                 <member>EasyButtonText</member>
                 <member>HardButtonText</member>
                 <member>MediumButtonText</member>
-                <member>MultiplayerButtonTest</member>
+                <member>MPBackButtonText</member>
+                <member>MPGoText</member>
+                <member>MultiplayerButtonText</member>
                 <member>PlayButtonText</member>
                 <member>QuitButtonText</member>
                 <member>SettingsButtonText</member>
                 <member>SingleplayerButtonText</member>
             </members>
         </family>
-        <family name="AllTitleText" plugin-id="Text" sid="811197225495572">
+        <family name="TitleText" plugin-id="Text" sid="811197225495572">
             <members>
                 <member>CreditsTitleText</member>
+                <member>LoadingTitleText</member>
+                <member>MultiplayerTitleText</member>
                 <member>PlayTitleText</member>
                 <member>SettingsMenuTitleText</member>
                 <member>SingleplayerTitleText</member>
@@ -409,7 +469,9 @@
         <family name="MenuDescriptionText" plugin-id="Text" sid="896428122419930">
             <members>
                 <member>FeatureUnavailableText</member>
+                <member>FullscreenText</member>
                 <member>MasterSoundBarText</member>
+                <member>MPSupportText</member>
                 <member>MusicCreditsText</member>
                 <member>MusicSoundBarText</member>
                 <member>UpscaleQualityText</member>
@@ -440,9 +502,9 @@
             <event-sheet>Loading Events.xml</event-sheet>
         </event-folder>
         <event-folder name="Multiplayer">
-            <event-sheet>Multiplayer Events.xml</event-sheet>
             <event-sheet>MP.xml</event-sheet>
         </event-folder>
+        <event-sheet>GLOBAL EVENTS.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Audio" uid="2">

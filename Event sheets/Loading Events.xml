@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Loading Events</name>
     <events>
+        <include>GLOBAL EVENTS</include>
         <include>Globals</include>
         <include>Storage</include>
         <comment>Play the loading video</comment>

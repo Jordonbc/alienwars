@@ -5,6 +5,30 @@
     <events>
         <include>Globals</include>
         <include>Functions</include>
+        <comment>Button Animation</comment>
+        <event-block any="1" sid="386137364567063">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="965135306183655" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">Button</param>
+                </condition>
+                <condition id="17" name="On tap object" sid="400933920685829" type="Touch">
+                    <param id="0" name="Object">Button</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="5" name="Set frame" sid="311638827285398" type="Button">
+                    <param id="0" name="Frame number">1</param>
+                </action>
+                <action id="-16" name="Wait" sid="811973188688641" type="System">
+                    <param id="0" name="Seconds">0.2</param>
+                </action>
+                <action id="5" name="Set frame" sid="616193852663299" type="Button">
+                    <param id="0" name="Frame number">0</param>
+                </action>
+            </actions>
+        </event-block>
         <comment>Quit button logic</comment>
         <event-block any="1" sid="970016541139717">
             <conditions>
@@ -22,10 +46,13 @@
                 <event-block sid="977760135777926">
                     <conditions>
                         <condition id="-9" name="Layer is visible" sid="759758326709756" type="System">
-                            <param id="0" name="Layer">1</param>
+                            <param id="0" name="Layer">&quot;Buttons&quot;</param>
                         </condition>
                         <condition id="-9" inverted="1" name="Layer is visible" sid="573169589832775" type="System">
-                            <param id="0" name="Layer">13</param>
+                            <param id="0" name="Layer">&quot;Singleplayer Buttons&quot;</param>
+                        </condition>
+                        <condition id="-9" inverted="1" name="Layer is visible" sid="206976237312402" type="System">
+                            <param id="0" name="Layer">&quot;Multiplayer Buttons&quot;</param>
                         </condition>
                     </conditions>
                     <actions />
@@ -71,30 +98,6 @@
                 </event-block>
             </sub-events>
         </event-block>
-        <comment>Button Animation</comment>
-        <event-block any="1" sid="386137364567063">
-            <conditions>
-                <condition id="6" name="On object clicked" sid="965135306183655" type="Mouse">
-                    <param id="0" name="Mouse button">0</param>
-                    <param id="1" name="Click type">0</param>
-                    <param id="2" name="Object clicked">Button</param>
-                </condition>
-                <condition id="17" name="On tap object" sid="400933920685829" type="Touch">
-                    <param id="0" name="Object">Button</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="5" name="Set frame" sid="311638827285398" type="Button">
-                    <param id="0" name="Frame number">1</param>
-                </action>
-                <action id="-16" name="Wait" sid="811973188688641" type="System">
-                    <param id="0" name="Seconds">0.2</param>
-                </action>
-                <action id="5" name="Set frame" sid="616193852663299" type="Button">
-                    <param id="0" name="Frame number">0</param>
-                </action>
-            </actions>
-        </event-block>
         <comment>Settings button Logic</comment>
         <event-block any="1" sid="808756457342675">
             <conditions>
@@ -112,10 +115,13 @@
                 <event-block sid="420942529472265">
                     <conditions>
                         <condition id="-9" name="Layer is visible" sid="550606801308711" type="System">
-                            <param id="0" name="Layer">1</param>
+                            <param id="0" name="Layer">&quot;Buttons&quot;</param>
                         </condition>
                         <condition id="-9" inverted="1" name="Layer is visible" sid="793539434021475" type="System">
-                            <param id="0" name="Layer">13</param>
+                            <param id="0" name="Layer">&quot;Singleplayer Buttons&quot;</param>
+                        </condition>
+                        <condition id="-9" inverted="1" name="Layer is visible" sid="425185249537239" type="System">
+                            <param id="0" name="Layer">&quot;Multiplayer Buttons&quot;</param>
                         </condition>
                     </conditions>
                     <actions />
@@ -146,10 +152,14 @@
                         <event-block sid="950568455420197">
                             <conditions>
                                 <condition id="-9" inverted="1" name="Layer is visible" sid="346092014257573" type="System">
-                                    <param id="0" name="Layer">8</param>
+                                    <param id="0" name="Layer">&quot;Settings Text&quot;</param>
                                 </condition>
                             </conditions>
                             <actions>
+                                <action id="0" name="Call function" sid="120545511607261" type="Function">
+                                    <param id="0" name="Name">&quot;HideAll&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
                                 <action id="0" name="Call function" sid="366118075821915" type="Function">
                                     <param id="0" name="Name">&quot;ShowSettings&quot;</param>
                                     <param id="1" name="Parameter {n}"></param>
@@ -216,10 +226,13 @@
                 <event-block sid="792536408711367">
                     <conditions>
                         <condition id="-9" name="Layer is visible" sid="440442724104900" type="System">
-                            <param id="0" name="Layer">1</param>
+                            <param id="0" name="Layer">&quot;Buttons&quot;</param>
                         </condition>
                         <condition id="-9" inverted="1" name="Layer is visible" sid="866858403688265" type="System">
-                            <param id="0" name="Layer">13</param>
+                            <param id="0" name="Layer">&quot;Singleplayer Buttons&quot;</param>
+                        </condition>
+                        <condition id="-9" inverted="1" name="Layer is visible" sid="165547002113220" type="System">
+                            <param id="0" name="Layer">&quot;Multiplayer Buttons&quot;</param>
                         </condition>
                     </conditions>
                     <actions />
@@ -250,10 +263,14 @@
                         <event-block sid="720442029385091">
                             <conditions>
                                 <condition id="-9" inverted="1" name="Layer is visible" sid="757634996720888" type="System">
-                                    <param id="0" name="Layer">6</param>
+                                    <param id="0" name="Layer">&quot;Credits Text&quot;</param>
                                 </condition>
                             </conditions>
                             <actions>
+                                <action id="0" name="Call function" sid="369825494785404" type="Function">
+                                    <param id="0" name="Name">&quot;HideAll&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
                                 <action id="0" name="Call function" sid="538308227443394" type="Function">
                                     <param id="0" name="Name">&quot;ShowCredits&quot;</param>
                                     <param id="1" name="Parameter {n}"></param>
@@ -320,10 +337,13 @@
                 <event-block sid="431905997896471">
                     <conditions>
                         <condition id="-9" name="Layer is visible" sid="614772542185906" type="System">
-                            <param id="0" name="Layer">1</param>
+                            <param id="0" name="Layer">&quot;Buttons&quot;</param>
                         </condition>
                         <condition id="-9" inverted="1" name="Layer is visible" sid="112533163358509" type="System">
-                            <param id="0" name="Layer">13</param>
+                            <param id="0" name="Layer">&quot;Singleplayer Buttons&quot;</param>
+                        </condition>
+                        <condition id="-9" inverted="1" name="Layer is visible" sid="352389723141971" type="System">
+                            <param id="0" name="Layer">&quot;Multiplayer Buttons&quot;</param>
                         </condition>
                     </conditions>
                     <actions />
@@ -358,6 +378,10 @@
                                 </condition>
                             </conditions>
                             <actions>
+                                <action id="0" name="Call function" sid="456808960637449" type="Function">
+                                    <param id="0" name="Name">&quot;HideAll&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
                                 <action id="0" name="Call function" sid="367873469243199" type="Function">
                                     <param id="0" name="Name">&quot;ShowPlay&quot;</param>
                                     <param id="1" name="Parameter {n}"></param>
@@ -423,7 +447,7 @@
                 <event-block sid="405406686157097">
                     <conditions>
                         <condition id="-9" name="Layer is visible" sid="421215403073663" type="System">
-                            <param id="0" name="Layer">10</param>
+                            <param id="0" name="Layer">&quot;Play&quot;</param>
                         </condition>
                     </conditions>
                     <actions>
@@ -485,7 +509,7 @@
                 <event-block sid="160783245370011">
                     <conditions>
                         <condition id="-9" name="Layer is visible" sid="918834977800970" type="System">
-                            <param id="0" name="Layer">13</param>
+                            <param id="0" name="Layer">&quot;Singleplayer Buttons&quot;</param>
                         </condition>
                     </conditions>
                     <actions>
@@ -532,10 +556,10 @@
                 <condition id="6" name="On object clicked" sid="685942282970403" type="Mouse">
                     <param id="0" name="Mouse button">0</param>
                     <param id="1" name="Click type">0</param>
-                    <param id="2" name="Object clicked">MultiplayerButtonTest</param>
+                    <param id="2" name="Object clicked">MultiplayerButtonText</param>
                 </condition>
                 <condition id="17" name="On tap object" sid="106981931840065" type="Touch">
-                    <param id="0" name="Object">MultiplayerButtonTest</param>
+                    <param id="0" name="Object">MultiplayerButtonText</param>
                 </condition>
             </conditions>
             <actions />
@@ -543,7 +567,7 @@
                 <event-block sid="449342166772732">
                     <conditions>
                         <condition id="-9" name="Layer is visible" sid="233978972456692" type="System">
-                            <param id="0" name="Layer">10</param>
+                            <param id="0" name="Layer">&quot;Play&quot;</param>
                         </condition>
                     </conditions>
                     <actions>
@@ -554,6 +578,9 @@
                         <action id="0" name="Call function" sid="292156995456804" type="Function">
                             <param id="0" name="Name">&quot;Enable Singleplayer Blur&quot;</param>
                             <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="0" name="Set text" sid="786683568285976" type="MPUsernameBox">
+                            <param id="0" name="Text">MP_USERNAME</param>
                         </action>
                         <action id="0" name="Call function" sid="146912483484897" type="Function">
                             <param id="0" name="Name">&quot;Show Multiplayer&quot;</param>
@@ -605,7 +632,7 @@
                 <event-block sid="880075369063961">
                     <conditions>
                         <condition id="-9" name="Layer is visible" sid="181125251521784" type="System">
-                            <param id="0" name="Layer">16</param>
+                            <param id="0" name="Layer">&quot;Multiplayer Buttons&quot;</param>
                         </condition>
                     </conditions>
                     <actions>
@@ -663,11 +690,12 @@
                 <event-block sid="449640384628225">
                     <conditions>
                         <condition id="-9" name="Layer is visible" sid="529434810223814" type="System">
-                            <param id="0" name="Layer">16</param>
+                            <param id="0" name="Layer">&quot;Multiplayer Buttons&quot;</param>
                         </condition>
-                        <condition id="0" inverted="1" name="Compare text" sid="539540262008321" type="MPUsernameBox">
-                            <param id="0" name="Text">&quot;&quot;</param>
-                            <param id="1" name="Case">0</param>
+                        <condition id="-8" name="Compare two values" sid="539540262008321" type="System">
+                            <param id="0" name="First value">len(MPUsernameBox.Text)</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Second value">4</param>
                         </condition>
                         <condition id="12" name="Supports multiplayer" sid="630033982706575" type="Multiplayer" />
                     </conditions>
@@ -675,6 +703,10 @@
                         <action id="-9" name="Set value" sid="775284983310248" type="System">
                             <param id="0" name="Variable">MP_USERNAME</param>
                             <param id="1" name="Value">MPUsernameBox.Text</param>
+                        </action>
+                        <action id="0" name="Set item" sid="756190098448504" type="LocalStorage">
+                            <param id="0" name="Key">&quot;MP USERNAME&quot;</param>
+                            <param id="1" name="Value">MP_USERNAME</param>
                         </action>
                         <action id="-2" name="Go to layout" sid="894343654233128" type="System">
                             <param id="0" name="Layout">Multiplayer</param>

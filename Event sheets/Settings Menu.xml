@@ -15,6 +15,9 @@
                 <action id="4" name="Set font color" sid="923050262172099" type="VideoQualityText">
                     <param id="0" name="Color">rgb(109, 109, 109)</param>
                 </action>
+                <action id="4" name="Set font color" sid="115623807937696" type="FullscreenText">
+                    <param id="0" name="Color">rgb(109, 109, 109)</param>
+                </action>
             </actions>
         </event-block>
         <comment>Apply button pressed</comment>
@@ -80,11 +83,42 @@
                         </event-group>
                         <event-group description="" sid="128818968835783" title="Upscale Quality">
                             <sub-events>
+                                <event-block sid="636426071593533">
+                                    <conditions>
+                                        <condition id="0" name="Compare selection" sid="334921299990407" type="UpscaleQualityListbox">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Index">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-40" name="Set fullscreen scaling" sid="998342452479050" type="System">
+                                            <param id="0" name="Fullscreen scaling">0</param>
+                                        </action>
+                                        <action id="-47" name="Set pixel rounding" sid="881165259429413" type="System">
+                                            <param id="0" name="Mode">0</param>
+                                        </action>
+                                        <action id="-28" name="Set canvas size" sid="787838621028229" type="System">
+                                            <param id="0" name="Width">640</param>
+                                            <param id="1" name="Height">360</param>
+                                        </action>
+                                        <action id="-20" name="Set layout scale" sid="232966535091850" type="System">
+                                            <param id="0" name="Scale">0.5</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="434498332171969" type="System">
+                                            <param id="0" name="Variable">UpscaleQuality</param>
+                                            <param id="1" name="Value">uppercase(&quot;POTATO&quot;)</param>
+                                        </action>
+                                        <action id="0" name="Set item" sid="636034287388052" type="LocalStorage">
+                                            <param id="0" name="Key">&quot;UpscaleQuality&quot;</param>
+                                            <param id="1" name="Value">Uppercase(&quot;POTATO&quot;)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
                                 <event-block sid="618771449740794">
                                     <conditions>
                                         <condition id="0" name="Compare selection" sid="400290802670845" type="UpscaleQualityListbox">
                                             <param id="0" name="Comparison">0</param>
-                                            <param id="1" name="Index">0</param>
+                                            <param id="1" name="Index">1</param>
                                         </condition>
                                     </conditions>
                                     <actions>
@@ -94,13 +128,20 @@
                                         <action id="-47" name="Set pixel rounding" sid="818628111067731" type="System">
                                             <param id="0" name="Mode">0</param>
                                         </action>
+                                        <action id="-28" name="Set canvas size" sid="698684499978614" type="System">
+                                            <param id="0" name="Width">854</param>
+                                            <param id="1" name="Height">480</param>
+                                        </action>
+                                        <action id="-20" name="Set layout scale" sid="336662944968589" type="System">
+                                            <param id="0" name="Scale">0.665</param>
+                                        </action>
                                         <action id="-9" name="Set value" sid="438249840576177" type="System">
                                             <param id="0" name="Variable">UpscaleQuality</param>
-                                            <param id="1" name="Value">uppercase(&quot;LQ&quot;)</param>
+                                            <param id="1" name="Value">uppercase(&quot;ULTRA LOW&quot;)</param>
                                         </action>
                                         <action id="0" name="Set item" sid="557119789441954" type="LocalStorage">
                                             <param id="0" name="Key">&quot;UpscaleQuality&quot;</param>
-                                            <param id="1" name="Value">Uppercase(&quot;LQ&quot;)</param>
+                                            <param id="1" name="Value">Uppercase(&quot;ULTRA LOW&quot;)</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -108,23 +149,185 @@
                                     <conditions>
                                         <condition id="0" name="Compare selection" sid="215117016911345" type="UpscaleQualityListbox">
                                             <param id="0" name="Comparison">0</param>
-                                            <param id="1" name="Index">1</param>
+                                            <param id="1" name="Index">2</param>
                                         </condition>
                                     </conditions>
                                     <actions>
                                         <action id="-40" name="Set fullscreen scaling" sid="906833571202539" type="System">
-                                            <param id="0" name="Fullscreen scaling">1</param>
+                                            <param id="0" name="Fullscreen scaling">0</param>
+                                        </action>
+                                        <action id="-28" name="Set canvas size" sid="725013293266307" type="System">
+                                            <param id="0" name="Width">1280</param>
+                                            <param id="1" name="Height">720</param>
+                                        </action>
+                                        <action id="-20" name="Set layout scale" sid="771883804275288" type="System">
+                                            <param id="0" name="Scale">1</param>
                                         </action>
                                         <action id="-47" name="Set pixel rounding" sid="201863854504381" type="System">
                                             <param id="0" name="Mode">1</param>
                                         </action>
                                         <action id="-9" name="Set value" sid="657959724942499" type="System">
                                             <param id="0" name="Variable">UpscaleQuality</param>
-                                            <param id="1" name="Value">uppercase(&quot;HQ&quot;)</param>
+                                            <param id="1" name="Value">uppercase(&quot;LOW&quot;)</param>
                                         </action>
                                         <action id="0" name="Set item" sid="179890418058087" type="LocalStorage">
                                             <param id="0" name="Key">&quot;UpscaleQuality&quot;</param>
-                                            <param id="1" name="Value">Uppercase(&quot;HQ&quot;)</param>
+                                            <param id="1" name="Value">Uppercase(&quot;LOW&quot;)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="717241565538344">
+                                    <conditions>
+                                        <condition id="0" name="Compare selection" sid="187517962296845" type="UpscaleQualityListbox">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Index">3</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-40" name="Set fullscreen scaling" sid="822435269856160" type="System">
+                                            <param id="0" name="Fullscreen scaling">1</param>
+                                        </action>
+                                        <action id="-28" name="Set canvas size" sid="382323891645411" type="System">
+                                            <param id="0" name="Width">1920</param>
+                                            <param id="1" name="Height">1080</param>
+                                        </action>
+                                        <action id="-20" name="Set layout scale" sid="780626624958059" type="System">
+                                            <param id="0" name="Scale">1.5</param>
+                                        </action>
+                                        <action id="-47" name="Set pixel rounding" sid="224426075016187" type="System">
+                                            <param id="0" name="Mode">1</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="457654431305104" type="System">
+                                            <param id="0" name="Variable">UpscaleQuality</param>
+                                            <param id="1" name="Value">uppercase(&quot;MEDIUM&quot;)</param>
+                                        </action>
+                                        <action id="0" name="Set item" sid="892965610060874" type="LocalStorage">
+                                            <param id="0" name="Key">&quot;UpscaleQuality&quot;</param>
+                                            <param id="1" name="Value">Uppercase(&quot;MEDIUM&quot;)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="251588254069310">
+                                    <conditions>
+                                        <condition id="0" name="Compare selection" sid="261720948470800" type="UpscaleQualityListbox">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Index">4</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-40" name="Set fullscreen scaling" sid="722263775806573" type="System">
+                                            <param id="0" name="Fullscreen scaling">1</param>
+                                        </action>
+                                        <action id="-28" name="Set canvas size" sid="416413186126517" type="System">
+                                            <param id="0" name="Width">2560</param>
+                                            <param id="1" name="Height">1440</param>
+                                        </action>
+                                        <action id="-20" name="Set layout scale" sid="258530925435821" type="System">
+                                            <param id="0" name="Scale">2</param>
+                                        </action>
+                                        <action id="-47" name="Set pixel rounding" sid="358450616390995" type="System">
+                                            <param id="0" name="Mode">1</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="834332357374362" type="System">
+                                            <param id="0" name="Variable">UpscaleQuality</param>
+                                            <param id="1" name="Value">uppercase(&quot;HIGH&quot;)</param>
+                                        </action>
+                                        <action id="0" name="Set item" sid="308556937562654" type="LocalStorage">
+                                            <param id="0" name="Key">&quot;UpscaleQuality&quot;</param>
+                                            <param id="1" name="Value">Uppercase(&quot;HIGH&quot;)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="994596911849984">
+                                    <conditions>
+                                        <condition id="0" name="Compare selection" sid="299753826013614" type="UpscaleQualityListbox">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Index">5</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-40" name="Set fullscreen scaling" sid="870718673638113" type="System">
+                                            <param id="0" name="Fullscreen scaling">1</param>
+                                        </action>
+                                        <action id="-28" name="Set canvas size" sid="251841451450651" type="System">
+                                            <param id="0" name="Width">3840</param>
+                                            <param id="1" name="Height">2160</param>
+                                        </action>
+                                        <action id="-20" name="Set layout scale" sid="898394631450399" type="System">
+                                            <param id="0" name="Scale">3</param>
+                                        </action>
+                                        <action id="-47" name="Set pixel rounding" sid="368201513192523" type="System">
+                                            <param id="0" name="Mode">1</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="183569794613015" type="System">
+                                            <param id="0" name="Variable">UpscaleQuality</param>
+                                            <param id="1" name="Value">uppercase(&quot;ULTRA&quot;)</param>
+                                        </action>
+                                        <action id="0" name="Set item" sid="903949148244616" type="LocalStorage">
+                                            <param id="0" name="Key">&quot;UpscaleQuality&quot;</param>
+                                            <param id="1" name="Value">Uppercase(&quot;ULTRA&quot;)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="526903231738355">
+                                    <conditions>
+                                        <condition id="0" name="Compare selection" sid="261869418482463" type="UpscaleQualityListbox">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Index">6</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-40" name="Set fullscreen scaling" sid="804791108065015" type="System">
+                                            <param id="0" name="Fullscreen scaling">1</param>
+                                        </action>
+                                        <action id="-28" name="Set canvas size" sid="809158372844866" type="System">
+                                            <param id="0" name="Width">7680</param>
+                                            <param id="1" name="Height">4320</param>
+                                        </action>
+                                        <action id="-20" name="Set layout scale" sid="345104941788916" type="System">
+                                            <param id="0" name="Scale">6</param>
+                                        </action>
+                                        <action id="-47" name="Set pixel rounding" sid="481822315088599" type="System">
+                                            <param id="0" name="Mode">1</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="862952063159819" type="System">
+                                            <param id="0" name="Variable">UpscaleQuality</param>
+                                            <param id="1" name="Value">uppercase(&quot;SUPER COMPUTER&quot;)</param>
+                                        </action>
+                                        <action id="0" name="Set item" sid="337927809213096" type="LocalStorage">
+                                            <param id="0" name="Key">&quot;UpscaleQuality&quot;</param>
+                                            <param id="1" name="Value">Uppercase(&quot;SUPERCOMPUTER&quot;)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="372741291445859">
+                                    <conditions>
+                                        <condition id="0" name="Compare selection" sid="842986262326843" type="UpscaleQualityListbox">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Index">7</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-40" name="Set fullscreen scaling" sid="268123316882625" type="System">
+                                            <param id="0" name="Fullscreen scaling">1</param>
+                                        </action>
+                                        <action id="-28" name="Set canvas size" sid="475527812253366" type="System">
+                                            <param id="0" name="Width">Browser.ScreenWidth</param>
+                                            <param id="1" name="Height">Browser.ScreenHeight</param>
+                                        </action>
+                                        <action id="-20" name="Set layout scale" sid="986584215709207" type="System">
+                                            <param id="0" name="Scale">Browser.ScreenHeight/720</param>
+                                        </action>
+                                        <action id="-47" name="Set pixel rounding" sid="725784545329604" type="System">
+                                            <param id="0" name="Mode">1</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="118704182486909" type="System">
+                                            <param id="0" name="Variable">UpscaleQuality</param>
+                                            <param id="1" name="Value">uppercase(&quot;NATIVE&quot;)</param>
+                                        </action>
+                                        <action id="0" name="Set item" sid="771739937262990" type="LocalStorage">
+                                            <param id="0" name="Key">&quot;UpscaleQuality&quot;</param>
+                                            <param id="1" name="Value">Uppercase(&quot;NATIVE&quot;)</param>
                                         </action>
                                     </actions>
                                 </event-block>
