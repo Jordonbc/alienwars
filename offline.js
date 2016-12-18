@@ -1,5 +1,5 @@
 ﻿{
-	"version": 1482016299,
+	"version": 1482022805,
 	"fileList": [
 		"data.js",
 		"c2runtime.js",
@@ -15,6 +15,7 @@
 		"images/lazer-sheet0.png",
 		"images/arrow-sheet0.png",
 		"images/aimspot-sheet0.png",
+		"images/mpcursor-sheet0.png",
 		"media/the_freeharmonic_orchestra_-_08_-_unconquered_sun.m4a",
 		"media/the_freeharmonic_orchestra_-_08_-_unconquered_sun.ogg",
 		"icon-16.png",
