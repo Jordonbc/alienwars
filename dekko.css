@@ -2,10 +2,10 @@
 
 @font-face {
 	font-family: 'Dekko';
-	src: url('Dekko.eot');
-	src: url('Dekko.eot?#iefix') format('embedded-opentype'),
-		url('Dekko.woff') format('woff'),
-		url('Dekko.ttf') format('truetype');
+	src: url('dekko.eot');
+	src: url('dekko.eot?#iefix') format('embedded-opentype'),
+		url('dekko.woff') format('woff'),
+		url('dekko.ttf') format('truetype');
 	font-weight: normal;
 	font-style: normal;
 }
