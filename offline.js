@@ -1,10 +1,11 @@
 ﻿{
-	"version": 1482141248,
+	"version": 1482143002,
 	"fileList": [
 		"data.js",
 		"c2runtime.js",
 		"jquery-2.1.1.min.js",
 		"images/button-sheet0.png",
+		"images/xbox-sheet0.png",
 		"images/menubackground-sheet0.png",
 		"images/background-sheet0.png",
 		"images/fadein-sheet0.png",
