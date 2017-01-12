@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>MP Globals</name>
+    <events>
+        <variable comment="Name of the game" constant="1" name="GAMENAME" sid="342910949414256" static="0" type="text">Jordonbc-AlienWars</variable>
+        <variable comment="Instance of the game" constant="0" name="INSTANCE" sid="788638040464288" static="0" type="text">DEFAULT</variable>
+        <variable constant="0" name="USERNAME" sid="697362101103243" static="0" type="text">TEST</variable>
+        <variable constant="0" name="AttackDamage" sid="426728221255663" static="0" type="number">4</variable>
+    </events>
+</c2eventsheet>

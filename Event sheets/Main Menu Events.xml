@@ -10,32 +10,54 @@
         <include>Globals</include>
         <include>Storage</include>
         <include>Settings Menu</include>
-        <comment>Initialises the sound, video, effects, button size and cursor sprite</comment>
+        <comment>Initialises the sound, video, effects, button size, cursor sprite, etc...</comment>
         <event-block sid="759430886101808">
             <conditions>
                 <condition id="-2" name="On start of layout" sid="544475208102868" type="System" />
             </conditions>
             <actions>
+                <action id="-16" name="Wait" sid="513850574799480" type="System">
+                    <param id="0" name="Seconds">0</param>
+                </action>
                 <action id="0" name="Call function" sid="959091324629490" type="Function">
                     <param id="0" name="Name">&quot;Disable Singleplayer Blur&quot;</param>
                     <param id="1" name="Parameter {n}"></param>
                 </action>
-                <action id="0" name="Play" sid="777740934932962" type="Audio">
-                    <param id="0" name="Audio file">The_Freeharmonic_Orchestra_-_08_-_Unconquered_Sun</param>
-                    <param id="2" name="Loop">1</param>
-                    <param id="3" name="Volume">0</param>
-                    <param id="1" name="Tag (optional)">&quot;MainMenuMusic&quot;</param>
+                <action id="-16" name="Wait" sid="855196775141235" type="System">
+                    <param id="0" name="Seconds">0</param>
                 </action>
                 <action id="0" name="Call function" sid="337601066064074" type="Function">
                     <param id="0" name="Name">&quot;refreshMainMenuVideo&quot;</param>
                     <param id="1" name="Parameter {n}"></param>
                 </action>
+                <action id="-16" name="Wait" sid="132584554364853" type="System">
+                    <param id="0" name="Seconds">0</param>
+                </action>
                 <action id="1" name="Set cursor from sprite" sid="498679691315872" type="Mouse">
                     <param id="0" name="Sprite">Cursor</param>
+                </action>
+                <action id="-16" name="Wait" sid="484050770822153" type="System">
+                    <param id="0" name="Seconds">0</param>
+                </action>
+                <action id="0" name="Play" sid="991996795876689" type="Audio">
+                    <param id="0" name="Audio file">The_Freeharmonic_Orchestra_-_08_-_Unconquered_Sun</param>
+                    <param id="2" name="Loop">1</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;MainMenuMusic&quot;</param>
+                </action>
+                <action id="-16" name="Wait" sid="991752186337888" type="System">
+                    <param id="0" name="Seconds">0</param>
                 </action>
                 <action id="-27" name="Set effect enabled" sid="473257114356142" type="Button">
                     <param id="0" name="Mode">0</param>
                     <param id="1" name="Effect">&quot;DISABLED&quot;</param>
+                </action>
+                <action id="-16" name="Wait" sid="748191270545872" type="System">
+                    <param id="0" name="Seconds">0</param>
+                </action>
+                <action id="-27" name="Set effect enabled" sid="540326468821990" type="Button">
+                    <param id="0" name="Mode">0</param>
+                    <param id="1" name="Effect">&quot;SELECTED&quot;</param>
                 </action>
                 <action id="-16" name="Wait" sid="320493796099121" type="System">
                     <param id="0" name="Seconds">0</param>
@@ -44,9 +66,22 @@
                     <param id="0" name="Name">&quot;resetButtonSize&quot;</param>
                     <param id="1" name="Parameter {n}"></param>
                 </action>
+                <action id="-16" name="Wait" sid="348068307845970" type="System">
+                    <param id="0" name="Seconds">0</param>
+                </action>
+                <action id="5" name="Set web font" sid="125566992627187" type="MPSupportText">
+                    <param id="0" name="Family name">&quot;Dekko&quot;</param>
+                    <param id="1" name="CSS URL">&quot;dekko.css&quot;</param>
+                </action>
+                <action id="-16" name="Wait" sid="662446659725067" type="System">
+                    <param id="0" name="Seconds">0</param>
+                </action>
                 <action id="-12" name="Set group active" sid="325241200726846" type="System">
                     <param id="0" name="Group name">&quot;FADEIN&quot;</param>
                     <param id="1" name="State">1</param>
+                </action>
+                <action id="-16" name="Wait" sid="743456910435574" type="System">
+                    <param id="0" name="Seconds">0</param>
                 </action>
             </actions>
             <sub-events>
@@ -91,28 +126,57 @@
                 </event-block>
             </sub-events>
         </event-block>
-        <comment>Sets the mobile version</comment>
-        <event-block sid="896024543040107">
+        <event-block sid="829031417227396">
             <conditions>
-                <condition id="-20" name="Is on mobile device" sid="283349286779013" type="System" />
+                <condition id="-2" name="On start of layout" sid="250444151342027" type="System" />
             </conditions>
-            <actions>
-                <action id="0" name="Call function" sid="460476577879301" type="Function">
-                    <param id="0" name="Name">&quot;setMobile&quot;</param>
-                    <param id="1" name="Parameter {n}"></param>
-                </action>
-            </actions>
+            <actions />
             <sub-events>
-                <comment>iOS does not support videos</comment>
-                <event-block sid="338992496646555">
+                <event-block sid="297855766039194">
                     <conditions>
-                        <condition id="-32" name="Is on platform" sid="308141007662576" type="System">
-                            <param id="0" name="Platform">1</param>
+                        <condition id="-32" name="Is on platform" sid="733034689406737" type="System">
+                            <param id="0" name="Platform">13</param>
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-9" name="Destroy" sid="274927122736780" type="MainMenuVideo" />
+                        <action id="-9" name="Destroy" sid="296011130580794" type="MainMenuVideo" />
                     </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <comment>Sets the mobile version</comment>
+        <event-block sid="355434690530009">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="956666964989627" type="System" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="896024543040107">
+                    <conditions>
+                        <condition id="-20" name="Is on mobile device" sid="283349286779013" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="460476577879301" type="Function">
+                            <param id="0" name="Name">&quot;setMobile&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="3" name="Set enabled" sid="805759651409398" type="UpscaleQualityListbox">
+                            <param id="0" name="Mode">0</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <comment>iOS does not support videos</comment>
+                        <event-block sid="338992496646555">
+                            <conditions>
+                                <condition id="-32" name="Is on platform" sid="308141007662576" type="System">
+                                    <param id="0" name="Platform">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="274927122736780" type="MainMenuVideo" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
             </sub-events>
         </event-block>
@@ -164,69 +228,91 @@
                 </event-block>
             </sub-events>
         </event-block>
-        <event-block sid="288986547668767">
+        <comment>Check if users browser supports WebRTC</comment>
+        <event-block sid="229001552465467">
             <conditions>
-                <condition id="12" name="Supports multiplayer" sid="491697033610465" type="Multiplayer" />
-            </conditions>
-            <actions />
-            <sub-events>
-                <event-block sid="824614120930234">
-                    <conditions>
-                        <condition id="-14" name="Pick by unique ID" sid="865168992008753" type="Button">
-                            <param id="0" name="Unique ID">61</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-27" name="Set effect enabled" sid="605643861905371" type="Button">
-                            <param id="0" name="Mode">0</param>
-                            <param id="1" name="Effect">&quot;DISABLED&quot;</param>
-                        </action>
-                        <action id="-15" name="Set visible" sid="168361939792717" type="MPSupportText">
-                            <param id="0" name="Visibility">0</param>
-                        </action>
-                    </actions>
-                </event-block>
-            </sub-events>
-        </event-block>
-        <event-block sid="498624450218089">
-            <conditions>
-                <condition id="12" inverted="1" name="Supports multiplayer" sid="298801275758683" type="Multiplayer" />
-            </conditions>
-            <actions />
-            <sub-events>
-                <event-block sid="171158058879599">
-                    <conditions>
-                        <condition id="-14" name="Pick by unique ID" sid="768029370564902" type="Button">
-                            <param id="0" name="Unique ID">61</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-27" name="Set effect enabled" sid="652644414574247" type="Button">
-                            <param id="0" name="Mode">1</param>
-                            <param id="1" name="Effect">&quot;DISABLED&quot;</param>
-                        </action>
-                        <action id="-15" name="Set visible" sid="446622703611026" type="MPSupportText">
-                            <param id="0" name="Visibility">1</param>
-                        </action>
-                    </actions>
-                </event-block>
-            </sub-events>
-        </event-block>
-        <event-block any="1" sid="103371470125581">
-            <conditions>
-                <condition id="-32" name="Is on platform" sid="158696384053185" type="System">
-                    <param id="0" name="Platform">13</param>
+                <condition id="-6" name="Every X seconds" sid="453816585122083" type="System">
+                    <param id="0" name="Interval (seconds)">2</param>
                 </condition>
-                <condition id="-20" name="Is on mobile device" sid="156558079523774" type="System" />
             </conditions>
-            <actions>
-                <action id="3" name="Set enabled" sid="272760334627644" type="FullscreenCheckbox">
-                    <param id="0" name="Mode">0</param>
-                </action>
-            </actions>
+            <actions />
+            <sub-events>
+                <event-block sid="969249982944904">
+                    <conditions>
+                        <condition id="12" name="Supports multiplayer" sid="491697033610465" type="Multiplayer" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="824614120930234">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="865168992008753" type="Button">
+                                    <param id="0" name="Unique ID">61</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-27" name="Set effect enabled" sid="605643861905371" type="Button">
+                                    <param id="0" name="Mode">0</param>
+                                    <param id="1" name="Effect">&quot;DISABLED&quot;</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="168361939792717" type="MPSupportText">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="498624450218089">
+                    <conditions>
+                        <condition id="12" inverted="1" name="Supports multiplayer" sid="298801275758683" type="Multiplayer" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="171158058879599">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="768029370564902" type="Button">
+                                    <param id="0" name="Unique ID">61</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-27" name="Set effect enabled" sid="652644414574247" type="Button">
+                                    <param id="0" name="Mode">1</param>
+                                    <param id="1" name="Effect">&quot;DISABLED&quot;</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="446622703611026" type="MPSupportText">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
         </event-block>
+        <comment>Disables the fullscreen button if the game is win10 App or Mobile</comment>
+        <event-block sid="384577513079883">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="105151577596085" type="System" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block any="1" sid="103371470125581">
+                    <conditions>
+                        <condition id="-32" name="Is on platform" sid="158696384053185" type="System">
+                            <param id="0" name="Platform">13</param>
+                        </condition>
+                        <condition id="-20" name="Is on mobile device" sid="156558079523774" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="3" name="Set enabled" sid="272760334627644" type="FullscreenCheckbox">
+                            <param id="0" name="Mode">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <comment>Disables the Go Button for multiplayer if there is less than 4 characters in the text box</comment>
         <event-block sid="309636086632204">
             <conditions>
+                <condition id="12" name="Supports multiplayer" sid="201509706505198" type="Multiplayer" />
                 <condition id="-8" name="Compare two values" sid="202304678791898" type="System">
                     <param id="0" name="First value">len(MPUsernameBox.Text)</param>
                     <param id="1" name="Comparison">5</param>
@@ -270,6 +356,839 @@
                     </actions>
                 </event-block>
             </sub-events>
+        </event-block>
+        <comment>Multiplayer mrror message logic</comment>
+        <event-block sid="946922638166541">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="997573536186116" type="System">
+                    <param id="0" name="Variable">MPError</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="506275895594583" type="MPErrorText">
+                    <param id="0" name="Text">MPErrorMessage</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="947571099730609" type="System">
+                    <param id="0" name="Layer">&quot;Messages&quot;</param>
+                    <param id="1" name="Visibility">1</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="544396163977752" type="System">
+                    <param id="0" name="Layer">&quot;Small Menu&quot;</param>
+                    <param id="1" name="Visibility">1</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="529929802067563">
+                    <conditions>
+                        <condition id="-20" inverted="1" name="Is on mobile device" sid="646115053452079" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="600287535941427" type="Function">
+                            <param id="0" name="Name">&quot;Enable Singleplayer Blur&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="597241058501956">
+                    <conditions>
+                        <condition id="4" name="Has gamepads" sid="331533471543627" type="Gamepad" />
+                    </conditions>
+                    <actions>
+                        <action id="-4" name="Set layer visible" sid="650572156244611" type="System">
+                            <param id="0" name="Layer">&quot;XboxBackButtonRootMenu&quot;</param>
+                            <param id="1" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="251556265239730">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="216296228986838" type="System">
+                    <param id="0" name="Variable">MPError</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-9" name="Layer is visible" sid="999725702485099" type="System">
+                    <param id="0" name="Layer">&quot;Messages&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-4" name="Set layer visible" sid="498650906776734" type="System">
+                    <param id="0" name="Layer">&quot;Messages&quot;</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="283906025705300" type="System">
+                    <param id="0" name="Layer">&quot;Small Menu&quot;</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="862860733837310">
+                    <conditions>
+                        <condition id="-20" inverted="1" name="Is on mobile device" sid="564708123115266" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="241804418148085" type="Function">
+                            <param id="0" name="Name">&quot;Disable Singleplayer Blur&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="763679509695273">
+                    <conditions>
+                        <condition id="4" name="Has gamepads" sid="621115058220430" type="Gamepad" />
+                    </conditions>
+                    <actions>
+                        <action id="-4" name="Set layer visible" sid="835594537433428" type="System">
+                            <param id="0" name="Layer">&quot;XboxBackButtonRootMenu&quot;</param>
+                            <param id="1" name="Visibility">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <variable constant="0" name="MaxSelectable" sid="831301686877046" static="0" type="number">3</variable>
+        <variable constant="0" name="MinSelectable" sid="718353651949443" static="0" type="number">0</variable>
+        <variable constant="0" name="Selected" sid="759038870086035" static="0" type="number">3</variable>
+        <event-block sid="830257827532337">
+            <conditions>
+                <condition id="4" name="Has gamepads" sid="588475329918266" type="Gamepad" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="404312399071019">
+                    <conditions>
+                        <condition id="-4" name="Trigger once while true" sid="164327372734167" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Set group active" sid="742996540365408" type="System">
+                            <param id="0" name="Group name">&quot;Controller Menus&quot;</param>
+                            <param id="1" name="State">1</param>
+                        </action>
+                        <action id="0" name="Call function" sid="778318110785478" type="Function">
+                            <param id="0" name="Name">&quot;HideAll&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="0" name="Call function" sid="158236283920632" type="Function">
+                            <param id="0" name="Name">&quot;Disable Singleplayer Blur&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="-9" name="Set value" sid="366842322290502" type="System">
+                            <param id="0" name="Variable">MaxSelectable</param>
+                            <param id="1" name="Value">3</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="429773585739888" type="System">
+                            <param id="0" name="Variable">MinSelectable</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="370391264796402" type="System">
+                            <param id="0" name="Variable">Selected</param>
+                            <param id="1" name="Value">3</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="167211462524345" type="BackButtonText">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="220241968779344" type="MPBackButtonText">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="779649204102717" type="MPErrorBackButtonText">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="136011675465088">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="476809386215956" type="Button">
+                                    <param id="0" name="Unique ID">50</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-15" name="Set visible" sid="217973608494728" type="Button">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="809175262503686">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="186416368677579" type="Button">
+                                    <param id="0" name="Unique ID">76</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-15" name="Set visible" sid="221935044976135" type="Button">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="391284661209188">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="994229676109686" type="Button">
+                                    <param id="0" name="Unique ID">59</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-15" name="Set visible" sid="175806166601958" type="Button">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="695624081887794">
+            <conditions>
+                <condition id="-22" name="Else" sid="238679748165348" type="System" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="491796056676071">
+                    <conditions>
+                        <condition id="-4" name="Trigger once while true" sid="736143170558464" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Set group active" sid="229786803102663" type="System">
+                            <param id="0" name="Group name">&quot;Controller Menus&quot;</param>
+                            <param id="1" name="State">0</param>
+                        </action>
+                        <action id="9" name="Set scale" sid="430898905435760" type="Button">
+                            <param id="0" name="Scale">1</param>
+                        </action>
+                        <action id="-27" name="Set effect enabled" sid="956026694156578" type="Button">
+                            <param id="0" name="Mode">0</param>
+                            <param id="1" name="Effect">&quot;SELECTED&quot;</param>
+                        </action>
+                        <action id="-4" name="Set layer visible" sid="947803957482811" type="System">
+                            <param id="0" name="Layer">&quot;XboxBackButtonRootMenu&quot;</param>
+                            <param id="1" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="536465476959334" type="BackButtonText">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="602565103943984" type="MPBackButtonText">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="295110669584230" type="MPErrorBackButtonText">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="235358614538521">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="527698031137601" type="Button">
+                                    <param id="0" name="Unique ID">50</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-15" name="Set visible" sid="392427332447039" type="Button">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="363590226178190">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="550349669064916" type="Button">
+                                    <param id="0" name="Unique ID">76</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-15" name="Set visible" sid="776813713777904" type="Button">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="984314080313485">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="876458939073097" type="Button">
+                                    <param id="0" name="Unique ID">59</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-15" name="Set visible" sid="260323614133492" type="Button">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-group description="" inactive="1" sid="277414104950262" title="Controller Menus">
+            <sub-events>
+                <event-group description="" sid="574263213823396" title="Controls">
+                    <sub-events>
+                        <event-block sid="955218580447267">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="129648584641828" type="System">
+                                    <param id="0" name="Variable">Selected</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Value">MinSelectable</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="282928826309710" type="System">
+                                    <param id="0" name="Variable">Selected</param>
+                                    <param id="1" name="Value">MinSelectable</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="968905651846149">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="495951439527111" type="System">
+                                    <param id="0" name="Variable">Selected</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Value">MaxSelectable</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="466144545184415" type="System">
+                                    <param id="0" name="Variable">Selected</param>
+                                    <param id="1" name="Value">MaxSelectable</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="487497726050653">
+                            <conditions>
+                                <condition id="4" name="Has gamepads" sid="955214750511101" type="Gamepad" />
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="469624018591087">
+                                    <conditions>
+                                        <condition id="5" name="Compare axis" sid="470094211892125" type="Gamepad">
+                                            <param id="0" name="Gamepad">0</param>
+                                            <param id="1" name="Axis">1</param>
+                                            <param id="2" name="Comparison">2</param>
+                                            <param id="3" name="Value">0</param>
+                                        </condition>
+                                        <condition id="-21" name="Is between values" sid="792830969881151" type="System">
+                                            <param id="0" name="Value">Gamepad.Axis(0,0)</param>
+                                            <param id="1" name="Lower bound">-15</param>
+                                            <param id="2" name="Upper bound">15</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="742816293443893">
+                                            <conditions>
+                                                <condition id="-4" name="Trigger once while true" sid="376217826518960" type="System" />
+                                            </conditions>
+                                            <actions>
+                                                <action id="-10" name="Add to" sid="599264164158381" type="System">
+                                                    <param id="0" name="Variable">Selected</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="790279849587679">
+                                    <conditions>
+                                        <condition id="5" name="Compare axis" sid="740001685711853" type="Gamepad">
+                                            <param id="0" name="Gamepad">0</param>
+                                            <param id="1" name="Axis">1</param>
+                                            <param id="2" name="Comparison">4</param>
+                                            <param id="3" name="Value">0</param>
+                                        </condition>
+                                        <condition id="-21" name="Is between values" sid="922880430571284" type="System">
+                                            <param id="0" name="Value">Gamepad.Axis(0,0)</param>
+                                            <param id="1" name="Lower bound">-15</param>
+                                            <param id="2" name="Upper bound">15</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="656264298941303">
+                                            <conditions>
+                                                <condition id="-4" name="Trigger once while true" sid="446453482349123" type="System" />
+                                            </conditions>
+                                            <actions>
+                                                <action id="-11" name="Subtract from" sid="241352116856947" type="System">
+                                                    <param id="0" name="Variable">Selected</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="474668754479024">
+                                    <conditions>
+                                        <condition id="6" name="On button pressed" sid="391487168968340" type="Gamepad">
+                                            <param id="0" name="Gamepad">0</param>
+                                            <param id="1" name="Button">13</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-11" name="Subtract from" sid="527921457410967" type="System">
+                                            <param id="0" name="Variable">Selected</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="592952493411243">
+                                    <conditions>
+                                        <condition id="6" name="On button pressed" sid="783746119570518" type="Gamepad">
+                                            <param id="0" name="Gamepad">0</param>
+                                            <param id="1" name="Button">12</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Add to" sid="595959473256138" type="System">
+                                            <param id="0" name="Variable">Selected</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="" sid="771058453510725" title="Buttons">
+                    <sub-events>
+                        <event-group description="" sid="918253681409244" title="Root Buttons">
+                            <sub-events>
+                                <comment>Quit Button</comment>
+                                <event-block sid="372378321142155">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="826323350391750" type="System">
+                                            <param id="0" name="Variable">Selected</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="971277385069164">
+                                            <conditions>
+                                                <condition id="-14" name="Pick by unique ID" sid="882928075335850" type="Button">
+                                                    <param id="0" name="Unique ID">8</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-27" name="Set effect enabled" sid="524814918304368" type="Button">
+                                                    <param id="0" name="Mode">1</param>
+                                                    <param id="1" name="Effect">&quot;SELECTED&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="847219707881827">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="153103864144841" type="System" />
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="640830842979457">
+                                            <conditions>
+                                                <condition id="-14" name="Pick by unique ID" sid="647213588099384" type="Button">
+                                                    <param id="0" name="Unique ID">8</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-27" name="Set effect enabled" sid="740462273807669" type="Button">
+                                                    <param id="0" name="Mode">0</param>
+                                                    <param id="1" name="Effect">&quot;SELECTED&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <comment>Credits Button</comment>
+                                <event-block sid="850038936276954">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="437367012437091" type="System">
+                                            <param id="0" name="Variable">Selected</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="869334253592186">
+                                            <conditions>
+                                                <condition id="-14" name="Pick by unique ID" sid="164549749960653" type="Button">
+                                                    <param id="0" name="Unique ID">7</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-27" name="Set effect enabled" sid="898531544416548" type="Button">
+                                                    <param id="0" name="Mode">1</param>
+                                                    <param id="1" name="Effect">&quot;SELECTED&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="264869817334324">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="800939271341105" type="System" />
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="936268482071874">
+                                            <conditions>
+                                                <condition id="-14" name="Pick by unique ID" sid="604832868665343" type="Button">
+                                                    <param id="0" name="Unique ID">7</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-27" name="Set effect enabled" sid="552019499931275" type="Button">
+                                                    <param id="0" name="Mode">0</param>
+                                                    <param id="1" name="Effect">&quot;SELECTED&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <comment>Settings Button</comment>
+                                <event-block sid="185622161394857">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="736003096501541" type="System">
+                                            <param id="0" name="Variable">Selected</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">2</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="796862553184724">
+                                            <conditions>
+                                                <condition id="-14" name="Pick by unique ID" sid="261341850765975" type="Button">
+                                                    <param id="0" name="Unique ID">5</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-27" name="Set effect enabled" sid="146444433401140" type="Button">
+                                                    <param id="0" name="Mode">1</param>
+                                                    <param id="1" name="Effect">&quot;SELECTED&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="245566831711458">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="264428561752025" type="System" />
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="432924361911865">
+                                            <conditions>
+                                                <condition id="-14" name="Pick by unique ID" sid="805359320039051" type="Button">
+                                                    <param id="0" name="Unique ID">5</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-27" name="Set effect enabled" sid="189598453099513" type="Button">
+                                                    <param id="0" name="Mode">0</param>
+                                                    <param id="1" name="Effect">&quot;SELECTED&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <comment>Play Button</comment>
+                                <event-block sid="475516046843887">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="843153133738599" type="System">
+                                            <param id="0" name="Variable">Selected</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">3</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="144690211928140">
+                                            <conditions>
+                                                <condition id="-14" name="Pick by unique ID" sid="238701990229492" type="Button">
+                                                    <param id="0" name="Unique ID">3</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-27" name="Set effect enabled" sid="223062653052943" type="Button">
+                                                    <param id="0" name="Mode">1</param>
+                                                    <param id="1" name="Effect">&quot;SELECTED&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="963963753279949">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="356082894667542" type="System" />
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="794818628103383">
+                                            <conditions>
+                                                <condition id="-14" name="Pick by unique ID" sid="883072907217945" type="Button">
+                                                    <param id="0" name="Unique ID">3</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-27" name="Set effect enabled" sid="970881421948258" type="Button">
+                                                    <param id="0" name="Mode">0</param>
+                                                    <param id="1" name="Effect">&quot;SELECTED&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-group>
+                        <event-group description="" sid="247017743875792" title="Sub Menu Buttons">
+                            <sub-events>
+                                <event-group description="" sid="856997395313288" title="Play Menu">
+                                    <sub-events>
+                                        <comment>Multiplayer Button</comment>
+                                        <event-block sid="300509464387462">
+                                            <conditions>
+                                                <condition id="-14" name="Compare variable" sid="538679680135097" type="System">
+                                                    <param id="0" name="Variable">Selected</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">5</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block sid="814094284145239">
+                                                    <conditions>
+                                                        <condition id="-14" name="Pick by unique ID" sid="362349916128543" type="Button">
+                                                            <param id="0" name="Unique ID">40</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-27" name="Set effect enabled" sid="424575489394749" type="Button">
+                                                            <param id="0" name="Mode">1</param>
+                                                            <param id="1" name="Effect">&quot;SELECTED&quot;</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                        <event-block sid="201560017482023">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="251129086128411" type="System" />
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block sid="404927705941230">
+                                                    <conditions>
+                                                        <condition id="-14" name="Pick by unique ID" sid="153551567429647" type="Button">
+                                                            <param id="0" name="Unique ID">40</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-27" name="Set effect enabled" sid="162813929585626" type="Button">
+                                                            <param id="0" name="Mode">0</param>
+                                                            <param id="1" name="Effect">&quot;SELECTED&quot;</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                        <comment>Singleplayer Button</comment>
+                                        <event-block sid="457521756234112">
+                                            <conditions>
+                                                <condition id="-14" name="Compare variable" sid="293728619342175" type="System">
+                                                    <param id="0" name="Variable">Selected</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">6</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block sid="170631847881660">
+                                                    <conditions>
+                                                        <condition id="-14" name="Pick by unique ID" sid="682682145017288" type="Button">
+                                                            <param id="0" name="Unique ID">21</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-27" name="Set effect enabled" sid="152522309236180" type="Button">
+                                                            <param id="0" name="Mode">1</param>
+                                                            <param id="1" name="Effect">&quot;SELECTED&quot;</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                        <event-block sid="304371394740879">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="525801700720291" type="System" />
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block sid="532957749954743">
+                                                    <conditions>
+                                                        <condition id="-14" name="Pick by unique ID" sid="822063669292612" type="Button">
+                                                            <param id="0" name="Unique ID">21</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-27" name="Set effect enabled" sid="964581395321781" type="Button">
+                                                            <param id="0" name="Mode">0</param>
+                                                            <param id="1" name="Effect">&quot;SELECTED&quot;</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                        <comment>MP Go Button</comment>
+                                        <event-block sid="629215119360506">
+                                            <conditions>
+                                                <condition id="-14" name="Compare variable" sid="179428704705973" type="System">
+                                                    <param id="0" name="Variable">Selected</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">7</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block sid="669250355637481">
+                                                    <conditions>
+                                                        <condition id="-14" name="Pick by unique ID" sid="632442571782103" type="Button">
+                                                            <param id="0" name="Unique ID">61</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-27" name="Set effect enabled" sid="535804960645465" type="Button">
+                                                            <param id="0" name="Mode">1</param>
+                                                            <param id="1" name="Effect">&quot;SELECTED&quot;</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                        <event-block sid="608318407955213">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="544739300333244" type="System" />
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block sid="566899779825245">
+                                                    <conditions>
+                                                        <condition id="-14" name="Pick by unique ID" sid="635540235322156" type="Button">
+                                                            <param id="0" name="Unique ID">61</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-27" name="Set effect enabled" sid="211452336786608" type="Button">
+                                                            <param id="0" name="Mode">0</param>
+                                                            <param id="1" name="Effect">&quot;SELECTED&quot;</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
+                                </event-group>
+                                <event-group description="" sid="805708642398920" title="Setting Menu">
+                                    <sub-events>
+                                        <event-block sid="307920856176465">
+                                            <conditions>
+                                                <condition id="-14" name="Compare variable" sid="248379505386888" type="System">
+                                                    <param id="0" name="Variable">Selected</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">4</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block sid="242405719147602">
+                                                    <conditions>
+                                                        <condition id="-14" name="Pick by unique ID" sid="239750068446988" type="Button">
+                                                            <param id="0" name="Unique ID">38</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-27" name="Set effect enabled" sid="584627592914008" type="Button">
+                                                            <param id="0" name="Mode">1</param>
+                                                            <param id="1" name="Effect">&quot;SELECTED&quot;</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                        <event-block sid="514168263123986">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="114618449947236" type="System" />
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block sid="579097909542583">
+                                                    <conditions>
+                                                        <condition id="-14" name="Pick by unique ID" sid="855024392477278" type="Button">
+                                                            <param id="0" name="Unique ID">38</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-27" name="Set effect enabled" sid="273666926689795" type="Button">
+                                                            <param id="0" name="Mode">0</param>
+                                                            <param id="1" name="Effect">&quot;SELECTED&quot;</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
+                                </event-group>
+                            </sub-events>
+                        </event-group>
+                    </sub-events>
+                </event-group>
+            </sub-events>
+        </event-group>
+        <event-block sid="872261025655266">
+            <conditions>
+                <condition id="3" name="Is silent" sid="172610957627006" type="Audio" />
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="948215366039982" type="Audio">
+                    <param id="0" name="Audio file">The_Freeharmonic_Orchestra_-_08_-_Unconquered_Sun</param>
+                    <param id="2" name="Loop">1</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;MainMenuMusic&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="141304074311612">
+            <conditions>
+                <condition id="2" name="Mouse button is down" sid="133230890322978" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Wait" sid="196735787178073" type="System">
+                    <param id="0" name="Seconds">0</param>
+                </action>
+                <action id="1" name="Set cursor from sprite" sid="497370611733143" type="Mouse">
+                    <param id="0" name="Sprite">CursorInverted</param>
+                </action>
+                <action id="-16" name="Wait" sid="657183234018994" type="System">
+                    <param id="0" name="Seconds">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="115369168548761">
+            <conditions>
+                <condition id="-22" name="Else" sid="185715191848296" type="System" />
+            </conditions>
+            <actions>
+                <action id="-16" name="Wait" sid="971386444624359" type="System">
+                    <param id="0" name="Seconds">0</param>
+                </action>
+                <action id="1" name="Set cursor from sprite" sid="611404955319298" type="Mouse">
+                    <param id="0" name="Sprite">Cursor</param>
+                </action>
+                <action id="-16" name="Wait" sid="291719490938125" type="System">
+                    <param id="0" name="Seconds">0</param>
+                </action>
+            </actions>
         </event-block>
     </events>
 </c2eventsheet>

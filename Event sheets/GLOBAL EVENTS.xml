@@ -3,203 +3,825 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>GLOBAL EVENTS</name>
     <events>
+        <include>Storage</include>
+        <event-block sid="604550903617873">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="709025059053409" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="517260942486613" type="VersionText">
+                    <param id="0" name="Text">&quot;Ver. &quot;&amp;projectversion</param>
+                </action>
+                <action id="-16" name="Wait" sid="584526101807909" type="System">
+                    <param id="0" name="Seconds">0</param>
+                </action>
+                <action id="5" name="Set web font" sid="708553444790412" type="AllText">
+                    <param id="0" name="Family name">&quot;Munro&quot;</param>
+                    <param id="1" name="CSS URL">&quot;munro.css&quot;</param>
+                </action>
+                <action id="-16" name="Wait" sid="123520519828068" type="System">
+                    <param id="0" name="Seconds">0</param>
+                </action>
+                <action id="5" name="Set web font" sid="993384670329164" type="AllTitleText">
+                    <param id="0" name="Family name">&quot;Dekko&quot;</param>
+                    <param id="1" name="CSS URL">&quot;dekko.css&quot;</param>
+                </action>
+                <action id="-16" name="Wait" sid="306188147773545" type="System">
+                    <param id="0" name="Seconds">0</param>
+                </action>
+                <action id="0" name="Set text" sid="532704197463810" type="RenderText">
+                    <param id="0" name="Text">&quot;Renderer: &quot;&amp;renderer&amp;&quot;, &quot;&amp;rendererDetail</param>
+                </action>
+                <action id="-16" name="Wait" sid="920971320334156" type="System">
+                    <param id="0" name="Seconds">0</param>
+                </action>
+                <action id="5" name="Set web font" sid="477019445031737" type="TitleScreenTitleText">
+                    <param id="0" name="Family name">&quot;Munro&quot;</param>
+                    <param id="1" name="CSS URL">&quot;munro.css&quot;</param>
+                </action>
+                <action id="-16" name="Wait" sid="134264143572129" type="System">
+                    <param id="0" name="Seconds">0</param>
+                </action>
+                <action id="5" name="Set web font" sid="606493538979613" type="LoadingTitleText">
+                    <param id="0" name="Family name">&quot;Munro&quot;</param>
+                    <param id="1" name="CSS URL">&quot;munro.css&quot;</param>
+                </action>
+                <action id="-16" name="Wait" sid="303148546755842" type="System">
+                    <param id="0" name="Seconds">0</param>
+                </action>
+                <action id="0" name="Call function" sid="824523698689665" type="Function">
+                    <param id="0" name="Name">&quot;Refresh UpscaleQuality&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+                <action id="0" name="Call function" sid="427813220137629" type="Function">
+                    <param id="0" name="Name">&quot;Refresh Sound&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="760366965364667">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="976658632441027" type="System">
+                            <param id="0" name="Variable">ShowFPS</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-4" name="Set layer visible" sid="590969449295650" type="System">
+                            <param id="0" name="Layer">&quot;FPS&quot;</param>
+                            <param id="1" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="170845415013983">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="472768196167098" type="System">
+                            <param id="0" name="Variable">ShowFPS</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-4" name="Set layer visible" sid="420582015551554" type="System">
+                            <param id="0" name="Layer">&quot;FPS&quot;</param>
+                            <param id="1" name="Visibility">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-group description="" sid="754129542533295" title="Sound">
+            <sub-events>
+                <event-block sid="415558359217006">
+                    <conditions>
+                        <condition id="0" name="On function" sid="446621905728723" type="Function">
+                            <param id="0" name="Name">&quot;Refresh Sound&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Check item exists" sid="846263373986681" type="LocalStorage">
+                            <param id="0" name="Key">&quot;MasterSound&quot;</param>
+                        </action>
+                        <action id="5" name="Check item exists" sid="872426883968608" type="LocalStorage">
+                            <param id="0" name="Key">&quot;MusicSound&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="449799910800753">
+                    <conditions>
+                        <condition id="1" name="On item get" sid="231463410031642" type="LocalStorage">
+                            <param id="0" name="Key">&quot;MasterSound&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="10" name="Set master volume" sid="149177508278605" type="Audio">
+                            <param id="0" name="dB">LocalStorage.ItemValue</param>
+                        </action>
+                        <action id="14" name="Log" sid="697517654253491" type="Browser">
+                            <param id="0" name="Type">0</param>
+                            <param id="1" name="Message">&quot;Setting Master Volume to: &quot;&amp;LocalStorage.ItemValue</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="217783357803926">
+                    <conditions>
+                        <condition id="1" name="On item get" sid="122046435835552" type="LocalStorage">
+                            <param id="0" name="Key">&quot;MusicSound&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="3" name="Set volume" sid="676349465009794" type="Audio">
+                            <param id="0" name="Tag">&quot;MainMenuMusic&quot;</param>
+                            <param id="1" name="dB">LocalStorage.ItemValue</param>
+                        </action>
+                        <action id="14" name="Log" sid="522586963105749" type="Browser">
+                            <param id="0" name="Type">0</param>
+                            <param id="1" name="Message">&quot;Setting Music Volume to: &quot;&amp;LocalStorage.ItemValue</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="663573345670681">
+                    <conditions>
+                        <condition id="10" name="On item missing" sid="651905650975531" type="LocalStorage">
+                            <param id="0" name="Key">&quot;MasterSound&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set item" sid="771931458857320" type="LocalStorage">
+                            <param id="0" name="Key">&quot;MasterSound&quot;</param>
+                            <param id="1" name="Value">Audio.MasterVolume</param>
+                        </action>
+                        <action id="14" name="Log" sid="840296821078178" type="Browser">
+                            <param id="0" name="Type">0</param>
+                            <param id="1" name="Message">&quot;Setting Local Storage MasterSound to: &quot;&amp;LocalStorage.ItemValue</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="402782345313711">
+                    <conditions>
+                        <condition id="10" name="On item missing" sid="140170381839826" type="LocalStorage">
+                            <param id="0" name="Key">&quot;MusicSound&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set item" sid="302224042412865" type="LocalStorage">
+                            <param id="0" name="Key">&quot;MusicSound&quot;</param>
+                            <param id="1" name="Value">Audio.Volume(&quot;MainMenuMusic&quot;)</param>
+                        </action>
+                        <action id="14" name="Log" sid="804015658218971" type="Browser">
+                            <param id="0" name="Type">0</param>
+                            <param id="1" name="Message">&quot;Setting Local Storage MusicSound to: &quot;&amp;LocalStorage.ItemValue</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="201590360725435">
+                    <conditions>
+                        <condition id="9" name="On item exists" sid="843419466939266" type="LocalStorage">
+                            <param id="0" name="Key">&quot;MasterSound&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="1" name="Get item" sid="690505096584771" type="LocalStorage">
+                            <param id="0" name="Key">&quot;MasterSound&quot;</param>
+                        </action>
+                        <action id="14" name="Log" sid="657223396667771" type="Browser">
+                            <param id="0" name="Type">0</param>
+                            <param id="1" name="Message">&quot;Getting Local Storage MasterSound&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="152582842434261">
+                    <conditions>
+                        <condition id="9" name="On item exists" sid="921885995163833" type="LocalStorage">
+                            <param id="0" name="Key">&quot;MusicSound&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="1" name="Get item" sid="365641480637202" type="LocalStorage">
+                            <param id="0" name="Key">&quot;MusicSound&quot;</param>
+                        </action>
+                        <action id="14" name="Log" sid="178766354751593" type="Browser">
+                            <param id="0" name="Type">0</param>
+                            <param id="1" name="Message">&quot;Getting Local Storage MusicSound&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
         <event-group description="" sid="950944789674305" title="QUALITY">
             <sub-events>
-                <event-block sid="947075631210053">
+                <event-block any="1" sid="947075631210053">
                     <conditions>
+                        <condition id="0" name="On function" sid="170960521553210" type="Function">
+                            <param id="0" name="Name">&quot;Refresh UpscaleQuality&quot;</param>
+                        </condition>
                         <condition id="-2" name="On start of layout" sid="903158997333202" type="System" />
                     </conditions>
                     <actions />
                     <sub-events>
-                        <event-block sid="555091317783951">
+                        <event-block sid="280264763778735">
                             <conditions>
-                                <condition id="-14" name="Compare variable" sid="959120954787920" type="System">
-                                    <param id="0" name="Variable">UpscaleQuality</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">uppercase(&quot;POTATO&quot;)</param>
-                                </condition>
+                                <condition id="-20" name="Is on mobile device" sid="260335031416849" type="System" />
                             </conditions>
                             <actions>
-                                <action id="-40" name="Set fullscreen scaling" sid="123093684280813" type="System">
-                                    <param id="0" name="Fullscreen scaling">0</param>
+                                <action id="-40" name="Set fullscreen scaling" sid="231825118822304" type="System">
+                                    <param id="0" name="Fullscreen scaling">1</param>
                                 </action>
-                                <action id="-47" name="Set pixel rounding" sid="875012126880133" type="System">
-                                    <param id="0" name="Mode">0</param>
-                                </action>
-                                <action id="-28" name="Set canvas size" sid="849875392393190" type="System">
-                                    <param id="0" name="Width">640</param>
-                                    <param id="1" name="Height">360</param>
-                                </action>
-                                <action id="-20" name="Set layout scale" sid="724735828710400" type="System">
-                                    <param id="0" name="Scale">0.5</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="470514123254734">
-                            <conditions>
-                                <condition id="-14" name="Compare variable" sid="702357925591747" type="System">
-                                    <param id="0" name="Variable">UpscaleQuality</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">uppercase(&quot;ULTRA LOW&quot;)</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-40" name="Set fullscreen scaling" sid="587546730735574" type="System">
-                                    <param id="0" name="Fullscreen scaling">0</param>
-                                </action>
-                                <action id="-47" name="Set pixel rounding" sid="187845984395515" type="System">
-                                    <param id="0" name="Mode">0</param>
-                                </action>
-                                <action id="-28" name="Set canvas size" sid="253998127189186" type="System">
-                                    <param id="0" name="Width">854</param>
-                                    <param id="1" name="Height">480</param>
-                                </action>
-                                <action id="-20" name="Set layout scale" sid="269991803244994" type="System">
-                                    <param id="0" name="Scale">0.665</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="623787918381324">
-                            <conditions>
-                                <condition id="-14" name="Compare variable" sid="851052504384086" type="System">
-                                    <param id="0" name="Variable">UpscaleQuality</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">uppercase(&quot;LOW&quot;)</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-40" name="Set fullscreen scaling" sid="147801703649999" type="System">
-                                    <param id="0" name="Fullscreen scaling">0</param>
-                                </action>
-                                <action id="-28" name="Set canvas size" sid="893218455037052" type="System">
+                                <action id="-28" name="Set canvas size" sid="911442433970560" type="System">
                                     <param id="0" name="Width">1280</param>
                                     <param id="1" name="Height">720</param>
                                 </action>
-                                <action id="-20" name="Set layout scale" sid="912344040909160" type="System">
-                                    <param id="0" name="Scale">1</param>
-                                </action>
-                                <action id="-47" name="Set pixel rounding" sid="591576170607694" type="System">
-                                    <param id="0" name="Mode">1</param>
+                                <action id="-20" name="Set layout scale" sid="437429834658031" type="System">
+                                    <param id="0" name="Scale">720/1080</param>
                                 </action>
                             </actions>
                         </event-block>
-                        <event-block sid="103814340093651">
+                        <event-block sid="858152305808363">
                             <conditions>
-                                <condition id="-14" name="Compare variable" sid="880428181573874" type="System">
-                                    <param id="0" name="Variable">UpscaleQuality</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">uppercase(&quot;MEDIUM&quot;)</param>
+                                <condition id="-22" name="Else" sid="899460068665555" type="System" />
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="555091317783951">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="959120954787920" type="System">
+                                            <param id="0" name="Variable">Resolution</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">uppercase(&quot;POTATO&quot;)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-40" name="Set fullscreen scaling" sid="123093684280813" type="System">
+                                            <param id="0" name="Fullscreen scaling">0</param>
+                                        </action>
+                                        <action id="-28" name="Set canvas size" sid="849875392393190" type="System">
+                                            <param id="0" name="Width">640</param>
+                                            <param id="1" name="Height">360</param>
+                                        </action>
+                                        <action id="-20" name="Set layout scale" sid="724735828710400" type="System">
+                                            <param id="0" name="Scale">360/1080</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="470514123254734">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="702357925591747" type="System">
+                                            <param id="0" name="Variable">Resolution</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">uppercase(&quot;ULTRA LOW&quot;)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-40" name="Set fullscreen scaling" sid="587546730735574" type="System">
+                                            <param id="0" name="Fullscreen scaling">0</param>
+                                        </action>
+                                        <action id="-28" name="Set canvas size" sid="253998127189186" type="System">
+                                            <param id="0" name="Width">854</param>
+                                            <param id="1" name="Height">480</param>
+                                        </action>
+                                        <action id="-20" name="Set layout scale" sid="269991803244994" type="System">
+                                            <param id="0" name="Scale">480/1080</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="623787918381324">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="851052504384086" type="System">
+                                            <param id="0" name="Variable">Resolution</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">uppercase(&quot;LOW&quot;)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-40" name="Set fullscreen scaling" sid="147801703649999" type="System">
+                                            <param id="0" name="Fullscreen scaling">0</param>
+                                        </action>
+                                        <action id="-28" name="Set canvas size" sid="893218455037052" type="System">
+                                            <param id="0" name="Width">1280</param>
+                                            <param id="1" name="Height">720</param>
+                                        </action>
+                                        <action id="-20" name="Set layout scale" sid="912344040909160" type="System">
+                                            <param id="0" name="Scale">720/1080</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="103814340093651">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="880428181573874" type="System">
+                                            <param id="0" name="Variable">Resolution</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">uppercase(&quot;MEDIUM&quot;)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-40" name="Set fullscreen scaling" sid="734800498155498" type="System">
+                                            <param id="0" name="Fullscreen scaling">1</param>
+                                        </action>
+                                        <action id="-28" name="Set canvas size" sid="574818686834008" type="System">
+                                            <param id="0" name="Width">1920</param>
+                                            <param id="1" name="Height">1080</param>
+                                        </action>
+                                        <action id="-20" name="Set layout scale" sid="253760338445416" type="System">
+                                            <param id="0" name="Scale">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="463381897276415">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="509844152129764" type="System">
+                                            <param id="0" name="Variable">Resolution</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">uppercase(&quot;HIGH&quot;)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-40" name="Set fullscreen scaling" sid="589772132067981" type="System">
+                                            <param id="0" name="Fullscreen scaling">1</param>
+                                        </action>
+                                        <action id="-28" name="Set canvas size" sid="200612550011470" type="System">
+                                            <param id="0" name="Width">2560</param>
+                                            <param id="1" name="Height">1440</param>
+                                        </action>
+                                        <action id="-20" name="Set layout scale" sid="591154627944539" type="System">
+                                            <param id="0" name="Scale">1440/1080</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="831367081237448">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="104682293812305" type="System">
+                                            <param id="0" name="Variable">Resolution</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">uppercase(&quot;ULTRA&quot;)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-40" name="Set fullscreen scaling" sid="539249468114908" type="System">
+                                            <param id="0" name="Fullscreen scaling">1</param>
+                                        </action>
+                                        <action id="-28" name="Set canvas size" sid="498082478617482" type="System">
+                                            <param id="0" name="Width">3840</param>
+                                            <param id="1" name="Height">2160</param>
+                                        </action>
+                                        <action id="-20" name="Set layout scale" sid="669688989586242" type="System">
+                                            <param id="0" name="Scale">2160/1080</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="202748241392641">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="542221168226657" type="System">
+                                            <param id="0" name="Variable">Resolution</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">uppercase(&quot;SUPER COMPUTER&quot;)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-40" name="Set fullscreen scaling" sid="891660242518840" type="System">
+                                            <param id="0" name="Fullscreen scaling">1</param>
+                                        </action>
+                                        <action id="-28" name="Set canvas size" sid="395138718892168" type="System">
+                                            <param id="0" name="Width">7680</param>
+                                            <param id="1" name="Height">4320</param>
+                                        </action>
+                                        <action id="-20" name="Set layout scale" sid="872863048742780" type="System">
+                                            <param id="0" name="Scale">4320/1080</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="890333163788883">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="523009834998247" type="System">
+                                            <param id="0" name="Variable">Resolution</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">uppercase(&quot;NATIVE&quot;)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-40" name="Set fullscreen scaling" sid="276116288215475" type="System">
+                                            <param id="0" name="Fullscreen scaling">1</param>
+                                        </action>
+                                        <action id="-28" name="Set canvas size" sid="114073893625085" type="System">
+                                            <param id="0" name="Width">Browser.ScreenWidth</param>
+                                            <param id="1" name="Height">Browser.ScreenHeight</param>
+                                        </action>
+                                        <action id="-20" name="Set layout scale" sid="395782216568942" type="System">
+                                            <param id="0" name="Scale">Browser.ScreenHeight/1080</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="535017599338683">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="516776153317679" type="System">
+                            <param id="0" name="Variable">PixelRounding</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-47" name="Set pixel rounding" sid="643699905348176" type="System">
+                            <param id="0" name="Mode">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="633957167244391">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="629786968439832" type="System">
+                            <param id="0" name="Variable">PixelRounding</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-47" name="Set pixel rounding" sid="914946825173144" type="System">
+                            <param id="0" name="Mode">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="624347954834038" title="Developer Console">
+            <sub-events>
+                <event-block sid="583716600590845">
+                    <conditions>
+                        <condition id="-9" name="Layer is visible" sid="712921692994316" type="System">
+                            <param id="0" name="Layer">&quot;Developer Console&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="6" name="Set focused" sid="479551971658136" type="CheatBox" />
+                        <action id="-13" name="Set time scale" sid="137768306350279" type="System">
+                            <param id="0" name="Time scale">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="314859497801770">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="149133257031015" type="Keyboard">
+                            <param id="0" name="Key">67 (C)</param>
+                        </condition>
+                        <condition id="2" name="Key is down" sid="729242814700899" type="Keyboard">
+                            <param id="0" name="Key">17 (Ctrl)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-4" name="Set layer visible" sid="517420010351569" type="System">
+                            <param id="0" name="Layer">&quot;Developer Console&quot;</param>
+                            <param id="1" name="Visibility">1</param>
+                        </action>
+                        <action id="-13" name="Set time scale" sid="571157088306161" type="System">
+                            <param id="0" name="Time scale">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="275751907059008">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="390147910670073" type="Keyboard">
+                            <param id="0" name="Key">13 (Return)</param>
+                        </condition>
+                        <condition id="-9" name="Layer is visible" sid="863653376124461" type="System">
+                            <param id="0" name="Layer">&quot;Developer Console&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="319002440315051">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="649780015651339" type="System">
+                                    <param id="0" name="First value">find(CheatBox.Text, &quot;call &quot;)</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Second value">-1</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="-40" name="Set fullscreen scaling" sid="734800498155498" type="System">
-                                    <param id="0" name="Fullscreen scaling">1</param>
-                                </action>
-                                <action id="-28" name="Set canvas size" sid="574818686834008" type="System">
-                                    <param id="0" name="Width">1920</param>
-                                    <param id="1" name="Height">1080</param>
-                                </action>
-                                <action id="-20" name="Set layout scale" sid="253760338445416" type="System">
-                                    <param id="0" name="Scale">1.5</param>
-                                </action>
-                                <action id="-47" name="Set pixel rounding" sid="182867813429043" type="System">
-                                    <param id="0" name="Mode">1</param>
+                                <action id="0" name="Call function" sid="181128783612204" type="Function">
+                                    <param id="0" name="Name">replace(CheatBox.Text, &quot;call &quot;, &quot;&quot;)</param>
+                                    <param id="1" name="Parameter {n}"></param>
                                 </action>
                             </actions>
                         </event-block>
-                        <event-block sid="463381897276415">
+                        <event-block sid="253562753196732">
                             <conditions>
-                                <condition id="-14" name="Compare variable" sid="509844152129764" type="System">
-                                    <param id="0" name="Variable">UpscaleQuality</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">uppercase(&quot;HIGH&quot;)</param>
+                                <condition id="-8" name="Compare two values" sid="484821665319420" type="System">
+                                    <param id="0" name="First value">find(CheatBox.Text, &quot;quit&quot;)</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Second value">-1</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="-40" name="Set fullscreen scaling" sid="589772132067981" type="System">
-                                    <param id="0" name="Fullscreen scaling">1</param>
-                                </action>
-                                <action id="-28" name="Set canvas size" sid="200612550011470" type="System">
-                                    <param id="0" name="Width">2560</param>
-                                    <param id="1" name="Height">1440</param>
-                                </action>
-                                <action id="-20" name="Set layout scale" sid="591154627944539" type="System">
-                                    <param id="0" name="Scale">2</param>
-                                </action>
-                                <action id="-47" name="Set pixel rounding" sid="602307264998931" type="System">
-                                    <param id="0" name="Mode">1</param>
+                                <action id="1" name="Close" sid="269538760398223" type="Browser" />
+                                <action id="14" name="Log" sid="998595159767627" type="Browser">
+                                    <param id="0" name="Type">0</param>
+                                    <param id="1" name="Message">&quot;Quitting&quot;</param>
                                 </action>
                             </actions>
                         </event-block>
-                        <event-block sid="831367081237448">
+                        <event-block sid="473141695608541">
                             <conditions>
-                                <condition id="-14" name="Compare variable" sid="104682293812305" type="System">
-                                    <param id="0" name="Variable">UpscaleQuality</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">uppercase(&quot;ULTRA&quot;)</param>
+                                <condition id="-8" name="Compare two values" sid="439580546716251" type="System">
+                                    <param id="0" name="First value">find(CheatBox.Text, &quot;set&quot;)</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Second value">-1</param>
                                 </condition>
                             </conditions>
-                            <actions>
-                                <action id="-40" name="Set fullscreen scaling" sid="539249468114908" type="System">
-                                    <param id="0" name="Fullscreen scaling">1</param>
-                                </action>
-                                <action id="-28" name="Set canvas size" sid="498082478617482" type="System">
-                                    <param id="0" name="Width">3840</param>
-                                    <param id="1" name="Height">2160</param>
-                                </action>
-                                <action id="-20" name="Set layout scale" sid="669688989586242" type="System">
-                                    <param id="0" name="Scale">3</param>
-                                </action>
-                                <action id="-47" name="Set pixel rounding" sid="519359289491474" type="System">
-                                    <param id="0" name="Mode">1</param>
-                                </action>
-                            </actions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="368906435026260">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="763278235825811" type="System">
+                                            <param id="0" name="First value">find(CheatBox.Text, &quot; NextLayout &quot;)</param>
+                                            <param id="1" name="Comparison">1</param>
+                                            <param id="2" name="Second value">-1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="925231826831641" type="System">
+                                            <param id="0" name="Variable">NextLayout</param>
+                                            <param id="1" name="Value">replace(CheatBox.Text, &quot;set NextLevel &quot;, &quot;&quot;)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="543982403011904">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="540523468698013" type="System">
+                                            <param id="0" name="First value">find(CheatBox.Text, &quot; Resolution&quot;)</param>
+                                            <param id="1" name="Comparison">1</param>
+                                            <param id="2" name="Second value">-1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="415369713976415">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="813611086263757" type="System">
+                                                    <param id="0" name="First value">find(CheatBox.Text, &quot;-r &quot;)</param>
+                                                    <param id="1" name="Comparison">1</param>
+                                                    <param id="2" name="Second value">-1</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-28" name="Set canvas size" sid="517937363303725" type="System">
+                                                    <param id="0" name="Width">int(tokenat(replace(CheatBox.Text, &quot;set Resolution -r &quot;, &quot;&quot;), 0, &quot;x&quot;))</param>
+                                                    <param id="1" name="Height">int(tokenat(replace(CheatBox.Text, &quot;set Resolution -r &quot;, &quot;&quot;), 1, &quot;x&quot;))</param>
+                                                </action>
+                                                <action id="-20" name="Set layout scale" sid="290783937308480" type="System">
+                                                    <param id="0" name="Scale">int(tokenat(replace(CheatBox.Text, &quot;set Resolution -r &quot;, &quot;&quot;), 1, &quot;x&quot;))/1080</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="694572792806811">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="994113442942364" type="System">
+                                                    <param id="0" name="First value">find(CheatBox.Text, &quot;-p &quot;)</param>
+                                                    <param id="1" name="Comparison">1</param>
+                                                    <param id="2" name="Second value">-1</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="319415986668260" type="System">
+                                                    <param id="0" name="Variable">Resolution</param>
+                                                    <param id="1" name="Value">uppercase(replace(CheatBox.Text, &quot;set Resolution -p &quot;, &quot;&quot;))</param>
+                                                </action>
+                                                <action id="0" name="Set item" sid="449676536098361" type="LocalStorage">
+                                                    <param id="0" name="Key">&quot;Resolution&quot;</param>
+                                                    <param id="1" name="Value">Resolution</param>
+                                                </action>
+                                                <action id="0" name="Call function" sid="318980871475091" type="Function">
+                                                    <param id="0" name="Name">&quot;Refresh UpscaleQuality&quot;</param>
+                                                    <param id="1" name="Parameter {n}"></param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="398044402573540">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="169295438780378" type="System">
+                                            <param id="0" name="First value">find(CheatBox.Text, &quot; PixelRounding &quot;)</param>
+                                            <param id="1" name="Comparison">1</param>
+                                            <param id="2" name="Second value">-1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="644422557787414" type="System">
+                                            <param id="0" name="Variable">PixelRounding</param>
+                                            <param id="1" name="Value">int(replace(CheatBox.Text, &quot;set PixelRounding &quot;, &quot;&quot;))</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="652556460923130">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="388697142719403" type="System">
+                                            <param id="0" name="First value">find(CheatBox.Text, &quot; VideoQuality &quot;)</param>
+                                            <param id="1" name="Comparison">1</param>
+                                            <param id="2" name="Second value">-1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="398925252243198" type="System">
+                                            <param id="0" name="Variable">VideoQuality</param>
+                                            <param id="1" name="Value">uppercase(replace(CheatBox.Text, &quot;set VideoQuality &quot;, &quot;&quot;))</param>
+                                        </action>
+                                        <action id="0" name="Set item" sid="279821808215929" type="LocalStorage">
+                                            <param id="0" name="Key">&quot;VideoQuality&quot;</param>
+                                            <param id="1" name="Value">VideoQuality</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="283238796687036" type="Function">
+                                            <param id="0" name="Name">&quot;refreshMainMenuVideo&quot;</param>
+                                            <param id="1" name="Parameter {n}"></param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
                         </event-block>
-                        <event-block sid="202748241392641">
+                        <event-block sid="634347515209519">
                             <conditions>
-                                <condition id="-14" name="Compare variable" sid="542221168226657" type="System">
-                                    <param id="0" name="Variable">UpscaleQuality</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">uppercase(&quot;SUPER COMPUTER&quot;)</param>
+                                <condition id="-8" name="Compare two values" sid="890549297005117" type="System">
+                                    <param id="0" name="First value">find(CheatBox.Text, &quot;goto&quot;)</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Second value">-1</param>
                                 </condition>
                             </conditions>
-                            <actions>
-                                <action id="-40" name="Set fullscreen scaling" sid="891660242518840" type="System">
-                                    <param id="0" name="Fullscreen scaling">1</param>
-                                </action>
-                                <action id="-28" name="Set canvas size" sid="395138718892168" type="System">
-                                    <param id="0" name="Width">7680</param>
-                                    <param id="1" name="Height">4320</param>
-                                </action>
-                                <action id="-20" name="Set layout scale" sid="872863048742780" type="System">
-                                    <param id="0" name="Scale">6</param>
-                                </action>
-                                <action id="-47" name="Set pixel rounding" sid="510756929931334" type="System">
-                                    <param id="0" name="Mode">1</param>
-                                </action>
-                            </actions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="581967838563000">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="166529327485944" type="System">
+                                            <param id="0" name="First value">find(CheatBox.Text, &quot; layout&quot;)</param>
+                                            <param id="1" name="Comparison">1</param>
+                                            <param id="2" name="Second value">-1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="766424858928606" type="System">
+                                            <param id="0" name="Variable">NextLayout</param>
+                                            <param id="1" name="Value">replace(CheatBox.Text, &quot;goto layout &quot;, &quot;&quot;)</param>
+                                        </action>
+                                        <action id="-2" name="Go to layout" sid="270961430934843" type="System">
+                                            <param id="0" name="Layout">Loading</param>
+                                        </action>
+                                        <action id="14" name="Log" sid="679407925146410" type="Browser">
+                                            <param id="0" name="Type">0</param>
+                                            <param id="1" name="Message">&quot;Going to layout &quot;&amp;replace(CheatBox.Text, &quot;goto layout &quot;, &quot;&quot;)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
                         </event-block>
-                        <event-block sid="890333163788883">
+                        <event-block sid="940980616876088">
                             <conditions>
-                                <condition id="-14" name="Compare variable" sid="523009834998247" type="System">
-                                    <param id="0" name="Variable">UpscaleQuality</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">uppercase(&quot;NATIVE&quot;)</param>
+                                <condition id="-8" name="Compare two values" sid="906242594476417" type="System">
+                                    <param id="0" name="First value">find(CheatBox.Text, &quot;reset&quot;)</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Second value">-1</param>
                                 </condition>
                             </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="132448565108878">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="802901540201578" type="System">
+                                            <param id="0" name="First value">find(CheatBox.Text, &quot; global&quot;)</param>
+                                            <param id="1" name="Comparison">1</param>
+                                            <param id="2" name="Second value">-1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="258877887793546">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="526350906507222" type="System">
+                                                    <param id="0" name="First value">find(CheatBox.Text, &quot; vars&quot;)</param>
+                                                    <param id="1" name="Comparison">1</param>
+                                                    <param id="2" name="Second value">-1</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-21" name="Reset global variables" sid="924804299575471" type="System" />
+                                                <action id="14" name="Log" sid="801116307061055" type="Browser">
+                                                    <param id="0" name="Type">0</param>
+                                                    <param id="1" name="Message">&quot;Resetting global variables to default&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="974690321235037">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="936353056192532" type="System">
+                                    <param id="0" name="First value">find(CheatBox.Text, &quot;show&quot;)</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Second value">-1</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="593001324184456">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="999481568699742" type="System">
+                                            <param id="0" name="First value">find(CheatBox.Text, &quot; layer&quot;)</param>
+                                            <param id="1" name="Comparison">1</param>
+                                            <param id="2" name="Second value">-1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-4" name="Set layer visible" sid="328003728027701" type="System">
+                                            <param id="0" name="Layer">replace(CheatBox.Text, &quot;show layer &quot;, &quot;&quot;)</param>
+                                            <param id="1" name="Visibility">1</param>
+                                        </action>
+                                        <action id="14" name="Log" sid="786290989365082" type="Browser">
+                                            <param id="0" name="Type">0</param>
+                                            <param id="1" name="Message">&quot;Showing &quot;&amp;replace(CheatBox.Text, &quot;show layer &quot;, &quot;&quot;)</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="939181532214924">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="311992928668924" type="System">
+                                                    <param id="0" name="First value">find(CheatBox.Text, &quot; fps&quot;)</param>
+                                                    <param id="1" name="Comparison">1</param>
+                                                    <param id="2" name="Second value">-1</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="243433299052527" type="System">
+                                                    <param id="0" name="Variable">ShowFPS</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="530460089495905">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="744842316706201" type="System">
+                                    <param id="0" name="First value">find(CheatBox.Text, &quot;hide&quot;)</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Second value">-1</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="189119825344502">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="653253953608711" type="System">
+                                            <param id="0" name="First value">find(CheatBox.Text, &quot; layer&quot;)</param>
+                                            <param id="1" name="Comparison">1</param>
+                                            <param id="2" name="Second value">-1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-4" name="Set layer visible" sid="984740602346031" type="System">
+                                            <param id="0" name="Layer">replace(CheatBox.Text, &quot;hide layer &quot;, &quot;&quot;)</param>
+                                            <param id="1" name="Visibility">0</param>
+                                        </action>
+                                        <action id="14" name="Log" sid="429506160911985" type="Browser">
+                                            <param id="0" name="Type">0</param>
+                                            <param id="1" name="Message">&quot;hiding &quot;&amp;replace(CheatBox.Text, &quot;hiding layer &quot;, &quot;&quot;)</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="163234838697715">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="729034504559041" type="System">
+                                                    <param id="0" name="First value">find(CheatBox.Text, &quot; fps&quot;)</param>
+                                                    <param id="1" name="Comparison">1</param>
+                                                    <param id="2" name="Second value">-1</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="131846945671218" type="System">
+                                                    <param id="0" name="Variable">ShowFPS</param>
+                                                    <param id="1" name="Value">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="909157440216771">
+                            <conditions />
                             <actions>
-                                <action id="-40" name="Set fullscreen scaling" sid="276116288215475" type="System">
-                                    <param id="0" name="Fullscreen scaling">1</param>
+                                <action id="0" name="Set text" sid="782558620151663" type="CheatBox">
+                                    <param id="0" name="Text">&quot;&quot;</param>
                                 </action>
-                                <action id="-28" name="Set canvas size" sid="114073893625085" type="System">
-                                    <param id="0" name="Width">Browser.ScreenWidth</param>
-                                    <param id="1" name="Height">Browser.ScreenHeight</param>
+                                <action id="8" name="Set unfocused" sid="466216146287031" type="CheatBox" />
+                                <action id="-4" name="Set layer visible" sid="763833762517670" type="System">
+                                    <param id="0" name="Layer">&quot;Developer Console&quot;</param>
+                                    <param id="1" name="Visibility">0</param>
                                 </action>
-                                <action id="-20" name="Set layout scale" sid="395782216568942" type="System">
-                                    <param id="0" name="Scale">Browser.ScreenHeight/720</param>
-                                </action>
-                                <action id="-47" name="Set pixel rounding" sid="257160306112591" type="System">
-                                    <param id="0" name="Mode">1</param>
+                                <action id="-13" name="Set time scale" sid="620665134705001" type="System">
+                                    <param id="0" name="Time scale">1</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -207,5 +829,29 @@
                 </event-block>
             </sub-events>
         </event-group>
+        <event-block sid="116046452341805">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="449358502756991" type="System" />
+                <condition id="-14" name="Compare variable" sid="141104767918491" type="System">
+                    <param id="0" name="Variable">ShowFPS</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="142144053520753" type="FPSText">
+                    <param id="0" name="Text">&quot;FPS: &quot;&amp;fps</param>
+                </action>
+                <action id="0" name="Set text" sid="644103803177648" type="CPUText">
+                    <param id="0" name="Text">&quot;CPU Usage: &quot;&amp;int(cpuutilisation*100)&amp;&quot;%&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="706505201019267" type="VRAMText">
+                    <param id="0" name="Text">&quot;VRAM Usage: &quot;&amp;ImageMemoryUsage&amp;&quot;MB&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="174361765532184" type="NetworkUsageText">
+                    <param id="0" name="Text">&quot;Network S: &quot;&amp;Multiplayer.StatOutboundBandwidth&amp;&quot;kbps&quot;&amp;&quot; R: &quot;&amp;Multiplayer.StatInboundBandwidth&amp;&quot;kbps&quot;</param>
+                </action>
+            </actions>
+        </event-block>
     </events>
 </c2eventsheet>
