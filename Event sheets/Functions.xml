@@ -523,6 +523,10 @@
                     <param id="0" name="Layer">&quot;Server&quot;</param>
                     <param id="1" name="Visibility">0</param>
                 </action>
+                <action id="-4" name="Set layer visible" sid="230634608644454" type="System">
+                    <param id="0" name="Layer">&quot;Player Stats&quot;</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
                 <action id="-7" name="Set size" sid="939877252110089" type="ButtonText">
                     <param id="0" name="Width">Button.Width</param>
                     <param id="1" name="Height">Button.Height</param>
@@ -792,6 +796,27 @@
                 </action>
                 <action id="-4" name="Set layer visible" sid="468439485966409" type="System">
                     <param id="0" name="Layer">&quot;Server&quot;</param>
+                    <param id="1" name="Visibility">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="816207296568604">
+            <conditions>
+                <condition id="0" name="On function" sid="179653333902218" type="Function">
+                    <param id="0" name="Name">&quot;Show Stats&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-4" name="Set layer visible" sid="313258246845060" type="System">
+                    <param id="0" name="Layer">&quot;Title&quot;</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="284701950544287" type="System">
+                    <param id="0" name="Layer">&quot;Menu Background&quot;</param>
+                    <param id="1" name="Visibility">1</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="439005697110085" type="System">
+                    <param id="0" name="Layer">&quot;Player Stats&quot;</param>
                     <param id="1" name="Visibility">1</param>
                 </action>
             </actions>

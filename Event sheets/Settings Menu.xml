@@ -54,23 +54,7 @@
                     <param id="1" name="Button">0</param>
                 </condition>
             </conditions>
-            <actions>
-                <action id="0" name="Set item" sid="641601755213589" type="LocalStorage">
-                    <param id="0" name="Key">&quot;MasterSound&quot;</param>
-                    <param id="1" name="Value">int(MasterSoundBar.Value)</param>
-                </action>
-                <action id="10" name="Set master volume" sid="937705002726422" type="Audio">
-                    <param id="0" name="dB">int(MasterSoundBar.Value)</param>
-                </action>
-                <action id="0" name="Set item" sid="725661900243038" type="LocalStorage">
-                    <param id="0" name="Key">&quot;MusicSound&quot;</param>
-                    <param id="1" name="Value">int(MusicSoundBar.Value)</param>
-                </action>
-                <action id="3" name="Set volume" sid="971861697089136" type="Audio">
-                    <param id="0" name="Tag">&quot;MainMenuMusic&quot;</param>
-                    <param id="1" name="dB">int(MusicSoundBar.Value)</param>
-                </action>
-            </actions>
+            <actions />
             <sub-events>
                 <event-block sid="635250316704467">
                     <conditions>
@@ -89,10 +73,25 @@
                         <event-block sid="410064354722456">
                             <conditions>
                                 <condition id="-9" name="Layer is visible" sid="608947377812344" type="System">
-                                    <param id="0" name="Layer">7</param>
+                                    <param id="0" name="Layer">&quot;Settings Buttons&quot;</param>
                                 </condition>
                             </conditions>
                             <actions>
+                                <action id="0" name="Set item" sid="641601755213589" type="LocalStorage">
+                                    <param id="0" name="Key">&quot;MasterSound&quot;</param>
+                                    <param id="1" name="Value">int(MasterSoundBar.Value)</param>
+                                </action>
+                                <action id="10" name="Set master volume" sid="937705002726422" type="Audio">
+                                    <param id="0" name="dB">int(MasterSoundBar.Value)</param>
+                                </action>
+                                <action id="0" name="Set item" sid="725661900243038" type="LocalStorage">
+                                    <param id="0" name="Key">&quot;MusicSound&quot;</param>
+                                    <param id="1" name="Value">int(MusicSoundBar.Value)</param>
+                                </action>
+                                <action id="3" name="Set volume" sid="971861697089136" type="Audio">
+                                    <param id="0" name="Tag">&quot;MainMenuMusic&quot;</param>
+                                    <param id="1" name="dB">int(MusicSoundBar.Value)</param>
+                                </action>
                                 <action id="0" name="Call function" sid="274965905415737" type="Function">
                                     <param id="0" name="Name">&quot;Set and Save Settings&quot;</param>
                                     <param id="1" name="Parameter {n}"></param>
@@ -115,11 +114,26 @@
                     <sub-events>
                         <event-block sid="492490144265341">
                             <conditions>
-                                <condition id="-9" name="Layer is visible" sid="925345317961446" type="System">
-                                    <param id="0" name="Layer">7</param>
+                                <condition id="-9" name="Layer is visible" sid="505973776411447" type="System">
+                                    <param id="0" name="Layer">&quot;Settings Buttons&quot;</param>
                                 </condition>
                             </conditions>
                             <actions>
+                                <action id="0" name="Set item" sid="986553065370172" type="LocalStorage">
+                                    <param id="0" name="Key">&quot;MasterSound&quot;</param>
+                                    <param id="1" name="Value">int(MasterSoundBar.Value)</param>
+                                </action>
+                                <action id="10" name="Set master volume" sid="987164580448032" type="Audio">
+                                    <param id="0" name="dB">int(MasterSoundBar.Value)</param>
+                                </action>
+                                <action id="0" name="Set item" sid="818718967947649" type="LocalStorage">
+                                    <param id="0" name="Key">&quot;MusicSound&quot;</param>
+                                    <param id="1" name="Value">int(MusicSoundBar.Value)</param>
+                                </action>
+                                <action id="3" name="Set volume" sid="554940405669509" type="Audio">
+                                    <param id="0" name="Tag">&quot;MainMenuMusic&quot;</param>
+                                    <param id="1" name="dB">int(MusicSoundBar.Value)</param>
+                                </action>
                                 <action id="0" name="Call function" sid="421000706433589" type="Function">
                                     <param id="0" name="Name">&quot;Set and Save Settings&quot;</param>
                                     <param id="1" name="Parameter {n}"></param>

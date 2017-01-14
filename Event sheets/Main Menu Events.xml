@@ -1246,5 +1246,33 @@
                 </action>
             </actions>
         </event-block>
+        <event-block sid="715376713443853">
+            <conditions>
+                <condition id="1" name="On text changed" sid="308834676060731" type="MPUsernameBox" />
+                <condition id="-8" name="Compare two values" sid="158403451838445" type="System">
+                    <param id="0" name="First value">len(MPUsernameBox.Text)</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Second value">4</param>
+                </condition>
+                <condition id="-8" name="Compare two values" sid="164900129221910" type="System">
+                    <param id="0" name="First value">len(MPUsernameBox.Text)</param>
+                    <param id="1" name="Comparison">2</param>
+                    <param id="2" name="Second value">10</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="961194406167862" type="System">
+                    <param id="0" name="Variable">MP_USERNAME</param>
+                    <param id="1" name="Value">MPUsernameBox.Text</param>
+                </action>
+                <action id="0" name="Set text" sid="792229422038387" type="StatsTitleText">
+                    <param id="0" name="Text">uppercase(MP_USERNAME)&amp;&quot;&apos;S STATS&quot;</param>
+                </action>
+                <action id="0" name="Set item" sid="491473708185198" type="LocalStorage">
+                    <param id="0" name="Key">&quot;MP USERNAME&quot;</param>
+                    <param id="1" name="Value">MP_USERNAME</param>
+                </action>
+            </actions>
+        </event-block>
     </events>
 </c2eventsheet>

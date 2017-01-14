@@ -587,9 +587,9 @@
             <instances>
                 <instance type="UnconqueredSunCreditsText" uid="19">
                     <properties>
-                        <text>&apos;Unconquered Sun&apos; by The Freeharmonic Orchestra, from the Free Music Archive, CC BY 4.0, &quot;Menu Selection Click&quot; by NenadSimic from Open Game Art, CC BY 3.0, &quot;Rain and Thunder loop&quot; by DoKashiteru from Open Game Art, CC BY 3.0</text>
+                        <text>&apos;Unconquered Sun&apos; by The Freeharmonic Orchestra, from the Free Music Archive, CC BY 4.0, &quot;Menu Selection Click&quot; by NenadSimic from Open Game Art, CC BY 3.0, &quot;Rain and Thunder loop&quot; by DoKashiteru from Open Game Art, CC BY 3.0, &quot;Level up sound effects&quot; by Bart Kelsey. Commissioned by Will Corwin for OpenGameArt.org (http://opengameart.org)</text>
                         <initial-visibility>Visible</initial-visibility>
-                        <font>Arial,-35,400,0</font>
+                        <font>Arial,-29,400,0</font>
                         <color>0,255,255</color>
                         <horizontal-alignment>Left</horizontal-alignment>
                         <vertical-alignment>Top</vertical-alignment>
@@ -601,10 +601,10 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>984</x>
-                        <y>343</y>
+                        <y>332</y>
                         <z>0</z>
                         <width>1087</width>
-                        <height>223</height>
+                        <height>251</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
@@ -1592,6 +1592,71 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
+                <instance type="Button" uid="126">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <effect-instances>
+                        <effect-instance type="DISABLED">
+                            <parameters>
+                                <blue>0.5</blue>
+                                <green>0.5</green>
+                                <red>0.5</red>
+                            </parameters>
+                        </effect-instance>
+                        <effect-instance type="SELECTED">
+                            <parameters>
+                                <blue>0</blue>
+                                <green>0.5</green>
+                                <red>0</red>
+                            </parameters>
+                        </effect-instance>
+                    </effect-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>588</x>
+                        <y>828</y>
+                        <z>0</z>
+                        <width>190</width>
+                        <height>49</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.510204077</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="StatsButtonText" uid="127">
+                    <properties>
+                        <text>STATS</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Arial,-29,400,0</font>
+                        <color>0,0,0</color>
+                        <horizontal-alignment>Center</horizontal-alignment>
+                        <vertical-alignment>Center</vertical-alignment>
+                        <hotspot>Center</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>588.5</x>
+                        <y>827.5</y>
+                        <z>0</z>
+                        <width>189</width>
+                        <height>43</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
             </instances>
             <effects />
         </layer>
@@ -2224,7 +2289,7 @@
                         <tooltip></tooltip>
                         <initial-visibility>Visible</initial-visibility>
                         <enabled>Yes</enabled>
-                        <read-only>No</read-only>
+                        <read-only>Yes</read-only>
                         <spell-check>No</spell-check>
                         <type>Text</type>
                         <auto-font-size>Yes</auto-font-size>
@@ -2236,7 +2301,7 @@
                         <x>843</x>
                         <y>391.5</y>
                         <z>0</z>
-                        <width>234</width>
+                        <width>251</width>
                         <height>45</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
@@ -2272,7 +2337,7 @@
                 </instance>
                 <instance type="MPUsernameTipText" uid="66">
                     <properties>
-                        <text>Min Chars: 4</text>
+                        <text>MIN CHARS: 4 MAX CHARS: 10</text>
                         <initial-visibility>Visible</initial-visibility>
                         <font>Arial,-16,400,0</font>
                         <color>0,255,255</color>
@@ -2285,10 +2350,10 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>960</x>
+                        <x>968</x>
                         <y>453</y>
                         <z>0</z>
-                        <width>233</width>
+                        <width>250</width>
                         <height>33</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
@@ -2313,10 +2378,10 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>842.569580078</x>
+                        <x>843</x>
                         <y>486.518371582</y>
                         <z>0</z>
-                        <width>233.516479492</width>
+                        <width>250.516479492</width>
                         <height>43.049194336</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
@@ -2863,6 +2928,270 @@
                         <z>0</z>
                         <width>120</width>
                         <height>44</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+            </instances>
+            <effects />
+        </layer>
+        <layer name="Player Stats" sid="534840764312093">
+            <initially-visible>0</initially-visible>
+            <background-color>255,255,255</background-color>
+            <transparent>1</transparent>
+            <parallax>
+                <x>0</x>
+                <y>0</y>
+            </parallax>
+            <zoom-rate>1</zoom-rate>
+            <opacity>1</opacity>
+            <force-own-texture>0</force-own-texture>
+            <global>0</global>
+            <use-render-cells>0</use-render-cells>
+            <blend-mode>0</blend-mode>
+            <effect-fallback>0</effect-fallback>
+            <instances>
+                <instance type="MenuBackground" uid="114">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>609</x>
+                        <y>256.5</y>
+                        <z>0</z>
+                        <width>356</width>
+                        <height>370</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="Player" uid="113">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <behavior-instances>
+                        <behavior-instance type="BoundToLayout">
+                            <properties>
+                                <bound-by>Edge</bound-by>
+                            </properties>
+                        </behavior-instance>
+                        <behavior-instance type="Solid">
+                            <properties>
+                                <initial-state>Enabled</initial-state>
+                            </properties>
+                        </behavior-instance>
+                        <behavior-instance type="ScrollTo">
+                            <properties>
+                                <initial-state>Enabled</initial-state>
+                            </properties>
+                        </behavior-instance>
+                        <behavior-instance type="8Direction">
+                            <properties>
+                                <max-speed>400</max-speed>
+                                <acceleration>600</acceleration>
+                                <deceleration>600</deceleration>
+                                <directions>8 directions</directions>
+                                <set-angle>360 degree (smooth)</set-angle>
+                                <default-controls>Yes</default-controls>
+                                <initial-state>Enabled</initial-state>
+                            </properties>
+                        </behavior-instance>
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>606</x>
+                        <y>243</y>
+                        <z>0</z>
+                        <width>337.296417236</width>
+                        <height>323.448425293</height>
+                        <depth>0</depth>
+                        <hotspotX>0.539589465</hotspotX>
+                        <hotspotY>0.492354751</hotspotY>
+                        <angle>-1.57079649</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="StatsTitleText" uid="115">
+                    <properties>
+                        <text>PLAYER&apos;S STATS</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Arial,-96,400,0</font>
+                        <color>0,255,255</color>
+                        <horizontal-alignment>Center</horizontal-alignment>
+                        <vertical-alignment>Top</vertical-alignment>
+                        <hotspot>Center</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <effect-instances>
+                        <effect-instance type="GlowHorizontal">
+                            <parameters>
+                                <intensity>1</intensity>
+                            </parameters>
+                        </effect-instance>
+                        <effect-instance type="GlowVertical">
+                            <parameters>
+                                <intensity>1</intensity>
+                            </parameters>
+                        </effect-instance>
+                    </effect-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>1318</x>
+                        <y>147.5</y>
+                        <z>0</z>
+                        <width>1060</width>
+                        <height>183</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="StatsLevelText" uid="116">
+                    <properties>
+                        <text>LEVEL</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Arial,-48,400,0</font>
+                        <color>0,255,255</color>
+                        <horizontal-alignment>Left</horizontal-alignment>
+                        <vertical-alignment>Center</vertical-alignment>
+                        <hotspot>Center</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>1318.5</x>
+                        <y>234</y>
+                        <z>0</z>
+                        <width>793</width>
+                        <height>69</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="MPUsernameBox" uid="128">
+                    <properties>
+                        <text></text>
+                        <placeholder>USERNAME</placeholder>
+                        <tooltip></tooltip>
+                        <initial-visibility>Visible</initial-visibility>
+                        <enabled>Yes</enabled>
+                        <read-only>No</read-only>
+                        <spell-check>No</spell-check>
+                        <type>Text</type>
+                        <auto-font-size>Yes</auto-font-size>
+                        <id-optional></id-optional>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>431</x>
+                        <y>454</y>
+                        <z>0</z>
+                        <width>356</width>
+                        <height>45</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                    </world>
+                </instance>
+                <instance type="StatsTotalKillsText" uid="129">
+                    <properties>
+                        <text>TOTAL KILLS</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Arial,-48,400,0</font>
+                        <color>0,255,255</color>
+                        <horizontal-alignment>Left</horizontal-alignment>
+                        <vertical-alignment>Center</vertical-alignment>
+                        <hotspot>Center</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>1318.5</x>
+                        <y>312</y>
+                        <z>0</z>
+                        <width>793</width>
+                        <height>69</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="StatsTotalDeathsText" uid="130">
+                    <properties>
+                        <text>TOTAL DEATHS</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Arial,-48,400,0</font>
+                        <color>0,255,255</color>
+                        <horizontal-alignment>Left</horizontal-alignment>
+                        <vertical-alignment>Center</vertical-alignment>
+                        <hotspot>Center</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>1318.5</x>
+                        <y>390</y>
+                        <z>0</z>
+                        <width>793</width>
+                        <height>69</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="MPUsernameTipText" uid="131">
+                    <properties>
+                        <text>MIN CHARS: 4 MAX CHARS: 10</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Arial,-24,400,0</font>
+                        <color>0,255,255</color>
+                        <horizontal-alignment>Center</horizontal-alignment>
+                        <vertical-alignment>Top</vertical-alignment>
+                        <hotspot>Center</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>609</x>
+                        <y>528.5</y>
+                        <z>0</z>
+                        <width>356</width>
+                        <height>52</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>

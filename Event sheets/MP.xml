@@ -108,6 +108,9 @@
                         <condition id="-2" name="On start of layout" sid="178380548748568" type="System" />
                     </conditions>
                     <actions>
+                        <action id="0" name="Set text" sid="133581337707116" type="ImportantText">
+                            <param id="0" name="Text">&quot;&quot;</param>
+                        </action>
                         <action id="-10" name="Set value" sid="135164216358169" type="MPPlayer">
                             <param id="0" name="Instance variable">Level</param>
                             <param id="1" name="Value">MPLevel</param>
@@ -317,6 +320,13 @@
                         <action id="12" name="Sync instance variable" sid="369463652424557" type="Multiplayer">
                             <param id="0" name="Object">MPPlayer</param>
                             <param id="1" name="Instance variable">MPPlayer|XP</param>
+                            <param id="2" name="Precision">3</param>
+                            <param id="3" name="Interpolation">0</param>
+                            <param id="4" name="Client value tag">&quot;&quot;</param>
+                        </action>
+                        <action id="12" name="Sync instance variable" sid="915412241635239" type="Multiplayer">
+                            <param id="0" name="Object">MPPlayer</param>
+                            <param id="1" name="Instance variable">MPPlayer|Levelup</param>
                             <param id="2" name="Precision">3</param>
                             <param id="3" name="Interpolation">0</param>
                             <param id="4" name="Client value tag">&quot;&quot;</param>
@@ -861,6 +871,17 @@
                                         <action id="0" name="Call function" sid="788799454747261" type="Function">
                                             <param id="0" name="Name">&quot;AddLog&quot;</param>
                                             <param id="1" name="Parameter {n}">Multiplayer.PeerAliasFromID(MPPlayer.MPID)&amp;&quot; leveled up!&quot;</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="626804070916500" type="MPPlayer">
+                                            <param id="0" name="Instance variable">Levelup</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="-16" name="Wait" sid="408932459907071" type="System">
+                                            <param id="0" name="Seconds">1</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="523604188974060" type="MPPlayer">
+                                            <param id="0" name="Instance variable">Levelup</param>
+                                            <param id="1" name="Value">0</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -2804,6 +2825,28 @@
                                 </event-block>
                             </sub-events>
                         </event-block>
+                        <event-block sid="767114050885592">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="135790116658995" type="MPPlayer">
+                                    <param id="0" name="Instance variable">Levelup</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                                <condition id="-4" name="Trigger once while true" sid="826327140993500" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Play" sid="220185043488035" type="Audio">
+                                    <param id="0" name="Audio file">snare</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
+                                <action id="0" name="Set text" sid="586028887185493" type="ImportantText">
+                                    <param id="0" name="Text">&quot;LEVELED UP!&quot;</param>
+                                </action>
+                                <action behavior="Fade" id="1" name="Start fade" sid="608194015359564" type="ImportantText" />
+                            </actions>
+                        </event-block>
                     </sub-events>
                 </event-block>
                 <event-block sid="728961111081372">
@@ -2853,10 +2896,6 @@
                                 <condition behavior="8Direction" id="0" name="Is moving" sid="283670367815749" type="MPPlayer" />
                             </conditions>
                             <actions>
-                                <action disabled="1" id="-10" name="Set value" sid="392814729068468" type="MPPlayer">
-                                    <param id="0" name="Instance variable">ThrusterOn</param>
-                                    <param id="1" name="Value">setbit(MPPlayer.ThrusterOn, 0, 1)</param>
-                                </action>
                                 <action id="-10" name="Set value" sid="293594361137819" type="MPPlayer">
                                     <param id="0" name="Instance variable">ThrusterOn</param>
                                     <param id="1" name="Value">1</param>
@@ -2872,10 +2911,6 @@
                                 <condition behavior="8Direction" id="0" inverted="1" name="Is moving" sid="251482752513220" type="MPPlayer" />
                             </conditions>
                             <actions>
-                                <action disabled="1" id="-10" name="Set value" sid="749194000639856" type="MPPlayer">
-                                    <param id="0" name="Instance variable">ThrusterOn</param>
-                                    <param id="1" name="Value">setbit(MPPlayer.ThrusterOn, 0, 0)</param>
-                                </action>
                                 <action id="-10" name="Set value" sid="824804485016707" type="MPPlayer">
                                     <param id="0" name="Instance variable">ThrusterOn</param>
                                     <param id="1" name="Value">0</param>
@@ -3002,11 +3037,6 @@
                         </event-block>
                         <event-block sid="120370796415652">
                             <conditions>
-                                <condition disabled="1" id="-8" name="Compare two values" sid="423679521029893" type="System">
-                                    <param id="0" name="First value">getbit(MPPlayer.ThrusterOn, 0)</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Second value">1</param>
-                                </condition>
                                 <condition id="-7" name="Compare instance variable" sid="544602010087698" type="MPPlayer">
                                     <param id="0" name="Instance variable">ThrusterOn</param>
                                     <param id="1" name="Comparison">0</param>
@@ -3025,11 +3055,6 @@
                         </event-block>
                         <event-block sid="562663432008992">
                             <conditions>
-                                <condition disabled="1" id="-8" name="Compare two values" sid="432013379289822" type="System">
-                                    <param id="0" name="First value">getbit(MPPlayer.ThrusterOn, 0)</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Second value">0</param>
-                                </condition>
                                 <condition id="-7" name="Compare instance variable" sid="712402174255502" type="MPPlayer">
                                     <param id="0" name="Instance variable">ThrusterOn</param>
                                     <param id="1" name="Comparison">0</param>
@@ -3096,27 +3121,6 @@
                         <action id="7" name="Disconnect" sid="650586535331826" type="Multiplayer" />
                         <action id="2" name="Disconnect" sid="487188332200063" type="Multiplayer" />
                     </actions>
-                    <sub-events>
-                        <event-block sid="473798464840994">
-                            <conditions>
-                                <condition id="-7" name="Compare instance variable" sid="850189493564433" type="MPPlayer">
-                                    <param id="0" name="Instance variable">MPID</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">Multiplayer.MyID</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-9" name="Set value" sid="351887640865787" type="System">
-                                    <param id="0" name="Variable">MPLevel</param>
-                                    <param id="1" name="Value">MPPlayer.Level</param>
-                                </action>
-                                <action id="0" name="Set item" sid="845857198212731" type="LocalStorage">
-                                    <param id="0" name="Key">&quot;MP Level&quot;</param>
-                                    <param id="1" name="Value">MPLevel</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                    </sub-events>
                 </event-block>
             </sub-events>
         </event-group>

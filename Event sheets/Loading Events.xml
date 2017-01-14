@@ -41,6 +41,12 @@
                 <action id="4" name="Preload" sid="845357699760907" type="Audio">
                     <param id="0" name="Audio file">Menu Selection Click</param>
                 </action>
+                <action id="4" name="Preload" sid="856424915122947" type="Audio">
+                    <param id="0" name="Audio file">rain_thunder_loop</param>
+                </action>
+                <action id="4" name="Preload" sid="420195753911047" type="Audio">
+                    <param id="0" name="Audio file">snare</param>
+                </action>
             </actions>
             <sub-events>
                 <event-block any="1" sid="326984758796714">

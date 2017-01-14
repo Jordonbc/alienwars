@@ -27,6 +27,12 @@
                 <action id="5" name="Check item exists" sid="721207762510189" type="LocalStorage">
                     <param id="0" name="Key">&quot;MP Level&quot;</param>
                 </action>
+                <action id="5" name="Check item exists" sid="400790952241788" type="LocalStorage">
+                    <param id="0" name="Key">&quot;MP Kills&quot;</param>
+                </action>
+                <action id="5" name="Check item exists" sid="790996636276079" type="LocalStorage">
+                    <param id="0" name="Key">&quot;MP Deaths&quot;</param>
+                </action>
             </actions>
         </event-block>
         <event-group description="" sid="318209688799877" title="Exists">
@@ -131,6 +137,38 @@
                         </action>
                     </actions>
                 </event-block>
+                <event-block sid="875576269941452">
+                    <conditions>
+                        <condition id="9" name="On item exists" sid="853678007916903" type="LocalStorage">
+                            <param id="0" name="Key">&quot;MP Kills&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="1" name="Get item" sid="945712252044834" type="LocalStorage">
+                            <param id="0" name="Key">&quot;MP Kills&quot;</param>
+                        </action>
+                        <action id="14" name="Log" sid="118500596140295" type="Browser">
+                            <param id="0" name="Type">0</param>
+                            <param id="1" name="Message">&quot;Getting Local Storage MP Kills&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="568875250331550">
+                    <conditions>
+                        <condition id="9" name="On item exists" sid="300040698225115" type="LocalStorage">
+                            <param id="0" name="Key">&quot;MP Deaths&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="1" name="Get item" sid="162892818294123" type="LocalStorage">
+                            <param id="0" name="Key">&quot;MP Deaths&quot;</param>
+                        </action>
+                        <action id="14" name="Log" sid="810770465727062" type="Browser">
+                            <param id="0" name="Type">0</param>
+                            <param id="1" name="Message">&quot;Getting Local Storage MP Deaths&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
             </sub-events>
         </event-group>
         <event-group description="" sid="892538156247705" title="Missing">
@@ -216,7 +254,7 @@
                     <actions>
                         <action id="0" name="Set item" sid="650287167315633" type="LocalStorage">
                             <param id="0" name="Key">&quot;MP USERNAME&quot;</param>
-                            <param id="1" name="Value">&quot;&quot;</param>
+                            <param id="1" name="Value">MP_USERNAME</param>
                         </action>
                         <action id="14" name="Log" sid="629102495861653" type="Browser">
                             <param id="0" name="Type">1</param>
@@ -238,6 +276,40 @@
                         <action id="14" name="Log" sid="445640078054449" type="Browser">
                             <param id="0" name="Type">1</param>
                             <param id="1" name="Message">&quot;Setting Local Storage MP Level: &quot;&amp;LocalStorage.ItemValue</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="394922954625852">
+                    <conditions>
+                        <condition id="10" name="On item missing" sid="190669052271188" type="LocalStorage">
+                            <param id="0" name="Key">&quot;MP Kills&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set item" sid="986759785323912" type="LocalStorage">
+                            <param id="0" name="Key">&quot;MP Kills&quot;</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="14" name="Log" sid="874335938508925" type="Browser">
+                            <param id="0" name="Type">1</param>
+                            <param id="1" name="Message">&quot;Setting Local Storage MP Kills: &quot;&amp;LocalStorage.ItemValue</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="553315582161986">
+                    <conditions>
+                        <condition id="10" name="On item missing" sid="617134640044908" type="LocalStorage">
+                            <param id="0" name="Key">&quot;MP Deaths&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set item" sid="422708227071285" type="LocalStorage">
+                            <param id="0" name="Key">&quot;MP Deaths&quot;</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="14" name="Log" sid="114594182533027" type="Browser">
+                            <param id="0" name="Type">1</param>
+                            <param id="1" name="Message">&quot;Setting Local Storage MP Deaths: &quot;&amp;LocalStorage.ItemValue</param>
                         </action>
                     </actions>
                 </event-block>
@@ -384,6 +456,40 @@
                         <action id="14" name="Log" sid="392554726230227" type="Browser">
                             <param id="0" name="Type">0</param>
                             <param id="1" name="Message">&quot;Setting MPLevel to: &quot;&amp;LocalStorage.ItemValue</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="629206914930003">
+                    <conditions>
+                        <condition id="1" name="On item get" sid="446247052101323" type="LocalStorage">
+                            <param id="0" name="Key">&quot;MP Kills&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="929308275884991" type="System">
+                            <param id="0" name="Variable">TotalKills</param>
+                            <param id="1" name="Value">LocalStorage.ItemValue</param>
+                        </action>
+                        <action id="14" name="Log" sid="525052984023632" type="Browser">
+                            <param id="0" name="Type">0</param>
+                            <param id="1" name="Message">&quot;Setting TotalKills to: &quot;&amp;LocalStorage.ItemValue</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="253144150685387">
+                    <conditions>
+                        <condition id="1" name="On item get" sid="238289471377319" type="LocalStorage">
+                            <param id="0" name="Key">&quot;MP Deaths&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="648317929332403" type="System">
+                            <param id="0" name="Variable">TotalDeaths</param>
+                            <param id="1" name="Value">LocalStorage.ItemValue</param>
+                        </action>
+                        <action id="14" name="Log" sid="893742128339694" type="Browser">
+                            <param id="0" name="Type">0</param>
+                            <param id="1" name="Message">&quot;Setting TotalDeaths to: &quot;&amp;LocalStorage.ItemValue</param>
                         </action>
                     </actions>
                 </event-block>

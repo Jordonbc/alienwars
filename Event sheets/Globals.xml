@@ -3,6 +3,8 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Globals</name>
     <events>
+        <variable constant="0" name="TotalKills" sid="752641048191002" static="0" type="number">0</variable>
+        <variable constant="0" name="TotalDeaths" sid="203099041490003" static="0" type="number">0</variable>
         <variable constant="0" name="ShowFPS" sid="644192668404062" static="0" type="number">0</variable>
         <variable comment="Room to be joined" constant="0" name="ROOM" sid="652315021777226" static="0" type="text">ROOM1</variable>
         <variable constant="0" name="NextLayout" sid="517908477827608" static="0" type="text">Main Menu</variable>
@@ -12,7 +14,7 @@
         <variable constant="0" name="MPRestart" sid="302180109042700" static="0" type="number">0</variable>
         <variable constant="0" name="MPErrorMessage" sid="968461049134133" static="0" type="text"></variable>
         <variable constant="0" name="MPError" sid="942525540791649" static="0" type="number">0</variable>
-        <variable constant="0" name="MP_USERNAME" sid="935545513331999" static="0" type="text">TEST</variable>
+        <variable constant="0" name="MP_USERNAME" sid="935545513331999" static="0" type="text">Unnamed</variable>
         <variable comment="POTATO, ULTRA LOW, LOW, MEDIUM, HIGH, ULTRA, SUPER COMPUTER, NATIVE" constant="0" name="Resolution" sid="103882498459293" static="0" type="text">NATIVE</variable>
         <variable comment="LQ (Low Quality)  or HQ (High Quality)" constant="0" name="VideoQuality" sid="913375351660569" static="0" type="text">LQ</variable>
         <variable comment="The Space between the buttons in mobile version" constant="0" name="MobileButtonSpacing" sid="132149266579844" static="0" type="number">450</variable>

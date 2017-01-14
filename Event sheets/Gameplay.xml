@@ -3,7 +3,85 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Gameplay</name>
     <events>
+        <include>Settings Menu</include>
+        <include>Main Menu Buttons</include>
         <include>Functions</include>
+        <event-block sid="711939271962130">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="962123435642451" type="System" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="860317192546298">
+                    <conditions>
+                        <condition id="-14" name="Pick by unique ID" sid="139780264364504" type="Button">
+                            <param id="0" name="Unique ID">134</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-27" name="Set effect enabled" sid="581246658793045" type="Button">
+                            <param id="0" name="Mode">0</param>
+                            <param id="1" name="Effect">&quot;DISABLED&quot;</param>
+                        </action>
+                        <action id="-27" name="Set effect enabled" sid="586915152995245" type="Button">
+                            <param id="0" name="Mode">0</param>
+                            <param id="1" name="Effect">&quot;SELECTED&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="760757862935748">
+                    <conditions>
+                        <condition id="-14" name="Pick by unique ID" sid="992953625005148" type="Button">
+                            <param id="0" name="Unique ID">133</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-27" name="Set effect enabled" sid="422111611990727" type="Button">
+                            <param id="0" name="Mode">0</param>
+                            <param id="1" name="Effect">&quot;DISABLED&quot;</param>
+                        </action>
+                        <action id="-27" name="Set effect enabled" sid="461543512570543" type="Button">
+                            <param id="0" name="Mode">0</param>
+                            <param id="1" name="Effect">&quot;SELECTED&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="962930808852577">
+                    <conditions>
+                        <condition id="-14" name="Pick by unique ID" sid="573751231635254" type="Button">
+                            <param id="0" name="Unique ID">132</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-27" name="Set effect enabled" sid="700401889479654" type="Button">
+                            <param id="0" name="Mode">0</param>
+                            <param id="1" name="Effect">&quot;DISABLED&quot;</param>
+                        </action>
+                        <action id="-27" name="Set effect enabled" sid="852548886575871" type="Button">
+                            <param id="0" name="Mode">0</param>
+                            <param id="1" name="Effect">&quot;SELECTED&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="130156819989269">
+                    <conditions>
+                        <condition id="-14" name="Pick by unique ID" sid="604831535249063" type="Button">
+                            <param id="0" name="Unique ID">38</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-27" name="Set effect enabled" sid="347481060323134" type="Button">
+                            <param id="0" name="Mode">0</param>
+                            <param id="1" name="Effect">&quot;DISABLED&quot;</param>
+                        </action>
+                        <action id="-27" name="Set effect enabled" sid="550259113736071" type="Button">
+                            <param id="0" name="Mode">0</param>
+                            <param id="1" name="Effect">&quot;SELECTED&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
         <event-group description="" sid="747216857802041" title="Settings Menu">
             <sub-events>
                 <event-block any="1" sid="580581842575098">
@@ -18,91 +96,53 @@
                     </conditions>
                     <actions />
                     <sub-events>
-                        <event-block sid="986573201218005">
+                        <event-block sid="928448617197044">
                             <conditions>
-                                <condition id="-9" name="Layer is visible" sid="938991505550520" type="System">
-                                    <param id="0" name="Layer">&quot;Settings Buttons&quot;</param>
+                                <condition id="-9" name="Layer is visible" sid="247645981777191" type="System">
+                                    <param id="0" name="Layer">&quot;Pause Menu&quot;</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="0" name="Call function" sid="583712525152633" type="Function">
-                                    <param id="0" name="Name">&quot;Set and Save Settings&quot;</param>
-                                    <param id="1" name="Parameter {n}"></param>
-                                </action>
-                                <action id="0" name="Call function" sid="164780732701621" type="Function">
-                                    <param id="0" name="Name">&quot;Hide Settings Menu&quot;</param>
-                                    <param id="1" name="Parameter {n}"></param>
-                                </action>
-                                <action id="-4" name="Set layer visible" sid="734170828255778" type="System">
+                                <action id="-4" name="Set layer visible" sid="742660762116304" type="System">
                                     <param id="0" name="Layer">&quot;Info&quot;</param>
                                     <param id="1" name="Visibility">1</param>
                                 </action>
-                                <action id="-4" name="Set layer visible" sid="638343656933968" type="System">
+                                <action id="-4" name="Set layer visible" sid="686582230706963" type="System">
                                     <param id="0" name="Layer">&quot;Log&quot;</param>
                                     <param id="1" name="Visibility">1</param>
                                 </action>
-                                <action id="-15" name="Set visible" sid="868356259347271" type="ApplySettingsButtonText">
-                                    <param id="0" name="Visibility">1</param>
+                                <action id="-4" name="Set layer visible" sid="636714025705764" type="System">
+                                    <param id="0" name="Layer">&quot;Pause Menu&quot;</param>
+                                    <param id="1" name="Visibility">0</param>
                                 </action>
-                                <action id="14" name="Log" sid="394382734436007" type="Browser">
+                                <action id="14" name="Log" sid="360823682965337" type="Browser">
                                     <param id="0" name="Type">0</param>
-                                    <param id="1" name="Message">&quot;Closing Settings menu&quot;</param>
+                                    <param id="1" name="Message">&quot;Closing pause menu&quot;</param>
                                 </action>
                             </actions>
-                            <sub-events>
-                                <event-block sid="984559421903270">
-                                    <conditions>
-                                        <condition id="-14" name="Pick by unique ID" sid="853311292931770" type="Button">
-                                            <param id="0" name="Unique ID">38</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="-15" name="Set visible" sid="727228204442273" type="Button">
-                                            <param id="0" name="Visibility">1</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                            </sub-events>
                         </event-block>
-                        <event-block sid="949887941072314">
+                        <event-block sid="373575209303348">
                             <conditions>
-                                <condition id="-22" name="Else" sid="493895806193330" type="System" />
+                                <condition id="-22" name="Else" sid="358149587698622" type="System" />
                             </conditions>
                             <actions>
-                                <action id="-15" name="Set visible" sid="597743010215960" type="ApplySettingsButtonText">
-                                    <param id="0" name="Visibility">0</param>
-                                </action>
-                                <action id="-4" name="Set layer visible" sid="763289392882043" type="System">
+                                <action id="-4" name="Set layer visible" sid="343417130628495" type="System">
                                     <param id="0" name="Layer">&quot;Info&quot;</param>
                                     <param id="1" name="Visibility">0</param>
                                 </action>
-                                <action id="-4" name="Set layer visible" sid="638556649272649" type="System">
+                                <action id="-4" name="Set layer visible" sid="352027872965206" type="System">
                                     <param id="0" name="Layer">&quot;Log&quot;</param>
                                     <param id="1" name="Visibility">0</param>
                                 </action>
-                                <action id="0" name="Call function" sid="741306148095154" type="Function">
-                                    <param id="0" name="Name">&quot;ShowSettings&quot;</param>
-                                    <param id="1" name="Parameter {n}"></param>
+                                <action id="-4" name="Set layer visible" sid="885547350983863" type="System">
+                                    <param id="0" name="Layer">&quot;Pause Menu&quot;</param>
+                                    <param id="1" name="Visibility">1</param>
                                 </action>
-                                <action id="14" name="Log" sid="655902917247846" type="Browser">
+                                <action id="14" name="Log" sid="655190570392970" type="Browser">
                                     <param id="0" name="Type">0</param>
-                                    <param id="1" name="Message">&quot;Opening Settings menu&quot;</param>
+                                    <param id="1" name="Message">&quot;Opening pause menu&quot;</param>
                                 </action>
                             </actions>
-                            <sub-events>
-                                <event-block sid="692236050149766">
-                                    <conditions>
-                                        <condition id="-14" name="Pick by unique ID" sid="984464490017124" type="Button">
-                                            <param id="0" name="Unique ID">38</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="-15" name="Set visible" sid="338522457121787" type="Button">
-                                            <param id="0" name="Visibility">0</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                            </sub-events>
                         </event-block>
                     </sub-events>
                 </event-block>

@@ -23,14 +23,14 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <property expanded="0" name="Margins" />
         <property expanded="1" name="Effects" />
     </properties>
-    <active-layer name="Settings Text" />
+    <active-layer name="Player Stats" />
     <layers>
         <layer locked="1" name="Video" parallax-in-editor="0" visible="1" />
         <layer locked="1" name="Buttons" parallax-in-editor="0" visible="1" />
         <layer locked="1" name="Button Text" parallax-in-editor="0" visible="1" />
         <layer locked="1" name="Title" parallax-in-editor="0" visible="1" />
-        <layer locked="1" name="Menu Background" parallax-in-editor="0" visible="0" />
-        <layer locked="1" name="Credits Text" parallax-in-editor="0" visible="1" />
+        <layer locked="1" name="Menu Background" parallax-in-editor="0" visible="1" />
+        <layer locked="0" name="Credits Text" parallax-in-editor="0" visible="1" />
         <layer locked="1" name="Settings Buttons" parallax-in-editor="0" visible="0" />
         <layer locked="1" name="Settings Text" parallax-in-editor="0" visible="0" />
         <layer locked="1" name="Settings UI" parallax-in-editor="0" visible="0" />
@@ -47,6 +47,7 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <layer locked="1" name="Server" parallax-in-editor="0" visible="0" />
         <layer locked="1" name="Messages" parallax-in-editor="0" visible="0" />
         <layer locked="1" name="XboxBackButtonRootMenu" parallax-in-editor="0" visible="0" />
+        <layer locked="1" name="Player Stats" parallax-in-editor="0" visible="0" />
         <layer locked="1" name="Developer Console" parallax-in-editor="0" visible="0" />
         <layer locked="1" name="FPS" parallax-in-editor="0" visible="0" />
     </layers>
