@@ -1,5 +1,5 @@
 ﻿{
-	"version": 1484407393,
+	"version": 1484420468,
 	"fileList": [
 		"data.js",
 		"c2runtime.js",
@@ -38,6 +38,8 @@
 		"media/rain_thunder_loop.ogg",
 		"media/menu selection click.m4a",
 		"media/menu selection click.ogg",
+		"media/snare.m4a",
+		"media/snare.ogg",
 		"media/the_freeharmonic_orchestra_-_08_-_unconquered_sun.m4a",
 		"media/the_freeharmonic_orchestra_-_08_-_unconquered_sun.ogg",
 		"media/observingthestar.m4a",
