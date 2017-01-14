@@ -4,6 +4,30 @@
     <name>GLOBAL EVENTS</name>
     <events>
         <include>Storage</include>
+        <comment>Button Animation</comment>
+        <event-block any="1" sid="870343930605803">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="932620218828055" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">Button</param>
+                </condition>
+                <condition id="17" name="On tap object" sid="184243589437671" type="Touch">
+                    <param id="0" name="Object">Button</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="5" name="Set frame" sid="143871116253542" type="Button">
+                    <param id="0" name="Frame number">1</param>
+                </action>
+                <action id="-16" name="Wait" sid="293692295971369" type="System">
+                    <param id="0" name="Seconds">0.2</param>
+                </action>
+                <action id="5" name="Set frame" sid="744834380436043" type="Button">
+                    <param id="0" name="Frame number">0</param>
+                </action>
+            </actions>
+        </event-block>
         <event-block sid="604550903617873">
             <conditions>
                 <condition id="-2" name="On start of layout" sid="709025059053409" type="System" />
@@ -86,6 +110,26 @@
                         <action id="-4" name="Set layer visible" sid="420582015551554" type="System">
                             <param id="0" name="Layer">&quot;FPS&quot;</param>
                             <param id="1" name="Visibility">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="156777702173958">
+                    <conditions>
+                        <condition id="10" name="Is fullscreen" sid="589507590455417" type="Browser" />
+                    </conditions>
+                    <actions>
+                        <action id="6" name="Set checked" sid="772733585300568" type="FullscreenCheckbox">
+                            <param id="0" name="State">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="228346453695717">
+                    <conditions>
+                        <condition id="10" inverted="1" name="Is fullscreen" sid="938742710908878" type="Browser" />
+                    </conditions>
+                    <actions>
+                        <action id="6" name="Set checked" sid="310878372263793" type="FullscreenCheckbox">
+                            <param id="0" name="State">0</param>
                         </action>
                     </actions>
                 </event-block>
@@ -531,6 +575,21 @@
                             </conditions>
                             <actions />
                             <sub-events>
+                                <event-block sid="373995673797943">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="294435101057355" type="System">
+                                            <param id="0" name="First value">find(CheatBox.Text, &quot; SERVER &quot;)</param>
+                                            <param id="1" name="Comparison">1</param>
+                                            <param id="2" name="Second value">-1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="786809700934023" type="System">
+                                            <param id="0" name="Variable">SERVER</param>
+                                            <param id="1" name="Value">replace(CheatBox.Text, &quot;set SERVER &quot;, &quot;&quot;)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
                                 <event-block sid="368906435026260">
                                     <conditions>
                                         <condition id="-8" name="Compare two values" sid="763278235825811" type="System">
@@ -850,6 +909,17 @@
                 </action>
                 <action id="0" name="Set text" sid="174361765532184" type="NetworkUsageText">
                     <param id="0" name="Text">&quot;Network S: &quot;&amp;Multiplayer.StatOutboundBandwidth&amp;&quot;kbps&quot;&amp;&quot; R: &quot;&amp;Multiplayer.StatInboundBandwidth&amp;&quot;kbps&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="519460569528860">
+            <conditions>
+                <condition id="1" name="On text changed" sid="234247507982032" type="RoomTextbox" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="409470485303398" type="System">
+                    <param id="0" name="Variable">ROOM</param>
+                    <param id="1" name="Value">RoomTextbox.Text</param>
                 </action>
             </actions>
         </event-block>

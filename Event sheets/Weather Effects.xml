@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Weather Effects</name>
+    <events>
+        <event-block sid="545038168017050">
+            <conditions>
+                <condition id="-15" name="Is group active" sid="724535841163260" type="System">
+                    <param id="0" name="Group name">&quot;RAIN&quot;</param>
+                </condition>
+                <condition id="-4" name="Trigger once while true" sid="298165615298940" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="754073310036350" type="Audio">
+                    <param id="0" name="Audio file">rain_thunder_loop</param>
+                    <param id="2" name="Loop">1</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;Rain&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="600722937304003">
+            <conditions>
+                <condition id="-15" inverted="1" name="Is group active" sid="543916706860109" type="System">
+                    <param id="0" name="Group name">&quot;RAIN&quot;</param>
+                </condition>
+                <condition id="-4" name="Trigger once while true" sid="835673034579160" type="System" />
+            </conditions>
+            <actions>
+                <action id="6" name="Stop" sid="871039867367691" type="Audio">
+                    <param id="0" name="Tag">&quot;Rain&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="" inactive="1" sid="522300199181598" title="RAIN">
+            <sub-events>
+                <variable constant="0" name="ChangeDirectionSpeed" sid="688654018304530" static="0" type="number">1</variable>
+                <event-block sid="416232389332052">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="768434118599666" type="System">
+                            <param id="0" name="Interval (seconds)">0.01</param>
+                        </condition>
+                        <condition id="-8" name="Compare two values" sid="701568748596313" type="System">
+                            <param id="0" name="First value">RainEffects.Count</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Second value">500</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="360800194359703" type="System">
+                            <param id="0" name="Object to create">RainEffects</param>
+                            <param id="1" name="Layer">&quot;Weather&quot;</param>
+                            <param id="2" name="X">random(RainSpawner.X-(RainSpawner.Width/2), RainSpawner.X-(RainSpawner.Width/2)+RainSpawner.Width)</param>
+                            <param id="3" name="Y">0</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block disabled="1" sid="837706408411222">
+                            <conditions>
+                                <condition id="-6" name="Every X seconds" sid="649103826764734" type="System">
+                                    <param id="0" name="Interval (seconds)">ChangeDirectionSpeed</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-8" name="Set angle" sid="860342979208954" type="RainEffects">
+                                    <param id="0" name="Angle">random(45, 135)</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="801852758038941" type="System">
+                                    <param id="0" name="Variable">ChangeDirectionSpeed</param>
+                                    <param id="1" name="Value">random(1,2)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="218915788587799">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="948245197468132" type="System">
+                            <param id="0" name="Interval (seconds)">0.02</param>
+                        </condition>
+                        <condition id="-8" name="Compare two values" sid="318727641967611" type="System">
+                            <param id="0" name="First value">Splash.Count</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Second value">100</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="149800721961676" type="System">
+                            <param id="0" name="Object to create">Splash</param>
+                            <param id="1" name="Layer">&quot;Weather&quot;</param>
+                            <param id="2" name="X">random(Player.X-(Player.Width/2), Player.X-(Player.Width/2)+Player.Width)</param>
+                            <param id="3" name="Y">random(Player.Y-(Player.Height/2), Player.Y-(Player.Height/2)+Player.Height)</param>
+                        </action>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="993822730449097" type="Splash">
+                            <param id="0" name="Pin to">Player</param>
+                            <param id="1" name="Mode">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="204752839049582">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="690054515876047" type="System">
+                    <param id="0" name="Interval (seconds)">dt</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="904064134559179">
+                    <conditions>
+                        <condition id="-11" name="For Each" sid="858229384207024" type="System">
+                            <param id="0" name="Object">Splash</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-11" name="Add to" sid="737547771752968" type="Splash">
+                            <param id="0" name="Instance variable">mytime</param>
+                            <param id="1" name="Value">dt</param>
+                        </action>
+                        <action id="-7" name="Set size" sid="134316805901447" type="Splash">
+                            <param id="0" name="Width">lerp(Self.startsize, Self.size, Self.mytime * 2)</param>
+                            <param id="1" name="Height">lerp(Self.startsize, Self.size, Self.mytime * 2)</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="558531376519295">
+            <conditions>
+                <condition id="-11" name="For Each" sid="992890442686913" type="System">
+                    <param id="0" name="Object">RainEffects</param>
+                </condition>
+                <condition id="-1" name="Every tick" sid="535289889159148" type="System" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="927019254296448">
+                    <conditions>
+                        <condition id="-2" name="Compare Y" sid="994256704329957" type="RainEffects">
+                            <param id="0" name="Comparison">5</param>
+                            <param id="1" name="Y co-ordinate">LayoutHeight</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="226128127004067" type="RainEffects" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>

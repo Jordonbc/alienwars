@@ -10,9 +10,15 @@
                 <condition id="-2" name="On start of layout" sid="275317880975784" type="System" />
             </conditions>
             <actions>
-                <action id="5" name="Set web font" sid="128422045981873" type="TitleScreenTitleText">
-                    <param id="0" name="Family name">&quot;Munro&quot;</param>
-                    <param id="1" name="CSS URL">&quot;munro.css&quot;</param>
+                <action id="33" name="Stop all" sid="675889580926980" type="Audio" />
+                <action id="-16" name="Wait" sid="158667440624823" type="System">
+                    <param id="0" name="Seconds">0</param>
+                </action>
+                <action id="0" name="Play" sid="174543695914200" type="Audio">
+                    <param id="0" name="Audio file">ObservingTheStar</param>
+                    <param id="2" name="Loop">1</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;TitleMusic&quot;</param>
                 </action>
                 <action id="0" name="Call function" sid="223989526964060" type="Function">
                     <param id="0" name="Name">&quot;Refresh UpscaleQuality&quot;</param>
@@ -29,6 +35,33 @@
                     <param id="0" name="X">LayoutWidth/2</param>
                     <param id="1" name="Y">LayoutHeight/2</param>
                 </action>
+                <action id="-4" name="Set layer visible" sid="683996836642911" type="System">
+                    <param id="0" name="Layer">&quot;Game Intro&quot;</param>
+                    <param id="1" name="Visibility">1</param>
+                </action>
+                <action id="5" name="Set web font" sid="128422045981873" type="TitleScreenTitleText">
+                    <param id="0" name="Family name">&quot;Munro&quot;</param>
+                    <param id="1" name="CSS URL">&quot;munro.css&quot;</param>
+                </action>
+                <action behavior="Fade" id="1" name="Start fade" sid="576255028461958" type="TitleScreenTitleText" />
+                <action id="-16" name="Wait" sid="844191410313833" type="System">
+                    <param id="0" name="Seconds">6</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="507186148000021" type="System">
+                    <param id="0" name="Layer">&quot;C2 Credits&quot;</param>
+                    <param id="1" name="Visibility">1</param>
+                </action>
+                <action id="5" name="Set web font" sid="350723877637044" type="TitleScreenC2Text">
+                    <param id="0" name="Family name">&quot;Munro&quot;</param>
+                    <param id="1" name="CSS URL">&quot;munro.css&quot;</param>
+                </action>
+                <action behavior="Fade" id="1" name="Start fade" sid="322921116778595" type="TitleScreenC2Text" />
+                <action id="-16" name="Wait" sid="198112155863497" type="System">
+                    <param id="0" name="Seconds">6</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="217804920888318" type="System">
+                    <param id="0" name="Layout">Tutorial</param>
+                </action>
             </actions>
         </event-block>
         <event-block sid="702811818780354">
@@ -43,12 +76,15 @@
         </event-block>
         <event-block any="1" sid="764020246481728">
             <conditions />
+            <actions />
+        </event-block>
+        <event-block disabled="1" sid="948945636884674">
+            <conditions>
+                <condition id="-3" name="On end of layout" sid="857238738015634" type="System" />
+            </conditions>
             <actions>
-                <action id="-16" name="Wait" sid="771791727693638" type="System">
-                    <param id="0" name="Seconds">4</param>
-                </action>
-                <action id="-2" name="Go to layout" sid="508649665013920" type="System">
-                    <param id="0" name="Layout">Main Menu</param>
+                <action id="6" name="Stop" sid="235197345940105" type="Audio">
+                    <param id="0" name="Tag">&quot;TitleMusic&quot;</param>
                 </action>
             </actions>
         </event-block>

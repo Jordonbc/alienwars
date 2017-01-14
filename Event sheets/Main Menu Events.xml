@@ -1190,5 +1190,61 @@
                 </action>
             </actions>
         </event-block>
+        <event-block any="1" sid="966901450349959">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="464564499110632" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">VersionText</param>
+                </condition>
+                <condition id="17" name="On tap object" sid="237162652776959" type="Touch">
+                    <param id="0" name="Object">VersionText</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="969287731194821">
+                    <conditions>
+                        <condition id="-9" name="Layer is visible" sid="492901238597058" type="System">
+                            <param id="0" name="Layer">&quot;Settings UI&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="8" name="Open URL in new window" sid="518406126253866" type="Browser">
+                            <param id="0" name="URL">&quot;https://github.com/Jordonbc/alienwars/commits/gh-pages&quot;</param>
+                            <param id="1" name="Tag">&quot;NewWindow&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="368780481780605">
+            <conditions>
+                <condition id="-3" name="On end of layout" sid="961568412789554" type="System" />
+            </conditions>
+            <actions>
+                <action id="33" name="Stop all" sid="999991441841410" type="Audio" />
+                <action id="0" name="Call function" sid="794446217359817" type="Function">
+                    <param id="0" name="Name">&quot;HideAll&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+                <action id="0" name="Call function" sid="861405042369346" type="Function">
+                    <param id="0" name="Name">&quot;Reset All Buttons&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+                <action id="0" name="Call function" sid="487906827339185" type="Function">
+                    <param id="0" name="Name">&quot;Disable Singleplayer Blur&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+                <action id="0" name="Call function" sid="322379764803127" type="Function">
+                    <param id="0" name="Name">&quot;Hide Multiplayer&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+                <action id="0" name="Call function" sid="827742092085583" type="Function">
+                    <param id="0" name="Name">&quot;Hide Singleplayer&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+            </actions>
+        </event-block>
     </events>
 </c2eventsheet>

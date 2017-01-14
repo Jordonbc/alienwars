@@ -519,6 +519,10 @@
                     <param id="0" name="Layer">&quot;Play&quot;</param>
                     <param id="1" name="Visibility">0</param>
                 </action>
+                <action id="-4" name="Set layer visible" sid="997063526269812" type="System">
+                    <param id="0" name="Layer">&quot;Server&quot;</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
                 <action id="-7" name="Set size" sid="939877252110089" type="ButtonText">
                     <param id="0" name="Width">Button.Width</param>
                     <param id="1" name="Height">Button.Height</param>
@@ -607,6 +611,10 @@
                 </action>
                 <action id="3" name="Set value" sid="454000472928680" type="MusicSoundBar">
                     <param id="0" name="Value">int(Audio.Volume(&quot;MainMenuMusic&quot;))</param>
+                </action>
+                <action id="5" name="Set web font" sid="511551976188214" type="SettingsMenuTitleText">
+                    <param id="0" name="Family name">&quot;Dekko&quot;</param>
+                    <param id="1" name="CSS URL">&quot;dekko.css&quot;</param>
                 </action>
             </actions>
             <sub-events>
@@ -767,6 +775,27 @@
                 </event-block>
             </sub-events>
         </event-block>
+        <event-block sid="925332644634442">
+            <conditions>
+                <condition id="0" name="On function" sid="992183967413295" type="Function">
+                    <param id="0" name="Name">&quot;Show Server&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-4" name="Set layer visible" sid="390059208838217" type="System">
+                    <param id="0" name="Layer">&quot;Title&quot;</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="457966504957446" type="System">
+                    <param id="0" name="Layer">&quot;Menu Background&quot;</param>
+                    <param id="1" name="Visibility">1</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="468439485966409" type="System">
+                    <param id="0" name="Layer">&quot;Server&quot;</param>
+                    <param id="1" name="Visibility">1</param>
+                </action>
+            </actions>
+        </event-block>
         <comment>Show the credits menu</comment>
         <event-block sid="824628762119117">
             <conditions>
@@ -786,6 +815,10 @@
                 <action id="-4" name="Set layer visible" sid="754149876823976" type="System">
                     <param id="0" name="Layer">&quot;Credits Text&quot;</param>
                     <param id="1" name="Visibility">1</param>
+                </action>
+                <action id="5" name="Set web font" sid="193067406310306" type="CreditsTitleText">
+                    <param id="0" name="Family name">&quot;Dekko&quot;</param>
+                    <param id="1" name="CSS URL">&quot;dekko.css&quot;</param>
                 </action>
             </actions>
         </event-block>
@@ -808,6 +841,10 @@
                 <action id="-4" name="Set layer visible" sid="228548588532800" type="System">
                     <param id="0" name="Layer">&quot;Play&quot;</param>
                     <param id="1" name="Visibility">1</param>
+                </action>
+                <action id="5" name="Set web font" sid="379737917820759" type="PlayTitleText">
+                    <param id="0" name="Family name">&quot;Dekko&quot;</param>
+                    <param id="1" name="CSS URL">&quot;dekko.css&quot;</param>
                 </action>
             </actions>
         </event-block>
@@ -917,6 +954,55 @@
                     <param id="1" name="Visibility">1</param>
                 </action>
             </actions>
+            <sub-events>
+                <event-block sid="959243047549406">
+                    <conditions>
+                        <condition id="-18" name="Is in preview" sid="476782246556079" type="System" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="875025631331259">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="130422896682482" type="Button">
+                                    <param id="0" name="Unique ID">53</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-27" name="Set effect enabled" sid="447296265270090" type="Button">
+                                    <param id="0" name="Mode">0</param>
+                                    <param id="1" name="Effect">&quot;DISABLED&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="757139173113565">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="785207015328687" type="Button">
+                                    <param id="0" name="Unique ID">52</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-27" name="Set effect enabled" sid="415372642354386" type="Button">
+                                    <param id="0" name="Mode">0</param>
+                                    <param id="1" name="Effect">&quot;DISABLED&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="325509129181925">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="194197114258719" type="Button">
+                                    <param id="0" name="Unique ID">51</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-27" name="Set effect enabled" sid="502899589866138" type="Button">
+                                    <param id="0" name="Mode">0</param>
+                                    <param id="1" name="Effect">&quot;DISABLED&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
         </event-block>
         <event-block sid="484355917736138">
             <conditions>
@@ -1070,6 +1156,13 @@
                 </action>
                 <action id="0" name="Set text" sid="175719417288857" type="MPUsernameBox">
                     <param id="0" name="Text">MP_USERNAME</param>
+                </action>
+                <action id="-9" name="Set value" sid="190619465847688" type="System">
+                    <param id="0" name="Variable">ROOM</param>
+                    <param id="1" name="Value">&quot;ROOM1&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="300528208663364" type="RoomTextbox">
+                    <param id="0" name="Text">&quot;ROOM1&quot;</param>
                 </action>
             </actions>
         </event-block>
@@ -1430,6 +1523,53 @@
                             </actions>
                         </event-block>
                     </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="913206970317859">
+            <conditions>
+                <condition id="0" name="On function" sid="936820506203663" type="Function">
+                    <param id="0" name="Name">&quot;ShuffleArray&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <variable constant="0" name="FirstItem" sid="616295874782118" static="0" type="number">0</variable>
+                <variable constant="0" name="RandomIndex" sid="234820075995917" static="0" type="number">0</variable>
+                <variable constant="0" name="MovedItem" sid="980326805476209" static="0" type="number">0</variable>
+                <event-block sid="285419204497780">
+                    <conditions>
+                        <condition id="-14" name="Pick by unique ID" sid="557800835861953" type="Arrays">
+                            <param id="0" name="Unique ID">Function.Param(0)</param>
+                        </condition>
+                        <condition id="-10" name="For" sid="880118277460039" type="System">
+                            <param id="0" name="Name">&quot;&quot;</param>
+                            <param id="1" name="Start index">0</param>
+                            <param id="2" name="End index">Arrays.Width</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="355702367057501" type="System">
+                            <param id="0" name="Variable">RandomIndex</param>
+                            <param id="1" name="Value">floor(random(0, Arrays.Width))</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="167258288084416" type="System">
+                            <param id="0" name="Variable">FirstItem</param>
+                            <param id="1" name="Value">Arrays.At(loopindex)</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="834266033442592" type="System">
+                            <param id="0" name="Variable">MovedItem</param>
+                            <param id="1" name="Value">Arrays.At(RandomIndex)</param>
+                        </action>
+                        <action id="2" name="Set at X" sid="482507918220442" type="Arrays">
+                            <param id="0" name="X">loopindex</param>
+                            <param id="1" name="Value">MovedItem</param>
+                        </action>
+                        <action id="2" name="Set at X" sid="565837347025585" type="Arrays">
+                            <param id="0" name="X">RandomIndex</param>
+                            <param id="1" name="Value">FirstItem</param>
+                        </action>
+                    </actions>
                 </event-block>
             </sub-events>
         </event-block>

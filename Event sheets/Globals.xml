@@ -5,7 +5,7 @@
     <events>
         <variable constant="0" name="ShowFPS" sid="644192668404062" static="0" type="number">0</variable>
         <variable comment="Room to be joined" constant="0" name="ROOM" sid="652315021777226" static="0" type="text">ROOM1</variable>
-        <variable constant="0" name="NextLayout" sid="517908477827608" static="0" type="text">Title Screen</variable>
+        <variable constant="0" name="NextLayout" sid="517908477827608" static="0" type="text">Main Menu</variable>
         <variable constant="0" name="PixelRounding" sid="608519011798753" static="0" type="number">0</variable>
         <variable constant="0" name="MPLevel" sid="942914330005684" static="0" type="number">1</variable>
         <variable comment="wss://multiplayer.scirra.com" constant="0" name="MPSignalingServer" sid="481241356820899" static="0" type="text">wss://multiplayer.scirra.com</variable>

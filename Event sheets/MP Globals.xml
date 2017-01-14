@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>MP Globals</name>
     <events>
+        <variable comment="Act like a server" constant="0" name="SERVER" sid="668717742619106" static="0" type="number">0</variable>
         <variable comment="Name of the game" constant="1" name="GAMENAME" sid="342910949414256" static="0" type="text">Jordonbc-AlienWars</variable>
         <variable comment="Instance of the game" constant="0" name="INSTANCE" sid="788638040464288" static="0" type="text">DEFAULT</variable>
         <variable constant="0" name="USERNAME" sid="697362101103243" static="0" type="text">TEST</variable>

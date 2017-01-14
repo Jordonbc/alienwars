@@ -4,8 +4,8 @@
     <sid>186871997165424</sid>
     <event-sheet>Loading Events</event-sheet>
     <size>
-        <width>1280</width>
-        <height>720</height>
+        <width>1920</width>
+        <height>1080</height>
     </size>
     <margins>
         <horizontal>500</horizontal>
@@ -29,6 +29,28 @@
             <blend-mode>0</blend-mode>
             <effect-fallback>0</effect-fallback>
             <instances>
+                <instance type="AlienWarsCreditsLogoWide" uid="94">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>960</x>
+                        <y>540</y>
+                        <z>0</z>
+                        <width>1920</width>
+                        <height>1080</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
                 <instance type="LoadingVideo" uid="25">
                     <properties>
                         <webm-source></webm-source>
@@ -44,8 +66,8 @@
                         <x>0</x>
                         <y>0</y>
                         <z>0</z>
-                        <width>1280</width>
-                        <height>720</height>
+                        <width>1920</width>
+                        <height>1080</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
                         <hotspotY>0</hotspotY>
@@ -75,7 +97,7 @@
                     <properties>
                         <text>LOADING</text>
                         <initial-visibility>Visible</initial-visibility>
-                        <font>Arial,-96,400,0</font>
+                        <font>Arial,-133,400,0</font>
                         <color>0,255,255</color>
                         <horizontal-alignment>Center</horizontal-alignment>
                         <vertical-alignment>Center</vertical-alignment>
@@ -98,11 +120,11 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>641</x>
-                        <y>360</y>
+                        <x>954</x>
+                        <y>985</y>
                         <z>0</z>
-                        <width>1280</width>
-                        <height>720</height>
+                        <width>1920</width>
+                        <height>194</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
@@ -111,6 +133,42 @@
                     </world>
                 </instance>
             </instances>
+            <effects />
+        </layer>
+        <layer name="Developer Console" sid="927717167454712">
+            <initially-visible>1</initially-visible>
+            <background-color>255,255,255</background-color>
+            <transparent>1</transparent>
+            <parallax>
+                <x>1</x>
+                <y>1</y>
+            </parallax>
+            <zoom-rate>1</zoom-rate>
+            <opacity>1</opacity>
+            <force-own-texture>0</force-own-texture>
+            <global>0</global>
+            <use-render-cells>0</use-render-cells>
+            <blend-mode>0</blend-mode>
+            <effect-fallback>0</effect-fallback>
+            <instances />
+            <effects />
+        </layer>
+        <layer name="FPS" sid="580645306573687">
+            <initially-visible>1</initially-visible>
+            <background-color>255,255,255</background-color>
+            <transparent>1</transparent>
+            <parallax>
+                <x>1</x>
+                <y>1</y>
+            </parallax>
+            <zoom-rate>1</zoom-rate>
+            <opacity>1</opacity>
+            <force-own-texture>0</force-own-texture>
+            <global>0</global>
+            <use-render-cells>0</use-render-cells>
+            <blend-mode>0</blend-mode>
+            <effect-fallback>0</effect-fallback>
+            <instances />
             <effects />
         </layer>
     </layers>

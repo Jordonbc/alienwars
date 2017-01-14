@@ -24,6 +24,9 @@
                 <action id="5" name="Check item exists" sid="673109659485472" type="LocalStorage">
                     <param id="0" name="Key">&quot;MP USERNAME&quot;</param>
                 </action>
+                <action id="5" name="Check item exists" sid="721207762510189" type="LocalStorage">
+                    <param id="0" name="Key">&quot;MP Level&quot;</param>
+                </action>
             </actions>
         </event-block>
         <event-group description="" sid="318209688799877" title="Exists">
@@ -112,6 +115,22 @@
                         </action>
                     </actions>
                 </event-block>
+                <event-block sid="293822340488503">
+                    <conditions>
+                        <condition id="9" name="On item exists" sid="656522269390513" type="LocalStorage">
+                            <param id="0" name="Key">&quot;MP Level&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="1" name="Get item" sid="932908538620678" type="LocalStorage">
+                            <param id="0" name="Key">&quot;MP Level&quot;</param>
+                        </action>
+                        <action id="14" name="Log" sid="169706238003953" type="Browser">
+                            <param id="0" name="Type">0</param>
+                            <param id="1" name="Message">&quot;Getting Local Storage MP Level&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
             </sub-events>
         </event-group>
         <event-group description="" sid="892538156247705" title="Missing">
@@ -129,7 +148,7 @@
                             <param id="1" name="Value">Audio.MasterVolume</param>
                         </action>
                         <action id="14" name="Log" sid="104441736107537" type="Browser">
-                            <param id="0" name="Type">0</param>
+                            <param id="0" name="Type">1</param>
                             <param id="1" name="Message">&quot;Setting Local Storage MasterSound to: &quot;&amp;LocalStorage.ItemValue</param>
                         </action>
                     </actions>
@@ -147,7 +166,7 @@
                             <param id="1" name="Value">Audio.Volume(&quot;MainMenuMusic&quot;)</param>
                         </action>
                         <action id="14" name="Log" sid="554686934930669" type="Browser">
-                            <param id="0" name="Type">0</param>
+                            <param id="0" name="Type">1</param>
                             <param id="1" name="Message">&quot;Setting Local Storage MusicSound to: &quot;&amp;LocalStorage.ItemValue</param>
                         </action>
                     </actions>
@@ -165,7 +184,7 @@
                             <param id="1" name="Value">uppercase(Resolution)</param>
                         </action>
                         <action id="14" name="Log" sid="853451183711908" type="Browser">
-                            <param id="0" name="Type">0</param>
+                            <param id="0" name="Type">1</param>
                             <param id="1" name="Message">&quot;Setting Local Storage Resolution to: &quot;&amp;LocalStorage.ItemValue</param>
                         </action>
                     </actions>
@@ -183,7 +202,7 @@
                             <param id="1" name="Value">uppercase(VideoQuality)</param>
                         </action>
                         <action id="14" name="Log" sid="792584948841992" type="Browser">
-                            <param id="0" name="Type">0</param>
+                            <param id="0" name="Type">1</param>
                             <param id="1" name="Message">&quot;Setting Local Storage VideoQuality to: &quot;&amp;LocalStorage.ItemValue</param>
                         </action>
                     </actions>
@@ -200,8 +219,25 @@
                             <param id="1" name="Value">&quot;&quot;</param>
                         </action>
                         <action id="14" name="Log" sid="629102495861653" type="Browser">
-                            <param id="0" name="Type">0</param>
+                            <param id="0" name="Type">1</param>
                             <param id="1" name="Message">&quot;Setting Local Storage MP USERNAME to: &quot;&amp;LocalStorage.ItemValue</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="847503404674110">
+                    <conditions>
+                        <condition id="10" name="On item missing" sid="318050218235287" type="LocalStorage">
+                            <param id="0" name="Key">&quot;MP Level&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set item" sid="596125378621026" type="LocalStorage">
+                            <param id="0" name="Key">&quot;MP Level&quot;</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="14" name="Log" sid="445640078054449" type="Browser">
+                            <param id="0" name="Type">1</param>
+                            <param id="1" name="Message">&quot;Setting Local Storage MP Level: &quot;&amp;LocalStorage.ItemValue</param>
                         </action>
                     </actions>
                 </event-block>
@@ -331,6 +367,23 @@
                         <action id="14" name="Log" sid="989052115217839" type="Browser">
                             <param id="0" name="Type">0</param>
                             <param id="1" name="Message">&quot;Setting MP USERNAME to: &quot;&amp;LocalStorage.ItemValue</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="383533970125459">
+                    <conditions>
+                        <condition id="1" name="On item get" sid="259521496599109" type="LocalStorage">
+                            <param id="0" name="Key">&quot;MP Level&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="471192839304725" type="System">
+                            <param id="0" name="Variable">MPLevel</param>
+                            <param id="1" name="Value">LocalStorage.ItemValue</param>
+                        </action>
+                        <action id="14" name="Log" sid="392554726230227" type="Browser">
+                            <param id="0" name="Type">0</param>
+                            <param id="1" name="Message">&quot;Setting MPLevel to: &quot;&amp;LocalStorage.ItemValue</param>
                         </action>
                     </actions>
                 </event-block>

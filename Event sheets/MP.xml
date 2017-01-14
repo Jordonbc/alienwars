@@ -108,6 +108,14 @@
                         <condition id="-2" name="On start of layout" sid="178380548748568" type="System" />
                     </conditions>
                     <actions>
+                        <action id="-10" name="Set value" sid="135164216358169" type="MPPlayer">
+                            <param id="0" name="Instance variable">Level</param>
+                            <param id="1" name="Value">MPLevel</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="715717305159401" type="MPPlayer">
+                            <param id="0" name="Instance variable">Damage</param>
+                            <param id="1" name="Value">int(MPPlayer.Level*0.75)</param>
+                        </action>
                         <action id="-30" name="Set layer effect enabled" sid="665024600166238" type="System">
                             <param id="0" name="Layer">&quot;Background&quot;</param>
                             <param id="1" name="Mode">0</param>
@@ -118,9 +126,17 @@
                             <param id="1" name="Mode">0</param>
                             <param id="2" name="Effect">&quot;BlurVertical&quot;</param>
                         </action>
-                        <action id="-18" name="Set layer opacity" sid="111117543019368" type="System">
-                            <param id="0" name="Layer">&quot;Log&quot;</param>
-                            <param id="1" name="Opacity">50</param>
+                        <action id="7" name="Set CSS style" sid="424547097138910" type="StatusBox">
+                            <param id="0" name="Property name">&quot;opacity&quot;</param>
+                            <param id="1" name="Value">&quot;0.5&quot;</param>
+                        </action>
+                        <action id="7" name="Set CSS style" sid="663700387592188" type="StatusBox">
+                            <param id="0" name="Property name">&quot;border&quot;</param>
+                            <param id="1" name="Value">&quot;0&quot;</param>
+                        </action>
+                        <action id="7" name="Set CSS style" sid="832285162823783" type="StatusBox">
+                            <param id="0" name="Property name">&quot;outline&quot;</param>
+                            <param id="1" name="Value">&quot;none&quot;</param>
                         </action>
                         <action id="14" name="Log" sid="152142253564043" type="Browser">
                             <param id="0" name="Type">0</param>
@@ -171,7 +187,7 @@
                             <param id="1" name="Precision">2</param>
                             <param id="2" name="Interpolation">0</param>
                         </action>
-                        <action id="15" name="Add client input value" sid="447685091983531" type="Multiplayer">
+                        <action disabled="1" id="15" name="Add client input value" sid="447685091983531" type="Multiplayer">
                             <param id="0" name="Tag">&quot;THRUSTERS&quot;</param>
                             <param id="1" name="Precision">3</param>
                             <param id="2" name="Interpolation">0</param>
@@ -188,105 +204,119 @@
                             <param id="1" name="Message">&quot;Syncing player data&quot;</param>
                         </action>
                         <action id="11" name="Sync object" sid="171463173513062" type="Multiplayer">
-                            <param id="0" name="Object">Player</param>
+                            <param id="0" name="Object">MPPlayer</param>
                             <param id="1" name="Data">1</param>
                             <param id="2" name="Precision">2</param>
                             <param id="3" name="Bandwidth">0</param>
                         </action>
                         <action id="12" name="Sync instance variable" sid="403838666141185" type="Multiplayer">
-                            <param id="0" name="Object">Player</param>
-                            <param id="1" name="Instance variable">Player|LookX</param>
+                            <param id="0" name="Object">MPPlayer</param>
+                            <param id="1" name="Instance variable">MPPlayer|LookX</param>
                             <param id="2" name="Precision">1</param>
                             <param id="3" name="Interpolation">0</param>
                             <param id="4" name="Client value tag">&quot;LOOKX&quot;</param>
                         </action>
                         <action id="12" name="Sync instance variable" sid="650744089527595" type="Multiplayer">
-                            <param id="0" name="Object">Player</param>
-                            <param id="1" name="Instance variable">Player|LookY</param>
+                            <param id="0" name="Object">MPPlayer</param>
+                            <param id="1" name="Instance variable">MPPlayer|LookY</param>
                             <param id="2" name="Precision">1</param>
                             <param id="3" name="Interpolation">0</param>
                             <param id="4" name="Client value tag">&quot;LOOKY&quot;</param>
                         </action>
                         <action id="12" name="Sync instance variable" sid="842653176328405" type="Multiplayer">
-                            <param id="0" name="Object">Player</param>
-                            <param id="1" name="Instance variable">Player|Inputs</param>
+                            <param id="0" name="Object">MPPlayer</param>
+                            <param id="1" name="Instance variable">MPPlayer|Inputs</param>
                             <param id="2" name="Precision">3</param>
                             <param id="3" name="Interpolation">0</param>
                             <param id="4" name="Client value tag">&quot;INPUTS&quot;</param>
                         </action>
                         <action id="12" name="Sync instance variable" sid="552941137351381" type="Multiplayer">
-                            <param id="0" name="Object">Player</param>
-                            <param id="1" name="Instance variable">Player|Health</param>
+                            <param id="0" name="Object">MPPlayer</param>
+                            <param id="1" name="Instance variable">MPPlayer|Health</param>
                             <param id="2" name="Precision">2</param>
                             <param id="3" name="Interpolation">0</param>
                             <param id="4" name="Client value tag">&quot;&quot;</param>
                         </action>
                         <action id="12" name="Sync instance variable" sid="360343213777500" type="Multiplayer">
-                            <param id="0" name="Object">Player</param>
-                            <param id="1" name="Instance variable">Player|Kills</param>
+                            <param id="0" name="Object">MPPlayer</param>
+                            <param id="1" name="Instance variable">MPPlayer|Kills</param>
                             <param id="2" name="Precision">3</param>
                             <param id="3" name="Interpolation">0</param>
                             <param id="4" name="Client value tag">&quot;&quot;</param>
                         </action>
                         <action id="12" name="Sync instance variable" sid="161985667420430" type="Multiplayer">
-                            <param id="0" name="Object">Player</param>
-                            <param id="1" name="Instance variable">Player|TotalKills</param>
+                            <param id="0" name="Object">MPPlayer</param>
+                            <param id="1" name="Instance variable">MPPlayer|TotalKills</param>
                             <param id="2" name="Precision">3</param>
                             <param id="3" name="Interpolation">1</param>
                             <param id="4" name="Client value tag">&quot;&quot;</param>
                         </action>
                         <action id="12" name="Sync instance variable" sid="899440585047775" type="Multiplayer">
-                            <param id="0" name="Object">Player</param>
-                            <param id="1" name="Instance variable">Player|Deaths</param>
+                            <param id="0" name="Object">MPPlayer</param>
+                            <param id="1" name="Instance variable">MPPlayer|Deaths</param>
                             <param id="2" name="Precision">3</param>
                             <param id="3" name="Interpolation">0</param>
                             <param id="4" name="Client value tag">&quot;&quot;</param>
                         </action>
                         <action id="12" name="Sync instance variable" sid="876191163540160" type="Multiplayer">
-                            <param id="0" name="Object">Player</param>
-                            <param id="1" name="Instance variable">Player|LastHitByID</param>
+                            <param id="0" name="Object">MPPlayer</param>
+                            <param id="1" name="Instance variable">MPPlayer|LastHitByID</param>
                             <param id="2" name="Precision">3</param>
                             <param id="3" name="Interpolation">0</param>
                             <param id="4" name="Client value tag">&quot;&quot;</param>
                         </action>
                         <action id="12" name="Sync instance variable" sid="338901216724645" type="Multiplayer">
-                            <param id="0" name="Object">Player</param>
-                            <param id="1" name="Instance variable">Player|Hit</param>
+                            <param id="0" name="Object">MPPlayer</param>
+                            <param id="1" name="Instance variable">MPPlayer|Hit</param>
                             <param id="2" name="Precision">3</param>
                             <param id="3" name="Interpolation">1</param>
                             <param id="4" name="Client value tag">&quot;&quot;</param>
                         </action>
                         <action id="12" name="Sync instance variable" sid="292850108536766" type="Multiplayer">
-                            <param id="0" name="Object">Player</param>
-                            <param id="1" name="Instance variable">Player|ThrusterOn</param>
+                            <param id="0" name="Object">MPPlayer</param>
+                            <param id="1" name="Instance variable">MPPlayer|ThrusterOn</param>
                             <param id="2" name="Precision">3</param>
                             <param id="3" name="Interpolation">0</param>
                             <param id="4" name="Client value tag">&quot;&quot;</param>
                         </action>
                         <action id="12" name="Sync instance variable" sid="537092189872879" type="Multiplayer">
-                            <param id="0" name="Object">Player</param>
-                            <param id="1" name="Instance variable">Player|IsExploding</param>
+                            <param id="0" name="Object">MPPlayer</param>
+                            <param id="1" name="Instance variable">MPPlayer|IsExploding</param>
                             <param id="2" name="Precision">3</param>
                             <param id="3" name="Interpolation">0</param>
                             <param id="4" name="Client value tag">&quot;&quot;</param>
                         </action>
                         <action id="12" name="Sync instance variable" sid="895868669947314" type="Multiplayer">
-                            <param id="0" name="Object">Player</param>
-                            <param id="1" name="Instance variable">Player|BoostTimer</param>
+                            <param id="0" name="Object">MPPlayer</param>
+                            <param id="1" name="Instance variable">MPPlayer|BoostTimer</param>
                             <param id="2" name="Precision">3</param>
                             <param id="3" name="Interpolation">0</param>
                             <param id="4" name="Client value tag">&quot;&quot;</param>
                         </action>
                         <action id="12" name="Sync instance variable" sid="399257682435412" type="Multiplayer">
-                            <param id="0" name="Object">Player</param>
-                            <param id="1" name="Instance variable">Player|BoostActive</param>
+                            <param id="0" name="Object">MPPlayer</param>
+                            <param id="1" name="Instance variable">MPPlayer|BoostActive</param>
                             <param id="2" name="Precision">3</param>
                             <param id="3" name="Interpolation">0</param>
                             <param id="4" name="Client value tag">&quot;&quot;</param>
                         </action>
                         <action id="12" name="Sync instance variable" sid="777770001355670" type="Multiplayer">
-                            <param id="0" name="Object">Player</param>
-                            <param id="1" name="Instance variable">Player|LastHitTime</param>
+                            <param id="0" name="Object">MPPlayer</param>
+                            <param id="1" name="Instance variable">MPPlayer|LastHitTime</param>
+                            <param id="2" name="Precision">3</param>
+                            <param id="3" name="Interpolation">0</param>
+                            <param id="4" name="Client value tag">&quot;&quot;</param>
+                        </action>
+                        <action id="12" name="Sync instance variable" sid="771049764435050" type="Multiplayer">
+                            <param id="0" name="Object">MPPlayer</param>
+                            <param id="1" name="Instance variable">MPPlayer|Level</param>
+                            <param id="2" name="Precision">1</param>
+                            <param id="3" name="Interpolation">0</param>
+                            <param id="4" name="Client value tag">&quot;&quot;</param>
+                        </action>
+                        <action id="12" name="Sync instance variable" sid="369463652424557" type="Multiplayer">
+                            <param id="0" name="Object">MPPlayer</param>
+                            <param id="1" name="Instance variable">MPPlayer|XP</param>
                             <param id="2" name="Precision">3</param>
                             <param id="3" name="Interpolation">0</param>
                             <param id="4" name="Client value tag">&quot;&quot;</param>
@@ -460,15 +490,15 @@
                                     <param id="0" name="Group name">&quot;HOST&quot;</param>
                                     <param id="1" name="State">1</param>
                                 </action>
-                                <action id="-10" name="Set value" sid="615180658185131" type="Player">
+                                <action id="-10" name="Set value" sid="615180658185131" type="MPPlayer">
                                     <param id="0" name="Instance variable">MPID</param>
                                     <param id="1" name="Value">Multiplayer.MyID</param>
                                 </action>
                                 <action id="13" name="Associate object with peer" sid="798913478327203" type="Multiplayer">
-                                    <param id="0" name="Object">Player</param>
+                                    <param id="0" name="Object">MPPlayer</param>
                                     <param id="1" name="Peer ID">Multiplayer.MyID</param>
                                 </action>
-                                <action id="-3" name="Set position" sid="151026703336375" type="Player">
+                                <action id="-3" name="Set position" sid="151026703336375" type="MPPlayer">
                                     <param id="0" name="X">int(random(50, LayoutWidth-50))</param>
                                     <param id="1" name="Y">int(random(50, LayoutHeight-50))</param>
                                 </action>
@@ -491,7 +521,7 @@
                                     <param id="0" name="Group name">&quot;PEER&quot;</param>
                                     <param id="1" name="State">1</param>
                                 </action>
-                                <action id="-9" name="Destroy" sid="315418320215528" type="Player" />
+                                <action id="-9" name="Destroy" sid="315418320215528" type="MPPlayer" />
                             </actions>
                         </event-block>
                     </sub-events>
@@ -500,19 +530,211 @@
         </event-group>
         <event-group description="" inactive="1" sid="947317131745066" title="HOST">
             <sub-events>
+                <event-group description="" inactive="1" sid="366624986381082" title="SERVER">
+                    <sub-events>
+                        <variable constant="0" name="ScrollSpeed" sid="945075998390274" static="0" type="number">20</variable>
+                        <event-block sid="662559442036926">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="444191867868444" type="Keyboard">
+                                    <param id="0" name="Key">87 (W)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-6" name="Scroll to Y" sid="637112479425149" type="System">
+                                    <param id="0" name="Y">scrolly-ScrollSpeed</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="801453097621827">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="307076061326374" type="Keyboard">
+                                    <param id="0" name="Key">83 (S)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-6" name="Scroll to Y" sid="981166415182779" type="System">
+                                    <param id="0" name="Y">scrolly+ScrollSpeed</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="373582981959469">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="443255434776119" type="Keyboard">
+                                    <param id="0" name="Key">65 (A)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-5" name="Scroll to X" sid="527517357010727" type="System">
+                                    <param id="0" name="X">scrollx-ScrollSpeed</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="655081818456027">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="543094562215882" type="Keyboard">
+                                    <param id="0" name="Key">68 (D)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-5" name="Scroll to X" sid="245403178203660" type="System">
+                                    <param id="0" name="X">scrollx+ScrollSpeed</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="683165220367469">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="269292275855900" type="System">
+                                    <param id="0" name="Variable">SERVER</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-17" name="Set layer scale" sid="473058856231312" type="System">
+                                    <param id="0" name="Layer">&quot;Background&quot;</param>
+                                    <param id="1" name="Scale">1080/LayoutHeight</param>
+                                </action>
+                                <action id="-17" name="Set layer scale" sid="687429781481525" type="System">
+                                    <param id="0" name="Layer">&quot;Lazers&quot;</param>
+                                    <param id="1" name="Scale">1080/LayoutHeight</param>
+                                </action>
+                                <action id="-17" name="Set layer scale" sid="132210631532900" type="System">
+                                    <param id="0" name="Layer">&quot;Players&quot;</param>
+                                    <param id="1" name="Scale">1080/LayoutHeight</param>
+                                </action>
+                                <action id="-17" name="Set layer scale" sid="409515889925465" type="System">
+                                    <param id="0" name="Layer">&quot;Aiming&quot;</param>
+                                    <param id="1" name="Scale">1080/LayoutHeight</param>
+                                </action>
+                                <action id="-3" name="Set position" sid="227699791902076" type="RoomText">
+                                    <param id="0" name="X">1265</param>
+                                    <param id="1" name="Y">20</param>
+                                </action>
+                                <action id="0" name="Set text" sid="451543649283253" type="RoomText">
+                                    <param id="0" name="Text">&quot;ROOM: &apos;&quot;&amp;ROOM&amp;&quot;&apos;&quot;</param>
+                                </action>
+                                <action id="-3" name="Set position" sid="428279119187557" type="StatusBox">
+                                    <param id="0" name="X">1080</param>
+                                    <param id="1" name="Y">540</param>
+                                </action>
+                                <action id="-7" name="Set size" sid="481360820157830" type="StatusBox">
+                                    <param id="0" name="Width">840</param>
+                                    <param id="1" name="Height">540</param>
+                                </action>
+                                <action id="7" name="Set CSS style" sid="598926882161298" type="StatusBox">
+                                    <param id="0" name="Property name">&quot;opacity&quot;</param>
+                                    <param id="1" name="Value">&quot;1&quot;</param>
+                                </action>
+                                <action id="3" name="Set font size" sid="610200977552135" type="PlayerUsernameText">
+                                    <param id="0" name="Size (pt)">48</param>
+                                </action>
+                                <action id="-6" name="Set height" sid="682536442166040" type="PlayerUsernameText">
+                                    <param id="0" name="Height">200</param>
+                                </action>
+                                <action id="-5" name="Set width" sid="960818245636681" type="PlayerUsernameText">
+                                    <param id="0" name="Width">2000</param>
+                                </action>
+                                <action id="-4" name="Set layer visible" sid="235219193611813" type="System">
+                                    <param id="0" name="Layer">&quot;FPS&quot;</param>
+                                    <param id="1" name="Visibility">1</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="533046344747861" type="System">
+                                    <param id="0" name="Variable">ShowFPS</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-1" name="Set X" sid="685973633500359" type="CPUText">
+                                    <param id="0" name="X">1380</param>
+                                </action>
+                                <action id="4" name="Set font color" sid="400316289211323" type="CPUText">
+                                    <param id="0" name="Color">rgb(0,0,0)</param>
+                                </action>
+                                <action id="-1" name="Set X" sid="349457794146594" type="FPSText">
+                                    <param id="0" name="X">1380</param>
+                                </action>
+                                <action id="4" name="Set font color" sid="306647675720861" type="FPSText">
+                                    <param id="0" name="Color">rgb(0,0,0)</param>
+                                </action>
+                                <action id="-1" name="Set X" sid="225743144622882" type="NetworkUsageText">
+                                    <param id="0" name="X">1380</param>
+                                </action>
+                                <action id="4" name="Set font color" sid="506271611160136" type="NetworkUsageText">
+                                    <param id="0" name="Color">rgb(0,0,0)</param>
+                                </action>
+                                <action id="-1" name="Set X" sid="649288754047140" type="RenderText">
+                                    <param id="0" name="X">1380</param>
+                                </action>
+                                <action id="4" name="Set font color" sid="892464915114067" type="RenderText">
+                                    <param id="0" name="Color">rgb(0,0,0)</param>
+                                </action>
+                                <action id="-1" name="Set X" sid="355408213228256" type="VRAMText">
+                                    <param id="0" name="X">1380</param>
+                                </action>
+                                <action id="4" name="Set font color" sid="739763226314313" type="VRAMText">
+                                    <param id="0" name="Color">rgb(0,0,0)</param>
+                                </action>
+                                <action id="-4" name="Set layer visible" sid="568783749731746" type="System">
+                                    <param id="0" name="Layer">&quot;Touch UI&quot;</param>
+                                    <param id="1" name="Visibility">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-block sid="865631063548940">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="468164002665080" type="System">
+                            <param id="0" name="Variable">SERVER</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="181438913818596" type="MPPlayer">
+                            <param id="0" name="Instance variable">MPID</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">Multiplayer.MyID</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="352041315577247" type="MPPlayer" />
+                        <action id="-15" name="Set visible" sid="847476622853593" type="PlayerUsernameText">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="696878591488913" type="PlayerHealthText">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-12" name="Set group active" sid="573259947294349" type="System">
+                            <param id="0" name="Group name">&quot;SERVER&quot;</param>
+                            <param id="1" name="State">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="695068990077739">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="785363395642827" type="System">
+                            <param id="0" name="Variable">SERVER</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Set group active" sid="153760969947987" type="System">
+                            <param id="0" name="Group name">&quot;SERVER&quot;</param>
+                            <param id="1" name="State">0</param>
+                        </action>
+                    </actions>
+                </event-block>
                 <event-block sid="167622602142424">
                     <conditions>
                         <condition id="-6" name="Every X seconds" sid="867261703609036" type="System">
                             <param id="0" name="Interval (seconds)">1</param>
                         </condition>
-                        <condition id="-7" name="Compare instance variable" sid="985467077300879" type="Player">
+                        <condition id="-7" name="Compare instance variable" sid="985467077300879" type="MPPlayer">
                             <param id="0" name="Instance variable">LastHitTime</param>
                             <param id="1" name="Comparison">2</param>
                             <param id="2" name="Value">5</param>
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-11" name="Add to" sid="424855118646493" type="Player">
+                        <action id="-11" name="Add to" sid="424855118646493" type="MPPlayer">
                             <param id="0" name="Instance variable">LastHitTime</param>
                             <param id="1" name="Value">1</param>
                         </action>
@@ -524,12 +746,12 @@
                 </event-block>
                 <event-block sid="111458638614637">
                     <conditions>
-                        <condition id="-7" name="Compare instance variable" sid="537435534879458" type="Player">
+                        <condition id="-7" name="Compare instance variable" sid="537435534879458" type="MPPlayer">
                             <param id="0" name="Instance variable">Health</param>
                             <param id="1" name="Comparison">1</param>
                             <param id="2" name="Value">100</param>
                         </condition>
-                        <condition id="-7" name="Compare instance variable" sid="477572815317628" type="Player">
+                        <condition id="-7" name="Compare instance variable" sid="477572815317628" type="MPPlayer">
                             <param id="0" name="Instance variable">LastHitTime</param>
                             <param id="1" name="Comparison">5</param>
                             <param id="2" name="Value">5</param>
@@ -539,7 +761,7 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-11" name="Add to" sid="585379316946481" type="Player">
+                        <action id="-11" name="Add to" sid="585379316946481" type="MPPlayer">
                             <param id="0" name="Instance variable">Health</param>
                             <param id="1" name="Value">1</param>
                         </action>
@@ -551,14 +773,14 @@
                 </event-block>
                 <event-block sid="243710306901928">
                     <conditions>
-                        <condition id="-7" name="Compare instance variable" sid="756546477451333" type="Player">
+                        <condition id="-7" name="Compare instance variable" sid="756546477451333" type="MPPlayer">
                             <param id="0" name="Instance variable">Health</param>
                             <param id="1" name="Comparison">4</param>
                             <param id="2" name="Value">100</param>
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-10" name="Set value" sid="852998406736684" type="Player">
+                        <action id="-10" name="Set value" sid="852998406736684" type="MPPlayer">
                             <param id="0" name="Instance variable">Health</param>
                             <param id="1" name="Value">100</param>
                         </action>
@@ -578,70 +800,67 @@
                     <sub-events>
                         <event-block sid="550976657445796">
                             <conditions>
-                                <condition id="-7" name="Compare instance variable" sid="230455065136650" type="Player">
+                                <condition id="-7" name="Compare instance variable" sid="230455065136650" type="MPPlayer">
                                     <param id="0" name="Instance variable">MPID</param>
                                     <param id="1" name="Comparison">0</param>
                                     <param id="2" name="Value">Function.Param(0)</param>
                                 </condition>
                             </conditions>
-                            <actions />
+                            <actions>
+                                <action id="-16" name="Wait" sid="643693477102634" type="System">
+                                    <param id="0" name="Seconds">0</param>
+                                </action>
+                                <action id="-11" name="Add to" sid="602191720987351" type="MPPlayer">
+                                    <param id="0" name="Instance variable">TotalKills</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="755818887227694" type="System">
+                                    <param id="0" name="Seconds">0</param>
+                                </action>
+                                <action id="-11" name="Add to" sid="643207053891212" type="MPPlayer">
+                                    <param id="0" name="Instance variable">Kills</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="488117679517123" type="System">
+                                    <param id="0" name="Seconds">0</param>
+                                </action>
+                                <action id="-11" name="Add to" sid="650706291588023" type="MPPlayer">
+                                    <param id="0" name="Instance variable">XP</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="0" name="Call function" sid="854007225110130" type="Function">
+                                    <param id="0" name="Name">&quot;AddLog&quot;</param>
+                                    <param id="1" name="Parameter {n}">Multiplayer.PeerAliasFromID(MPPlayer.MPID)&amp;&quot; earned 1 xp&quot;</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="610241833640918" type="System">
+                                    <param id="0" name="Seconds">0</param>
+                                </action>
+                            </actions>
                             <sub-events>
-                                <event-block sid="541425444525041">
+                                <event-block sid="926986962172952">
                                     <conditions>
-                                        <condition id="-7" name="Compare instance variable" sid="528577237506569" type="Player">
-                                            <param id="0" name="Instance variable">Kills</param>
-                                            <param id="1" name="Comparison">4</param>
-                                            <param id="2" name="Value">(self.TotalKills)*0.15</param>
+                                        <condition id="-7" name="Compare instance variable" sid="444445605625192" type="MPPlayer">
+                                            <param id="0" name="Instance variable">XP</param>
+                                            <param id="1" name="Comparison">5</param>
+                                            <param id="2" name="Value">MPPlayer.Level*0.75</param>
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="-16" name="Wait" sid="154799671289955" type="System">
-                                            <param id="0" name="Seconds">0</param>
-                                        </action>
-                                        <action id="-11" name="Add to" sid="365948349139295" type="Player">
-                                            <param id="0" name="Instance variable">TotalKills</param>
-                                            <param id="1" name="Value">1</param>
-                                        </action>
-                                        <action id="-16" name="Wait" sid="964825066561025" type="System">
-                                            <param id="0" name="Seconds">0</param>
-                                        </action>
-                                        <action id="-11" name="Add to" sid="961309338839179" type="Player">
+                                        <action id="-11" name="Add to" sid="235868726083603" type="MPPlayer">
                                             <param id="0" name="Instance variable">Level</param>
                                             <param id="1" name="Value">1</param>
                                         </action>
-                                        <action id="-16" name="Wait" sid="544627919939641" type="System">
-                                            <param id="0" name="Seconds">0</param>
-                                        </action>
-                                        <action id="-10" name="Set value" sid="975956000677912" type="Player">
-                                            <param id="0" name="Instance variable">Kills</param>
+                                        <action id="-10" name="Set value" sid="224526288334761" type="MPPlayer">
+                                            <param id="0" name="Instance variable">XP</param>
                                             <param id="1" name="Value">0</param>
                                         </action>
-                                        <action id="-16" name="Wait" sid="630163515662194" type="System">
-                                            <param id="0" name="Seconds">0</param>
+                                        <action id="-10" name="Set value" sid="601531773192415" type="MPPlayer">
+                                            <param id="0" name="Instance variable">Damage</param>
+                                            <param id="1" name="Value">int(MPPlayer.Level*0.75)</param>
                                         </action>
-                                    </actions>
-                                </event-block>
-                                <event-block sid="792308495614634">
-                                    <conditions>
-                                        <condition id="-22" name="Else" sid="431333976986716" type="System" />
-                                    </conditions>
-                                    <actions>
-                                        <action id="-16" name="Wait" sid="643693477102634" type="System">
-                                            <param id="0" name="Seconds">0</param>
-                                        </action>
-                                        <action id="-11" name="Add to" sid="602191720987351" type="Player">
-                                            <param id="0" name="Instance variable">TotalKills</param>
-                                            <param id="1" name="Value">1</param>
-                                        </action>
-                                        <action id="-16" name="Wait" sid="755818887227694" type="System">
-                                            <param id="0" name="Seconds">0</param>
-                                        </action>
-                                        <action id="-11" name="Add to" sid="643207053891212" type="Player">
-                                            <param id="0" name="Instance variable">Kills</param>
-                                            <param id="1" name="Value">1</param>
-                                        </action>
-                                        <action id="-16" name="Wait" sid="488117679517123" type="System">
-                                            <param id="0" name="Seconds">0</param>
+                                        <action id="0" name="Call function" sid="788799454747261" type="Function">
+                                            <param id="0" name="Name">&quot;AddLog&quot;</param>
+                                            <param id="1" name="Parameter {n}">Multiplayer.PeerAliasFromID(MPPlayer.MPID)&amp;&quot; leveled up!&quot;</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -649,9 +868,24 @@
                         </event-block>
                     </sub-events>
                 </event-block>
+                <event-block sid="976550334944004">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="413227973172051" type="MPPlayer">
+                            <param id="0" name="Instance variable">Health</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="595119220380971" type="MPPlayer">
+                            <param id="0" name="Instance variable">Health</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
                 <event-block sid="131744387855832">
                     <conditions>
-                        <condition id="-7" name="Compare instance variable" sid="763029599906549" type="Player">
+                        <condition id="-7" name="Compare instance variable" sid="763029599906549" type="MPPlayer">
                             <param id="0" name="Instance variable">Health</param>
                             <param id="1" name="Comparison">3</param>
                             <param id="2" name="Value">0</param>
@@ -659,47 +893,47 @@
                         <condition id="-4" name="Trigger once while true" sid="465853447076909" type="System" />
                     </conditions>
                     <actions>
-                        <action id="-10" name="Set value" sid="338710110793784" type="Player">
+                        <action id="-10" name="Set value" sid="338710110793784" type="MPPlayer">
                             <param id="0" name="Instance variable">Health</param>
                             <param id="1" name="Value">0</param>
                         </action>
                         <action id="0" name="Call function" sid="741014952854993" type="Function">
                             <param id="0" name="Name">&quot;Player Explode&quot;</param>
-                            <param id="1" name="Parameter {n}">Player.MPID</param>
+                            <param id="1" name="Parameter {n}">MPPlayer.MPID</param>
                         </action>
                         <action id="-16" name="Wait" sid="600913520705971" type="System">
                             <param id="0" name="Seconds">1</param>
                         </action>
-                        <action id="-3" name="Set position" sid="517741605826327" type="Player">
+                        <action id="-3" name="Set position" sid="517741605826327" type="MPPlayer">
                             <param id="0" name="X">int(random(50,LayoutWidth-50))</param>
                             <param id="1" name="Y">int(random(50,LayoutHeight-50))</param>
                         </action>
-                        <action id="-10" name="Set value" sid="453538864136947" type="Player">
+                        <action id="-10" name="Set value" sid="453538864136947" type="MPPlayer">
                             <param id="0" name="Instance variable">Health</param>
                             <param id="1" name="Value">100</param>
                         </action>
-                        <action id="-11" name="Add to" sid="222262407973232" type="Player">
+                        <action id="-11" name="Add to" sid="222262407973232" type="MPPlayer">
                             <param id="0" name="Instance variable">Deaths</param>
                             <param id="1" name="Value">1</param>
                         </action>
                         <action id="0" name="Call function" sid="680185519196805" type="Function">
                             <param id="0" name="Name">&quot;AddLog&quot;</param>
-                            <param id="1" name="Parameter {n}">Multiplayer.PeerAliasFromID(Player.LastHitByID)&amp;&quot; blown up &quot;&amp;Multiplayer.PeerAliasFromID(Player.MPID)</param>
+                            <param id="1" name="Parameter {n}">Multiplayer.PeerAliasFromID(MPPlayer.LastHitByID)&amp;&quot; blown up &quot;&amp;Multiplayer.PeerAliasFromID(MPPlayer.MPID)</param>
                         </action>
                     </actions>
                     <sub-events>
                         <event-block sid="826113096188001">
                             <conditions>
-                                <condition id="-7" name="Compare instance variable" sid="653936041434493" type="Player">
+                                <condition id="-7" name="Compare instance variable" sid="653936041434493" type="MPPlayer">
                                     <param id="0" name="Instance variable">MPID</param>
                                     <param id="1" name="Comparison">1</param>
-                                    <param id="2" name="Value">Player.LastHitByID</param>
+                                    <param id="2" name="Value">MPPlayer.LastHitByID</param>
                                 </condition>
                             </conditions>
                             <actions>
                                 <action id="0" name="Call function" sid="940096155029097" type="Function">
                                     <param id="0" name="Name">&quot;AddToKills&quot;</param>
-                                    <param id="1" name="Parameter {n}">Player.LastHitByID</param>
+                                    <param id="1" name="Parameter {n}">MPPlayer.LastHitByID</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -708,7 +942,7 @@
                 <event-block sid="610147150656768">
                     <conditions>
                         <condition id="-11" name="For Each" sid="500944028608894" type="System">
-                            <param id="0" name="Object">Player</param>
+                            <param id="0" name="Object">MPPlayer</param>
                         </condition>
                     </conditions>
                     <actions />
@@ -721,18 +955,18 @@
                             <sub-events>
                                 <event-block sid="173992322448262">
                                     <conditions>
-                                        <condition id="-8" name="Is boolean instance variable set" sid="658176713999081" type="Player">
+                                        <condition id="-8" name="Is boolean instance variable set" sid="658176713999081" type="MPPlayer">
                                             <param id="0" name="Instance variable">FirstShot</param>
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="-13" name="Set boolean" sid="108031613930071" type="Player">
+                                        <action id="-13" name="Set boolean" sid="108031613930071" type="MPPlayer">
                                             <param id="0" name="Instance variable">FirstShot</param>
                                             <param id="1" name="Value">0</param>
                                         </action>
                                         <action id="0" name="Call function" sid="869157757527531" type="Function">
                                             <param id="0" name="Name">&quot;TestHit&quot;</param>
-                                            <param id="1" name="Parameter {n}">AimSpot.UID{###}Player.MPID</param>
+                                            <param id="1" name="Parameter {n}">AimSpot.UID{###}MPPlayer.MPID</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -743,7 +977,7 @@
                                 <condition id="-22" name="Else" sid="780303965496208" type="System" />
                             </conditions>
                             <actions>
-                                <action id="-13" name="Set boolean" sid="653473933686177" type="Player">
+                                <action id="-13" name="Set boolean" sid="653473933686177" type="MPPlayer">
                                     <param id="0" name="Instance variable">FirstShot</param>
                                     <param id="1" name="Value">1</param>
                                 </action>
@@ -752,13 +986,11 @@
                     </sub-events>
                 </event-block>
                 <variable constant="0" name="FiringPeerID" sid="904277183080729" static="0" type="text"></variable>
+                <variable constant="0" name="Damage" sid="794476157225291" static="0" type="number">0</variable>
                 <event-block sid="103395177289216">
                     <conditions>
                         <condition id="0" name="On function" sid="616242174735272" type="Function">
                             <param id="0" name="Name">&quot;TestHit&quot;</param>
-                        </condition>
-                        <condition id="-14" name="Pick by unique ID" sid="722737763447428" type="AllAimSpot">
-                            <param id="0" name="Unique ID">Function.Param(0)</param>
                         </condition>
                     </conditions>
                     <actions>
@@ -772,84 +1004,109 @@
                         </action>
                     </actions>
                     <sub-events>
-                        <event-block sid="344515171274540">
+                        <event-block sid="722493160321662">
                             <conditions>
-                                <condition id="-7" name="Compare instance variable" sid="615235585575551" type="Player">
+                                <condition id="-7" name="Compare instance variable" sid="991524769865692" type="MPPlayer">
                                     <param id="0" name="Instance variable">MPID</param>
-                                    <param id="1" name="Comparison">1</param>
-                                    <param id="2" name="Value">FiringPeerID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">Function.Param(1)</param>
                                 </condition>
-                                <condition id="-11" name="For Each" sid="590250063680621" type="System">
-                                    <param id="0" name="Object">Player</param>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="128181037685764" type="System">
+                                    <param id="0" name="Variable">Damage</param>
+                                    <param id="1" name="Value">MPPlayer.Damage</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="729691413395237">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="722737763447428" type="AllAimSpot">
+                                    <param id="0" name="Unique ID">Function.Param(0)</param>
                                 </condition>
                             </conditions>
                             <actions />
                             <sub-events>
-                                <variable constant="0" name="OldX" sid="700521881847698" static="0" type="number">0</variable>
-                                <variable constant="0" name="OldY" sid="272107715850452" static="0" type="number">0</variable>
-                                <variable constant="0" name="OldAngle" sid="692449653501484" static="0" type="number">0</variable>
-                                <event-block sid="215481361864327">
-                                    <conditions />
-                                    <actions>
-                                        <action id="-9" name="Set value" sid="879573319656774" type="System">
-                                            <param id="0" name="Variable">OldX</param>
-                                            <param id="1" name="Value">Player.X</param>
-                                        </action>
-                                        <action id="-9" name="Set value" sid="674103299581063" type="System">
-                                            <param id="0" name="Variable">OldY</param>
-                                            <param id="1" name="Value">Player.Y</param>
-                                        </action>
-                                        <action id="-9" name="Set value" sid="656893090289278" type="System">
-                                            <param id="0" name="Variable">OldAngle</param>
-                                            <param id="1" name="Value">Player.Angle</param>
-                                        </action>
-                                        <action id="-3" name="Set position" sid="729430714343648" type="Player">
-                                            <param id="0" name="X">Multiplayer.LagCompensateX(Player.MPID, FiringPeerID)</param>
-                                            <param id="1" name="Y">Multiplayer.LagCompensateY(Player.MPID, FiringPeerID)</param>
-                                        </action>
-                                        <action id="-8" name="Set angle" sid="668433302157734" type="Player">
-                                            <param id="0" name="Angle">Multiplayer.LagCompensateAngle(Player.MPID, FiringPeerID)</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                                <event-block sid="753275887589685">
+                                <event-block sid="344515171274540">
                                     <conditions>
-                                        <condition id="1" name="Is overlapping another object" sid="298497398413955" type="Player">
-                                            <param id="0" name="Object">AllAimSpot</param>
+                                        <condition id="-7" name="Compare instance variable" sid="615235585575551" type="MPPlayer">
+                                            <param id="0" name="Instance variable">MPID</param>
+                                            <param id="1" name="Comparison">1</param>
+                                            <param id="2" name="Value">FiringPeerID</param>
+                                        </condition>
+                                        <condition id="-11" name="For Each" sid="590250063680621" type="System">
+                                            <param id="0" name="Object">MPPlayer</param>
                                         </condition>
                                     </conditions>
-                                    <actions>
-                                        <action id="-12" name="Subtract from" sid="257218585717660" type="Player">
-                                            <param id="0" name="Instance variable">Health</param>
-                                            <param id="1" name="Value">3</param>
-                                        </action>
-                                        <action id="-10" name="Set value" sid="677413427892713" type="Player">
-                                            <param id="0" name="Instance variable">LastHitTime</param>
-                                            <param id="1" name="Value">0</param>
-                                        </action>
-                                        <action id="-10" name="Set value" sid="662467723843641" type="Player">
-                                            <param id="0" name="Instance variable">LastHitByID</param>
-                                            <param id="1" name="Value">Function.Param(1)</param>
-                                        </action>
-                                        <action id="-3" name="Set position" sid="658826717101209" type="Player">
-                                            <param id="0" name="X">OldX</param>
-                                            <param id="1" name="Y">OldY</param>
-                                        </action>
-                                        <action id="-8" name="Set angle" sid="468271833234042" type="Player">
-                                            <param id="0" name="Angle">OldAngle</param>
-                                        </action>
-                                        <action id="-10" name="Set value" sid="633459809242156" type="Player">
-                                            <param id="0" name="Instance variable">Hit</param>
-                                            <param id="1" name="Value">1</param>
-                                        </action>
-                                        <action id="-16" name="Wait" sid="780679753432687" type="System">
-                                            <param id="0" name="Seconds">0.5</param>
-                                        </action>
-                                        <action id="-10" name="Set value" sid="386214774884963" type="Player">
-                                            <param id="0" name="Instance variable">Hit</param>
-                                            <param id="1" name="Value">0</param>
-                                        </action>
-                                    </actions>
+                                    <actions />
+                                    <sub-events>
+                                        <variable constant="0" name="OldX" sid="700521881847698" static="0" type="number">0</variable>
+                                        <variable constant="0" name="OldY" sid="272107715850452" static="0" type="number">0</variable>
+                                        <variable constant="0" name="OldAngle" sid="692449653501484" static="0" type="number">0</variable>
+                                        <event-block sid="215481361864327">
+                                            <conditions />
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="879573319656774" type="System">
+                                                    <param id="0" name="Variable">OldX</param>
+                                                    <param id="1" name="Value">MPPlayer.X</param>
+                                                </action>
+                                                <action id="-9" name="Set value" sid="674103299581063" type="System">
+                                                    <param id="0" name="Variable">OldY</param>
+                                                    <param id="1" name="Value">MPPlayer.Y</param>
+                                                </action>
+                                                <action id="-9" name="Set value" sid="656893090289278" type="System">
+                                                    <param id="0" name="Variable">OldAngle</param>
+                                                    <param id="1" name="Value">MPPlayer.Angle</param>
+                                                </action>
+                                                <action id="-3" name="Set position" sid="729430714343648" type="MPPlayer">
+                                                    <param id="0" name="X">Multiplayer.LagCompensateX(MPPlayer.MPID, FiringPeerID)</param>
+                                                    <param id="1" name="Y">Multiplayer.LagCompensateY(MPPlayer.MPID, FiringPeerID)</param>
+                                                </action>
+                                                <action id="-8" name="Set angle" sid="668433302157734" type="MPPlayer">
+                                                    <param id="0" name="Angle">Multiplayer.LagCompensateAngle(MPPlayer.MPID, FiringPeerID)</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="753275887589685">
+                                            <conditions>
+                                                <condition id="1" name="Is overlapping another object" sid="298497398413955" type="MPPlayer">
+                                                    <param id="0" name="Object">AllAimSpot</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-12" name="Subtract from" sid="257218585717660" type="MPPlayer">
+                                                    <param id="0" name="Instance variable">Health</param>
+                                                    <param id="1" name="Value">Damage</param>
+                                                </action>
+                                                <action id="-10" name="Set value" sid="677413427892713" type="MPPlayer">
+                                                    <param id="0" name="Instance variable">LastHitTime</param>
+                                                    <param id="1" name="Value">0</param>
+                                                </action>
+                                                <action id="-10" name="Set value" sid="662467723843641" type="MPPlayer">
+                                                    <param id="0" name="Instance variable">LastHitByID</param>
+                                                    <param id="1" name="Value">Function.Param(1)</param>
+                                                </action>
+                                                <action id="-3" name="Set position" sid="658826717101209" type="MPPlayer">
+                                                    <param id="0" name="X">OldX</param>
+                                                    <param id="1" name="Y">OldY</param>
+                                                </action>
+                                                <action id="-8" name="Set angle" sid="468271833234042" type="MPPlayer">
+                                                    <param id="0" name="Angle">OldAngle</param>
+                                                </action>
+                                                <action id="-10" name="Set value" sid="633459809242156" type="MPPlayer">
+                                                    <param id="0" name="Instance variable">Hit</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                                <action id="-16" name="Wait" sid="780679753432687" type="System">
+                                                    <param id="0" name="Seconds">0.5</param>
+                                                </action>
+                                                <action id="-10" name="Set value" sid="386214774884963" type="MPPlayer">
+                                                    <param id="0" name="Instance variable">Hit</param>
+                                                    <param id="1" name="Value">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
                                 </event-block>
                             </sub-events>
                         </event-block>
@@ -861,17 +1118,17 @@
                     </conditions>
                     <actions>
                         <action id="-3" name="Create object" sid="487212997932161" type="System">
-                            <param id="0" name="Object to create">Player</param>
+                            <param id="0" name="Object to create">MPPlayer</param>
                             <param id="1" name="Layer">0</param>
                             <param id="2" name="X">int(random(100, layoutWidth-100))</param>
                             <param id="3" name="Y">int(random(100, layoutHeight-100))</param>
                         </action>
-                        <action id="-10" name="Set value" sid="883068740901678" type="Player">
+                        <action id="-10" name="Set value" sid="883068740901678" type="MPPlayer">
                             <param id="0" name="Instance variable">MPID</param>
                             <param id="1" name="Value">Multiplayer.PeerID</param>
                         </action>
                         <action id="13" name="Associate object with peer" sid="913480282788998" type="Multiplayer">
-                            <param id="0" name="Object">Player</param>
+                            <param id="0" name="Object">MPPlayer</param>
                             <param id="1" name="Peer ID">Multiplayer.PeerID</param>
                         </action>
                         <action id="14" name="Log" sid="766971889853222" type="Browser">
@@ -882,15 +1139,20 @@
                 </event-block>
                 <event-block sid="165035352768862">
                     <conditions>
-                        <condition id="-7" name="Compare instance variable" sid="891473825743082" type="Player">
+                        <condition id="-7" name="Compare instance variable" sid="891473825743082" type="MPPlayer">
                             <param id="0" name="Instance variable">MPID</param>
                             <param id="1" name="Comparison">0</param>
                             <param id="2" name="Value">Multiplayer.MyID</param>
                         </condition>
+                        <condition id="-14" name="Compare variable" sid="809847215141237" type="System">
+                            <param id="0" name="Variable">SERVER</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
                         <condition id="-4" name="Trigger once while true" sid="392491008947620" type="System" />
                     </conditions>
                     <actions>
-                        <action behavior="ScrollTo" id="1" name="Set enabled" sid="106461747862710" type="Player">
+                        <action behavior="ScrollTo" id="1" name="Set enabled" sid="106461747862710" type="MPPlayer">
                             <param id="0" name="State">1</param>
                         </action>
                         <action behavior="ScrollTo" id="1" name="Set enabled" sid="865689515588447" type="AimSpot">
@@ -904,10 +1166,15 @@
                 </event-block>
                 <event-block sid="925923054581330">
                     <conditions>
-                        <condition id="-7" name="Compare instance variable" sid="956308431089863" type="Player">
+                        <condition id="-7" name="Compare instance variable" sid="956308431089863" type="MPPlayer">
                             <param id="0" name="Instance variable">MPID</param>
                             <param id="1" name="Comparison">0</param>
                             <param id="2" name="Value">Multiplayer.MyID</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="825865450327982" type="System">
+                            <param id="0" name="Variable">SERVER</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
                         </condition>
                     </conditions>
                     <actions />
@@ -923,9 +1190,9 @@
                                         <condition id="2" name="Is in touch" sid="288689967469635" type="Touch" />
                                     </conditions>
                                     <actions>
-                                        <action id="-10" name="Set value" sid="283191439914275" type="Player">
+                                        <action id="-10" name="Set value" sid="283191439914275" type="MPPlayer">
                                             <param id="0" name="Instance variable">Inputs</param>
-                                            <param id="1" name="Value">setbit(Player.Inputs, 4, 1)</param>
+                                            <param id="1" name="Value">setbit(MPPlayer.Inputs, 4, 1)</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -934,9 +1201,9 @@
                                         <condition id="-22" name="Else" sid="327670125974006" type="System" />
                                     </conditions>
                                     <actions>
-                                        <action id="-10" name="Set value" sid="208371210387284" type="Player">
+                                        <action id="-10" name="Set value" sid="208371210387284" type="MPPlayer">
                                             <param id="0" name="Instance variable">Inputs</param>
-                                            <param id="1" name="Value">setbit(Player.Inputs, 4, 0)</param>
+                                            <param id="1" name="Value">setbit(MPPlayer.Inputs, 4, 0)</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -949,7 +1216,7 @@
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action behavior="8Direction" id="7" name="Simulate control" sid="565397204007041" type="Player">
+                                        <action behavior="8Direction" id="7" name="Simulate control" sid="565397204007041" type="MPPlayer">
                                             <param id="0" name="Control">2</param>
                                         </action>
                                     </actions>
@@ -963,7 +1230,7 @@
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action behavior="8Direction" id="7" name="Simulate control" sid="910543575642610" type="Player">
+                                        <action behavior="8Direction" id="7" name="Simulate control" sid="910543575642610" type="MPPlayer">
                                             <param id="0" name="Control">3</param>
                                         </action>
                                     </actions>
@@ -977,7 +1244,7 @@
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action behavior="8Direction" id="7" name="Simulate control" sid="784550162833754" type="Player">
+                                        <action behavior="8Direction" id="7" name="Simulate control" sid="784550162833754" type="MPPlayer">
                                             <param id="0" name="Control">0</param>
                                         </action>
                                     </actions>
@@ -991,7 +1258,7 @@
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action behavior="8Direction" id="7" name="Simulate control" sid="191093447494007" type="Player">
+                                        <action behavior="8Direction" id="7" name="Simulate control" sid="191093447494007" type="MPPlayer">
                                             <param id="0" name="Control">1</param>
                                         </action>
                                     </actions>
@@ -1014,7 +1281,7 @@
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action behavior="8Direction" id="7" name="Simulate control" sid="276257893689276" type="Player">
+                                        <action behavior="8Direction" id="7" name="Simulate control" sid="276257893689276" type="MPPlayer">
                                             <param id="0" name="Control">2</param>
                                         </action>
                                     </actions>
@@ -1029,7 +1296,7 @@
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action behavior="8Direction" id="7" name="Simulate control" sid="609565595184642" type="Player">
+                                        <action behavior="8Direction" id="7" name="Simulate control" sid="609565595184642" type="MPPlayer">
                                             <param id="0" name="Control">3</param>
                                         </action>
                                     </actions>
@@ -1044,7 +1311,7 @@
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action behavior="8Direction" id="7" name="Simulate control" sid="683760284613130" type="Player">
+                                        <action behavior="8Direction" id="7" name="Simulate control" sid="683760284613130" type="MPPlayer">
                                             <param id="0" name="Control">0</param>
                                         </action>
                                     </actions>
@@ -1059,7 +1326,7 @@
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action behavior="8Direction" id="7" name="Simulate control" sid="344807919982193" type="Player">
+                                        <action behavior="8Direction" id="7" name="Simulate control" sid="344807919982193" type="MPPlayer">
                                             <param id="0" name="Control">1</param>
                                         </action>
                                     </actions>
@@ -1072,9 +1339,9 @@
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="-10" name="Set value" sid="573659575856249" type="Player">
+                                        <action id="-10" name="Set value" sid="573659575856249" type="MPPlayer">
                                             <param id="0" name="Instance variable">Inputs</param>
-                                            <param id="1" name="Value">setbit(Player.Inputs, 4, 1)</param>
+                                            <param id="1" name="Value">setbit(MPPlayer.Inputs, 4, 1)</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -1083,9 +1350,9 @@
                                         <condition id="-22" name="Else" sid="967188527060687" type="System" />
                                     </conditions>
                                     <actions>
-                                        <action id="-10" name="Set value" sid="341037262365460" type="Player">
+                                        <action id="-10" name="Set value" sid="341037262365460" type="MPPlayer">
                                             <param id="0" name="Instance variable">Inputs</param>
-                                            <param id="1" name="Value">setbit(Player.Inputs, 4, 0)</param>
+                                            <param id="1" name="Value">setbit(MPPlayer.Inputs, 4, 0)</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -1104,7 +1371,7 @@
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action behavior="8Direction" id="7" name="Simulate control" sid="843611826757696" type="Player">
+                                        <action behavior="8Direction" id="7" name="Simulate control" sid="843611826757696" type="MPPlayer">
                                             <param id="0" name="Control">2</param>
                                         </action>
                                         <action id="14" name="Log" sid="432773375161154" type="Browser">
@@ -1120,7 +1387,7 @@
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action behavior="8Direction" id="7" name="Simulate control" sid="122647942880326" type="Player">
+                                        <action behavior="8Direction" id="7" name="Simulate control" sid="122647942880326" type="MPPlayer">
                                             <param id="0" name="Control">3</param>
                                         </action>
                                         <action id="14" name="Log" sid="803363954860231" type="Browser">
@@ -1136,7 +1403,7 @@
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action behavior="8Direction" id="7" name="Simulate control" sid="847620902190238" type="Player">
+                                        <action behavior="8Direction" id="7" name="Simulate control" sid="847620902190238" type="MPPlayer">
                                             <param id="0" name="Control">0</param>
                                         </action>
                                         <action id="14" name="Log" sid="180744628949581" type="Browser">
@@ -1152,7 +1419,7 @@
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action behavior="8Direction" id="7" name="Simulate control" sid="739077542316336" type="Player">
+                                        <action behavior="8Direction" id="7" name="Simulate control" sid="739077542316336" type="MPPlayer">
                                             <param id="0" name="Control">1</param>
                                         </action>
                                         <action id="14" name="Log" sid="766696096665710" type="Browser">
@@ -1168,9 +1435,9 @@
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="-10" name="Set value" sid="611482690776905" type="Player">
+                                        <action id="-10" name="Set value" sid="611482690776905" type="MPPlayer">
                                             <param id="0" name="Instance variable">Inputs</param>
-                                            <param id="1" name="Value">setbit(Player.Inputs, 4, 1)</param>
+                                            <param id="1" name="Value">setbit(MPPlayer.Inputs, 4, 1)</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -1179,65 +1446,43 @@
                                         <condition id="-22" name="Else" sid="568388612284920" type="System" />
                                     </conditions>
                                     <actions>
-                                        <action id="-10" name="Set value" sid="739992508085843" type="Player">
+                                        <action id="-10" name="Set value" sid="739992508085843" type="MPPlayer">
                                             <param id="0" name="Instance variable">Inputs</param>
-                                            <param id="1" name="Value">setbit(Player.Inputs, 4, 0)</param>
+                                            <param id="1" name="Value">setbit(MPPlayer.Inputs, 4, 0)</param>
                                         </action>
                                     </actions>
                                 </event-block>
                             </sub-events>
                         </event-block>
-                        <event-block sid="310814832820406">
-                            <conditions>
-                                <condition behavior="8Direction" id="0" name="Is moving" sid="844113656330437" type="Player" />
-                            </conditions>
-                            <actions>
-                                <action id="-10" name="Set value" sid="282205171897258" type="Player">
-                                    <param id="0" name="Instance variable">ThrusterOn</param>
-                                    <param id="1" name="Value">setbit(player.ThrusterOn, 0, 1)</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="971867143615900">
-                            <conditions>
-                                <condition behavior="8Direction" id="0" inverted="1" name="Is moving" sid="744222155426372" type="Player" />
-                            </conditions>
-                            <actions>
-                                <action id="-10" name="Set value" sid="931638451329662" type="Player">
-                                    <param id="0" name="Instance variable">ThrusterOn</param>
-                                    <param id="1" name="Value">setbit(player.ThrusterOn, 0, 0)</param>
-                                </action>
-                            </actions>
-                        </event-block>
                     </sub-events>
                 </event-block>
                 <event-block sid="226920451219137">
                     <conditions>
-                        <condition id="-7" name="Compare instance variable" sid="710613908108204" type="Player">
+                        <condition id="-7" name="Compare instance variable" sid="710613908108204" type="MPPlayer">
                             <param id="0" name="Instance variable">MPID</param>
                             <param id="1" name="Comparison">1</param>
                             <param id="2" name="Value">Multiplayer.MyID</param>
                         </condition>
                         <condition id="-11" name="For Each" sid="433172554034124" type="System">
-                            <param id="0" name="Object">Player</param>
+                            <param id="0" name="Object">MPPlayer</param>
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-10" name="Set value" sid="642194620157917" type="Player">
+                        <action id="-10" name="Set value" sid="642194620157917" type="MPPlayer">
                             <param id="0" name="Instance variable">LookX</param>
-                            <param id="1" name="Value">Multiplayer.PeerState(Player.MPID,&quot;LOOKX&quot;)</param>
+                            <param id="1" name="Value">Multiplayer.PeerState(MPPlayer.MPID,&quot;LOOKX&quot;)</param>
                         </action>
-                        <action id="-10" name="Set value" sid="175273551734671" type="Player">
+                        <action id="-10" name="Set value" sid="175273551734671" type="MPPlayer">
                             <param id="0" name="Instance variable">LookY</param>
-                            <param id="1" name="Value">Multiplayer.PeerState(Player.MPID,&quot;LOOKY&quot;)</param>
+                            <param id="1" name="Value">Multiplayer.PeerState(MPPlayer.MPID,&quot;LOOKY&quot;)</param>
                         </action>
-                        <action id="-10" name="Set value" sid="791226945875190" type="Player">
+                        <action id="-10" name="Set value" sid="791226945875190" type="MPPlayer">
                             <param id="0" name="Instance variable">Inputs</param>
-                            <param id="1" name="Value">Multiplayer.PeerState(Player.MPID,&quot;INPUTS&quot;)</param>
+                            <param id="1" name="Value">Multiplayer.PeerState(MPPlayer.MPID,&quot;INPUTS&quot;)</param>
                         </action>
-                        <action id="-10" name="Set value" sid="306623428478035" type="Player">
+                        <action disabled="1" id="-10" name="Set value" sid="306623428478035" type="MPPlayer">
                             <param id="0" name="Instance variable">ThrusterOn</param>
-                            <param id="1" name="Value">Multiplayer.PeerState(Player.MPID,&quot;THRUSTERS&quot;)</param>
+                            <param id="1" name="Value">Multiplayer.PeerState(MPPlayer.MPID,&quot;THRUSTERS&quot;)</param>
                         </action>
                         <action id="14" name="Log" sid="516698364763983" type="Browser">
                             <param id="0" name="Type">0</param>
@@ -1248,41 +1493,41 @@
                         <event-block sid="528671797749967">
                             <conditions>
                                 <condition id="-8" name="Compare two values" sid="141711949755979" type="System">
-                                    <param id="0" name="First value">getbit(Player.Inputs, 6)</param>
+                                    <param id="0" name="First value">getbit(MPPlayer.Inputs, 6)</param>
                                     <param id="1" name="Comparison">0</param>
                                     <param id="2" name="Second value">1</param>
                                 </condition>
-                                <condition id="-7" name="Compare instance variable" sid="936894112803351" type="Player">
+                                <condition id="-7" name="Compare instance variable" sid="936894112803351" type="MPPlayer">
                                     <param id="0" name="Instance variable">BoostTimer</param>
                                     <param id="1" name="Comparison">0</param>
                                     <param id="2" name="Value">0</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action behavior="8Direction" id="4" name="Set max speed" sid="823517790078847" type="Player">
+                                <action behavior="8Direction" id="4" name="Set max speed" sid="823517790078847" type="MPPlayer">
                                     <param id="0" name="Max Speed">1000</param>
                                 </action>
-                                <action behavior="8Direction" id="5" name="Set acceleration" sid="857195643557446" type="Player">
+                                <action behavior="8Direction" id="5" name="Set acceleration" sid="857195643557446" type="MPPlayer">
                                     <param id="0" name="Acceleration">2000</param>
                                 </action>
-                                <action id="-10" name="Set value" sid="770961101720024" type="Player">
+                                <action id="-10" name="Set value" sid="770961101720024" type="MPPlayer">
                                     <param id="0" name="Instance variable">BoostActive</param>
                                     <param id="1" name="Value">1</param>
                                 </action>
                                 <action id="-16" name="Wait" sid="865222805208151" type="System">
                                     <param id="0" name="Seconds">2</param>
                                 </action>
-                                <action behavior="8Direction" id="4" name="Set max speed" sid="838879192187904" type="Player">
+                                <action behavior="8Direction" id="4" name="Set max speed" sid="838879192187904" type="MPPlayer">
                                     <param id="0" name="Max Speed">400</param>
                                 </action>
-                                <action behavior="8Direction" id="5" name="Set acceleration" sid="353370482373876" type="Player">
+                                <action behavior="8Direction" id="5" name="Set acceleration" sid="353370482373876" type="MPPlayer">
                                     <param id="0" name="Acceleration">400</param>
                                 </action>
-                                <action id="-10" name="Set value" sid="831882546722926" type="Player">
+                                <action id="-10" name="Set value" sid="831882546722926" type="MPPlayer">
                                     <param id="0" name="Instance variable">BoostTimer</param>
                                     <param id="1" name="Value">self.BoostTimerMax</param>
                                 </action>
-                                <action id="-10" name="Set value" sid="720765909104374" type="Player">
+                                <action id="-10" name="Set value" sid="720765909104374" type="MPPlayer">
                                     <param id="0" name="Instance variable">BoostActive</param>
                                     <param id="1" name="Value">0</param>
                                 </action>
@@ -1293,14 +1538,14 @@
                                 <condition id="-6" name="Every X seconds" sid="882772080861053" type="System">
                                     <param id="0" name="Interval (seconds)">1</param>
                                 </condition>
-                                <condition id="-7" name="Compare instance variable" sid="568098254509723" type="Player">
+                                <condition id="-7" name="Compare instance variable" sid="568098254509723" type="MPPlayer">
                                     <param id="0" name="Instance variable">BoostTimer</param>
                                     <param id="1" name="Comparison">1</param>
                                     <param id="2" name="Value">0</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="-12" name="Subtract from" sid="287104438916409" type="Player">
+                                <action id="-12" name="Subtract from" sid="287104438916409" type="MPPlayer">
                                     <param id="0" name="Instance variable">BoostTimer</param>
                                     <param id="1" name="Value">1</param>
                                 </action>
@@ -1309,13 +1554,13 @@
                         <event-block sid="433375432104728">
                             <conditions>
                                 <condition id="-8" name="Compare two values" sid="606452354239699" type="System">
-                                    <param id="0" name="First value">getbit(Player.Inputs, 0)</param>
+                                    <param id="0" name="First value">getbit(MPPlayer.Inputs, 0)</param>
                                     <param id="1" name="Comparison">0</param>
                                     <param id="2" name="Second value">1</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action behavior="8Direction" id="7" name="Simulate control" sid="800386626200715" type="Player">
+                                <action behavior="8Direction" id="7" name="Simulate control" sid="800386626200715" type="MPPlayer">
                                     <param id="0" name="Control">2</param>
                                 </action>
                             </actions>
@@ -1323,13 +1568,13 @@
                         <event-block sid="110418296058851">
                             <conditions>
                                 <condition id="-8" name="Compare two values" sid="897745640007577" type="System">
-                                    <param id="0" name="First value">getbit(Player.Inputs, 1)</param>
+                                    <param id="0" name="First value">getbit(MPPlayer.Inputs, 1)</param>
                                     <param id="1" name="Comparison">0</param>
                                     <param id="2" name="Second value">1</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action behavior="8Direction" id="7" name="Simulate control" sid="170386770233853" type="Player">
+                                <action behavior="8Direction" id="7" name="Simulate control" sid="170386770233853" type="MPPlayer">
                                     <param id="0" name="Control">0</param>
                                 </action>
                             </actions>
@@ -1337,13 +1582,13 @@
                         <event-block sid="860966485994913">
                             <conditions>
                                 <condition id="-8" name="Compare two values" sid="273797259526868" type="System">
-                                    <param id="0" name="First value">getbit(Player.Inputs, 2)</param>
+                                    <param id="0" name="First value">getbit(MPPlayer.Inputs, 2)</param>
                                     <param id="1" name="Comparison">0</param>
                                     <param id="2" name="Second value">1</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action behavior="8Direction" id="7" name="Simulate control" sid="383302685130141" type="Player">
+                                <action behavior="8Direction" id="7" name="Simulate control" sid="383302685130141" type="MPPlayer">
                                     <param id="0" name="Control">3</param>
                                 </action>
                             </actions>
@@ -1351,36 +1596,36 @@
                         <event-block sid="608341493660152">
                             <conditions>
                                 <condition id="-8" name="Compare two values" sid="537311529604405" type="System">
-                                    <param id="0" name="First value">getbit(Player.Inputs, 3)</param>
+                                    <param id="0" name="First value">getbit(MPPlayer.Inputs, 3)</param>
                                     <param id="1" name="Comparison">0</param>
                                     <param id="2" name="Second value">1</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action behavior="8Direction" id="7" name="Simulate control" sid="480173515505448" type="Player">
+                                <action behavior="8Direction" id="7" name="Simulate control" sid="480173515505448" type="MPPlayer">
                                     <param id="0" name="Control">1</param>
                                 </action>
                             </actions>
                         </event-block>
                         <event-block sid="661444010917282">
                             <conditions>
-                                <condition behavior="8Direction" id="0" name="Is moving" sid="989656723521197" type="Player" />
+                                <condition behavior="8Direction" id="0" name="Is moving" sid="989656723521197" type="MPPlayer" />
                             </conditions>
                             <actions>
-                                <action id="-10" name="Set value" sid="564521893417470" type="Player">
+                                <action id="-10" name="Set value" sid="564521893417470" type="MPPlayer">
                                     <param id="0" name="Instance variable">ThrusterOn</param>
-                                    <param id="1" name="Value">setbit(player.ThrusterOn, 0, 1)</param>
+                                    <param id="1" name="Value">setbit(MPPlayer.ThrusterOn, 0, 1)</param>
                                 </action>
                             </actions>
                         </event-block>
                         <event-block sid="219040291589359">
                             <conditions>
-                                <condition behavior="8Direction" id="0" inverted="1" name="Is moving" sid="736731388463229" type="Player" />
+                                <condition behavior="8Direction" id="0" inverted="1" name="Is moving" sid="736731388463229" type="MPPlayer" />
                             </conditions>
                             <actions>
-                                <action id="-10" name="Set value" sid="424686899135913" type="Player">
+                                <action id="-10" name="Set value" sid="424686899135913" type="MPPlayer">
                                     <param id="0" name="Instance variable">ThrusterOn</param>
-                                    <param id="1" name="Value">setbit(player.ThrusterOn, 0, 0)</param>
+                                    <param id="1" name="Value">setbit(MPPlayer.ThrusterOn, 0, 0)</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -1392,7 +1637,7 @@
             <sub-events>
                 <event-block sid="883978148588919">
                     <conditions>
-                        <condition id="-7" name="Compare instance variable" sid="176396238764022" type="Player">
+                        <condition id="-7" name="Compare instance variable" sid="176396238764022" type="MPPlayer">
                             <param id="0" name="Instance variable">Health</param>
                             <param id="1" name="Comparison">3</param>
                             <param id="2" name="Value">0</param>
@@ -1402,17 +1647,17 @@
                     <actions>
                         <action id="0" name="Call function" sid="312441610551698" type="Function">
                             <param id="0" name="Name">&quot;Player Explode&quot;</param>
-                            <param id="1" name="Parameter {n}">Player.MPID</param>
+                            <param id="1" name="Parameter {n}">MPPlayer.MPID</param>
                         </action>
                     </actions>
                 </event-block>
                 <variable constant="0" name="OldY" sid="903366683510493" static="0" type="number">0</variable>
                 <event-block sid="147718353348614">
                     <conditions>
-                        <condition id="-18" name="On created" sid="157519466937646" type="Player" />
+                        <condition id="-18" name="On created" sid="157519466937646" type="MPPlayer" />
                     </conditions>
                     <actions>
-                        <action id="-10" name="Set value" sid="940148340052128" type="Player">
+                        <action id="-10" name="Set value" sid="940148340052128" type="MPPlayer">
                             <param id="0" name="Instance variable">MPID</param>
                             <param id="1" name="Value">Multiplayer.PeerID</param>
                         </action>
@@ -1421,7 +1666,7 @@
                             <param id="1" name="Message">&quot;Setting Player MPID to &quot;&amp;Multiplayer.PeerID</param>
                         </action>
                         <action id="13" name="Associate object with peer" sid="414426089317232" type="Multiplayer">
-                            <param id="0" name="Object">Player</param>
+                            <param id="0" name="Object">MPPlayer</param>
                             <param id="1" name="Peer ID">Multiplayer.PeerID</param>
                         </action>
                         <action id="14" name="Log" sid="139755139293053" type="Browser">
@@ -1432,7 +1677,7 @@
                     <sub-events>
                         <event-block sid="804639926097651">
                             <conditions>
-                                <condition id="-7" name="Compare instance variable" sid="890789581334914" type="Player">
+                                <condition id="-7" name="Compare instance variable" sid="890789581334914" type="MPPlayer">
                                     <param id="0" name="Instance variable">MPID</param>
                                     <param id="1" name="Comparison">0</param>
                                     <param id="2" name="Value">Multiplayer.MyID</param>
@@ -1441,13 +1686,13 @@
                             </conditions>
                             <actions>
                                 <action id="16" name="Enable local input prediction" sid="274517080284856" type="Multiplayer">
-                                    <param id="0" name="Object">Player</param>
+                                    <param id="0" name="Object">MPPlayer</param>
                                 </action>
                                 <action id="14" name="Log" sid="382772101400444" type="Browser">
                                     <param id="0" name="Type">0</param>
                                     <param id="1" name="Message">&quot;Enabling local input prediction for player&quot;</param>
                                 </action>
-                                <action behavior="ScrollTo" id="1" name="Set enabled" sid="608767645773306" type="Player">
+                                <action behavior="ScrollTo" id="1" name="Set enabled" sid="608767645773306" type="MPPlayer">
                                     <param id="0" name="State">1</param>
                                 </action>
                                 <action id="14" name="Log" sid="496191489839762" type="Browser">
@@ -1468,7 +1713,7 @@
                 <event-block sid="564801034258944">
                     <conditions>
                         <condition id="17" name="On client update" sid="620723528517982" type="Multiplayer" />
-                        <condition id="-7" name="Compare instance variable" sid="901658081155513" type="Player">
+                        <condition id="-7" name="Compare instance variable" sid="901658081155513" type="MPPlayer">
                             <param id="0" name="Instance variable">MPID</param>
                             <param id="1" name="Comparison">0</param>
                             <param id="2" name="Value">Multiplayer.MyID</param>
@@ -1500,7 +1745,7 @@
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="-10" name="Set value" sid="509580112256924" type="Player">
+                                        <action id="-10" name="Set value" sid="509580112256924" type="MPPlayer">
                                             <param id="0" name="Instance variable">Inputs</param>
                                             <param id="1" name="Value">setbit(self.Inputs, 0, 1)</param>
                                         </action>
@@ -1511,7 +1756,7 @@
                                         <condition id="-22" name="Else" sid="879825943486304" type="System" />
                                     </conditions>
                                     <actions>
-                                        <action id="-10" name="Set value" sid="755770984376220" type="Player">
+                                        <action id="-10" name="Set value" sid="755770984376220" type="MPPlayer">
                                             <param id="0" name="Instance variable">Inputs</param>
                                             <param id="1" name="Value">setbit(self.Inputs, 0, 0)</param>
                                         </action>
@@ -1526,7 +1771,7 @@
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="-10" name="Set value" sid="322012084629075" type="Player">
+                                        <action id="-10" name="Set value" sid="322012084629075" type="MPPlayer">
                                             <param id="0" name="Instance variable">Inputs</param>
                                             <param id="1" name="Value">setbit(self.Inputs, 1, 1)</param>
                                         </action>
@@ -1537,7 +1782,7 @@
                                         <condition id="-22" name="Else" sid="246491533771237" type="System" />
                                     </conditions>
                                     <actions>
-                                        <action id="-10" name="Set value" sid="692388439025579" type="Player">
+                                        <action id="-10" name="Set value" sid="692388439025579" type="MPPlayer">
                                             <param id="0" name="Instance variable">Inputs</param>
                                             <param id="1" name="Value">setbit(self.Inputs, 1, 0)</param>
                                         </action>
@@ -1552,7 +1797,7 @@
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="-10" name="Set value" sid="669511223765310" type="Player">
+                                        <action id="-10" name="Set value" sid="669511223765310" type="MPPlayer">
                                             <param id="0" name="Instance variable">Inputs</param>
                                             <param id="1" name="Value">setbit(self.Inputs, 2, 1)</param>
                                         </action>
@@ -1563,7 +1808,7 @@
                                         <condition id="-22" name="Else" sid="860813726501616" type="System" />
                                     </conditions>
                                     <actions>
-                                        <action id="-10" name="Set value" sid="664311378141227" type="Player">
+                                        <action id="-10" name="Set value" sid="664311378141227" type="MPPlayer">
                                             <param id="0" name="Instance variable">Inputs</param>
                                             <param id="1" name="Value">setbit(self.Inputs, 2, 0)</param>
                                         </action>
@@ -1578,7 +1823,7 @@
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="-10" name="Set value" sid="350283681903012" type="Player">
+                                        <action id="-10" name="Set value" sid="350283681903012" type="MPPlayer">
                                             <param id="0" name="Instance variable">Inputs</param>
                                             <param id="1" name="Value">setbit(self.Inputs, 3, 1)</param>
                                         </action>
@@ -1589,7 +1834,7 @@
                                         <condition id="-22" name="Else" sid="347748312407825" type="System" />
                                     </conditions>
                                     <actions>
-                                        <action id="-10" name="Set value" sid="182032111689009" type="Player">
+                                        <action id="-10" name="Set value" sid="182032111689009" type="MPPlayer">
                                             <param id="0" name="Instance variable">Inputs</param>
                                             <param id="1" name="Value">setbit(self.Inputs, 3, 0)</param>
                                         </action>
@@ -1598,11 +1843,11 @@
                                 <event-block sid="115481994309034">
                                     <conditions>
                                         <condition id="4" name="Is touching object" sid="153335150387751" type="Touch">
-                                            <param id="0" name="Object">Player</param>
+                                            <param id="0" name="Object">MPPlayer</param>
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="-10" name="Set value" sid="493737660896664" type="Player">
+                                        <action id="-10" name="Set value" sid="493737660896664" type="MPPlayer">
                                             <param id="0" name="Instance variable">Inputs</param>
                                             <param id="1" name="Value">setbit(self.Inputs, 4, 1)</param>
                                         </action>
@@ -1613,7 +1858,7 @@
                                         <condition id="-22" name="Else" sid="260156081001518" type="System" />
                                     </conditions>
                                     <actions>
-                                        <action id="-10" name="Set value" sid="558933738855353" type="Player">
+                                        <action id="-10" name="Set value" sid="558933738855353" type="MPPlayer">
                                             <param id="0" name="Instance variable">Inputs</param>
                                             <param id="1" name="Value">setbit(self.Inputs, 4, 0)</param>
                                         </action>
@@ -1637,7 +1882,7 @@
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="-10" name="Set value" sid="433071244436511" type="Player">
+                                        <action id="-10" name="Set value" sid="433071244436511" type="MPPlayer">
                                             <param id="0" name="Instance variable">Inputs</param>
                                             <param id="1" name="Value">setbit(self.Inputs, 0, 1)</param>
                                         </action>
@@ -1648,7 +1893,7 @@
                                         <condition id="-22" name="Else" sid="870481346983733" type="System" />
                                     </conditions>
                                     <actions>
-                                        <action id="-10" name="Set value" sid="421162547873083" type="Player">
+                                        <action id="-10" name="Set value" sid="421162547873083" type="MPPlayer">
                                             <param id="0" name="Instance variable">Inputs</param>
                                             <param id="1" name="Value">setbit(self.Inputs, 0, 0)</param>
                                         </action>
@@ -1664,7 +1909,7 @@
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="-10" name="Set value" sid="781177847744252" type="Player">
+                                        <action id="-10" name="Set value" sid="781177847744252" type="MPPlayer">
                                             <param id="0" name="Instance variable">Inputs</param>
                                             <param id="1" name="Value">setbit(self.Inputs, 1, 1)</param>
                                         </action>
@@ -1675,7 +1920,7 @@
                                         <condition id="-22" name="Else" sid="597029211284181" type="System" />
                                     </conditions>
                                     <actions>
-                                        <action id="-10" name="Set value" sid="294224425342585" type="Player">
+                                        <action id="-10" name="Set value" sid="294224425342585" type="MPPlayer">
                                             <param id="0" name="Instance variable">Inputs</param>
                                             <param id="1" name="Value">setbit(self.Inputs, 1, 0)</param>
                                         </action>
@@ -1691,7 +1936,7 @@
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="-10" name="Set value" sid="249669285579424" type="Player">
+                                        <action id="-10" name="Set value" sid="249669285579424" type="MPPlayer">
                                             <param id="0" name="Instance variable">Inputs</param>
                                             <param id="1" name="Value">setbit(self.Inputs, 2, 1)</param>
                                         </action>
@@ -1702,7 +1947,7 @@
                                         <condition id="-22" name="Else" sid="446491436346110" type="System" />
                                     </conditions>
                                     <actions>
-                                        <action id="-10" name="Set value" sid="892697484630936" type="Player">
+                                        <action id="-10" name="Set value" sid="892697484630936" type="MPPlayer">
                                             <param id="0" name="Instance variable">Inputs</param>
                                             <param id="1" name="Value">setbit(self.Inputs, 2, 0)</param>
                                         </action>
@@ -1718,7 +1963,7 @@
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="-10" name="Set value" sid="892677616489490" type="Player">
+                                        <action id="-10" name="Set value" sid="892677616489490" type="MPPlayer">
                                             <param id="0" name="Instance variable">Inputs</param>
                                             <param id="1" name="Value">setbit(self.Inputs, 3, 1)</param>
                                         </action>
@@ -1729,7 +1974,7 @@
                                         <condition id="-22" name="Else" sid="388582917937921" type="System" />
                                     </conditions>
                                     <actions>
-                                        <action id="-10" name="Set value" sid="289526315791881" type="Player">
+                                        <action id="-10" name="Set value" sid="289526315791881" type="MPPlayer">
                                             <param id="0" name="Instance variable">Inputs</param>
                                             <param id="1" name="Value">setbit(self.Inputs, 3, 0)</param>
                                         </action>
@@ -1743,7 +1988,7 @@
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="-10" name="Set value" sid="609297079964085" type="Player">
+                                        <action id="-10" name="Set value" sid="609297079964085" type="MPPlayer">
                                             <param id="0" name="Instance variable">Inputs</param>
                                             <param id="1" name="Value">setbit(self.Inputs, 4, 1)</param>
                                         </action>
@@ -1754,7 +1999,7 @@
                                         <condition id="-22" name="Else" sid="740087775946908" type="System" />
                                     </conditions>
                                     <actions>
-                                        <action id="-10" name="Set value" sid="136870514413409" type="Player">
+                                        <action id="-10" name="Set value" sid="136870514413409" type="MPPlayer">
                                             <param id="0" name="Instance variable">Inputs</param>
                                             <param id="1" name="Value">setbit(self.Inputs, 4, 0)</param>
                                         </action>
@@ -1775,7 +2020,7 @@
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="-10" name="Set value" sid="428235996332942" type="Player">
+                                        <action id="-10" name="Set value" sid="428235996332942" type="MPPlayer">
                                             <param id="0" name="Instance variable">Inputs</param>
                                             <param id="1" name="Value">setbit(self.Inputs, 0, 1)</param>
                                         </action>
@@ -1786,7 +2031,7 @@
                                         <condition id="-22" name="Else" sid="597296062763743" type="System" />
                                     </conditions>
                                     <actions>
-                                        <action id="-10" name="Set value" sid="529750495445847" type="Player">
+                                        <action id="-10" name="Set value" sid="529750495445847" type="MPPlayer">
                                             <param id="0" name="Instance variable">Inputs</param>
                                             <param id="1" name="Value">setbit(self.Inputs, 0, 0)</param>
                                         </action>
@@ -1799,7 +2044,7 @@
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="-10" name="Set value" sid="979473647941471" type="Player">
+                                        <action id="-10" name="Set value" sid="979473647941471" type="MPPlayer">
                                             <param id="0" name="Instance variable">Inputs</param>
                                             <param id="1" name="Value">setbit(self.Inputs, 1, 1)</param>
                                         </action>
@@ -1810,7 +2055,7 @@
                                         <condition id="-22" name="Else" sid="243944093940328" type="System" />
                                     </conditions>
                                     <actions>
-                                        <action id="-10" name="Set value" sid="446159849923023" type="Player">
+                                        <action id="-10" name="Set value" sid="446159849923023" type="MPPlayer">
                                             <param id="0" name="Instance variable">Inputs</param>
                                             <param id="1" name="Value">setbit(self.Inputs, 1, 0)</param>
                                         </action>
@@ -1823,7 +2068,7 @@
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="-10" name="Set value" sid="634555696532041" type="Player">
+                                        <action id="-10" name="Set value" sid="634555696532041" type="MPPlayer">
                                             <param id="0" name="Instance variable">Inputs</param>
                                             <param id="1" name="Value">setbit(self.Inputs, 2, 1)</param>
                                         </action>
@@ -1834,7 +2079,7 @@
                                         <condition id="-22" name="Else" sid="248008977911800" type="System" />
                                     </conditions>
                                     <actions>
-                                        <action id="-10" name="Set value" sid="582680960564765" type="Player">
+                                        <action id="-10" name="Set value" sid="582680960564765" type="MPPlayer">
                                             <param id="0" name="Instance variable">Inputs</param>
                                             <param id="1" name="Value">setbit(self.Inputs, 2, 0)</param>
                                         </action>
@@ -1847,7 +2092,7 @@
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="-10" name="Set value" sid="411444827884128" type="Player">
+                                        <action id="-10" name="Set value" sid="411444827884128" type="MPPlayer">
                                             <param id="0" name="Instance variable">Inputs</param>
                                             <param id="1" name="Value">setbit(self.Inputs, 3, 1)</param>
                                         </action>
@@ -1858,7 +2103,7 @@
                                         <condition id="-22" name="Else" sid="968692455285565" type="System" />
                                     </conditions>
                                     <actions>
-                                        <action id="-10" name="Set value" sid="461627713575235" type="Player">
+                                        <action id="-10" name="Set value" sid="461627713575235" type="MPPlayer">
                                             <param id="0" name="Instance variable">Inputs</param>
                                             <param id="1" name="Value">setbit(self.Inputs, 3, 0)</param>
                                         </action>
@@ -1871,7 +2116,7 @@
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="-10" name="Set value" sid="249563178530050" type="Player">
+                                        <action id="-10" name="Set value" sid="249563178530050" type="MPPlayer">
                                             <param id="0" name="Instance variable">Inputs</param>
                                             <param id="1" name="Value">setbit(self.Inputs, 4, 1)</param>
                                         </action>
@@ -1882,7 +2127,7 @@
                                         <condition id="-22" name="Else" sid="661835889358413" type="System" />
                                     </conditions>
                                     <actions>
-                                        <action id="-10" name="Set value" sid="118316758190089" type="Player">
+                                        <action id="-10" name="Set value" sid="118316758190089" type="MPPlayer">
                                             <param id="0" name="Instance variable">Inputs</param>
                                             <param id="1" name="Value">setbit(self.Inputs, 4, 0)</param>
                                         </action>
@@ -1890,16 +2135,38 @@
                                 </event-block>
                             </sub-events>
                         </event-block>
+                        <event-block sid="868101119683063">
+                            <conditions>
+                                <condition behavior="8Direction" id="0" name="Is moving" sid="428443922800670" type="MPPlayer" />
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="777632534252071" type="MPPlayer">
+                                    <param id="0" name="Instance variable">ThrusterOn</param>
+                                    <param id="1" name="Value">setbit(MPPlayer.ThrusterOn, 0, 1)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="311162322664192">
+                            <conditions>
+                                <condition behavior="8Direction" id="0" inverted="1" name="Is moving" sid="129346710299425" type="MPPlayer" />
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="430842208445426" type="MPPlayer">
+                                    <param id="0" name="Instance variable">ThrusterOn</param>
+                                    <param id="1" name="Value">setbit(MPPlayer.ThrusterOn, 0, 0)</param>
+                                </action>
+                            </actions>
+                        </event-block>
                         <event-block sid="465572264718470">
                             <conditions />
                             <actions>
                                 <action id="14" name="Set client state" sid="130890274130154" type="Multiplayer">
                                     <param id="0" name="Tag">&quot;INPUTS&quot;</param>
-                                    <param id="1" name="Value">Player.Inputs</param>
+                                    <param id="1" name="Value">MPPlayer.Inputs</param>
                                 </action>
                                 <action id="14" name="Set client state" sid="426959535889091" type="Multiplayer">
                                     <param id="0" name="Tag">&quot;THRUSTERS&quot;</param>
-                                    <param id="1" name="Value">Player.ThrusterOn</param>
+                                    <param id="1" name="Value">MPPlayer.ThrusterOn</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -1907,7 +2174,7 @@
                 </event-block>
                 <event-block sid="141045428899444">
                     <conditions>
-                        <condition id="-7" name="Compare instance variable" sid="578234915842867" type="Player">
+                        <condition id="-7" name="Compare instance variable" sid="578234915842867" type="MPPlayer">
                             <param id="0" name="Instance variable">MPID</param>
                             <param id="1" name="Comparison">0</param>
                             <param id="2" name="Value">Multiplayer.MyID</param>
@@ -1918,13 +2185,13 @@
                         <event-block sid="498466111750962">
                             <conditions>
                                 <condition id="-8" name="Compare two values" sid="434062105613151" type="System">
-                                    <param id="0" name="First value">getbit(Player.Inputs, 0)</param>
+                                    <param id="0" name="First value">getbit(MPPlayer.Inputs, 0)</param>
                                     <param id="1" name="Comparison">0</param>
                                     <param id="2" name="Second value">1</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action behavior="8Direction" id="7" name="Simulate control" sid="112258091655785" type="Player">
+                                <action behavior="8Direction" id="7" name="Simulate control" sid="112258091655785" type="MPPlayer">
                                     <param id="0" name="Control">2</param>
                                 </action>
                             </actions>
@@ -1932,13 +2199,13 @@
                         <event-block sid="502680146250576">
                             <conditions>
                                 <condition id="-8" name="Compare two values" sid="395455749525388" type="System">
-                                    <param id="0" name="First value">getbit(Player.Inputs, 1)</param>
+                                    <param id="0" name="First value">getbit(MPPlayer.Inputs, 1)</param>
                                     <param id="1" name="Comparison">0</param>
                                     <param id="2" name="Second value">1</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action behavior="8Direction" id="7" name="Simulate control" sid="189966204558255" type="Player">
+                                <action behavior="8Direction" id="7" name="Simulate control" sid="189966204558255" type="MPPlayer">
                                     <param id="0" name="Control">0</param>
                                 </action>
                             </actions>
@@ -1946,13 +2213,13 @@
                         <event-block sid="292370675520376">
                             <conditions>
                                 <condition id="-8" name="Compare two values" sid="255630905598790" type="System">
-                                    <param id="0" name="First value">getbit(Player.Inputs, 2)</param>
+                                    <param id="0" name="First value">getbit(MPPlayer.Inputs, 2)</param>
                                     <param id="1" name="Comparison">0</param>
                                     <param id="2" name="Second value">1</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action behavior="8Direction" id="7" name="Simulate control" sid="753671186470711" type="Player">
+                                <action behavior="8Direction" id="7" name="Simulate control" sid="753671186470711" type="MPPlayer">
                                     <param id="0" name="Control">3</param>
                                 </action>
                             </actions>
@@ -1960,36 +2227,14 @@
                         <event-block sid="210548610696857">
                             <conditions>
                                 <condition id="-8" name="Compare two values" sid="349629357336598" type="System">
-                                    <param id="0" name="First value">getbit(Player.Inputs, 3)</param>
+                                    <param id="0" name="First value">getbit(MPPlayer.Inputs, 3)</param>
                                     <param id="1" name="Comparison">0</param>
                                     <param id="2" name="Second value">1</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action behavior="8Direction" id="7" name="Simulate control" sid="593569392828869" type="Player">
+                                <action behavior="8Direction" id="7" name="Simulate control" sid="593569392828869" type="MPPlayer">
                                     <param id="0" name="Control">1</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="868101119683063">
-                            <conditions>
-                                <condition behavior="8Direction" id="0" name="Is moving" sid="428443922800670" type="Player" />
-                            </conditions>
-                            <actions>
-                                <action id="-10" name="Set value" sid="777632534252071" type="Player">
-                                    <param id="0" name="Instance variable">ThrusterOn</param>
-                                    <param id="1" name="Value">setbit(player.ThrusterOn, 0, 1)</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="311162322664192">
-                            <conditions>
-                                <condition behavior="8Direction" id="0" inverted="1" name="Is moving" sid="129346710299425" type="Player" />
-                            </conditions>
-                            <actions>
-                                <action id="-10" name="Set value" sid="430842208445426" type="Player">
-                                    <param id="0" name="Instance variable">ThrusterOn</param>
-                                    <param id="1" name="Value">setbit(player.ThrusterOn, 0, 0)</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -2010,14 +2255,14 @@
                         <event-block sid="863678038099424">
                             <conditions>
                                 <condition id="-11" name="For Each" sid="988180301721423" type="System">
-                                    <param id="0" name="Object">Player</param>
+                                    <param id="0" name="Object">MPPlayer</param>
                                 </condition>
                             </conditions>
                             <actions />
                             <sub-events>
                                 <event-block sid="625035396985879">
                                     <conditions>
-                                        <condition id="-7" name="Compare instance variable" sid="403822371006845" type="Player">
+                                        <condition id="-7" name="Compare instance variable" sid="403822371006845" type="MPPlayer">
                                             <param id="0" name="Instance variable">MPID</param>
                                             <param id="1" name="Comparison">0</param>
                                             <param id="2" name="Value">function.Param(0)</param>
@@ -2028,14 +2273,14 @@
                                         <action id="-3" name="Create object" sid="109384103339037" type="System">
                                             <param id="0" name="Object to create">Explosion</param>
                                             <param id="1" name="Layer">&quot;Players&quot;</param>
-                                            <param id="2" name="X">Player.X</param>
-                                            <param id="3" name="Y">Player.Y</param>
+                                            <param id="2" name="X">MPPlayer.X</param>
+                                            <param id="3" name="Y">MPPlayer.Y</param>
                                         </action>
                                         <action id="14" name="Log" sid="679917573264074" type="Browser">
                                             <param id="0" name="Type">0</param>
-                                            <param id="1" name="Message">&quot;Creating explosion at &quot;&amp;int(Player.X)&amp;&quot;. &quot;&amp;int(player.Y)</param>
+                                            <param id="1" name="Message">&quot;Creating explosion at &quot;&amp;int(MPPlayer.X)&amp;&quot;. &quot;&amp;int(MPPlayer.Y)</param>
                                         </action>
-                                        <action id="-10" name="Set value" sid="933320595287726" type="Player">
+                                        <action id="-10" name="Set value" sid="933320595287726" type="MPPlayer">
                                             <param id="0" name="Instance variable">IsExploding</param>
                                             <param id="1" name="Value">1</param>
                                         </action>
@@ -2047,7 +2292,7 @@
                                             <param id="0" name="Type">0</param>
                                             <param id="1" name="Message">&quot;Destroying explosion&quot;</param>
                                         </action>
-                                        <action id="-10" name="Set value" sid="951788767774086" type="Player">
+                                        <action id="-10" name="Set value" sid="951788767774086" type="MPPlayer">
                                             <param id="0" name="Instance variable">IsExploding</param>
                                             <param id="1" name="Value">0</param>
                                         </action>
@@ -2089,7 +2334,7 @@
                 </event-block>
                 <event-block sid="892257838110463">
                     <conditions>
-                        <condition id="-7" name="Compare instance variable" sid="694365689236843" type="Player">
+                        <condition id="-7" name="Compare instance variable" sid="694365689236843" type="MPPlayer">
                             <param id="0" name="Instance variable">MPID</param>
                             <param id="1" name="Comparison">0</param>
                             <param id="2" name="Value">Multiplayer.MyID</param>
@@ -2097,7 +2342,7 @@
                     </conditions>
                     <actions>
                         <action id="0" name="Set text" sid="205006369410321" type="PlayerHealthText">
-                            <param id="0" name="Text">&quot;HEALTH: &quot;&amp;int(Player.Health)&amp;&quot;%&quot;</param>
+                            <param id="0" name="Text">&quot;HEALTH: &quot;&amp;int(MPPlayer.Health)&amp;&quot;%&quot;</param>
                         </action>
                     </actions>
                     <sub-events>
@@ -2108,9 +2353,9 @@
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="-10" name="Set value" sid="231948611466837" type="Player">
+                                <action id="-10" name="Set value" sid="231948611466837" type="MPPlayer">
                                     <param id="0" name="Instance variable">Inputs</param>
-                                    <param id="1" name="Value">setbit(Player.Inputs, 6, 1)</param>
+                                    <param id="1" name="Value">setbit(MPPlayer.Inputs, 6, 1)</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -2119,22 +2364,22 @@
                                 <condition id="-22" name="Else" sid="257954746846168" type="System" />
                             </conditions>
                             <actions>
-                                <action id="-10" name="Set value" sid="148660915656838" type="Player">
+                                <action id="-10" name="Set value" sid="148660915656838" type="MPPlayer">
                                     <param id="0" name="Instance variable">Inputs</param>
-                                    <param id="1" name="Value">setbit(Player.Inputs, 6, 0)</param>
+                                    <param id="1" name="Value">setbit(MPPlayer.Inputs, 6, 0)</param>
                                 </action>
                             </actions>
                         </event-block>
                         <event-block sid="188559672290745">
                             <conditions>
-                                <condition id="-7" name="Compare instance variable" sid="864568981383888" type="Player">
+                                <condition id="-7" name="Compare instance variable" sid="864568981383888" type="MPPlayer">
                                     <param id="0" name="Instance variable">Hit</param>
                                     <param id="1" name="Comparison">0</param>
                                     <param id="2" name="Value">1</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action behavior="ScrollTo" id="0" name="Shake" sid="907795226899288" type="Player">
+                                <action behavior="ScrollTo" id="0" name="Shake" sid="907795226899288" type="MPPlayer">
                                     <param id="0" name="Magnitude">20</param>
                                     <param id="1" name="Duration">0.4</param>
                                     <param id="2" name="Mode">0</param>
@@ -2157,7 +2402,7 @@
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="-10" name="Set value" sid="590563755363115" type="Player">
+                                        <action id="-10" name="Set value" sid="590563755363115" type="MPPlayer">
                                             <param id="0" name="Instance variable">LookY</param>
                                             <param id="1" name="Value">self.LookY-10</param>
                                         </action>
@@ -2173,7 +2418,7 @@
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="-10" name="Set value" sid="652881364331903" type="Player">
+                                        <action id="-10" name="Set value" sid="652881364331903" type="MPPlayer">
                                             <param id="0" name="Instance variable">LookY</param>
                                             <param id="1" name="Value">self.LookY+10</param>
                                         </action>
@@ -2189,7 +2434,7 @@
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="-10" name="Set value" sid="417273869319795" type="Player">
+                                        <action id="-10" name="Set value" sid="417273869319795" type="MPPlayer">
                                             <param id="0" name="Instance variable">LookX</param>
                                             <param id="1" name="Value">self.LookX-10</param>
                                         </action>
@@ -2205,7 +2450,7 @@
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="-10" name="Set value" sid="604664684696536" type="Player">
+                                        <action id="-10" name="Set value" sid="604664684696536" type="MPPlayer">
                                             <param id="0" name="Instance variable">LookX</param>
                                             <param id="1" name="Value">self.LookX+10</param>
                                         </action>
@@ -2218,7 +2463,7 @@
                                 <condition id="-22" name="Else" sid="851726422496059" type="System" />
                             </conditions>
                             <actions>
-                                <action id="-10" name="Set value" sid="277175388383904" type="Player">
+                                <action id="-10" name="Set value" sid="277175388383904" type="MPPlayer">
                                     <param id="0" name="Instance variable">LookX</param>
                                     <param id="1" name="Value">Mouse.X</param>
                                 </action>
@@ -2226,7 +2471,7 @@
                                     <param id="0" name="Type">0</param>
                                     <param id="1" name="Message">&quot;Setting LookX to &quot;&amp;Mouse.X</param>
                                 </action>
-                                <action id="-10" name="Set value" sid="305156959072037" type="Player">
+                                <action id="-10" name="Set value" sid="305156959072037" type="MPPlayer">
                                     <param id="0" name="Instance variable">LookY</param>
                                     <param id="1" name="Value">Mouse.Y</param>
                                 </action>
@@ -2238,7 +2483,7 @@
                         </event-block>
                         <event-block sid="477964585242297">
                             <conditions>
-                                <condition id="-7" name="Compare instance variable" sid="986039634083669" type="Player">
+                                <condition id="-7" name="Compare instance variable" sid="986039634083669" type="MPPlayer">
                                     <param id="0" name="Instance variable">Health</param>
                                     <param id="1" name="Comparison">4</param>
                                     <param id="2" name="Value">25</param>
@@ -2259,12 +2504,12 @@
                         </event-block>
                         <event-block sid="314947139427791">
                             <conditions>
-                                <condition id="-7" name="Compare instance variable" sid="818412819696290" type="Player">
+                                <condition id="-7" name="Compare instance variable" sid="818412819696290" type="MPPlayer">
                                     <param id="0" name="Instance variable">Health</param>
                                     <param id="1" name="Comparison">3</param>
                                     <param id="2" name="Value">25</param>
                                 </condition>
-                                <condition id="-7" name="Compare instance variable" sid="166605209089985" type="Player">
+                                <condition id="-7" name="Compare instance variable" sid="166605209089985" type="MPPlayer">
                                     <param id="0" name="Instance variable">Health</param>
                                     <param id="1" name="Comparison">4</param>
                                     <param id="2" name="Value">5</param>
@@ -2311,7 +2556,7 @@
                         </event-block>
                         <event-block sid="493652279238817">
                             <conditions>
-                                <condition id="-7" name="Compare instance variable" sid="935459364942525" type="Player">
+                                <condition id="-7" name="Compare instance variable" sid="935459364942525" type="MPPlayer">
                                     <param id="0" name="Instance variable">Health</param>
                                     <param id="1" name="Comparison">3</param>
                                     <param id="2" name="Value">5</param>
@@ -2359,41 +2604,41 @@
                         <event-block sid="941195454323099">
                             <conditions>
                                 <condition id="-8" name="Compare two values" sid="546041548282133" type="System">
-                                    <param id="0" name="First value">getbit(Player.Inputs, 6)</param>
+                                    <param id="0" name="First value">getbit(MPPlayer.Inputs, 6)</param>
                                     <param id="1" name="Comparison">0</param>
                                     <param id="2" name="Second value">1</param>
                                 </condition>
-                                <condition id="-7" name="Compare instance variable" sid="222144804164497" type="Player">
+                                <condition id="-7" name="Compare instance variable" sid="222144804164497" type="MPPlayer">
                                     <param id="0" name="Instance variable">BoostTimer</param>
                                     <param id="1" name="Comparison">0</param>
                                     <param id="2" name="Value">0</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action behavior="8Direction" id="4" name="Set max speed" sid="571372615221753" type="Player">
+                                <action behavior="8Direction" id="4" name="Set max speed" sid="571372615221753" type="MPPlayer">
                                     <param id="0" name="Max Speed">1000</param>
                                 </action>
-                                <action behavior="8Direction" id="5" name="Set acceleration" sid="127789607660784" type="Player">
+                                <action behavior="8Direction" id="5" name="Set acceleration" sid="127789607660784" type="MPPlayer">
                                     <param id="0" name="Acceleration">2000</param>
                                 </action>
-                                <action id="-10" name="Set value" sid="404372245867459" type="Player">
+                                <action id="-10" name="Set value" sid="404372245867459" type="MPPlayer">
                                     <param id="0" name="Instance variable">BoostActive</param>
                                     <param id="1" name="Value">1</param>
                                 </action>
                                 <action id="-16" name="Wait" sid="529573644256848" type="System">
                                     <param id="0" name="Seconds">2</param>
                                 </action>
-                                <action behavior="8Direction" id="4" name="Set max speed" sid="282702613723386" type="Player">
+                                <action behavior="8Direction" id="4" name="Set max speed" sid="282702613723386" type="MPPlayer">
                                     <param id="0" name="Max Speed">400</param>
                                 </action>
-                                <action behavior="8Direction" id="5" name="Set acceleration" sid="505590830263912" type="Player">
+                                <action behavior="8Direction" id="5" name="Set acceleration" sid="505590830263912" type="MPPlayer">
                                     <param id="0" name="Acceleration">400</param>
                                 </action>
-                                <action id="-10" name="Set value" sid="836120499466093" type="Player">
+                                <action id="-10" name="Set value" sid="836120499466093" type="MPPlayer">
                                     <param id="0" name="Instance variable">BoostTimer</param>
                                     <param id="1" name="Value">self.BoostTimerMax</param>
                                 </action>
-                                <action id="-10" name="Set value" sid="181594092738182" type="Player">
+                                <action id="-10" name="Set value" sid="181594092738182" type="MPPlayer">
                                     <param id="0" name="Instance variable">BoostActive</param>
                                     <param id="1" name="Value">0</param>
                                 </action>
@@ -2414,14 +2659,14 @@
                                 <condition id="-6" name="Every X seconds" sid="766077860205812" type="System">
                                     <param id="0" name="Interval (seconds)">1</param>
                                 </condition>
-                                <condition id="-7" name="Compare instance variable" sid="601744847273117" type="Player">
+                                <condition id="-7" name="Compare instance variable" sid="601744847273117" type="MPPlayer">
                                     <param id="0" name="Instance variable">BoostTimer</param>
                                     <param id="1" name="Comparison">1</param>
                                     <param id="2" name="Value">0</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="-12" name="Subtract from" sid="191551519356993" type="Player">
+                                <action id="-12" name="Subtract from" sid="191551519356993" type="MPPlayer">
                                     <param id="0" name="Instance variable">BoostTimer</param>
                                     <param id="1" name="Value">1</param>
                                 </action>
@@ -2440,7 +2685,7 @@
                             <sub-events>
                                 <event-block sid="905531921888276">
                                     <conditions>
-                                        <condition id="-7" name="Compare instance variable" sid="726099604123789" type="Player">
+                                        <condition id="-7" name="Compare instance variable" sid="726099604123789" type="MPPlayer">
                                             <param id="0" name="Instance variable">BoostActive</param>
                                             <param id="1" name="Comparison">0</param>
                                             <param id="2" name="Value">1</param>
@@ -2473,7 +2718,7 @@
                             <sub-events>
                                 <event-block sid="962868033414434">
                                     <conditions>
-                                        <condition id="-7" name="Compare instance variable" sid="468444520368028" type="Player">
+                                        <condition id="-7" name="Compare instance variable" sid="468444520368028" type="MPPlayer">
                                             <param id="0" name="Instance variable">BoostActive</param>
                                             <param id="1" name="Comparison">0</param>
                                             <param id="2" name="Value">1</param>
@@ -2506,7 +2751,7 @@
                             <sub-events>
                                 <event-block sid="408538178634717">
                                     <conditions>
-                                        <condition id="-7" name="Compare instance variable" sid="845065493558320" type="Player">
+                                        <condition id="-7" name="Compare instance variable" sid="845065493558320" type="MPPlayer">
                                             <param id="0" name="Instance variable">BoostActive</param>
                                             <param id="1" name="Comparison">0</param>
                                             <param id="2" name="Value">1</param>
@@ -2539,7 +2784,7 @@
                             <sub-events>
                                 <event-block sid="857903690548792">
                                     <conditions>
-                                        <condition id="-7" name="Compare instance variable" sid="419276473666092" type="Player">
+                                        <condition id="-7" name="Compare instance variable" sid="419276473666092" type="MPPlayer">
                                             <param id="0" name="Instance variable">BoostActive</param>
                                             <param id="1" name="Comparison">0</param>
                                             <param id="2" name="Value">1</param>
@@ -2564,7 +2809,7 @@
                 <event-block sid="728961111081372">
                     <conditions>
                         <condition id="-11" name="For Each" sid="403663284470301" type="System">
-                            <param id="0" name="Object">Player</param>
+                            <param id="0" name="Object">MPPlayer</param>
                         </condition>
                     </conditions>
                     <actions />
@@ -2574,13 +2819,13 @@
                                 <condition id="-1" name="Every tick" sid="214463867515435" type="System" />
                             </conditions>
                             <actions>
-                                <action id="-22" name="Set angle toward position" sid="991902506290008" type="Player">
+                                <action id="-22" name="Set angle toward position" sid="991902506290008" type="MPPlayer">
                                     <param id="0" name="X">Self.LookX</param>
                                     <param id="1" name="Y">Self.LookY</param>
                                 </action>
                                 <action id="-3" name="Set position" sid="478589046178735" type="PlayerUsernameText">
-                                    <param id="0" name="X">Player.X</param>
-                                    <param id="1" name="Y">Player.Y-150</param>
+                                    <param id="0" name="X">MPPlayer.X</param>
+                                    <param id="1" name="Y">MPPlayer.Y-150</param>
                                 </action>
                                 <action id="-26" name="Move to layer" sid="493560013978195" type="PlayerUsernameText">
                                     <param id="0" name="Layer">&quot;Players&quot;</param>
@@ -2588,39 +2833,77 @@
                                 <action id="-26" name="Move to layer" sid="908083586316271" type="Lazer">
                                     <param id="0" name="Layer">&quot;Lazers&quot;</param>
                                 </action>
-                                <action id="-26" name="Move to layer" sid="874050048860290" type="Player">
+                                <action id="-26" name="Move to layer" sid="874050048860290" type="MPPlayer">
                                     <param id="0" name="Layer">&quot;Players&quot;</param>
                                 </action>
                                 <action id="-3" name="Set position" sid="206192777511710" type="AimSpot">
-                                    <param id="0" name="X">Player.LookX</param>
-                                    <param id="1" name="Y">Player.LookY</param>
+                                    <param id="0" name="X">MPPlayer.LookX</param>
+                                    <param id="1" name="Y">MPPlayer.LookY</param>
                                 </action>
                                 <action id="-26" name="Move to layer" sid="618108602100853" type="AimSpot">
                                     <param id="0" name="Layer">&quot;Aiming&quot;</param>
                                 </action>
                                 <action id="0" name="Set text" sid="466681624581842" type="PlayerUsernameText">
-                                    <param id="0" name="Text">Multiplayer.PeerAliasFromID(Player.MPID)&amp;&quot; - Health: &quot;&amp;Player.Health&amp;&quot;% - Total kills &quot;&amp;Player.TotalKills</param>
+                                    <param id="0" name="Text">Multiplayer.PeerAliasFromID(MPPlayer.MPID)&amp;&quot; - Health: &quot;&amp;MPPlayer.Health&amp;&quot;% - Total kills &quot;&amp;MPPlayer.TotalKills&amp;&quot; Level: &quot;&amp;MPPlayer.Level&amp;&quot; XP: &quot;&amp;MPPlayer.XP</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="680699882849447">
+                            <conditions>
+                                <condition behavior="8Direction" id="0" name="Is moving" sid="283670367815749" type="MPPlayer" />
+                            </conditions>
+                            <actions>
+                                <action disabled="1" id="-10" name="Set value" sid="392814729068468" type="MPPlayer">
+                                    <param id="0" name="Instance variable">ThrusterOn</param>
+                                    <param id="1" name="Value">setbit(MPPlayer.ThrusterOn, 0, 1)</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="293594361137819" type="MPPlayer">
+                                    <param id="0" name="Instance variable">ThrusterOn</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action disabled="1" id="14" name="Log" sid="529804898768433" type="Browser">
+                                    <param id="0" name="Type">0</param>
+                                    <param id="1" name="Message">&quot;Setting ThrustersOn to 1&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="447973065916526">
+                            <conditions>
+                                <condition behavior="8Direction" id="0" inverted="1" name="Is moving" sid="251482752513220" type="MPPlayer" />
+                            </conditions>
+                            <actions>
+                                <action disabled="1" id="-10" name="Set value" sid="749194000639856" type="MPPlayer">
+                                    <param id="0" name="Instance variable">ThrusterOn</param>
+                                    <param id="1" name="Value">setbit(MPPlayer.ThrusterOn, 0, 0)</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="824804485016707" type="MPPlayer">
+                                    <param id="0" name="Instance variable">ThrusterOn</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action disabled="1" id="14" name="Log" sid="911063556554015" type="Browser">
+                                    <param id="0" name="Type">0</param>
+                                    <param id="1" name="Message">&quot;Setting ThrustersOn to 0&quot;</param>
                                 </action>
                             </actions>
                         </event-block>
                         <event-block sid="280576156750556">
                             <conditions>
-                                <condition id="-7" name="Compare instance variable" sid="915782508207183" type="Player">
+                                <condition id="-7" name="Compare instance variable" sid="915782508207183" type="MPPlayer">
                                     <param id="0" name="Instance variable">IsExploding</param>
                                     <param id="1" name="Comparison">0</param>
                                     <param id="2" name="Value">1</param>
                                 </condition>
-                                <condition id="-7" name="Compare instance variable" sid="870952308158178" type="Player">
+                                <condition id="-7" name="Compare instance variable" sid="870952308158178" type="MPPlayer">
                                     <param id="0" name="Instance variable">MPID</param>
                                     <param id="1" name="Comparison">0</param>
                                     <param id="2" name="Value">Multiplayer.MyID</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action behavior="8Direction" id="8" name="Set enabled" sid="694739117270638" type="Player">
+                                <action behavior="8Direction" id="8" name="Set enabled" sid="694739117270638" type="MPPlayer">
                                     <param id="0" name="State">0</param>
                                 </action>
-                                <action id="-15" name="Set visible" sid="625282006780922" type="Player">
+                                <action id="-15" name="Set visible" sid="625282006780922" type="MPPlayer">
                                     <param id="0" name="Visibility">0</param>
                                 </action>
                                 <action behavior="ScrollTo" id="1" name="Set enabled" sid="835458190490477" type="AimSpot">
@@ -2630,22 +2913,22 @@
                         </event-block>
                         <event-block sid="202679135102430">
                             <conditions>
-                                <condition id="-7" name="Compare instance variable" sid="907658262886868" type="Player">
+                                <condition id="-7" name="Compare instance variable" sid="907658262886868" type="MPPlayer">
                                     <param id="0" name="Instance variable">IsExploding</param>
                                     <param id="1" name="Comparison">0</param>
                                     <param id="2" name="Value">0</param>
                                 </condition>
-                                <condition id="-7" name="Compare instance variable" sid="131030840698678" type="Player">
+                                <condition id="-7" name="Compare instance variable" sid="131030840698678" type="MPPlayer">
                                     <param id="0" name="Instance variable">MPID</param>
                                     <param id="1" name="Comparison">0</param>
                                     <param id="2" name="Value">Multiplayer.MyID</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action behavior="8Direction" id="8" name="Set enabled" sid="125818883485318" type="Player">
+                                <action behavior="8Direction" id="8" name="Set enabled" sid="125818883485318" type="MPPlayer">
                                     <param id="0" name="State">1</param>
                                 </action>
-                                <action id="-15" name="Set visible" sid="440438073399518" type="Player">
+                                <action id="-15" name="Set visible" sid="440438073399518" type="MPPlayer">
                                     <param id="0" name="Visibility">1</param>
                                 </action>
                                 <action behavior="ScrollTo" id="1" name="Set enabled" sid="551335570892703" type="AimSpot">
@@ -2656,22 +2939,22 @@
                         <event-block sid="475253966574924">
                             <conditions>
                                 <condition id="-8" name="Compare two values" sid="300914654399796" type="System">
-                                    <param id="0" name="First value">getbit(Player.Inputs, 4)</param>
+                                    <param id="0" name="First value">getbit(MPPlayer.Inputs, 4)</param>
                                     <param id="1" name="Comparison">0</param>
                                     <param id="2" name="Second value">1</param>
                                 </condition>
                             </conditions>
                             <actions>
                                 <action id="-3" name="Set position" sid="346005532751946" type="Lazer">
-                                    <param id="0" name="X">Player.X</param>
-                                    <param id="1" name="Y">Player.Y</param>
+                                    <param id="0" name="X">MPPlayer.X</param>
+                                    <param id="1" name="Y">MPPlayer.Y</param>
                                 </action>
                                 <action id="-22" name="Set angle toward position" sid="990295799069075" type="Lazer">
-                                    <param id="0" name="X">Player.LookX</param>
-                                    <param id="1" name="Y">Player.LookY</param>
+                                    <param id="0" name="X">MPPlayer.LookX</param>
+                                    <param id="1" name="Y">MPPlayer.LookY</param>
                                 </action>
                                 <action id="-5" name="Set width" sid="686163579969283" type="Lazer">
-                                    <param id="0" name="Width">distance(Lazer.X,Lazer.Y,Player.LookX,Player.LookY)</param>
+                                    <param id="0" name="Width">distance(Lazer.X,Lazer.Y,MPPlayer.LookX,MPPlayer.LookY)</param>
                                 </action>
                             </actions>
                             <sub-events>
@@ -2719,37 +3002,117 @@
                         </event-block>
                         <event-block sid="120370796415652">
                             <conditions>
-                                <condition id="-8" name="Compare two values" sid="423679521029893" type="System">
-                                    <param id="0" name="First value">getbit(player.ThrusterOn, 0)</param>
+                                <condition disabled="1" id="-8" name="Compare two values" sid="423679521029893" type="System">
+                                    <param id="0" name="First value">getbit(MPPlayer.ThrusterOn, 0)</param>
                                     <param id="1" name="Comparison">0</param>
                                     <param id="2" name="Second value">1</param>
                                 </condition>
+                                <condition id="-7" name="Compare instance variable" sid="544602010087698" type="MPPlayer">
+                                    <param id="0" name="Instance variable">ThrusterOn</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
                             </conditions>
                             <actions>
-                                <action id="5" name="Set frame" sid="241802357532638" type="Player">
+                                <action id="5" name="Set frame" sid="241802357532638" type="MPPlayer">
                                     <param id="0" name="Frame number">1</param>
                                 </action>
                                 <action disabled="1" id="14" name="Log" sid="978167987716791" type="Browser">
                                     <param id="0" name="Type">0</param>
-                                    <param id="1" name="Message">&quot;setting player &quot;&amp;Multiplayer.PeerAliasFromID(Player.MPID)&amp;&quot; animation frame to 1&quot;</param>
+                                    <param id="1" name="Message">&quot;setting player &quot;&amp;Multiplayer.PeerAliasFromID(MPPlayer.MPID)&amp;&quot; animation frame to 1&quot;</param>
                                 </action>
                             </actions>
                         </event-block>
                         <event-block sid="562663432008992">
                             <conditions>
-                                <condition id="-8" name="Compare two values" sid="432013379289822" type="System">
-                                    <param id="0" name="First value">getbit(player.ThrusterOn, 0)</param>
+                                <condition disabled="1" id="-8" name="Compare two values" sid="432013379289822" type="System">
+                                    <param id="0" name="First value">getbit(MPPlayer.ThrusterOn, 0)</param>
                                     <param id="1" name="Comparison">0</param>
                                     <param id="2" name="Second value">0</param>
                                 </condition>
+                                <condition id="-7" name="Compare instance variable" sid="712402174255502" type="MPPlayer">
+                                    <param id="0" name="Instance variable">ThrusterOn</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
                             </conditions>
                             <actions>
-                                <action id="5" name="Set frame" sid="776082689314763" type="Player">
+                                <action id="5" name="Set frame" sid="776082689314763" type="MPPlayer">
                                     <param id="0" name="Frame number">0</param>
                                 </action>
                                 <action disabled="1" id="14" name="Log" sid="247688459471865" type="Browser">
                                     <param id="0" name="Type">0</param>
-                                    <param id="1" name="Message">&quot;setting player &quot;&amp;Multiplayer.PeerAliasFromID(Player.MPID)&amp;&quot; animation frame to 0&quot;</param>
+                                    <param id="1" name="Message">&quot;setting player &quot;&amp;Multiplayer.PeerAliasFromID(MPPlayer.MPID)&amp;&quot; animation frame to 0&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="512791057810897">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="343057391983149" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="7" name="Set CSS style" sid="184820800450335" type="StatusBox">
+                            <param id="0" name="Property name">&quot;font-size&quot;</param>
+                            <param id="1" name="Value">&quot;1em&quot;</param>
+                        </action>
+                        <action id="9" name="Scroll to bottom" sid="900111340176524" type="StatusBox" />
+                    </actions>
+                    <sub-events>
+                        <event-block sid="953778711343281">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="302316233322884" type="System">
+                                    <param id="0" name="Variable">SERVER</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="7" name="Set CSS style" sid="926676107475044" type="StatusBox">
+                                    <param id="0" name="Property name">&quot;overflow&quot;</param>
+                                    <param id="1" name="Value">&quot;visible&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="189446176011354">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="685698062132235" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="7" name="Set CSS style" sid="314493221292793" type="StatusBox">
+                                    <param id="0" name="Property name">&quot;overflow&quot;</param>
+                                    <param id="1" name="Value">&quot;hidden&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="955563969652341">
+                    <conditions>
+                        <condition id="-3" name="On end of layout" sid="298472482740204" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="7" name="Disconnect" sid="650586535331826" type="Multiplayer" />
+                        <action id="2" name="Disconnect" sid="487188332200063" type="Multiplayer" />
+                    </actions>
+                    <sub-events>
+                        <event-block sid="473798464840994">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="850189493564433" type="MPPlayer">
+                                    <param id="0" name="Instance variable">MPID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">Multiplayer.MyID</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="351887640865787" type="System">
+                                    <param id="0" name="Variable">MPLevel</param>
+                                    <param id="1" name="Value">MPPlayer.Level</param>
+                                </action>
+                                <action id="0" name="Set item" sid="845857198212731" type="LocalStorage">
+                                    <param id="0" name="Key">&quot;MP Level&quot;</param>
+                                    <param id="1" name="Value">MPLevel</param>
                                 </action>
                             </actions>
                         </event-block>

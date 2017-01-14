@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Tutorial</name>
+    <events>
+        <include>Gameplay</include>
+        <include>Globals</include>
+        <include>GLOBAL EVENTS</include>
+        <include>Weather Effects</include>
+        <event-block sid="746119018124463">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="197942777486082" type="System" />
+            </conditions>
+            <actions>
+                <action id="-12" name="Set group active" sid="945961324953496" type="System">
+                    <param id="0" name="Group name">&quot;RAIN&quot;</param>
+                    <param id="1" name="State">1</param>
+                </action>
+                <action id="0" name="Set cursor style" sid="798635734263335" type="Mouse">
+                    <param id="0" name="Cursor style">0</param>
+                </action>
+                <action id="-6" name="Set height" sid="550274539372026" type="TutorialBackground">
+                    <param id="0" name="Height">LayoutHeight+512</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="845296234776055">
+            <conditions>
+                <condition behavior="8Direction" id="0" name="Is moving" sid="514208814636624" type="Player" />
+            </conditions>
+            <actions>
+                <action id="5" name="Set frame" sid="518936653558851" type="Player">
+                    <param id="0" name="Frame number">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="966430702655557">
+            <conditions>
+                <condition behavior="8Direction" id="0" inverted="1" name="Is moving" sid="146596115127046" type="Player" />
+            </conditions>
+            <actions>
+                <action id="5" name="Set frame" sid="287409083300636" type="Player">
+                    <param id="0" name="Frame number">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="890337828720247">
+            <conditions>
+                <condition id="2" name="Key is down" sid="390042324418521" type="Keyboard">
+                    <param id="0" name="Key">87 (W)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="8Direction" id="7" name="Simulate control" sid="245492952472967" type="Player">
+                    <param id="0" name="Control">2</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="386429617008113">
+            <conditions>
+                <condition id="2" name="Key is down" sid="995170922239745" type="Keyboard">
+                    <param id="0" name="Key">83 (S)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="8Direction" id="7" name="Simulate control" sid="956353026723792" type="Player">
+                    <param id="0" name="Control">3</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="554862492100841">
+            <conditions>
+                <condition id="2" name="Key is down" sid="625709043603407" type="Keyboard">
+                    <param id="0" name="Key">65 (A)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="8Direction" id="7" name="Simulate control" sid="907019104760694" type="Player">
+                    <param id="0" name="Control">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="941512866858318">
+            <conditions>
+                <condition id="2" name="Key is down" sid="902283280726233" type="Keyboard">
+                    <param id="0" name="Key">68 (D)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="8Direction" id="7" name="Simulate control" sid="628795739727071" type="Player">
+                    <param id="0" name="Control">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="576919851480907">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="843441578193103" type="System" />
+            </conditions>
+            <actions>
+                <action id="-22" name="Set angle toward position" sid="718811822214400" type="Player">
+                    <param id="0" name="X">Mouse.X</param>
+                    <param id="1" name="Y">Mouse.Y</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="280886526550768">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="547142385685361" type="System" />
+                <condition behavior="8Direction" id="0" inverted="1" name="Is moving" sid="606973970655061" type="Player" />
+            </conditions>
+            <actions>
+                <action id="-2" name="Set Y" sid="560482722480326" type="Player">
+                    <param id="0" name="Y">self.Y+2</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="770242851808845">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="670211031990750" type="System" />
+                <condition id="-9" inverted="1" name="Layer is visible" sid="385061821789254" type="System">
+                    <param id="0" name="Layer">&quot;Developer Console&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Set Y" sid="227095596941298" type="TutorialBackground">
+                    <param id="0" name="Y">self.Y+5</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="254252374148330">
+            <conditions>
+                <condition id="-2" name="Compare Y" sid="613035154335645" type="TutorialBackground">
+                    <param id="0" name="Comparison">5</param>
+                    <param id="1" name="Y co-ordinate">LayoutHeight+512</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Set Y" sid="310488776031441" type="TutorialBackground">
+                    <param id="0" name="Y">LayoutHeight+256</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="343255260839273">
+            <conditions>
+                <condition id="-3" name="On end of layout" sid="769053583039479" type="System" />
+            </conditions>
+            <actions>
+                <action id="33" name="Stop all" sid="268009229235756" type="Audio" />
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
