@@ -1,5 +1,5 @@
 ﻿{
-	"version": 1484484594,
+	"version": 1484491850,
 	"fileList": [
 		"data.js",
 		"c2runtime.js",
@@ -19,8 +19,8 @@
 		"images/arrow-sheet0.png",
 		"images/aimspot-sheet0.png",
 		"images/mpcursor-sheet0.png",
-		"images/touchcenter-sheet0.png",
-		"images/touchmove-sheet0.png",
+		"images/movetouchcenter-sheet0.png",
+		"images/movetouchmove-sheet0.png",
 		"images/cursorinverted-sheet0.png",
 		"images/explosion-sheet0.png",
 		"images/explosion-sheet1.png",
