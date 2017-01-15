@@ -1,5 +1,5 @@
 ﻿{
-	"version": 1484492829,
+	"version": 1484499993,
 	"fileList": [
 		"data.js",
 		"c2runtime.js",
@@ -19,13 +19,13 @@
 		"images/arrow-sheet0.png",
 		"images/aimspot-sheet0.png",
 		"images/mpcursor-sheet0.png",
-		"images/movetouchcenter-sheet0.png",
-		"images/movetouchmove-sheet0.png",
+		"images/movetouch-sheet0.png",
 		"images/cursorinverted-sheet0.png",
 		"images/explosion-sheet0.png",
 		"images/explosion-sheet1.png",
 		"images/explosion-sheet2.png",
 		"images/player-sheet0.png",
+		"images/aimtouch-sheet0.png",
 		"images/alienwarscreditslogomini-sheet0.png",
 		"images/alienwarscreditslogosquare-sheet0.png",
 		"images/alienwarscreditslogowide-sheet0.png",
