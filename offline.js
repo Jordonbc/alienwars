@@ -1,5 +1,5 @@
 ﻿{
-	"version": 1484606215,
+	"version": 1484682484,
 	"fileList": [
 		"data.js",
 		"c2runtime.js",
@@ -30,7 +30,6 @@
 		"images/explosion-sheet0.png",
 		"images/explosion-sheet1.png",
 		"images/explosion-sheet2.png",
-		"images/player-sheet0.png",
 		"images/aimtouch-sheet0.png",
 		"images/alienwarscreditslogomini-sheet0.png",
 		"images/alienwarscreditslogosquare-sheet0.png",
