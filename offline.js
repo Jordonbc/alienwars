@@ -1,5 +1,5 @@
 ﻿{
-	"version": 1484682484,
+	"version": 1484750499,
 	"fileList": [
 		"data.js",
 		"c2runtime.js",
@@ -45,10 +45,10 @@
 		"media/menu selection click.ogg",
 		"media/snare.m4a",
 		"media/snare.ogg",
-		"media/the_freeharmonic_orchestra_-_08_-_unconquered_sun.m4a",
-		"media/the_freeharmonic_orchestra_-_08_-_unconquered_sun.ogg",
 		"media/observingthestar.m4a",
 		"media/observingthestar.ogg",
+		"media/through space.m4a",
+		"media/through space.ogg",
 		"icon-16.png",
 		"icon-32.png",
 		"icon-114.png",
