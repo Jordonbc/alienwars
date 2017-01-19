@@ -3,10 +3,12 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>MP Globals</name>
     <events>
+        <variable constant="0" name="PlayerList" sid="755882596690703" static="0" type="text"></variable>
+        <variable comment="Percentage required to level up" constant="0" name="LevelPercentage" sid="876546309406205" static="0" type="number">0.75</variable>
+        <variable comment="Percentage of level used for attack damage" constant="0" name="AttackPercentage" sid="640223744592309" static="0" type="number">0.25</variable>
         <variable comment="Act like a server" constant="0" name="SERVER" sid="668717742619106" static="0" type="number">0</variable>
         <variable comment="Name of the game" constant="1" name="GAMENAME" sid="342910949414256" static="0" type="text">Jordonbc-AlienWars</variable>
         <variable comment="Instance of the game" constant="0" name="INSTANCE" sid="788638040464288" static="0" type="text">DEFAULT</variable>
         <variable constant="0" name="USERNAME" sid="697362101103243" static="0" type="text">TEST</variable>
-        <variable constant="0" name="AttackDamage" sid="426728221255663" static="0" type="number">4</variable>
     </events>
 </c2eventsheet>

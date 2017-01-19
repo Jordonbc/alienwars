@@ -3,6 +3,8 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Title</name>
     <events>
+        <variable comment="The current size of the title" constant="0" name="TitleScale" sid="769267226489413" static="0" type="number">0.8</variable>
+        <variable comment="How much to add to the title each tick" constant="0" name="TitleAdd" sid="620345288775101" static="0" type="number">0.005</variable>
         <include>Globals</include>
         <event-block sid="951397772017661">
             <conditions>

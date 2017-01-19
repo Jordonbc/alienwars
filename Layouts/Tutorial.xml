@@ -109,11 +109,11 @@
                         <x>966.979919434</x>
                         <y>538.707397461</y>
                         <z>0</z>
-                        <width>176.30708313</width>
+                        <width>174.238967896</width>
                         <height>169.068649292</height>
                         <depth>0</depth>
-                        <hotspotX>0.539589465</hotspotX>
-                        <hotspotY>0.492354751</hotspotY>
+                        <hotspotX>0.53709197</hotspotX>
+                        <hotspotY>0.501529038</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
@@ -183,7 +183,7 @@
                     <behavior-instances>
                         <behavior-instance type="Bullet">
                             <properties>
-                                <speed>1400</speed>
+                                <speed>2000</speed>
                                 <acceleration>0</acceleration>
                                 <gravity>0</gravity>
                                 <bounce-off-solids>No</bounce-off-solids>
@@ -272,7 +272,7 @@
             </instances>
             <effects />
         </layer>
-        <layer name="Menu Background" sid="469977159911881">
+        <layer name="Pause Menu" sid="437050673229577">
             <initially-visible>1</initially-visible>
             <background-color>255,255,255</background-color>
             <transparent>1</transparent>

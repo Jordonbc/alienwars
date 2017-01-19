@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Storage</name>
     <events>
+        <include>Functions</include>
         <comment>At start of game check local storage for settings</comment>
         <event-block sid="436741180326239">
             <conditions>
@@ -32,6 +33,15 @@
                 </action>
                 <action id="5" name="Check item exists" sid="790996636276079" type="LocalStorage">
                     <param id="0" name="Key">&quot;MP Deaths&quot;</param>
+                </action>
+                <action id="5" name="Check item exists" sid="420664931199493" type="LocalStorage">
+                    <param id="0" name="Key">&quot;MenuColour&quot;</param>
+                </action>
+                <action id="5" name="Check item exists" sid="136031195133940" type="LocalStorage">
+                    <param id="0" name="Key">&quot;GraphicsQuality&quot;</param>
+                </action>
+                <action id="5" name="Check item exists" sid="576472454739504" type="LocalStorage">
+                    <param id="0" name="Key">&quot;EffectsQuality&quot;</param>
                 </action>
             </actions>
         </event-block>
@@ -166,6 +176,54 @@
                         <action id="14" name="Log" sid="810770465727062" type="Browser">
                             <param id="0" name="Type">0</param>
                             <param id="1" name="Message">&quot;Getting Local Storage MP Deaths&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="506174571643591">
+                    <conditions>
+                        <condition id="9" name="On item exists" sid="790374737502240" type="LocalStorage">
+                            <param id="0" name="Key">&quot;MenuColour&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="1" name="Get item" sid="750802084917624" type="LocalStorage">
+                            <param id="0" name="Key">&quot;MenuColour&quot;</param>
+                        </action>
+                        <action id="14" name="Log" sid="112492756122659" type="Browser">
+                            <param id="0" name="Type">0</param>
+                            <param id="1" name="Message">&quot;Getting Local Storage MenuColour&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="166938208412585">
+                    <conditions>
+                        <condition id="9" name="On item exists" sid="544858392607389" type="LocalStorage">
+                            <param id="0" name="Key">&quot;GraphicsQuality&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="1" name="Get item" sid="589389975157314" type="LocalStorage">
+                            <param id="0" name="Key">&quot;GraphicsQuality&quot;</param>
+                        </action>
+                        <action id="14" name="Log" sid="255149732545741" type="Browser">
+                            <param id="0" name="Type">0</param>
+                            <param id="1" name="Message">&quot;Getting Local Storage GraphicsQuality&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="753890831853187">
+                    <conditions>
+                        <condition id="9" name="On item exists" sid="321414101110247" type="LocalStorage">
+                            <param id="0" name="Key">&quot;EffectsQuality&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="1" name="Get item" sid="907031559138530" type="LocalStorage">
+                            <param id="0" name="Key">&quot;EffectsQuality&quot;</param>
+                        </action>
+                        <action id="14" name="Log" sid="526206564641461" type="Browser">
+                            <param id="0" name="Type">0</param>
+                            <param id="1" name="Message">&quot;Getting Local Storage EffectsQuality&quot;</param>
                         </action>
                     </actions>
                 </event-block>
@@ -310,6 +368,57 @@
                         <action id="14" name="Log" sid="114594182533027" type="Browser">
                             <param id="0" name="Type">1</param>
                             <param id="1" name="Message">&quot;Setting Local Storage MP Deaths: &quot;&amp;LocalStorage.ItemValue</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="258685218304869">
+                    <conditions>
+                        <condition id="10" name="On item missing" sid="620856825202719" type="LocalStorage">
+                            <param id="0" name="Key">&quot;MenuColour&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set item" sid="293602088638860" type="LocalStorage">
+                            <param id="0" name="Key">&quot;MenuColour&quot;</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="14" name="Log" sid="231822027986182" type="Browser">
+                            <param id="0" name="Type">1</param>
+                            <param id="1" name="Message">&quot;Setting Local Storage MenuColour: &quot;&amp;LocalStorage.ItemValue</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="443036179330139">
+                    <conditions>
+                        <condition id="10" name="On item missing" sid="207619406570367" type="LocalStorage">
+                            <param id="0" name="Key">&quot;GraphicsQuality&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set item" sid="518010944720309" type="LocalStorage">
+                            <param id="0" name="Key">&quot;GraphicsQuality&quot;</param>
+                            <param id="1" name="Value">GraphicsQuality</param>
+                        </action>
+                        <action id="14" name="Log" sid="213366537315925" type="Browser">
+                            <param id="0" name="Type">1</param>
+                            <param id="1" name="Message">&quot;Setting Local Storage GraphicsQuality: &quot;&amp;LocalStorage.ItemValue</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="524957317751950">
+                    <conditions>
+                        <condition id="10" name="On item missing" sid="714620813005871" type="LocalStorage">
+                            <param id="0" name="Key">&quot;EffectsQuality&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set item" sid="661880330253020" type="LocalStorage">
+                            <param id="0" name="Key">&quot;EffectsQuality&quot;</param>
+                            <param id="1" name="Value">EffectsQuality</param>
+                        </action>
+                        <action id="14" name="Log" sid="487560065124346" type="Browser">
+                            <param id="0" name="Type">1</param>
+                            <param id="1" name="Message">&quot;Setting Local Storage EffectsQuality: &quot;&amp;LocalStorage.ItemValue</param>
                         </action>
                     </actions>
                 </event-block>
@@ -490,6 +599,69 @@
                         <action id="14" name="Log" sid="893742128339694" type="Browser">
                             <param id="0" name="Type">0</param>
                             <param id="1" name="Message">&quot;Setting TotalDeaths to: &quot;&amp;LocalStorage.ItemValue</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="203291496430171">
+                    <conditions>
+                        <condition id="1" name="On item get" sid="583206732251484" type="LocalStorage">
+                            <param id="0" name="Key">&quot;MenuColour&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="449376888015799" type="System">
+                            <param id="0" name="Variable">MenuColour</param>
+                            <param id="1" name="Value">LocalStorage.ItemValue</param>
+                        </action>
+                        <action id="0" name="Call function" sid="158268568389331" type="Function">
+                            <param id="0" name="Name">&quot;SetMenuColour&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="14" name="Log" sid="376220246366008" type="Browser">
+                            <param id="0" name="Type">0</param>
+                            <param id="1" name="Message">&quot;Setting MenuColour to: &quot;&amp;LocalStorage.ItemValue</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="146999893736935">
+                    <conditions>
+                        <condition id="1" name="On item get" sid="316638163540897" type="LocalStorage">
+                            <param id="0" name="Key">&quot;GraphicsQuality&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="168224846997740" type="System">
+                            <param id="0" name="Variable">GraphicsQuality</param>
+                            <param id="1" name="Value">LocalStorage.ItemValue</param>
+                        </action>
+                        <action id="0" name="Call function" sid="163166069181160" type="Function">
+                            <param id="0" name="Name">&quot;Refresh GraphicsQuality&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="14" name="Log" sid="560314187481228" type="Browser">
+                            <param id="0" name="Type">0</param>
+                            <param id="1" name="Message">&quot;Setting GraphicsQuality to: &quot;&amp;LocalStorage.ItemValue</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="947101849373060">
+                    <conditions>
+                        <condition id="1" name="On item get" sid="239733591400875" type="LocalStorage">
+                            <param id="0" name="Key">&quot;EffectsQuality&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="840962227374490" type="System">
+                            <param id="0" name="Variable">EffectsQuality</param>
+                            <param id="1" name="Value">LocalStorage.ItemValue</param>
+                        </action>
+                        <action id="0" name="Call function" sid="207045362450708" type="Function">
+                            <param id="0" name="Name">&quot;Refresh EffectsQuality&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="14" name="Log" sid="112493692199119" type="Browser">
+                            <param id="0" name="Type">0</param>
+                            <param id="1" name="Message">&quot;Setting EffectsQuality to: &quot;&amp;LocalStorage.ItemValue</param>
                         </action>
                     </actions>
                 </event-block>

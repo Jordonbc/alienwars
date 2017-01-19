@@ -492,10 +492,43 @@
                                                 </action>
                                             </actions>
                                             <sub-events>
-                                                <event-block sid="689807224656216">
+                                                <event-block any="1" sid="100648152924250">
+                                                    <conditions>
+                                                        <condition id="-14" name="Pick by unique ID" sid="770310486717850" type="Button">
+                                                            <param id="0" name="Unique ID">5</param>
+                                                        </condition>
+                                                        <condition id="-14" name="Pick by unique ID" sid="538580728990959" type="Button">
+                                                            <param id="0" name="Unique ID">133</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="0" name="Call function" sid="426746334064462" type="Function">
+                                                            <param id="0" name="Name">&quot;Reset All Buttons&quot;</param>
+                                                            <param id="1" name="Parameter {n}"></param>
+                                                        </action>
+                                                        <action id="-16" name="Wait" sid="741503062351428" type="System">
+                                                            <param id="0" name="Seconds">0</param>
+                                                        </action>
+                                                        <action id="-7" name="Set size" sid="774174049515212" type="SettingsButtonText">
+                                                            <param id="0" name="Width">Button.Width</param>
+                                                            <param id="1" name="Height">Button.Height</param>
+                                                        </action>
+                                                        <action id="-3" name="Set position" sid="370067877331349" type="SettingsButtonText">
+                                                            <param id="0" name="X">Button.X</param>
+                                                            <param id="1" name="Y">Button.Y</param>
+                                                        </action>
+                                                        <action id="3" name="Set font size" sid="331314401133241" type="SettingsButtonText">
+                                                            <param id="0" name="Size (pt)">32</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block any="1" sid="689807224656216">
                                                     <conditions>
                                                         <condition id="-14" name="Pick by unique ID" sid="829011527926993" type="Button">
                                                             <param id="0" name="Unique ID">5</param>
+                                                        </condition>
+                                                        <condition id="-14" name="Pick by unique ID" sid="752106966325352" type="Button">
+                                                            <param id="0" name="Unique ID">133</param>
                                                         </condition>
                                                     </conditions>
                                                     <actions />
@@ -542,29 +575,6 @@
                                                     <param id="2" name="Loop">0</param>
                                                     <param id="3" name="Volume">0</param>
                                                     <param id="1" name="Tag (optional)">&quot;&quot;</param>
-                                                </action>
-                                            </actions>
-                                        </event-block>
-                                        <event-block sid="100648152924250">
-                                            <conditions>
-                                                <condition id="-14" name="Pick by unique ID" sid="770310486717850" type="Button">
-                                                    <param id="0" name="Unique ID">5</param>
-                                                </condition>
-                                            </conditions>
-                                            <actions>
-                                                <action id="3" name="Set font size" sid="516558455897526" type="ButtonText">
-                                                    <param id="0" name="Size (pt)">18</param>
-                                                </action>
-                                                <action id="-7" name="Set size" sid="774174049515212" type="SettingsButtonText">
-                                                    <param id="0" name="Width">Button.Width</param>
-                                                    <param id="1" name="Height">Button.Height</param>
-                                                </action>
-                                                <action id="-3" name="Set position" sid="370067877331349" type="SettingsButtonText">
-                                                    <param id="0" name="X">Button.X</param>
-                                                    <param id="1" name="Y">Button.Y</param>
-                                                </action>
-                                                <action id="3" name="Set font size" sid="331314401133241" type="SettingsButtonText">
-                                                    <param id="0" name="Size (pt)">28</param>
                                                 </action>
                                             </actions>
                                         </event-block>
@@ -715,29 +725,6 @@
                             </conditions>
                             <actions />
                             <sub-events>
-                                <event-block sid="518378294024801">
-                                    <conditions>
-                                        <condition id="-14" name="Pick by unique ID" sid="386914200457109" type="Button">
-                                            <param id="0" name="Unique ID">7</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="3" name="Set font size" sid="940028243313462" type="ButtonText">
-                                            <param id="0" name="Size (pt)">18</param>
-                                        </action>
-                                        <action id="-7" name="Set size" sid="231697078820473" type="CreditsButtonText">
-                                            <param id="0" name="Width">Button.Width</param>
-                                            <param id="1" name="Height">Button.Height</param>
-                                        </action>
-                                        <action id="-3" name="Set position" sid="352311856723596" type="CreditsButtonText">
-                                            <param id="0" name="X">Button.X</param>
-                                            <param id="1" name="Y">Button.Y</param>
-                                        </action>
-                                        <action id="3" name="Set font size" sid="352044435548750" type="CreditsButtonText">
-                                            <param id="0" name="Size (pt)">28</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
                                 <event-block sid="419091814201602">
                                     <conditions>
                                         <condition id="-9" inverted="1" name="Layer is visible" sid="443438340578824" type="System">
@@ -768,6 +755,33 @@
                                         </action>
                                     </actions>
                                     <sub-events>
+                                        <event-block sid="518378294024801">
+                                            <conditions>
+                                                <condition id="-14" name="Pick by unique ID" sid="386914200457109" type="Button">
+                                                    <param id="0" name="Unique ID">7</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Call function" sid="556945187326652" type="Function">
+                                                    <param id="0" name="Name">&quot;Reset All Buttons&quot;</param>
+                                                    <param id="1" name="Parameter {n}"></param>
+                                                </action>
+                                                <action id="-16" name="Wait" sid="700454859538446" type="System">
+                                                    <param id="0" name="Seconds">0</param>
+                                                </action>
+                                                <action id="-7" name="Set size" sid="231697078820473" type="CreditsButtonText">
+                                                    <param id="0" name="Width">Button.Width</param>
+                                                    <param id="1" name="Height">Button.Height</param>
+                                                </action>
+                                                <action id="-3" name="Set position" sid="352311856723596" type="CreditsButtonText">
+                                                    <param id="0" name="X">Button.X</param>
+                                                    <param id="1" name="Y">Button.Y</param>
+                                                </action>
+                                                <action id="3" name="Set font size" sid="352044435548750" type="CreditsButtonText">
+                                                    <param id="0" name="Size (pt)">32</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
                                         <event-block sid="986844627730888">
                                             <conditions>
                                                 <condition id="-14" name="Pick by unique ID" sid="541540149799600" type="Button">
@@ -972,6 +986,18 @@
                                     <param id="0" name="Layer">&quot;Pause Menu&quot;</param>
                                     <param id="1" name="Visibility">0</param>
                                 </action>
+                                <action id="-4" name="Set layer visible" sid="331809896840829" type="System">
+                                    <param id="0" name="Layer">&quot;Info&quot;</param>
+                                    <param id="1" name="Visibility">1</param>
+                                </action>
+                                <action id="-4" name="Set layer visible" sid="726848382839133" type="System">
+                                    <param id="0" name="Layer">&quot;Log&quot;</param>
+                                    <param id="1" name="Visibility">1</param>
+                                </action>
+                                <action id="-4" name="Set layer visible" sid="405729707998821" type="System">
+                                    <param id="0" name="Layer">&quot;Players List&quot;</param>
+                                    <param id="1" name="Visibility">0</param>
+                                </action>
                                 <action id="0" name="Play" sid="693910548758433" type="Audio">
                                     <param id="0" name="Audio file">Menu Selection Click</param>
                                     <param id="2" name="Loop">0</param>
@@ -1133,29 +1159,6 @@
                             </conditions>
                             <actions />
                             <sub-events>
-                                <event-block sid="518495688328389">
-                                    <conditions>
-                                        <condition id="-14" name="Pick by unique ID" sid="354138485742271" type="Button">
-                                            <param id="0" name="Unique ID">3</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="3" name="Set font size" sid="608957464909661" type="ButtonText">
-                                            <param id="0" name="Size (pt)">18</param>
-                                        </action>
-                                        <action id="-7" name="Set size" sid="963246292107648" type="PlayButtonText">
-                                            <param id="0" name="Width">Button.Width</param>
-                                            <param id="1" name="Height">Button.Height</param>
-                                        </action>
-                                        <action id="-3" name="Set position" sid="903964515651023" type="PlayButtonText">
-                                            <param id="0" name="X">Button.X</param>
-                                            <param id="1" name="Y">Button.Y</param>
-                                        </action>
-                                        <action id="3" name="Set font size" sid="327390067661074" type="PlayButtonText">
-                                            <param id="0" name="Size (pt)">28</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
                                 <event-block sid="973318612607028">
                                     <conditions>
                                         <condition id="-9" inverted="1" name="Layer is visible" sid="496771555469773" type="System">
@@ -1190,6 +1193,33 @@
                                         </action>
                                     </actions>
                                     <sub-events>
+                                        <event-block sid="518495688328389">
+                                            <conditions>
+                                                <condition id="-14" name="Pick by unique ID" sid="354138485742271" type="Button">
+                                                    <param id="0" name="Unique ID">3</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Call function" sid="919635091199520" type="Function">
+                                                    <param id="0" name="Name">&quot;Reset All Buttons&quot;</param>
+                                                    <param id="1" name="Parameter {n}"></param>
+                                                </action>
+                                                <action id="-16" name="Wait" sid="215936598252057" type="System">
+                                                    <param id="0" name="Seconds">0</param>
+                                                </action>
+                                                <action id="-7" name="Set size" sid="963246292107648" type="PlayButtonText">
+                                                    <param id="0" name="Width">Button.Width</param>
+                                                    <param id="1" name="Height">Button.Height</param>
+                                                </action>
+                                                <action id="-3" name="Set position" sid="903964515651023" type="PlayButtonText">
+                                                    <param id="0" name="X">Button.X</param>
+                                                    <param id="1" name="Y">Button.Y</param>
+                                                </action>
+                                                <action id="3" name="Set font size" sid="327390067661074" type="PlayButtonText">
+                                                    <param id="0" name="Size (pt)">32</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
                                         <event-block sid="744884268884780">
                                             <conditions>
                                                 <condition id="-14" name="Pick by unique ID" sid="153051243194496" type="Button">
@@ -1409,7 +1439,7 @@
                                             <param id="0" name="Scale">1.2</param>
                                         </action>
                                         <action id="3" name="Set font size" sid="527084897130886" type="SingleplayerButtonText">
-                                            <param id="0" name="Size (pt)">22</param>
+                                            <param id="0" name="Size (pt)">32</param>
                                         </action>
                                         <action id="-16" name="Wait" sid="235637133405777" type="System">
                                             <param id="0" name="Seconds">0.2</param>
@@ -1418,7 +1448,7 @@
                                             <param id="0" name="Scale">1</param>
                                         </action>
                                         <action id="3" name="Set font size" sid="362456176337274" type="SingleplayerButtonText">
-                                            <param id="0" name="Size (pt)">18</param>
+                                            <param id="0" name="Size (pt)">22</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -2077,7 +2107,7 @@
                                     <param id="0" name="Scale">1.2</param>
                                 </action>
                                 <action id="3" name="Set font size" sid="645104985868248" type="SingleplayerButtonText">
-                                    <param id="0" name="Size (pt)">22</param>
+                                    <param id="0" name="Size (pt)">32</param>
                                 </action>
                                 <action id="-16" name="Wait" sid="604804712576632" type="System">
                                     <param id="0" name="Seconds">0.2</param>
@@ -2086,7 +2116,7 @@
                                     <param id="0" name="Scale">1</param>
                                 </action>
                                 <action id="3" name="Set font size" sid="808124284905492" type="SingleplayerButtonText">
-                                    <param id="0" name="Size (pt)">18</param>
+                                    <param id="0" name="Size (pt)">32</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -2185,7 +2215,7 @@
                                             <param id="0" name="Scale">1.2</param>
                                         </action>
                                         <action id="3" name="Set font size" sid="911381378732930" type="SingleplayerButtonText">
-                                            <param id="0" name="Size (pt)">22</param>
+                                            <param id="0" name="Size (pt)">32</param>
                                         </action>
                                         <action id="-16" name="Wait" sid="169187912607319" type="System">
                                             <param id="0" name="Seconds">0.2</param>
@@ -2194,7 +2224,7 @@
                                             <param id="0" name="Scale">1</param>
                                         </action>
                                         <action id="3" name="Set font size" sid="895700381614586" type="SingleplayerButtonText">
-                                            <param id="0" name="Size (pt)">18</param>
+                                            <param id="0" name="Size (pt)">32</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -2263,15 +2293,15 @@
                                 <event-block sid="814087050875152">
                                     <conditions>
                                         <condition id="-14" name="Pick by unique ID" sid="851095292580668" type="Button">
-                                            <param id="0" name="Unique ID">42</param>
+                                            <param id="0" name="Unique ID">40</param>
                                         </condition>
                                     </conditions>
                                     <actions>
                                         <action id="9" name="Set scale" sid="840596478679414" type="Button">
                                             <param id="0" name="Scale">1.2</param>
                                         </action>
-                                        <action id="3" name="Set font size" sid="308759532608690" type="SingleplayerButtonText">
-                                            <param id="0" name="Size (pt)">22</param>
+                                        <action id="3" name="Set font size" sid="308759532608690" type="MultiplayerButtonText">
+                                            <param id="0" name="Size (pt)">32</param>
                                         </action>
                                         <action id="-16" name="Wait" sid="560577158688939" type="System">
                                             <param id="0" name="Seconds">0.2</param>
@@ -2279,8 +2309,8 @@
                                         <action id="9" name="Set scale" sid="361950805464880" type="Button">
                                             <param id="0" name="Scale">1</param>
                                         </action>
-                                        <action id="3" name="Set font size" sid="737191599868721" type="SingleplayerButtonText">
-                                            <param id="0" name="Size (pt)">18</param>
+                                        <action id="3" name="Set font size" sid="737191599868721" type="MultiplayerButtonText">
+                                            <param id="0" name="Size (pt)">22</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -2598,9 +2628,6 @@
                     <param id="0" name="Mouse button">0</param>
                     <param id="1" name="Click type">0</param>
                     <param id="2" name="Object clicked">SetupServerButtonText</param>
-                </condition>
-                <condition id="17" name="On tap object" sid="948748051545796" type="Touch">
-                    <param id="0" name="Object">SetupServerButtonText</param>
                 </condition>
                 <condition disabled="1" id="6" name="On button pressed" sid="520465069255684" type="Gamepad">
                     <param id="0" name="Gamepad">0</param>
@@ -3024,7 +3051,7 @@
                                 <action id="0" name="Set text" sid="711582615761032" type="StatsTitleText">
                                     <param id="0" name="Text">uppercase(MP_USERNAME)&amp;&quot;&apos;S STATS&quot;</param>
                                 </action>
-                                <action id="0" name="Set text" sid="668806035953899" type="StatsLevelText">
+                                <action id="0" name="Set text" sid="620310317057947" type="StatsLevelText">
                                     <param id="0" name="Text">&quot;LEVEL: &quot;&amp;MPLevel</param>
                                 </action>
                                 <action id="0" name="Set text" sid="697137127158682" type="MPUsernameBox">
@@ -3038,29 +3065,17 @@
                                 </action>
                             </actions>
                             <sub-events>
-                                <event-block sid="990814503490949">
+                                <event-block sid="516355472619589">
                                     <conditions>
-                                        <condition id="3" name="For each element" sid="315748342224915" type="Letters">
-                                            <param id="0" name="Axes">2</param>
-                                        </condition>
-                                        <condition id="-8" name="Compare two values" sid="707824149002711" type="System">
-                                            <param id="0" name="First value">Letters.CurX</param>
-                                            <param id="1" name="Comparison">3</param>
-                                            <param id="2" name="Second value">3</param>
+                                        <condition id="-14" name="Compare variable" sid="539709906637957" type="System">
+                                            <param id="0" name="Variable">MPLevel</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">50</param>
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="-10" name="Add to" sid="121675552467114" type="System">
-                                            <param id="0" name="Variable">ROOM</param>
-                                            <param id="1" name="Value">Letters.CurValue</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                                <event-block sid="856594043094328">
-                                    <conditions />
-                                    <actions>
-                                        <action id="0" name="Set text" sid="578152472849162" type="RoomTextbox">
-                                            <param id="0" name="Text">ROOM</param>
+                                        <action id="0" name="Set text" sid="582175500835433" type="StatsLevelText">
+                                            <param id="0" name="Text">&quot;LEVEL: &quot;&amp;MPLevel&amp;&quot; (MAX LEVEL)&quot;</param>
                                         </action>
                                     </actions>
                                 </event-block>

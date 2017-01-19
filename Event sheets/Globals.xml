@@ -3,6 +3,13 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Globals</name>
     <events>
+        <variable constant="0" name="AllowRain" sid="302231375936454" static="0" type="number">0</variable>
+        <include>MP Globals</include>
+        <variable constant="0" name="EffectsDetail" sid="442564190098061" static="0" type="number">0</variable>
+        <variable constant="0" name="EffectsQuality" sid="340375656261271" static="0" type="text">HIGH</variable>
+        <variable constant="0" name="ParallaxEnabled" sid="707302189423685" static="0" type="number">1</variable>
+        <variable constant="0" name="GraphicsQuality" sid="343212604184567" static="0" type="text">LOW</variable>
+        <variable constant="0" name="MenuColour" sid="841999175355857" static="0" type="text"></variable>
         <variable constant="0" name="TotalKills" sid="752641048191002" static="0" type="number">0</variable>
         <variable constant="0" name="TotalDeaths" sid="203099041490003" static="0" type="number">0</variable>
         <variable constant="0" name="ShowFPS" sid="644192668404062" static="0" type="number">0</variable>
@@ -18,7 +25,5 @@
         <variable comment="POTATO, ULTRA LOW, LOW, MEDIUM, HIGH, ULTRA, SUPER COMPUTER, NATIVE" constant="0" name="Resolution" sid="103882498459293" static="0" type="text">NATIVE</variable>
         <variable comment="LQ (Low Quality)  or HQ (High Quality)" constant="0" name="VideoQuality" sid="913375351660569" static="0" type="text">LQ</variable>
         <variable comment="The Space between the buttons in mobile version" constant="0" name="MobileButtonSpacing" sid="132149266579844" static="0" type="number">450</variable>
-        <variable comment="The current size of the title" constant="0" name="TitleScale" sid="769267226489413" static="0" type="number">0.8</variable>
-        <variable comment="How much to add to the title each tick" constant="0" name="TitleAdd" sid="620345288775101" static="0" type="number">0.005</variable>
     </events>
 </c2eventsheet>

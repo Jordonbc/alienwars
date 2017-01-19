@@ -10,7 +10,8 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <display name="HTML5" />
     </configurations>
     <open-tabs>
-        <layout active="1" order="0">Main Menu</layout>
+        <layout order="0">Main Menu</layout>
+        <event-sheet active="1" order="1">Multiplayer Events</event-sheet>
     </open-tabs>
     <properties>
         <property expanded="1" name="About" />
@@ -18,27 +19,41 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <property expanded="0" name="Window Size" />
         <property expanded="1" name="Configuration Settings" />
     </properties>
-    <families-expanded root="0">
+    <families-expanded root="1">
         <family expanded="0" name="AllText" />
-        <family expanded="0" name="ButtonText" />
+        <family expanded="0" name="AllButtonText" />
         <family expanded="0" name="AllTitleText" />
-        <family expanded="0" name="MenuDescriptionText" />
+        <family expanded="0" name="AllMenuDescriptionText" />
         <family expanded="0" name="AllAimSpot" />
-        <family expanded="0" name="Arrays" />
+        <family expanded="0" name="AllArrays" />
+        <family expanded="0" name="AllCreditsText" />
+        <family expanded="0" name="MyCredits" />
+        <family expanded="0" name="SettingsText" />
+        <family expanded="0" name="StatsText" />
+        <family expanded="0" name="AllTextNoButtons" />
+        <family expanded="0" name="AllVideos" />
+        <family expanded="0" name="AllTextBoxes" />
+        <family expanded="0" name="AllSliders" />
+        <family expanded="0" name="AllListboxes" />
+        <family expanded="0" name="AllMPPlayers" />
+        <family expanded="0" name="AllCursors" />
+        <family expanded="0" name="AllButtons" />
+        <family expanded="0" name="AllLogos" />
+        <family expanded="0" name="AllLazers" />
     </families-expanded>
     <folders-expanded>
         <folder expanded="1" path="object-folder/" />
         <folder expanded="0" path="object-folder/Buttons/" />
-        <folder expanded="1" path="object-folder/Text/" />
+        <folder expanded="0" path="object-folder/Text/" />
         <folder expanded="0" path="object-folder/Text/Button Text/" />
-        <folder expanded="1" path="object-folder/Text/Title Text/" />
+        <folder expanded="0" path="object-folder/Text/Title Text/" />
         <folder expanded="0" path="object-folder/Text/Description Text/" />
         <folder expanded="0" path="object-folder/Text/Performance Info/" />
         <folder expanded="0" path="object-folder/Videos/" />
         <folder expanded="0" path="object-folder/Intergrations/" />
         <folder expanded="0" path="object-folder/Backgrounds/" />
         <folder expanded="0" path="object-folder/Settings/" />
-        <folder expanded="0" path="object-folder/Objects/" />
+        <folder expanded="1" path="object-folder/Objects/" />
         <folder expanded="0" path="object-folder/Multiplayer/" />
         <folder expanded="0" path="object-folder/Credits/" />
         <folder expanded="0" path="object-folder/Effects/" />
@@ -54,10 +69,10 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="event-folder/Menus/" />
         <folder expanded="0" path="event-folder/Menus/TitleScreen/" />
         <folder expanded="1" path="event-folder/Menus/Main Menu/" />
-        <folder expanded="0" path="event-folder/Singleplayer/" />
+        <folder expanded="1" path="event-folder/Singleplayer/" />
         <folder expanded="0" path="file-folder/" />
-        <folder expanded="1" path="sound-folder/" />
-        <folder expanded="0" path="music-folder/" />
+        <folder expanded="0" path="sound-folder/" />
+        <folder expanded="1" path="music-folder/" />
         <folder expanded="0" path="file-folder/Icons/" />
         <folder expanded="0" path="file-folder/Videos/" />
         <folder expanded="0" path="file-folder/Fonts/" />
@@ -73,11 +88,12 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="animation-folder/Arrow/" />
         <folder expanded="1" path="animation-folder/AimSpot/" />
         <folder expanded="1" path="animation-folder/MPCursor/" />
-        <folder expanded="1" path="animation-folder/TouchCenter/" />
-        <folder expanded="1" path="animation-folder/TouchMove/" />
+        <folder expanded="1" path="animation-folder/MoveTouch/" />
         <folder expanded="1" path="animation-folder/CursorInverted/" />
         <folder expanded="1" path="animation-folder/Explosion/" />
         <folder expanded="1" path="animation-folder/Player/" />
+        <folder expanded="1" path="animation-folder/AimTouch/" />
+        <folder expanded="1" path="animation-folder/SettingsSpacer/" />
         <folder expanded="1" path="animation-folder/AlienWarsCreditsLogoMini/" />
         <folder expanded="1" path="animation-folder/AlienWarsCreditsLogoSquare/" />
         <folder expanded="1" path="animation-folder/AlienWarsCreditsLogoWide/" />

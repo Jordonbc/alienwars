@@ -40,7 +40,7 @@
                     <param id="0" name="Seconds">0</param>
                 </action>
                 <action id="0" name="Play" sid="991996795876689" type="Audio">
-                    <param id="0" name="Audio file">The_Freeharmonic_Orchestra_-_08_-_Unconquered_Sun</param>
+                    <param id="0" name="Audio file">through space</param>
                     <param id="2" name="Loop">1</param>
                     <param id="3" name="Volume">0</param>
                     <param id="1" name="Tag (optional)">&quot;MainMenuMusic&quot;</param>
@@ -156,9 +156,22 @@
                         <condition id="-20" name="Is on mobile device" sid="283349286779013" type="System" />
                     </conditions>
                     <actions>
+                        <action id="-16" name="Wait" sid="471745163856193" type="System">
+                            <param id="0" name="Seconds">0</param>
+                        </action>
                         <action id="0" name="Call function" sid="460476577879301" type="Function">
                             <param id="0" name="Name">&quot;setMobile&quot;</param>
                             <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="-16" name="Wait" sid="755144666615534" type="System">
+                            <param id="0" name="Seconds">0</param>
+                        </action>
+                        <action id="0" name="Call function" sid="808622609776078" type="Function">
+                            <param id="0" name="Name">&quot;SetMenuColour&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="-16" name="Wait" sid="818771486840339" type="System">
+                            <param id="0" name="Seconds">0</param>
                         </action>
                         <action id="3" name="Set enabled" sid="805759651409398" type="UpscaleQualityListbox">
                             <param id="0" name="Mode">0</param>
@@ -1147,14 +1160,7 @@
             <conditions>
                 <condition id="3" name="Is silent" sid="172610957627006" type="Audio" />
             </conditions>
-            <actions>
-                <action id="0" name="Play" sid="948215366039982" type="Audio">
-                    <param id="0" name="Audio file">The_Freeharmonic_Orchestra_-_08_-_Unconquered_Sun</param>
-                    <param id="2" name="Loop">1</param>
-                    <param id="3" name="Volume">0</param>
-                    <param id="1" name="Tag (optional)">&quot;MainMenuMusic&quot;</param>
-                </action>
-            </actions>
+            <actions />
         </event-block>
         <event-block sid="141304074311612">
             <conditions>
@@ -1259,6 +1265,11 @@
                     <param id="1" name="Comparison">2</param>
                     <param id="2" name="Second value">10</param>
                 </condition>
+                <condition disabled="1" id="-8" name="Compare two values" sid="122728380383557" type="System">
+                    <param id="0" name="First value">find(MPUsernameBox.Text, &quot; &quot;)</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Second value">-1</param>
+                </condition>
             </conditions>
             <actions>
                 <action id="-9" name="Set value" sid="961194406167862" type="System">
@@ -1271,6 +1282,24 @@
                 <action id="0" name="Set item" sid="491473708185198" type="LocalStorage">
                     <param id="0" name="Key">&quot;MP USERNAME&quot;</param>
                     <param id="1" name="Value">MP_USERNAME</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="945596462840217">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="337229684273073" type="System" />
+            </conditions>
+            <actions>
+                <action id="7" name="Set CSS style" sid="614806818157608" type="MPUsernameBox">
+                    <param id="0" name="Property name">&quot;font-size&quot;</param>
+                    <param id="1" name="Value">&quot;1em&quot;</param>
+                </action>
+                <action id="7" name="Set CSS style" sid="594350914414055" type="RoomTextbox">
+                    <param id="0" name="Property name">&quot;font-size&quot;</param>
+                    <param id="1" name="Value">&quot;1em&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="171065949855335" type="MPUsernameBox">
+                    <param id="0" name="Text">replace(MPUsernameBox.Text, &quot; &quot;, &quot;&quot;)</param>
                 </action>
             </actions>
         </event-block>

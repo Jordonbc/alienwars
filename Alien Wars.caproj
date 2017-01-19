@@ -2,7 +2,7 @@
 <c2project>
     <name>Alien Wars</name>
     <description>Destroy the  Aliens</description>
-    <version>1.1.0.0 ALPHA</version>
+    <version>1.2.0.0 ALPHA</version>
     <author>Jordon Brooks</author>
     <author-email>Jordonbc@hotmail.co.uk</author-email>
     <author-website>https://jordonbc.github.io</author-website>
@@ -32,7 +32,6 @@
     </used-plugins>
     <used-behaviors>
         <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
-        <behavior author="Scirra" id="DragnDrop" version="1">Drag &amp; Drop</behavior>
         <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
         <behavior author="Scirra" id="Fade" version="1">Fade</behavior>
         <behavior author="Scirra" id="Pin" version="1">Pin</behavior>
@@ -46,6 +45,7 @@
         <effect author="Scirra" id="blurvertical">Blur Vertical</effect>
         <effect author="Scirra" id="glowhorizontal">Glow Horizontal</effect>
         <effect author="Scirra" id="glowvertical">Glow Vertical</effect>
+        <effect author="Scirra" id="hsladjust">Adjust HSL</effect>
         <effect author="Scirra" id="setcolor">Set color</effect>
     </used-effects>
     <configurations>
@@ -85,11 +85,14 @@
                     <effect-type name="SELECTED">
                         <effect id="setcolor" />
                     </effect-type>
+                    <effect-type name="AdjustHSL">
+                        <effect id="hsladjust" />
+                    </effect-type>
                 </effects>
                 <animation-folder>
                     <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="741092340785894" speed="0">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.510204" original-source="E:\Software\Construct 2\freebundle\Sprites\UI elements\Base pack\blue_button02.png" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.511111" original-source="E:\Software\Construct 2\freebundle\Sprites\UI elements\Base pack\blue_button03.png" />
+                        <frame duration="1" hotspotX="0.505263" hotspotY="0.55102" original-source="E:\College\Level 3 Year 1\Graphics\Alien Wars\Button\Button2.png" />
+                        <frame duration="1" hotspotX="0.505263" hotspotY="0.55102" original-source="E:\College\Level 3 Year 1\Graphics\Alien Wars\Button\Button2 Pressed.png" />
                     </animation>
                 </animation-folder>
             </object-type>
@@ -158,6 +161,12 @@
                 <object-type name="SetupServerButtonText" sid="889389511700650">
                     <plugin id="Text" />
                 </object-type>
+                <object-type name="ResumeButtonText" sid="296097164921394">
+                    <plugin id="Text" />
+                </object-type>
+                <object-type name="StatsButtonText" sid="655709877449455">
+                    <plugin id="Text" />
+                </object-type>
             </object-folder>
             <object-folder name="Title Text">
                 <object-type name="CreditsTitleText" sid="843298887735213">
@@ -204,6 +213,9 @@
                             <behavior id="Fade" />
                         </behavior-type>
                     </behaviors>
+                </object-type>
+                <object-type name="StatsTitleText" sid="984425818818796">
+                    <plugin id="Text" />
                 </object-type>
             </object-folder>
             <object-folder name="Description Text">
@@ -268,6 +280,18 @@
                     <plugin id="Text" />
                 </object-type>
                 <object-type name="UsernameTextboxText" sid="618130210932539">
+                    <plugin id="Text" />
+                </object-type>
+                <object-type name="ChangeColourText" sid="144054956852533">
+                    <plugin id="Text" />
+                </object-type>
+                <object-type name="StatsLevelText" sid="880960941582671">
+                    <plugin id="Text" />
+                </object-type>
+                <object-type name="StatsTotalDeathsText" sid="689115109580332">
+                    <plugin id="Text" />
+                </object-type>
+                <object-type name="StatsTotalKillsText" sid="217535261767197">
                     <plugin id="Text" />
                 </object-type>
             </object-folder>
@@ -335,6 +359,11 @@
         <object-folder name="Backgrounds">
             <object-type name="MenuBackground" sid="562637304899072">
                 <plugin id="Sprite" />
+                <effects>
+                    <effect-type name="AdjustHSL">
+                        <effect id="hsladjust" />
+                    </effect-type>
+                </effects>
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="895525082583206" speed="5">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\College\Level 3\Graphics\Main Menu done.png">
@@ -372,6 +401,30 @@
                 <plugin id="TiledBg" />
                 <texture />
             </object-type>
+            <object-type name="MPBackgroundL0" sid="568791021564312">
+                <plugin id="TiledBg" />
+                <texture original-source="E:\College\Level 3 Year 1\Graphics\Alien Wars\Background\BackgroundL0.jpg" />
+            </object-type>
+            <object-type name="MPBackgroundL1" sid="655849770439256">
+                <plugin id="TiledBg" />
+                <texture original-source="E:\College\Level 3 Year 1\Graphics\Alien Wars\Background\BackgroundL1.png" />
+            </object-type>
+            <object-type name="MPBackgroundL2" sid="692493816976643">
+                <plugin id="TiledBg" />
+                <texture original-source="E:\College\Level 3 Year 1\Graphics\Alien Wars\Background\BackgroundL2.png" />
+            </object-type>
+            <object-type name="MPBackgroundL3" sid="417387025630340">
+                <plugin id="TiledBg" />
+                <texture original-source="E:\College\Level 3 Year 1\Graphics\Alien Wars\Background\BackgroundL3.png" />
+            </object-type>
+            <object-type name="MPBackgroundL4" sid="898382679926373">
+                <plugin id="TiledBg" />
+                <texture original-source="E:\College\Level 3 Year 1\Graphics\Alien Wars\Background\BackgroundL4.png" />
+            </object-type>
+            <object-type name="MPBackgroundL5" sid="347728782765779">
+                <plugin id="TiledBg" />
+                <texture original-source="E:\College\Level 3 Year 1\Graphics\Alien Wars\Background\BackgroundL5.png" />
+            </object-type>
         </object-folder>
         <object-folder name="Settings">
             <object-type name="MasterSoundBar" sid="296326276283547">
@@ -394,6 +447,9 @@
             </object-type>
             <object-type name="CheatBox" sid="381693023356704">
                 <plugin id="TextBox" />
+            </object-type>
+            <object-type name="ChangeColourSlider" sid="663216269656126">
+                <plugin id="sliderbar" />
             </object-type>
         </object-folder>
         <object-folder name="Objects">
@@ -421,6 +477,7 @@
                     <instance-variable name="XP" sid="132036278238491" type="number" />
                     <instance-variable name="Damage" sid="733991372057532" type="number" />
                     <instance-variable name="Levelup" sid="809289700189074" type="number" />
+                    <instance-variable name="Ping" sid="271360084597355" type="number" />
                 </instance-variables>
                 <behaviors>
                     <behavior-type name="8Direction" sid="578437888382124">
@@ -440,35 +497,23 @@
                     <type>MPPlayer</type>
                     <type>AimSpot</type>
                     <type>PlayerUsernameText</type>
-                    <type>Lazer</type>
                 </container>
                 <animation-folder>
                     <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="666810576614864" speed="0">
-                        <frame duration="1" hotspotX="0.539589" hotspotY="0.492355" original-source="D:\College\Level 3\Graphics\Alien Wars\Player.png">
-                            <image-point name="Thruster1" x="0.0146628" y="0.140673" />
-                            <image-point name="Thruster 2" x="0.0146628" y="0.400612" />
-                            <image-point name="Thruster 3" x="0.0322581" y="0.620795" />
-                            <image-point name="Thruster 4" x="0.0439883" y="0.877676" />
+                        <frame duration="1" hotspotX="0.537092" hotspotY="0.501529" original-source="C:\Users\Jordon\Downloads\blufighter\bluefighter0005.png">
                             <collision-poly>
-                                <point x="0.709678" y="0.376147" />
-                                <point x="0.935484" y="0.489296" />
-                                <point x="0.73607" y="0.633027" />
-                                <point x="0.542521" y="0.932722" />
-                                <point x="0.0909094" y="0.899083" />
-                                <point x="0.0674487" y="0.489296" />
-                                <point x="0.114369" y="0.107034" />
-                                <point x="0.542521" y="0.0672783" />
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
                             </collision-poly>
                         </frame>
-                        <frame duration="1" hotspotX="0.643836" hotspotY="0.489297" original-source="D:\College\Level 3\Graphics\Alien Wars\Player Thrusters.png">
+                        <frame duration="1" hotspotX="0.625899" hotspotY="0.501529" original-source="C:\Users\Jordon\Downloads\blufighter\bluefighter0005 - Thrusters.png">
                             <collision-poly>
-                                <point x="0.72831" y="0.351682" />
-                                <point x="0.954338" y="0.498471" />
-                                <point x="0.732877" y="0.654434" />
-                                <point x="0.438356" y="0.926606" />
-                                <point x="0.273973" y="0.480122" />
-                                <point x="0.273973" y="0.519878" />
-                                <point x="0.438356" y="0.0856269" />
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
                             </collision-poly>
                         </frame>
                     </animation>
@@ -478,16 +523,16 @@
                 <plugin id="Sprite" />
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="200995296118119" speed="1">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.441176" original-source="C:\Users\Jordon\Downloads\cursor-27058.png">
+                        <frame duration="1" hotspotX="0.484848" hotspotY="0.387097" original-source="C:\Users\Jordon\Downloads\blufighter\bluefighter0005.png">
                             <collision-poly>
-                                <point x="0.38596" y="0.308601" />
-                                <point x="0.484409" y="0.11328" />
-                                <point x="0.609466" y="0.285772" />
-                                <point x="0.870226" y="0.453192" />
-                                <point x="0.840957" y="0.843834" />
-                                <point x="0.484409" y="0.864128" />
-                                <point x="0.151809" y="0.823543" />
-                                <point x="0.117218" y="0.453192" />
+                                <point x="0.374264" y="0.25404" />
+                                <point x="0.46973" y="0.0524181" />
+                                <point x="0.590997" y="0.230474" />
+                                <point x="0.843856" y="0.403295" />
+                                <point x="0.815473" y="0.806538" />
+                                <point x="0.46973" y="0.827487" />
+                                <point x="0.147209" y="0.785593" />
+                                <point x="0.113666" y="0.403295" />
                             </collision-poly>
                         </frame>
                     </animation>
@@ -510,17 +555,18 @@
             </object-type>
             <object-type name="Lazer" sid="792362336614513">
                 <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="PlayerID" sid="703407141052655" type="string" />
+                    <instance-variable name="Damage" sid="987840382553995" type="number" />
+                </instance-variables>
                 <behaviors>
                     <behavior-type name="Bullet" sid="809944171312026">
                         <behavior id="Bullet" />
                     </behavior-type>
+                    <behavior-type name="DestroyOutsideLayout" sid="741772698002194">
+                        <behavior id="destroy" />
+                    </behavior-type>
                 </behaviors>
-                <container>
-                    <type>MPPlayer</type>
-                    <type>AimSpot</type>
-                    <type>PlayerUsernameText</type>
-                    <type>Lazer</type>
-                </container>
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="977046410550339" speed="5">
                         <frame duration="1" hotspotX="0.0634921" hotspotY="0.48" original-source="D:\College\Level 3\Graphics\Alien Wars\Lazer.png">
@@ -560,18 +606,17 @@
             <object-type name="AimSpot" sid="296387097991029">
                 <plugin id="Sprite" />
                 <behaviors>
-                    <behavior-type name="DragDrop" sid="489874713762855">
-                        <behavior id="DragnDrop" />
-                    </behavior-type>
                     <behavior-type name="ScrollTo" sid="994697736218249">
                         <behavior id="scrollto" />
+                    </behavior-type>
+                    <behavior-type name="BoundToLayout" sid="277870849422040">
+                        <behavior id="bound" />
                     </behavior-type>
                 </behaviors>
                 <container>
                     <type>MPPlayer</type>
                     <type>AimSpot</type>
                     <type>PlayerUsernameText</type>
-                    <type>Lazer</type>
                 </container>
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="788388727411853" speed="5">
@@ -598,21 +643,8 @@
                     </animation>
                 </animation-folder>
             </object-type>
-            <object-type name="TouchCenter" sid="130689402708678">
+            <object-type name="MoveTouch" sid="808808442443957">
                 <plugin id="Sprite" />
-                <animation-folder>
-                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="521664390759280" speed="5">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                    </animation>
-                </animation-folder>
-            </object-type>
-            <object-type name="TouchMove" sid="808808442443957">
-                <plugin id="Sprite" />
-                <behaviors>
-                    <behavior-type name="DragDrop" sid="390934611457578">
-                        <behavior id="DragnDrop" />
-                    </behavior-type>
-                </behaviors>
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="648349943800174" speed="5">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
@@ -623,16 +655,16 @@
                 <plugin id="Sprite" />
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="673043847560589" speed="1">
-                        <frame duration="1" hotspotX="0.470588" hotspotY="0.323529" original-source="D:\College\Level 3 Year 1\Graphics\Alien Wars\Player Inverted.png">
+                        <frame duration="1" hotspotX="0.454545" hotspotY="0.322581" original-source="D:\College\Level 3 Year 1\Graphics\Alien Wars\Player Inverted.png">
                             <collision-poly>
-                                <point x="0.379509" y="0.299865" />
-                                <point x="0.484298" y="0.0927289" />
-                                <point x="0.617409" y="0.275655" />
-                                <point x="0.89496" y="0.4532" />
-                                <point x="0.863807" y="0.867474" />
-                                <point x="0.484298" y="0.888994" />
-                                <point x="0.130279" y="0.845953" />
-                                <point x="0.0934611" y="0.4532" />
+                                <point x="0.368666" y="0.310984" />
+                                <point x="0.470461" y="0.115355" />
+                                <point x="0.599769" y="0.288119" />
+                                <point x="0.86939" y="0.4558" />
+                                <point x="0.839127" y="0.847059" />
+                                <point x="0.470461" y="0.867383" />
+                                <point x="0.126557" y="0.826733" />
+                                <point x="0.0907908" y="0.4558" />
                             </collision-poly>
                         </frame>
                     </animation>
@@ -716,7 +748,7 @@
                 </behaviors>
                 <animation-folder>
                     <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="522036937425324" speed="0">
-                        <frame duration="1" hotspotX="0.539589" hotspotY="0.492355" original-source="E:\College\Level 3 Year 1\Graphics\Alien Wars\Player.png">
+                        <frame duration="1" hotspotX="0.537092" hotspotY="0.501529" original-source="C:\Users\Jordon\Downloads\blufighter\bluefighter0005.png">
                             <collision-poly>
                                 <point x="1" y="0" />
                                 <point x="1" y="1" />
@@ -724,12 +756,39 @@
                                 <point x="0" y="0" />
                             </collision-poly>
                         </frame>
-                        <frame duration="1" hotspotX="0.438356" hotspotY="0.501529" original-source="E:\College\Level 3 Year 1\Graphics\Alien Wars\Player Thrusters.png">
+                        <frame duration="1" hotspotX="0.625899" hotspotY="0.501529" original-source="C:\Users\Jordon\Downloads\blufighter\bluefighter0005 - Thrusters.png">
                             <collision-poly>
                                 <point x="1" y="0" />
                                 <point x="1" y="1" />
                                 <point x="0" y="1" />
                                 <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="AimTouch" sid="187057502359421">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="127065889659500" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="SettingsSpacer" sid="983391605969645">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="552263219269810" speed="5">
+                        <frame duration="1" hotspotX="0.0634921" hotspotY="0.48" original-source="D:\College\Level 3\Graphics\Alien Wars\Lazer.png">
+                            <collision-poly>
+                                <point x="0.859585" y="1" />
+                                <point x="0.547009" y="1" />
+                                <point x="0.156288" y="1" />
+                                <point x="0" y="0.542456" />
+                                <point x="0.156288" y="0" />
+                                <point x="0.547009" y="0" />
+                                <point x="0.859585" y="0" />
+                                <point x="1" y="0.542456" />
                             </collision-poly>
                         </frame>
                     </animation>
@@ -742,6 +801,9 @@
             </object-type>
             <object-type name="StatusBox" sid="852931461204569">
                 <plugin id="TextBox" />
+                <instance-variables>
+                    <instance-variable name="SyncText" sid="474434430432335" type="string" />
+                </instance-variables>
             </object-type>
             <object-type name="PlayerUsernameText" sid="653971169003553">
                 <plugin id="Text" />
@@ -749,7 +811,6 @@
                     <type>MPPlayer</type>
                     <type>AimSpot</type>
                     <type>PlayerUsernameText</type>
-                    <type>Lazer</type>
                 </container>
             </object-type>
             <object-type global="1" name="Letters" sid="708651348230618">
@@ -866,23 +927,23 @@
                 </animation-folder>
             </object-type>
         </object-folder>
-        <object-type name="StatsTitleText" sid="984425818818796">
+        <object-type name="PlayersListbox" sid="525106282193113">
+            <plugin id="List" />
+        </object-type>
+        <object-type name="MPPlayerListboxText" sid="109254035290003">
             <plugin id="Text" />
         </object-type>
-        <object-type name="StatsLevelText" sid="880960941582671">
+        <object-type name="GraphicsQualityListboxText" sid="325338205058098">
             <plugin id="Text" />
         </object-type>
-        <object-type name="StatsButtonText" sid="655709877449455">
+        <object-type name="GraphicsQualityListbox" sid="941916207231754">
+            <plugin id="List" />
+        </object-type>
+        <object-type name="EffectsQualityListboxText" sid="512116190625701">
             <plugin id="Text" />
         </object-type>
-        <object-type name="StatsTotalKillsText" sid="217535261767197">
-            <plugin id="Text" />
-        </object-type>
-        <object-type name="StatsTotalDeathsText" sid="689115109580332">
-            <plugin id="Text" />
-        </object-type>
-        <object-type name="ResumeButtonText" sid="296097164921394">
-            <plugin id="Text" />
+        <object-type name="EffectsQualityListbox" sid="409775201863372">
+            <plugin id="List" />
         </object-type>
     </object-folder>
     <families>
@@ -891,6 +952,7 @@
                 <member>AlienWarsCreditsText</member>
                 <member>ApplySettingsButtonText</member>
                 <member>BackButtonText</member>
+                <member>ChangeColourText</member>
                 <member>CPUText</member>
                 <member>CreateServerButtonText</member>
                 <member>CreditsButtonText</member>
@@ -898,9 +960,11 @@
                 <member>DesignerCreditsText</member>
                 <member>DeveloperCreditsText</member>
                 <member>EasyButtonText</member>
+                <member>EffectsQualityListboxText</member>
                 <member>FeatureUnavailableText</member>
                 <member>FPSText</member>
                 <member>FullscreenText</member>
+                <member>GraphicsQualityListboxText</member>
                 <member>HardButtonText</member>
                 <member>ImportantText</member>
                 <member>LoadingTitleText</member>
@@ -910,6 +974,7 @@
                 <member>MPErrorBackButtonText</member>
                 <member>MPErrorText</member>
                 <member>MPGoText</member>
+                <member>MPPlayerListboxText</member>
                 <member>MPSupportText</member>
                 <member>MPUsernameTipText</member>
                 <member>MultiplayerButtonText</member>
@@ -950,7 +1015,7 @@
                 <member>XboxBButton</member>
             </members>
         </family>
-        <family name="ButtonText" plugin-id="Text" sid="455207575529761">
+        <family name="AllButtonText" plugin-id="Text" sid="455207575529761">
             <members>
                 <member>ApplySettingsButtonText</member>
                 <member>BackButtonText</member>
@@ -994,25 +1059,30 @@
                 </effect-type>
             </effects>
         </family>
-        <family name="MenuDescriptionText" plugin-id="Text" sid="896428122419930">
+        <family name="AllMenuDescriptionText" plugin-id="Text" sid="896428122419930">
             <members>
                 <member>AlienWarsCreditsText</member>
+                <member>ChangeColourText</member>
                 <member>DesignerCreditsText</member>
                 <member>DeveloperCreditsText</member>
                 <member>FeatureUnavailableText</member>
                 <member>FullscreenText</member>
                 <member>MasterSoundBarText</member>
+                <member>MPPlayerListboxText</member>
                 <member>MPSupportText</member>
                 <member>MPUsernameTipText</member>
                 <member>MusicSoundBarText</member>
                 <member>PlayerUsernameText</member>
                 <member>ProgrammerCreditsText</member>
                 <member>ResolutionText</member>
+                <member>RoomText</member>
+                <member>RoomTextboxText</member>
                 <member>SoftwareCreditsText</member>
                 <member>StatsLevelText</member>
                 <member>StatsTotalDeathsText</member>
                 <member>StatsTotalKillsText</member>
                 <member>UnconqueredSunCreditsText</member>
+                <member>UsernameTextboxText</member>
                 <member>VersionText</member>
                 <member>VideoQualityText</member>
             </members>
@@ -1022,9 +1092,163 @@
                 <member>AimSpot</member>
             </members>
         </family>
-        <family name="Arrays" plugin-id="Arr" sid="437526399214444">
+        <family name="AllArrays" plugin-id="Arr" sid="437526399214444">
             <members>
                 <member>Letters</member>
+            </members>
+        </family>
+        <family name="AllCreditsText" plugin-id="Text" sid="798558889581013">
+            <members>
+                <member>AlienWarsCreditsText</member>
+                <member>DesignerCreditsText</member>
+                <member>DeveloperCreditsText</member>
+                <member>ProgrammerCreditsText</member>
+                <member>SoftwareCreditsText</member>
+                <member>UnconqueredSunCreditsText</member>
+            </members>
+        </family>
+        <family name="MyCredits" plugin-id="Text" sid="317972363066972">
+            <members>
+                <member>AlienWarsCreditsText</member>
+                <member>DesignerCreditsText</member>
+                <member>DeveloperCreditsText</member>
+                <member>ProgrammerCreditsText</member>
+                <member>SoftwareCreditsText</member>
+            </members>
+        </family>
+        <family name="SettingsText" plugin-id="Text" sid="197713654168811">
+            <members>
+                <member>ApplySettingsButtonText</member>
+                <member>ChangeColourText</member>
+                <member>EffectsQualityListboxText</member>
+                <member>FullscreenText</member>
+                <member>GraphicsQualityListboxText</member>
+                <member>MasterSoundBarText</member>
+                <member>MusicSoundBarText</member>
+                <member>ResolutionText</member>
+                <member>VideoQualityText</member>
+            </members>
+        </family>
+        <family name="StatsText" plugin-id="Text" sid="638565896536278">
+            <members>
+                <member>StatsLevelText</member>
+                <member>StatsTotalDeathsText</member>
+                <member>StatsTotalKillsText</member>
+            </members>
+        </family>
+        <family name="AllTextNoButtons" plugin-id="Text" sid="533919975026652">
+            <members>
+                <member>AlienWarsCreditsText</member>
+                <member>ChangeColourText</member>
+                <member>CPUText</member>
+                <member>CreditsTitleText</member>
+                <member>DesignerCreditsText</member>
+                <member>DeveloperCreditsText</member>
+                <member>EffectsQualityListboxText</member>
+                <member>FeatureUnavailableText</member>
+                <member>FPSText</member>
+                <member>FullscreenText</member>
+                <member>GraphicsQualityListboxText</member>
+                <member>ImportantText</member>
+                <member>LoadingTitleText</member>
+                <member>MasterSoundBarText</member>
+                <member>MPErrorText</member>
+                <member>MPPlayerListboxText</member>
+                <member>MPSupportText</member>
+                <member>MPUsernameTipText</member>
+                <member>MultiplayerTitleText</member>
+                <member>MusicSoundBarText</member>
+                <member>NetworkUsageText</member>
+                <member>PlayerHealthText</member>
+                <member>PlayerUsernameText</member>
+                <member>PlayTitleText</member>
+                <member>ProgrammerCreditsText</member>
+                <member>RenderText</member>
+                <member>ResolutionText</member>
+                <member>RoomText</member>
+                <member>RoomTextboxText</member>
+                <member>ServerSetupTitleText</member>
+                <member>SettingsMenuTitleText</member>
+                <member>SingleplayerTitleText</member>
+                <member>SoftwareCreditsText</member>
+                <member>StatsLevelText</member>
+                <member>StatsTitleText</member>
+                <member>StatsTotalDeathsText</member>
+                <member>StatsTotalKillsText</member>
+                <member>TitleScreenC2Text</member>
+                <member>TitleScreenTitleText</member>
+                <member>UnconqueredSunCreditsText</member>
+                <member>UsernameTextboxText</member>
+                <member>VersionText</member>
+                <member>VideoQualityText</member>
+                <member>VRAMText</member>
+                <member>XboxBackText</member>
+            </members>
+            <effects>
+                <effect-type name="AdjustHSL">
+                    <effect id="hsladjust" />
+                </effect-type>
+            </effects>
+        </family>
+        <family name="AllVideos" plugin-id="video" sid="728368277452209">
+            <members>
+                <member>LoadingVideo</member>
+                <member>MainMenuVideo</member>
+                <member>SingleplayerBackgroundVideo</member>
+                <member>SingleplayerOpeningVideo</member>
+            </members>
+        </family>
+        <family name="AllTextBoxes" plugin-id="TextBox" sid="206493537277042">
+            <members>
+                <member>CheatBox</member>
+                <member>MPUsernameBox</member>
+                <member>RoomTextbox</member>
+                <member>StatusBox</member>
+            </members>
+        </family>
+        <family name="AllSliders" plugin-id="sliderbar" sid="897419065413945">
+            <members>
+                <member>ChangeColourSlider</member>
+                <member>MasterSoundBar</member>
+                <member>MusicSoundBar</member>
+            </members>
+        </family>
+        <family name="AllListboxes" plugin-id="List" sid="858229636595109">
+            <members>
+                <member>PlayersListbox</member>
+                <member>UpscaleQualityListbox</member>
+                <member>VideoQualityList</member>
+            </members>
+        </family>
+        <family name="AllMPPlayers" plugin-id="Sprite" sid="817254652037456">
+            <members>
+                <member>MPPlayer</member>
+            </members>
+        </family>
+        <family name="AllCursors" plugin-id="Sprite" sid="595573942896170">
+            <members>
+                <member>Cursor</member>
+                <member>CursorInverted</member>
+                <member>MPCursor</member>
+            </members>
+        </family>
+        <family name="AllButtons" plugin-id="Sprite" sid="818906599502699">
+            <members>
+                <member>Button</member>
+            </members>
+        </family>
+        <family name="AllLogos" plugin-id="Sprite" sid="460938497089687">
+            <members>
+                <member>AlienWarsCreditsLogoMini</member>
+                <member>AlienWarsCreditsLogoSquare</member>
+                <member>AlienWarsCreditsLogoText</member>
+                <member>AlienWarsCreditsLogoWide</member>
+                <member>TheFreeharmonicOrchestraLogo</member>
+            </members>
+        </family>
+        <family name="AllLazers" plugin-id="Sprite" sid="375799114319332">
+            <members>
+                <member>Lazer</member>
             </members>
         </family>
     </families>
@@ -1048,7 +1272,7 @@
             <event-sheet>Loading Events.xml</event-sheet>
         </event-folder>
         <event-folder name="Multiplayer">
-            <event-sheet>MP.xml</event-sheet>
+            <event-sheet>Multiplayer Events.xml</event-sheet>
             <event-sheet>MP Globals.xml</event-sheet>
         </event-folder>
         <event-folder name="Global">
@@ -1123,10 +1347,10 @@
         <file name="snare.ogg" />
     </sounds-folder>
     <music-folder>
-        <file name="The_Freeharmonic_Orchestra_-_08_-_Unconquered_Sun.m4a" />
-        <file name="The_Freeharmonic_Orchestra_-_08_-_Unconquered_Sun.ogg" />
         <file name="ObservingTheStar.m4a" />
         <file name="ObservingTheStar.ogg" />
+        <file name="through space.m4a" />
+        <file name="through space.ogg" />
     </music-folder>
     <files-folder>
         <file-folder name="Icons">

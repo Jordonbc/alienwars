@@ -82,7 +82,7 @@
                 </event-block>
             </sub-events>
         </event-block>
-        <event-group description="" sid="747216857802041" title="Settings Menu">
+        <event-group description="" sid="747216857802041" title="Pause Menu">
             <sub-events>
                 <event-block any="1" sid="580581842575098">
                     <conditions>
@@ -115,11 +115,40 @@
                                     <param id="0" name="Layer">&quot;Pause Menu&quot;</param>
                                     <param id="1" name="Visibility">0</param>
                                 </action>
+                                <action id="0" name="Call function" sid="332516134578317" type="Function">
+                                    <param id="0" name="Name">&quot;Hide Settings Menu&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                                <action id="0" name="Call function" sid="375483089860570" type="Function">
+                                    <param id="0" name="Name">&quot;Reset All Buttons&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                                <action id="0" name="Call function" sid="887624816933857" type="Function">
+                                    <param id="0" name="Name">&quot;HideAll&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
                                 <action id="14" name="Log" sid="360823682965337" type="Browser">
                                     <param id="0" name="Type">0</param>
                                     <param id="1" name="Message">&quot;Closing pause menu&quot;</param>
                                 </action>
                             </actions>
+                            <sub-events>
+                                <event-block sid="234732400399427">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="804101255851322" type="System">
+                                            <param id="0" name="First value">LayoutName</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">&quot;Multiplayer&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-4" name="Set layer visible" sid="509223466532676" type="System">
+                                            <param id="0" name="Layer">&quot;Players List&quot;</param>
+                                            <param id="1" name="Visibility">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
                         </event-block>
                         <event-block sid="373575209303348">
                             <conditions>
@@ -143,10 +172,62 @@
                                     <param id="1" name="Message">&quot;Opening pause menu&quot;</param>
                                 </action>
                             </actions>
+                            <sub-events>
+                                <event-block sid="591102424450602">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="969431211360808" type="System">
+                                            <param id="0" name="First value">LayoutName</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">&quot;Multiplayer&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-4" name="Set layer visible" sid="136359486498994" type="System">
+                                            <param id="0" name="Layer">&quot;Players List&quot;</param>
+                                            <param id="1" name="Visibility">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
                         </event-block>
                     </sub-events>
                 </event-block>
             </sub-events>
         </event-group>
+        <event-block sid="524418389687160">
+            <conditions>
+                <condition id="-3" name="On end of layout" sid="353691539034452" type="System" />
+            </conditions>
+            <actions>
+                <action id="-4" name="Set layer visible" sid="391005075102416" type="System">
+                    <param id="0" name="Layer">&quot;Info&quot;</param>
+                    <param id="1" name="Visibility">1</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="745575034349066" type="System">
+                    <param id="0" name="Layer">&quot;Log&quot;</param>
+                    <param id="1" name="Visibility">1</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="781928268363366" type="System">
+                    <param id="0" name="Layer">&quot;Pause Menu&quot;</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
+                <action id="0" name="Call function" sid="693399481943016" type="Function">
+                    <param id="0" name="Name">&quot;Hide Settings Menu&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+                <action id="0" name="Call function" sid="707167051308817" type="Function">
+                    <param id="0" name="Name">&quot;Reset All Buttons&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+                <action id="0" name="Call function" sid="662641178835252" type="Function">
+                    <param id="0" name="Name">&quot;HideAll&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+                <action id="14" name="Log" sid="924220649198803" type="Browser">
+                    <param id="0" name="Type">0</param>
+                    <param id="1" name="Message">&quot;Closing pause menu&quot;</param>
+                </action>
+            </actions>
+        </event-block>
     </events>
 </c2eventsheet>
