@@ -1,5 +1,5 @@
 ﻿CACHE MANIFEST
-#1484921839
+#1484951778
 data.js
 c2runtime.js
 jquery-2.1.1.min.js
@@ -16,11 +16,12 @@ images/mpbackgroundl2.png
 images/mpbackgroundl3.png
 images/mpbackgroundl4.png
 images/mpbackgroundl5.png
+images/black-sheet0.png
 images/mpplayer-sheet0.png
 images/mpplayer-sheet1.png
 images/cursor-sheet0.png
 images/title-sheet0.png
-images/lazer-sheet0.png
+images/laser-sheet0.png
 images/arrow-sheet0.png
 images/aimspot-sheet0.png
 images/mpcursor-sheet0.png
@@ -30,6 +31,8 @@ images/explosion-sheet0.png
 images/explosion-sheet1.png
 images/explosion-sheet2.png
 images/aimtouch-sheet0.png
+images/enemy-sheet0.png
+images/retrolive1-sheet0.png
 images/alienwarscreditslogomini-sheet0.png
 images/alienwarscreditslogosquare-sheet0.png
 images/alienwarscreditslogowide-sheet0.png
@@ -44,10 +47,20 @@ media/menu%20selection%20click.m4a
 media/menu%20selection%20click.ogg
 media/snare.m4a
 media/snare.ogg
+media/explosion%203.m4a
+media/explosion%203.ogg
+media/sfx1.m4a
+media/sfx1.ogg
+media/8bit_gunloop_explosion.m4a
+media/8bit_gunloop_explosion.ogg
+media/explosion%205.m4a
+media/explosion%205.ogg
 media/observingthestar.m4a
 media/observingthestar.ogg
 media/through%20space.m4a
 media/through%20space.ogg
+media/darkmusicfinal.m4a
+media/darkmusicfinal.ogg
 icon-16.png
 icon-32.png
 icon-114.png
