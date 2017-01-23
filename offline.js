@@ -1,5 +1,5 @@
 ﻿{
-	"version": 1485172295,
+	"version": 1485186600,
 	"fileList": [
 		"data.js",
 		"c2runtime.js",
@@ -19,6 +19,7 @@
 		"images/tutorialbackground.png",
 		"images/mpplayer-sheet0.png",
 		"images/mpplayer-sheet1.png",
+		"images/mpplayer-sheet2.png",
 		"images/cursor-sheet0.png",
 		"images/title-sheet0.png",
 		"images/laser-sheet0.png",
