@@ -583,6 +583,16 @@
                         </behavior-instance>
                     </behavior-instances>
                     <effect-instances>
+                        <effect-instance type="GlowHorizontal">
+                            <parameters>
+                                <intensity>1</intensity>
+                            </parameters>
+                        </effect-instance>
+                        <effect-instance type="GlowVertical">
+                            <parameters>
+                                <intensity>1</intensity>
+                            </parameters>
+                        </effect-instance>
                         <effect-instance type="AdjustHSL">
                             <parameters>
                                 <hue>0</hue>

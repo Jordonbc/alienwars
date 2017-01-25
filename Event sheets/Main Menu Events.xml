@@ -43,7 +43,7 @@
                     <param id="0" name="Audio file">through space</param>
                     <param id="2" name="Loop">1</param>
                     <param id="3" name="Volume">0</param>
-                    <param id="1" name="Tag (optional)">&quot;MainMenuMusic&quot;</param>
+                    <param id="1" name="Tag (optional)">&quot;Music&quot;</param>
                 </action>
                 <action id="-16" name="Wait" sid="991752186337888" type="System">
                     <param id="0" name="Seconds">0</param>
@@ -1265,11 +1265,6 @@
                     <param id="1" name="Comparison">2</param>
                     <param id="2" name="Second value">10</param>
                 </condition>
-                <condition disabled="1" id="-8" name="Compare two values" sid="122728380383557" type="System">
-                    <param id="0" name="First value">find(MPUsernameBox.Text, &quot; &quot;)</param>
-                    <param id="1" name="Comparison">0</param>
-                    <param id="2" name="Second value">-1</param>
-                </condition>
             </conditions>
             <actions>
                 <action id="-9" name="Set value" sid="961194406167862" type="System">
@@ -1300,6 +1295,102 @@
                 </action>
                 <action id="0" name="Set text" sid="171065949855335" type="MPUsernameBox">
                     <param id="0" name="Text">replace(MPUsernameBox.Text, &quot; &quot;, &quot;&quot;)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="211069075753406">
+            <conditions>
+                <condition id="0" name="On completed" sid="690738490215130" type="AJAX">
+                    <param id="0" name="Tag">&quot;Level&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Request URL" sid="902275379029112" type="AJAX">
+                    <param id="0" name="Tag">&quot;Kills&quot;</param>
+                    <param id="1" name="URL">&quot;http://jordan.bnettech.pw/getKills.php?fname=&quot;&amp;MP_USERNAME&amp;&quot;&amp;fpass=&quot;&amp;Password</param>
+                </action>
+                <action id="-9" name="Set value" sid="210518141163348" type="System">
+                    <param id="0" name="Variable">MPLevel</param>
+                    <param id="1" name="Value">AJAX.LastData</param>
+                </action>
+                <action id="0" name="Set item" sid="782072479910837" type="LocalStorage">
+                    <param id="0" name="Key">&quot;MP Level&quot;</param>
+                    <param id="1" name="Value">MPLevel</param>
+                </action>
+                <action id="0" name="Set text" sid="908482390103479" type="StatsLevelText">
+                    <param id="0" name="Text">&quot;LEVEL: &quot;&amp;MPLevel</param>
+                </action>
+                <action id="14" name="Log" sid="388297149878088" type="Browser">
+                    <param id="0" name="Type">0</param>
+                    <param id="1" name="Message">&quot;AJAX recieved value: &quot;&amp;AJAX.LastData</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="534395234396711">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="889517824080129" type="System">
+                            <param id="0" name="Variable">MPLevel</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">50</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="759887077478702" type="StatsLevelText">
+                            <param id="0" name="Text">&quot;LEVEL: &quot;&amp;MPLevel&amp;&quot; (MAX LEVEL)&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="236967799128502">
+            <conditions>
+                <condition id="0" name="On completed" sid="226102521549276" type="AJAX">
+                    <param id="0" name="Tag">&quot;Kills&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Request URL" sid="159592874905294" type="AJAX">
+                    <param id="0" name="Tag">&quot;Deaths&quot;</param>
+                    <param id="1" name="URL">&quot;http://jordan.bnettech.pw/getDeaths.php?fname=&quot;&amp;MP_USERNAME&amp;&quot;&amp;fpass=&quot;&amp;Password</param>
+                </action>
+                <action id="-9" name="Set value" sid="124745858986005" type="System">
+                    <param id="0" name="Variable">TotalKills</param>
+                    <param id="1" name="Value">AJAX.LastData</param>
+                </action>
+                <action id="0" name="Set item" sid="347235102610592" type="LocalStorage">
+                    <param id="0" name="Key">&quot;MP Kills&quot;</param>
+                    <param id="1" name="Value">TotalKills</param>
+                </action>
+                <action id="0" name="Set text" sid="362310165366522" type="StatsTotalKillsText">
+                    <param id="0" name="Text">&quot;TOTAL KILLS: &quot;&amp;TotalKills</param>
+                </action>
+                <action id="14" name="Log" sid="600390962116687" type="Browser">
+                    <param id="0" name="Type">0</param>
+                    <param id="1" name="Message">&quot;AJAX recieved value: &quot;&amp;AJAX.LastData</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="306759012017209">
+            <conditions>
+                <condition id="0" name="On completed" sid="195852333979169" type="AJAX">
+                    <param id="0" name="Tag">&quot;Deaths&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="421867193264609" type="System">
+                    <param id="0" name="Variable">TotalDeaths</param>
+                    <param id="1" name="Value">AJAX.LastData</param>
+                </action>
+                <action id="0" name="Set item" sid="915840074330566" type="LocalStorage">
+                    <param id="0" name="Key">&quot;MP Deaths&quot;</param>
+                    <param id="1" name="Value">TotalDeaths</param>
+                </action>
+                <action id="0" name="Set text" sid="162720548529435" type="StatsTotalDeathsText">
+                    <param id="0" name="Text">&quot;TOTAL DEATHS: &quot;&amp;TotalDeaths</param>
+                </action>
+                <action id="14" name="Log" sid="753564867822588" type="Browser">
+                    <param id="0" name="Type">0</param>
+                    <param id="1" name="Message">&quot;AJAX recieved value: &quot;&amp;AJAX.LastData</param>
                 </action>
             </actions>
         </event-block>

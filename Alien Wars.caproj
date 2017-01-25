@@ -2,7 +2,7 @@
 <c2project>
     <name>Alien Wars</name>
     <description>Destroy the  Aliens</description>
-    <version>1.2.6.4 ALPHA</version>
+    <version>1.2.9.0 ALPHA</version>
     <author>Jordon Brooks</author>
     <author-email>Jordonbc@hotmail.co.uk</author-email>
     <author-website>https://jordonbc.github.io</author-website>
@@ -10,6 +10,7 @@
     <unique-id>2o4via63bu0g3</unique-id>
     <saved-with-version>23900</saved-with-version>
     <used-plugins>
+        <plugin author="Scirra" id="AJAX" version="1">AJAX</plugin>
         <plugin author="Scirra" id="Arr" version="1">Array</plugin>
         <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
         <plugin author="Scirra" id="Browser" version="1">Browser</plugin>
@@ -512,6 +513,7 @@
                     <instance-variable name="CanShoot" sid="405799207359997" type="number" />
                     <instance-variable name="Cheating" sid="612923039765541" type="number" />
                     <instance-variable name="URL" sid="129662605167301" type="string" />
+                    <instance-variable name="MPNumber" sid="626740436982120" type="number" />
                 </instance-variables>
                 <behaviors>
                     <behavior-type name="8Direction" sid="578437888382124">
@@ -550,6 +552,21 @@
                                 <point x="0" y="0" />
                             </collision-poly>
                         </frame>
+                    </animation>
+                    <animation framecount="13" loop="0" name="Blank" pingpong="0" repeatcount="1" repeatto="0" sid="406448939056131" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     </animation>
                 </animation-folder>
             </object-type>
@@ -1134,6 +1151,33 @@
         <object-type name="ChatTextBox" sid="438574225113799">
             <plugin id="TextBox" />
         </object-type>
+        <object-type name="ChangeSpriteText" sid="168808797043965">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="ChangeSpriteTextBox" sid="911416371449702">
+            <plugin id="TextBox" />
+        </object-type>
+        <object-type name="AJAX" sid="528633107614093">
+            <plugin id="AJAX" />
+        </object-type>
+        <object-type global="1" name="Array" sid="377833203432836">
+            <plugin id="Arr" />
+        </object-type>
+        <object-type name="LoginTitleText" sid="867534296723493">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="PasswordTextbox" sid="619626191169633">
+            <plugin id="TextBox" />
+        </object-type>
+        <object-type name="LoginButtonText" sid="774836235182512">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="BradnumNetCreditsText" sid="775713202169431">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="LoginStatusText" sid="468672230303242">
+            <plugin id="Text" />
+        </object-type>
     </object-folder>
     <families>
         <family name="AllText" plugin-id="Text" sid="760463930764342">
@@ -1141,7 +1185,9 @@
                 <member>AlienWarsCreditsText</member>
                 <member>ApplySettingsButtonText</member>
                 <member>BackButtonText</member>
+                <member>BradnumNetCreditsText</member>
                 <member>ChangeColourText</member>
+                <member>ChangeSpriteText</member>
                 <member>CPUText</member>
                 <member>CreateServerButtonText</member>
                 <member>CreditsButtonText</member>
@@ -1158,6 +1204,9 @@
                 <member>HardButtonText</member>
                 <member>ImportantText</member>
                 <member>LoadingTitleText</member>
+                <member>LoginButtonText</member>
+                <member>LoginStatusText</member>
+                <member>LoginTitleText</member>
                 <member>MasterSoundBarText</member>
                 <member>MediumButtonText</member>
                 <member>MPBackButtonText</member>
@@ -1218,6 +1267,7 @@
                 <member>CreditsButtonText</member>
                 <member>EasyButtonText</member>
                 <member>HardButtonText</member>
+                <member>LoginButtonText</member>
                 <member>MediumButtonText</member>
                 <member>MPBackButtonText</member>
                 <member>MPErrorBackButtonText</member>
@@ -1236,8 +1286,10 @@
             <members>
                 <member>CreditsTitleText</member>
                 <member>LoadingTitleText</member>
+                <member>LoginTitleText</member>
                 <member>MultiplayerTitleText</member>
                 <member>PlayTitleText</member>
+                <member>RetroCreditsTitleText</member>
                 <member>ServerSetupTitleText</member>
                 <member>SettingsMenuTitleText</member>
                 <member>SingleplayerTitleText</member>
@@ -1257,6 +1309,7 @@
         <family name="AllMenuDescriptionText" plugin-id="Text" sid="896428122419930">
             <members>
                 <member>AlienWarsCreditsText</member>
+                <member>BradnumNetCreditsText</member>
                 <member>ChangeColourText</member>
                 <member>DesignerCreditsText</member>
                 <member>DeveloperCreditsText</member>
@@ -1295,6 +1348,7 @@
         <family name="AllCreditsText" plugin-id="Text" sid="798558889581013">
             <members>
                 <member>AlienWarsCreditsText</member>
+                <member>BradnumNetCreditsText</member>
                 <member>DesignerCreditsText</member>
                 <member>DeveloperCreditsText</member>
                 <member>ProgrammerCreditsText</member>
@@ -1334,6 +1388,7 @@
         <family name="AllTextNoButtons" plugin-id="Text" sid="533919975026652">
             <members>
                 <member>AlienWarsCreditsText</member>
+                <member>BradnumNetCreditsText</member>
                 <member>ChangeColourText</member>
                 <member>CPUText</member>
                 <member>CreditsTitleText</member>
@@ -1347,6 +1402,8 @@
                 <member>GraphicsQualityListboxText</member>
                 <member>ImportantText</member>
                 <member>LoadingTitleText</member>
+                <member>LoginStatusText</member>
+                <member>LoginTitleText</member>
                 <member>MasterSoundBarText</member>
                 <member>MPErrorText</member>
                 <member>MPPlayerListboxText</member>
@@ -1401,8 +1458,11 @@
         </family>
         <family name="AllTextBoxes" plugin-id="TextBox" sid="206493537277042">
             <members>
+                <member>ChangeSpriteTextBox</member>
+                <member>ChatTextBox</member>
                 <member>DevConsole</member>
                 <member>MPUsernameBox</member>
+                <member>PasswordTextbox</member>
                 <member>RoomTextbox</member>
                 <member>StatusBox</member>
             </members>
@@ -1466,6 +1526,7 @@
         <layout-folder name="Menus">
             <layout>Main Menu.xml</layout>
             <layout>Title Screen.xml</layout>
+            <layout>Login.xml</layout>
         </layout-folder>
         <layout-folder name="Multiplayer">
             <layout>Multiplayer.xml</layout>
@@ -1504,6 +1565,9 @@
                 <event-sheet>Main Menu Events.xml</event-sheet>
                 <event-sheet>Settings Menu.xml</event-sheet>
                 <event-sheet>Title.xml</event-sheet>
+            </event-folder>
+            <event-folder name="Login">
+                <event-sheet>Login.xml</event-sheet>
             </event-folder>
         </event-folder>
         <event-folder name="Singleplayer">
@@ -1554,6 +1618,7 @@
             </properties>
         </global-instance>
         <global-instance type="ScirraArcade" uid="166" />
+        <global-instance type="AJAX" uid="170" />
     </global-instances>
     <sounds-folder>
         <file name="rain_thunder_loop.m4a" />

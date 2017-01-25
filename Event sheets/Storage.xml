@@ -25,13 +25,13 @@
                 <action id="5" name="Check item exists" sid="673109659485472" type="LocalStorage">
                     <param id="0" name="Key">&quot;MP USERNAME&quot;</param>
                 </action>
-                <action id="5" name="Check item exists" sid="721207762510189" type="LocalStorage">
+                <action disabled="1" id="5" name="Check item exists" sid="721207762510189" type="LocalStorage">
                     <param id="0" name="Key">&quot;MP Level&quot;</param>
                 </action>
-                <action id="5" name="Check item exists" sid="400790952241788" type="LocalStorage">
+                <action disabled="1" id="5" name="Check item exists" sid="400790952241788" type="LocalStorage">
                     <param id="0" name="Key">&quot;MP Kills&quot;</param>
                 </action>
-                <action id="5" name="Check item exists" sid="790996636276079" type="LocalStorage">
+                <action disabled="1" id="5" name="Check item exists" sid="790996636276079" type="LocalStorage">
                     <param id="0" name="Key">&quot;MP Deaths&quot;</param>
                 </action>
                 <action id="5" name="Check item exists" sid="420664931199493" type="LocalStorage">
@@ -42,6 +42,12 @@
                 </action>
                 <action id="5" name="Check item exists" sid="576472454739504" type="LocalStorage">
                     <param id="0" name="Key">&quot;EffectsQuality&quot;</param>
+                </action>
+                <action id="5" name="Check item exists" sid="216766741490699" type="LocalStorage">
+                    <param id="0" name="Key">&quot;Cheating&quot;</param>
+                </action>
+                <action id="5" name="Check item exists" sid="468091825895696" type="LocalStorage">
+                    <param id="0" name="Key">&quot;Password&quot;</param>
                 </action>
             </actions>
         </event-block>
@@ -227,6 +233,34 @@
                         </action>
                     </actions>
                 </event-block>
+                <event-block sid="402435144740736">
+                    <conditions>
+                        <condition id="9" name="On item exists" sid="638811538829648" type="LocalStorage">
+                            <param id="0" name="Key">&quot;Cheating&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="1" name="Get item" sid="544715451330278" type="LocalStorage">
+                            <param id="0" name="Key">&quot;Cheating&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="459307674623253">
+                    <conditions>
+                        <condition id="9" name="On item exists" sid="538963383262672" type="LocalStorage">
+                            <param id="0" name="Key">&quot;Password&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="1" name="Get item" sid="198838754055162" type="LocalStorage">
+                            <param id="0" name="Key">&quot;Password&quot;</param>
+                        </action>
+                        <action id="14" name="Log" sid="892037813241300" type="Browser">
+                            <param id="0" name="Type">0</param>
+                            <param id="1" name="Message">&quot;Getting Local Storage Password&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
             </sub-events>
         </event-group>
         <event-group description="" sid="892538156247705" title="Missing">
@@ -329,7 +363,7 @@
                     <actions>
                         <action id="0" name="Set item" sid="596125378621026" type="LocalStorage">
                             <param id="0" name="Key">&quot;MP Level&quot;</param>
-                            <param id="1" name="Value">1</param>
+                            <param id="1" name="Value">MPLevel</param>
                         </action>
                         <action id="14" name="Log" sid="445640078054449" type="Browser">
                             <param id="0" name="Type">1</param>
@@ -422,6 +456,36 @@
                         </action>
                     </actions>
                 </event-block>
+                <event-block sid="778105164090214">
+                    <conditions>
+                        <condition id="10" name="On item missing" sid="354029399248341" type="LocalStorage">
+                            <param id="0" name="Key">&quot;Cheating&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set item" sid="611587330528304" type="LocalStorage">
+                            <param id="0" name="Key">&quot;Cheating&quot;</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="596036497033436">
+                    <conditions>
+                        <condition id="10" name="On item missing" sid="341610866798565" type="LocalStorage">
+                            <param id="0" name="Key">&quot;Password&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set item" sid="221294890859387" type="LocalStorage">
+                            <param id="0" name="Key">&quot;Password&quot;</param>
+                            <param id="1" name="Value">&quot;&quot;</param>
+                        </action>
+                        <action id="14" name="Log" sid="184520089271987" type="Browser">
+                            <param id="0" name="Type">1</param>
+                            <param id="1" name="Message">&quot;Setting Local Storage Password: &quot;&amp;LocalStorage.ItemValue</param>
+                        </action>
+                    </actions>
+                </event-block>
             </sub-events>
         </event-group>
         <event-group description="" sid="941389255348365" title="Get">
@@ -451,9 +515,9 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="3" name="Set volume" sid="812139864861111" type="Audio">
-                            <param id="0" name="Tag">&quot;MainMenuMusic&quot;</param>
-                            <param id="1" name="dB">LocalStorage.ItemValue</param>
+                        <action id="-9" name="Set value" sid="623493371091997" type="System">
+                            <param id="0" name="Variable">MusicVolume</param>
+                            <param id="1" name="Value">LocalStorage.ItemValue</param>
                         </action>
                         <action id="14" name="Log" sid="231467142185111" type="Browser">
                             <param id="0" name="Type">0</param>
@@ -662,6 +726,36 @@
                         <action id="14" name="Log" sid="112493692199119" type="Browser">
                             <param id="0" name="Type">0</param>
                             <param id="1" name="Message">&quot;Setting EffectsQuality to: &quot;&amp;LocalStorage.ItemValue</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="660727395143731">
+                    <conditions>
+                        <condition id="1" name="On item get" sid="505155571021646" type="LocalStorage">
+                            <param id="0" name="Key">&quot;Cheating&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="693062556966804" type="System">
+                            <param id="0" name="Variable">Cheating</param>
+                            <param id="1" name="Value">LocalStorage.ItemValue</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="741768337892353">
+                    <conditions>
+                        <condition id="1" name="On item get" sid="879888754552786" type="LocalStorage">
+                            <param id="0" name="Key">&quot;Password&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="875409954457405" type="System">
+                            <param id="0" name="Variable">Password</param>
+                            <param id="1" name="Value">LocalStorage.ItemValue</param>
+                        </action>
+                        <action id="14" name="Log" sid="575349800819730" type="Browser">
+                            <param id="0" name="Type">0</param>
+                            <param id="1" name="Message">&quot;Setting Password to: &quot;&amp;LocalStorage.ItemValue</param>
                         </action>
                     </actions>
                 </event-block>

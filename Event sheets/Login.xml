@@ -1,0 +1,347 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Login</name>
+    <events>
+        <include>Globals</include>
+        <include>GLOBAL EVENTS</include>
+        <event-block sid="381039369065431">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="194558057525926" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set cursor style" sid="635302780066429" type="Mouse">
+                    <param id="0" name="Cursor style">0</param>
+                </action>
+                <action id="-27" name="Set effect enabled" sid="663793346729914" type="Button">
+                    <param id="0" name="Mode">0</param>
+                    <param id="1" name="Effect">&quot;DISABLED&quot;</param>
+                </action>
+                <action id="-27" name="Set effect enabled" sid="453977206613426" type="Button">
+                    <param id="0" name="Mode">0</param>
+                    <param id="1" name="Effect">&quot;SELECTED&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="245863007360721" type="MPUsernameBox">
+                    <param id="0" name="Text">MP_USERNAME</param>
+                </action>
+                <action id="0" name="Set text" sid="894070138618959" type="PasswordTextbox">
+                    <param id="0" name="Text">Password</param>
+                </action>
+                <action id="0" name="Set text" sid="548989156836553" type="VersionText">
+                    <param id="0" name="Text">projectversion</param>
+                </action>
+                <action id="0" name="Play" sid="696991350679311" type="Audio">
+                    <param id="0" name="Audio file">through space</param>
+                    <param id="2" name="Loop">1</param>
+                    <param id="3" name="Volume">MusicVolume</param>
+                    <param id="1" name="Tag (optional)">&quot;Music&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block any="1" sid="960404780860785">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="903523887183924" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">LoginButtonText</param>
+                </condition>
+                <condition id="17" name="On tap object" sid="172947396736233" type="Touch">
+                    <param id="0" name="Object">LoginButtonText</param>
+                </condition>
+                <condition id="0" name="On key pressed" sid="399000624152562" type="Keyboard">
+                    <param id="0" name="Key">13 (Return)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action disabled="1" id="0" name="Set text" sid="693044966930996" type="LoginStatusText">
+                    <param id="0" name="Text">&quot;&quot;</param>
+                </action>
+                <action disabled="1" id="-15" name="Set visible" sid="316171262886779" type="LoginStatusText">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="484185296406507">
+                    <conditions>
+                        <condition id="-14" inverted="1" name="Compare variable" sid="242284656868133" type="System">
+                            <param id="0" name="Variable">MP_USERNAME</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;&quot;</param>
+                        </condition>
+                        <condition id="-14" inverted="1" name="Compare variable" sid="892782857935498" type="System">
+                            <param id="0" name="Variable">Password</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Request URL" sid="530211676924538" type="AJAX">
+                            <param id="0" name="Tag">&quot;Login&quot;</param>
+                            <param id="1" name="URL">&quot;http://jordan.bnettech.pw/login.php?fname=&quot;&amp;MP_USERNAME&amp;&quot;&amp;fpass=&quot;&amp;Password</param>
+                        </action>
+                        <action id="14" name="Log" sid="722469176692243" type="Browser">
+                            <param id="0" name="Type">0</param>
+                            <param id="1" name="Message">&quot;Requesting Login data&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block any="1" sid="757022721972450">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="776617465899596" type="System">
+                    <param id="0" name="Variable">MP_USERNAME</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">&quot;&quot;</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="648123406372459" type="System">
+                    <param id="0" name="Variable">Password</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">&quot;&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="807607406841737">
+                    <conditions>
+                        <condition id="-14" name="Pick by unique ID" sid="595881988974093" type="Button">
+                            <param id="0" name="Unique ID">178</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-27" name="Set effect enabled" sid="883842528365303" type="Button">
+                            <param id="0" name="Mode">1</param>
+                            <param id="1" name="Effect">&quot;DISABLED&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="835552944968632">
+            <conditions>
+                <condition id="-22" name="Else" sid="131660546768064" type="System" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="766815484691958">
+                    <conditions>
+                        <condition id="-14" name="Pick by unique ID" sid="204136578328258" type="Button">
+                            <param id="0" name="Unique ID">178</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-27" name="Set effect enabled" sid="792608861961232" type="Button">
+                            <param id="0" name="Mode">0</param>
+                            <param id="1" name="Effect">&quot;DISABLED&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="238366688417062">
+            <conditions>
+                <condition id="1" name="On text changed" sid="376790474792806" type="PasswordTextbox" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="474427096625542" type="System">
+                    <param id="0" name="Variable">Password</param>
+                    <param id="1" name="Value">PasswordTextbox.Text</param>
+                </action>
+                <action disabled="1" id="14" name="Log" sid="850457658240517" type="Browser">
+                    <param id="0" name="Type">0</param>
+                    <param id="1" name="Message">&quot;Setting Password: &quot;&amp;Password</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="980790579221431">
+            <conditions>
+                <condition id="1" name="On text changed" sid="490215323677538" type="MPUsernameBox" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="130886332601801" type="System">
+                    <param id="0" name="Variable">MP_USERNAME</param>
+                    <param id="1" name="Value">MPUsernameBox.Text</param>
+                </action>
+                <action disabled="1" id="14" name="Log" sid="116797368467061" type="Browser">
+                    <param id="0" name="Type">0</param>
+                    <param id="1" name="Message">&quot;Setting MP_USERNAME: &quot;&amp;MP_USERNAME</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="510626629234227">
+            <conditions>
+                <condition id="1" name="On error" sid="607089936761184" type="AJAX">
+                    <param id="0" name="Tag">&quot;Login&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="487767627443342" type="LoginStatusText">
+                    <param id="0" name="Text">&quot;Error: Cannot connect to server!&quot;</param>
+                </action>
+                <action id="-15" name="Set visible" sid="393168488274731" type="LoginStatusText">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="721087981357356">
+            <conditions>
+                <condition id="0" name="On completed" sid="590835918831354" type="AJAX">
+                    <param id="0" name="Tag">&quot;Login&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Request URL" sid="715893377206807" type="AJAX">
+                    <param id="0" name="Tag">&quot;Level&quot;</param>
+                    <param id="1" name="URL">&quot;http://jordan.bnettech.pw/getLevel.php?fname=&quot;&amp;MP_USERNAME&amp;&quot;&amp;fpass=&quot;&amp;Password</param>
+                </action>
+                <action id="-9" name="Set value" sid="800996759641584" type="System">
+                    <param id="0" name="Variable">UserID</param>
+                    <param id="1" name="Value">AJAX.LastData</param>
+                </action>
+                <action id="14" name="Log" sid="879559826255426" type="Browser">
+                    <param id="0" name="Type">0</param>
+                    <param id="1" name="Message">&quot;AJAX recieved value: &quot;&amp;AJAX.LastData</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="623189177880385">
+            <conditions>
+                <condition id="0" name="On completed" sid="972167480797963" type="AJAX">
+                    <param id="0" name="Tag">&quot;Level&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Request URL" sid="797003452130188" type="AJAX">
+                    <param id="0" name="Tag">&quot;Kills&quot;</param>
+                    <param id="1" name="URL">&quot;http://jordan.bnettech.pw/getKills.php?fname=&quot;&amp;MP_USERNAME&amp;&quot;&amp;fpass=&quot;&amp;Password</param>
+                </action>
+                <action id="-9" name="Set value" sid="869336936198881" type="System">
+                    <param id="0" name="Variable">MPLevel</param>
+                    <param id="1" name="Value">AJAX.LastData</param>
+                </action>
+                <action id="0" name="Set item" sid="382421683146590" type="LocalStorage">
+                    <param id="0" name="Key">&quot;MP Level&quot;</param>
+                    <param id="1" name="Value">MPLevel</param>
+                </action>
+                <action id="14" name="Log" sid="825993632947067" type="Browser">
+                    <param id="0" name="Type">0</param>
+                    <param id="1" name="Message">&quot;AJAX recieved value: &quot;&amp;AJAX.LastData</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="686196361480644">
+            <conditions>
+                <condition id="0" name="On completed" sid="111751422956180" type="AJAX">
+                    <param id="0" name="Tag">&quot;Kills&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Request URL" sid="516605790778209" type="AJAX">
+                    <param id="0" name="Tag">&quot;Deaths&quot;</param>
+                    <param id="1" name="URL">&quot;http://jordan.bnettech.pw/getDeaths.php?fname=&quot;&amp;MP_USERNAME&amp;&quot;&amp;fpass=&quot;&amp;Password</param>
+                </action>
+                <action id="-9" name="Set value" sid="346387519635233" type="System">
+                    <param id="0" name="Variable">TotalKills</param>
+                    <param id="1" name="Value">AJAX.LastData</param>
+                </action>
+                <action id="0" name="Set item" sid="109552025378144" type="LocalStorage">
+                    <param id="0" name="Key">&quot;MP Kills&quot;</param>
+                    <param id="1" name="Value">TotalKills</param>
+                </action>
+                <action id="14" name="Log" sid="654075919826094" type="Browser">
+                    <param id="0" name="Type">0</param>
+                    <param id="1" name="Message">&quot;AJAX recieved value: &quot;&amp;AJAX.LastData</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="145904525642333">
+            <conditions>
+                <condition id="0" name="On completed" sid="568251657819419" type="AJAX">
+                    <param id="0" name="Tag">&quot;Deaths&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="874756243338375" type="System">
+                    <param id="0" name="Variable">TotalDeaths</param>
+                    <param id="1" name="Value">AJAX.LastData</param>
+                </action>
+                <action id="0" name="Set item" sid="711540258387526" type="LocalStorage">
+                    <param id="0" name="Key">&quot;MP Deaths&quot;</param>
+                    <param id="1" name="Value">TotalDeaths</param>
+                </action>
+                <action id="14" name="Log" sid="597932470380046" type="Browser">
+                    <param id="0" name="Type">0</param>
+                    <param id="1" name="Message">&quot;AJAX recieved value: &quot;&amp;AJAX.LastData</param>
+                </action>
+                <action id="0" name="Call function" sid="576453442301529" type="Function">
+                    <param id="0" name="Name">&quot;Login&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="997412396445918">
+            <conditions>
+                <condition id="0" name="On function" sid="631586539620686" type="Function">
+                    <param id="0" name="Name">&quot;Login&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="384628668214762">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="864015102112716" type="System">
+                            <param id="0" name="Variable">UserID</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="930053202062450" type="System">
+                            <param id="0" name="Variable">MPLevel</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-4" name="Trigger once while true" sid="911884196557121" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set item" sid="873868484420667" type="LocalStorage">
+                            <param id="0" name="Key">&quot;MP USERNAME&quot;</param>
+                            <param id="1" name="Value">MP_USERNAME</param>
+                        </action>
+                        <action id="0" name="Set item" sid="529880289825454" type="LocalStorage">
+                            <param id="0" name="Key">&quot;Password&quot;</param>
+                            <param id="1" name="Value">Password</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="941882784235381" type="System">
+                            <param id="0" name="Variable">NextLayout</param>
+                            <param id="1" name="Value">&quot;Main Menu&quot;</param>
+                        </action>
+                        <action id="-2" name="Go to layout" sid="135826457489406" type="System">
+                            <param id="0" name="Layout">Loading</param>
+                        </action>
+                        <action id="14" name="Log" sid="680122724761544" type="Browser">
+                            <param id="0" name="Type">0</param>
+                            <param id="1" name="Message">&quot;Going to &quot;&amp;NextLayout</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="987233745312966">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="609386018015274" type="System" />
+                        <condition id="-14" inverted="1" name="Compare variable" sid="166975990564230" type="System">
+                            <param id="0" name="Variable">UserID</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="502369637669360" type="LoginStatusText">
+                            <param id="0" name="Text">&quot;Error: Username or Password is incorrect!&quot;</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="133114136971551" type="LoginStatusText">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>

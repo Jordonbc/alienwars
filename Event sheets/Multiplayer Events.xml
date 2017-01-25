@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Multiplayer Events</name>
     <events>
+        <variable constant="0" name="Number" sid="248685102930454" static="0" type="number">0</variable>
         <include>MP Globals</include>
         <include>Gameplay</include>
         <include>GLOBAL EVENTS</include>
@@ -133,6 +134,18 @@
                             <param id="0" name="Property name">&quot;outline&quot;</param>
                             <param id="1" name="Value">&quot;none&quot;</param>
                         </action>
+                        <action id="7" name="Set CSS style" sid="994291298199081" type="ChatTextBox">
+                            <param id="0" name="Property name">&quot;opacity&quot;</param>
+                            <param id="1" name="Value">&quot;0.5&quot;</param>
+                        </action>
+                        <action id="7" name="Set CSS style" sid="407709083357907" type="ChatTextBox">
+                            <param id="0" name="Property name">&quot;border&quot;</param>
+                            <param id="1" name="Value">&quot;0&quot;</param>
+                        </action>
+                        <action id="7" name="Set CSS style" sid="964071211190245" type="ChatTextBox">
+                            <param id="0" name="Property name">&quot;outline&quot;</param>
+                            <param id="1" name="Value">&quot;none&quot;</param>
+                        </action>
                         <action id="1" name="Set cursor from sprite" sid="631958360605395" type="Mouse">
                             <param id="0" name="Sprite">MPCursor</param>
                         </action>
@@ -204,14 +217,6 @@
                             <param id="0" name="Layer">&quot;Players List&quot;</param>
                             <param id="1" name="Visibility">0</param>
                         </action>
-                        <action id="-10" name="Set value" sid="135164216358169" type="MPPlayer">
-                            <param id="0" name="Instance variable">Level</param>
-                            <param id="1" name="Value">MPLevel</param>
-                        </action>
-                        <action id="-10" name="Set value" sid="715717305159401" type="MPPlayer">
-                            <param id="0" name="Instance variable">Damage</param>
-                            <param id="1" name="Value">MPPlayer.Level*AttackPercentage</param>
-                        </action>
                         <action id="-30" name="Set layer effect enabled" sid="665024600166238" type="System">
                             <param id="0" name="Layer">&quot;Background&quot;</param>
                             <param id="1" name="Mode">0</param>
@@ -280,7 +285,7 @@
                         </action>
                         <action id="15" name="Add client input value" sid="222642210751658" type="Multiplayer">
                             <param id="0" name="Tag">&quot;INPUTS&quot;</param>
-                            <param id="1" name="Precision">2</param>
+                            <param id="1" name="Precision">0</param>
                             <param id="2" name="Interpolation">0</param>
                         </action>
                         <action disabled="1" id="15" name="Add client input value" sid="447685091983531" type="Multiplayer">
@@ -300,21 +305,21 @@
                             <param id="1" name="Message">&quot;Syncing player data&quot;</param>
                         </action>
                         <action id="11" name="Sync object" sid="210859599154113" type="Multiplayer">
-                            <param id="0" name="Object">Lazer</param>
+                            <param id="0" name="Object">Laser</param>
                             <param id="1" name="Data">3</param>
                             <param id="2" name="Precision">1</param>
                             <param id="3" name="Bandwidth">0</param>
                         </action>
-                        <action disabled="1" id="12" name="Sync instance variable" sid="475073486946370" type="Multiplayer">
-                            <param id="0" name="Object">Lazer</param>
-                            <param id="1" name="Instance variable">Lazer|PlayerID</param>
+                        <action id="12" name="Sync instance variable" sid="475073486946370" type="Multiplayer">
+                            <param id="0" name="Object">Laser</param>
+                            <param id="1" name="Instance variable">Laser|PlayerID</param>
                             <param id="2" name="Precision">2</param>
                             <param id="3" name="Interpolation">0</param>
                             <param id="4" name="Client value tag">&quot;&quot;</param>
                         </action>
                         <action id="12" name="Sync instance variable" sid="306285412888381" type="Multiplayer">
-                            <param id="0" name="Object">Lazer</param>
-                            <param id="1" name="Instance variable">Lazer|Damage</param>
+                            <param id="0" name="Object">Laser</param>
+                            <param id="1" name="Instance variable">Laser|Damage</param>
                             <param id="2" name="Precision">0</param>
                             <param id="3" name="Interpolation">0</param>
                             <param id="4" name="Client value tag">&quot;&quot;</param>
@@ -342,7 +347,7 @@
                         <action id="12" name="Sync instance variable" sid="842653176328405" type="Multiplayer">
                             <param id="0" name="Object">MPPlayer</param>
                             <param id="1" name="Instance variable">MPPlayer|Inputs</param>
-                            <param id="2" name="Precision">2</param>
+                            <param id="2" name="Precision">0</param>
                             <param id="3" name="Interpolation">0</param>
                             <param id="4" name="Client value tag">&quot;INPUTS&quot;</param>
                         </action>
@@ -419,7 +424,7 @@
                         <action id="12" name="Sync instance variable" sid="777770001355670" type="Multiplayer">
                             <param id="0" name="Object">MPPlayer</param>
                             <param id="1" name="Instance variable">MPPlayer|LastHitTime</param>
-                            <param id="2" name="Precision">3</param>
+                            <param id="2" name="Precision">2</param>
                             <param id="3" name="Interpolation">0</param>
                             <param id="4" name="Client value tag">&quot;&quot;</param>
                         </action>
@@ -454,7 +459,28 @@
                         <action id="12" name="Sync instance variable" sid="110270354330475" type="Multiplayer">
                             <param id="0" name="Object">MPPlayer</param>
                             <param id="1" name="Instance variable">MPPlayer|Ping</param>
+                            <param id="2" name="Precision">2</param>
+                            <param id="3" name="Interpolation">0</param>
+                            <param id="4" name="Client value tag">&quot;&quot;</param>
+                        </action>
+                        <action id="12" name="Sync instance variable" sid="999674051720745" type="Multiplayer">
+                            <param id="0" name="Object">MPPlayer</param>
+                            <param id="1" name="Instance variable">MPPlayer|CanShoot</param>
                             <param id="2" name="Precision">3</param>
+                            <param id="3" name="Interpolation">0</param>
+                            <param id="4" name="Client value tag">&quot;&quot;</param>
+                        </action>
+                        <action id="12" name="Sync instance variable" sid="908481242167604" type="Multiplayer">
+                            <param id="0" name="Object">MPPlayer</param>
+                            <param id="1" name="Instance variable">MPPlayer|Cheating</param>
+                            <param id="2" name="Precision">2</param>
+                            <param id="3" name="Interpolation">0</param>
+                            <param id="4" name="Client value tag">&quot;&quot;</param>
+                        </action>
+                        <action id="12" name="Sync instance variable" sid="142071203920357" type="Multiplayer">
+                            <param id="0" name="Object">MPPlayer</param>
+                            <param id="1" name="Instance variable">MPPlayer|MPNumber</param>
+                            <param id="2" name="Precision">2</param>
                             <param id="3" name="Interpolation">0</param>
                             <param id="4" name="Client value tag">&quot;&quot;</param>
                         </action>
@@ -620,6 +646,34 @@
                                 <action id="-3" name="Set position" sid="151026703336375" type="MPPlayer">
                                     <param id="0" name="X">int(random(50, LayoutWidth-50))</param>
                                     <param id="1" name="Y">int(random(50, LayoutHeight-50))</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="548373379437709" type="MPPlayer">
+                                    <param id="0" name="Instance variable">Level</param>
+                                    <param id="1" name="Value">MPLevel</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="774576778615301" type="MPPlayer">
+                                    <param id="0" name="Instance variable">Damage</param>
+                                    <param id="1" name="Value">AttackPercentage</param>
+                                </action>
+                                <action disabled="1" id="-10" name="Set value" sid="695718964271910" type="MPPlayer">
+                                    <param id="0" name="Instance variable">Cheating</param>
+                                    <param id="1" name="Value">Cheating</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="291788968911014" type="MPPlayer">
+                                    <param id="0" name="Instance variable">TotalKills</param>
+                                    <param id="1" name="Value">TotalKills</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="587558102540856" type="MPPlayer">
+                                    <param id="0" name="Instance variable">Deaths</param>
+                                    <param id="1" name="Value">TotalDeaths</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="113889409136897" type="MPPlayer">
+                                    <param id="0" name="Instance variable">URL</param>
+                                    <param id="1" name="Value">SpaceshipURL</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="567646719517354" type="MPPlayer">
+                                    <param id="0" name="Instance variable">MPNumber</param>
+                                    <param id="1" name="Value">0</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -800,6 +854,147 @@
                         </event-block>
                     </sub-events>
                 </event-group>
+                <event-block sid="916692429255425">
+                    <conditions>
+                        <condition id="15" name="On peer message" sid="587336188539830" type="Multiplayer">
+                            <param id="0" name="Tag">&quot;URL&quot;</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="799593567268751" type="MPPlayer">
+                            <param id="0" name="Instance variable">MPID</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">Multiplayer.FromID</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="783535973630846" type="MPPlayer">
+                            <param id="0" name="Instance variable">URL</param>
+                            <param id="1" name="Value">Multiplayer.Message</param>
+                        </action>
+                        <action id="9" name="Broadcast message" sid="342258870454151" type="Multiplayer">
+                            <param id="0" name="From ID">Multiplayer.FromID</param>
+                            <param id="1" name="Tag">&quot;URL&quot;</param>
+                            <param id="2" name="Message">Multiplayer.Message</param>
+                            <param id="3" name="Mode">0</param>
+                        </action>
+                        <action id="14" name="Log" sid="407792292905451" type="Browser">
+                            <param id="0" name="Type">0</param>
+                            <param id="1" name="Message">&quot;Setting &quot;&amp;Multiplayer.FromAlias&amp;&quot; URL to &quot;&amp;Multiplayer.Message</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="621322523719951">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="400939966498222" type="System">
+                                    <param id="0" name="First value">Multiplayer.Message</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Second value">&quot;&quot;</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="264045067195500" type="MPPlayer">
+                                    <param id="0" name="Instance variable">MPID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">Multiplayer.FromID</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="474759579882106" type="MPPlayer">
+                                    <param id="0" name="Frame number">MPPlayer.MPNumber</param>
+                                </action>
+                                <action id="10" name="Load image from URL" sid="576922392068929" type="MPPlayer">
+                                    <param id="0" name="URI">MPPlayer.URL</param>
+                                    <param id="1" name="Size">1</param>
+                                </action>
+                                <action id="-7" name="Set size" sid="920278191673754" type="MPPlayer">
+                                    <param id="0" name="Width">108</param>
+                                    <param id="1" name="Height">105</param>
+                                </action>
+                                <action id="14" name="Log" sid="677362216385983" type="Browser">
+                                    <param id="0" name="Type">0</param>
+                                    <param id="1" name="Message">&quot;Setting &quot;&amp;Multiplayer.FromAlias&amp;&quot; SPRITE to &quot;&amp;Multiplayer.Message</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="936596005728769">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="346031624779874" type="System">
+                                    <param id="0" name="First value">Multiplayer.Message</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">&quot;&quot;</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="363791981551866" type="MPPlayer">
+                                    <param id="0" name="Instance variable">MPID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">Multiplayer.FromID</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="415104322660224" type="MPPlayer">
+                                    <param id="0" name="Frame number">MPPlayer.MPNumber</param>
+                                </action>
+                                <action id="10" name="Load image from URL" sid="873017016801816" type="MPPlayer">
+                                    <param id="0" name="URI">&quot;https://cdn.rawgit.com/Jordonbc/alienwars/252d8777/Animations/Player/Default/000.png&quot;</param>
+                                    <param id="1" name="Size">1</param>
+                                </action>
+                                <action id="-7" name="Set size" sid="513507985633668" type="MPPlayer">
+                                    <param id="0" name="Width">108</param>
+                                    <param id="1" name="Height">105</param>
+                                </action>
+                                <action id="14" name="Log" sid="311123607443043" type="Browser">
+                                    <param id="0" name="Type">0</param>
+                                    <param id="1" name="Message">&quot;Setting &quot;&amp;Multiplayer.FromAlias&amp;&quot; SPRITE to &quot;&amp;Multiplayer.Message</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="191151153367166">
+                    <conditions>
+                        <condition id="15" name="On peer message" sid="775521046122152" type="Multiplayer">
+                            <param id="0" name="Tag">&quot;CHAT&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="723173201039988" type="Function">
+                            <param id="0" name="Name">&quot;AddChat&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;&lt;&quot;&amp;Multiplayer.FromAlias&amp;&quot;&gt;&quot;&amp;Multiplayer.Message</param>
+                        </action>
+                        <action id="9" name="Broadcast message" sid="848699841258750" type="Multiplayer">
+                            <param id="0" name="From ID">Multiplayer.FromID</param>
+                            <param id="1" name="Tag">&quot;CHAT&quot;</param>
+                            <param id="2" name="Message">Multiplayer.Message</param>
+                            <param id="3" name="Mode">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="370701878311208">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="824417510121527" type="Keyboard">
+                            <param id="0" name="Key">13 (Return)</param>
+                        </condition>
+                        <condition id="-9" inverted="1" name="Layer is visible" sid="761004009670556" type="System">
+                            <param id="0" name="Layer">&quot;Pause Menu&quot;</param>
+                        </condition>
+                        <condition id="0" inverted="1" name="Compare text" sid="666671857960858" type="ChatTextBox">
+                            <param id="0" name="Text">&quot;&quot;</param>
+                            <param id="1" name="Case">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="966145069430977" type="Function">
+                            <param id="0" name="Name">&quot;AddMessageBox&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;&lt;&quot;&amp;Multiplayer.MyAlias&amp;&quot;&gt;&quot;&amp;ChatTextBox.Text</param>
+                        </action>
+                        <action id="9" name="Broadcast message" sid="198207999443447" type="Multiplayer">
+                            <param id="0" name="From ID">&quot;&quot;</param>
+                            <param id="1" name="Tag">&quot;CHAT&quot;</param>
+                            <param id="2" name="Message">ChatTextBox.Text</param>
+                            <param id="3" name="Mode">0</param>
+                        </action>
+                        <action id="0" name="Set text" sid="927292953337270" type="ChatTextBox">
+                            <param id="0" name="Text">&quot;&quot;</param>
+                        </action>
+                        <action id="8" name="Set unfocused" sid="135902989704617" type="ChatTextBox" />
+                    </actions>
+                </event-block>
                 <event-block sid="829313664430987">
                     <conditions>
                         <condition id="11" name="On peer connected" sid="328034252169057" type="Multiplayer" />
@@ -904,11 +1099,6 @@
                         <condition id="-6" name="Every X seconds" sid="867261703609036" type="System">
                             <param id="0" name="Interval (seconds)">1</param>
                         </condition>
-                        <condition id="-7" name="Compare instance variable" sid="985467077300879" type="MPPlayer">
-                            <param id="0" name="Instance variable">LastHitTime</param>
-                            <param id="1" name="Comparison">2</param>
-                            <param id="2" name="Value">5</param>
-                        </condition>
                     </conditions>
                     <actions>
                         <action id="-11" name="Add to" sid="424855118646493" type="MPPlayer">
@@ -928,25 +1118,68 @@
                             <param id="1" name="Comparison">1</param>
                             <param id="2" name="Value">100</param>
                         </condition>
-                        <condition id="-7" name="Compare instance variable" sid="477572815317628" type="MPPlayer">
-                            <param id="0" name="Instance variable">LastHitTime</param>
-                            <param id="1" name="Comparison">5</param>
-                            <param id="2" name="Value">5</param>
-                        </condition>
-                        <condition id="-6" name="Every X seconds" sid="583227379639920" type="System">
-                            <param id="0" name="Interval (seconds)">0.2</param>
-                        </condition>
                     </conditions>
-                    <actions>
-                        <action id="-11" name="Add to" sid="585379316946481" type="MPPlayer">
-                            <param id="0" name="Instance variable">Health</param>
-                            <param id="1" name="Value">1</param>
-                        </action>
-                        <action id="14" name="Log" sid="162295388037236" type="Browser">
-                            <param id="0" name="Type">0</param>
-                            <param id="1" name="Message">&quot;Adding 1 Health&quot;</param>
-                        </action>
-                    </actions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="361905154363334">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="168016799085496" type="MPPlayer">
+                                    <param id="0" name="Instance variable">LastHitTime</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">20</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="662371889383266">
+                                    <conditions>
+                                        <condition id="-6" name="Every X seconds" sid="691409104863442" type="System">
+                                            <param id="0" name="Interval (seconds)">0.2</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-11" name="Add to" sid="551232409279590" type="MPPlayer">
+                                            <param id="0" name="Instance variable">Health</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="14" name="Log" sid="381509416690122" type="Browser">
+                                            <param id="0" name="Type">0</param>
+                                            <param id="1" name="Message">&quot;Adding 1 Health&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="851781013171786">
+                            <conditions>
+                                <condition id="-21" name="Is between values" sid="477572815317628" type="System">
+                                    <param id="0" name="Value">MPPlayer.LastHitTime</param>
+                                    <param id="1" name="Lower bound">10</param>
+                                    <param id="2" name="Upper bound">19</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="244912091184447">
+                                    <conditions>
+                                        <condition id="-6" name="Every X seconds" sid="583227379639920" type="System">
+                                            <param id="0" name="Interval (seconds)">0.5</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-11" name="Add to" sid="585379316946481" type="MPPlayer">
+                                            <param id="0" name="Instance variable">Health</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="14" name="Log" sid="162295388037236" type="Browser">
+                                            <param id="0" name="Type">0</param>
+                                            <param id="1" name="Message">&quot;Adding 1 Health&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
                 </event-block>
                 <event-block sid="243710306901928">
                     <conditions>
@@ -1069,6 +1302,21 @@
                         </event-block>
                     </sub-events>
                 </event-block>
+                <event-block sid="255712580411674">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="904724652002247" type="MPPlayer">
+                            <param id="0" name="Instance variable">Health</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="710538607987591" type="MPPlayer">
+                            <param id="0" name="Instance variable">CanShoot</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
                 <event-block sid="976550334944004">
                     <conditions>
                         <condition id="-7" name="Compare instance variable" sid="413227973172051" type="MPPlayer">
@@ -1094,13 +1342,13 @@
                         <condition id="-4" name="Trigger once while true" sid="465853447076909" type="System" />
                     </conditions>
                     <actions>
-                        <action id="-10" name="Set value" sid="338710110793784" type="MPPlayer">
-                            <param id="0" name="Instance variable">Health</param>
-                            <param id="1" name="Value">0</param>
-                        </action>
                         <action id="0" name="Call function" sid="741014952854993" type="Function">
                             <param id="0" name="Name">&quot;Player Explode&quot;</param>
                             <param id="1" name="Parameter {n}">MPPlayer.MPID</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="488808768106847" type="MPPlayer">
+                            <param id="0" name="Instance variable">CanShoot</param>
+                            <param id="1" name="Value">0</param>
                         </action>
                         <action id="-16" name="Wait" sid="600913520705971" type="System">
                             <param id="0" name="Seconds">1</param>
@@ -1150,7 +1398,7 @@
                     <sub-events>
                         <event-block disabled="1" sid="392760895160413">
                             <conditions>
-                                <condition id="-9" name="Is visible" sid="205804581278894" type="Lazer" />
+                                <condition id="-9" name="Is visible" sid="205804581278894" type="Laser" />
                             </conditions>
                             <actions />
                             <sub-events>
@@ -1186,12 +1434,143 @@
                         </event-block>
                     </sub-events>
                 </event-block>
+                <event-block sid="925158886724817">
+                    <conditions>
+                        <condition id="-11" name="For Each" sid="562888559085936" type="System">
+                            <param id="0" name="Object">MPPlayer</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="420284391993785" type="MPPlayer">
+                            <param id="0" name="Instance variable">MPID</param>
+                            <param id="1" name="Comparison">1</param>
+                            <param id="2" name="Value">Multiplayer.HostID</param>
+                        </condition>
+                        <condition id="-8" name="Compare two values" sid="544684906198549" type="System">
+                            <param id="0" name="First value">getbit(MPPlayer.Inputs, 4)</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="14" name="Log" sid="149338478767855" type="Browser">
+                            <param id="0" name="Type">0</param>
+                            <param id="1" name="Message">Multiplayer.PeerAliasFromID(MPPlayer.MPID)&amp;&quot;Pressed Left Mouse Button&quot;</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="231989381036310">
+                            <conditions>
+                                <condition id="-6" name="Every X seconds" sid="181145406446911" type="System">
+                                    <param id="0" name="Interval (seconds)">0.2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="14" name="Log" sid="434079895905359" type="Browser">
+                                    <param id="0" name="Type">0</param>
+                                    <param id="1" name="Message">&quot;Spawning Lazer&quot;</param>
+                                </action>
+                                <action id="0" name="Spawn another object" sid="478988290266507" type="MPPlayer">
+                                    <param id="0" name="Object">Laser</param>
+                                    <param id="1" name="Layer">&quot;Lazers&quot;</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action id="0" name="Play" sid="954931995787691" type="Audio">
+                                    <param id="0" name="Audio file">SFX1</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;Game&quot;</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="437074621876114" type="Laser">
+                                    <param id="0" name="Instance variable">PlayerID</param>
+                                    <param id="1" name="Value">MPPlayer.MPID</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="404810554537766" type="Laser">
+                                    <param id="0" name="Instance variable">Damage</param>
+                                    <param id="1" name="Value">MPPlayer.Damage</param>
+                                </action>
+                                <action id="14" name="Log" sid="557927516651393" type="Browser">
+                                    <param id="0" name="Type">0</param>
+                                    <param id="1" name="Message">&quot;Setting Damage to: &quot;&amp;MPPlayer.Damage</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="179363267885174">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="628950678960753" type="MPPlayer">
+                            <param id="0" name="Instance variable">MPID</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">Multiplayer.HostID</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="14" name="Log" sid="293361078213041" type="Browser">
+                            <param id="0" name="Type">0</param>
+                            <param id="1" name="Message">Multiplayer.PeerAliasFromID(MPPlayer.MPID)&amp;&quot;Pressed Left Mouse Button&quot;</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="488614155166929">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="211118595519583" type="System">
+                                    <param id="0" name="First value">getbit(MPPlayer.Inputs, 4)</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="14" name="Log" sid="524570742640732" type="Browser">
+                                    <param id="0" name="Type">0</param>
+                                    <param id="1" name="Message">Multiplayer.PeerAliasFromID(MPPlayer.MPID)&amp;&quot;Pressed Left Mouse Button&quot;</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="694402856219658">
+                                    <conditions>
+                                        <condition id="-6" name="Every X seconds" sid="685242675383819" type="System">
+                                            <param id="0" name="Interval (seconds)">0.2</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="14" name="Log" sid="752526353988350" type="Browser">
+                                            <param id="0" name="Type">0</param>
+                                            <param id="1" name="Message">&quot;Spawning Lazer&quot;</param>
+                                        </action>
+                                        <action id="0" name="Spawn another object" sid="449572875697752" type="MPPlayer">
+                                            <param id="0" name="Object">Laser</param>
+                                            <param id="1" name="Layer">&quot;Lazers&quot;</param>
+                                            <param id="2" name="Image point">0</param>
+                                        </action>
+                                        <action id="0" name="Play" sid="984382992350964" type="Audio">
+                                            <param id="0" name="Audio file">SFX1</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">0</param>
+                                            <param id="1" name="Tag (optional)">&quot;Game&quot;</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="701677414455039" type="Laser">
+                                            <param id="0" name="Instance variable">PlayerID</param>
+                                            <param id="1" name="Value">MPPlayer.MPID</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="759315773499315" type="Laser">
+                                            <param id="0" name="Instance variable">Damage</param>
+                                            <param id="1" name="Value">MPPlayer.Damage</param>
+                                        </action>
+                                        <action id="14" name="Log" sid="940186509754335" type="Browser">
+                                            <param id="0" name="Type">0</param>
+                                            <param id="1" name="Message">&quot;Setting Damage to: &quot;&amp;MPPlayer.Damage</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
                 <event-block sid="610147150656768">
                     <conditions>
                         <condition id="0" name="On collision with another object" sid="530708909504546" type="MPPlayer">
-                            <param id="0" name="Object">Lazer</param>
+                            <param id="0" name="Object">Laser</param>
                         </condition>
-                        <condition id="-7" name="Compare instance variable" sid="259724877676333" type="Lazer">
+                        <condition id="-7" name="Compare instance variable" sid="259724877676333" type="Laser">
                             <param id="0" name="Instance variable">PlayerID</param>
                             <param id="1" name="Comparison">1</param>
                             <param id="2" name="Value">MPPlayer.MPID</param>
@@ -1200,18 +1579,22 @@
                     <actions>
                         <action id="14" name="Log" sid="781828565221581" type="Browser">
                             <param id="0" name="Type">0</param>
-                            <param id="1" name="Message">Multiplayer.PeerAliasFromID(MPPlayer.MPID)&amp;&quot; got shot by &quot;&amp;Multiplayer.PeerAliasFromID(Lazer.PlayerID)</param>
+                            <param id="1" name="Message">Multiplayer.PeerAliasFromID(MPPlayer.MPID)&amp;&quot; got shot by &quot;&amp;Multiplayer.PeerAliasFromID(Laser.PlayerID)</param>
                         </action>
                         <action disabled="1" id="-3" name="Set position" sid="243089072208125" type="MPPlayer">
-                            <param id="0" name="X">Multiplayer.LagCompensateX(MPPlayer.MPID, Lazer.PlayerID)</param>
-                            <param id="1" name="Y">Multiplayer.LagCompensateY(MPPlayer.MPID,Lazer.PlayerID)</param>
+                            <param id="0" name="X">Multiplayer.LagCompensateX(MPPlayer.MPID, Laser.PlayerID)</param>
+                            <param id="1" name="Y">Multiplayer.LagCompensateY(MPPlayer.MPID,Laser.PlayerID)</param>
                         </action>
                         <action disabled="1" id="-8" name="Set angle" sid="379249020080194" type="MPPlayer">
-                            <param id="0" name="Angle">Multiplayer.LagCompensateAngle(MPPlayer.MPID, Lazer.PlayerID)</param>
+                            <param id="0" name="Angle">Multiplayer.LagCompensateAngle(MPPlayer.MPID, Laser.PlayerID)</param>
                         </action>
                         <action id="-12" name="Subtract from" sid="451940161254953" type="MPPlayer">
                             <param id="0" name="Instance variable">Health</param>
-                            <param id="1" name="Value">Lazer.Damage</param>
+                            <param id="1" name="Value">Laser.Damage</param>
+                        </action>
+                        <action id="14" name="Log" sid="676088767956827" type="Browser">
+                            <param id="0" name="Type">0</param>
+                            <param id="1" name="Message">&quot;Subtracting &quot;&amp;Laser.Damage&amp;&quot; from &quot;&amp;Multiplayer.PeerAliasFromID(MPPlayer.MPID)</param>
                         </action>
                         <action id="-10" name="Set value" sid="713707000813067" type="MPPlayer">
                             <param id="0" name="Instance variable">LastHitTime</param>
@@ -1219,9 +1602,9 @@
                         </action>
                         <action id="-10" name="Set value" sid="609624074897427" type="MPPlayer">
                             <param id="0" name="Instance variable">LastHitByID</param>
-                            <param id="1" name="Value">Lazer.PlayerID</param>
+                            <param id="1" name="Value">Laser.PlayerID</param>
                         </action>
-                        <action id="-9" name="Destroy" sid="181651437100836" type="Lazer" />
+                        <action id="-9" name="Destroy" sid="181651437100836" type="Laser" />
                         <action id="-10" name="Set value" sid="922193110033029" type="MPPlayer">
                             <param id="0" name="Instance variable">Hit</param>
                             <param id="1" name="Value">1</param>
@@ -1236,131 +1619,22 @@
                     </actions>
                 </event-block>
                 <variable constant="0" name="FiringPeerID" sid="904277183080729" static="0" type="text"></variable>
-                <variable constant="0" name="Damage" sid="794476157225291" static="0" type="number">0</variable>
-                <event-block disabled="1" sid="103395177289216">
+                <event-block sid="529072432203001">
                     <conditions>
-                        <condition id="0" name="On function" sid="616242174735272" type="Function">
-                            <param id="0" name="Name">&quot;TestHit&quot;</param>
+                        <condition id="-7" name="Compare instance variable" sid="187451967421528" type="MPPlayer">
+                            <param id="0" name="Instance variable">MPID</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">Multiplayer.MyID</param>
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-9" name="Set value" sid="718122557847717" type="System">
-                            <param id="0" name="Variable">FiringPeerID</param>
-                            <param id="1" name="Value">Function.Param(1)</param>
-                        </action>
-                        <action id="14" name="Log" sid="405030165891498" type="Browser">
-                            <param id="0" name="Type">0</param>
-                            <param id="1" name="Message">&quot;Running TestHit&quot;</param>
+                        <action id="9" name="Broadcast message" sid="819840053624910" type="Multiplayer">
+                            <param id="0" name="From ID">&quot;&quot;</param>
+                            <param id="1" name="Tag">&quot;URL&quot;</param>
+                            <param id="2" name="Message">MPPlayer.URL</param>
+                            <param id="3" name="Mode">0</param>
                         </action>
                     </actions>
-                    <sub-events>
-                        <event-block disabled="1" sid="722493160321662">
-                            <conditions>
-                                <condition id="-7" name="Compare instance variable" sid="991524769865692" type="MPPlayer">
-                                    <param id="0" name="Instance variable">MPID</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">Function.Param(1)</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-9" name="Set value" sid="128181037685764" type="System">
-                                    <param id="0" name="Variable">Damage</param>
-                                    <param id="1" name="Value">MPPlayer.Damage</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block disabled="1" sid="729691413395237">
-                            <conditions>
-                                <condition id="-14" name="Pick by unique ID" sid="722737763447428" type="AllAimSpot">
-                                    <param id="0" name="Unique ID">Function.Param(0)</param>
-                                </condition>
-                            </conditions>
-                            <actions />
-                            <sub-events>
-                                <event-block disabled="1" sid="344515171274540">
-                                    <conditions>
-                                        <condition id="-7" name="Compare instance variable" sid="615235585575551" type="MPPlayer">
-                                            <param id="0" name="Instance variable">MPID</param>
-                                            <param id="1" name="Comparison">1</param>
-                                            <param id="2" name="Value">FiringPeerID</param>
-                                        </condition>
-                                        <condition id="-11" name="For Each" sid="590250063680621" type="System">
-                                            <param id="0" name="Object">MPPlayer</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions />
-                                    <sub-events>
-                                        <variable constant="0" name="OldX" sid="700521881847698" static="0" type="number">0</variable>
-                                        <variable constant="0" name="OldY" sid="272107715850452" static="0" type="number">0</variable>
-                                        <variable constant="0" name="OldAngle" sid="692449653501484" static="0" type="number">0</variable>
-                                        <event-block disabled="1" sid="215481361864327">
-                                            <conditions />
-                                            <actions>
-                                                <action id="-9" name="Set value" sid="879573319656774" type="System">
-                                                    <param id="0" name="Variable">OldX</param>
-                                                    <param id="1" name="Value">MPPlayer.X</param>
-                                                </action>
-                                                <action id="-9" name="Set value" sid="674103299581063" type="System">
-                                                    <param id="0" name="Variable">OldY</param>
-                                                    <param id="1" name="Value">MPPlayer.Y</param>
-                                                </action>
-                                                <action id="-9" name="Set value" sid="656893090289278" type="System">
-                                                    <param id="0" name="Variable">OldAngle</param>
-                                                    <param id="1" name="Value">MPPlayer.Angle</param>
-                                                </action>
-                                                <action id="-3" name="Set position" sid="729430714343648" type="MPPlayer">
-                                                    <param id="0" name="X">Multiplayer.LagCompensateX(MPPlayer.MPID, FiringPeerID)</param>
-                                                    <param id="1" name="Y">Multiplayer.LagCompensateY(MPPlayer.MPID, FiringPeerID)</param>
-                                                </action>
-                                                <action id="-8" name="Set angle" sid="668433302157734" type="MPPlayer">
-                                                    <param id="0" name="Angle">Multiplayer.LagCompensateAngle(MPPlayer.MPID, FiringPeerID)</param>
-                                                </action>
-                                            </actions>
-                                        </event-block>
-                                        <event-block disabled="1" sid="753275887589685">
-                                            <conditions>
-                                                <condition id="1" name="Is overlapping another object" sid="298497398413955" type="MPPlayer">
-                                                    <param id="0" name="Object">AllAimSpot</param>
-                                                </condition>
-                                            </conditions>
-                                            <actions>
-                                                <action id="-12" name="Subtract from" sid="257218585717660" type="MPPlayer">
-                                                    <param id="0" name="Instance variable">Health</param>
-                                                    <param id="1" name="Value">Damage</param>
-                                                </action>
-                                                <action id="-10" name="Set value" sid="677413427892713" type="MPPlayer">
-                                                    <param id="0" name="Instance variable">LastHitTime</param>
-                                                    <param id="1" name="Value">0</param>
-                                                </action>
-                                                <action id="-10" name="Set value" sid="662467723843641" type="MPPlayer">
-                                                    <param id="0" name="Instance variable">LastHitByID</param>
-                                                    <param id="1" name="Value">Function.Param(1)</param>
-                                                </action>
-                                                <action id="-3" name="Set position" sid="658826717101209" type="MPPlayer">
-                                                    <param id="0" name="X">OldX</param>
-                                                    <param id="1" name="Y">OldY</param>
-                                                </action>
-                                                <action id="-8" name="Set angle" sid="468271833234042" type="MPPlayer">
-                                                    <param id="0" name="Angle">OldAngle</param>
-                                                </action>
-                                                <action id="-10" name="Set value" sid="633459809242156" type="MPPlayer">
-                                                    <param id="0" name="Instance variable">Hit</param>
-                                                    <param id="1" name="Value">1</param>
-                                                </action>
-                                                <action id="-16" name="Wait" sid="780679753432687" type="System">
-                                                    <param id="0" name="Seconds">0.5</param>
-                                                </action>
-                                                <action id="-10" name="Set value" sid="386214774884963" type="MPPlayer">
-                                                    <param id="0" name="Instance variable">Hit</param>
-                                                    <param id="1" name="Value">0</param>
-                                                </action>
-                                            </actions>
-                                        </event-block>
-                                    </sub-events>
-                                </event-block>
-                            </sub-events>
-                        </event-block>
-                    </sub-events>
                 </event-block>
                 <event-block sid="387775903045554">
                     <conditions>
@@ -1380,6 +1654,14 @@
                         <action id="13" name="Associate object with peer" sid="913480282788998" type="Multiplayer">
                             <param id="0" name="Object">MPPlayer</param>
                             <param id="1" name="Peer ID">Multiplayer.PeerID</param>
+                        </action>
+                        <action id="-10" name="Add to" sid="788058047669972" type="System">
+                            <param id="0" name="Variable">Number</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="151226885098466" type="MPPlayer">
+                            <param id="0" name="Instance variable">MPNumber</param>
+                            <param id="1" name="Value">Number</param>
                         </action>
                         <action id="14" name="Log" sid="766971889853222" type="Browser">
                             <param id="0" name="Type">0</param>
@@ -1777,6 +2059,92 @@
         </event-group>
         <event-group description="" inactive="1" sid="833471193609302" title="PEER">
             <sub-events>
+                <event-block sid="864258095409185">
+                    <conditions>
+                        <condition id="15" name="On peer message" sid="242042197236425" type="Multiplayer">
+                            <param id="0" name="Tag">&quot;URL&quot;</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="763562891074770" type="MPPlayer">
+                            <param id="0" name="Instance variable">MPID</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">Multiplayer.FromID</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="633628719859691" type="MPPlayer">
+                            <param id="0" name="Instance variable">URL</param>
+                            <param id="1" name="Value">Multiplayer.Message</param>
+                        </action>
+                        <action id="14" name="Log" sid="981006153815595" type="Browser">
+                            <param id="0" name="Type">0</param>
+                            <param id="1" name="Message">&quot;Setting &quot;&amp;Multiplayer.FromAlias&amp;&quot; URL to &quot;&amp;Multiplayer.Message</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="786928764844365">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="606016420269387" type="System">
+                                    <param id="0" name="First value">Multiplayer.Message</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Second value">&quot;&quot;</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="393577627073277" type="MPPlayer">
+                                    <param id="0" name="Instance variable">MPID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">Multiplayer.FromID</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="916633349644286" type="MPPlayer">
+                                    <param id="0" name="Frame number">MPPlayer.MPNumber</param>
+                                </action>
+                                <action id="10" name="Load image from URL" sid="703218944316019" type="MPPlayer">
+                                    <param id="0" name="URI">MPPlayer.URL</param>
+                                    <param id="1" name="Size">1</param>
+                                </action>
+                                <action id="-7" name="Set size" sid="803985595596528" type="MPPlayer">
+                                    <param id="0" name="Width">108</param>
+                                    <param id="1" name="Height">105</param>
+                                </action>
+                                <action id="14" name="Log" sid="182982442852696" type="Browser">
+                                    <param id="0" name="Type">0</param>
+                                    <param id="1" name="Message">&quot;Setting &quot;&amp;Multiplayer.FromAlias&amp;&quot; SPRITE to &quot;&amp;Multiplayer.Message</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="715697780856639">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="874595037557762" type="System">
+                                    <param id="0" name="First value">Multiplayer.Message</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">&quot;&quot;</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="493186718888631" type="MPPlayer">
+                                    <param id="0" name="Instance variable">MPID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">Multiplayer.FromID</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="542274148685399" type="MPPlayer">
+                                    <param id="0" name="Frame number">MPPlayer.MPNumber</param>
+                                </action>
+                                <action id="10" name="Load image from URL" sid="844850167369499" type="MPPlayer">
+                                    <param id="0" name="URI">&quot;https://cdn.rawgit.com/Jordonbc/alienwars/252d8777/Animations/Player/Default/000.png&quot;</param>
+                                    <param id="1" name="Size">1</param>
+                                </action>
+                                <action id="-7" name="Set size" sid="600965198327957" type="MPPlayer">
+                                    <param id="0" name="Width">108</param>
+                                    <param id="1" name="Height">105</param>
+                                </action>
+                                <action id="14" name="Log" sid="618799339693573" type="Browser">
+                                    <param id="0" name="Type">0</param>
+                                    <param id="1" name="Message">&quot;Setting &quot;&amp;Multiplayer.FromAlias&amp;&quot; SPRITE to &quot;&amp;Multiplayer.Message</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
                 <event-block sid="883978148588919">
                     <conditions>
                         <condition id="-7" name="Compare instance variable" sid="176396238764022" type="MPPlayer">
@@ -1848,6 +2216,32 @@
                                     <param id="0" name="Type">0</param>
                                     <param id="1" name="Message">&quot;Setting AinSpot ScrollTo to enabled&quot;</param>
                                 </action>
+                                <action id="-10" name="Set value" sid="164331682088309" type="MPPlayer">
+                                    <param id="0" name="Instance variable">Level</param>
+                                    <param id="1" name="Value">MPLevel</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="448573305623832" type="MPPlayer">
+                                    <param id="0" name="Instance variable">TotalKills</param>
+                                    <param id="1" name="Value">TotalKills</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="961927756559764" type="MPPlayer">
+                                    <param id="0" name="Instance variable">Deaths</param>
+                                    <param id="1" name="Value">TotalDeaths</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="729934628948704" type="MPPlayer">
+                                    <param id="0" name="Instance variable">Damage</param>
+                                    <param id="1" name="Value">AttackPercentage</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="203730754039745" type="MPPlayer">
+                                    <param id="0" name="Instance variable">URL</param>
+                                    <param id="1" name="Value">SpaceshipURL</param>
+                                </action>
+                                <action id="8" name="Send message" sid="562071748389735" type="Multiplayer">
+                                    <param id="0" name="Peer ID">&quot;&quot;</param>
+                                    <param id="1" name="Tag">&quot;URL&quot;</param>
+                                    <param id="2" name="Message">MPPlayer.URL</param>
+                                    <param id="3" name="Mode">0</param>
+                                </action>
                             </actions>
                         </event-block>
                     </sub-events>
@@ -1869,6 +2263,12 @@
                         <action id="14" name="Set client state" sid="597465850059729" type="Multiplayer">
                             <param id="0" name="Tag">&quot;LOOKY&quot;</param>
                             <param id="1" name="Value">Mouse.Y</param>
+                        </action>
+                        <action id="8" name="Send message" sid="371838291986537" type="Multiplayer">
+                            <param id="0" name="Peer ID">&quot;&quot;</param>
+                            <param id="1" name="Tag">&quot;URL&quot;</param>
+                            <param id="2" name="Message">MPPlayer.URL</param>
+                            <param id="3" name="Mode">0</param>
                         </action>
                     </actions>
                     <sub-events>
@@ -2154,6 +2554,49 @@
                         </event-block>
                     </sub-events>
                 </event-block>
+                <event-block sid="591194823295025">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="726751832651284" type="Keyboard">
+                            <param id="0" name="Key">13 (Return)</param>
+                        </condition>
+                        <condition id="-9" inverted="1" name="Layer is visible" sid="150161319122081" type="System">
+                            <param id="0" name="Layer">&quot;Pause Menu&quot;</param>
+                        </condition>
+                        <condition id="0" inverted="1" name="Compare text" sid="312570960886821" type="ChatTextBox">
+                            <param id="0" name="Text">&quot;&quot;</param>
+                            <param id="1" name="Case">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="8" name="Send message" sid="541722450957309" type="Multiplayer">
+                            <param id="0" name="Peer ID">&quot;&quot;</param>
+                            <param id="1" name="Tag">&quot;CHAT&quot;</param>
+                            <param id="2" name="Message">ChatTextBox.Text</param>
+                            <param id="3" name="Mode">0</param>
+                        </action>
+                        <action id="0" name="Call function" sid="142735065684949" type="Function">
+                            <param id="0" name="Name">&quot;AddMessageBox&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;&lt;&quot;&amp;Multiplayer.MyAlias&amp;&quot;&gt;&quot;&amp;ChatTextBox.Text</param>
+                        </action>
+                        <action id="0" name="Set text" sid="201354797943836" type="ChatTextBox">
+                            <param id="0" name="Text">&quot;&quot;</param>
+                        </action>
+                        <action id="8" name="Set unfocused" sid="164555963583897" type="ChatTextBox" />
+                    </actions>
+                </event-block>
+                <event-block sid="342657269132117">
+                    <conditions>
+                        <condition id="15" name="On peer message" sid="621912362481865" type="Multiplayer">
+                            <param id="0" name="Tag">&quot;CHAT&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="516680314031765" type="Function">
+                            <param id="0" name="Name">&quot;AddChat&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;&lt;&quot;&amp;Multiplayer.FromAlias&amp;&quot;&gt;&quot;&amp;Multiplayer.Message</param>
+                        </action>
+                    </actions>
+                </event-block>
                 <event-block sid="141045428899444">
                     <conditions>
                         <condition id="-7" name="Compare instance variable" sid="578234915842867" type="MPPlayer">
@@ -2222,10 +2665,137 @@
                         </event-block>
                     </sub-events>
                 </event-block>
+                <event-block sid="773912520526303">
+                    <conditions>
+                        <condition id="-18" name="On created" sid="454545942968834" type="Laser" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="754826419411299" type="Audio">
+                            <param id="0" name="Audio file">SFX1</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;Game&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
             </sub-events>
         </event-group>
         <event-group description="" sid="507147630881312" title="BOTH">
             <sub-events>
+                <event-block sid="544020791007781">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="743304954930107" type="System">
+                            <param id="0" name="Interval (seconds)">5</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="308802276931753" type="MPPlayer">
+                            <param id="0" name="Instance variable">MPID</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">Multiplayer.MyID</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="2" name="Post to URL" sid="407391249201977" type="AJAX">
+                            <param id="0" name="Tag">&quot;Level&quot;</param>
+                            <param id="1" name="URL">&quot;http://jordan.bnettech.pw/saveLevel.php?fname=&quot;&amp;USERNAME&amp;&quot;&amp;fpass=&quot;&amp;Password&amp;&quot;&amp;Level=&quot;&amp;MPPlayer.Level</param>
+                            <param id="2" name="Data">&quot;&quot;</param>
+                            <param id="3" name="Method">&quot;POST&quot;</param>
+                        </action>
+                        <action id="2" name="Post to URL" sid="207348153549921" type="AJAX">
+                            <param id="0" name="Tag">&quot;Kills&quot;</param>
+                            <param id="1" name="URL">&quot;http://jordan.bnettech.pw/saveKills.php?fname=&quot;&amp;USERNAME&amp;&quot;&amp;fpass=&quot;&amp;Password&amp;&quot;&amp;Kills=&quot;&amp;MPPlayer.TotalKills</param>
+                            <param id="2" name="Data">&quot;&quot;</param>
+                            <param id="3" name="Method">&quot;POST&quot;</param>
+                        </action>
+                        <action id="2" name="Post to URL" sid="698431880711447" type="AJAX">
+                            <param id="0" name="Tag">&quot;Deaths&quot;</param>
+                            <param id="1" name="URL">&quot;http://jordan.bnettech.pw/saveDeaths.php?fname=&quot;&amp;USERNAME&amp;&quot;&amp;fpass=&quot;&amp;Password&amp;&quot;&amp;Deaths=&quot;&amp;MPPlayer.Deaths</param>
+                            <param id="2" name="Data">&quot;&quot;</param>
+                            <param id="3" name="Method">&quot;POST&quot;</param>
+                        </action>
+                        <action id="14" name="Log" sid="448187334890185" type="Browser">
+                            <param id="0" name="Type">0</param>
+                            <param id="1" name="Message">&quot;Sending Data to servers!&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="112550347129299">
+                    <conditions>
+                        <condition id="1" name="On error" sid="716954378087441" type="AJAX">
+                            <param id="0" name="Tag">&quot;Level&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="14" name="Log" sid="749949607472620" type="Browser">
+                            <param id="0" name="Type">2</param>
+                            <param id="1" name="Message">&quot;Error while Saving Level to servers!&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="410155509002078">
+                    <conditions>
+                        <condition id="1" name="On error" sid="967102942728666" type="AJAX">
+                            <param id="0" name="Tag">&quot;Kills&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="14" name="Log" sid="722851077083053" type="Browser">
+                            <param id="0" name="Type">2</param>
+                            <param id="1" name="Message">&quot;Error while Saving Kills to servers!&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="510543261708571">
+                    <conditions>
+                        <condition id="1" name="On error" sid="245090566779051" type="AJAX">
+                            <param id="0" name="Tag">&quot;Deaths&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="14" name="Log" sid="322616545624653" type="Browser">
+                            <param id="0" name="Type">2</param>
+                            <param id="1" name="Message">&quot;Error while Saving Deaths to servers!&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="285290739343673">
+                    <conditions>
+                        <condition id="0" name="On completed" sid="443195111407059" type="AJAX">
+                            <param id="0" name="Tag">&quot;Level&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="14" name="Log" sid="855725288096176" type="Browser">
+                            <param id="0" name="Type">0</param>
+                            <param id="1" name="Message">&quot;Level successfully updated!&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="625378354601024">
+                    <conditions>
+                        <condition id="0" name="On completed" sid="249849002672821" type="AJAX">
+                            <param id="0" name="Tag">&quot;Kills&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="14" name="Log" sid="812606361182132" type="Browser">
+                            <param id="0" name="Type">0</param>
+                            <param id="1" name="Message">&quot;Kills successfully updated!&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="889187172225211">
+                    <conditions>
+                        <condition id="0" name="On completed" sid="378972676382855" type="AJAX">
+                            <param id="0" name="Tag">&quot;Deaths&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="14" name="Log" sid="539299682203571" type="Browser">
+                            <param id="0" name="Type">0</param>
+                            <param id="1" name="Message">&quot;Deaths successfully updated!&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
                 <event-block sid="984961851111230">
                     <conditions>
                         <condition id="13" name="On peer disconnected" sid="832733421917165" type="Multiplayer" />
@@ -2279,6 +2849,12 @@
                                             <param id="1" name="Layer">&quot;Players&quot;</param>
                                             <param id="2" name="X">MPPlayer.X</param>
                                             <param id="3" name="Y">MPPlayer.Y</param>
+                                        </action>
+                                        <action id="0" name="Play" sid="909533515926468" type="Audio">
+                                            <param id="0" name="Audio file">Explosion 3</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">0</param>
+                                            <param id="1" name="Tag (optional)">&quot;Game&quot;</param>
                                         </action>
                                         <action id="14" name="Log" sid="679917573264074" type="Browser">
                                             <param id="0" name="Type">0</param>
@@ -2348,38 +2924,6 @@
                         </action>
                     </actions>
                     <sub-events>
-                        <event-block sid="126807484338909">
-                            <conditions>
-                                <condition id="2" name="Mouse button is down" sid="539130824425205" type="Mouse">
-                                    <param id="0" name="Mouse button">0</param>
-                                </condition>
-                                <condition id="-9" inverted="1" name="Layer is visible" sid="179622278876133" type="System">
-                                    <param id="0" name="Layer">&quot;Pause Menu&quot;</param>
-                                </condition>
-                                <condition id="7" inverted="1" name="Cursor is over object" sid="832707090695055" type="Mouse">
-                                    <param id="0" name="Object">StatusBox</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-10" name="Set value" sid="582568473111524" type="MPPlayer">
-                                    <param id="0" name="Instance variable">Inputs</param>
-                                    <param id="1" name="Value">setbit(MPPlayer.Inputs, 4, 1)</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="847429232605983">
-                            <conditions>
-                                <condition id="2" inverted="1" name="Mouse button is down" sid="806587944460098" type="Mouse">
-                                    <param id="0" name="Mouse button">0</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-10" name="Set value" sid="909558344224713" type="MPPlayer">
-                                    <param id="0" name="Instance variable">Inputs</param>
-                                    <param id="1" name="Value">setbit(MPPlayer.Inputs, 4, 0)</param>
-                                </action>
-                            </actions>
-                        </event-block>
                         <event-block sid="757267513289725">
                             <conditions>
                                 <condition id="2" name="Key is down" sid="340850289558791" type="Keyboard">
@@ -2409,6 +2953,11 @@
                                 <condition id="-7" name="Compare instance variable" sid="864568981383888" type="MPPlayer">
                                     <param id="0" name="Instance variable">Hit</param>
                                     <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="473738863969641" type="System">
+                                    <param id="0" name="Variable">EffectsDetail</param>
+                                    <param id="1" name="Comparison">5</param>
                                     <param id="2" name="Value">1</param>
                                 </condition>
                             </conditions>
@@ -2881,6 +3430,32 @@
                                 <action behavior="Fade" id="1" name="Start fade" sid="608194015359564" type="ImportantText" />
                             </actions>
                         </event-block>
+                        <event-block sid="356141770109745">
+                            <conditions>
+                                <condition id="0" name="On completed" sid="989055657565547" type="AJAX">
+                                    <param id="0" name="Tag">&quot;Level&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="14" name="Log" sid="486476334517392" type="Browser">
+                                    <param id="0" name="Type">0</param>
+                                    <param id="1" name="Message">&quot;Successfully saved level to database&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="962617375566950">
+                            <conditions>
+                                <condition id="1" name="On error" sid="966563541032720" type="AJAX">
+                                    <param id="0" name="Tag">&quot;Level&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="14" name="Log" sid="310801027420041" type="Browser">
+                                    <param id="0" name="Type">1</param>
+                                    <param id="1" name="Message">&quot;Error on saving level to database&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
                     </sub-events>
                 </event-block>
                 <event-block sid="728961111081372">
@@ -2888,9 +3463,65 @@
                         <condition id="-11" name="For Each" sid="403663284470301" type="System">
                             <param id="0" name="Object">MPPlayer</param>
                         </condition>
+                        <condition id="-1" name="Every tick" sid="871704875466710" type="System" />
                     </conditions>
-                    <actions />
+                    <actions>
+                        <action id="-10" name="Set value" sid="791820681643293" type="MPPlayer">
+                            <param id="0" name="Instance variable">Damage</param>
+                            <param id="1" name="Value">AttackPercentage</param>
+                        </action>
+                        <action id="5" name="Set frame" sid="847507487211385" type="MPPlayer">
+                            <param id="0" name="Frame number">Self.MPNumber</param>
+                        </action>
+                    </actions>
                     <sub-events>
+                        <event-block sid="318550220625384">
+                            <conditions>
+                                <condition id="2" name="Mouse button is down" sid="859409290268849" type="Mouse">
+                                    <param id="0" name="Mouse button">0</param>
+                                </condition>
+                                <condition id="-9" inverted="1" name="Layer is visible" sid="902725401737826" type="System">
+                                    <param id="0" name="Layer">&quot;Pause Menu&quot;</param>
+                                </condition>
+                                <condition id="7" inverted="1" name="Cursor is over object" sid="259635339706593" type="Mouse">
+                                    <param id="0" name="Object">StatusBox</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="519458472137088" type="MPPlayer">
+                                    <param id="0" name="Instance variable">MPID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">Multiplayer.MyID</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="681406216883800" type="MPPlayer">
+                                    <param id="0" name="Instance variable">CanShoot</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="251761823621376" type="MPPlayer">
+                                    <param id="0" name="Instance variable">Inputs</param>
+                                    <param id="1" name="Value">setbit(MPPlayer.Inputs, 4, 1)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="108446853502032">
+                            <conditions>
+                                <condition id="2" inverted="1" name="Mouse button is down" sid="268344409830773" type="Mouse">
+                                    <param id="0" name="Mouse button">0</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="997750257197579" type="MPPlayer">
+                                    <param id="0" name="Instance variable">MPID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">Multiplayer.MyID</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="412707931649599" type="MPPlayer">
+                                    <param id="0" name="Instance variable">Inputs</param>
+                                    <param id="1" name="Value">setbit(MPPlayer.Inputs, 4, 0)</param>
+                                </action>
+                            </actions>
+                        </event-block>
                         <event-block sid="950095485907988">
                             <conditions>
                                 <condition id="-1" name="Every tick" sid="214463867515435" type="System" />
@@ -2908,7 +3539,7 @@
                                     <param id="0" name="Layer">&quot;Players&quot;</param>
                                 </action>
                                 <action id="-24" name="Move to top" sid="804599695353254" type="PlayerUsernameText" />
-                                <action id="-26" name="Move to layer" sid="908083586316271" type="Lazer">
+                                <action id="-26" name="Move to layer" sid="908083586316271" type="Laser">
                                     <param id="0" name="Layer">&quot;Lazers&quot;</param>
                                 </action>
                                 <action id="-26" name="Move to layer" sid="874050048860290" type="MPPlayer">
@@ -2921,10 +3552,40 @@
                                 <action id="-26" name="Move to layer" sid="618108602100853" type="AimSpot">
                                     <param id="0" name="Layer">&quot;Aiming&quot;</param>
                                 </action>
-                                <action id="0" name="Set text" sid="466681624581842" type="PlayerUsernameText">
-                                    <param id="0" name="Text">Multiplayer.PeerAliasFromID(MPPlayer.MPID)&amp;&quot; - Health: &quot;&amp;MPPlayer.Health&amp;&quot;% - kills &quot;&amp;MPPlayer.TotalKills&amp;&quot; - Level: &quot;&amp;MPPlayer.Level&amp;&quot; - XP: &quot;&amp;MPPlayer.XP</param>
+                                <action id="0" name="Set text" sid="651789064907426" type="PlayerUsernameText">
+                                    <param id="0" name="Text">Multiplayer.PeerAliasFromID(MPPlayer.MPID)&amp;&quot; - Health: &quot;&amp;MPPlayer.Health&amp;&quot;%&quot;&amp;&quot; - Level: &quot;&amp;MPPlayer.Level&amp;&quot; - XP: &quot;&amp;MPPlayer.XP</param>
                                 </action>
                             </actions>
+                            <sub-events>
+                                <event-block disabled="1" sid="560845547215008">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="673608433592106" type="MPPlayer">
+                                            <param id="0" name="Instance variable">Cheating</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Set text" sid="466681624581842" type="PlayerUsernameText">
+                                            <param id="0" name="Text">Multiplayer.PeerAliasFromID(MPPlayer.MPID)&amp;&quot; - Health: &quot;&amp;MPPlayer.Health&amp;&quot;% - kills &quot;&amp;MPPlayer.TotalKills&amp;&quot; - Level: &quot;&amp;MPPlayer.Level&amp;&quot; - XP: &quot;&amp;MPPlayer.XP</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block disabled="1" sid="458460612642330">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="778169464910682" type="MPPlayer">
+                                            <param id="0" name="Instance variable">Cheating</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Set text" sid="783315095313799" type="PlayerUsernameText">
+                                            <param id="0" name="Text">Multiplayer.PeerAliasFromID(MPPlayer.MPID)&amp;&quot; (CHEATING)&quot;&amp;&quot; - Health: &quot;&amp;MPPlayer.Health&amp;&quot;% - kills &quot;&amp;MPPlayer.TotalKills&amp;&quot; - Level: &quot;&amp;MPPlayer.Level&amp;&quot; - XP: &quot;&amp;MPPlayer.XP</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
                         </event-block>
                         <event-block sid="680699882849447">
                             <conditions>
@@ -3006,87 +3667,6 @@
                                 </action>
                             </actions>
                         </event-block>
-                        <event-block sid="475253966574924">
-                            <conditions>
-                                <condition id="-8" name="Compare two values" sid="300914654399796" type="System">
-                                    <param id="0" name="First value">getbit(MPPlayer.Inputs, 4)</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Second value">1</param>
-                                </condition>
-                                <condition id="-6" name="Every X seconds" sid="688100887063112" type="System">
-                                    <param id="0" name="Interval (seconds)">0.2</param>
-                                </condition>
-                                <condition id="10" name="Is host" sid="973979636386511" type="Multiplayer" />
-                            </conditions>
-                            <actions>
-                                <action disabled="1" id="-3" name="Set position" sid="346005532751946" type="Lazer">
-                                    <param id="0" name="X">MPPlayer.X</param>
-                                    <param id="1" name="Y">MPPlayer.Y</param>
-                                </action>
-                                <action disabled="1" id="-22" name="Set angle toward position" sid="990295799069075" type="Lazer">
-                                    <param id="0" name="X">MPPlayer.LookX</param>
-                                    <param id="1" name="Y">MPPlayer.LookY</param>
-                                </action>
-                                <action disabled="1" id="-5" name="Set width" sid="686163579969283" type="Lazer">
-                                    <param id="0" name="Width">distance(Lazer.X,Lazer.Y,MPPlayer.LookX,MPPlayer.LookY)</param>
-                                </action>
-                                <action id="0" name="Spawn another object" sid="613381528267444" type="MPPlayer">
-                                    <param id="0" name="Object">Lazer</param>
-                                    <param id="1" name="Layer">&quot;Lazers&quot;</param>
-                                    <param id="2" name="Image point">0</param>
-                                </action>
-                                <action id="-10" name="Set value" sid="100758713022261" type="Lazer">
-                                    <param id="0" name="Instance variable">PlayerID</param>
-                                    <param id="1" name="Value">MPPlayer.MPID</param>
-                                </action>
-                                <action id="-10" name="Set value" sid="127881791855822" type="Lazer">
-                                    <param id="0" name="Instance variable">Damage</param>
-                                    <param id="1" name="Value">MPPlayer.Damage</param>
-                                </action>
-                            </actions>
-                            <sub-events>
-                                <event-block disabled="1" sid="793718789552325">
-                                    <conditions>
-                                        <condition id="-6" name="Every X seconds" sid="726713133481957" type="System">
-                                            <param id="0" name="Interval (seconds)">0.2</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions />
-                                    <sub-events>
-                                        <event-block disabled="1" sid="240016254127345">
-                                            <conditions>
-                                                <condition id="-9" inverted="1" name="Is visible" sid="206304694524322" type="Lazer" />
-                                            </conditions>
-                                            <actions>
-                                                <action id="-15" name="Set visible" sid="659841531026067" type="Lazer">
-                                                    <param id="0" name="Visibility">1</param>
-                                                </action>
-                                            </actions>
-                                        </event-block>
-                                        <event-block disabled="1" sid="662730501377105">
-                                            <conditions>
-                                                <condition id="-22" name="Else" sid="750623022351035" type="System" />
-                                            </conditions>
-                                            <actions>
-                                                <action id="-15" name="Set visible" sid="231286533318109" type="Lazer">
-                                                    <param id="0" name="Visibility">0</param>
-                                                </action>
-                                            </actions>
-                                        </event-block>
-                                    </sub-events>
-                                </event-block>
-                            </sub-events>
-                        </event-block>
-                        <event-block sid="605238875960436">
-                            <conditions>
-                                <condition id="-22" name="Else" sid="375056829713261" type="System" />
-                            </conditions>
-                            <actions>
-                                <action disabled="1" id="-15" name="Set visible" sid="760750394236919" type="Lazer">
-                                    <param id="0" name="Visibility">0</param>
-                                </action>
-                            </actions>
-                        </event-block>
                         <event-block sid="120370796415652">
                             <conditions>
                                 <condition id="-7" name="Compare instance variable" sid="544602010087698" type="MPPlayer">
@@ -3101,7 +3681,7 @@
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="5" name="Set frame" sid="241802357532638" type="MPPlayer">
+                                <action disabled="1" id="5" name="Set frame" sid="198564296084249" type="MPPlayer">
                                     <param id="0" name="Frame number">1</param>
                                 </action>
                                 <action disabled="1" id="14" name="Log" sid="978167987716791" type="Browser">
@@ -3128,7 +3708,7 @@
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="5" name="Set frame" sid="776082689314763" type="MPPlayer">
+                                <action disabled="1" id="5" name="Set frame" sid="505955031175115" type="MPPlayer">
                                     <param id="0" name="Frame number">0</param>
                                 </action>
                                 <action disabled="1" id="14" name="Log" sid="247688459471865" type="Browser">
@@ -3138,6 +3718,45 @@
                             </actions>
                         </event-block>
                     </sub-events>
+                </event-block>
+                <event-block sid="982819389998483">
+                    <conditions>
+                        <condition id="0" inverted="1" name="Compare text" sid="860442305378006" type="ChatTextBox">
+                            <param id="0" name="Text">&quot;&quot;</param>
+                            <param id="1" name="Case">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="7" name="Set CSS style" sid="258422630352692" type="ChatTextBox">
+                            <param id="0" name="Property name">&quot;opacity&quot;</param>
+                            <param id="1" name="Value">&quot;1&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="886201165710882">
+                    <conditions>
+                        <condition id="0" name="Compare text" sid="703531565139851" type="ChatTextBox">
+                            <param id="0" name="Text">&quot;&quot;</param>
+                            <param id="1" name="Case">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="7" name="Set CSS style" sid="375159732983714" type="ChatTextBox">
+                            <param id="0" name="Property name">&quot;opacity&quot;</param>
+                            <param id="1" name="Value">&quot;0.5&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="478132079474713">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="712051449300723" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="7" name="Set CSS style" sid="455915881607588" type="ChatTextBox">
+                            <param id="0" name="Property name">&quot;font-size&quot;</param>
+                            <param id="1" name="Value">&quot;1em&quot;</param>
+                        </action>
+                    </actions>
                 </event-block>
                 <event-block sid="512791057810897">
                     <conditions>
@@ -3216,6 +3835,35 @@
                 </event-block>
             </sub-events>
         </event-group>
+        <event-block sid="165307789786312">
+            <conditions>
+                <condition id="0" name="On function" sid="216030854449918" type="Function">
+                    <param id="0" name="Name">&quot;AddMessageBox&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="504139269627675" type="StatusBox">
+                    <param id="0" name="Text">Self.Text&amp;Function.Param(0)&amp;newline</param>
+                </action>
+                <action id="14" name="Log" sid="681166597264474" type="Browser">
+                    <param id="0" name="Type">0</param>
+                    <param id="1" name="Message">Function.Param(0)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="588312979004126">
+            <conditions>
+                <condition id="0" name="On function" sid="704067197512287" type="Function">
+                    <param id="0" name="Name">&quot;AddChat&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Call function" sid="700537411512554" type="Function">
+                    <param id="0" name="Name">&quot;AddMessageBox&quot;</param>
+                    <param id="1" name="Parameter {n}">Function.Param(0)</param>
+                </action>
+            </actions>
+        </event-block>
         <event-block sid="930627482233927">
             <conditions>
                 <condition id="0" name="On function" sid="299045305233129" type="Function">
@@ -3223,12 +3871,9 @@
                 </condition>
             </conditions>
             <actions>
-                <action id="0" name="Set text" sid="658090556564560" type="StatusBox">
-                    <param id="0" name="Text">Self.Text&amp;Function.Param(0)&amp;newline</param>
-                </action>
-                <action id="14" name="Log" sid="553614310720843" type="Browser">
-                    <param id="0" name="Type">0</param>
-                    <param id="1" name="Message">Function.Param(0)</param>
+                <action id="0" name="Call function" sid="333954896403911" type="Function">
+                    <param id="0" name="Name">&quot;AddMessageBox&quot;</param>
+                    <param id="1" name="Parameter {n}">Function.Param(0)</param>
                 </action>
             </actions>
             <sub-events>
@@ -3286,59 +3931,21 @@
                 </action>
             </actions>
         </event-block>
-        <event-block sid="474706669710143">
+        <event-block sid="232252237202128">
             <conditions>
-                <condition id="15" name="On peer message" sid="270188607003653" type="Multiplayer">
+                <condition id="15" name="On peer message" sid="349835943277655" type="Multiplayer">
                     <param id="0" name="Tag">&quot;LOG&quot;</param>
                 </condition>
             </conditions>
             <actions>
-                <action id="0" name="Call function" sid="428167374631662" type="Function">
+                <action id="0" name="Call function" sid="623655507075371" type="Function">
                     <param id="0" name="Name">&quot;AddLog&quot;</param>
                     <param id="1" name="Parameter {n}">Multiplayer.Message</param>
                 </action>
             </actions>
         </event-block>
-        <variable constant="0" name="MoveTouchID" sid="138735399395155" static="0" type="number">0</variable>
-        <variable constant="0" name="AimTouchID" sid="369765734871004" static="0" type="number">0</variable>
-        <variable constant="0" name="MoveTouchXPosStart" sid="779789445004880" static="0" type="number">0</variable>
-        <variable constant="0" name="MoveTouchXPosEnd" sid="856262111228374" static="0" type="number">0</variable>
-        <variable constant="0" name="MoveSwipeDistanceX" sid="314017651626519" static="0" type="number">0</variable>
-        <variable constant="0" name="MoveTouchYPosStart" sid="744848413620528" static="0" type="number">0</variable>
-        <variable constant="0" name="MoveTouchYPosEnd" sid="357543800638049" static="0" type="number">0</variable>
-        <variable constant="0" name="MoveSwipeDistanceY" sid="779708333370038" static="0" type="number">0</variable>
-        <variable constant="0" name="AimTouchXPosStart" sid="477479702350726" static="0" type="number">0</variable>
-        <variable constant="0" name="AimTouchXPosEnd" sid="876452241228049" static="0" type="number">0</variable>
-        <variable constant="0" name="AimSwipeDistanceX" sid="255633336729813" static="0" type="number">0</variable>
-        <variable constant="0" name="AimTouchYPosStart" sid="193516911913330" static="0" type="number">0</variable>
-        <variable constant="0" name="AimTouchYPosEnd" sid="416425008070636" static="0" type="number">0</variable>
-        <variable constant="0" name="AimSwipeDistanceY" sid="685720483365838" static="0" type="number">0</variable>
         <event-group description="" inactive="1" sid="709341515556296" title="Touch Controls">
             <sub-events>
-                <event-block disabled="1" sid="869978897057589">
-                    <conditions>
-                        <condition id="4" name="Is touching object" sid="522538995171202" type="Touch">
-                            <param id="0" name="Object">MPTiledBackground</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-10" name="Set value" sid="303998247229348" type="MPPlayer">
-                            <param id="0" name="Instance variable">Inputs</param>
-                            <param id="1" name="Value">setbit(MPPlayer.Inputs, 4, 1)</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block disabled="1" sid="100685573822100">
-                    <conditions>
-                        <condition id="-22" name="Else" sid="976314724765206" type="System" />
-                    </conditions>
-                    <actions>
-                        <action id="-10" name="Set value" sid="438872428541408" type="MPPlayer">
-                            <param id="0" name="Instance variable">Inputs</param>
-                            <param id="1" name="Value">setbit(MPPlayer.Inputs, 4, 0)</param>
-                        </action>
-                    </actions>
-                </event-block>
                 <event-group description="" sid="154301216122826" title="Movement">
                     <sub-events>
                         <event-group description="" sid="181736384439840" title="AimX">
@@ -3370,6 +3977,7 @@
                                             <param id="1" name="Comparison">5</param>
                                             <param id="2" name="Value">0</param>
                                         </condition>
+                                        <condition id="-1" name="Every tick" sid="963639471218695" type="System" />
                                     </conditions>
                                     <actions>
                                         <action id="-9" name="Set value" sid="197943598187599" type="System">
@@ -3403,7 +4011,11 @@
                                                     <actions>
                                                         <action id="-10" name="Set value" sid="956350382345103" type="MPPlayer">
                                                             <param id="0" name="Instance variable">LookX</param>
-                                                            <param id="1" name="Value">self.LookX-10</param>
+                                                            <param id="1" name="Value">self.X-20</param>
+                                                        </action>
+                                                        <action id="-10" name="Set value" sid="165275426199066" type="MPPlayer">
+                                                            <param id="0" name="Instance variable">Inputs</param>
+                                                            <param id="1" name="Value">setbit(MPPlayer.Inputs, 4, 1)</param>
                                                         </action>
                                                     </actions>
                                                 </event-block>
@@ -3428,9 +4040,13 @@
                                                         </condition>
                                                     </conditions>
                                                     <actions>
-                                                        <action id="-10" name="Set value" sid="438291072537444" type="MPPlayer">
+                                                        <action id="-10" name="Set value" sid="971178710897042" type="MPPlayer">
                                                             <param id="0" name="Instance variable">LookX</param>
-                                                            <param id="1" name="Value">self.LookX+10</param>
+                                                            <param id="1" name="Value">self.X+20</param>
+                                                        </action>
+                                                        <action id="-10" name="Set value" sid="998969174458455" type="MPPlayer">
+                                                            <param id="0" name="Instance variable">Inputs</param>
+                                                            <param id="1" name="Value">setbit(MPPlayer.Inputs, 4, 1)</param>
                                                         </action>
                                                     </actions>
                                                 </event-block>
@@ -3448,6 +4064,10 @@
                                         <action id="-9" name="Set value" sid="143810621453383" type="System">
                                             <param id="0" name="Variable">AimTouchID</param>
                                             <param id="1" name="Value">-1</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="305254740157992" type="MPPlayer">
+                                            <param id="0" name="Instance variable">Inputs</param>
+                                            <param id="1" name="Value">setbit(MPPlayer.Inputs, 4, 0)</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -3482,6 +4102,7 @@
                                             <param id="1" name="Comparison">5</param>
                                             <param id="2" name="Value">0</param>
                                         </condition>
+                                        <condition id="-1" name="Every tick" sid="364659143517936" type="System" />
                                     </conditions>
                                     <actions>
                                         <action id="-9" name="Set value" sid="381456736979487" type="System">
@@ -3515,7 +4136,11 @@
                                                     <actions>
                                                         <action id="-10" name="Set value" sid="804681102266717" type="MPPlayer">
                                                             <param id="0" name="Instance variable">LookY</param>
-                                                            <param id="1" name="Value">self.LookY-10</param>
+                                                            <param id="1" name="Value">self.Y-20</param>
+                                                        </action>
+                                                        <action id="-10" name="Set value" sid="169673150327470" type="MPPlayer">
+                                                            <param id="0" name="Instance variable">Inputs</param>
+                                                            <param id="1" name="Value">setbit(MPPlayer.Inputs, 4, 1)</param>
                                                         </action>
                                                     </actions>
                                                 </event-block>
@@ -3540,9 +4165,13 @@
                                                         </condition>
                                                     </conditions>
                                                     <actions>
-                                                        <action id="-10" name="Set value" sid="353703481353670" type="MPPlayer">
+                                                        <action id="-10" name="Set value" sid="290376206160880" type="MPPlayer">
                                                             <param id="0" name="Instance variable">LookY</param>
-                                                            <param id="1" name="Value">self.LookY+10</param>
+                                                            <param id="1" name="Value">self.Y+20</param>
+                                                        </action>
+                                                        <action id="-10" name="Set value" sid="705613765428307" type="MPPlayer">
+                                                            <param id="0" name="Instance variable">Inputs</param>
+                                                            <param id="1" name="Value">setbit(MPPlayer.Inputs, 4, 1)</param>
                                                         </action>
                                                     </actions>
                                                 </event-block>
@@ -3560,6 +4189,10 @@
                                         <action id="-9" name="Set value" sid="520030537095878" type="System">
                                             <param id="0" name="Variable">AimTouchID</param>
                                             <param id="1" name="Value">-1</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="464067785400564" type="MPPlayer">
+                                            <param id="0" name="Instance variable">Inputs</param>
+                                            <param id="1" name="Value">setbit(MPPlayer.Inputs, 4, 0)</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -3629,10 +4262,6 @@
                                                         <action behavior="8Direction" id="7" name="Simulate control" sid="919404479835175" type="MPPlayer">
                                                             <param id="0" name="Control">0</param>
                                                         </action>
-                                                        <action id="-10" name="Set value" sid="195421691157922" type="MPPlayer">
-                                                            <param id="0" name="Instance variable">LookX</param>
-                                                            <param id="1" name="Value">self.LookX-6</param>
-                                                        </action>
                                                     </actions>
                                                 </event-block>
                                                 <event-block sid="602824391281782">
@@ -3648,10 +4277,6 @@
                                                         <action id="-10" name="Set value" sid="297118748301701" type="MPPlayer">
                                                             <param id="0" name="Instance variable">Inputs</param>
                                                             <param id="1" name="Value">setbit(self.Inputs, 1, 1)</param>
-                                                        </action>
-                                                        <action id="-10" name="Set value" sid="483276656814614" type="MPPlayer">
-                                                            <param id="0" name="Instance variable">LookX</param>
-                                                            <param id="1" name="Value">self.LookX-6</param>
                                                         </action>
                                                     </actions>
                                                 </event-block>
@@ -3704,10 +4329,6 @@
                                                         <action behavior="8Direction" id="7" name="Simulate control" sid="527818413493590" type="MPPlayer">
                                                             <param id="0" name="Control">1</param>
                                                         </action>
-                                                        <action id="-10" name="Set value" sid="166420562928867" type="MPPlayer">
-                                                            <param id="0" name="Instance variable">LookX</param>
-                                                            <param id="1" name="Value">self.LookX+6</param>
-                                                        </action>
                                                     </actions>
                                                 </event-block>
                                                 <event-block sid="162638740294618">
@@ -3723,10 +4344,6 @@
                                                         <action id="-10" name="Set value" sid="947752555227301" type="MPPlayer">
                                                             <param id="0" name="Instance variable">Inputs</param>
                                                             <param id="1" name="Value">setbit(self.Inputs, 3, 1)</param>
-                                                        </action>
-                                                        <action id="-10" name="Set value" sid="883891432732435" type="MPPlayer">
-                                                            <param id="0" name="Instance variable">LookX</param>
-                                                            <param id="1" name="Value">self.LookX+6</param>
                                                         </action>
                                                     </actions>
                                                 </event-block>
@@ -3837,10 +4454,6 @@
                                                         <action behavior="8Direction" id="7" name="Simulate control" sid="268831174247698" type="MPPlayer">
                                                             <param id="0" name="Control">2</param>
                                                         </action>
-                                                        <action id="-10" name="Set value" sid="716951872965556" type="MPPlayer">
-                                                            <param id="0" name="Instance variable">LookY</param>
-                                                            <param id="1" name="Value">self.LookY-6</param>
-                                                        </action>
                                                     </actions>
                                                 </event-block>
                                                 <event-block sid="501657823831440">
@@ -3856,10 +4469,6 @@
                                                         <action id="-10" name="Set value" sid="982951276476348" type="MPPlayer">
                                                             <param id="0" name="Instance variable">Inputs</param>
                                                             <param id="1" name="Value">setbit(self.Inputs, 0, 1)</param>
-                                                        </action>
-                                                        <action id="-10" name="Set value" sid="520740170585387" type="MPPlayer">
-                                                            <param id="0" name="Instance variable">LookY</param>
-                                                            <param id="1" name="Value">self.LookY-6</param>
                                                         </action>
                                                     </actions>
                                                 </event-block>
@@ -3912,10 +4521,6 @@
                                                         <action behavior="8Direction" id="7" name="Simulate control" sid="451271455996184" type="MPPlayer">
                                                             <param id="0" name="Control">3</param>
                                                         </action>
-                                                        <action id="-10" name="Set value" sid="128091312293986" type="MPPlayer">
-                                                            <param id="0" name="Instance variable">LookY</param>
-                                                            <param id="1" name="Value">self.LookY+6</param>
-                                                        </action>
                                                     </actions>
                                                 </event-block>
                                                 <event-block sid="270114452197976">
@@ -3931,10 +4536,6 @@
                                                         <action id="-10" name="Set value" sid="421401247819906" type="MPPlayer">
                                                             <param id="0" name="Instance variable">Inputs</param>
                                                             <param id="1" name="Value">setbit(self.Inputs, 2, 1)</param>
-                                                        </action>
-                                                        <action id="-10" name="Set value" sid="220647396366150" type="MPPlayer">
-                                                            <param id="0" name="Instance variable">LookY</param>
-                                                            <param id="1" name="Value">self.LookY+6</param>
                                                         </action>
                                                     </actions>
                                                 </event-block>

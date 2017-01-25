@@ -677,7 +677,7 @@
                     <param id="0" name="Value">int(Audio.MasterVolume)</param>
                 </action>
                 <action id="3" name="Set value" sid="454000472928680" type="MusicSoundBar">
-                    <param id="0" name="Value">int(Audio.Volume(&quot;MainMenuMusic&quot;))</param>
+                    <param id="0" name="Value">MusicVolume</param>
                 </action>
                 <action id="3" name="Set value" sid="600890038979124" type="ChangeColourSlider">
                     <param id="0" name="Value">MenuColour</param>

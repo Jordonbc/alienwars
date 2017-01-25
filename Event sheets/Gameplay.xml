@@ -84,6 +84,206 @@
         </event-block>
         <event-group description="" sid="747216857802041" title="Pause Menu">
             <sub-events>
+                <event-block any="1" sid="890472329320700">
+                    <conditions>
+                        <condition id="6" name="On object clicked" sid="440877384464337" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                            <param id="1" name="Click type">0</param>
+                            <param id="2" name="Object clicked">ResumeButtonText</param>
+                        </condition>
+                        <condition id="17" name="On tap object" sid="521405828050502" type="Touch">
+                            <param id="0" name="Object">ResumeButtonText</param>
+                        </condition>
+                        <condition disabled="1" id="6" name="On button pressed" sid="189010849642917" type="Gamepad">
+                            <param id="0" name="Gamepad">0</param>
+                            <param id="1" name="Button">0</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block disabled="1" sid="467161004843611">
+                            <conditions>
+                                <condition id="3" name="Is button down" sid="924195403036013" type="Gamepad">
+                                    <param id="0" name="Gamepad">0</param>
+                                    <param id="1" name="Button">0</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="586151517329537">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="387253971821226" type="System">
+                                            <param id="0" name="Variable">Selected</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                        <condition id="-9" name="Layer is visible" sid="880608398754337" type="System">
+                                            <param id="0" name="Layer">&quot;Buttons&quot;</param>
+                                        </condition>
+                                        <condition id="-9" inverted="1" name="Layer is visible" sid="143321683880221" type="System">
+                                            <param id="0" name="Layer">&quot;Small Menu&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="756987405057217">
+                                            <conditions>
+                                                <condition id="-9" inverted="1" name="Layer is visible" sid="168284189824784" type="System">
+                                                    <param id="0" name="Layer">&quot;Credits Text&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Call function" sid="731771115812123" type="Function">
+                                                    <param id="0" name="Name">&quot;HideAll&quot;</param>
+                                                    <param id="1" name="Parameter {n}"></param>
+                                                </action>
+                                                <action id="-16" name="Wait" sid="466051445369095" type="System">
+                                                    <param id="0" name="Seconds">0</param>
+                                                </action>
+                                                <action id="-4" name="Set layer visible" sid="199095277701460" type="System">
+                                                    <param id="0" name="Layer">&quot;XboxBackButtonRootMenu&quot;</param>
+                                                    <param id="1" name="Visibility">1</param>
+                                                </action>
+                                                <action id="-16" name="Wait" sid="403921040631774" type="System">
+                                                    <param id="0" name="Seconds">0</param>
+                                                </action>
+                                                <action id="0" name="Call function" sid="675439537919172" type="Function">
+                                                    <param id="0" name="Name">&quot;ShowCredits&quot;</param>
+                                                    <param id="1" name="Parameter {n}"></param>
+                                                </action>
+                                                <action id="-16" name="Wait" sid="415291068501520" type="System">
+                                                    <param id="0" name="Seconds">0</param>
+                                                </action>
+                                                <action id="0" name="Call function" sid="434985889340293" type="Function">
+                                                    <param id="0" name="Name">&quot;Reset All Buttons&quot;</param>
+                                                    <param id="1" name="Parameter {n}"></param>
+                                                </action>
+                                                <action id="-16" name="Wait" sid="280200591091446" type="System">
+                                                    <param id="0" name="Seconds">0</param>
+                                                </action>
+                                                <action id="0" name="Play" sid="153715040141515" type="Audio">
+                                                    <param id="0" name="Audio file">Menu Selection Click</param>
+                                                    <param id="2" name="Loop">0</param>
+                                                    <param id="3" name="Volume">0</param>
+                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                </action>
+                                            </actions>
+                                            <sub-events>
+                                                <event-block sid="910438004696886">
+                                                    <conditions>
+                                                        <condition id="-14" name="Pick by unique ID" sid="208472397173426" type="Button">
+                                                            <param id="0" name="Unique ID">7</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions />
+                                                    <sub-events>
+                                                        <event-block sid="325138159681459">
+                                                            <conditions>
+                                                                <condition id="-20" name="Is on mobile device" sid="446842264081547" type="System" />
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="9" name="Set scale" sid="937702981407434" type="Button">
+                                                                    <param id="0" name="Scale">2.2</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                        <event-block sid="242815582442051">
+                                                            <conditions>
+                                                                <condition id="-22" name="Else" sid="466038013031162" type="System" />
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="9" name="Set scale" sid="592827581755099" type="Button">
+                                                                    <param id="0" name="Scale">1.2</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                    </sub-events>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="234966816325966">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="879188506035681" type="System" />
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="284372116324348">
+                                    <conditions>
+                                        <condition id="-9" name="Layer is visible" sid="684563490001798" type="System">
+                                            <param id="0" name="Layer">&quot;Pause Menu&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="974675675113128" type="Function">
+                                            <param id="0" name="Name">&quot;HideAll&quot;</param>
+                                            <param id="1" name="Parameter {n}"></param>
+                                        </action>
+                                        <action id="-16" name="Wait" sid="270700491935463" type="System">
+                                            <param id="0" name="Seconds">0</param>
+                                        </action>
+                                        <action id="-4" name="Set layer visible" sid="285004316979663" type="System">
+                                            <param id="0" name="Layer">&quot;Pause Menu&quot;</param>
+                                            <param id="1" name="Visibility">0</param>
+                                        </action>
+                                        <action id="-4" name="Set layer visible" sid="365010625831408" type="System">
+                                            <param id="0" name="Layer">&quot;Info&quot;</param>
+                                            <param id="1" name="Visibility">1</param>
+                                        </action>
+                                        <action id="-4" name="Set layer visible" sid="681731325696043" type="System">
+                                            <param id="0" name="Layer">&quot;Log&quot;</param>
+                                            <param id="1" name="Visibility">1</param>
+                                        </action>
+                                        <action id="0" name="Play" sid="491230756838937" type="Audio">
+                                            <param id="0" name="Audio file">Menu Selection Click</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">0</param>
+                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="256118080347139">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="906311440176869" type="System">
+                                                    <param id="0" name="First value">LayoutName</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">&quot;Multiplayer&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-4" name="Set layer visible" sid="575680044871235" type="System">
+                                                    <param id="0" name="Layer">&quot;Players List&quot;</param>
+                                                    <param id="1" name="Visibility">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="342926684193864">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="235012425048763" type="System">
+                                                    <param id="0" name="First value">LayoutName</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">&quot;AWRetro&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="895379448182781" type="System">
+                                                    <param id="0" name="Variable">Pause</param>
+                                                    <param id="1" name="Value">0</param>
+                                                </action>
+                                                <action id="0" name="Set cursor style" sid="743082382249129" type="Mouse">
+                                                    <param id="0" name="Cursor style">7</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
                 <event-block any="1" sid="580581842575098">
                     <conditions>
                         <condition id="0" name="On key pressed" sid="475799734509102" type="Keyboard">
@@ -148,6 +348,24 @@
                                         </action>
                                     </actions>
                                 </event-block>
+                                <event-block sid="216754330434536">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="903717163919975" type="System">
+                                            <param id="0" name="First value">LayoutName</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">&quot;AWRetro&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="829705992078424" type="System">
+                                            <param id="0" name="Variable">Pause</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="0" name="Set cursor style" sid="560425493115345" type="Mouse">
+                                            <param id="0" name="Cursor style">7</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
                             </sub-events>
                         </event-block>
                         <event-block sid="373575209303348">
@@ -185,6 +403,24 @@
                                         <action id="-4" name="Set layer visible" sid="136359486498994" type="System">
                                             <param id="0" name="Layer">&quot;Players List&quot;</param>
                                             <param id="1" name="Visibility">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="279422040173532">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="126824066715474" type="System">
+                                            <param id="0" name="First value">LayoutName</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">&quot;AWRetro&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="439993031433332" type="System">
+                                            <param id="0" name="Variable">Pause</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="0" name="Set cursor style" sid="687330680898906" type="Mouse">
+                                            <param id="0" name="Cursor style">0</param>
                                         </action>
                                     </actions>
                                 </event-block>

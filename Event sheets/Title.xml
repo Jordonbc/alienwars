@@ -3,57 +3,135 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Title</name>
     <events>
+        <variable constant="0" name="TextScale" sid="587408452287997" static="0" type="number">72</variable>
+        <variable constant="0" name="TextAdd" sid="663139798564395" static="0" type="number">0.5</variable>
         <variable comment="The current size of the title" constant="0" name="TitleScale" sid="769267226489413" static="0" type="number">0.8</variable>
         <variable comment="How much to add to the title each tick" constant="0" name="TitleAdd" sid="620345288775101" static="0" type="number">0.005</variable>
         <include>Globals</include>
-        <event-block sid="951397772017661">
+        <event-block sid="804439840094034">
             <conditions>
-                <condition id="-1" name="Every tick" sid="537046123213429" type="System" />
-                <condition id="-9" name="Layer is visible" sid="105083386237602" type="System">
-                    <param id="0" name="Layer">3</param>
+                <condition id="-1" name="Every tick" sid="575684744342260" type="System" />
+                <condition id="-9" name="Layer is visible" sid="509601793239840" type="System">
+                    <param id="0" name="Layer">&quot;Title&quot;</param>
                 </condition>
             </conditions>
             <actions>
-                <action id="-10" name="Add to" sid="994577675402388" type="System">
+                <action id="-10" name="Add to" sid="868405873198546" type="System">
                     <param id="0" name="Variable">TitleScale</param>
                     <param id="1" name="Value">TitleAdd</param>
                 </action>
-                <action id="9" name="Set scale" sid="345230597997314" type="Title">
+                <action id="9" name="Set scale" sid="501692686817867" type="Title">
                     <param id="0" name="Scale">TitleScale</param>
                 </action>
             </actions>
             <sub-events>
-                <event-block sid="976931732834966">
+                <event-block sid="113911640445263">
                     <conditions>
-                        <condition id="-8" name="Compare two values" sid="656865402144796" type="System">
+                        <condition id="-8" name="Compare two values" sid="245932987587854" type="System">
                             <param id="0" name="First value">TitleScale</param>
                             <param id="1" name="Comparison">3</param>
                             <param id="2" name="Second value">0.8</param>
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-9" name="Set value" sid="294397782821119" type="System">
+                        <action id="-9" name="Set value" sid="638533988748513" type="System">
                             <param id="0" name="Variable">TitleAdd</param>
                             <param id="1" name="Value">0.005</param>
                         </action>
                     </actions>
                 </event-block>
-                <event-block sid="294124227491657">
+                <event-block sid="440291279325008">
                     <conditions>
-                        <condition id="-8" name="Compare two values" sid="105383509721060" type="System">
+                        <condition id="-8" name="Compare two values" sid="829451347456297" type="System">
                             <param id="0" name="First value">TitleScale</param>
                             <param id="1" name="Comparison">5</param>
                             <param id="2" name="Second value">1</param>
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-9" name="Set value" sid="412185167863551" type="System">
+                        <action id="-9" name="Set value" sid="449590479378828" type="System">
                             <param id="0" name="Variable">TitleAdd</param>
                             <param id="1" name="Value">-0.005</param>
                         </action>
                     </actions>
                 </event-block>
             </sub-events>
+        </event-block>
+        <event-block sid="951397772017661">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="537046123213429" type="System" />
+                <condition id="-9" name="Layer is visible" sid="105083386237602" type="System">
+                    <param id="0" name="Layer">&quot;Title&quot;</param>
+                </condition>
+                <condition id="-32" name="Is on platform" sid="372631519834834" type="System">
+                    <param id="0" name="Platform">9</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Add to" sid="994577675402388" type="System">
+                    <param id="0" name="Variable">TextScale</param>
+                    <param id="1" name="Value">TextAdd</param>
+                </action>
+                <action id="3" name="Set font size" sid="345230597997314" type="DemoText">
+                    <param id="0" name="Size (pt)">TextScale</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="976931732834966">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="656865402144796" type="System">
+                            <param id="0" name="First value">TextScale</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Second value">48</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="294397782821119" type="System">
+                            <param id="0" name="Variable">TextAdd</param>
+                            <param id="1" name="Value">0.5</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="294124227491657">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="105383509721060" type="System">
+                            <param id="0" name="First value">TextScale</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Second value">60</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="412185167863551" type="System">
+                            <param id="0" name="Variable">TextAdd</param>
+                            <param id="1" name="Value">-0.5</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="213638847184235">
+            <conditions>
+                <condition id="-32" name="Is on platform" sid="113148474637569" type="System">
+                    <param id="0" name="Platform">9</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="985573895193352" type="DemoText">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="162986530324115">
+            <conditions>
+                <condition id="-32" inverted="1" name="Is on platform" sid="380147251972942" type="System">
+                    <param id="0" name="Platform">9</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="684629890732988" type="DemoText">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+            </actions>
         </event-block>
     </events>
 </c2eventsheet>

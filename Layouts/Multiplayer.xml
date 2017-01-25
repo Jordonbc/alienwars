@@ -410,6 +410,7 @@
                         <CanShoot>0</CanShoot>
                         <Cheating>0</Cheating>
                         <URL></URL>
+                        <MPNumber>0</MPNumber>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="8Direction">
@@ -445,8 +446,8 @@
                         <x>645</x>
                         <y>263</y>
                         <z>0</z>
-                        <width>108.49861908</width>
-                        <height>105.279067993</height>
+                        <width>108</width>
+                        <height>105</height>
                         <depth>0</depth>
                         <hotspotX>0.53709197</hotspotX>
                         <hotspotY>0.501529038</hotspotY>

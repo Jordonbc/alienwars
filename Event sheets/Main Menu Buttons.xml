@@ -279,7 +279,45 @@
                                             <param id="0" name="Key">&quot;MP Deaths&quot;</param>
                                             <param id="1" name="Value">TotalDeaths</param>
                                         </action>
+                                        <action id="-16" name="Wait" sid="225460790583971" type="System">
+                                            <param id="0" name="Seconds">0</param>
+                                        </action>
                                     </actions>
+                                    <sub-events>
+                                        <event-block sid="521734077908788">
+                                            <conditions>
+                                                <condition id="-32" name="Is on platform" sid="388365113197823" type="System">
+                                                    <param id="0" name="Platform">9</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-16" name="Wait" sid="205538724002054" type="System">
+                                                    <param id="0" name="Seconds">0</param>
+                                                </action>
+                                                <action id="0" name="Submit score" sid="245733378272352" type="ScirraArcade">
+                                                    <param id="0" name="Leaderboard ID">&quot;Level&quot;</param>
+                                                    <param id="1" name="Score">MPLevel</param>
+                                                </action>
+                                                <action id="-16" name="Wait" sid="464234513278310" type="System">
+                                                    <param id="0" name="Seconds">0</param>
+                                                </action>
+                                                <action id="0" name="Submit score" sid="802960378215636" type="ScirraArcade">
+                                                    <param id="0" name="Leaderboard ID">&quot;Kills&quot;</param>
+                                                    <param id="1" name="Score">TotalKills</param>
+                                                </action>
+                                                <action id="-16" name="Wait" sid="184112947747096" type="System">
+                                                    <param id="0" name="Seconds">0</param>
+                                                </action>
+                                                <action id="0" name="Submit score" sid="295700981027467" type="ScirraArcade">
+                                                    <param id="0" name="Leaderboard ID">&quot;Deaths&quot;</param>
+                                                    <param id="1" name="Score">TotalDeaths</param>
+                                                </action>
+                                                <action id="-16" name="Wait" sid="464578547586603" type="System">
+                                                    <param id="0" name="Seconds">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
                                 </event-block>
                                 <event-block sid="977760135777926">
                                     <conditions>
@@ -836,175 +874,6 @@
                                     </actions>
                                 </event-block>
                             </sub-events>
-                        </event-block>
-                    </sub-events>
-                </event-block>
-            </sub-events>
-        </event-block>
-        <event-block any="1" sid="663448023310899">
-            <conditions>
-                <condition id="6" name="On object clicked" sid="475874321868074" type="Mouse">
-                    <param id="0" name="Mouse button">0</param>
-                    <param id="1" name="Click type">0</param>
-                    <param id="2" name="Object clicked">ResumeButtonText</param>
-                </condition>
-                <condition id="17" name="On tap object" sid="590664699609743" type="Touch">
-                    <param id="0" name="Object">ResumeButtonText</param>
-                </condition>
-                <condition disabled="1" id="6" name="On button pressed" sid="342034510837576" type="Gamepad">
-                    <param id="0" name="Gamepad">0</param>
-                    <param id="1" name="Button">0</param>
-                </condition>
-            </conditions>
-            <actions />
-            <sub-events>
-                <event-block disabled="1" sid="883113790021648">
-                    <conditions>
-                        <condition id="3" name="Is button down" sid="180992164689443" type="Gamepad">
-                            <param id="0" name="Gamepad">0</param>
-                            <param id="1" name="Button">0</param>
-                        </condition>
-                    </conditions>
-                    <actions />
-                    <sub-events>
-                        <event-block sid="800051283406864">
-                            <conditions>
-                                <condition id="-14" name="Compare variable" sid="334936481104971" type="System">
-                                    <param id="0" name="Variable">Selected</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">1</param>
-                                </condition>
-                                <condition id="-9" name="Layer is visible" sid="707320953684944" type="System">
-                                    <param id="0" name="Layer">&quot;Buttons&quot;</param>
-                                </condition>
-                                <condition id="-9" inverted="1" name="Layer is visible" sid="868532577707488" type="System">
-                                    <param id="0" name="Layer">&quot;Small Menu&quot;</param>
-                                </condition>
-                            </conditions>
-                            <actions />
-                            <sub-events>
-                                <event-block sid="854400252508514">
-                                    <conditions>
-                                        <condition id="-9" inverted="1" name="Layer is visible" sid="487179795781401" type="System">
-                                            <param id="0" name="Layer">&quot;Credits Text&quot;</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="0" name="Call function" sid="331091955873467" type="Function">
-                                            <param id="0" name="Name">&quot;HideAll&quot;</param>
-                                            <param id="1" name="Parameter {n}"></param>
-                                        </action>
-                                        <action id="-16" name="Wait" sid="693525651995337" type="System">
-                                            <param id="0" name="Seconds">0</param>
-                                        </action>
-                                        <action id="-4" name="Set layer visible" sid="525290399632628" type="System">
-                                            <param id="0" name="Layer">&quot;XboxBackButtonRootMenu&quot;</param>
-                                            <param id="1" name="Visibility">1</param>
-                                        </action>
-                                        <action id="-16" name="Wait" sid="313354798717485" type="System">
-                                            <param id="0" name="Seconds">0</param>
-                                        </action>
-                                        <action id="0" name="Call function" sid="744728532693629" type="Function">
-                                            <param id="0" name="Name">&quot;ShowCredits&quot;</param>
-                                            <param id="1" name="Parameter {n}"></param>
-                                        </action>
-                                        <action id="-16" name="Wait" sid="702397490107300" type="System">
-                                            <param id="0" name="Seconds">0</param>
-                                        </action>
-                                        <action id="0" name="Call function" sid="698053392633166" type="Function">
-                                            <param id="0" name="Name">&quot;Reset All Buttons&quot;</param>
-                                            <param id="1" name="Parameter {n}"></param>
-                                        </action>
-                                        <action id="-16" name="Wait" sid="398431733865807" type="System">
-                                            <param id="0" name="Seconds">0</param>
-                                        </action>
-                                        <action id="0" name="Play" sid="681778338561466" type="Audio">
-                                            <param id="0" name="Audio file">Menu Selection Click</param>
-                                            <param id="2" name="Loop">0</param>
-                                            <param id="3" name="Volume">0</param>
-                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
-                                        </action>
-                                    </actions>
-                                    <sub-events>
-                                        <event-block sid="429279155593422">
-                                            <conditions>
-                                                <condition id="-14" name="Pick by unique ID" sid="789845624045983" type="Button">
-                                                    <param id="0" name="Unique ID">7</param>
-                                                </condition>
-                                            </conditions>
-                                            <actions />
-                                            <sub-events>
-                                                <event-block sid="773799059663554">
-                                                    <conditions>
-                                                        <condition id="-20" name="Is on mobile device" sid="326128673699243" type="System" />
-                                                    </conditions>
-                                                    <actions>
-                                                        <action id="9" name="Set scale" sid="259274659885418" type="Button">
-                                                            <param id="0" name="Scale">2.2</param>
-                                                        </action>
-                                                    </actions>
-                                                </event-block>
-                                                <event-block sid="994714485295151">
-                                                    <conditions>
-                                                        <condition id="-22" name="Else" sid="974676644027776" type="System" />
-                                                    </conditions>
-                                                    <actions>
-                                                        <action id="9" name="Set scale" sid="267157249725736" type="Button">
-                                                            <param id="0" name="Scale">1.2</param>
-                                                        </action>
-                                                    </actions>
-                                                </event-block>
-                                            </sub-events>
-                                        </event-block>
-                                    </sub-events>
-                                </event-block>
-                            </sub-events>
-                        </event-block>
-                    </sub-events>
-                </event-block>
-                <event-block sid="294193289013281">
-                    <conditions>
-                        <condition id="-22" name="Else" sid="537271507794163" type="System" />
-                    </conditions>
-                    <actions />
-                    <sub-events>
-                        <event-block sid="792536408711367">
-                            <conditions>
-                                <condition id="-9" name="Layer is visible" sid="440442724104900" type="System">
-                                    <param id="0" name="Layer">&quot;Pause Menu&quot;</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="0" name="Call function" sid="369825494785404" type="Function">
-                                    <param id="0" name="Name">&quot;HideAll&quot;</param>
-                                    <param id="1" name="Parameter {n}"></param>
-                                </action>
-                                <action id="-16" name="Wait" sid="872833272805014" type="System">
-                                    <param id="0" name="Seconds">0</param>
-                                </action>
-                                <action id="-4" name="Set layer visible" sid="906270637948349" type="System">
-                                    <param id="0" name="Layer">&quot;Pause Menu&quot;</param>
-                                    <param id="1" name="Visibility">0</param>
-                                </action>
-                                <action id="-4" name="Set layer visible" sid="331809896840829" type="System">
-                                    <param id="0" name="Layer">&quot;Info&quot;</param>
-                                    <param id="1" name="Visibility">1</param>
-                                </action>
-                                <action id="-4" name="Set layer visible" sid="726848382839133" type="System">
-                                    <param id="0" name="Layer">&quot;Log&quot;</param>
-                                    <param id="1" name="Visibility">1</param>
-                                </action>
-                                <action id="-4" name="Set layer visible" sid="405729707998821" type="System">
-                                    <param id="0" name="Layer">&quot;Players List&quot;</param>
-                                    <param id="1" name="Visibility">0</param>
-                                </action>
-                                <action id="0" name="Play" sid="693910548758433" type="Audio">
-                                    <param id="0" name="Audio file">Menu Selection Click</param>
-                                    <param id="2" name="Loop">0</param>
-                                    <param id="3" name="Volume">0</param>
-                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
-                                </action>
-                            </actions>
                         </event-block>
                     </sub-events>
                 </event-block>
@@ -3063,8 +2932,82 @@
                                 <action id="0" name="Set text" sid="933629403666007" type="StatsTotalDeathsText">
                                     <param id="0" name="Text">&quot;TOTAL DEATHS: &quot;&amp;TotalDeaths</param>
                                 </action>
+                                <action id="0" name="Request URL" sid="410238568118339" type="AJAX">
+                                    <param id="0" name="Tag">&quot;Level&quot;</param>
+                                    <param id="1" name="URL">&quot;http://jordan.bnettech.pw/getLevel.php?fname=&quot;&amp;MP_USERNAME&amp;&quot;&amp;fpass=&quot;&amp;Password</param>
+                                </action>
                             </actions>
                             <sub-events>
+                                <event-block sid="876944051930420">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="989226260495592" type="System">
+                                            <param id="0" name="Variable">SpaceshipURL</param>
+                                            <param id="1" name="Comparison">1</param>
+                                            <param id="2" name="Value">&quot;&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="5" name="Set frame" sid="664594161473275" type="AllPlayerSprites">
+                                            <param id="0" name="Frame number">0</param>
+                                        </action>
+                                        <action id="10" name="Load image from URL" sid="455093964429425" type="AllPlayerSprites">
+                                            <param id="0" name="URI">SpaceshipURL</param>
+                                            <param id="1" name="Size">1</param>
+                                        </action>
+                                        <action id="5" name="Set frame" sid="708123241238893" type="AllPlayerSprites">
+                                            <param id="0" name="Frame number">1</param>
+                                        </action>
+                                        <action id="10" name="Load image from URL" sid="278336305122606" type="AllPlayerSprites">
+                                            <param id="0" name="URI">SpaceshipURL</param>
+                                            <param id="1" name="Size">1</param>
+                                        </action>
+                                        <action id="5" name="Set frame" sid="115262685699795" type="AllPlayerSprites">
+                                            <param id="0" name="Frame number">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="144700926145171">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="539557094804397" type="System">
+                                            <param id="0" name="Variable">SpaceshipURL</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="5" name="Set frame" sid="833297044824443" type="AllPlayerSprites">
+                                            <param id="0" name="Frame number">0</param>
+                                        </action>
+                                        <action id="10" name="Load image from URL" sid="476720981979820" type="AllPlayerSprites">
+                                            <param id="0" name="URI">&quot;https://cdn.rawgit.com/Jordonbc/alienwars/252d8777/Animations/Player/Default/000.png&quot;</param>
+                                            <param id="1" name="Size">1</param>
+                                        </action>
+                                        <action id="5" name="Set frame" sid="774431143242709" type="AllPlayerSprites">
+                                            <param id="0" name="Frame number">1</param>
+                                        </action>
+                                        <action id="10" name="Load image from URL" sid="497146728188534" type="AllPlayerSprites">
+                                            <param id="0" name="URI">&quot;https://cdn.rawgit.com/Jordonbc/alienwars/252d8777/Animations/Player/Default/001.png&quot;</param>
+                                            <param id="1" name="Size">1</param>
+                                        </action>
+                                        <action id="5" name="Set frame" sid="613190639778649" type="AllPlayerSprites">
+                                            <param id="0" name="Frame number">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="697666245351855">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="368152339325500" type="System">
+                                            <param id="0" name="Variable">Cheating</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Set text" sid="419636236441433" type="StatsLevelText">
+                                            <param id="0" name="Text">&quot;LEVEL: &quot;&amp;MPLevel&amp;&quot; (Cheating)&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
                                 <event-block sid="516355472619589">
                                     <conditions>
                                         <condition id="-14" name="Compare variable" sid="539709906637957" type="System">

@@ -683,10 +683,10 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>984</x>
-                        <y>343</y>
+                        <y>362</y>
                         <z>0</z>
                         <width>1087</width>
-                        <height>241</height>
+                        <height>278</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
@@ -765,7 +765,7 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>984</x>
-                        <y>490</y>
+                        <y>537</y>
                         <z>0</z>
                         <width>1087</width>
                         <height>51</height>
@@ -801,7 +801,7 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>984</x>
-                        <y>545</y>
+                        <y>579</y>
                         <z>0</z>
                         <width>1087</width>
                         <height>51</height>
@@ -837,7 +837,7 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>984</x>
-                        <y>601</y>
+                        <y>627</y>
                         <z>0</z>
                         <width>1087</width>
                         <height>51</height>
@@ -994,7 +994,7 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>984</x>
-                        <y>656</y>
+                        <y>675</y>
                         <z>0</z>
                         <width>1087</width>
                         <height>51</height>
@@ -1030,13 +1030,49 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>984</x>
-                        <y>711</y>
+                        <y>719</y>
                         <z>0</z>
                         <width>1087</width>
-                        <height>51</height>
+                        <height>53</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="BradnumNetCreditsText" uid="180">
+                    <properties>
+                        <text>Sponserd by BradnumNET Technologies (Bradnumnet.space)</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Arial,-35,400,0</font>
+                        <color>0,255,255</color>
+                        <horizontal-alignment>Left</horizontal-alignment>
+                        <vertical-alignment>Top</vertical-alignment>
+                        <hotspot>Top-left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <effect-instances>
+                        <effect-instance type="AdjustHSL">
+                            <parameters>
+                                <hue>0</hue>
+                                <luminosity>1</luminosity>
+                                <saturation>1</saturation>
+                            </parameters>
+                        </effect-instance>
+                    </effect-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>440.5</x>
+                        <y>467</y>
+                        <z>0</z>
+                        <width>1088</width>
+                        <height>59</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
@@ -3560,32 +3596,6 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="MPUsernameBox" uid="128">
-                    <properties>
-                        <text></text>
-                        <placeholder>USERNAME</placeholder>
-                        <tooltip></tooltip>
-                        <initial-visibility>Visible</initial-visibility>
-                        <enabled>Yes</enabled>
-                        <read-only>No</read-only>
-                        <spell-check>No</spell-check>
-                        <type>Text</type>
-                        <auto-font-size>Yes</auto-font-size>
-                        <id-optional></id-optional>
-                    </properties>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>431</x>
-                        <y>454</y>
-                        <z>0</z>
-                        <width>356</width>
-                        <height>45</height>
-                        <depth>0</depth>
-                        <hotspotX>0</hotspotX>
-                        <hotspotY>0</hotspotY>
-                    </world>
-                </instance>
                 <instance type="StatsTotalKillsText" uid="129">
                     <properties>
                         <text>TOTAL KILLS</text>
@@ -3658,40 +3668,57 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="MPUsernameTipText" uid="131">
+                <instance type="ChangeSpriteText" uid="168">
                     <properties>
-                        <text>MIN CHARS: 4,  MAX CHARS: 10, NO SPACES</text>
+                        <text>Change Sprite</text>
                         <initial-visibility>Visible</initial-visibility>
-                        <font>Arial,-24,400,0</font>
+                        <font>Arial,-32,400,0</font>
                         <color>0,255,255</color>
                         <horizontal-alignment>Center</horizontal-alignment>
-                        <vertical-alignment>Top</vertical-alignment>
+                        <vertical-alignment>Center</vertical-alignment>
                         <hotspot>Center</hotspot>
                         <wrapping>Word</wrapping>
                         <line-height>0</line-height>
                     </properties>
-                    <effect-instances>
-                        <effect-instance type="AdjustHSL">
-                            <parameters>
-                                <hue>0</hue>
-                                <luminosity>1</luminosity>
-                                <saturation>1</saturation>
-                            </parameters>
-                        </effect-instance>
-                    </effect-instances>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>609</x>
-                        <y>557</y>
+                        <y>472</y>
                         <z>0</z>
-                        <width>356</width>
-                        <height>109</height>
+                        <width>374</width>
+                        <height>47</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="ChangeSpriteTextBox" uid="169">
+                    <properties>
+                        <text></text>
+                        <placeholder>URL to Inage</placeholder>
+                        <tooltip></tooltip>
+                        <initial-visibility>Visible</initial-visibility>
+                        <enabled>Yes</enabled>
+                        <read-only>No</read-only>
+                        <spell-check>No</spell-check>
+                        <type>URL</type>
+                        <auto-font-size>Yes</auto-font-size>
+                        <id-optional></id-optional>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>435</x>
+                        <y>497</y>
+                        <z>0</z>
+                        <width>356</width>
+                        <height>45</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
                     </world>
                 </instance>
             </instances>
@@ -3946,6 +3973,13 @@
         <instance type="Letters" uid="110">
             <properties>
                 <width>1</width>
+                <height>1</height>
+                <depth>1</depth>
+            </properties>
+        </instance>
+        <instance type="Array" uid="171">
+            <properties>
+                <width>10</width>
                 <height>1</height>
                 <depth>1</depth>
             </properties>
