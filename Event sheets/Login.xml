@@ -10,8 +10,8 @@
                 <condition id="-2" name="On start of layout" sid="194558057525926" type="System" />
             </conditions>
             <actions>
-                <action id="0" name="Set cursor style" sid="635302780066429" type="Mouse">
-                    <param id="0" name="Cursor style">0</param>
+                <action id="1" name="Set cursor from sprite" sid="635302780066429" type="Mouse">
+                    <param id="0" name="Sprite">Cursor</param>
                 </action>
                 <action id="-27" name="Set effect enabled" sid="663793346729914" type="Button">
                     <param id="0" name="Mode">0</param>
@@ -199,6 +199,66 @@
                 </action>
             </actions>
         </event-block>
+        <event-block sid="469731792521585">
+            <conditions>
+                <condition id="1" name="On error" sid="205650631266618" type="AJAX">
+                    <param id="0" name="Tag">&quot;Level&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="153331077225762" type="LoginStatusText">
+                    <param id="0" name="Text">&quot;Error: Level not defined!&quot;</param>
+                </action>
+                <action id="-15" name="Set visible" sid="524245281986408" type="LoginStatusText">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="815467107715219">
+            <conditions>
+                <condition id="1" name="On error" sid="467975152964609" type="AJAX">
+                    <param id="0" name="Tag">&quot;Kills&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="921740844290909" type="LoginStatusText">
+                    <param id="0" name="Text">&quot;Error: Kills not defined!&quot;</param>
+                </action>
+                <action id="-15" name="Set visible" sid="476675027326701" type="LoginStatusText">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="584202439264588">
+            <conditions>
+                <condition id="1" name="On error" sid="505292268490538" type="AJAX">
+                    <param id="0" name="Tag">&quot;Deaths&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="445888381204019" type="LoginStatusText">
+                    <param id="0" name="Text">&quot;Error: Deaths not defined!&quot;</param>
+                </action>
+                <action id="-15" name="Set visible" sid="275817146275659" type="LoginStatusText">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="494320970644741">
+            <conditions>
+                <condition id="1" name="On error" sid="197225038817903" type="AJAX">
+                    <param id="0" name="Tag">&quot;Prefix&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="789176996955991" type="LoginStatusText">
+                    <param id="0" name="Text">&quot;Error: Prefix not defined!&quot;</param>
+                </action>
+                <action id="-15" name="Set visible" sid="229878907519639" type="LoginStatusText">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+            </actions>
+        </event-block>
         <event-block sid="721087981357356">
             <conditions>
                 <condition id="0" name="On completed" sid="590835918831354" type="AJAX">
@@ -277,6 +337,10 @@
                 </condition>
             </conditions>
             <actions>
+                <action id="0" name="Request URL" sid="378443076303473" type="AJAX">
+                    <param id="0" name="Tag">&quot;Prefix&quot;</param>
+                    <param id="1" name="URL">&quot;http://jordan.bnettech.pw/getPrefix.php?fname=&quot;&amp;MP_USERNAME&amp;&quot;&amp;fpass=&quot;&amp;Password</param>
+                </action>
                 <action id="-9" name="Set value" sid="874756243338375" type="System">
                     <param id="0" name="Variable">TotalDeaths</param>
                     <param id="1" name="Value">AJAX.LastData</param>
@@ -289,7 +353,24 @@
                     <param id="0" name="Type">0</param>
                     <param id="1" name="Message">&quot;AJAX recieved value: &quot;&amp;AJAX.LastData</param>
                 </action>
-                <action id="0" name="Call function" sid="576453442301529" type="Function">
+            </actions>
+        </event-block>
+        <event-block sid="146775284533437">
+            <conditions>
+                <condition id="0" name="On completed" sid="421257956087533" type="AJAX">
+                    <param id="0" name="Tag">&quot;Prefix&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="904114598145034" type="System">
+                    <param id="0" name="Variable">Prefix</param>
+                    <param id="1" name="Value">AJAX.LastData</param>
+                </action>
+                <action id="14" name="Log" sid="296394461426971" type="Browser">
+                    <param id="0" name="Type">0</param>
+                    <param id="1" name="Message">&quot;AJAX recieved value: &quot;&amp;AJAX.LastData</param>
+                </action>
+                <action id="0" name="Call function" sid="305116289709061" type="Function">
                     <param id="0" name="Name">&quot;Login&quot;</param>
                     <param id="1" name="Parameter {n}"></param>
                 </action>
@@ -374,6 +455,30 @@
                 <action id="8" name="Open URL in new window" sid="835461752818040" type="Browser">
                     <param id="0" name="URL">&quot;http://jordan.bnettech.pw/Signup.html&quot;</param>
                     <param id="1" name="Tag">&quot;NewWindow&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="462742480338745">
+            <conditions>
+                <condition id="2" name="Mouse button is down" sid="723496662034267" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                </condition>
+                <condition id="-4" name="Trigger once while true" sid="545269907334791" type="System" />
+            </conditions>
+            <actions>
+                <action id="1" name="Set cursor from sprite" sid="774394147119910" type="Mouse">
+                    <param id="0" name="Sprite">CursorInverted</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="702232158243386">
+            <conditions>
+                <condition id="-22" name="Else" sid="347276612402542" type="System" />
+                <condition id="-4" name="Trigger once while true" sid="869380346449856" type="System" />
+            </conditions>
+            <actions>
+                <action id="1" name="Set cursor from sprite" sid="968695815699927" type="Mouse">
+                    <param id="0" name="Sprite">Cursor</param>
                 </action>
             </actions>
         </event-block>

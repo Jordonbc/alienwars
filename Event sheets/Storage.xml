@@ -46,7 +46,7 @@
                 <action id="5" name="Check item exists" sid="216766741490699" type="LocalStorage">
                     <param id="0" name="Key">&quot;Cheating&quot;</param>
                 </action>
-                <action id="5" name="Check item exists" sid="468091825895696" type="LocalStorage">
+                <action disabled="1" id="5" name="Check item exists" sid="468091825895696" type="LocalStorage">
                     <param id="0" name="Key">&quot;Password&quot;</param>
                 </action>
             </actions>

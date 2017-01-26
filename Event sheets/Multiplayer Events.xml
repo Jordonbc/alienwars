@@ -324,6 +324,12 @@
                             <param id="3" name="Interpolation">0</param>
                             <param id="4" name="Client value tag">&quot;&quot;</param>
                         </action>
+                        <action id="11" name="Sync object" sid="187734210617169" type="Multiplayer">
+                            <param id="0" name="Object">Asteroid</param>
+                            <param id="1" name="Data">3</param>
+                            <param id="2" name="Precision">2</param>
+                            <param id="3" name="Bandwidth">0</param>
+                        </action>
                         <action id="11" name="Sync object" sid="171463173513062" type="Multiplayer">
                             <param id="0" name="Object">MPPlayer</param>
                             <param id="1" name="Data">1</param>
@@ -480,6 +486,13 @@
                         <action id="12" name="Sync instance variable" sid="142071203920357" type="Multiplayer">
                             <param id="0" name="Object">MPPlayer</param>
                             <param id="1" name="Instance variable">MPPlayer|MPNumber</param>
+                            <param id="2" name="Precision">2</param>
+                            <param id="3" name="Interpolation">0</param>
+                            <param id="4" name="Client value tag">&quot;&quot;</param>
+                        </action>
+                        <action id="12" name="Sync instance variable" sid="505384133041169" type="Multiplayer">
+                            <param id="0" name="Object">MPPlayer</param>
+                            <param id="1" name="Instance variable">MPPlayer|Score</param>
                             <param id="2" name="Precision">2</param>
                             <param id="3" name="Interpolation">0</param>
                             <param id="4" name="Client value tag">&quot;&quot;</param>
@@ -675,6 +688,10 @@
                                     <param id="0" name="Instance variable">MPNumber</param>
                                     <param id="1" name="Value">0</param>
                                 </action>
+                                <action id="-10" name="Set value" sid="659069081661812" type="MPPlayer">
+                                    <param id="0" name="Instance variable">Prefix</param>
+                                    <param id="1" name="Value">Prefix</param>
+                                </action>
                             </actions>
                         </event-block>
                         <event-block sid="791426299491891">
@@ -854,6 +871,38 @@
                         </event-block>
                     </sub-events>
                 </event-group>
+                <event-block sid="202953432217338">
+                    <conditions>
+                        <condition id="15" name="On peer message" sid="491525721855022" type="Multiplayer">
+                            <param id="0" name="Tag">&quot;PREFIX&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="9" name="Broadcast message" sid="623644982875494" type="Multiplayer">
+                            <param id="0" name="From ID">Multiplayer.FromID</param>
+                            <param id="1" name="Tag">&quot;PREFIX&quot;</param>
+                            <param id="2" name="Message">Multiplayer.Message</param>
+                            <param id="3" name="Mode">0</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="518919126796356">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="316543822374630" type="MPPlayer">
+                                    <param id="0" name="Instance variable">MPID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">Multiplayer.FromID</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="236597074036373" type="MPPlayer">
+                                    <param id="0" name="Instance variable">Prefix</param>
+                                    <param id="1" name="Value">Multiplayer.Message</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
                 <event-block sid="916692429255425">
                     <conditions>
                         <condition id="15" name="On peer message" sid="587336188539830" type="Multiplayer">
@@ -946,17 +995,13 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <event-block sid="191151153367166">
+                <event-block sid="725929214132831">
                     <conditions>
-                        <condition id="15" name="On peer message" sid="775521046122152" type="Multiplayer">
+                        <condition id="15" name="On peer message" sid="595390004578975" type="Multiplayer">
                             <param id="0" name="Tag">&quot;CHAT&quot;</param>
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="0" name="Call function" sid="723173201039988" type="Function">
-                            <param id="0" name="Name">&quot;AddChat&quot;</param>
-                            <param id="1" name="Parameter {n}">&quot;&lt;&quot;&amp;Multiplayer.FromAlias&amp;&quot;&gt;&quot;&amp;Multiplayer.Message</param>
-                        </action>
                         <action id="9" name="Broadcast message" sid="848699841258750" type="Multiplayer">
                             <param id="0" name="From ID">Multiplayer.FromID</param>
                             <param id="1" name="Tag">&quot;CHAT&quot;</param>
@@ -964,6 +1009,46 @@
                             <param id="3" name="Mode">0</param>
                         </action>
                     </actions>
+                    <sub-events>
+                        <event-block sid="300309155336906">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="596817974229933" type="MPPlayer">
+                                    <param id="0" name="Instance variable">MPID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">Multiplayer.FromID</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="485582810685702">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="788251989180193" type="MPPlayer">
+                                            <param id="0" name="Instance variable">Prefix</param>
+                                            <param id="1" name="Comparison">1</param>
+                                            <param id="2" name="Value">&quot;&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="328731296937448" type="Function">
+                                            <param id="0" name="Name">&quot;AddChat&quot;</param>
+                                            <param id="1" name="Parameter {n}">&quot;&lt;&quot;&amp;&quot;&lt;&quot;&amp;MPPlayer.Prefix&amp;&quot;&gt; &quot;&amp;Multiplayer.FromAlias&amp;&quot;&gt;&quot;&amp;Multiplayer.Message</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="223095429519192">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="873807038633176" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="629653694272727" type="Function">
+                                            <param id="0" name="Name">&quot;AddChat&quot;</param>
+                                            <param id="1" name="Parameter {n}">&quot;&lt;&quot;&amp;Multiplayer.FromAlias&amp;&quot;&gt;&quot;&amp;Multiplayer.Message</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
                 </event-block>
                 <event-block sid="370701878311208">
                     <conditions>
@@ -981,7 +1066,7 @@
                     <actions>
                         <action id="0" name="Call function" sid="966145069430977" type="Function">
                             <param id="0" name="Name">&quot;AddMessageBox&quot;</param>
-                            <param id="1" name="Parameter {n}">&quot;&lt;&quot;&amp;Multiplayer.MyAlias&amp;&quot;&gt;&quot;&amp;ChatTextBox.Text</param>
+                            <param id="1" name="Parameter {n}">&quot;&lt;&quot;&amp;&quot;&lt;&quot;&amp;MPPlayer.Prefix&amp;&quot;&gt; &quot;&amp;Multiplayer.MyAlias&amp;&quot;&gt;&quot;&amp;ChatTextBox.Text</param>
                         </action>
                         <action id="9" name="Broadcast message" sid="198207999443447" type="Multiplayer">
                             <param id="0" name="From ID">&quot;&quot;</param>
@@ -1365,7 +1450,7 @@
                             <param id="0" name="Instance variable">Deaths</param>
                             <param id="1" name="Value">1</param>
                         </action>
-                        <action id="0" name="Call function" sid="680185519196805" type="Function">
+                        <action id="0" name="Call function" sid="389462505221006" type="Function">
                             <param id="0" name="Name">&quot;AddLog&quot;</param>
                             <param id="1" name="Parameter {n}">Multiplayer.PeerAliasFromID(MPPlayer.LastHitByID)&amp;&quot; blown up &quot;&amp;Multiplayer.PeerAliasFromID(MPPlayer.MPID)</param>
                         </action>
@@ -1383,6 +1468,10 @@
                                 <action id="0" name="Call function" sid="940096155029097" type="Function">
                                     <param id="0" name="Name">&quot;AddToKills&quot;</param>
                                     <param id="1" name="Parameter {n}">MPPlayer.LastHitByID</param>
+                                </action>
+                                <action id="0" name="Call function" sid="403270882127550" type="Function">
+                                    <param id="0" name="Name">&quot;Add Score&quot;</param>
+                                    <param id="1" name="Parameter {n}">MPPlayer.LastHitByID{###}50</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -1632,6 +1721,12 @@
                             <param id="0" name="From ID">&quot;&quot;</param>
                             <param id="1" name="Tag">&quot;URL&quot;</param>
                             <param id="2" name="Message">MPPlayer.URL</param>
+                            <param id="3" name="Mode">0</param>
+                        </action>
+                        <action id="9" name="Broadcast message" sid="100547826494223" type="Multiplayer">
+                            <param id="0" name="From ID">&quot;&quot;</param>
+                            <param id="1" name="Tag">&quot;PREFIX&quot;</param>
+                            <param id="2" name="Message">MPPlayer.Prefix</param>
                             <param id="3" name="Mode">0</param>
                         </action>
                     </actions>
@@ -2055,10 +2150,182 @@
                         </event-block>
                     </sub-events>
                 </event-block>
+                <event-block sid="271148318391083">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="529536220042677" type="Asteroid">
+                            <param id="0" name="Object">Laser</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Subtract from" sid="104487950495134" type="Asteroid">
+                            <param id="0" name="Instance variable">Health</param>
+                            <param id="1" name="Value">25</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="975525628087725" type="Laser" />
+                        <action id="-10" name="Set value" sid="999885906458083" type="Asteroid">
+                            <param id="0" name="Instance variable">LastHitbyID</param>
+                            <param id="1" name="Value">Laser.PlayerID</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="456988831613824">
+                    <conditions>
+                        <condition id="0" name="On function" sid="577831899562739" type="Function">
+                            <param id="0" name="Name">&quot;Add Score&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="915069806581891">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="590319279324120" type="MPPlayer">
+                                    <param id="0" name="Instance variable">MPID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">Function.Param(0)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-11" name="Add to" sid="681568285722961" type="MPPlayer">
+                                    <param id="0" name="Instance variable">Score</param>
+                                    <param id="1" name="Value">Function.Param(1)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="749965867806384">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="425490277492216" type="Asteroid">
+                            <param id="0" name="Instance variable">Health</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="960466999579693" type="Asteroid" />
+                        <action id="-3" name="Create object" sid="401932108013293" type="System">
+                            <param id="0" name="Object to create">Explosion</param>
+                            <param id="1" name="Layer">&quot;Players&quot;</param>
+                            <param id="2" name="X">Asteroid.X</param>
+                            <param id="3" name="Y">Asteroid.Y</param>
+                        </action>
+                        <action id="0" name="Play" sid="236116300986707" type="Audio">
+                            <param id="0" name="Audio file">Explosion 3</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;Game&quot;</param>
+                        </action>
+                        <action id="0" name="Call function" sid="164802002798110" type="Function">
+                            <param id="0" name="Name">&quot;Add Score&quot;</param>
+                            <param id="1" name="Parameter {n}">Asteroid.LastHitbyID{###}10</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="911371879696222" type="System">
+                            <param id="0" name="Seconds">1</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="579494540282060" type="Explosion" />
+                    </actions>
+                </event-block>
+                <event-block sid="642006608148999">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="573173585981073" type="MPPlayer">
+                            <param id="0" name="Object">Asteroid</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Subtract from" sid="617270436902921" type="MPPlayer">
+                            <param id="0" name="Instance variable">Health</param>
+                            <param id="1" name="Value">25</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="243214168349283" type="Asteroid">
+                            <param id="0" name="Instance variable">Health</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="410574775397579" type="Asteroid">
+                            <param id="0" name="Instance variable">LastHitbyID</param>
+                            <param id="1" name="Value">MPPlayer.MPID</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="265996574698450" type="MPPlayer">
+                            <param id="0" name="Instance variable">LastHitTime</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="932923390369954" type="MPPlayer">
+                            <param id="0" name="Instance variable">Hit</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="218971334483177" type="System">
+                            <param id="0" name="Seconds">0.5</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="192436259133990" type="MPPlayer">
+                            <param id="0" name="Instance variable">Hit</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="425560743620131">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="971116980545534" type="System">
+                            <param id="0" name="Interval (seconds)">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="216415822458426" type="System">
+                            <param id="0" name="Object to create">Asteroid</param>
+                            <param id="1" name="Layer">&quot;Players&quot;</param>
+                            <param id="2" name="X">0</param>
+                            <param id="3" name="Y">int(random(LayoutHeight))</param>
+                        </action>
+                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="167997708519713" type="Asteroid">
+                            <param id="0" name="Angle">int(random(-45, 45))</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="114236579176647">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="237072548760940" type="System">
+                            <param id="0" name="Interval (seconds)">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="695592818199473" type="System">
+                            <param id="0" name="Object to create">Asteroid</param>
+                            <param id="1" name="Layer">&quot;Players&quot;</param>
+                            <param id="2" name="X">LayoutWidth</param>
+                            <param id="3" name="Y">int(random(LayoutHeight))</param>
+                        </action>
+                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="307933305569250" type="Asteroid">
+                            <param id="0" name="Angle">int(random(135, 225))</param>
+                        </action>
+                    </actions>
+                </event-block>
             </sub-events>
         </event-group>
         <event-group description="" inactive="1" sid="833471193609302" title="PEER">
             <sub-events>
+                <event-block sid="932773757268733">
+                    <conditions>
+                        <condition id="15" name="On peer message" sid="538516552632749" type="Multiplayer">
+                            <param id="0" name="Tag">&quot;PREFIX&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="765471350422376">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="862979680228352" type="MPPlayer">
+                                    <param id="0" name="Instance variable">MPID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">Multiplayer.FromID</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="112598128790606" type="MPPlayer">
+                                    <param id="0" name="Instance variable">Prefix</param>
+                                    <param id="1" name="Value">Multiplayer.Message</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
                 <event-block sid="864258095409185">
                     <conditions>
                         <condition id="15" name="On peer message" sid="242042197236425" type="Multiplayer">
@@ -2235,6 +2502,16 @@
                                 <action id="-10" name="Set value" sid="203730754039745" type="MPPlayer">
                                     <param id="0" name="Instance variable">URL</param>
                                     <param id="1" name="Value">SpaceshipURL</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="825769729406484" type="MPPlayer">
+                                    <param id="0" name="Instance variable">Prefix</param>
+                                    <param id="1" name="Value">Prefix</param>
+                                </action>
+                                <action id="8" name="Send message" sid="232847802070275" type="Multiplayer">
+                                    <param id="0" name="Peer ID">&quot;&quot;</param>
+                                    <param id="1" name="Tag">&quot;PREFIX&quot;</param>
+                                    <param id="2" name="Message">MPPlayer.Prefix</param>
+                                    <param id="3" name="Mode">0</param>
                                 </action>
                                 <action id="8" name="Send message" sid="562071748389735" type="Multiplayer">
                                     <param id="0" name="Peer ID">&quot;&quot;</param>
@@ -2574,15 +2851,56 @@
                             <param id="2" name="Message">ChatTextBox.Text</param>
                             <param id="3" name="Mode">0</param>
                         </action>
-                        <action id="0" name="Call function" sid="142735065684949" type="Function">
-                            <param id="0" name="Name">&quot;AddMessageBox&quot;</param>
-                            <param id="1" name="Parameter {n}">&quot;&lt;&quot;&amp;Multiplayer.MyAlias&amp;&quot;&gt;&quot;&amp;ChatTextBox.Text</param>
-                        </action>
-                        <action id="0" name="Set text" sid="201354797943836" type="ChatTextBox">
-                            <param id="0" name="Text">&quot;&quot;</param>
-                        </action>
-                        <action id="8" name="Set unfocused" sid="164555963583897" type="ChatTextBox" />
                     </actions>
+                    <sub-events>
+                        <event-block sid="679582127136945">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="769933397335430" type="MPPlayer">
+                                    <param id="0" name="Instance variable">MPID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">Multiplayer.MyID</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="857740459918075">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="279856713348467" type="MPPlayer">
+                                            <param id="0" name="Instance variable">Prefix</param>
+                                            <param id="1" name="Comparison">1</param>
+                                            <param id="2" name="Value">&quot;&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="773754982870825" type="Function">
+                                            <param id="0" name="Name">&quot;AddMessageBox&quot;</param>
+                                            <param id="1" name="Parameter {n}">&quot;&lt;&quot;&amp;&quot;&lt;&quot;&amp;MPPlayer.Prefix&amp;&quot;&gt; &quot;&amp;Multiplayer.MyAlias&amp;&quot;&gt;&quot;&amp;ChatTextBox.Text</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="780060852537746">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="810598253714657" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="956495457851442" type="Function">
+                                            <param id="0" name="Name">&quot;AddMessageBox&quot;</param>
+                                            <param id="1" name="Parameter {n}">&quot;&lt;&quot;&amp;Multiplayer.MyAlias&amp;&quot;&gt;&quot;&amp;ChatTextBox.Text</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="633618383383243">
+                                    <conditions />
+                                    <actions>
+                                        <action id="0" name="Set text" sid="201354797943836" type="ChatTextBox">
+                                            <param id="0" name="Text">&quot;&quot;</param>
+                                        </action>
+                                        <action id="8" name="Set unfocused" sid="164555963583897" type="ChatTextBox" />
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
                 </event-block>
                 <event-block sid="342657269132117">
                     <conditions>
@@ -2590,12 +2908,47 @@
                             <param id="0" name="Tag">&quot;CHAT&quot;</param>
                         </condition>
                     </conditions>
-                    <actions>
-                        <action id="0" name="Call function" sid="516680314031765" type="Function">
-                            <param id="0" name="Name">&quot;AddChat&quot;</param>
-                            <param id="1" name="Parameter {n}">&quot;&lt;&quot;&amp;Multiplayer.FromAlias&amp;&quot;&gt;&quot;&amp;Multiplayer.Message</param>
-                        </action>
-                    </actions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="289042065438563">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="553863849149868" type="MPPlayer">
+                                    <param id="0" name="Instance variable">MPID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">Multiplayer.FromID</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="333636814605218">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="280133108694816" type="MPPlayer">
+                                            <param id="0" name="Instance variable">Prefix</param>
+                                            <param id="1" name="Comparison">1</param>
+                                            <param id="2" name="Value">&quot;&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="516680314031765" type="Function">
+                                            <param id="0" name="Name">&quot;AddChat&quot;</param>
+                                            <param id="1" name="Parameter {n}">&quot;&lt;&quot;&amp;&quot;&lt;&quot;&amp;MPPlayer.Prefix&amp;&quot;&gt; &quot;&amp;Multiplayer.FromAlias&amp;&quot;&gt;&quot;&amp;Multiplayer.Message</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="832472389211447">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="941792415781802" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="845098270851211" type="Function">
+                                            <param id="0" name="Name">&quot;AddChat&quot;</param>
+                                            <param id="1" name="Parameter {n}">&quot;&lt;&quot;&amp;Multiplayer.FromAlias&amp;&quot;&gt;&quot;&amp;Multiplayer.Message</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
                 </event-block>
                 <event-block sid="141045428899444">
                     <conditions>
@@ -3552,11 +3905,32 @@
                                 <action id="-26" name="Move to layer" sid="618108602100853" type="AimSpot">
                                     <param id="0" name="Layer">&quot;Aiming&quot;</param>
                                 </action>
-                                <action id="0" name="Set text" sid="651789064907426" type="PlayerUsernameText">
-                                    <param id="0" name="Text">Multiplayer.PeerAliasFromID(MPPlayer.MPID)&amp;&quot; - Health: &quot;&amp;MPPlayer.Health&amp;&quot;%&quot;&amp;&quot; - Level: &quot;&amp;MPPlayer.Level&amp;&quot; - XP: &quot;&amp;MPPlayer.XP</param>
-                                </action>
                             </actions>
                             <sub-events>
+                                <event-block sid="834519268202621">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="652024376858606" type="MPPlayer">
+                                            <param id="0" name="Instance variable">Prefix</param>
+                                            <param id="1" name="Comparison">1</param>
+                                            <param id="2" name="Value">&quot;&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Set text" sid="651789064907426" type="PlayerUsernameText">
+                                            <param id="0" name="Text">&quot;&lt;&quot;&amp;MPPlayer.Prefix&amp;&quot;&gt; &quot;&amp;Multiplayer.PeerAliasFromID(MPPlayer.MPID)&amp;&quot; - Health: &quot;&amp;MPPlayer.Health&amp;&quot;%&quot;&amp;&quot; - Level: &quot;&amp;MPPlayer.Level&amp;&quot; - XP: &quot;&amp;MPPlayer.XP</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="774398548123789">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="760204575483378" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Set text" sid="757943407849642" type="PlayerUsernameText">
+                                            <param id="0" name="Text">Multiplayer.PeerAliasFromID(MPPlayer.MPID)&amp;&quot; - Health: &quot;&amp;MPPlayer.Health&amp;&quot;%&quot;&amp;&quot; - Level: &quot;&amp;MPPlayer.Level&amp;&quot; - XP: &quot;&amp;MPPlayer.XP</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
                                 <event-block disabled="1" sid="560845547215008">
                                     <conditions>
                                         <condition id="-7" name="Compare instance variable" sid="673608433592106" type="MPPlayer">
@@ -3908,11 +4282,33 @@
                             <param id="0" name="Object">MPPlayer</param>
                         </condition>
                     </conditions>
-                    <actions>
-                        <action id="7" name="Add item" sid="354899559376058" type="PlayersListbox">
-                            <param id="0" name="Text">Multiplayer.PeerAliasFromID(MPPlayer.MPID)&amp;&quot; &quot;&amp;int(Multiplayer.PeerLatency(MPPlayer.MPID))</param>
-                        </action>
-                    </actions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="185335530253082">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="952727580274501" type="MPPlayer">
+                                    <param id="0" name="Instance variable">Prefix</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Value">&quot;&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="7" name="Add item" sid="149855656915475" type="PlayersListbox">
+                                    <param id="0" name="Text">&quot;&lt;&quot;&amp;MPPlayer.Prefix&amp;&quot;&gt; &quot;&amp;Multiplayer.PeerAliasFromID(MPPlayer.MPID)&amp;&quot; &quot;&amp;int(Multiplayer.PeerLatency(MPPlayer.MPID))</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="279240606819422">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="323692644779539" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="7" name="Add item" sid="975282833111889" type="PlayersListbox">
+                                    <param id="0" name="Text">Multiplayer.PeerAliasFromID(MPPlayer.MPID)&amp;&quot; &quot;&amp;int(Multiplayer.PeerLatency(MPPlayer.MPID))</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
             </sub-events>
         </event-block>
@@ -4584,6 +4980,98 @@
                         </event-group>
                     </sub-events>
                 </event-group>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="780762685642385" title="Score">
+            <sub-events>
+                <variable constant="0" name="Count" sid="105013681702035" static="0" type="number">1</variable>
+                <event-block sid="453789283392138">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="644853722373775" type="System">
+                            <param id="0" name="Interval (seconds)">1</param>
+                        </condition>
+                        <condition id="-19" name="Pick all" sid="858940803814507" type="System">
+                            <param id="0" name="Object">ScoreText</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="769933342243782" type="ScoreText" />
+                        <action id="-9" name="Destroy" sid="436773462339121" type="ScoreBackground" />
+                        <action id="-9" name="Set value" sid="198908004451708" type="System">
+                            <param id="0" name="Variable">Count</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="185385550247069">
+                            <conditions>
+                                <condition id="-24" name="For Each (ordered)" sid="756499290757549" type="System">
+                                    <param id="0" name="Object">MPPlayer</param>
+                                    <param id="1" name="Expression">MPPlayer.Score</param>
+                                    <param id="2" name="Order">1</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="207199695741089" type="System">
+                                    <param id="0" name="Variable">Count</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Value">4</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="659094293233301" type="System">
+                                    <param id="0" name="Object to create">ScoreText</param>
+                                    <param id="1" name="Layer">&quot;Log&quot;</param>
+                                    <param id="2" name="X">50</param>
+                                    <param id="3" name="Y">80*Count</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="822196147601689" type="System">
+                                    <param id="0" name="Object to create">ScoreBackground</param>
+                                    <param id="1" name="Layer">&quot;Log&quot;</param>
+                                    <param id="2" name="X">40</param>
+                                    <param id="3" name="Y">80*Count</param>
+                                </action>
+                                <action id="-7" name="Set size" sid="557539133322874" type="ScoreBackground">
+                                    <param id="0" name="Width">ScoreText.Width+10</param>
+                                    <param id="1" name="Height">ScoreText.Height</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="325995139011050">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="900969739497363" type="MPPlayer">
+                                            <param id="0" name="Instance variable">Prefix</param>
+                                            <param id="1" name="Comparison">1</param>
+                                            <param id="2" name="Value">&quot;&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Set text" sid="453767396012194" type="ScoreText">
+                                            <param id="0" name="Text">&quot;&lt;&quot;&amp;MPPlayer.Prefix&amp;&quot;&gt; &quot;&amp;Multiplayer.PeerAliasFromID(MPPlayer.MPID)&amp;&quot;: &quot;&amp;MPPlayer.Score</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="776480983122526">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="780494450327922" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Set text" sid="773222541490335" type="ScoreText">
+                                            <param id="0" name="Text">Multiplayer.PeerAliasFromID(MPPlayer.MPID)&amp;&quot;: &quot;&amp;MPPlayer.Score</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="735645599514254">
+                                    <conditions />
+                                    <actions>
+                                        <action id="-10" name="Add to" sid="141794221006351" type="System">
+                                            <param id="0" name="Variable">Count</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
             </sub-events>
         </event-group>
     </events>

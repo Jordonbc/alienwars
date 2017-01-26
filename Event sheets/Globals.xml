@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Globals</name>
     <events>
+        <variable constant="0" name="Prefix" sid="340408901450685" static="0" type="text"></variable>
         <variable constant="0" name="Password" sid="518828128895035" static="0" type="text"></variable>
         <variable constant="0" name="UserID" sid="793229974982067" static="0" type="number">0</variable>
         <variable constant="0" name="Cheating" sid="614657705458155" static="0" type="number">0</variable>

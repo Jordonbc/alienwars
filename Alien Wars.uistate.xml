@@ -10,9 +10,8 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <display name="HTML5" />
     </configurations>
     <open-tabs>
-        <layout order="0">Main Menu</layout>
-        <event-sheet active="1" order="1">Main Menu Buttons</event-sheet>
-        <event-sheet order="2">GLOBAL EVENTS</event-sheet>
+        <layout order="0">Multiplayer</layout>
+        <event-sheet active="1" order="1">Multiplayer Events</event-sheet>
     </open-tabs>
     <properties>
         <property expanded="1" name="About" />
@@ -44,7 +43,7 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <family expanded="0" name="AllPlayerSprites" />
     </families-expanded>
     <folders-expanded>
-        <folder expanded="0" path="object-folder/" />
+        <folder expanded="1" path="object-folder/" />
         <folder expanded="0" path="object-folder/Buttons/" />
         <folder expanded="0" path="object-folder/Text/" />
         <folder expanded="0" path="object-folder/Text/Button Text/" />
@@ -53,7 +52,7 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="0" path="object-folder/Text/Performance Info/" />
         <folder expanded="0" path="object-folder/Videos/" />
         <folder expanded="0" path="object-folder/Intergrations/" />
-        <folder expanded="0" path="object-folder/Backgrounds/" />
+        <folder expanded="1" path="object-folder/Backgrounds/" />
         <folder expanded="0" path="object-folder/Backgrounds/MP/" />
         <folder expanded="1" path="object-folder/Backgrounds/Menu/" />
         <folder expanded="0" path="object-folder/Settings/" />
@@ -63,19 +62,19 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="0" path="object-folder/Effects/" />
         <folder expanded="0" path="object-folder/Retro/" />
         <folder expanded="1" path="layout-folder/" />
-        <folder expanded="1" path="layout-folder/Menus/" />
+        <folder expanded="0" path="layout-folder/Menus/" />
         <folder expanded="0" path="layout-folder/Multiplayer/" />
         <folder expanded="0" path="layout-folder/Loading/" />
         <folder expanded="0" path="layout-folder/Singleplayer/" />
         <folder expanded="0" path="layout-folder/Bonus/" />
         <folder expanded="1" path="event-folder/" />
         <folder expanded="0" path="event-folder/Loading/" />
-        <folder expanded="0" path="event-folder/Multiplayer/" />
-        <folder expanded="0" path="event-folder/Global/" />
-        <folder expanded="1" path="event-folder/Menus/" />
+        <folder expanded="1" path="event-folder/Multiplayer/" />
+        <folder expanded="1" path="event-folder/Global/" />
+        <folder expanded="0" path="event-folder/Menus/" />
         <folder expanded="0" path="event-folder/Menus/TitleScreen/" />
         <folder expanded="0" path="event-folder/Menus/Main Menu/" />
-        <folder expanded="1" path="event-folder/Menus/Login/" />
+        <folder expanded="0" path="event-folder/Menus/Login/" />
         <folder expanded="0" path="event-folder/Singleplayer/" />
         <folder expanded="0" path="event-folder/Bonus/" />
         <folder expanded="0" path="file-folder/" />
@@ -87,6 +86,7 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="animation-folder/Button/" />
         <folder expanded="1" path="animation-folder/Xbox/" />
         <folder expanded="1" path="animation-folder/MenuBackground/" />
+        <folder expanded="1" path="animation-folder/ScoreBackground/" />
         <folder expanded="1" path="animation-folder/Background/" />
         <folder expanded="1" path="animation-folder/FadeIn/" />
         <folder expanded="1" path="animation-folder/MPPlayer/" />
@@ -103,6 +103,7 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="animation-folder/SettingsSpacer/" />
         <folder expanded="1" path="animation-folder/Explosion8Bit/" />
         <folder expanded="1" path="animation-folder/Enemy/" />
+        <folder expanded="1" path="animation-folder/Asteroid/" />
         <folder expanded="1" path="animation-folder/AlienWarsCreditsLogoMini/" />
         <folder expanded="1" path="animation-folder/AlienWarsCreditsLogoSquare/" />
         <folder expanded="1" path="animation-folder/AlienWarsCreditsLogoWide/" />
