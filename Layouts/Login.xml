@@ -423,6 +423,42 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
+                <instance type="SignUpText" uid="181">
+                    <properties>
+                        <text>New Player? Sign-up here!</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Arial,-35,400,0</font>
+                        <color>0,255,255</color>
+                        <horizontal-alignment>Center</horizontal-alignment>
+                        <vertical-alignment>Bottom</vertical-alignment>
+                        <hotspot>Center</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <effect-instances>
+                        <effect-instance type="AdjustHSL">
+                            <parameters>
+                                <hue>0</hue>
+                                <luminosity>1</luminosity>
+                                <saturation>1</saturation>
+                            </parameters>
+                        </effect-instance>
+                    </effect-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>970</x>
+                        <y>848</y>
+                        <z>0</z>
+                        <width>453</width>
+                        <height>77</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
             </instances>
             <effects />
         </layer>

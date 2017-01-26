@@ -23,21 +23,21 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <property expanded="0" name="Margins" />
         <property expanded="1" name="Effects" />
     </properties>
-    <active-layer name="Player Stats" />
+    <active-layer name="Singleplayer Buttons" />
     <layers>
         <layer locked="1" name="Video" parallax-in-editor="0" visible="1" />
         <layer locked="1" name="Buttons" parallax-in-editor="0" visible="1" />
         <layer locked="1" name="Button Text" parallax-in-editor="0" visible="1" />
         <layer locked="1" name="Title" parallax-in-editor="0" visible="0" />
         <layer locked="1" name="Menu Background" parallax-in-editor="0" visible="1" />
-        <layer locked="1" name="Credits Text" parallax-in-editor="0" visible="1" />
+        <layer locked="1" name="Credits Text" parallax-in-editor="0" visible="0" />
         <layer locked="1" name="Settings Buttons" parallax-in-editor="0" visible="0" />
         <layer locked="1" name="Settings Text" parallax-in-editor="0" visible="0" />
         <layer locked="1" name="Settings UI" parallax-in-editor="0" visible="0" />
         <layer locked="1" name="Play" parallax-in-editor="0" visible="0" />
         <layer locked="1" name="Fade In" parallax-in-editor="0" visible="0" />
-        <layer locked="1" name="Small Menu" parallax-in-editor="0" visible="0" />
-        <layer locked="1" name="Singleplayer Buttons" parallax-in-editor="0" visible="0" />
+        <layer locked="1" name="Small Menu" parallax-in-editor="0" visible="1" />
+        <layer locked="1" name="Singleplayer Buttons" parallax-in-editor="0" visible="1" />
         <layer locked="1" name="Singleplayer Button Text" parallax-in-editor="0" visible="0" />
         <layer locked="1" name="Singleplayer Title" parallax-in-editor="0" visible="0" />
         <layer locked="1" name="Multiplayer Buttons" parallax-in-editor="0" visible="0" />

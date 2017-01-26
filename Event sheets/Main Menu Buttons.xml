@@ -935,11 +935,11 @@
                                         </action>
                                         <action id="-9" name="Set value" sid="406625122583347" type="System">
                                             <param id="0" name="Variable">MaxSelectable</param>
-                                            <param id="1" name="Value">6</param>
+                                            <param id="1" name="Value">7</param>
                                         </action>
                                         <action id="-9" name="Set value" sid="444320429375535" type="System">
                                             <param id="0" name="Variable">Selected</param>
-                                            <param id="1" name="Value">6</param>
+                                            <param id="1" name="Value">7</param>
                                         </action>
                                         <action id="-4" name="Set layer visible" sid="263828786088819" type="System">
                                             <param id="0" name="Layer">&quot;XboxBackButtonRootMenu&quot;</param>
@@ -1182,7 +1182,7 @@
                                 <condition id="-14" name="Compare variable" sid="889339271034529" type="System">
                                     <param id="0" name="Variable">Selected</param>
                                     <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">6</param>
+                                    <param id="2" name="Value">7</param>
                                 </condition>
                             </conditions>
                             <actions>
@@ -1196,15 +1196,15 @@
                                 </action>
                                 <action id="-9" name="Set value" sid="181750902620473" type="System">
                                     <param id="0" name="Variable">MaxSelectable</param>
-                                    <param id="1" name="Value">7</param>
+                                    <param id="1" name="Value">11</param>
                                 </action>
                                 <action id="-9" name="Set value" sid="275857887546998" type="System">
                                     <param id="0" name="Variable">MinSelectable</param>
-                                    <param id="1" name="Value">7</param>
+                                    <param id="1" name="Value">9</param>
                                 </action>
                                 <action id="-9" name="Set value" sid="268476474030672" type="System">
                                     <param id="0" name="Variable">Selected</param>
-                                    <param id="1" name="Value">7</param>
+                                    <param id="1" name="Value">12</param>
                                 </action>
                                 <action id="-4" name="Set layer visible" sid="603406003416352" type="System">
                                     <param id="0" name="Layer">&quot;XboxBackButtonRootMenu&quot;</param>
@@ -1337,7 +1337,7 @@
                 <condition id="17" name="On tap object" sid="730485252369423" type="Touch">
                     <param id="0" name="Object">EasyButtonText</param>
                 </condition>
-                <condition disabled="1" id="6" name="On button pressed" sid="231865537674822" type="Gamepad">
+                <condition id="6" name="On button pressed" sid="231865537674822" type="Gamepad">
                     <param id="0" name="Gamepad">0</param>
                     <param id="1" name="Button">0</param>
                 </condition>
@@ -1350,7 +1350,7 @@
                     </conditions>
                     <actions />
                     <sub-events>
-                        <event-block disabled="1" sid="273377906298900">
+                        <event-block sid="273377906298900">
                             <conditions>
                                 <condition id="3" name="Is button down" sid="211355857325386" type="Gamepad">
                                     <param id="0" name="Gamepad">0</param>
@@ -1359,54 +1359,45 @@
                             </conditions>
                             <actions />
                             <sub-events>
-                                <event-block disabled="1" sid="232854131277450">
+                                <event-block sid="232854131277450">
                                     <conditions>
-                                        <condition id="-9" name="Layer is visible" sid="700226615200488" type="System">
-                                            <param id="0" name="Layer">&quot;Play&quot;</param>
+                                        <condition id="-9" name="Layer is visible" sid="655860067705191" type="System">
+                                            <param id="0" name="Layer">&quot;Singleplayer Buttons&quot;</param>
                                         </condition>
                                         <condition id="-14" name="Compare variable" sid="881308390784983" type="System">
                                             <param id="0" name="Variable">Selected</param>
                                             <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Value">6</param>
+                                            <param id="2" name="Value">11</param>
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="0" name="Call function" sid="802067025383838" type="Function">
+                                        <action id="0" name="Call function" sid="782003376013634" type="Function">
                                             <param id="0" name="Name">&quot;HideAll&quot;</param>
                                             <param id="1" name="Parameter {n}"></param>
                                         </action>
-                                        <action id="0" name="Call function" sid="908112522083494" type="Function">
-                                            <param id="0" name="Name">&quot;Show Singleplayer&quot;</param>
-                                            <param id="1" name="Parameter {n}"></param>
+                                        <action id="-9" name="Set value" sid="804465058862238" type="System">
+                                            <param id="0" name="Variable">NextLayout</param>
+                                            <param id="1" name="Value">&quot;Title Screen&quot;</param>
                                         </action>
-                                        <action id="-9" name="Set value" sid="422382447558287" type="System">
-                                            <param id="0" name="Variable">MaxSelectable</param>
-                                            <param id="1" name="Value">7</param>
-                                        </action>
-                                        <action id="-9" name="Set value" sid="571122396059826" type="System">
-                                            <param id="0" name="Variable">MinSelectable</param>
-                                            <param id="1" name="Value">7</param>
-                                        </action>
-                                        <action id="-9" name="Set value" sid="616465300138842" type="System">
-                                            <param id="0" name="Variable">Selected</param>
-                                            <param id="1" name="Value">7</param>
-                                        </action>
-                                        <action id="-4" name="Set layer visible" sid="453578574874768" type="System">
-                                            <param id="0" name="Layer">&quot;XboxBackButtonRootMenu&quot;</param>
-                                            <param id="1" name="Visibility">1</param>
-                                        </action>
-                                        <action id="-16" name="Wait" sid="757623203686362" type="System">
-                                            <param id="0" name="Seconds">0.3</param>
-                                        </action>
-                                        <action id="0" name="Play" sid="379110163841680" type="Audio">
+                                        <action id="0" name="Play" sid="616147892238693" type="Audio">
                                             <param id="0" name="Audio file">Menu Selection Click</param>
                                             <param id="2" name="Loop">0</param>
                                             <param id="3" name="Volume">0</param>
                                             <param id="1" name="Tag (optional)">&quot;&quot;</param>
                                         </action>
+                                        <action id="-16" name="Wait" sid="249267019486458" type="System">
+                                            <param id="0" name="Seconds">0.3</param>
+                                        </action>
+                                        <action id="-4" name="Set layer visible" sid="750664947042368" type="System">
+                                            <param id="0" name="Layer">&quot;XboxBackButtonRootMenu&quot;</param>
+                                            <param id="1" name="Visibility">0</param>
+                                        </action>
+                                        <action id="-2" name="Go to layout" sid="534040994784428" type="System">
+                                            <param id="0" name="Layout">Loading</param>
+                                        </action>
                                     </actions>
                                     <sub-events>
-                                        <event-block disabled="1" sid="903277458314707">
+                                        <event-block sid="903277458314707">
                                             <conditions>
                                                 <condition id="-20" inverted="1" name="Is on mobile device" sid="142194262841917" type="System" />
                                             </conditions>
@@ -1417,7 +1408,7 @@
                                                 </action>
                                             </actions>
                                         </event-block>
-                                        <event-block disabled="1" sid="924420436312576">
+                                        <event-block sid="924420436312576">
                                             <conditions>
                                                 <condition id="-14" name="Pick by unique ID" sid="773564160255627" type="Button">
                                                     <param id="0" name="Unique ID">21</param>
@@ -1471,9 +1462,6 @@
                                             <param id="2" name="Loop">0</param>
                                             <param id="3" name="Volume">0</param>
                                             <param id="1" name="Tag (optional)">&quot;&quot;</param>
-                                        </action>
-                                        <action id="-16" name="Wait" sid="746415893434382" type="System">
-                                            <param id="0" name="Seconds">0.5</param>
                                         </action>
                                         <action id="-16" name="Wait" sid="388772759202870" type="System">
                                             <param id="0" name="Seconds">0.3</param>
@@ -1536,7 +1524,7 @@
                 <condition id="17" name="On tap object" sid="395707445442916" type="Touch">
                     <param id="0" name="Object">MediumButtonText</param>
                 </condition>
-                <condition disabled="1" id="6" name="On button pressed" sid="773170567188981" type="Gamepad">
+                <condition id="6" name="On button pressed" sid="773170567188981" type="Gamepad">
                     <param id="0" name="Gamepad">0</param>
                     <param id="1" name="Button">0</param>
                 </condition>
@@ -1549,7 +1537,7 @@
                     </conditions>
                     <actions />
                     <sub-events>
-                        <event-block disabled="1" sid="722994664021868">
+                        <event-block sid="722994664021868">
                             <conditions>
                                 <condition id="3" name="Is button down" sid="503092407669373" type="Gamepad">
                                     <param id="0" name="Gamepad">0</param>
@@ -1558,54 +1546,45 @@
                             </conditions>
                             <actions />
                             <sub-events>
-                                <event-block disabled="1" sid="379390861510194">
+                                <event-block sid="379390861510194">
                                     <conditions>
-                                        <condition id="-9" name="Layer is visible" sid="297143910644175" type="System">
-                                            <param id="0" name="Layer">&quot;Play&quot;</param>
+                                        <condition id="-9" name="Layer is visible" sid="886608613155830" type="System">
+                                            <param id="0" name="Layer">&quot;Singleplayer Buttons&quot;</param>
                                         </condition>
                                         <condition id="-14" name="Compare variable" sid="192559638613615" type="System">
                                             <param id="0" name="Variable">Selected</param>
                                             <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Value">6</param>
+                                            <param id="2" name="Value">10</param>
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="0" name="Call function" sid="382711914666705" type="Function">
+                                        <action id="0" name="Call function" sid="801045562657595" type="Function">
                                             <param id="0" name="Name">&quot;HideAll&quot;</param>
                                             <param id="1" name="Parameter {n}"></param>
                                         </action>
-                                        <action id="0" name="Call function" sid="454275105348397" type="Function">
-                                            <param id="0" name="Name">&quot;Show Singleplayer&quot;</param>
-                                            <param id="1" name="Parameter {n}"></param>
+                                        <action id="-9" name="Set value" sid="583206383063107" type="System">
+                                            <param id="0" name="Variable">NextLayout</param>
+                                            <param id="1" name="Value">&quot;Title Screen&quot;</param>
                                         </action>
-                                        <action id="-9" name="Set value" sid="583900831826335" type="System">
-                                            <param id="0" name="Variable">MaxSelectable</param>
-                                            <param id="1" name="Value">7</param>
-                                        </action>
-                                        <action id="-9" name="Set value" sid="420679673857251" type="System">
-                                            <param id="0" name="Variable">MinSelectable</param>
-                                            <param id="1" name="Value">7</param>
-                                        </action>
-                                        <action id="-9" name="Set value" sid="583336236692559" type="System">
-                                            <param id="0" name="Variable">Selected</param>
-                                            <param id="1" name="Value">7</param>
-                                        </action>
-                                        <action id="-4" name="Set layer visible" sid="565179930508227" type="System">
-                                            <param id="0" name="Layer">&quot;XboxBackButtonRootMenu&quot;</param>
-                                            <param id="1" name="Visibility">1</param>
-                                        </action>
-                                        <action id="-16" name="Wait" sid="966000734925603" type="System">
-                                            <param id="0" name="Seconds">0.3</param>
-                                        </action>
-                                        <action id="0" name="Play" sid="594702239844524" type="Audio">
+                                        <action id="0" name="Play" sid="142213993718619" type="Audio">
                                             <param id="0" name="Audio file">Menu Selection Click</param>
                                             <param id="2" name="Loop">0</param>
                                             <param id="3" name="Volume">0</param>
                                             <param id="1" name="Tag (optional)">&quot;&quot;</param>
                                         </action>
+                                        <action id="-16" name="Wait" sid="273353476666151" type="System">
+                                            <param id="0" name="Seconds">0.3</param>
+                                        </action>
+                                        <action id="-4" name="Set layer visible" sid="244554253505893" type="System">
+                                            <param id="0" name="Layer">&quot;XboxBackButtonRootMenu&quot;</param>
+                                            <param id="1" name="Visibility">0</param>
+                                        </action>
+                                        <action id="-2" name="Go to layout" sid="680193461091339" type="System">
+                                            <param id="0" name="Layout">Loading</param>
+                                        </action>
                                     </actions>
                                     <sub-events>
-                                        <event-block disabled="1" sid="985382600848738">
+                                        <event-block sid="985382600848738">
                                             <conditions>
                                                 <condition id="-20" inverted="1" name="Is on mobile device" sid="836207191058508" type="System" />
                                             </conditions>
@@ -1616,7 +1595,7 @@
                                                 </action>
                                             </actions>
                                         </event-block>
-                                        <event-block disabled="1" sid="993481852201061">
+                                        <event-block sid="993481852201061">
                                             <conditions>
                                                 <condition id="-14" name="Pick by unique ID" sid="153467608282647" type="Button">
                                                     <param id="0" name="Unique ID">21</param>
@@ -1732,7 +1711,7 @@
                 <condition id="17" name="On tap object" sid="836100295901599" type="Touch">
                     <param id="0" name="Object">HardButtonText</param>
                 </condition>
-                <condition disabled="1" id="6" name="On button pressed" sid="240635975988665" type="Gamepad">
+                <condition id="6" name="On button pressed" sid="240635975988665" type="Gamepad">
                     <param id="0" name="Gamepad">0</param>
                     <param id="1" name="Button">0</param>
                 </condition>
@@ -1745,7 +1724,7 @@
                     </conditions>
                     <actions />
                     <sub-events>
-                        <event-block disabled="1" sid="955803257358027">
+                        <event-block sid="955803257358027">
                             <conditions>
                                 <condition id="3" name="Is button down" sid="822067511231882" type="Gamepad">
                                     <param id="0" name="Gamepad">0</param>
@@ -1754,54 +1733,45 @@
                             </conditions>
                             <actions />
                             <sub-events>
-                                <event-block disabled="1" sid="521943875114444">
+                                <event-block sid="521943875114444">
                                     <conditions>
-                                        <condition id="-9" name="Layer is visible" sid="917906433778840" type="System">
-                                            <param id="0" name="Layer">&quot;Play&quot;</param>
+                                        <condition id="-9" name="Layer is visible" sid="620783702427768" type="System">
+                                            <param id="0" name="Layer">&quot;Singleplayer Buttons&quot;</param>
                                         </condition>
                                         <condition id="-14" name="Compare variable" sid="594688051269034" type="System">
                                             <param id="0" name="Variable">Selected</param>
                                             <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Value">6</param>
+                                            <param id="2" name="Value">9</param>
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="0" name="Call function" sid="253817323750585" type="Function">
+                                        <action id="0" name="Call function" sid="305605374685206" type="Function">
                                             <param id="0" name="Name">&quot;HideAll&quot;</param>
                                             <param id="1" name="Parameter {n}"></param>
                                         </action>
-                                        <action id="0" name="Call function" sid="571481539764454" type="Function">
-                                            <param id="0" name="Name">&quot;Show Singleplayer&quot;</param>
-                                            <param id="1" name="Parameter {n}"></param>
+                                        <action id="-9" name="Set value" sid="854682998816641" type="System">
+                                            <param id="0" name="Variable">NextLayout</param>
+                                            <param id="1" name="Value">&quot;Title Screen&quot;</param>
                                         </action>
-                                        <action id="-9" name="Set value" sid="246931040536604" type="System">
-                                            <param id="0" name="Variable">MaxSelectable</param>
-                                            <param id="1" name="Value">7</param>
-                                        </action>
-                                        <action id="-9" name="Set value" sid="450753553762000" type="System">
-                                            <param id="0" name="Variable">MinSelectable</param>
-                                            <param id="1" name="Value">7</param>
-                                        </action>
-                                        <action id="-9" name="Set value" sid="389431843514532" type="System">
-                                            <param id="0" name="Variable">Selected</param>
-                                            <param id="1" name="Value">7</param>
-                                        </action>
-                                        <action id="-4" name="Set layer visible" sid="975231421617837" type="System">
-                                            <param id="0" name="Layer">&quot;XboxBackButtonRootMenu&quot;</param>
-                                            <param id="1" name="Visibility">1</param>
-                                        </action>
-                                        <action id="-16" name="Wait" sid="701918933908308" type="System">
-                                            <param id="0" name="Seconds">0.3</param>
-                                        </action>
-                                        <action id="0" name="Play" sid="120804954768613" type="Audio">
+                                        <action id="0" name="Play" sid="231751652591936" type="Audio">
                                             <param id="0" name="Audio file">Menu Selection Click</param>
                                             <param id="2" name="Loop">0</param>
                                             <param id="3" name="Volume">0</param>
                                             <param id="1" name="Tag (optional)">&quot;&quot;</param>
                                         </action>
+                                        <action id="-16" name="Wait" sid="206307385603606" type="System">
+                                            <param id="0" name="Seconds">0.3</param>
+                                        </action>
+                                        <action id="-4" name="Set layer visible" sid="449736038537805" type="System">
+                                            <param id="0" name="Layer">&quot;XboxBackButtonRootMenu&quot;</param>
+                                            <param id="1" name="Visibility">0</param>
+                                        </action>
+                                        <action id="-2" name="Go to layout" sid="746491259685854" type="System">
+                                            <param id="0" name="Layout">Loading</param>
+                                        </action>
                                     </actions>
                                     <sub-events>
-                                        <event-block disabled="1" sid="540641598013381">
+                                        <event-block sid="540641598013381">
                                             <conditions>
                                                 <condition id="-20" inverted="1" name="Is on mobile device" sid="818587864829067" type="System" />
                                             </conditions>
@@ -1812,7 +1782,7 @@
                                                 </action>
                                             </actions>
                                         </event-block>
-                                        <event-block disabled="1" sid="429438467067924">
+                                        <event-block sid="429438467067924">
                                             <conditions>
                                                 <condition id="-14" name="Pick by unique ID" sid="727116050162308" type="Button">
                                                     <param id="0" name="Unique ID">21</param>
@@ -2031,35 +2001,28 @@
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="-9" name="Set value" sid="850548170595167" type="System">
-                                    <param id="0" name="Variable">MinSelectable</param>
-                                    <param id="1" name="Value">7</param>
-                                </action>
-                                <action id="-9" name="Set value" sid="144517858471537" type="System">
-                                    <param id="0" name="Variable">MaxSelectable</param>
-                                    <param id="1" name="Value">7</param>
-                                </action>
-                                <action id="-9" name="Set value" sid="598753612201200" type="System">
-                                    <param id="0" name="Variable">Selected</param>
-                                    <param id="1" name="Value">7</param>
-                                </action>
-                                <action id="-4" name="Set layer visible" sid="356384470445643" type="System">
-                                    <param id="0" name="Layer">&quot;XboxBackButtonRootMenu&quot;</param>
-                                    <param id="1" name="Visibility">1</param>
-                                </action>
-                                <action id="-16" name="Wait" sid="726864628431746" type="System">
-                                    <param id="0" name="Seconds">0</param>
-                                </action>
                                 <action id="0" name="Call function" sid="594535084046641" type="Function">
                                     <param id="0" name="Name">&quot;HideAll&quot;</param>
                                     <param id="1" name="Parameter {n}"></param>
                                 </action>
-                                <action id="0" name="Set text" sid="661148914917497" type="MPUsernameBox">
-                                    <param id="0" name="Text">MP_USERNAME</param>
+                                <action id="-16" name="Wait" sid="726864628431746" type="System">
+                                    <param id="0" name="Seconds">0</param>
                                 </action>
-                                <action id="-9" name="Set value" sid="638972741733793" type="System">
-                                    <param id="0" name="Variable">ROOM</param>
-                                    <param id="1" name="Value">&quot;MMO&quot;</param>
+                                <action id="-9" name="Set value" sid="850548170595167" type="System">
+                                    <param id="0" name="Variable">MinSelectable</param>
+                                    <param id="1" name="Value">8</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="144517858471537" type="System">
+                                    <param id="0" name="Variable">MaxSelectable</param>
+                                    <param id="1" name="Value">8</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="598753612201200" type="System">
+                                    <param id="0" name="Variable">Selected</param>
+                                    <param id="1" name="Value">8</param>
+                                </action>
+                                <action id="-4" name="Set layer visible" sid="356384470445643" type="System">
+                                    <param id="0" name="Layer">&quot;XboxBackButtonRootMenu&quot;</param>
+                                    <param id="1" name="Visibility">1</param>
                                 </action>
                                 <action id="0" name="Call function" sid="490759180221821" type="Function">
                                     <param id="0" name="Name">&quot;Show Multiplayer&quot;</param>
@@ -2128,13 +2091,6 @@
                                 <action id="0" name="Call function" sid="684603502690866" type="Function">
                                     <param id="0" name="Name">&quot;HideAll&quot;</param>
                                     <param id="1" name="Parameter {n}"></param>
-                                </action>
-                                <action id="0" name="Set text" sid="786683568285976" type="MPUsernameBox">
-                                    <param id="0" name="Text">MP_USERNAME</param>
-                                </action>
-                                <action id="-9" name="Set value" sid="774693605914047" type="System">
-                                    <param id="0" name="Variable">ROOM</param>
-                                    <param id="1" name="Value">&quot;MMO&quot;</param>
                                 </action>
                                 <action id="0" name="Call function" sid="146912483484897" type="Function">
                                     <param id="0" name="Name">&quot;Show Multiplayer&quot;</param>
@@ -2304,7 +2260,7 @@
                                 <condition id="-14" name="Compare variable" sid="238867302539251" type="System">
                                     <param id="0" name="Variable">Selected</param>
                                     <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">7</param>
+                                    <param id="2" name="Value">8</param>
                                 </condition>
                             </conditions>
                             <actions>
@@ -2491,7 +2447,7 @@
                 </event-block>
             </sub-events>
         </event-block>
-        <event-block any="1" sid="612911163000256">
+        <event-block any="1" disabled="1" sid="612911163000256">
             <conditions>
                 <condition id="6" name="On object clicked" sid="696629383434143" type="Mouse">
                     <param id="0" name="Mouse button">0</param>
@@ -2613,13 +2569,13 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <event-block sid="988618417871847">
+                <event-block disabled="1" sid="988618417871847">
                     <conditions>
                         <condition id="-22" name="Else" sid="213544646939809" type="System" />
                     </conditions>
                     <actions />
                     <sub-events>
-                        <event-block sid="590107886721702">
+                        <event-block disabled="1" sid="590107886721702">
                             <conditions>
                                 <condition id="-9" name="Layer is visible" sid="829999776275683" type="System">
                                     <param id="0" name="Layer">&quot;Play&quot;</param>
@@ -2706,7 +2662,7 @@
                                 </action>
                             </actions>
                             <sub-events>
-                                <event-block sid="515152659474016">
+                                <event-block disabled="1" sid="515152659474016">
                                     <conditions>
                                         <condition id="3" name="For each element" sid="147663841555763" type="Letters">
                                             <param id="0" name="Axes">2</param>
@@ -2724,7 +2680,7 @@
                                         </action>
                                     </actions>
                                 </event-block>
-                                <event-block sid="469676708772831">
+                                <event-block disabled="1" sid="469676708772831">
                                     <conditions />
                                     <actions>
                                         <action id="0" name="Set text" sid="725313846274463" type="RoomTextbox">
@@ -2772,14 +2728,14 @@
                 <condition id="17" name="On tap object" sid="812426283366351" type="Touch">
                     <param id="0" name="Object">StatsButtonText</param>
                 </condition>
-                <condition disabled="1" id="6" name="On button pressed" sid="889179622742364" type="Gamepad">
+                <condition id="6" name="On button pressed" sid="889179622742364" type="Gamepad">
                     <param id="0" name="Gamepad">0</param>
                     <param id="1" name="Button">0</param>
                 </condition>
             </conditions>
             <actions />
             <sub-events>
-                <event-block disabled="1" sid="809913819168365">
+                <event-block sid="809913819168365">
                     <conditions>
                         <condition id="3" name="Is button down" sid="178850085494329" type="Gamepad">
                             <param id="0" name="Gamepad">0</param>
@@ -2788,67 +2744,141 @@
                     </conditions>
                     <actions />
                     <sub-events>
-                        <event-block disabled="1" sid="133551243539557">
+                        <event-block sid="133551243539557">
                             <conditions>
                                 <condition id="-9" name="Layer is visible" sid="399085834438021" type="System">
-                                    <param id="0" name="Layer">&quot;Multiplayer Buttons&quot;</param>
+                                    <param id="0" name="Layer">&quot;Play&quot;</param>
                                 </condition>
-                                <condition id="-8" name="Compare two values" sid="161299371197068" type="System">
-                                    <param id="0" name="First value">len(MPUsernameBox.Text)</param>
-                                    <param id="1" name="Comparison">5</param>
-                                    <param id="2" name="Second value">4</param>
-                                </condition>
-                                <condition id="12" name="Supports multiplayer" sid="584333293939166" type="Multiplayer" />
                                 <condition id="-14" name="Compare variable" sid="460899857775476" type="System">
                                     <param id="0" name="Variable">Selected</param>
                                     <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">7</param>
+                                    <param id="2" name="Value">6</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="-9" name="Set value" sid="989824811624745" type="System">
-                                    <param id="0" name="Variable">MP_USERNAME</param>
-                                    <param id="1" name="Value">MPUsernameBox.Text</param>
-                                </action>
-                                <action id="0" name="Set item" sid="514637045277212" type="LocalStorage">
-                                    <param id="0" name="Key">&quot;MP USERNAME&quot;</param>
-                                    <param id="1" name="Value">MP_USERNAME</param>
-                                </action>
-                                <action id="-9" name="Set value" sid="727674339260630" type="System">
-                                    <param id="0" name="Variable">ROOM</param>
-                                    <param id="1" name="Value">RoomTextbox.Text</param>
-                                </action>
-                                <action id="0" name="Call function" sid="204847785750616" type="Function">
-                                    <param id="0" name="Name">&quot;HideAll&quot;</param>
-                                    <param id="1" name="Parameter {n}"></param>
-                                </action>
-                                <action id="0" name="Call function" sid="830033290242457" type="Function">
-                                    <param id="0" name="Name">&quot;Hide Multiplayer&quot;</param>
-                                    <param id="1" name="Parameter {n}"></param>
-                                </action>
-                                <action id="-9" name="Set value" sid="704718836386225" type="System">
-                                    <param id="0" name="Variable">MPRestart</param>
-                                    <param id="1" name="Value">1</param>
-                                </action>
-                                <action id="-16" name="Wait" sid="200326421743259" type="System">
-                                    <param id="0" name="Seconds">1</param>
-                                </action>
-                                <action id="-9" name="Set value" sid="786258347361527" type="System">
-                                    <param id="0" name="Variable">NextLayout</param>
-                                    <param id="1" name="Value">&quot;Multiplayer&quot;</param>
-                                </action>
-                                <action id="-2" name="Go to layout" sid="833455127283551" type="System">
-                                    <param id="0" name="Layout">Loading</param>
-                                </action>
-                                <action id="0" name="Play" sid="936978130299691" type="Audio">
+                                <action id="0" name="Play" sid="527775826877395" type="Audio">
                                     <param id="0" name="Audio file">Menu Selection Click</param>
                                     <param id="2" name="Loop">0</param>
                                     <param id="3" name="Volume">0</param>
                                     <param id="1" name="Tag (optional)">&quot;&quot;</param>
                                 </action>
+                                <action id="0" name="Call function" sid="389824485226175" type="Function">
+                                    <param id="0" name="Name">&quot;HideAll&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                                <action id="-16" name="Wait" sid="576031823894985" type="System">
+                                    <param id="0" name="Seconds">0</param>
+                                </action>
+                                <action id="0" name="Call function" sid="887139006700711" type="Function">
+                                    <param id="0" name="Name">&quot;Show Stats&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                                <action id="0" name="Set text" sid="160303098635806" type="StatsTitleText">
+                                    <param id="0" name="Text">uppercase(MP_USERNAME)&amp;&quot;&apos;S STATS&quot;</param>
+                                </action>
+                                <action id="0" name="Set text" sid="353998339354327" type="StatsLevelText">
+                                    <param id="0" name="Text">&quot;LEVEL: &quot;&amp;MPLevel</param>
+                                </action>
+                                <action id="0" name="Set text" sid="648004502421498" type="MPUsernameBox">
+                                    <param id="0" name="Text">MP_USERNAME</param>
+                                </action>
+                                <action id="0" name="Set text" sid="687053868911270" type="StatsTotalKillsText">
+                                    <param id="0" name="Text">&quot;TOTAL KILLS: &quot;&amp;TotalKills</param>
+                                </action>
+                                <action id="0" name="Set text" sid="472755412663998" type="StatsTotalDeathsText">
+                                    <param id="0" name="Text">&quot;TOTAL DEATHS: &quot;&amp;TotalDeaths</param>
+                                </action>
+                                <action id="0" name="Request URL" sid="964722608501591" type="AJAX">
+                                    <param id="0" name="Tag">&quot;Level&quot;</param>
+                                    <param id="1" name="URL">&quot;http://jordan.bnettech.pw/getLevel.php?fname=&quot;&amp;MP_USERNAME&amp;&quot;&amp;fpass=&quot;&amp;Password</param>
+                                </action>
                             </actions>
                             <sub-events>
-                                <event-block disabled="1" sid="821161457773106">
+                                <event-block sid="816137346325590">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="670171747711160" type="System">
+                                            <param id="0" name="Variable">SpaceshipURL</param>
+                                            <param id="1" name="Comparison">1</param>
+                                            <param id="2" name="Value">&quot;&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="5" name="Set frame" sid="982351585875013" type="AllPlayerSprites">
+                                            <param id="0" name="Frame number">0</param>
+                                        </action>
+                                        <action id="10" name="Load image from URL" sid="718615989301989" type="AllPlayerSprites">
+                                            <param id="0" name="URI">SpaceshipURL</param>
+                                            <param id="1" name="Size">1</param>
+                                        </action>
+                                        <action id="5" name="Set frame" sid="910380492290740" type="AllPlayerSprites">
+                                            <param id="0" name="Frame number">1</param>
+                                        </action>
+                                        <action id="10" name="Load image from URL" sid="147584321129347" type="AllPlayerSprites">
+                                            <param id="0" name="URI">SpaceshipURL</param>
+                                            <param id="1" name="Size">1</param>
+                                        </action>
+                                        <action id="5" name="Set frame" sid="688687768489064" type="AllPlayerSprites">
+                                            <param id="0" name="Frame number">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="577873596699747">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="284932632530203" type="System">
+                                            <param id="0" name="Variable">SpaceshipURL</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="5" name="Set frame" sid="685169914619285" type="AllPlayerSprites">
+                                            <param id="0" name="Frame number">0</param>
+                                        </action>
+                                        <action id="10" name="Load image from URL" sid="590419845431853" type="AllPlayerSprites">
+                                            <param id="0" name="URI">&quot;https://cdn.rawgit.com/Jordonbc/alienwars/252d8777/Animations/Player/Default/000.png&quot;</param>
+                                            <param id="1" name="Size">1</param>
+                                        </action>
+                                        <action id="5" name="Set frame" sid="848198256177151" type="AllPlayerSprites">
+                                            <param id="0" name="Frame number">1</param>
+                                        </action>
+                                        <action id="10" name="Load image from URL" sid="408544621192159" type="AllPlayerSprites">
+                                            <param id="0" name="URI">&quot;https://cdn.rawgit.com/Jordonbc/alienwars/252d8777/Animations/Player/Default/001.png&quot;</param>
+                                            <param id="1" name="Size">1</param>
+                                        </action>
+                                        <action id="5" name="Set frame" sid="408215493507010" type="AllPlayerSprites">
+                                            <param id="0" name="Frame number">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="632808591058231">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="523630052926657" type="System">
+                                            <param id="0" name="Variable">Cheating</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Set text" sid="546501496913239" type="StatsLevelText">
+                                            <param id="0" name="Text">&quot;LEVEL: &quot;&amp;MPLevel&amp;&quot; (Cheating)&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="553352127192162">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="936822636889105" type="System">
+                                            <param id="0" name="Variable">MPLevel</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">50</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Set text" sid="898243982987231" type="StatsLevelText">
+                                            <param id="0" name="Text">&quot;LEVEL: &quot;&amp;MPLevel&amp;&quot; (MAX LEVEL)&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="821161457773106">
                                     <conditions>
                                         <condition id="-20" inverted="1" name="Is on mobile device" sid="575775088353590" type="System" />
                                     </conditions>
@@ -2859,7 +2889,7 @@
                                         </action>
                                     </actions>
                                 </event-block>
-                                <event-block disabled="1" sid="888984195633686">
+                                <event-block sid="888984195633686">
                                     <conditions>
                                         <condition id="-14" name="Pick by unique ID" sid="192018955034396" type="Button">
                                             <param id="0" name="Unique ID">61</param>
@@ -3052,7 +3082,7 @@
                 </event-block>
             </sub-events>
         </event-block>
-        <event-block any="1" sid="204067647740606">
+        <event-block any="1" disabled="1" sid="204067647740606">
             <conditions>
                 <condition id="6" name="On object clicked" sid="906829602797810" type="Mouse">
                     <param id="0" name="Mouse button">0</param>
@@ -3069,7 +3099,7 @@
             </conditions>
             <actions />
             <sub-events>
-                <event-block sid="373447888482401">
+                <event-block disabled="1" sid="373447888482401">
                     <conditions>
                         <condition id="12" name="Supports multiplayer" sid="388297576485067" type="Multiplayer" />
                     </conditions>
@@ -3183,13 +3213,13 @@
                                 </event-block>
                             </sub-events>
                         </event-block>
-                        <event-block sid="251839798110923">
+                        <event-block disabled="1" sid="251839798110923">
                             <conditions>
                                 <condition id="-22" name="Else" sid="111052153191456" type="System" />
                             </conditions>
                             <actions />
                             <sub-events>
-                                <event-block sid="294217677302602">
+                                <event-block disabled="1" sid="294217677302602">
                                     <conditions>
                                         <condition id="-9" name="Layer is visible" sid="583757954140107" type="System">
                                             <param id="0" name="Layer">&quot;Server&quot;</param>
@@ -3314,261 +3344,6 @@
                             </actions>
                         </event-block>
                     </sub-events>
-                </event-block>
-            </sub-events>
-        </event-block>
-        <event-block sid="455539571007324">
-            <conditions>
-                <condition id="6" name="On button pressed" sid="823433617296379" type="Gamepad">
-                    <param id="0" name="Gamepad">0</param>
-                    <param id="1" name="Button">1</param>
-                </condition>
-            </conditions>
-            <actions />
-            <sub-events>
-                <event-block sid="764700503564237">
-                    <conditions>
-                        <condition id="-9" name="Layer is visible" sid="754909241514239" type="System">
-                            <param id="0" name="Layer">&quot;Play&quot;</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="0" name="Call function" sid="286117146000478" type="Function">
-                            <param id="0" name="Name">&quot;HideAll&quot;</param>
-                            <param id="1" name="Parameter {n}"></param>
-                        </action>
-                        <action id="-9" name="Set value" sid="301214027984258" type="System">
-                            <param id="0" name="Variable">Selected</param>
-                            <param id="1" name="Value">3</param>
-                        </action>
-                        <action id="-9" name="Set value" sid="716624040704789" type="System">
-                            <param id="0" name="Variable">MaxSelectable</param>
-                            <param id="1" name="Value">3</param>
-                        </action>
-                        <action id="-9" name="Set value" sid="412275078353245" type="System">
-                            <param id="0" name="Variable">MinSelectable</param>
-                            <param id="1" name="Value">0</param>
-                        </action>
-                        <action id="-4" name="Set layer visible" sid="352264733252683" type="System">
-                            <param id="0" name="Layer">&quot;XboxBackButtonRootMenu&quot;</param>
-                            <param id="1" name="Visibility">0</param>
-                        </action>
-                        <action id="0" name="Play" sid="664283703390625" type="Audio">
-                            <param id="0" name="Audio file">Menu Selection Click</param>
-                            <param id="2" name="Loop">0</param>
-                            <param id="3" name="Volume">0</param>
-                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="732329576282037">
-                    <conditions>
-                        <condition id="-9" name="Layer is visible" sid="544493123069004" type="System">
-                            <param id="0" name="Layer">&quot;Credits Text&quot;</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="0" name="Call function" sid="372062688866809" type="Function">
-                            <param id="0" name="Name">&quot;HideAll&quot;</param>
-                            <param id="1" name="Parameter {n}"></param>
-                        </action>
-                        <action id="-9" name="Set value" sid="150196654292392" type="System">
-                            <param id="0" name="Variable">MaxSelectable</param>
-                            <param id="1" name="Value">3</param>
-                        </action>
-                        <action id="-9" name="Set value" sid="676172194703351" type="System">
-                            <param id="0" name="Variable">MinSelectable</param>
-                            <param id="1" name="Value">0</param>
-                        </action>
-                        <action id="-9" name="Set value" sid="521532471761857" type="System">
-                            <param id="0" name="Variable">Selected</param>
-                            <param id="1" name="Value">1</param>
-                        </action>
-                        <action id="-4" name="Set layer visible" sid="842774067885427" type="System">
-                            <param id="0" name="Layer">&quot;XboxBackButtonRootMenu&quot;</param>
-                            <param id="1" name="Visibility">0</param>
-                        </action>
-                        <action id="0" name="Play" sid="845903275960170" type="Audio">
-                            <param id="0" name="Audio file">Menu Selection Click</param>
-                            <param id="2" name="Loop">0</param>
-                            <param id="3" name="Volume">0</param>
-                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="553563722764750">
-                    <conditions>
-                        <condition id="-9" name="Layer is visible" sid="664814742485469" type="System">
-                            <param id="0" name="Layer">&quot;Settings Buttons&quot;</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="0" name="Call function" sid="915811010965938" type="Function">
-                            <param id="0" name="Name">&quot;HideAll&quot;</param>
-                            <param id="1" name="Parameter {n}"></param>
-                        </action>
-                        <action id="-9" name="Set value" sid="259639266359481" type="System">
-                            <param id="0" name="Variable">Selected</param>
-                            <param id="1" name="Value">2</param>
-                        </action>
-                        <action id="-9" name="Set value" sid="525920252764007" type="System">
-                            <param id="0" name="Variable">MaxSelectable</param>
-                            <param id="1" name="Value">3</param>
-                        </action>
-                        <action id="-9" name="Set value" sid="935305537780431" type="System">
-                            <param id="0" name="Variable">MinSelectable</param>
-                            <param id="1" name="Value">0</param>
-                        </action>
-                        <action id="-4" name="Set layer visible" sid="193575784101248" type="System">
-                            <param id="0" name="Layer">&quot;XboxBackButtonRootMenu&quot;</param>
-                            <param id="1" name="Visibility">0</param>
-                        </action>
-                        <action id="0" name="Play" sid="267732539549801" type="Audio">
-                            <param id="0" name="Audio file">Menu Selection Click</param>
-                            <param id="2" name="Loop">0</param>
-                            <param id="3" name="Volume">0</param>
-                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="537004967056363">
-                    <conditions>
-                        <condition id="-9" name="Layer is visible" sid="646410212206870" type="System">
-                            <param id="0" name="Layer">&quot;Singleplayer Buttons&quot;</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="0" name="Call function" sid="150996185421031" type="Function">
-                            <param id="0" name="Name">&quot;HideAll&quot;</param>
-                            <param id="1" name="Parameter {n}"></param>
-                        </action>
-                        <action id="0" name="Call function" sid="439499109242423" type="Function">
-                            <param id="0" name="Name">&quot;Hide Singleplayer&quot;</param>
-                            <param id="1" name="Parameter {n}"></param>
-                        </action>
-                        <action id="-9" name="Set value" sid="308181721426693" type="System">
-                            <param id="0" name="Variable">Selected</param>
-                            <param id="1" name="Value">3</param>
-                        </action>
-                        <action id="-9" name="Set value" sid="435190974159449" type="System">
-                            <param id="0" name="Variable">MaxSelectable</param>
-                            <param id="1" name="Value">3</param>
-                        </action>
-                        <action id="-9" name="Set value" sid="812427050344374" type="System">
-                            <param id="0" name="Variable">MinSelectable</param>
-                            <param id="1" name="Value">0</param>
-                        </action>
-                        <action id="-4" name="Set layer visible" sid="812466607379597" type="System">
-                            <param id="0" name="Layer">&quot;XboxBackButtonRootMenu&quot;</param>
-                            <param id="1" name="Visibility">0</param>
-                        </action>
-                        <action id="0" name="Play" sid="810929283230788" type="Audio">
-                            <param id="0" name="Audio file">Menu Selection Click</param>
-                            <param id="2" name="Loop">0</param>
-                            <param id="3" name="Volume">0</param>
-                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
-                        </action>
-                    </actions>
-                    <sub-events>
-                        <event-block sid="736788648528464">
-                            <conditions>
-                                <condition id="-20" inverted="1" name="Is on mobile device" sid="936228931896495" type="System" />
-                            </conditions>
-                            <actions>
-                                <action id="0" name="Call function" sid="914105363596020" type="Function">
-                                    <param id="0" name="Name">&quot;Disable Singleplayer Blur&quot;</param>
-                                    <param id="1" name="Parameter {n}"></param>
-                                </action>
-                            </actions>
-                        </event-block>
-                    </sub-events>
-                </event-block>
-                <event-block sid="266082515653316">
-                    <conditions>
-                        <condition id="-9" name="Layer is visible" sid="976365577101648" type="System">
-                            <param id="0" name="Layer">&quot;Multiplayer Buttons&quot;</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="0" name="Call function" sid="183568213667479" type="Function">
-                            <param id="0" name="Name">&quot;HideAll&quot;</param>
-                            <param id="1" name="Parameter {n}"></param>
-                        </action>
-                        <action id="0" name="Call function" sid="429545820976422" type="Function">
-                            <param id="0" name="Name">&quot;Hide Multiplayer&quot;</param>
-                            <param id="1" name="Parameter {n}"></param>
-                        </action>
-                        <action id="-9" name="Set value" sid="516987502453136" type="System">
-                            <param id="0" name="Variable">Selected</param>
-                            <param id="1" name="Value">3</param>
-                        </action>
-                        <action id="-9" name="Set value" sid="522875345395793" type="System">
-                            <param id="0" name="Variable">MaxSelectable</param>
-                            <param id="1" name="Value">3</param>
-                        </action>
-                        <action id="-9" name="Set value" sid="974614834576212" type="System">
-                            <param id="0" name="Variable">MinSelectable</param>
-                            <param id="1" name="Value">0</param>
-                        </action>
-                        <action id="-4" name="Set layer visible" sid="308194099035736" type="System">
-                            <param id="0" name="Layer">&quot;XboxBackButtonRootMenu&quot;</param>
-                            <param id="1" name="Visibility">0</param>
-                        </action>
-                        <action id="0" name="Play" sid="496622485326386" type="Audio">
-                            <param id="0" name="Audio file">Menu Selection Click</param>
-                            <param id="2" name="Loop">0</param>
-                            <param id="3" name="Volume">0</param>
-                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
-                        </action>
-                    </actions>
-                    <sub-events>
-                        <event-block sid="684249681130162">
-                            <conditions>
-                                <condition id="-20" inverted="1" name="Is on mobile device" sid="318828935731916" type="System" />
-                            </conditions>
-                            <actions>
-                                <action id="0" name="Call function" sid="865620607067134" type="Function">
-                                    <param id="0" name="Name">&quot;Disable Singleplayer Blur&quot;</param>
-                                    <param id="1" name="Parameter {n}"></param>
-                                </action>
-                            </actions>
-                        </event-block>
-                    </sub-events>
-                </event-block>
-                <event-block sid="416512265138296">
-                    <conditions>
-                        <condition id="-9" name="Layer is visible" sid="369474502941589" type="System">
-                            <param id="0" name="Layer">&quot;Messages&quot;</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-9" name="Set value" sid="177993825711708" type="System">
-                            <param id="0" name="Variable">Selected</param>
-                            <param id="1" name="Value">3</param>
-                        </action>
-                        <action id="-9" name="Set value" sid="776337654454945" type="System">
-                            <param id="0" name="Variable">MaxSelectable</param>
-                            <param id="1" name="Value">3</param>
-                        </action>
-                        <action id="-9" name="Set value" sid="928904349579269" type="System">
-                            <param id="0" name="Variable">MinSelectable</param>
-                            <param id="1" name="Value">0</param>
-                        </action>
-                        <action id="-4" name="Set layer visible" sid="788097209527320" type="System">
-                            <param id="0" name="Layer">&quot;XboxBackButtonRootMenu&quot;</param>
-                            <param id="1" name="Visibility">0</param>
-                        </action>
-                        <action id="-9" name="Set value" sid="621957503056481" type="System">
-                            <param id="0" name="Variable">MPError</param>
-                            <param id="1" name="Value">0</param>
-                        </action>
-                        <action id="0" name="Play" sid="716501332128638" type="Audio">
-                            <param id="0" name="Audio file">Menu Selection Click</param>
-                            <param id="2" name="Loop">0</param>
-                            <param id="3" name="Volume">0</param>
-                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
-                        </action>
-                    </actions>
                 </event-block>
             </sub-events>
         </event-block>

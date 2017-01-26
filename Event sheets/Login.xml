@@ -36,6 +36,18 @@
                     <param id="3" name="Volume">MusicVolume</param>
                     <param id="1" name="Tag (optional)">&quot;Music&quot;</param>
                 </action>
+                <action id="-9" name="Set value" sid="306996954523774" type="System">
+                    <param id="0" name="Variable">MaxSelectable</param>
+                    <param id="1" name="Value">13</param>
+                </action>
+                <action id="-9" name="Set value" sid="899788200165506" type="System">
+                    <param id="0" name="Variable">MinSelectable</param>
+                    <param id="1" name="Value">13</param>
+                </action>
+                <action id="-9" name="Set value" sid="708790169138344" type="System">
+                    <param id="0" name="Variable">Selected</param>
+                    <param id="1" name="Value">13</param>
+                </action>
             </actions>
         </event-block>
         <event-block any="1" sid="960404780860785">
@@ -50,6 +62,10 @@
                 </condition>
                 <condition id="0" name="On key pressed" sid="399000624152562" type="Keyboard">
                     <param id="0" name="Key">13 (Return)</param>
+                </condition>
+                <condition id="6" name="On button pressed" sid="806574981794907" type="Gamepad">
+                    <param id="0" name="Gamepad">0</param>
+                    <param id="1" name="Button">0</param>
                 </condition>
             </conditions>
             <actions>
@@ -342,6 +358,24 @@
                     </actions>
                 </event-block>
             </sub-events>
+        </event-block>
+        <event-block any="1" sid="892276598979062">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="323263781562903" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">SignUpText</param>
+                </condition>
+                <condition id="17" name="On tap object" sid="140424714861092" type="Touch">
+                    <param id="0" name="Object">SignUpText</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="8" name="Open URL in new window" sid="835461752818040" type="Browser">
+                    <param id="0" name="URL">&quot;http://jordan.bnettech.pw/Signup.html&quot;</param>
+                    <param id="1" name="Tag">&quot;NewWindow&quot;</param>
+                </action>
+            </actions>
         </event-block>
     </events>
 </c2eventsheet>
