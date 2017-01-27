@@ -396,7 +396,6 @@
                             <param id="1" name="Comparison">4</param>
                             <param id="2" name="Value">0</param>
                         </condition>
-                        <condition id="-4" name="Trigger once while true" sid="911884196557121" type="System" />
                     </conditions>
                     <actions>
                         <action id="0" name="Set item" sid="873868484420667" type="LocalStorage">
@@ -420,18 +419,36 @@
                         </action>
                     </actions>
                 </event-block>
-                <event-block sid="987233745312966">
+                <event-block sid="856462405915665">
                     <conditions>
-                        <condition id="-22" name="Else" sid="609386018015274" type="System" />
-                        <condition id="-14" inverted="1" name="Compare variable" sid="166975990564230" type="System">
+                        <condition id="-22" name="Else" sid="767855460834457" type="System" />
+                        <condition id="-14" inverted="1" name="Compare variable" sid="458269605538277" type="System">
                             <param id="0" name="Variable">UserID</param>
                             <param id="1" name="Comparison">4</param>
                             <param id="2" name="Value">0</param>
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="0" name="Set text" sid="502369637669360" type="LoginStatusText">
+                        <action id="0" name="Set text" sid="617705017940600" type="LoginStatusText">
                             <param id="0" name="Text">&quot;Error: Username or Password is incorrect!&quot;</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="947132837570877" type="LoginStatusText">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="987233745312966">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="609386018015274" type="System" />
+                        <condition id="-14" inverted="1" name="Compare variable" sid="166975990564230" type="System">
+                            <param id="0" name="Variable">MPLevel</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="502369637669360" type="LoginStatusText">
+                            <param id="0" name="Text">&quot;Error: Level cannot be 0!&quot;</param>
                         </action>
                         <action id="-15" name="Set visible" sid="133114136971551" type="LoginStatusText">
                             <param id="0" name="Visibility">1</param>

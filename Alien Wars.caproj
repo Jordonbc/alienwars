@@ -2,7 +2,7 @@
 <c2project>
     <name>Alien Wars</name>
     <description>Destroy the  Aliens</description>
-    <version>1.3.2.0 ALPHA</version>
+    <version>1.3.2.1 ALPHA</version>
     <author>Jordon Brooks</author>
     <author-email>Jordonbc@hotmail.co.uk</author-email>
     <author-website>https://jordonbc.github.io</author-website>
@@ -439,6 +439,26 @@
                     <animation-folder>
                         <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="143402229654875" speed="5">
                             <frame duration="1" hotspotX="0" hotspotY="0.5" original-source="D:\College\Level 3\Graphics\Main Menu done.png">
+                                <collision-poly>
+                                    <point x="0.00546875" y="0.00546875" />
+                                    <point x="0.992969" y="0.00703125" />
+                                    <point x="0.99375" y="0.99375" />
+                                    <point x="0.00625" y="0.99375" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="UIBackground" sid="679843613200853">
+                    <plugin id="Sprite" />
+                    <effects>
+                        <effect-type name="AdjustHSL">
+                            <effect id="hsladjust" />
+                        </effect-type>
+                    </effects>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="893809849209829" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\College\Level 3\Graphics\Main Menu done.png">
                                 <collision-poly>
                                     <point x="0.00546875" y="0.00546875" />
                                     <point x="0.992969" y="0.00703125" />
@@ -961,6 +981,41 @@
                     </animation>
                 </animation-folder>
             </object-type>
+            <object-type name="LittleAsteroid" sid="682390170996506">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="Health" sid="307079442057470" type="number" />
+                    <instance-variable name="LastHitbyID" sid="170454444617974" type="string" />
+                </instance-variables>
+                <behaviors>
+                    <behavior-type name="DestroyOutsideLayout" sid="485306660205193">
+                        <behavior id="destroy" />
+                    </behavior-type>
+                    <behavior-type name="Bullet" sid="972737602566590">
+                        <behavior id="Bullet" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="16" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="158557595969915" speed="15">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Software\Construct 2\freebundle\Sprites\Space\Rocks\rock_type_A0000.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Software\Construct 2\freebundle\Sprites\Space\Rocks\rock_type_A0001.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Software\Construct 2\freebundle\Sprites\Space\Rocks\rock_type_A0002.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Software\Construct 2\freebundle\Sprites\Space\Rocks\rock_type_A0003.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Software\Construct 2\freebundle\Sprites\Space\Rocks\rock_type_A0004.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Software\Construct 2\freebundle\Sprites\Space\Rocks\rock_type_A0005.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Software\Construct 2\freebundle\Sprites\Space\Rocks\rock_type_A0006.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Software\Construct 2\freebundle\Sprites\Space\Rocks\rock_type_A0007.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Software\Construct 2\freebundle\Sprites\Space\Rocks\rock_type_A0008.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Software\Construct 2\freebundle\Sprites\Space\Rocks\rock_type_A0009.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Software\Construct 2\freebundle\Sprites\Space\Rocks\rock_type_A0010.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Software\Construct 2\freebundle\Sprites\Space\Rocks\rock_type_A0011.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Software\Construct 2\freebundle\Sprites\Space\Rocks\rock_type_A0012.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Software\Construct 2\freebundle\Sprites\Space\Rocks\rock_type_A0013.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Software\Construct 2\freebundle\Sprites\Space\Rocks\rock_type_A0014.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Software\Construct 2\freebundle\Sprites\Space\Rocks\rock_type_A0015.png" />
+                    </animation>
+                </animation-folder>
+            </object-type>
         </object-folder>
         <object-folder name="Multiplayer">
             <object-type name="Multiplayer" sid="436072568837400">
@@ -1244,6 +1299,9 @@
         <object-type global="1" name="ScoreArray" sid="351157868819499">
             <plugin id="Arr" />
         </object-type>
+        <object-type name="ConnectingText" sid="502968101915882">
+            <plugin id="Text" />
+        </object-type>
     </object-folder>
     <families>
         <family name="AllText" plugin-id="Text" sid="760463930764342">
@@ -1254,6 +1312,7 @@
                 <member>BradnumNetCreditsText</member>
                 <member>ChangeColourText</member>
                 <member>ChangeSpriteText</member>
+                <member>ConnectingText</member>
                 <member>CPUText</member>
                 <member>CreateServerButtonText</member>
                 <member>CreditsButtonText</member>
@@ -1461,6 +1520,7 @@
                 <member>AlienWarsCreditsText</member>
                 <member>BradnumNetCreditsText</member>
                 <member>ChangeColourText</member>
+                <member>ConnectingText</member>
                 <member>CPUText</member>
                 <member>CreditsTitleText</member>
                 <member>DemoText</member>

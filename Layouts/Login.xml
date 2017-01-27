@@ -55,7 +55,7 @@
                     <properties>
                         <webm-source></webm-source>
                         <ogg-theora-source></ogg-theora-source>
-                        <h264-source>https://cdn.rawgit.com/Jordonbc/alienwars/gh-pages/mainmenubackground-HQ.mp4</h264-source>
+                        <h264-source>mainmenubackground-hq.mp4</h264-source>
                         <autoplay>Yes</autoplay>
                         <play-in-background>No</play-in-background>
                         <initial-visibility>Visible</initial-visibility>

@@ -257,6 +257,38 @@
         </event-group>
         <event-group description="" sid="950944789674305" title="QUALITY">
             <sub-events>
+                <event-block any="1" sid="176947356028882">
+                    <conditions>
+                        <condition id="0" name="On function" sid="835674325604732" type="Function">
+                            <param id="0" name="Name">&quot;refreshMainMenuVideo&quot;</param>
+                        </condition>
+                        <condition id="-2" name="On start of layout" sid="531246966626455" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Check item exists" sid="598323326271627" type="LocalStorage">
+                            <param id="0" name="Key">&quot;VideoQuality&quot;</param>
+                        </action>
+                        <action id="2" name="Set looping" sid="326633374871724" type="MainMenuVideo">
+                            <param id="0" name="Mode">1</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="390906379882252" type="System">
+                            <param id="0" name="Seconds">0</param>
+                        </action>
+                        <action id="5" name="Pause" sid="525701896927342" type="MainMenuVideo" />
+                        <action id="-16" name="Wait" sid="542746233363591" type="System">
+                            <param id="0" name="Seconds">0</param>
+                        </action>
+                        <action id="0" name="Set source" sid="219710653308738" type="MainMenuVideo">
+                            <param id="0" name="WebM source">&quot;&quot;</param>
+                            <param id="1" name="Ogg Theora source">&quot;&quot;</param>
+                            <param id="2" name="H.264 source">&quot;mainmenubackground-&quot;&amp;VideoQuality&amp;&quot;.mp4&quot;</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="888691825499379" type="System">
+                            <param id="0" name="Seconds">0</param>
+                        </action>
+                        <action id="6" name="Play" sid="948321854503702" type="MainMenuVideo" />
+                    </actions>
+                </event-block>
                 <event-block any="1" sid="534038064685542">
                     <conditions>
                         <condition id="0" name="On function" sid="416041511281911" type="Function">
