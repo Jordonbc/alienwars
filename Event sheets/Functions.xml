@@ -7,7 +7,7 @@
         <comment>Resets all buttons to the button size</comment>
         <event-block sid="209981594952787">
             <conditions>
-                <condition id="0" name="On function" sid="696478683491300" type="Function">
+                <condition id="0" name="On function" sid="696478683491300" type="f">
                     <param id="0" name="Name">&quot;resetButtonSize&quot;</param>
                 </condition>
             </conditions>
@@ -24,7 +24,7 @@
         <comment>Sets layout to mobile version</comment>
         <event-block sid="954513038657534">
             <conditions>
-                <condition id="0" name="On function" sid="351310100059669" type="Function">
+                <condition id="0" name="On function" sid="351310100059669" type="f">
                     <param id="0" name="Name">&quot;setMobile&quot;</param>
                 </condition>
             </conditions>
@@ -38,14 +38,14 @@
                         <action id="-16" name="Wait" sid="539119828572765" type="System">
                             <param id="0" name="Seconds">0</param>
                         </action>
-                        <action id="0" name="Call function" sid="601581051915548" type="Function">
+                        <action id="0" name="Call function" sid="601581051915548" type="f">
                             <param id="0" name="Name">&quot;refreshMainMenuVideo&quot;</param>
                             <param id="1" name="Parameter {n}"></param>
                         </action>
                         <action id="-16" name="Wait" sid="880131266651089" type="System">
                             <param id="0" name="Seconds">0</param>
                         </action>
-                        <action id="0" name="Call function" sid="851184072485888" type="Function">
+                        <action id="0" name="Call function" sid="851184072485888" type="f">
                             <param id="0" name="Name">&quot;SetMenuColour&quot;</param>
                             <param id="1" name="Parameter {n}"></param>
                         </action>
@@ -510,7 +510,7 @@
         <comment>Hides all the menus</comment>
         <event-block sid="265620542555016">
             <conditions>
-                <condition id="0" name="On function" sid="191504362058678" type="Function">
+                <condition id="0" name="On function" sid="191504362058678" type="f">
                     <param id="0" name="Name">&quot;HideAll&quot;</param>
                 </condition>
             </conditions>
@@ -551,6 +551,10 @@
                     <param id="0" name="Layer">&quot;Player Stats&quot;</param>
                     <param id="1" name="Visibility">0</param>
                 </action>
+                <action id="-4" name="Set layer visible" sid="122213128637223" type="System">
+                    <param id="0" name="Layer">&quot;Controls&quot;</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
                 <action id="-7" name="Set size" sid="939877252110089" type="AllButtonText">
                     <param id="0" name="Width">Button.Width</param>
                     <param id="1" name="Height">Button.Height</param>
@@ -589,8 +593,8 @@
         <comment>Show the settings menu</comment>
         <event-block sid="344310123308357">
             <conditions>
-                <condition id="0" name="On function" sid="988957092111371" type="Function">
-                    <param id="0" name="Name">&quot;ShowSettings&quot;</param>
+                <condition id="0" name="On function" sid="988957092111371" type="f">
+                    <param id="0" name="Name">&quot;Show Settings&quot;</param>
                 </condition>
             </conditions>
             <actions>
@@ -873,7 +877,7 @@
         </event-block>
         <event-block sid="490678574692953">
             <conditions>
-                <condition id="0" name="On function" sid="333202235272954" type="Function">
+                <condition id="0" name="On function" sid="333202235272954" type="f">
                     <param id="0" name="Name">&quot;Set and Save Settings&quot;</param>
                 </condition>
             </conditions>
@@ -892,6 +896,26 @@
                 <action id="0" name="Set item" sid="769194090925299" type="LocalStorage">
                     <param id="0" name="Key">&quot;MusicSound&quot;</param>
                     <param id="1" name="Value">MusicSoundBar.Value</param>
+                </action>
+                <action id="3" name="Set volume" sid="703891116933404" type="Audio">
+                    <param id="0" name="Tag">&quot;Game&quot;</param>
+                    <param id="1" name="dB">GameSlider.Value</param>
+                </action>
+                <action id="0" name="Set item" sid="490451273766977" type="LocalStorage">
+                    <param id="0" name="Key">&quot;GameSound&quot;</param>
+                    <param id="1" name="Value">GameSlider.Value</param>
+                </action>
+                <action id="-9" name="Set value" sid="435197892528296" type="System">
+                    <param id="0" name="Variable">GameVolume</param>
+                    <param id="1" name="Value">GameSlider.Value</param>
+                </action>
+                <action id="-9" name="Set value" sid="490404268128704" type="System">
+                    <param id="0" name="Variable">MPChatTTS</param>
+                    <param id="1" name="Value">TTS_MPChatBar.Value</param>
+                </action>
+                <action id="0" name="Set item" sid="877486983952765" type="LocalStorage">
+                    <param id="0" name="Key">&quot;MPChatTTS&quot;</param>
+                    <param id="1" name="Value">MPChatTTS</param>
                 </action>
             </actions>
             <sub-events>
@@ -930,7 +954,7 @@
                             <param id="0" name="Key">&quot;VideoQuality&quot;</param>
                             <param id="1" name="Value">VideoQuality</param>
                         </action>
-                        <action id="0" name="Call function" sid="738105969821248" type="Function">
+                        <action id="0" name="Call function" sid="738105969821248" type="f">
                             <param id="0" name="Name">&quot;refreshMainMenuVideo&quot;</param>
                             <param id="1" name="Parameter {n}"></param>
                         </action>
@@ -966,10 +990,6 @@
                             <param id="0" name="Variable">Resolution</param>
                             <param id="1" name="Value">uppercase(&quot;POTATO&quot;)</param>
                         </action>
-                        <action id="0" name="Set item" sid="387427644728403" type="LocalStorage">
-                            <param id="0" name="Key">&quot;UpscaleQuality&quot;</param>
-                            <param id="1" name="Value">Uppercase(&quot;POTATO&quot;)</param>
-                        </action>
                     </actions>
                 </event-block>
                 <event-block sid="185594445554131">
@@ -983,10 +1003,6 @@
                         <action id="-9" name="Set value" sid="323537212665576" type="System">
                             <param id="0" name="Variable">Resolution</param>
                             <param id="1" name="Value">uppercase(&quot;ULTRA LOW&quot;)</param>
-                        </action>
-                        <action id="0" name="Set item" sid="784323270057789" type="LocalStorage">
-                            <param id="0" name="Key">&quot;UpscaleQuality&quot;</param>
-                            <param id="1" name="Value">Uppercase(&quot;ULTRA LOW&quot;)</param>
                         </action>
                     </actions>
                 </event-block>
@@ -1002,10 +1018,6 @@
                             <param id="0" name="Variable">Resolution</param>
                             <param id="1" name="Value">uppercase(&quot;LOW&quot;)</param>
                         </action>
-                        <action id="0" name="Set item" sid="822150486286255" type="LocalStorage">
-                            <param id="0" name="Key">&quot;UpscaleQuality&quot;</param>
-                            <param id="1" name="Value">Uppercase(&quot;LOW&quot;)</param>
-                        </action>
                     </actions>
                 </event-block>
                 <event-block sid="154800365647507">
@@ -1019,10 +1031,6 @@
                         <action id="-9" name="Set value" sid="135560780258544" type="System">
                             <param id="0" name="Variable">Resolution</param>
                             <param id="1" name="Value">uppercase(&quot;MEDIUM&quot;)</param>
-                        </action>
-                        <action id="0" name="Set item" sid="721114549505857" type="LocalStorage">
-                            <param id="0" name="Key">&quot;UpscaleQuality&quot;</param>
-                            <param id="1" name="Value">Uppercase(&quot;MEDIUM&quot;)</param>
                         </action>
                     </actions>
                 </event-block>
@@ -1038,10 +1046,6 @@
                             <param id="0" name="Variable">Resolution</param>
                             <param id="1" name="Value">uppercase(&quot;HIGH&quot;)</param>
                         </action>
-                        <action id="0" name="Set item" sid="872413466034719" type="LocalStorage">
-                            <param id="0" name="Key">&quot;UpscaleQuality&quot;</param>
-                            <param id="1" name="Value">Uppercase(&quot;HIGH&quot;)</param>
-                        </action>
                     </actions>
                 </event-block>
                 <event-block sid="225996829965921">
@@ -1055,10 +1059,6 @@
                         <action id="-9" name="Set value" sid="401420423802538" type="System">
                             <param id="0" name="Variable">Resolution</param>
                             <param id="1" name="Value">uppercase(&quot;ULTRA&quot;)</param>
-                        </action>
-                        <action id="0" name="Set item" sid="952444353798054" type="LocalStorage">
-                            <param id="0" name="Key">&quot;UpscaleQuality&quot;</param>
-                            <param id="1" name="Value">Uppercase(&quot;ULTRA&quot;)</param>
                         </action>
                     </actions>
                 </event-block>
@@ -1074,10 +1074,6 @@
                             <param id="0" name="Variable">Resolution</param>
                             <param id="1" name="Value">uppercase(&quot;SUPER COMPUTER&quot;)</param>
                         </action>
-                        <action id="0" name="Set item" sid="624011789925236" type="LocalStorage">
-                            <param id="0" name="Key">&quot;UpscaleQuality&quot;</param>
-                            <param id="1" name="Value">Uppercase(&quot;SUPERCOMPUTER&quot;)</param>
-                        </action>
                     </actions>
                 </event-block>
                 <event-block sid="208281303208546">
@@ -1092,34 +1088,22 @@
                             <param id="0" name="Variable">Resolution</param>
                             <param id="1" name="Value">uppercase(&quot;NATIVE&quot;)</param>
                         </action>
-                        <action id="0" name="Set item" sid="584872269715911" type="LocalStorage">
-                            <param id="0" name="Key">&quot;UpscaleQuality&quot;</param>
-                            <param id="1" name="Value">Uppercase(&quot;NATIVE&quot;)</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="203698476361942">
-                    <conditions>
-                        <condition id="0" name="Compare selection" sid="894424737243633" type="UpscaleQualityListbox">
-                            <param id="0" name="Comparison">0</param>
-                            <param id="1" name="Index">8</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-9" name="Set value" sid="709510756289444" type="System">
-                            <param id="0" name="Variable">Resolution</param>
-                            <param id="1" name="Value">uppercase(&quot;BROWSER WINDOW&quot;)</param>
-                        </action>
-                        <action id="0" name="Set item" sid="554680591615625" type="LocalStorage">
-                            <param id="0" name="Key">&quot;UpscaleQuality&quot;</param>
-                            <param id="1" name="Value">Uppercase(&quot;BROWSER WINDOW&quot;)</param>
-                        </action>
                     </actions>
                 </event-block>
                 <event-block sid="669858630217844">
                     <conditions />
                     <actions>
-                        <action id="0" name="Call function" sid="482503660520566" type="Function">
+                        <action id="-16" name="Wait" sid="236589991536996" type="System">
+                            <param id="0" name="Seconds">0</param>
+                        </action>
+                        <action id="0" name="Set item" sid="387427644728403" type="LocalStorage">
+                            <param id="0" name="Key">&quot;Resolution&quot;</param>
+                            <param id="1" name="Value">Resolution</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="245125261887121" type="System">
+                            <param id="0" name="Seconds">0</param>
+                        </action>
+                        <action id="0" name="Call function" sid="482503660520566" type="f">
                             <param id="0" name="Name">&quot;Refresh UpscaleQuality&quot;</param>
                             <param id="1" name="Parameter {n}"></param>
                         </action>
@@ -1182,7 +1166,7 @@
                 <event-block sid="502605499031805">
                     <conditions />
                     <actions>
-                        <action id="0" name="Call function" sid="835338703783235" type="Function">
+                        <action id="0" name="Call function" sid="835338703783235" type="f">
                             <param id="0" name="Name">&quot;Refresh GraphicsQuality&quot;</param>
                             <param id="1" name="Parameter {n}"></param>
                         </action>
@@ -1245,7 +1229,7 @@
                 <event-block sid="641233252581453">
                     <conditions />
                     <actions>
-                        <action id="0" name="Call function" sid="635020615162280" type="Function">
+                        <action id="0" name="Call function" sid="635020615162280" type="f">
                             <param id="0" name="Name">&quot;Refresh EffectsQuality&quot;</param>
                             <param id="1" name="Parameter {n}"></param>
                         </action>
@@ -1255,7 +1239,7 @@
         </event-block>
         <event-block sid="925332644634442">
             <conditions>
-                <condition id="0" name="On function" sid="992183967413295" type="Function">
+                <condition id="0" name="On function" sid="992183967413295" type="f">
                     <param id="0" name="Name">&quot;Show Server&quot;</param>
                 </condition>
             </conditions>
@@ -1276,7 +1260,7 @@
         </event-block>
         <event-block sid="816207296568604">
             <conditions>
-                <condition id="0" name="On function" sid="179653333902218" type="Function">
+                <condition id="0" name="On function" sid="179653333902218" type="f">
                     <param id="0" name="Name">&quot;Show Stats&quot;</param>
                 </condition>
             </conditions>
@@ -1296,10 +1280,36 @@
             </actions>
         </event-block>
         <comment>Show the credits menu</comment>
+        <event-block sid="649614587616392">
+            <conditions>
+                <condition id="0" name="On function" sid="512974600958283" type="f">
+                    <param id="0" name="Name">&quot;Show Credits&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-4" name="Set layer visible" sid="278369006701293" type="System">
+                    <param id="0" name="Layer">&quot;Title&quot;</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="115265570983671" type="System">
+                    <param id="0" name="Layer">&quot;Menu Background&quot;</param>
+                    <param id="1" name="Visibility">1</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="901257269275528" type="System">
+                    <param id="0" name="Layer">&quot;Credits Text&quot;</param>
+                    <param id="1" name="Visibility">1</param>
+                </action>
+                <action id="5" name="Set web font" sid="456898316065014" type="CreditsTitleText">
+                    <param id="0" name="Family name">&quot;Dekko&quot;</param>
+                    <param id="1" name="CSS URL">&quot;dekko.css&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>Show the controls menu</comment>
         <event-block sid="824628762119117">
             <conditions>
-                <condition id="0" name="On function" sid="414778081117971" type="Function">
-                    <param id="0" name="Name">&quot;ShowCredits&quot;</param>
+                <condition id="0" name="On function" sid="414778081117971" type="f">
+                    <param id="0" name="Name">&quot;Show Controls&quot;</param>
                 </condition>
             </conditions>
             <actions>
@@ -1312,20 +1322,37 @@
                     <param id="1" name="Visibility">1</param>
                 </action>
                 <action id="-4" name="Set layer visible" sid="754149876823976" type="System">
-                    <param id="0" name="Layer">&quot;Credits Text&quot;</param>
+                    <param id="0" name="Layer">&quot;Controls&quot;</param>
                     <param id="1" name="Visibility">1</param>
                 </action>
-                <action id="5" name="Set web font" sid="193067406310306" type="CreditsTitleText">
+                <action id="5" name="Set web font" sid="193067406310306" type="ControlsTitleText">
                     <param id="0" name="Family name">&quot;Dekko&quot;</param>
                     <param id="1" name="CSS URL">&quot;dekko.css&quot;</param>
                 </action>
             </actions>
+            <sub-events>
+                <event-block sid="617659378068580">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="322090213103280" type="System">
+                            <param id="0" name="First value">LayoutName</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">&quot;Multiplayer&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-4" name="Set layer visible" sid="481383773934327" type="System">
+                            <param id="0" name="Layer">&quot;Players List&quot;</param>
+                            <param id="1" name="Visibility">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
         </event-block>
         <comment>Show the play menu</comment>
         <event-block sid="306389073734261">
             <conditions>
-                <condition id="0" name="On function" sid="934336498977426" type="Function">
-                    <param id="0" name="Name">&quot;ShowPlay&quot;</param>
+                <condition id="0" name="On function" sid="934336498977426" type="f">
+                    <param id="0" name="Name">&quot;Show Play&quot;</param>
                 </condition>
             </conditions>
             <actions>
@@ -1344,6 +1371,28 @@
                 <action id="5" name="Set web font" sid="379737917820759" type="PlayTitleText">
                     <param id="0" name="Family name">&quot;Dekko&quot;</param>
                     <param id="1" name="CSS URL">&quot;dekko.css&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>Hide the play menu</comment>
+        <event-block sid="536678683832569">
+            <conditions>
+                <condition id="0" name="On function" sid="838202289424781" type="f">
+                    <param id="0" name="Name">&quot;Hide Play&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-4" name="Set layer visible" sid="932029598735701" type="System">
+                    <param id="0" name="Layer">&quot;Title&quot;</param>
+                    <param id="1" name="Visibility">1</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="454836107288583" type="System">
+                    <param id="0" name="Layer">&quot;Menu Background&quot;</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="176112130686540" type="System">
+                    <param id="0" name="Layer">&quot;Play&quot;</param>
+                    <param id="1" name="Visibility">0</param>
                 </action>
             </actions>
         </event-block>
@@ -1431,7 +1480,7 @@
         </event-group>
         <event-block sid="637261994531361">
             <conditions>
-                <condition id="0" name="On function" sid="669513384121678" type="Function">
+                <condition id="0" name="On function" sid="669513384121678" type="f">
                     <param id="0" name="Name">&quot;Show Singleplayer&quot;</param>
                 </condition>
             </conditions>
@@ -1505,7 +1554,7 @@
         </event-block>
         <event-block sid="484355917736138">
             <conditions>
-                <condition id="0" name="On function" sid="331252939172978" type="Function">
+                <condition id="0" name="On function" sid="331252939172978" type="f">
                     <param id="0" name="Name">&quot;Hide Singleplayer&quot;</param>
                 </condition>
             </conditions>
@@ -1530,7 +1579,7 @@
         </event-block>
         <event-block sid="358869274966753">
             <conditions>
-                <condition id="0" name="On function" sid="345641385721615" type="Function">
+                <condition id="0" name="On function" sid="345641385721615" type="f">
                     <param id="0" name="Name">&quot;Enable Singleplayer Blur&quot;</param>
                 </condition>
             </conditions>
@@ -1579,7 +1628,7 @@
         </event-block>
         <event-block sid="917589973528487">
             <conditions>
-                <condition id="0" name="On function" sid="109847566514714" type="Function">
+                <condition id="0" name="On function" sid="109847566514714" type="f">
                     <param id="0" name="Name">&quot;Disable Singleplayer Blur&quot;</param>
                 </condition>
             </conditions>
@@ -1628,7 +1677,7 @@
         </event-block>
         <event-block sid="573203023792520">
             <conditions>
-                <condition id="0" name="On function" sid="690011882003675" type="Function">
+                <condition id="0" name="On function" sid="690011882003675" type="f">
                     <param id="0" name="Name">&quot;Show Multiplayer&quot;</param>
                 </condition>
             </conditions>
@@ -1667,7 +1716,7 @@
         </event-block>
         <event-block sid="374804064701932">
             <conditions>
-                <condition id="0" name="On function" sid="488313147124363" type="Function">
+                <condition id="0" name="On function" sid="488313147124363" type="f">
                     <param id="0" name="Name">&quot;Hide Multiplayer&quot;</param>
                 </condition>
             </conditions>
@@ -1696,7 +1745,7 @@
         </event-block>
         <event-block sid="480508392376549">
             <conditions>
-                <condition id="0" name="On function" sid="115809103633327" type="Function">
+                <condition id="0" name="On function" sid="115809103633327" type="f">
                     <param id="0" name="Name">&quot;Hide Settings Menu&quot;</param>
                 </condition>
             </conditions>
@@ -1738,7 +1787,7 @@
         </event-block>
         <event-block sid="466414731668891">
             <conditions>
-                <condition id="0" name="On function" sid="524497844308870" type="Function">
+                <condition id="0" name="On function" sid="524497844308870" type="f">
                     <param id="0" name="Name">&quot;Reset All Buttons&quot;</param>
                 </condition>
             </conditions>
@@ -1788,7 +1837,7 @@
         </event-block>
         <event-block sid="913206970317859">
             <conditions>
-                <condition id="0" name="On function" sid="936820506203663" type="Function">
+                <condition id="0" name="On function" sid="936820506203663" type="f">
                     <param id="0" name="Name">&quot;ShuffleArray&quot;</param>
                 </condition>
             </conditions>
@@ -1800,7 +1849,7 @@
                 <event-block sid="285419204497780">
                     <conditions>
                         <condition id="-14" name="Pick by unique ID" sid="557800835861953" type="AllArrays">
-                            <param id="0" name="Unique ID">Function.Param(0)</param>
+                            <param id="0" name="Unique ID">f.Param(0)</param>
                         </condition>
                         <condition id="-10" name="For" sid="880118277460039" type="System">
                             <param id="0" name="Name">&quot;&quot;</param>
@@ -1835,7 +1884,7 @@
         </event-block>
         <event-block sid="133608895543813">
             <conditions>
-                <condition id="0" name="On function" sid="471284310932587" type="Function">
+                <condition id="0" name="On function" sid="471284310932587" type="f">
                     <param id="0" name="Name">&quot;SetMenuColour&quot;</param>
                 </condition>
             </conditions>
@@ -1856,6 +1905,144 @@
                     <param id="2" name="Value">MenuColour</param>
                 </action>
             </actions>
+        </event-block>
+        <event-block sid="391545052147490">
+            <conditions>
+                <condition id="0" name="On function" sid="351452041589690" type="f">
+                    <param id="0" name="Name">&quot;ButtonPressed&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <comment>0 = Layer</comment>
+                <comment>1 = Show/Hide Function Name</comment>
+                <comment>2 = Show Blur</comment>
+                <comment>3 = Select Button Instance</comment>
+                <comment>4 = Root Button?</comment>
+                <comment>5 = Select Text Instance</comment>
+                <comment>6 = Layer to Show/Hide</comment>
+                <event-block sid="945551621980836">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="447231175792631" type="System">
+                            <param id="0" name="First value">f.Param(4)</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="189927514056464">
+                            <conditions>
+                                <condition id="-9" name="Layer is visible" sid="516190923067023" type="System">
+                                    <param id="0" name="Layer">f.Param(0)</param>
+                                </condition>
+                                <condition id="-9" inverted="1" name="Layer is visible" sid="707959711319964" type="System">
+                                    <param id="0" name="Layer">f.Param(6)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="384093643923744" type="f">
+                                    <param id="0" name="Name">&quot;HideAll&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                                <action id="0" name="Call function" sid="138366021956513" type="f">
+                                    <param id="0" name="Name">&quot;Show &quot;&amp;F.Param(1)</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                                <action id="0" name="Play" sid="267253491778714" type="Audio">
+                                    <param id="0" name="Audio file">Menu Selection Click</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
+                                <action id="0" name="Call function" sid="815959718063997" type="f">
+                                    <param id="0" name="Name">&quot;Reset All Buttons&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="463410947452907">
+                                    <conditions>
+                                        <condition id="-20" inverted="1" name="Is on mobile device" sid="662858122456266" type="System" />
+                                        <condition id="-8" name="Compare two values" sid="315724817048132" type="System">
+                                            <param id="0" name="First value">F.Param(2)</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="532321070176107" type="f">
+                                            <param id="0" name="Name">&quot;Enable Singleplayer Blur&quot;</param>
+                                            <param id="1" name="Parameter {n}"></param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="281660364202302">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="519876150312454" type="System" />
+                                <condition id="-9" name="Layer is visible" sid="650700627392525" type="System">
+                                    <param id="0" name="Layer">f.Param(0)</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="183790597332967">
+                                    <conditions>
+                                        <condition id="-9" name="Layer is visible" sid="761434197430574" type="System">
+                                            <param id="0" name="Layer">f.Param(6)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="685651815407779" type="f">
+                                            <param id="0" name="Name">&quot;HideAll&quot;</param>
+                                            <param id="1" name="Parameter {n}"></param>
+                                        </action>
+                                        <action id="-4" name="Set layer visible" sid="968779337945147" type="System">
+                                            <param id="0" name="Layer">&quot;XboxBackButtonRootMenu&quot;</param>
+                                            <param id="1" name="Visibility">0</param>
+                                        </action>
+                                        <action id="0" name="Play" sid="857199176501879" type="Audio">
+                                            <param id="0" name="Audio file">Menu Selection Click</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">0</param>
+                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="866963922021125">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="385393876307643" type="Button">
+                                    <param id="0" name="Unique ID">f.Param(3)</param>
+                                </condition>
+                                <condition id="-14" name="Pick by unique ID" sid="233297656695712" type="AllButtonText">
+                                    <param id="0" name="Unique ID">f.Param(5)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="9" name="Set scale" sid="505534745930965" type="Button">
+                                    <param id="0" name="Scale">1.2</param>
+                                </action>
+                                <action id="3" name="Set font size" sid="820947859529222" type="AllButtonText">
+                                    <param id="0" name="Size (pt)">32</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="366034990045601" type="System">
+                                    <param id="0" name="Seconds">0.2</param>
+                                </action>
+                                <action id="9" name="Set scale" sid="358187261193757" type="Button">
+                                    <param id="0" name="Scale">1</param>
+                                </action>
+                                <action id="3" name="Set font size" sid="669985196228186" type="AllButtonText">
+                                    <param id="0" name="Size (pt)">22</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
         </event-block>
     </events>
 </c2eventsheet>

@@ -188,7 +188,7 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>193</x>
-                        <y>608</y>
+                        <y>538</y>
                         <z>0</z>
                         <width>190</width>
                         <height>49</height>
@@ -233,7 +233,7 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>193</x>
-                        <y>690</y>
+                        <y>700</y>
                         <z>0</z>
                         <width>190</width>
                         <height>49</height>
@@ -278,7 +278,7 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>193</x>
-                        <y>776</y>
+                        <y>781</y>
                         <z>0</z>
                         <width>190</width>
                         <height>49</height>
@@ -324,6 +324,51 @@
                     <world>
                         <x>193</x>
                         <y>862</y>
+                        <z>0</z>
+                        <width>190</width>
+                        <height>49</height>
+                        <depth>0</depth>
+                        <hotspotX>0.50526315</hotspotX>
+                        <hotspotY>0.551020384</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="Button" uid="196">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <effect-instances>
+                        <effect-instance type="DISABLED">
+                            <parameters>
+                                <blue>0.5</blue>
+                                <green>0.5</green>
+                                <red>0.5</red>
+                            </parameters>
+                        </effect-instance>
+                        <effect-instance type="SELECTED">
+                            <parameters>
+                                <blue>0</blue>
+                                <green>0.5</green>
+                                <red>0</red>
+                            </parameters>
+                        </effect-instance>
+                        <effect-instance type="AdjustHSL">
+                            <parameters>
+                                <hue>0</hue>
+                                <luminosity>1</luminosity>
+                                <saturation>1</saturation>
+                            </parameters>
+                        </effect-instance>
+                    </effect-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>193</x>
+                        <y>619</y>
                         <z>0</z>
                         <width>190</width>
                         <height>49</height>
@@ -385,11 +430,11 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>193</x>
-                        <y>607</y>
+                        <x>192.022796631</x>
+                        <y>535.580810547</y>
                         <z>0</z>
-                        <width>194</width>
-                        <height>48</height>
+                        <width>190.370544434</width>
+                        <height>48.838378906</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
@@ -412,8 +457,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>193</x>
-                        <y>689.5</y>
+                        <x>192</x>
+                        <y>698.5</y>
                         <z>0</z>
                         <width>188</width>
                         <height>48</height>
@@ -439,11 +484,11 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>193</x>
-                        <y>776</y>
+                        <x>192</x>
+                        <y>778.037231445</y>
                         <z>0</z>
                         <width>189</width>
-                        <height>46</height>
+                        <height>47.925598145</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
@@ -466,11 +511,38 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>193</x>
-                        <y>862.5</y>
+                        <x>192</x>
+                        <y>859.5</y>
                         <z>0</z>
                         <width>188</width>
                         <height>47</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="ControlsButtonText" uid="197">
+                    <properties>
+                        <text>CONTROLS</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Arial,-24,400,0</font>
+                        <color>0,0,0</color>
+                        <horizontal-alignment>Center</horizontal-alignment>
+                        <vertical-alignment>Center</vertical-alignment>
+                        <hotspot>Center</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>191.892211914</x>
+                        <y>616.592346191</y>
+                        <z>0</z>
+                        <width>190.228240967</width>
+                        <height>48.879516602</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
@@ -572,6 +644,21 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
+                <instance type="UserMedia" uid="242">
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>661</x>
+                        <y>-265</y>
+                        <z>0</z>
+                        <width>320</width>
+                        <height>240</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
             </instances>
             <effects>
                 <effect-type name="BlurHorizontal">
@@ -627,11 +714,11 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>1131.9609375</x>
-                        <y>536.849975586</y>
+                        <x>1155.921875</x>
+                        <y>536.5</y>
                         <z>0</z>
-                        <width>1494.07824707</width>
-                        <height>1010.700012207</height>
+                        <width>1542</width>
+                        <height>1092</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
@@ -1135,7 +1222,7 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>694</x>
-                        <y>321</y>
+                        <y>386</y>
                         <z>0</z>
                         <width>366</width>
                         <height>28</height>
@@ -1159,7 +1246,7 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>694</x>
-                        <y>388</y>
+                        <y>453</y>
                         <z>0</z>
                         <width>366</width>
                         <height>28</height>
@@ -1183,7 +1270,7 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>694</x>
-                        <y>454</y>
+                        <y>519</y>
                         <z>0</z>
                         <width>366</width>
                         <height>28</height>
@@ -1252,7 +1339,7 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>694</x>
-                        <y>521</y>
+                        <y>598</y>
                         <z>0</z>
                         <width>366</width>
                         <height>28</height>
@@ -1276,7 +1363,7 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>694</x>
-                        <y>588</y>
+                        <y>660</y>
                         <z>0</z>
                         <width>366</width>
                         <height>28</height>
@@ -1299,8 +1386,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>1351</x>
-                        <y>261</y>
+                        <x>694</x>
+                        <y>721</y>
                         <z>0</z>
                         <width>366</width>
                         <height>28</height>
@@ -1323,8 +1410,56 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>1352</x>
-                        <y>315</y>
+                        <x>694</x>
+                        <y>794</y>
+                        <z>0</z>
+                        <width>366</width>
+                        <height>28</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                    </world>
+                </instance>
+                <instance type="TTS_MPChatBar" uid="243">
+                    <properties>
+                        <value>0</value>
+                        <minimum>0</minimum>
+                        <maximum>1</maximum>
+                        <step>1</step>
+                        <tooltip></tooltip>
+                        <initial-visibility>Visible</initial-visibility>
+                        <enabled>Yes</enabled>
+                        <id-optional></id-optional>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>694</x>
+                        <y>857</y>
+                        <z>0</z>
+                        <width>366</width>
+                        <height>28</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                    </world>
+                </instance>
+                <instance type="GameSlider" uid="247">
+                    <properties>
+                        <value>0</value>
+                        <minimum>-50</minimum>
+                        <maximum>0</maximum>
+                        <step>1</step>
+                        <tooltip></tooltip>
+                        <initial-visibility>Visible</initial-visibility>
+                        <enabled>Yes</enabled>
+                        <id-optional></id-optional>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>694</x>
+                        <y>320</y>
                         <z>0</z>
                         <width>366</width>
                         <height>28</height>
@@ -1413,7 +1548,7 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>547.5</x>
-                        <y>334</y>
+                        <y>402</y>
                         <z>0</z>
                         <width>269</width>
                         <height>48</height>
@@ -1449,7 +1584,7 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>547.5</x>
-                        <y>401</y>
+                        <y>470</y>
                         <z>0</z>
                         <width>269</width>
                         <height>48</height>
@@ -1485,7 +1620,7 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>547.5</x>
-                        <y>469</y>
+                        <y>537</y>
                         <z>0</z>
                         <width>269</width>
                         <height>48</height>
@@ -1548,7 +1683,7 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>547.5</x>
-                        <y>536</y>
+                        <y>605</y>
                         <z>0</z>
                         <width>269</width>
                         <height>48</height>
@@ -1584,7 +1719,7 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>547.5</x>
-                        <y>603</y>
+                        <y>672</y>
                         <z>0</z>
                         <width>269</width>
                         <height>48</height>
@@ -1619,8 +1754,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>1203</x>
-                        <y>277</y>
+                        <x>547.5</x>
+                        <y>740</y>
                         <z>0</z>
                         <width>269</width>
                         <height>48</height>
@@ -1655,8 +1790,62 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>1203</x>
-                        <y>334</y>
+                        <x>547.5</x>
+                        <y>807</y>
+                        <z>0</z>
+                        <width>269</width>
+                        <height>48</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="TTS_MPChatBarText" uid="244">
+                    <properties>
+                        <text>MP CHAT TTS</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Arial,-29,400,0</font>
+                        <color>0,255,255</color>
+                        <horizontal-alignment>Right</horizontal-alignment>
+                        <vertical-alignment>Center</vertical-alignment>
+                        <hotspot>Center</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>551</x>
+                        <y>875</y>
+                        <z>0</z>
+                        <width>269</width>
+                        <height>48</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="GameMusicSliderText" uid="246">
+                    <properties>
+                        <text>GAME VOLUME</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Arial,-29,400,0</font>
+                        <color>0,255,255</color>
+                        <horizontal-alignment>Right</horizontal-alignment>
+                        <vertical-alignment>Center</vertical-alignment>
+                        <hotspot>Center</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>550</x>
+                        <y>335</y>
                         <z>0</z>
                         <width>269</width>
                         <height>48</height>
@@ -1720,11 +1909,11 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>1131</x>
-                        <y>144.813995361</y>
+                        <x>1154</x>
+                        <y>140</y>
                         <z>0</z>
-                        <width>1443</width>
-                        <height>183.627975464</height>
+                        <width>1489</width>
+                        <height>184</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
@@ -3181,6 +3370,296 @@
             </instances>
             <effects />
         </layer>
+        <layer name="Controls" sid="319465088626046">
+            <initially-visible>0</initially-visible>
+            <background-color>255,255,255</background-color>
+            <transparent>1</transparent>
+            <parallax>
+                <x>0</x>
+                <y>0</y>
+            </parallax>
+            <zoom-rate>1</zoom-rate>
+            <opacity>1</opacity>
+            <force-own-texture>0</force-own-texture>
+            <global>1</global>
+            <use-render-cells>0</use-render-cells>
+            <blend-mode>0</blend-mode>
+            <effect-fallback>0</effect-fallback>
+            <instances>
+                <instance type="UPKBButtonText" uid="198">
+                    <properties>
+                        <text>MOVE UP</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Arial,-37,400,0</font>
+                        <color>0,255,255</color>
+                        <horizontal-alignment>Right</horizontal-alignment>
+                        <vertical-alignment>Center</vertical-alignment>
+                        <hotspot>Center</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <effect-instances>
+                        <effect-instance type="AdjustHSL">
+                            <parameters>
+                                <hue>0</hue>
+                                <luminosity>1</luminosity>
+                                <saturation>1</saturation>
+                            </parameters>
+                        </effect-instance>
+                    </effect-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>626</x>
+                        <y>307</y>
+                        <z>0</z>
+                        <width>338</width>
+                        <height>56</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="ControlsTitleText" uid="199">
+                    <properties>
+                        <text>CONTROLS</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Arial,-133,400,0</font>
+                        <color>0,255,255</color>
+                        <horizontal-alignment>Center</horizontal-alignment>
+                        <vertical-alignment>Center</vertical-alignment>
+                        <hotspot>Center</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <effect-instances>
+                        <effect-instance type="GlowHorizontal">
+                            <parameters>
+                                <intensity>1</intensity>
+                            </parameters>
+                        </effect-instance>
+                        <effect-instance type="GlowVertical">
+                            <parameters>
+                                <intensity>1</intensity>
+                            </parameters>
+                        </effect-instance>
+                        <effect-instance type="AdjustHSL">
+                            <parameters>
+                                <hue>0</hue>
+                                <luminosity>1</luminosity>
+                                <saturation>1</saturation>
+                            </parameters>
+                        </effect-instance>
+                    </effect-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>1131</x>
+                        <y>152</y>
+                        <z>0</z>
+                        <width>1442</width>
+                        <height>200</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="DownKBText" uid="200">
+                    <properties>
+                        <text>MOVE DOWN</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Arial,-37,400,0</font>
+                        <color>0,255,255</color>
+                        <horizontal-alignment>Right</horizontal-alignment>
+                        <vertical-alignment>Center</vertical-alignment>
+                        <hotspot>Center</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <effect-instances>
+                        <effect-instance type="AdjustHSL">
+                            <parameters>
+                                <hue>0</hue>
+                                <luminosity>1</luminosity>
+                                <saturation>1</saturation>
+                            </parameters>
+                        </effect-instance>
+                    </effect-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>626</x>
+                        <y>383</y>
+                        <z>0</z>
+                        <width>338</width>
+                        <height>56</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="LeftKBText" uid="201">
+                    <properties>
+                        <text>MOVE LEFT</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Arial,-37,400,0</font>
+                        <color>0,255,255</color>
+                        <horizontal-alignment>Right</horizontal-alignment>
+                        <vertical-alignment>Center</vertical-alignment>
+                        <hotspot>Center</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <effect-instances>
+                        <effect-instance type="AdjustHSL">
+                            <parameters>
+                                <hue>0</hue>
+                                <luminosity>1</luminosity>
+                                <saturation>1</saturation>
+                            </parameters>
+                        </effect-instance>
+                    </effect-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>626</x>
+                        <y>460</y>
+                        <z>0</z>
+                        <width>338</width>
+                        <height>56</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="RightKBText" uid="202">
+                    <properties>
+                        <text>MOVE RIGHT</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Arial,-37,400,0</font>
+                        <color>0,255,255</color>
+                        <horizontal-alignment>Right</horizontal-alignment>
+                        <vertical-alignment>Center</vertical-alignment>
+                        <hotspot>Center</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <effect-instances>
+                        <effect-instance type="AdjustHSL">
+                            <parameters>
+                                <hue>0</hue>
+                                <luminosity>1</luminosity>
+                                <saturation>1</saturation>
+                            </parameters>
+                        </effect-instance>
+                    </effect-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>626</x>
+                        <y>536</y>
+                        <z>0</z>
+                        <width>338</width>
+                        <height>56</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="ChangeControlsText" uid="203">
+                    <properties>
+                        <text>PRESS BUTTON THEN DOUBLE-CLICK TO CHANGE</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Arial,-32,400,0</font>
+                        <color>0,255,255</color>
+                        <horizontal-alignment>Left</horizontal-alignment>
+                        <vertical-alignment>Center</vertical-alignment>
+                        <hotspot>Center</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>1147.5</x>
+                        <y>912.5</y>
+                        <z>0</z>
+                        <width>1389</width>
+                        <height>77</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="ChangeControlsText" uid="212">
+                    <properties>
+                        <text>LMB OR RIGHT TRIGGER TO SHOOT</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Arial,-32,400,0</font>
+                        <color>0,255,255</color>
+                        <horizontal-alignment>Left</horizontal-alignment>
+                        <vertical-alignment>Center</vertical-alignment>
+                        <hotspot>Center</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>1146.5</x>
+                        <y>757</y>
+                        <z>0</z>
+                        <width>1389</width>
+                        <height>77</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="ChangeControlsText" uid="211">
+                    <properties>
+                        <text># TO OPEN DEV CONSOLE</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Arial,-32,400,0</font>
+                        <color>0,255,255</color>
+                        <horizontal-alignment>Left</horizontal-alignment>
+                        <vertical-alignment>Center</vertical-alignment>
+                        <hotspot>Center</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>1148</x>
+                        <y>696</y>
+                        <z>0</z>
+                        <width>1389</width>
+                        <height>77</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+            </instances>
+            <effects />
+        </layer>
         <layer name="Messages" sid="104717285029472">
             <initially-visible>0</initially-visible>
             <background-color>255,255,255</background-color>
@@ -3447,11 +3926,11 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>609</x>
-                        <y>256.5</y>
+                        <x>611.253845215</x>
+                        <y>230.579437256</y>
                         <z>0</z>
-                        <width>356</width>
-                        <height>370</height>
+                        <width>372.529418945</width>
+                        <height>318.158874512</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
@@ -3502,14 +3981,14 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>606</x>
-                        <y>243</y>
+                        <x>612.243347168</x>
+                        <y>237.705780029</y>
                         <z>0</z>
-                        <width>333.339874268</width>
-                        <height>323.448425293</height>
+                        <width>258.96887207</width>
+                        <height>323.90423584</height>
                         <depth>0</depth>
-                        <hotspotX>0.53709197</hotspotX>
-                        <hotspotY>0.501529038</hotspotY>
+                        <hotspotX>0.480597019</hotspotX>
+                        <hotspotY>0.503579974</hotspotY>
                         <angle>-1.57079649</angle>
                         <opacity>1</opacity>
                     </world>
@@ -3736,14 +4215,14 @@
             <opacity>1</opacity>
             <force-own-texture>0</force-own-texture>
             <global>1</global>
-            <use-render-cells>0</use-render-cells>
+            <use-render-cells>1</use-render-cells>
             <blend-mode>0</blend-mode>
             <effect-fallback>0</effect-fallback>
             <instances>
                 <instance type="DevConsole" uid="81">
                     <properties>
                         <text></text>
-                        <placeholder>DEVELOPER CONSOLE</placeholder>
+                        <placeholder>Command</placeholder>
                         <tooltip>Developer Console</tooltip>
                         <initial-visibility>Visible</initial-visibility>
                         <enabled>Yes</enabled>
@@ -3756,11 +4235,40 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>763.5</x>
-                        <y>930</y>
+                        <x>0</x>
+                        <y>172</y>
                         <z>0</z>
-                        <width>393</width>
-                        <height>93</height>
+                        <width>1920</width>
+                        <height>41</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                    </world>
+                </instance>
+                <instance type="DevConsoleOutput" uid="206">
+                    <properties>
+                        <text></text>
+                        <placeholder></placeholder>
+                        <tooltip></tooltip>
+                        <initial-visibility>Visible</initial-visibility>
+                        <enabled>Yes</enabled>
+                        <read-only>Yes</read-only>
+                        <spell-check>No</spell-check>
+                        <type>Textarea</type>
+                        <auto-font-size>Yes</auto-font-size>
+                        <id-optional></id-optional>
+                    </properties>
+                    <behavior-instances>
+                        <behavior-instance type="Persist" />
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>0</x>
+                        <y>0</y>
+                        <z>0</z>
+                        <width>1920</width>
+                        <height>172</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
                         <hotspotY>0</hotspotY>
@@ -3984,6 +4492,7 @@
                 <depth>1</depth>
             </properties>
         </instance>
+        <instance type="XML" uid="193" />
     </nonworld-instances>
     <effects />
 </c2layout>

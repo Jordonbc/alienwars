@@ -10,6 +10,7 @@
         <variable constant="0" name="EnemyCount" sid="764699572588608" static="0" type="number">0</variable>
         <variable constant="0" name="spawnTime" sid="360216085080328" static="0" type="number">5</variable>
         <variable constant="0" name="Pause" sid="439863682252205" static="0" type="number">1</variable>
+        <comment>Set required variables at start of layout</comment>
         <event-block sid="416791836277226">
             <conditions>
                 <condition id="-2" name="On start of layout" sid="892940260968264" type="System" />
@@ -73,9 +74,10 @@
                 <action behavior="Fade" id="1" name="Start fade" sid="545842314969269" type="RetroOpeningText" />
             </actions>
         </event-block>
+        <comment>Explosion animation</comment>
         <event-block sid="702657393921590">
             <conditions>
-                <condition id="0" name="On function" sid="615068866624830" type="Function">
+                <condition id="0" name="On function" sid="615068866624830" type="f">
                     <param id="0" name="Name">&quot;Explosion&quot;</param>
                 </condition>
             </conditions>
@@ -83,8 +85,8 @@
                 <action id="-3" name="Create object" sid="261718101085404" type="System">
                     <param id="0" name="Object to create">Explosion8Bit</param>
                     <param id="1" name="Layer">&quot;Explosion&quot;</param>
-                    <param id="2" name="X">Function.Param(0)</param>
-                    <param id="3" name="Y">Function.Param(1)</param>
+                    <param id="2" name="X">f.Param(0)</param>
+                    <param id="3" name="Y">f.Param(1)</param>
                 </action>
                 <action id="0" name="Play" sid="817089556658911" type="Audio">
                     <param id="0" name="Audio file">Explosion 5</param>
@@ -98,6 +100,7 @@
                 <action id="-9" name="Destroy" sid="268756393786620" type="Explosion8Bit" />
             </actions>
         </event-block>
+        <comment>If player is not idle, set to not idle frame</comment>
         <event-block sid="555081124264834">
             <conditions>
                 <condition behavior="8Direction" id="0" name="Is moving" sid="107171485661454" type="Player" />
@@ -108,6 +111,7 @@
                 </action>
             </actions>
         </event-block>
+        <comment>If player is idle, set to idle frame</comment>
         <event-block sid="925284973353057">
             <conditions>
                 <condition behavior="8Direction" id="0" inverted="1" name="Is moving" sid="901292234040449" type="Player" />
@@ -118,6 +122,7 @@
                 </action>
             </actions>
         </event-block>
+        <comment>W is pressed move player Up</comment>
         <event-block sid="206920393638289">
             <conditions>
                 <condition id="2" name="Key is down" sid="118335806984385" type="Keyboard">
@@ -135,6 +140,7 @@
                 </action>
             </actions>
         </event-block>
+        <comment>S is pressed move player down</comment>
         <event-block sid="870456066887076">
             <conditions>
                 <condition id="2" name="Key is down" sid="981992083158007" type="Keyboard">
@@ -152,6 +158,7 @@
                 </action>
             </actions>
         </event-block>
+        <comment>A is pressed move player left</comment>
         <event-block sid="158929751777863">
             <conditions>
                 <condition id="2" name="Key is down" sid="475724841720254" type="Keyboard">
@@ -169,6 +176,7 @@
                 </action>
             </actions>
         </event-block>
+        <comment>D is pressed move player right</comment>
         <event-block sid="181987023253623">
             <conditions>
                 <condition id="2" name="Key is down" sid="893109200529473" type="Keyboard">
@@ -186,6 +194,7 @@
                 </action>
             </actions>
         </event-block>
+        <comment>Every tick, when not paused move enemy to player position (Not mobile)</comment>
         <event-block sid="908410134281947">
             <conditions>
                 <condition id="-1" name="Every tick" sid="564643746282899" type="System" />
@@ -210,6 +219,7 @@
                 </action>
             </actions>
         </event-block>
+        <comment>Every tick, when not paused move enemy to player position (Mobile)</comment>
         <event-block sid="869572441290447">
             <conditions>
                 <condition id="-1" name="Every tick" sid="661258929074630" type="System" />
@@ -218,6 +228,7 @@
                     <param id="1" name="Comparison">0</param>
                     <param id="2" name="Value">0</param>
                 </condition>
+                <condition id="-20" name="Is on mobile device" sid="991510222924221" type="System" />
             </conditions>
             <actions>
                 <action id="-22" name="Set angle toward position" sid="806193998632963" type="Enemy">
@@ -229,6 +240,7 @@
                 </action>
             </actions>
         </event-block>
+        <comment>When Mouse button pressed and is not paused then shoot</comment>
         <event-block sid="837257929672774">
             <conditions>
                 <condition id="2" name="Mouse button is down" sid="645224494625997" type="Mouse">
@@ -264,6 +276,7 @@
                 </event-block>
             </sub-events>
         </event-block>
+        <comment>If game is not paused then spawn enemy enemy based on level</comment>
         <event-block sid="364928207651822">
             <conditions>
                 <condition id="-6" name="Every X seconds" sid="264742720120039" type="System">
@@ -284,6 +297,7 @@
                 </action>
             </actions>
         </event-block>
+        <comment>When player touches an enemy, remove 1 life, create explosion and destroy enemy</comment>
         <event-block sid="176888641758867">
             <conditions>
                 <condition id="0" name="On collision with another object" sid="203952395294677" type="Player">
@@ -295,7 +309,7 @@
                     <param id="0" name="Instance variable">Lives</param>
                     <param id="1" name="Value">1</param>
                 </action>
-                <action id="0" name="Call function" sid="635950601919237" type="Function">
+                <action id="0" name="Call function" sid="635950601919237" type="f">
                     <param id="0" name="Name">&quot;Explosion&quot;</param>
                     <param id="1" name="Parameter {n}">Enemy.X{###}Enemy.Y</param>
                 </action>
@@ -307,6 +321,7 @@
                 </action>
             </actions>
         </event-block>
+        <comment>When enemy is touching laser, take damage and destroy laser</comment>
         <event-block sid="328219456635138">
             <conditions>
                 <condition id="0" name="On collision with another object" sid="345446514305938" type="Enemy">
@@ -321,6 +336,7 @@
                 <action id="-9" name="Destroy" sid="797418412718016" type="Laser" />
             </actions>
         </event-block>
+        <comment>When enemy has no health trigger explode, destroy itself and add 1 to enemy count</comment>
         <event-block sid="185484200934685">
             <conditions>
                 <condition id="-7" name="Compare instance variable" sid="986455497260157" type="Enemy">
@@ -330,7 +346,7 @@
                 </condition>
             </conditions>
             <actions>
-                <action id="0" name="Call function" sid="932267113420915" type="Function">
+                <action id="0" name="Call function" sid="932267113420915" type="f">
                     <param id="0" name="Name">&quot;Explosion&quot;</param>
                     <param id="1" name="Parameter {n}">Enemy.X{###}Enemy.Y</param>
                 </action>
@@ -341,6 +357,7 @@
                 </action>
             </actions>
         </event-block>
+        <comment>When player has no lives trigger game over</comment>
         <event-block sid="972077073765871">
             <conditions>
                 <condition id="-7" name="Compare instance variable" sid="398919496348571" type="Player">
@@ -350,15 +367,16 @@
                 </condition>
             </conditions>
             <actions>
-                <action id="0" name="Call function" sid="155895024648105" type="Function">
+                <action id="0" name="Call function" sid="155895024648105" type="f">
                     <param id="0" name="Name">&quot;GameOver&quot;</param>
                     <param id="1" name="Parameter {n}"></param>
                 </action>
             </actions>
         </event-block>
+        <comment>Play level animation</comment>
         <event-block sid="266398924261097">
             <conditions>
-                <condition id="0" name="On function" sid="538753264270377" type="Function">
+                <condition id="0" name="On function" sid="538753264270377" type="f">
                     <param id="0" name="Name">&quot;Level&quot;</param>
                 </condition>
             </conditions>
@@ -373,9 +391,10 @@
                 <action behavior="Fade" id="1" name="Start fade" sid="190365463862419" type="RetroLevelText" />
             </actions>
         </event-block>
+        <comment>Triggers when game is over</comment>
         <event-block sid="692625270987701">
             <conditions>
-                <condition id="0" name="On function" sid="392164015780087" type="Function">
+                <condition id="0" name="On function" sid="392164015780087" type="f">
                     <param id="0" name="Name">&quot;GameOver&quot;</param>
                 </condition>
             </conditions>
@@ -390,6 +409,7 @@
                 <action behavior="Fade" id="1" name="Start fade" sid="528763756190647" type="RetroLooseText" />
             </actions>
         </event-block>
+        <comment>Handle Pause event</comment>
         <event-block sid="828039487745029">
             <conditions>
                 <condition id="-14" name="Compare variable" sid="861459556914968" type="System">
@@ -418,6 +438,7 @@
                 </action>
             </actions>
         </event-block>
+        <comment>Fade animations</comment>
         <event-block sid="155109241721100">
             <conditions>
                 <condition behavior="Fade" id="0" name="On fade-out finished" sid="698745555825843" type="RetroLooseText" />
@@ -450,12 +471,13 @@
                     <param id="0" name="Variable">Pause</param>
                     <param id="1" name="Value">0</param>
                 </action>
-                <action id="0" name="Call function" sid="296693705970617" type="Function">
+                <action id="0" name="Call function" sid="296693705970617" type="f">
                     <param id="0" name="Name">&quot;Level&quot;</param>
                     <param id="1" name="Parameter {n}"></param>
                 </action>
             </actions>
         </event-block>
+        <comment>Level logic</comment>
         <event-block sid="210852989049650">
             <conditions>
                 <condition id="-14" name="Compare variable" sid="125120349774484" type="System">
@@ -477,12 +499,13 @@
                     <param id="0" name="Variable">EnemyCount</param>
                     <param id="1" name="Value">0</param>
                 </action>
-                <action id="0" name="Call function" sid="775015453766247" type="Function">
+                <action id="0" name="Call function" sid="775015453766247" type="f">
                     <param id="0" name="Name">&quot;Level&quot;</param>
                     <param id="1" name="Parameter {n}"></param>
                 </action>
             </actions>
         </event-block>
+        <comment>At end of layout stop all sounds and music</comment>
         <event-block sid="353668326840572">
             <conditions>
                 <condition id="-3" name="On end of layout" sid="702937478674513" type="System" />
@@ -506,6 +529,7 @@
                 </action>
             </actions>
         </event-block>
+        <comment>Lives animations</comment>
         <event-block sid="298579023223312">
             <conditions>
                 <condition id="-7" name="Compare instance variable" sid="670242617240152" type="Player">
@@ -610,6 +634,7 @@
                 </action>
             </actions>
         </event-block>
+        <comment>If on mobile device activate touch controls</comment>
         <event-block sid="123001128906487">
             <conditions>
                 <condition id="-20" name="Is on mobile device" sid="869333089250633" type="System" />

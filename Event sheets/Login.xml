@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Login</name>
     <events>
+        <variable constant="0" name="LogInPressed" sid="633151059201870" static="0" type="number">0</variable>
         <include>Globals</include>
         <include>GLOBAL EVENTS</include>
         <event-block sid="381039369065431">
@@ -27,8 +28,8 @@
                 <action id="0" name="Set text" sid="894070138618959" type="PasswordTextbox">
                     <param id="0" name="Text">Password</param>
                 </action>
-                <action id="0" name="Set text" sid="548989156836553" type="VersionText">
-                    <param id="0" name="Text">projectversion</param>
+                <action id="0" name="Set text" sid="342084768014818" type="VersionText">
+                    <param id="0" name="Text">&quot;Ver. &quot;&amp;projectversion</param>
                 </action>
                 <action id="0" name="Play" sid="696991350679311" type="Audio">
                     <param id="0" name="Audio file">through space</param>
@@ -99,6 +100,13 @@
                             <param id="0" name="Type">0</param>
                             <param id="1" name="Message">&quot;Requesting Login data&quot;</param>
                         </action>
+                        <action id="-9" name="Set value" sid="381294420996179" type="System">
+                            <param id="0" name="Variable">LogInPressed</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="4" name="Set enabled" sid="695683462188560" type="PasswordTextbox">
+                            <param id="0" name="Mode">0</param>
+                        </action>
                     </actions>
                 </event-block>
             </sub-events>
@@ -114,6 +122,11 @@
                     <param id="0" name="Variable">Password</param>
                     <param id="1" name="Comparison">0</param>
                     <param id="2" name="Value">&quot;&quot;</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="592588749446897" type="System">
+                    <param id="0" name="Variable">LogInPressed</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
                 </condition>
             </conditions>
             <actions />
@@ -197,6 +210,9 @@
                 <action id="-15" name="Set visible" sid="393168488274731" type="LoginStatusText">
                     <param id="0" name="Visibility">1</param>
                 </action>
+                <action id="4" name="Set enabled" sid="506755803448051" type="PasswordTextbox">
+                    <param id="0" name="Mode">1</param>
+                </action>
             </actions>
         </event-block>
         <event-block sid="469731792521585">
@@ -211,6 +227,9 @@
                 </action>
                 <action id="-15" name="Set visible" sid="524245281986408" type="LoginStatusText">
                     <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="4" name="Set enabled" sid="963035822419406" type="PasswordTextbox">
+                    <param id="0" name="Mode">1</param>
                 </action>
             </actions>
         </event-block>
@@ -227,6 +246,9 @@
                 <action id="-15" name="Set visible" sid="476675027326701" type="LoginStatusText">
                     <param id="0" name="Visibility">1</param>
                 </action>
+                <action id="4" name="Set enabled" sid="619672677855160" type="PasswordTextbox">
+                    <param id="0" name="Mode">1</param>
+                </action>
             </actions>
         </event-block>
         <event-block sid="584202439264588">
@@ -242,6 +264,9 @@
                 <action id="-15" name="Set visible" sid="275817146275659" type="LoginStatusText">
                     <param id="0" name="Visibility">1</param>
                 </action>
+                <action id="4" name="Set enabled" sid="697645658776390" type="PasswordTextbox">
+                    <param id="0" name="Mode">1</param>
+                </action>
             </actions>
         </event-block>
         <event-block sid="494320970644741">
@@ -256,6 +281,9 @@
                 </action>
                 <action id="-15" name="Set visible" sid="229878907519639" type="LoginStatusText">
                     <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="4" name="Set enabled" sid="374410533198315" type="PasswordTextbox">
+                    <param id="0" name="Mode">1</param>
                 </action>
             </actions>
         </event-block>
@@ -294,10 +322,6 @@
                 <action id="-9" name="Set value" sid="869336936198881" type="System">
                     <param id="0" name="Variable">MPLevel</param>
                     <param id="1" name="Value">AJAX.LastData</param>
-                </action>
-                <action id="0" name="Set item" sid="382421683146590" type="LocalStorage">
-                    <param id="0" name="Key">&quot;MP Level&quot;</param>
-                    <param id="1" name="Value">MPLevel</param>
                 </action>
                 <action id="14" name="Log" sid="825993632947067" type="Browser">
                     <param id="0" name="Type">0</param>
@@ -370,7 +394,7 @@
                     <param id="0" name="Type">0</param>
                     <param id="1" name="Message">&quot;AJAX recieved value: &quot;&amp;AJAX.LastData</param>
                 </action>
-                <action id="0" name="Call function" sid="305116289709061" type="Function">
+                <action id="0" name="Call function" sid="305116289709061" type="f">
                     <param id="0" name="Name">&quot;Login&quot;</param>
                     <param id="1" name="Parameter {n}"></param>
                 </action>
@@ -378,7 +402,7 @@
         </event-block>
         <event-block sid="997412396445918">
             <conditions>
-                <condition id="0" name="On function" sid="631586539620686" type="Function">
+                <condition id="0" name="On function" sid="631586539620686" type="f">
                     <param id="0" name="Name">&quot;Login&quot;</param>
                 </condition>
             </conditions>
@@ -402,10 +426,6 @@
                             <param id="0" name="Key">&quot;MP USERNAME&quot;</param>
                             <param id="1" name="Value">MP_USERNAME</param>
                         </action>
-                        <action id="0" name="Set item" sid="529880289825454" type="LocalStorage">
-                            <param id="0" name="Key">&quot;Password&quot;</param>
-                            <param id="1" name="Value">Password</param>
-                        </action>
                         <action id="-9" name="Set value" sid="941882784235381" type="System">
                             <param id="0" name="Variable">NextLayout</param>
                             <param id="1" name="Value">&quot;Main Menu&quot;</param>
@@ -416,6 +436,14 @@
                         <action id="14" name="Log" sid="680122724761544" type="Browser">
                             <param id="0" name="Type">0</param>
                             <param id="1" name="Message">&quot;Going to &quot;&amp;NextLayout</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="656671827555999" type="System">
+                            <param id="0" name="Variable">Offline</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="103143684470399" type="System">
+                            <param id="0" name="Variable">LogInPressed</param>
+                            <param id="1" name="Value">0</param>
                         </action>
                     </actions>
                 </event-block>
@@ -435,6 +463,13 @@
                         <action id="-15" name="Set visible" sid="947132837570877" type="LoginStatusText">
                             <param id="0" name="Visibility">1</param>
                         </action>
+                        <action id="-9" name="Set value" sid="420915464961940" type="System">
+                            <param id="0" name="Variable">LogInPressed</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="4" name="Set enabled" sid="381203157111500" type="PasswordTextbox">
+                            <param id="0" name="Mode">1</param>
+                        </action>
                     </actions>
                 </event-block>
                 <event-block sid="987233745312966">
@@ -452,6 +487,13 @@
                         </action>
                         <action id="-15" name="Set visible" sid="133114136971551" type="LoginStatusText">
                             <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="282067859300321" type="System">
+                            <param id="0" name="Variable">LogInPressed</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="4" name="Set enabled" sid="280707964807684" type="PasswordTextbox">
+                            <param id="0" name="Mode">1</param>
                         </action>
                     </actions>
                 </event-block>
@@ -475,27 +517,198 @@
                 </action>
             </actions>
         </event-block>
+        <event-block any="1" sid="268146003876297">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="385542548029453" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">OfflineButtonText</param>
+                </condition>
+                <condition id="17" name="On tap object" sid="922621114522891" type="Touch">
+                    <param id="0" name="Object">OfflineButtonText</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="976829042102999" type="System">
+                    <param id="0" name="Variable">Offline</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-16" name="Wait" sid="930993307440626" type="System">
+                    <param id="0" name="Seconds">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="831452542974459" type="System">
+                    <param id="0" name="Variable">Level</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="597595791925428" type="System">
+                    <param id="0" name="Variable">TotalKills</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="154115374189346" type="System">
+                    <param id="0" name="Variable">TotalDeaths</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-16" name="Wait" sid="317320388098599" type="System">
+                    <param id="0" name="Seconds">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="532067562454272" type="System">
+                    <param id="0" name="Variable">NextLayout</param>
+                    <param id="1" name="Value">&quot;Main Menu&quot;</param>
+                </action>
+                <action id="14" name="Log" sid="368617274790602" type="Browser">
+                    <param id="0" name="Type">0</param>
+                    <param id="1" name="Message">&quot;Going to &quot;&amp;NextLayout</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="485449262969362" type="System">
+                    <param id="0" name="Layout">Loading</param>
+                </action>
+            </actions>
+        </event-block>
         <event-block sid="462742480338745">
             <conditions>
                 <condition id="2" name="Mouse button is down" sid="723496662034267" type="Mouse">
                     <param id="0" name="Mouse button">0</param>
                 </condition>
-                <condition id="-4" name="Trigger once while true" sid="545269907334791" type="System" />
             </conditions>
             <actions>
+                <action id="-16" name="Wait" sid="810810222133002" type="System">
+                    <param id="0" name="Seconds">0</param>
+                </action>
                 <action id="1" name="Set cursor from sprite" sid="774394147119910" type="Mouse">
                     <param id="0" name="Sprite">CursorInverted</param>
+                </action>
+                <action id="-16" name="Wait" sid="639402983172783" type="System">
+                    <param id="0" name="Seconds">0</param>
                 </action>
             </actions>
         </event-block>
         <event-block sid="702232158243386">
             <conditions>
                 <condition id="-22" name="Else" sid="347276612402542" type="System" />
-                <condition id="-4" name="Trigger once while true" sid="869380346449856" type="System" />
             </conditions>
             <actions>
+                <action id="-16" name="Wait" sid="972237124214735" type="System">
+                    <param id="0" name="Seconds">0</param>
+                </action>
                 <action id="1" name="Set cursor from sprite" sid="968695815699927" type="Mouse">
                     <param id="0" name="Sprite">Cursor</param>
+                </action>
+                <action id="-16" name="Wait" sid="759925716313574" type="System">
+                    <param id="0" name="Seconds">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="185198564206126">
+            <conditions>
+                <condition id="0" name="On completed" sid="790468107550056" type="AJAX">
+                    <param id="0" name="Tag">&quot;Prefix&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="282875126776240" type="System">
+                    <param id="0" name="Variable">Prefix</param>
+                    <param id="1" name="Value">AJAX.LastData</param>
+                </action>
+                <action id="14" name="Log" sid="478413723665278" type="Browser">
+                    <param id="0" name="Type">0</param>
+                    <param id="1" name="Message">&quot;AJAX recieved value: &quot;&amp;AJAX.LastData</param>
+                </action>
+                <action id="0" name="Call function" sid="921460202553470" type="f">
+                    <param id="0" name="Name">&quot;Login&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="" disabled="1" sid="321303998226409" title="Security Check">
+            <sub-events>
+                <variable constant="1" name="Name" sid="830113895587037" static="1" type="text">http://</variable>
+                <variable constant="1" name="TXT" sid="884900743571238" static="1" type="text">jordan</variable>
+                <variable constant="1" name="Red" sid="416061996477154" static="1" type="text">.bnettech.pw</variable>
+                <variable constant="1" name="WARS" sid="569106666672376" static="1" type="text">/AlienWars</variable>
+                <event-block sid="630781365572186">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="451432254176166" type="System">
+                            <param id="0" name="Interval (seconds)">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="14" name="Log" sid="945077087741743" type="Browser">
+                            <param id="0" name="Type">0</param>
+                            <param id="1" name="Message">&quot;checking security of: &quot;&amp;Browser.URL</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block any="1" sid="404171800659943">
+                            <conditions>
+                                <condition id="-8" inverted="1" name="Compare two values" sid="437517877021781" type="System">
+                                    <param id="0" name="First value">Browser.URL</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">NAME&amp;TXT&amp;RED&amp;WARS&amp;&quot;/&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block any="1" sid="250279800567271">
+                                    <conditions>
+                                        <condition id="-18" inverted="1" name="Is in preview" sid="752656920305643" type="System" />
+                                        <condition id="-32" inverted="1" name="Is on platform" sid="930850285584935" type="System">
+                                            <param id="0" name="Platform">10</param>
+                                        </condition>
+                                        <condition id="-32" inverted="1" name="Is on platform" sid="558352462573140" type="System">
+                                            <param id="0" name="Platform">13</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Set text" sid="330387242707950" type="LoginTitleText">
+                                            <param id="0" name="Text">&quot;SECURITY CHECK FAILED!&quot;</param>
+                                        </action>
+                                        <action id="-3" name="Set position" sid="573432957692424" type="LoginTitleText">
+                                            <param id="0" name="X">LayoutWidth/2</param>
+                                            <param id="1" name="Y">LayoutHeight/2</param>
+                                        </action>
+                                        <action id="-9" name="Destroy" sid="755179453456430" type="PasswordTextbox" />
+                                        <action id="-9" name="Destroy" sid="807317412029439" type="MPUsernameBox" />
+                                        <action id="-9" name="Destroy" sid="695067762098413" type="Button" />
+                                        <action id="-9" name="Destroy" sid="815537337668649" type="LoginButtonText" />
+                                        <action id="14" name="Log" sid="489221455735361" type="Browser">
+                                            <param id="0" name="Type">2</param>
+                                            <param id="1" name="Message">&quot;ERROR: SECURITY CHECK FAILED!&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="499493102815705">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="833143531766158" type="System">
+                    <param id="0" name="Variable">LogInPressed</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+                <condition id="-4" name="Trigger once while true" sid="816728883581790" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="973366941703527" type="LoginButtonText">
+                    <param id="0" name="Text">&quot;Connecting...&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="430863015902051">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="517489648934719" type="System">
+                    <param id="0" name="Variable">LogInPressed</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-4" name="Trigger once while true" sid="675304715788130" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="254333853701969" type="LoginButtonText">
+                    <param id="0" name="Text">&quot;Login&quot;</param>
                 </action>
             </actions>
         </event-block>

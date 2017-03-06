@@ -10,6 +10,17 @@
         <include>Functions</include>
         <include>Storage</include>
         <comment>Button Animation</comment>
+        <event-block sid="136042618099074">
+            <conditions>
+                <condition id="-26" name="On canvas snapshot" sid="396928074410449" type="System" />
+            </conditions>
+            <actions>
+                <action id="13" name="Invoke download" sid="988847246656099" type="Browser">
+                    <param id="0" name="URL">CanvasSnapshot</param>
+                    <param id="1" name="Filename">&quot;AW-screenshot&quot;</param>
+                </action>
+            </actions>
+        </event-block>
         <event-block any="1" sid="870343930605803">
             <conditions>
                 <condition id="7" name="Cursor is over object" sid="932620218828055" type="Mouse">
@@ -79,7 +90,13 @@
                 <action id="-16" name="Wait" sid="303148546755842" type="System">
                     <param id="0" name="Seconds">0</param>
                 </action>
-                <action id="0" name="Call function" sid="427813220137629" type="Function">
+                <action id="2" name="Set looping" sid="326633374871724" type="MainMenuVideo">
+                    <param id="0" name="Mode">1</param>
+                </action>
+                <action id="-16" name="Wait" sid="897991437138937" type="System">
+                    <param id="0" name="Seconds">0</param>
+                </action>
+                <action id="0" name="Call function" sid="427813220137629" type="f">
                     <param id="0" name="Name">&quot;Refresh Sound&quot;</param>
                     <param id="1" name="Parameter {n}"></param>
                 </action>
@@ -141,7 +158,7 @@
             <sub-events>
                 <event-block sid="415558359217006">
                     <conditions>
-                        <condition id="0" name="On function" sid="446621905728723" type="Function">
+                        <condition id="0" name="On function" sid="446621905728723" type="f">
                             <param id="0" name="Name">&quot;Refresh Sound&quot;</param>
                         </condition>
                     </conditions>
@@ -257,41 +274,41 @@
         </event-group>
         <event-group description="" sid="950944789674305" title="QUALITY">
             <sub-events>
+                <variable constant="0" name="VideoPlayBackTime" sid="273259211091193" static="0" type="number">0</variable>
                 <event-block any="1" sid="176947356028882">
                     <conditions>
-                        <condition id="0" name="On function" sid="835674325604732" type="Function">
+                        <condition id="0" name="On function" sid="835674325604732" type="f">
                             <param id="0" name="Name">&quot;refreshMainMenuVideo&quot;</param>
                         </condition>
                         <condition id="-2" name="On start of layout" sid="531246966626455" type="System" />
                     </conditions>
                     <actions>
-                        <action id="5" name="Check item exists" sid="598323326271627" type="LocalStorage">
-                            <param id="0" name="Key">&quot;VideoQuality&quot;</param>
-                        </action>
-                        <action id="2" name="Set looping" sid="326633374871724" type="MainMenuVideo">
-                            <param id="0" name="Mode">1</param>
+                        <action id="-9" name="Set value" sid="142671012814156" type="System">
+                            <param id="0" name="Variable">VideoPlayBackTime</param>
+                            <param id="1" name="Value">MainMenuVideo.PlaybackTime</param>
                         </action>
                         <action id="-16" name="Wait" sid="390906379882252" type="System">
-                            <param id="0" name="Seconds">0</param>
-                        </action>
-                        <action id="5" name="Pause" sid="525701896927342" type="MainMenuVideo" />
-                        <action id="-16" name="Wait" sid="542746233363591" type="System">
                             <param id="0" name="Seconds">0</param>
                         </action>
                         <action id="0" name="Set source" sid="219710653308738" type="MainMenuVideo">
                             <param id="0" name="WebM source">&quot;&quot;</param>
                             <param id="1" name="Ogg Theora source">&quot;&quot;</param>
-                            <param id="2" name="H.264 source">&quot;mainmenubackground-&quot;&amp;VideoQuality&amp;&quot;.mp4&quot;</param>
+                            <param id="2" name="H.264 source">&quot;mainmenubackground-&quot;&amp;lowercase(VideoQuality)&amp;&quot;.mp4&quot;</param>
                         </action>
                         <action id="-16" name="Wait" sid="888691825499379" type="System">
                             <param id="0" name="Seconds">0</param>
                         </action>
-                        <action id="6" name="Play" sid="948321854503702" type="MainMenuVideo" />
+                        <action id="1" name="Set playback time" sid="113169573219820" type="MainMenuVideo">
+                            <param id="0" name="Time">VideoPlayBackTime</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="534555712047590" type="System">
+                            <param id="0" name="Seconds">0</param>
+                        </action>
                     </actions>
                 </event-block>
                 <event-block any="1" sid="534038064685542">
                     <conditions>
-                        <condition id="0" name="On function" sid="416041511281911" type="Function">
+                        <condition id="0" name="On function" sid="416041511281911" type="f">
                             <param id="0" name="Name">&quot;Refresh UpscaleQuality&quot;</param>
                         </condition>
                         <condition id="-2" name="On start of layout" sid="198877148161781" type="System" />
@@ -507,7 +524,7 @@
                 </event-block>
                 <event-block any="1" sid="947075631210053">
                     <conditions>
-                        <condition id="0" name="On function" sid="170960521553210" type="Function">
+                        <condition id="0" name="On function" sid="170960521553210" type="f">
                             <param id="0" name="Name">&quot;Refresh GraphicsQuality&quot;</param>
                         </condition>
                         <condition id="-2" name="On start of layout" sid="903158997333202" type="System" />
@@ -612,7 +629,7 @@
                 </event-block>
                 <event-block any="1" sid="462683375179851">
                     <conditions>
-                        <condition id="0" name="On function" sid="760200389870165" type="Function">
+                        <condition id="0" name="On function" sid="760200389870165" type="f">
                             <param id="0" name="Name">&quot;Refresh EffectsQuality&quot;</param>
                         </condition>
                         <condition id="-2" name="On start of layout" sid="945126665041931" type="System" />
@@ -793,37 +810,218 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="" disabled="1" sid="624347954834038" title="Developer Console">
+        <event-group description="" sid="624347954834038" title="Developer Console">
             <sub-events>
-                <event-block sid="583716600590845">
+                <variable constant="0" name="DevboxSelected" sid="395882253365941" static="1" type="number">0</variable>
+                <variable constant="0" name="TextBoxText" sid="489243008779990" static="1" type="text"></variable>
+                <event-block sid="155059867125302">
+                    <conditions>
+                        <condition id="0" name="On function" sid="659182711648759" type="f">
+                            <param id="0" name="Name">&quot;SetVarsOutput&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="635849518836565" type="System">
+                            <param id="0" name="Variable">TextBoxText</param>
+                            <param id="1" name="Value">&quot;&gt;&quot;&amp;f.Param(0)&amp;&quot; Successfully set to &quot;&amp;f.Param(1)&amp;newline</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="451725310856404">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="936435062492045" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="7" name="Set CSS style" sid="448515869419298" type="DevConsoleOutput">
+                            <param id="0" name="Property name">&quot;border&quot;</param>
+                            <param id="1" name="Value">&quot;0&quot;</param>
+                        </action>
+                        <action id="7" name="Set CSS style" sid="321377438822598" type="DevConsoleOutput">
+                            <param id="0" name="Property name">&quot;outline&quot;</param>
+                            <param id="1" name="Value">&quot;none&quot;</param>
+                        </action>
+                        <action id="7" name="Set CSS style" sid="940815326726348" type="DevConsole">
+                            <param id="0" name="Property name">&quot;border&quot;</param>
+                            <param id="1" name="Value">&quot;0&quot;</param>
+                        </action>
+                        <action id="7" name="Set CSS style" sid="763436835095792" type="DevConsole">
+                            <param id="0" name="Property name">&quot;outline&quot;</param>
+                            <param id="1" name="Value">&quot;none&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="930635869739953">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="220034124146776" type="System" />
+                        <condition id="-9" name="Layer is visible" sid="115907681271755" type="System">
+                            <param id="0" name="Layer">&quot;Developer Console&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="909162181129231" type="DevConsoleOutput">
+                            <param id="0" name="Text">TextBoxText</param>
+                        </action>
+                        <action id="7" name="Set CSS style" sid="653523993748441" type="DevConsoleOutput">
+                            <param id="0" name="Property name">&quot;opacity&quot;</param>
+                            <param id="1" name="Value">&quot;0.5&quot;</param>
+                        </action>
+                        <action id="7" name="Set CSS style" sid="463268431118932" type="DevConsole">
+                            <param id="0" name="Property name">&quot;opacity&quot;</param>
+                            <param id="1" name="Value">&quot;0.5&quot;</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="665188981192040">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="918753815866932" type="System">
+                                    <param id="0" name="Variable">DevboxSelected</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="7" name="Set CSS style" sid="886885932518783" type="DevConsoleOutput">
+                                    <param id="0" name="Property name">&quot;overflow&quot;</param>
+                                    <param id="1" name="Value">&quot;hidden&quot;</param>
+                                </action>
+                                <action id="9" name="Scroll to bottom" sid="797244710132887" type="DevConsoleOutput" />
+                            </actions>
+                        </event-block>
+                        <event-block sid="550200479734421">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="649931730633724" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="7" name="Set CSS style" sid="558221292323609" type="DevConsoleOutput">
+                                    <param id="0" name="Property name">&quot;overflow&quot;</param>
+                                    <param id="1" name="Value">&quot;visible&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="438685461799040">
+                    <conditions>
+                        <condition id="0" name="On click" sid="492138259478569" type="Mouse">
+                            <param id="0" name="Mouse button">1</param>
+                            <param id="1" name="Click type">0</param>
+                        </condition>
+                        <condition id="-9" name="Layer is visible" sid="232557838981352" type="System">
+                            <param id="0" name="Layer">&quot;Developer Console&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="556423443744222">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="949403851638882" type="System">
+                                    <param id="0" name="Variable">DevboxSelected</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="168101365968758" type="System">
+                                    <param id="0" name="Variable">DevboxSelected</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="466452465411828">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="345637906253238" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="267414703204518" type="System">
+                                    <param id="0" name="Variable">DevboxSelected</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block disabled="1" sid="583716600590845">
                     <conditions>
                         <condition id="-9" name="Layer is visible" sid="712921692994316" type="System">
                             <param id="0" name="Layer">&quot;Developer Console&quot;</param>
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="6" name="Set focused" sid="479551971658136" type="DevConsole" />
-                        <action id="-13" name="Set time scale" sid="137768306350279" type="System">
+                        <action disabled="1" id="6" name="Set focused" sid="479551971658136" type="DevConsole" />
+                        <action disabled="1" id="-13" name="Set time scale" sid="137768306350279" type="System">
                             <param id="0" name="Time scale">0</param>
                         </action>
                     </actions>
                 </event-block>
-                <event-block sid="314859497801770">
+                <event-block sid="955583099306379">
                     <conditions>
-                        <condition id="0" name="On key pressed" sid="149133257031015" type="Keyboard">
-                            <param id="0" name="Key">67 (C)</param>
+                        <condition id="0" name="On key pressed" sid="276728942320153" type="Keyboard">
+                            <param id="0" name="Key">222 (#)</param>
                         </condition>
-                        <condition id="2" name="Key is down" sid="729242814700899" type="Keyboard">
-                            <param id="0" name="Key">17 (Ctrl)</param>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="385395719316661">
+                            <conditions>
+                                <condition id="-9" name="Layer is visible" sid="303823248298384" type="System">
+                                    <param id="0" name="Layer">&quot;Developer Console&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-4" name="Set layer visible" sid="745566846537940" type="System">
+                                    <param id="0" name="Layer">&quot;Developer Console&quot;</param>
+                                    <param id="1" name="Visibility">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="114450027397088">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="630096394793383" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-4" name="Set layer visible" sid="225048088538111" type="System">
+                                    <param id="0" name="Layer">&quot;Developer Console&quot;</param>
+                                    <param id="1" name="Visibility">1</param>
+                                </action>
+                                <action id="-10" name="Add to" sid="499328892202943" type="System">
+                                    <param id="0" name="Variable">TextBoxText</param>
+                                    <param id="1" name="Value">&quot;&gt;&quot;&amp;&quot;Type &apos;commands&apos; for a list of available commands&quot;&amp;newline</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="593331774181243" type="System">
+                                    <param id="0" name="Seconds">0</param>
+                                </action>
+                                <action id="6" name="Set focused" sid="119998067575504" type="DevConsole" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="499816362956022">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="813520622199201" type="System">
+                            <param id="0" name="First value">find(DevConsole.Text, &quot;&gt;&quot;)</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">-1</param>
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-4" name="Set layer visible" sid="517420010351569" type="System">
-                            <param id="0" name="Layer">&quot;Developer Console&quot;</param>
-                            <param id="1" name="Visibility">1</param>
+                        <action id="0" name="Set text" sid="460979857473775" type="DevConsole">
+                            <param id="0" name="Text">&quot;&gt;&quot;</param>
                         </action>
-                        <action id="-13" name="Set time scale" sid="571157088306161" type="System">
-                            <param id="0" name="Time scale">0</param>
+                    </actions>
+                </event-block>
+                <event-block sid="618423679256168">
+                    <conditions>
+                        <condition id="0" name="On function" sid="781806564107302" type="f">
+                            <param id="0" name="Name">&quot;Unknown command&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="342352462136791" type="System">
+                            <param id="0" name="Variable">TextBoxText</param>
+                            <param id="1" name="Value">&quot;&gt;&quot;&amp;&quot;Error: Unknown command &apos;&quot;&amp;DevConsole.Text&amp;&quot;&apos;!&quot;&amp;newline</param>
+                        </action>
+                        <action id="0" name="Set text" sid="384952561939984" type="DevConsole">
+                            <param id="0" name="Text">&quot;&quot;</param>
                         </action>
                     </actions>
                 </event-block>
@@ -836,10 +1034,50 @@
                             <param id="0" name="Layer">&quot;Developer Console&quot;</param>
                         </condition>
                     </conditions>
-                    <actions />
+                    <actions>
+                        <action id="0" name="Set text" sid="613480566190966" type="DevConsole">
+                            <param id="0" name="Text">replace(DevConsole.Text, &quot;&gt;&quot;, &quot;&quot;)</param>
+                        </action>
+                    </actions>
                     <sub-events>
+                        <event-block sid="342977766739123">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="131591033119923" type="System">
+                                    <param id="0" name="First value">find(DevConsole.Text, &quot;commands&quot;)</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Second value">-1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Add to" sid="634246045942314" type="System">
+                                    <param id="0" name="Variable">TextBoxText</param>
+                                    <param id="1" name="Value">&quot;&gt;&quot;&amp;&quot;Available commands:&quot;&amp;newline&amp;&quot;     commands - Shows the available commands&quot;&amp;newline&amp;&quot;     screenshot - Takes a screenshot&quot;&amp;newline&amp;&quot;     call &lt;function&gt; - Executes a function&quot;&amp;newline&amp;&quot;     quit - Quites the game&quot;&amp;newline&amp;&quot;     set &lt;setting&gt; &lt;value&gt; - Change a specific setting&quot;&amp;newline&amp;&quot;     goto layout &lt;layout&gt; - Goes to the layout&quot;&amp;newline&amp;&quot;     reset global vars - Resets all settings&quot;&amp;newline&amp;&quot;     show layer &lt;layer&gt; - Shows a specific layer&quot;&amp;newline&amp;&quot;     hide layer &lt;layer&gt; - Hides a specific layer&quot;&amp;newline</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="647244741045851">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="197168942857741" type="System" />
+                                <condition id="-8" name="Compare two values" sid="995887530007684" type="System">
+                                    <param id="0" name="First value">find(DevConsole.Text, &quot;screenshot&quot;)</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Second value">-1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-27" name="Snapshot canvas" sid="854678387469744" type="System">
+                                    <param id="0" name="Format">0</param>
+                                    <param id="1" name="JPEG quality">75</param>
+                                </action>
+                                <action id="-10" name="Add to" sid="908731297092646" type="System">
+                                    <param id="0" name="Variable">TextBoxText</param>
+                                    <param id="1" name="Value">&quot;&gt;&quot;&amp;&quot;Screenshot saved!&quot;&amp;newline</param>
+                                </action>
+                            </actions>
+                        </event-block>
                         <event-block sid="319002440315051">
                             <conditions>
+                                <condition id="-22" name="Else" sid="171163891051493" type="System" />
                                 <condition id="-8" name="Compare two values" sid="649780015651339" type="System">
                                     <param id="0" name="First value">find(DevConsole.Text, &quot;call &quot;)</param>
                                     <param id="1" name="Comparison">1</param>
@@ -847,14 +1085,19 @@
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="0" name="Call function" sid="181128783612204" type="Function">
+                                <action id="0" name="Call function" sid="181128783612204" type="f">
                                     <param id="0" name="Name">replace(DevConsole.Text, &quot;call &quot;, &quot;&quot;)</param>
                                     <param id="1" name="Parameter {n}"></param>
+                                </action>
+                                <action id="-10" name="Add to" sid="415272148520945" type="System">
+                                    <param id="0" name="Variable">TextBoxText</param>
+                                    <param id="1" name="Value">&quot;&gt;&quot;&amp;&quot;Command &apos;&quot;&amp;replace(DevConsole.Text, &quot;call &quot;, &quot;&quot;)&amp;&quot;&apos; executed&quot;&amp;newline</param>
                                 </action>
                             </actions>
                         </event-block>
                         <event-block sid="253562753196732">
                             <conditions>
+                                <condition id="-22" name="Else" sid="634817022741533" type="System" />
                                 <condition id="-8" name="Compare two values" sid="484821665319420" type="System">
                                     <param id="0" name="First value">find(DevConsole.Text, &quot;quit&quot;)</param>
                                     <param id="1" name="Comparison">1</param>
@@ -871,6 +1114,7 @@
                         </event-block>
                         <event-block sid="473141695608541">
                             <conditions>
+                                <condition id="-22" name="Else" sid="666715830965596" type="System" />
                                 <condition id="-8" name="Compare two values" sid="439580546716251" type="System">
                                     <param id="0" name="First value">find(DevConsole.Text, &quot;set&quot;)</param>
                                     <param id="1" name="Comparison">1</param>
@@ -879,30 +1123,22 @@
                             </conditions>
                             <actions />
                             <sub-events>
-                                <event-block sid="730214592829780">
+                                <event-block sid="945280879358236">
                                     <conditions>
-                                        <condition id="-8" name="Compare two values" sid="362716876859670" type="System">
-                                            <param id="0" name="First value">find(DevConsole.Text, &quot; MPLevel &quot;)</param>
+                                        <condition id="-8" name="Compare two values" sid="112067580131390" type="System">
+                                            <param id="0" name="First value">find(DevConsole.Text, &quot; RainbowMode &quot;)</param>
                                             <param id="1" name="Comparison">1</param>
                                             <param id="2" name="Second value">-1</param>
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="-9" name="Set value" sid="146853520134011" type="System">
-                                            <param id="0" name="Variable">MPLevel</param>
-                                            <param id="1" name="Value">replace(DevConsole.Text, &quot;set MPLevel &quot;, &quot;&quot;)</param>
+                                        <action id="-9" name="Set value" sid="836082578687582" type="System">
+                                            <param id="0" name="Variable">RainbowMode</param>
+                                            <param id="1" name="Value">replace(DevConsole.Text, &quot;set RainbowMode &quot;, &quot;&quot;)</param>
                                         </action>
-                                        <action id="-9" name="Set value" sid="238035193047907" type="System">
-                                            <param id="0" name="Variable">Cheating</param>
-                                            <param id="1" name="Value">1</param>
-                                        </action>
-                                        <action id="0" name="Set item" sid="387209345846387" type="LocalStorage">
-                                            <param id="0" name="Key">&quot;MP Level&quot;</param>
-                                            <param id="1" name="Value">MPLevel</param>
-                                        </action>
-                                        <action id="0" name="Set item" sid="352740459774942" type="LocalStorage">
-                                            <param id="0" name="Key">&quot;Cheating&quot;</param>
-                                            <param id="1" name="Value">Cheating</param>
+                                        <action id="0" name="Call function" sid="832767176843943" type="f">
+                                            <param id="0" name="Name">&quot;SetVarsOutput&quot;</param>
+                                            <param id="1" name="Parameter {n}">&quot;RainbowMode&quot;{###}RainbowMode</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -923,29 +1159,19 @@
                                             <param id="0" name="Key">&quot;MenuColour&quot;</param>
                                             <param id="1" name="Value">MenuColour</param>
                                         </action>
-                                        <action id="0" name="Call function" sid="331387272535453" type="Function">
+                                        <action id="0" name="Call function" sid="331387272535453" type="f">
                                             <param id="0" name="Name">&quot;SetMenuColour&quot;</param>
                                             <param id="1" name="Parameter {n}"></param>
                                         </action>
-                                    </actions>
-                                </event-block>
-                                <event-block sid="571962880547006">
-                                    <conditions>
-                                        <condition id="-8" name="Compare two values" sid="980255203971668" type="System">
-                                            <param id="0" name="First value">find(DevConsole.Text, &quot; PLAYERSPRITE &quot;)</param>
-                                            <param id="1" name="Comparison">1</param>
-                                            <param id="2" name="Second value">-1</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="-9" name="Set value" sid="438091028784030" type="System">
-                                            <param id="0" name="Variable">SpaceshipURL</param>
-                                            <param id="1" name="Value">replace(DevConsole.Text, &quot;set PLAYERSPRITE &quot;, &quot;&quot;)</param>
+                                        <action id="0" name="Call function" sid="283052716860678" type="f">
+                                            <param id="0" name="Name">&quot;SetVarsOutput&quot;</param>
+                                            <param id="1" name="Parameter {n}">&quot;MenuColour&quot;{###}MenuColour</param>
                                         </action>
                                     </actions>
                                 </event-block>
                                 <event-block sid="373995673797943">
                                     <conditions>
+                                        <condition id="-22" name="Else" sid="952250850790865" type="System" />
                                         <condition id="-8" name="Compare two values" sid="294435101057355" type="System">
                                             <param id="0" name="First value">find(DevConsole.Text, &quot; SERVER &quot;)</param>
                                             <param id="1" name="Comparison">1</param>
@@ -957,10 +1183,15 @@
                                             <param id="0" name="Variable">SERVER</param>
                                             <param id="1" name="Value">replace(DevConsole.Text, &quot;set SERVER &quot;, &quot;&quot;)</param>
                                         </action>
+                                        <action id="0" name="Call function" sid="941672308209387" type="f">
+                                            <param id="0" name="Name">&quot;SetVarsOutput&quot;</param>
+                                            <param id="1" name="Parameter {n}">&quot;SERVER&quot;{###}SERVER</param>
+                                        </action>
                                     </actions>
                                 </event-block>
                                 <event-block sid="368906435026260">
                                     <conditions>
+                                        <condition id="-22" name="Else" sid="685184327583951" type="System" />
                                         <condition id="-8" name="Compare two values" sid="763278235825811" type="System">
                                             <param id="0" name="First value">find(DevConsole.Text, &quot; NextLayout &quot;)</param>
                                             <param id="1" name="Comparison">1</param>
@@ -972,10 +1203,15 @@
                                             <param id="0" name="Variable">NextLayout</param>
                                             <param id="1" name="Value">replace(DevConsole.Text, &quot;set NextLevel &quot;, &quot;&quot;)</param>
                                         </action>
+                                        <action id="0" name="Call function" sid="573314068700053" type="f">
+                                            <param id="0" name="Name">&quot;SetVarsOutput&quot;</param>
+                                            <param id="1" name="Parameter {n}">&quot;NextLayout&quot;{###}NextLayout</param>
+                                        </action>
                                     </actions>
                                 </event-block>
                                 <event-block sid="543982403011904">
                                     <conditions>
+                                        <condition id="-22" name="Else" sid="743327605687426" type="System" />
                                         <condition id="-8" name="Compare two values" sid="540523468698013" type="System">
                                             <param id="0" name="First value">find(DevConsole.Text, &quot; Resolution&quot;)</param>
                                             <param id="1" name="Comparison">1</param>
@@ -984,7 +1220,7 @@
                                     </conditions>
                                     <actions />
                                     <sub-events>
-                                        <event-block sid="415369713976415">
+                                        <event-block disabled="1" sid="415369713976415">
                                             <conditions>
                                                 <condition id="-8" name="Compare two values" sid="813611086263757" type="System">
                                                     <param id="0" name="First value">find(DevConsole.Text, &quot;-r &quot;)</param>
@@ -999,6 +1235,10 @@
                                                 </action>
                                                 <action id="-20" name="Set layout scale" sid="290783937308480" type="System">
                                                     <param id="0" name="Scale">int(tokenat(replace(DevConsole.Text, &quot;set Resolution -r &quot;, &quot;&quot;), 1, &quot;x&quot;))/1080</param>
+                                                </action>
+                                                <action id="0" name="Call function" sid="814980946123578" type="f">
+                                                    <param id="0" name="Name">&quot;SetVarsOutput&quot;</param>
+                                                    <param id="1" name="Parameter {n}">&quot;Resolution&quot;{###}&quot;Resolution Successfully set to &quot;&amp;int(tokenat(replace(DevConsole.Text, &quot;set Resolution -r &quot;, &quot;&quot;), 0, &quot;x&quot;))&amp;&quot;x&quot;&amp;int(tokenat(replace(DevConsole.Text, &quot;set Resolution -r &quot;, &quot;&quot;), 1, &quot;x&quot;))</param>
                                                 </action>
                                             </actions>
                                         </event-block>
@@ -1019,9 +1259,13 @@
                                                     <param id="0" name="Key">&quot;Resolution&quot;</param>
                                                     <param id="1" name="Value">Resolution</param>
                                                 </action>
-                                                <action id="0" name="Call function" sid="318980871475091" type="Function">
+                                                <action id="0" name="Call function" sid="318980871475091" type="f">
                                                     <param id="0" name="Name">&quot;Refresh UpscaleQuality&quot;</param>
                                                     <param id="1" name="Parameter {n}"></param>
+                                                </action>
+                                                <action id="0" name="Call function" sid="845688731972405" type="f">
+                                                    <param id="0" name="Name">&quot;SetVarsOutput&quot;</param>
+                                                    <param id="1" name="Parameter {n}">&quot;Resolution&quot;{###}Resolution</param>
                                                 </action>
                                             </actions>
                                         </event-block>
@@ -1029,6 +1273,7 @@
                                 </event-block>
                                 <event-block sid="398044402573540">
                                     <conditions>
+                                        <condition id="-22" name="Else" sid="398796910930728" type="System" />
                                         <condition id="-8" name="Compare two values" sid="169295438780378" type="System">
                                             <param id="0" name="First value">find(DevConsole.Text, &quot; PixelRounding &quot;)</param>
                                             <param id="1" name="Comparison">1</param>
@@ -1040,10 +1285,15 @@
                                             <param id="0" name="Variable">PixelRounding</param>
                                             <param id="1" name="Value">int(replace(DevConsole.Text, &quot;set PixelRounding &quot;, &quot;&quot;))</param>
                                         </action>
+                                        <action id="0" name="Call function" sid="345582006192381" type="f">
+                                            <param id="0" name="Name">&quot;SetVarsOutput&quot;</param>
+                                            <param id="1" name="Parameter {n}">&quot;PixelRounding&quot;{###}PixelRounding</param>
+                                        </action>
                                     </actions>
                                 </event-block>
                                 <event-block sid="652556460923130">
                                     <conditions>
+                                        <condition id="-22" name="Else" sid="321649372944865" type="System" />
                                         <condition id="-8" name="Compare two values" sid="388697142719403" type="System">
                                             <param id="0" name="First value">find(DevConsole.Text, &quot; VideoQuality &quot;)</param>
                                             <param id="1" name="Comparison">1</param>
@@ -1059,9 +1309,27 @@
                                             <param id="0" name="Key">&quot;VideoQuality&quot;</param>
                                             <param id="1" name="Value">VideoQuality</param>
                                         </action>
-                                        <action id="0" name="Call function" sid="283238796687036" type="Function">
+                                        <action id="0" name="Call function" sid="283238796687036" type="f">
                                             <param id="0" name="Name">&quot;refreshMainMenuVideo&quot;</param>
                                             <param id="1" name="Parameter {n}"></param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="630874656071461" type="f">
+                                            <param id="0" name="Name">&quot;SetVarsOutput&quot;</param>
+                                            <param id="1" name="Parameter {n}">&quot;VideoQuality&quot;{###}VideoQuality</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="543903397441706">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="822619509348151" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Add to" sid="610216762147437" type="System">
+                                            <param id="0" name="Variable">TextBoxText</param>
+                                            <param id="1" name="Value">&quot;&gt;set &lt;setting&gt; &lt;value&gt; - Change a specific setting&quot;&amp;newline</param>
+                                        </action>
+                                        <action id="0" name="Set text" sid="256118380314716" type="DevConsole">
+                                            <param id="0" name="Text">&quot;&quot;</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -1069,6 +1337,7 @@
                         </event-block>
                         <event-block sid="634347515209519">
                             <conditions>
+                                <condition id="-22" name="Else" sid="341713133549536" type="System" />
                                 <condition id="-8" name="Compare two values" sid="890549297005117" type="System">
                                     <param id="0" name="First value">find(DevConsole.Text, &quot;goto&quot;)</param>
                                     <param id="1" name="Comparison">1</param>
@@ -1099,10 +1368,22 @@
                                         </action>
                                     </actions>
                                 </event-block>
+                                <event-block sid="919858586038358">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="792304481473969" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Add to" sid="789604563933678" type="System">
+                                            <param id="0" name="Variable">TextBoxText</param>
+                                            <param id="1" name="Value">&quot;&gt;goto layout &lt;layout&gt; - Goes to the layout&quot;&amp;newline</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
                             </sub-events>
                         </event-block>
                         <event-block sid="940980616876088">
                             <conditions>
+                                <condition id="-22" name="Else" sid="739750236851678" type="System" />
                                 <condition id="-8" name="Compare two values" sid="906242594476417" type="System">
                                     <param id="0" name="First value">find(DevConsole.Text, &quot;reset&quot;)</param>
                                     <param id="1" name="Comparison">1</param>
@@ -1131,6 +1412,10 @@
                                             </conditions>
                                             <actions>
                                                 <action id="-21" name="Reset global variables" sid="924804299575471" type="System" />
+                                                <action id="-10" name="Add to" sid="645109841363476" type="System">
+                                                    <param id="0" name="Variable">TextBoxText</param>
+                                                    <param id="1" name="Value">&quot;&gt;&quot;&amp;&quot;Global variables successfully reset to defaults&quot;&amp;newline</param>
+                                                </action>
                                                 <action id="14" name="Log" sid="801116307061055" type="Browser">
                                                     <param id="0" name="Type">0</param>
                                                     <param id="1" name="Message">&quot;Resetting global variables to default&quot;</param>
@@ -1139,10 +1424,22 @@
                                         </event-block>
                                     </sub-events>
                                 </event-block>
+                                <event-block sid="985937667317981">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="412500353397129" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Add to" sid="297760152762268" type="System">
+                                            <param id="0" name="Variable">TextBoxText</param>
+                                            <param id="1" name="Value">&quot;&gt;reset global vars - Resets all settings&quot;&amp;newline</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
                             </sub-events>
                         </event-block>
                         <event-block sid="974690321235037">
                             <conditions>
+                                <condition id="-22" name="Else" sid="347095758604569" type="System" />
                                 <condition id="-8" name="Compare two values" sid="936353056192532" type="System">
                                     <param id="0" name="First value">find(DevConsole.Text, &quot;show&quot;)</param>
                                     <param id="1" name="Comparison">1</param>
@@ -1187,10 +1484,22 @@
                                         </event-block>
                                     </sub-events>
                                 </event-block>
+                                <event-block sid="757798900037104">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="624432955120669" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Add to" sid="889586211616758" type="System">
+                                            <param id="0" name="Variable">TextBoxText</param>
+                                            <param id="1" name="Value">&quot;&gt;show layer &lt;layer&gt; - Shows a specific layer&quot;&amp;newline</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
                             </sub-events>
                         </event-block>
                         <event-block sid="530460089495905">
                             <conditions>
+                                <condition id="-22" name="Else" sid="266576893015596" type="System" />
                                 <condition id="-8" name="Compare two values" sid="744842316706201" type="System">
                                     <param id="0" name="First value">find(DevConsole.Text, &quot;hide&quot;)</param>
                                     <param id="1" name="Comparison">1</param>
@@ -1235,7 +1544,29 @@
                                         </event-block>
                                     </sub-events>
                                 </event-block>
+                                <event-block sid="898992361233267">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="560330820297500" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Add to" sid="532112542621765" type="System">
+                                            <param id="0" name="Variable">TextBoxText</param>
+                                            <param id="1" name="Value">&quot;&gt;hide layer &lt;layer&gt; - Hides a specific layer&quot;&amp;newline</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
                             </sub-events>
+                        </event-block>
+                        <event-block sid="306866436417144">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="773136447601331" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="412070575644604" type="f">
+                                    <param id="0" name="Name">&quot;Unknown command&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
                         </event-block>
                         <event-block sid="909157440216771">
                             <conditions />
@@ -1243,12 +1574,12 @@
                                 <action id="0" name="Set text" sid="782558620151663" type="DevConsole">
                                     <param id="0" name="Text">&quot;&quot;</param>
                                 </action>
-                                <action id="8" name="Set unfocused" sid="466216146287031" type="DevConsole" />
-                                <action id="-4" name="Set layer visible" sid="763833762517670" type="System">
+                                <action disabled="1" id="8" name="Set unfocused" sid="466216146287031" type="DevConsole" />
+                                <action disabled="1" id="-4" name="Set layer visible" sid="763833762517670" type="System">
                                     <param id="0" name="Layer">&quot;Developer Console&quot;</param>
                                     <param id="1" name="Visibility">0</param>
                                 </action>
-                                <action id="-13" name="Set time scale" sid="620665134705001" type="System">
+                                <action disabled="1" id="-13" name="Set time scale" sid="620665134705001" type="System">
                                     <param id="0" name="Time scale">1</param>
                                 </action>
                             </actions>
@@ -1297,7 +1628,7 @@
                 <condition id="-2" name="On start of layout" sid="362780135326481" type="System" />
             </conditions>
             <actions>
-                <action id="0" name="Call function" sid="426981187319994" type="Function">
+                <action id="0" name="Call function" sid="426981187319994" type="f">
                     <param id="0" name="Name">&quot;SetMenuColour&quot;</param>
                     <param id="1" name="Parameter {n}"></param>
                 </action>
@@ -1326,7 +1657,7 @@
                 <condition id="-14" name="Compare variable" sid="947121559232092" type="System">
                     <param id="0" name="Variable">LogoClicked</param>
                     <param id="1" name="Comparison">5</param>
-                    <param id="2" name="Value">100</param>
+                    <param id="2" name="Value">50</param>
                 </condition>
             </conditions>
             <actions>
@@ -1376,78 +1707,11 @@
                 </action>
             </actions>
         </event-block>
-        <event-group description="" sid="329003579535686" title="Change Spaceship">
-            <sub-events>
-                <event-block sid="219924847386507">
-                    <conditions>
-                        <condition id="-14" name="Compare variable" sid="575888887243083" type="System">
-                            <param id="0" name="Variable">SpaceshipURL</param>
-                            <param id="1" name="Comparison">1</param>
-                            <param id="2" name="Value">&quot;&quot;</param>
-                        </condition>
-                        <condition id="-4" name="Trigger once while true" sid="360828166952524" type="System" />
-                    </conditions>
-                    <actions>
-                        <action id="5" name="Set frame" sid="399125458055988" type="AllPlayerSprites">
-                            <param id="0" name="Frame number">0</param>
-                        </action>
-                        <action id="10" name="Load image from URL" sid="437298877420690" type="AllPlayerSprites">
-                            <param id="0" name="URI">SpaceshipURL</param>
-                            <param id="1" name="Size">1</param>
-                        </action>
-                        <action id="5" name="Set frame" sid="491127150095926" type="AllPlayerSprites">
-                            <param id="0" name="Frame number">1</param>
-                        </action>
-                        <action id="10" name="Load image from URL" sid="396534344607192" type="AllPlayerSprites">
-                            <param id="0" name="URI">SpaceshipURL</param>
-                            <param id="1" name="Size">1</param>
-                        </action>
-                        <action id="5" name="Set frame" sid="302422189481020" type="AllPlayerSprites">
-                            <param id="0" name="Frame number">0</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="540362906791409">
-                    <conditions>
-                        <condition id="-14" name="Compare variable" sid="921193662114847" type="System">
-                            <param id="0" name="Variable">SpaceshipURL</param>
-                            <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Value">&quot;&quot;</param>
-                        </condition>
-                        <condition id="-4" name="Trigger once while true" sid="197326398373572" type="System" />
-                    </conditions>
-                    <actions>
-                        <action id="5" name="Set frame" sid="167080918696959" type="AllPlayerSprites">
-                            <param id="0" name="Frame number">0</param>
-                        </action>
-                        <action id="10" name="Load image from URL" sid="672261703332913" type="AllPlayerSprites">
-                            <param id="0" name="URI">&quot;https://cdn.rawgit.com/Jordonbc/alienwars/252d8777/Animations/Player/Default/000.png&quot;</param>
-                            <param id="1" name="Size">1</param>
-                        </action>
-                        <action id="5" name="Set frame" sid="489122156704385" type="AllPlayerSprites">
-                            <param id="0" name="Frame number">1</param>
-                        </action>
-                        <action id="10" name="Load image from URL" sid="196369804416869" type="AllPlayerSprites">
-                            <param id="0" name="URI">&quot;https://cdn.rawgit.com/Jordonbc/alienwars/252d8777/Animations/Player/Default/001.png&quot;</param>
-                            <param id="1" name="Size">1</param>
-                        </action>
-                        <action id="5" name="Set frame" sid="649912308962465" type="AllPlayerSprites">
-                            <param id="0" name="Frame number">0</param>
-                        </action>
-                    </actions>
-                </event-block>
-            </sub-events>
-        </event-group>
         <event-block sid="380057792846354">
             <conditions>
                 <condition id="1" name="On text changed" sid="687308460467478" type="ChangeSpriteTextBox" />
             </conditions>
-            <actions>
-                <action id="-9" name="Set value" sid="639297509649942" type="System">
-                    <param id="0" name="Variable">SpaceshipURL</param>
-                    <param id="1" name="Value">ChangeSpriteTextBox.Text</param>
-                </action>
-            </actions>
+            <actions />
         </event-block>
         <event-block sid="663970266311019">
             <conditions>
@@ -1480,17 +1744,17 @@
                             <param id="0" name="Group name">&quot;Controller Menus&quot;</param>
                             <param id="1" name="State">1</param>
                         </action>
-                        <action id="0" name="Call function" sid="819672950679361" type="Function">
+                        <action id="0" name="Call function" sid="819672950679361" type="f">
                             <param id="0" name="Name">&quot;HideAll&quot;</param>
                             <param id="1" name="Parameter {n}"></param>
                         </action>
-                        <action id="0" name="Call function" sid="431588527325111" type="Function">
+                        <action id="0" name="Call function" sid="431588527325111" type="f">
                             <param id="0" name="Name">&quot;Disable Singleplayer Blur&quot;</param>
                             <param id="1" name="Parameter {n}"></param>
                         </action>
                         <action id="-9" name="Set value" sid="539590871387449" type="System">
                             <param id="0" name="Variable">MaxSelectable</param>
-                            <param id="1" name="Value">3</param>
+                            <param id="1" name="Value">4</param>
                         </action>
                         <action id="-9" name="Set value" sid="807898092252892" type="System">
                             <param id="0" name="Variable">MinSelectable</param>
@@ -1498,7 +1762,7 @@
                         </action>
                         <action id="-9" name="Set value" sid="206413692897370" type="System">
                             <param id="0" name="Variable">Selected</param>
-                            <param id="1" name="Value">3</param>
+                            <param id="1" name="Value">4</param>
                         </action>
                         <action id="-15" name="Set visible" sid="455454602967813" type="BackButtonText">
                             <param id="0" name="Visibility">0</param>
@@ -1684,6 +1948,89 @@
                 </event-block>
             </sub-events>
         </event-block>
+        <event-block sid="269371027779499">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="880538847715624" type="System">
+                    <param id="0" name="Variable">RainbowMode</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-19" name="Pick all" sid="844599843947943" type="System">
+                    <param id="0" name="Object">MPPlayer</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-27" name="Set effect enabled" sid="172027632631596" type="MPPlayer">
+                    <param id="0" name="Mode">0</param>
+                    <param id="1" name="Effect">&quot;AdjustHSL&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="659392229267026">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="750536422710376" type="System">
+                    <param id="0" name="Variable">RainbowMode</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+                <condition id="-19" name="Pick all" sid="745344740721077" type="System">
+                    <param id="0" name="Object">MPPlayer</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-27" name="Set effect enabled" sid="932521787436450" type="MPPlayer">
+                    <param id="0" name="Mode">1</param>
+                    <param id="1" name="Effect">&quot;AdjustHSL&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="700318689368105">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="228955913945697" type="System">
+                    <param id="0" name="Variable">RainbowMode</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="585700573422561">
+                    <conditions>
+                        <condition id="-11" name="For Each" sid="708448199791201" type="System">
+                            <param id="0" name="Object">MPPlayer</param>
+                        </condition>
+                        <condition id="-1" name="Every tick" sid="193136907891259" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-28" name="Set effect parameter" sid="718956814613326" type="MPPlayer">
+                            <param id="0" name="Effect">&quot;AdjustHSL&quot;</param>
+                            <param id="1" name="Parameter index">0</param>
+                            <param id="2" name="Value">MPPlayer.HueValue</param>
+                        </action>
+                        <action id="-11" name="Add to" sid="478338222987296" type="MPPlayer">
+                            <param id="0" name="Instance variable">HueValue</param>
+                            <param id="1" name="Value">0.2</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="451668423790163">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="592188115474121" type="MPPlayer">
+                    <param id="0" name="Instance variable">HueValue</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Value">100</param>
+                </condition>
+                <condition id="-1" name="Every tick" sid="396060506398536" type="System" />
+            </conditions>
+            <actions>
+                <action id="-10" name="Set value" sid="581408905899625" type="MPPlayer">
+                    <param id="0" name="Instance variable">HueValue</param>
+                    <param id="1" name="Value">-100</param>
+                </action>
+            </actions>
+        </event-block>
         <event-group description="" inactive="1" sid="502618397778746" title="Controller Menus">
             <sub-events>
                 <event-group description="" sid="157789651293508" title="Controls">
@@ -1832,17 +2179,17 @@
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="0" name="Call function" sid="952855028275874" type="Function">
+                                        <action id="0" name="Call function" sid="952855028275874" type="f">
                                             <param id="0" name="Name">&quot;HideAll&quot;</param>
                                             <param id="1" name="Parameter {n}"></param>
                                         </action>
                                         <action id="-9" name="Set value" sid="990524655536734" type="System">
                                             <param id="0" name="Variable">Selected</param>
-                                            <param id="1" name="Value">3</param>
+                                            <param id="1" name="Value">4</param>
                                         </action>
                                         <action id="-9" name="Set value" sid="776680218837736" type="System">
                                             <param id="0" name="Variable">MaxSelectable</param>
-                                            <param id="1" name="Value">3</param>
+                                            <param id="1" name="Value">4</param>
                                         </action>
                                         <action id="-9" name="Set value" sid="466393384889388" type="System">
                                             <param id="0" name="Variable">MinSelectable</param>
@@ -1860,6 +2207,41 @@
                                         </action>
                                     </actions>
                                 </event-block>
+                                <event-block sid="807504897736762">
+                                    <conditions>
+                                        <condition id="-9" name="Layer is visible" sid="614219655791226" type="System">
+                                            <param id="0" name="Layer">&quot;Controls&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="243029197837107" type="f">
+                                            <param id="0" name="Name">&quot;HideAll&quot;</param>
+                                            <param id="1" name="Parameter {n}"></param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="274884809426033" type="System">
+                                            <param id="0" name="Variable">Selected</param>
+                                            <param id="1" name="Value">4</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="131804710959205" type="System">
+                                            <param id="0" name="Variable">MaxSelectable</param>
+                                            <param id="1" name="Value">4</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="220819034056045" type="System">
+                                            <param id="0" name="Variable">MinSelectable</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="-4" name="Set layer visible" sid="366511887576418" type="System">
+                                            <param id="0" name="Layer">&quot;XboxBackButtonRootMenu&quot;</param>
+                                            <param id="1" name="Visibility">0</param>
+                                        </action>
+                                        <action id="0" name="Play" sid="341491824602664" type="Audio">
+                                            <param id="0" name="Audio file">Menu Selection Click</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">0</param>
+                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
                                 <event-block sid="413865792788990">
                                     <conditions>
                                         <condition id="-9" name="Layer is visible" sid="710277177874680" type="System">
@@ -1867,19 +2249,19 @@
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="0" name="Call function" sid="902687842141872" type="Function">
+                                        <action id="0" name="Call function" sid="902687842141872" type="f">
                                             <param id="0" name="Name">&quot;HideAll&quot;</param>
                                             <param id="1" name="Parameter {n}"></param>
                                         </action>
-                                        <action id="-9" name="Set value" sid="404181883299916" type="System">
+                                        <action id="-9" name="Set value" sid="103832735511070" type="System">
                                             <param id="0" name="Variable">Selected</param>
-                                            <param id="1" name="Value">3</param>
+                                            <param id="1" name="Value">4</param>
                                         </action>
-                                        <action id="-9" name="Set value" sid="359312194930282" type="System">
+                                        <action id="-9" name="Set value" sid="741063545237113" type="System">
                                             <param id="0" name="Variable">MaxSelectable</param>
-                                            <param id="1" name="Value">3</param>
+                                            <param id="1" name="Value">4</param>
                                         </action>
-                                        <action id="-9" name="Set value" sid="930238385410425" type="System">
+                                        <action id="-9" name="Set value" sid="638973330361606" type="System">
                                             <param id="0" name="Variable">MinSelectable</param>
                                             <param id="1" name="Value">0</param>
                                         </action>
@@ -1902,21 +2284,21 @@
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="0" name="Call function" sid="183310777940662" type="Function">
+                                        <action id="0" name="Call function" sid="183310777940662" type="f">
                                             <param id="0" name="Name">&quot;HideAll&quot;</param>
                                             <param id="1" name="Parameter {n}"></param>
                                         </action>
-                                        <action id="-9" name="Set value" sid="359229997101191" type="System">
-                                            <param id="0" name="Variable">MaxSelectable</param>
-                                            <param id="1" name="Value">3</param>
+                                        <action id="-9" name="Set value" sid="720466132573612" type="System">
+                                            <param id="0" name="Variable">Selected</param>
+                                            <param id="1" name="Value">4</param>
                                         </action>
-                                        <action id="-9" name="Set value" sid="162282439577344" type="System">
+                                        <action id="-9" name="Set value" sid="121319670574915" type="System">
+                                            <param id="0" name="Variable">MaxSelectable</param>
+                                            <param id="1" name="Value">4</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="633309192912189" type="System">
                                             <param id="0" name="Variable">MinSelectable</param>
                                             <param id="1" name="Value">0</param>
-                                        </action>
-                                        <action id="-9" name="Set value" sid="321078096075296" type="System">
-                                            <param id="0" name="Variable">Selected</param>
-                                            <param id="1" name="Value">1</param>
                                         </action>
                                         <action id="-4" name="Set layer visible" sid="621036215191946" type="System">
                                             <param id="0" name="Layer">&quot;XboxBackButtonRootMenu&quot;</param>
@@ -1937,19 +2319,19 @@
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="0" name="Call function" sid="566196521900506" type="Function">
+                                        <action id="0" name="Call function" sid="566196521900506" type="f">
                                             <param id="0" name="Name">&quot;HideAll&quot;</param>
                                             <param id="1" name="Parameter {n}"></param>
                                         </action>
-                                        <action id="-9" name="Set value" sid="589744443999481" type="System">
+                                        <action id="-9" name="Set value" sid="462504044291683" type="System">
                                             <param id="0" name="Variable">Selected</param>
-                                            <param id="1" name="Value">2</param>
+                                            <param id="1" name="Value">4</param>
                                         </action>
-                                        <action id="-9" name="Set value" sid="337709571945888" type="System">
+                                        <action id="-9" name="Set value" sid="285856903078676" type="System">
                                             <param id="0" name="Variable">MaxSelectable</param>
-                                            <param id="1" name="Value">3</param>
+                                            <param id="1" name="Value">4</param>
                                         </action>
-                                        <action id="-9" name="Set value" sid="840175287165140" type="System">
+                                        <action id="-9" name="Set value" sid="535300626703275" type="System">
                                             <param id="0" name="Variable">MinSelectable</param>
                                             <param id="1" name="Value">0</param>
                                         </action>
@@ -1972,23 +2354,23 @@
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="0" name="Call function" sid="511717366018187" type="Function">
+                                        <action id="0" name="Call function" sid="511717366018187" type="f">
                                             <param id="0" name="Name">&quot;HideAll&quot;</param>
                                             <param id="1" name="Parameter {n}"></param>
                                         </action>
-                                        <action id="0" name="Call function" sid="336631959719712" type="Function">
+                                        <action id="0" name="Call function" sid="336631959719712" type="f">
                                             <param id="0" name="Name">&quot;Hide Singleplayer&quot;</param>
                                             <param id="1" name="Parameter {n}"></param>
                                         </action>
-                                        <action id="-9" name="Set value" sid="541030522591603" type="System">
+                                        <action id="-9" name="Set value" sid="562688036441797" type="System">
                                             <param id="0" name="Variable">Selected</param>
-                                            <param id="1" name="Value">3</param>
+                                            <param id="1" name="Value">4</param>
                                         </action>
-                                        <action id="-9" name="Set value" sid="870402526728348" type="System">
+                                        <action id="-9" name="Set value" sid="137503191502951" type="System">
                                             <param id="0" name="Variable">MaxSelectable</param>
-                                            <param id="1" name="Value">3</param>
+                                            <param id="1" name="Value">4</param>
                                         </action>
-                                        <action id="-9" name="Set value" sid="631766573744186" type="System">
+                                        <action id="-9" name="Set value" sid="774923182497599" type="System">
                                             <param id="0" name="Variable">MinSelectable</param>
                                             <param id="1" name="Value">0</param>
                                         </action>
@@ -2009,7 +2391,7 @@
                                                 <condition id="-20" inverted="1" name="Is on mobile device" sid="904728315830352" type="System" />
                                             </conditions>
                                             <actions>
-                                                <action id="0" name="Call function" sid="290989263638237" type="Function">
+                                                <action id="0" name="Call function" sid="290989263638237" type="f">
                                                     <param id="0" name="Name">&quot;Disable Singleplayer Blur&quot;</param>
                                                     <param id="1" name="Parameter {n}"></param>
                                                 </action>
@@ -2024,23 +2406,23 @@
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="0" name="Call function" sid="677302615617938" type="Function">
+                                        <action id="0" name="Call function" sid="677302615617938" type="f">
                                             <param id="0" name="Name">&quot;HideAll&quot;</param>
                                             <param id="1" name="Parameter {n}"></param>
                                         </action>
-                                        <action id="0" name="Call function" sid="465674198950599" type="Function">
+                                        <action id="0" name="Call function" sid="465674198950599" type="f">
                                             <param id="0" name="Name">&quot;Hide Multiplayer&quot;</param>
                                             <param id="1" name="Parameter {n}"></param>
                                         </action>
-                                        <action id="-9" name="Set value" sid="863079706983408" type="System">
+                                        <action id="-9" name="Set value" sid="643266821280707" type="System">
                                             <param id="0" name="Variable">Selected</param>
-                                            <param id="1" name="Value">3</param>
+                                            <param id="1" name="Value">4</param>
                                         </action>
-                                        <action id="-9" name="Set value" sid="882453539546042" type="System">
+                                        <action id="-9" name="Set value" sid="402496532297306" type="System">
                                             <param id="0" name="Variable">MaxSelectable</param>
-                                            <param id="1" name="Value">3</param>
+                                            <param id="1" name="Value">4</param>
                                         </action>
-                                        <action id="-9" name="Set value" sid="278381025876171" type="System">
+                                        <action id="-9" name="Set value" sid="565378289842710" type="System">
                                             <param id="0" name="Variable">MinSelectable</param>
                                             <param id="1" name="Value">0</param>
                                         </action>
@@ -2061,7 +2443,7 @@
                                                 <condition id="-20" inverted="1" name="Is on mobile device" sid="519991772957236" type="System" />
                                             </conditions>
                                             <actions>
-                                                <action id="0" name="Call function" sid="752431118388309" type="Function">
+                                                <action id="0" name="Call function" sid="752431118388309" type="f">
                                                     <param id="0" name="Name">&quot;Disable Singleplayer Blur&quot;</param>
                                                     <param id="1" name="Parameter {n}"></param>
                                                 </action>
@@ -2076,15 +2458,15 @@
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="-9" name="Set value" sid="944897281793873" type="System">
+                                        <action id="-9" name="Set value" sid="769055407902033" type="System">
                                             <param id="0" name="Variable">Selected</param>
-                                            <param id="1" name="Value">3</param>
+                                            <param id="1" name="Value">4</param>
                                         </action>
-                                        <action id="-9" name="Set value" sid="607935833865454" type="System">
+                                        <action id="-9" name="Set value" sid="729868065953898" type="System">
                                             <param id="0" name="Variable">MaxSelectable</param>
-                                            <param id="1" name="Value">3</param>
+                                            <param id="1" name="Value">4</param>
                                         </action>
-                                        <action id="-9" name="Set value" sid="523317120426292" type="System">
+                                        <action id="-9" name="Set value" sid="640375686414019" type="System">
                                             <param id="0" name="Variable">MinSelectable</param>
                                             <param id="1" name="Value">0</param>
                                         </action>
@@ -2300,13 +2682,60 @@
                                         </event-block>
                                     </sub-events>
                                 </event-block>
+                                <comment>Controls Button</comment>
+                                <event-block sid="309543819242925">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="541521154876012" type="System">
+                                            <param id="0" name="Variable">Selected</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">3</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="471909147242910">
+                                            <conditions>
+                                                <condition id="-14" name="Pick by unique ID" sid="164898241308883" type="Button">
+                                                    <param id="0" name="Unique ID">196</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-27" name="Set effect enabled" sid="848933264204306" type="Button">
+                                                    <param id="0" name="Mode">1</param>
+                                                    <param id="1" name="Effect">&quot;SELECTED&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="980483786308085">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="878647984972495" type="System" />
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="441965310454335">
+                                            <conditions>
+                                                <condition id="-14" name="Pick by unique ID" sid="188714723940044" type="Button">
+                                                    <param id="0" name="Unique ID">196</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-27" name="Set effect enabled" sid="249165192286558" type="Button">
+                                                    <param id="0" name="Mode">0</param>
+                                                    <param id="1" name="Effect">&quot;SELECTED&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
                                 <comment>Play Button</comment>
                                 <event-block sid="976729802498263">
                                     <conditions>
                                         <condition id="-14" name="Compare variable" sid="320013296916231" type="System">
                                             <param id="0" name="Variable">Selected</param>
                                             <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Value">3</param>
+                                            <param id="2" name="Value">4</param>
                                         </condition>
                                     </conditions>
                                     <actions />
@@ -2359,7 +2788,7 @@
                                                 <condition id="-14" name="Compare variable" sid="332176442899129" type="System">
                                                     <param id="0" name="Variable">Selected</param>
                                                     <param id="1" name="Comparison">0</param>
-                                                    <param id="2" name="Value">11</param>
+                                                    <param id="2" name="Value">12</param>
                                                 </condition>
                                             </conditions>
                                             <actions />
@@ -2406,7 +2835,7 @@
                                                 <condition id="-14" name="Compare variable" sid="796666874111653" type="System">
                                                     <param id="0" name="Variable">Selected</param>
                                                     <param id="1" name="Comparison">0</param>
-                                                    <param id="2" name="Value">10</param>
+                                                    <param id="2" name="Value">11</param>
                                                 </condition>
                                             </conditions>
                                             <actions />
@@ -2453,7 +2882,7 @@
                                                 <condition id="-14" name="Compare variable" sid="102071125108469" type="System">
                                                     <param id="0" name="Variable">Selected</param>
                                                     <param id="1" name="Comparison">0</param>
-                                                    <param id="2" name="Value">9</param>
+                                                    <param id="2" name="Value">10</param>
                                                 </condition>
                                             </conditions>
                                             <actions />
@@ -2504,7 +2933,7 @@
                                                 <condition id="-14" name="Compare variable" sid="475904902746636" type="System">
                                                     <param id="0" name="Variable">Selected</param>
                                                     <param id="1" name="Comparison">0</param>
-                                                    <param id="2" name="Value">8</param>
+                                                    <param id="2" name="Value">9</param>
                                                 </condition>
                                             </conditions>
                                             <actions />
@@ -2555,7 +2984,7 @@
                                                 <condition id="-14" name="Compare variable" sid="856671120866678" type="System">
                                                     <param id="0" name="Variable">Selected</param>
                                                     <param id="1" name="Comparison">0</param>
-                                                    <param id="2" name="Value">5</param>
+                                                    <param id="2" name="Value">6</param>
                                                 </condition>
                                             </conditions>
                                             <actions />
@@ -2602,7 +3031,7 @@
                                                 <condition id="-14" name="Compare variable" sid="142201353155330" type="System">
                                                     <param id="0" name="Variable">Selected</param>
                                                     <param id="1" name="Comparison">0</param>
-                                                    <param id="2" name="Value">6</param>
+                                                    <param id="2" name="Value">7</param>
                                                 </condition>
                                             </conditions>
                                             <actions />
@@ -2649,7 +3078,7 @@
                                                 <condition id="-14" name="Compare variable" sid="518377632922644" type="System">
                                                     <param id="0" name="Variable">Selected</param>
                                                     <param id="1" name="Comparison">0</param>
-                                                    <param id="2" name="Value">7</param>
+                                                    <param id="2" name="Value">8</param>
                                                 </condition>
                                             </conditions>
                                             <actions />
@@ -2694,12 +3123,13 @@
                                 </event-group>
                                 <event-group description="" sid="249438297379158" title="Setting Menu">
                                     <sub-events>
+                                        <comment>Apply Button</comment>
                                         <event-block sid="660464522055899">
                                             <conditions>
                                                 <condition id="-14" name="Compare variable" sid="917536024457185" type="System">
                                                     <param id="0" name="Variable">Selected</param>
                                                     <param id="1" name="Comparison">0</param>
-                                                    <param id="2" name="Value">4</param>
+                                                    <param id="2" name="Value">5</param>
                                                 </condition>
                                             </conditions>
                                             <actions />
@@ -2746,6 +3176,80 @@
                         </event-group>
                     </sub-events>
                 </event-group>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="739260056612681" title="ScrollMenu">
+            <sub-events>
+                <event-block sid="247008224706192">
+                    <conditions>
+                        <condition id="8" name="On mouse wheel" sid="708836204871865" type="Mouse">
+                            <param id="0" name="Direction">1</param>
+                        </condition>
+                        <condition id="-2" name="Compare Y" sid="164990674598705" type="SettingsMenuTitleText">
+                            <param id="0" name="Comparison">2</param>
+                            <param id="1" name="Y co-ordinate">140</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="109912144235564">
+                            <conditions>
+                                <condition id="-9" name="Layer is visible" sid="156496313390563" type="System">
+                                    <param id="0" name="Layer">&quot;Settings UI&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-2" name="Set Y" sid="606580155081820" type="AllSettingsText">
+                                    <param id="0" name="Y">Self.Y+20</param>
+                                </action>
+                                <action id="-2" name="Set Y" sid="769261317175863" type="AllSettingsSliders">
+                                    <param id="0" name="Y">self.Y + 20</param>
+                                </action>
+                                <action id="-2" name="Set Y" sid="972981216019255" type="AllSettingsListBoxes">
+                                    <param id="0" name="Y">self.Y + 20</param>
+                                </action>
+                                <action id="-2" name="Set Y" sid="221499272267196" type="AllSettingsCheckboxes">
+                                    <param id="0" name="Y">self.Y + 20</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="678319666072771">
+                    <conditions>
+                        <condition id="8" name="On mouse wheel" sid="543126675142801" type="Mouse">
+                            <param id="0" name="Direction">0</param>
+                        </condition>
+                        <condition id="-2" name="Compare Y" sid="703926644455954" type="SettingsMenuTitleText">
+                            <param id="0" name="Comparison">4</param>
+                            <param id="1" name="Y co-ordinate">-760</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="883586819737270">
+                            <conditions>
+                                <condition id="-9" name="Layer is visible" sid="973484136602531" type="System">
+                                    <param id="0" name="Layer">&quot;Settings UI&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-2" name="Set Y" sid="234978204717655" type="AllSettingsText">
+                                    <param id="0" name="Y">Self.Y-20</param>
+                                </action>
+                                <action id="-2" name="Set Y" sid="878815856011179" type="AllSettingsSliders">
+                                    <param id="0" name="Y">self.Y - 20</param>
+                                </action>
+                                <action id="-2" name="Set Y" sid="240159218332509" type="AllSettingsListBoxes">
+                                    <param id="0" name="Y">self.Y - 20</param>
+                                </action>
+                                <action id="-2" name="Set Y" sid="837895148599729" type="AllSettingsCheckboxes">
+                                    <param id="0" name="Y">self.Y - 20</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
             </sub-events>
         </event-group>
     </events>

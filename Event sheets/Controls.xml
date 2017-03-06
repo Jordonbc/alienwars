@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Controls</name>
+    <events>
+        <event-block sid="813939719898125">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="178924367769103" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">1</param>
+                    <param id="2" name="Object clicked">UPKBButtonText</param>
+                </condition>
+                <condition id="-9" name="Layer is visible" sid="411452992184527" type="System">
+                    <param id="0" name="Layer">&quot;Controls&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="685101958378542" type="System">
+                    <param id="0" name="Variable">MoveUpKeyCode</param>
+                    <param id="1" name="Value">Keyboard.LastKeyCode</param>
+                </action>
+                <action id="0" name="Set item" sid="359812811239487" type="LocalStorage">
+                    <param id="0" name="Key">&quot;MoveUp&quot;</param>
+                    <param id="1" name="Value">MoveUpKeyCode</param>
+                </action>
+                <action id="0" name="Set text" sid="238375259391086" type="UPKBButtonText">
+                    <param id="0" name="Text">&quot;MOVE UP: &quot;&amp;Keyboard.StringFromKeyCode(MoveUpKeyCode)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="105461293765135">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="311407113691391" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">1</param>
+                    <param id="2" name="Object clicked">DownKBText</param>
+                </condition>
+                <condition id="-9" name="Layer is visible" sid="418009045285183" type="System">
+                    <param id="0" name="Layer">&quot;Controls&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="923327197461972" type="System">
+                    <param id="0" name="Variable">MoveDownKeyCode</param>
+                    <param id="1" name="Value">Keyboard.LastKeyCode</param>
+                </action>
+                <action id="0" name="Set item" sid="368060642919006" type="LocalStorage">
+                    <param id="0" name="Key">&quot;MoveDown&quot;</param>
+                    <param id="1" name="Value">MoveDownKeyCode</param>
+                </action>
+                <action id="0" name="Set text" sid="143145201753410" type="DownKBText">
+                    <param id="0" name="Text">&quot;MOVE DOWN: &quot;&amp;Keyboard.StringFromKeyCode(MoveDownKeyCode)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="125258071810369">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="378718622683149" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">1</param>
+                    <param id="2" name="Object clicked">LeftKBText</param>
+                </condition>
+                <condition id="-9" name="Layer is visible" sid="855467209669809" type="System">
+                    <param id="0" name="Layer">&quot;Controls&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="997707493016202" type="System">
+                    <param id="0" name="Variable">MoveLeftKeyCode</param>
+                    <param id="1" name="Value">Keyboard.LastKeyCode</param>
+                </action>
+                <action id="0" name="Set item" sid="978587995654911" type="LocalStorage">
+                    <param id="0" name="Key">&quot;MoveLeft&quot;</param>
+                    <param id="1" name="Value">MoveLeftKeyCode</param>
+                </action>
+                <action id="0" name="Set text" sid="905827517602954" type="LeftKBText">
+                    <param id="0" name="Text">&quot;MOVE LEFT: &quot;&amp;Keyboard.StringFromKeyCode(MoveLeftKeyCode)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="539796207357847">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="103823433873759" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">1</param>
+                    <param id="2" name="Object clicked">RightKBText</param>
+                </condition>
+                <condition id="-9" name="Layer is visible" sid="383042295685024" type="System">
+                    <param id="0" name="Layer">&quot;Controls&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="487456406570591" type="System">
+                    <param id="0" name="Variable">MoveRightKeyCode</param>
+                    <param id="1" name="Value">Keyboard.LastKeyCode</param>
+                </action>
+                <action id="0" name="Set item" sid="532521448594258" type="LocalStorage">
+                    <param id="0" name="Key">&quot;MoveRight&quot;</param>
+                    <param id="1" name="Value">MoveRightKeyCode</param>
+                </action>
+                <action id="0" name="Set text" sid="440514948859635" type="RightKBText">
+                    <param id="0" name="Text">&quot;MOVE RIGHT: &quot;&amp;Keyboard.StringFromKeyCode(MoveRIGHTKeyCode)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="537952550461319">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="606436306512807" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="241013907318194" type="UPKBButtonText">
+                    <param id="0" name="Text">&quot;MOVE UP: &quot;&amp;Keyboard.StringFromKeyCode(MoveUpKeyCode)</param>
+                </action>
+                <action id="0" name="Set text" sid="237634653998703" type="DownKBText">
+                    <param id="0" name="Text">&quot;MOVE DOWN: &quot;&amp;Keyboard.StringFromKeyCode(MoveDownKeyCode)</param>
+                </action>
+                <action id="0" name="Set text" sid="439560673485145" type="LeftKBText">
+                    <param id="0" name="Text">&quot;MOVE LEFT: &quot;&amp;Keyboard.StringFromKeyCode(MoveLeftKeyCode)</param>
+                </action>
+                <action id="0" name="Set text" sid="159603492941571" type="RightKBText">
+                    <param id="0" name="Text">&quot;MOVE RIGHT: &quot;&amp;Keyboard.StringFromKeyCode(MoveRIGHTKeyCode)</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

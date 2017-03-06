@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Gameplay</name>
     <events>
+        <include>Controls</include>
         <include>Settings Menu</include>
         <include>Main Menu Buttons</include>
         <include>Functions</include>
@@ -12,6 +13,23 @@
             </conditions>
             <actions />
             <sub-events>
+                <event-block sid="810279372143759">
+                    <conditions>
+                        <condition id="-14" name="Pick by unique ID" sid="827034233102600" type="Button">
+                            <param id="0" name="Unique ID">204</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-27" name="Set effect enabled" sid="300833021916917" type="Button">
+                            <param id="0" name="Mode">0</param>
+                            <param id="1" name="Effect">&quot;DISABLED&quot;</param>
+                        </action>
+                        <action id="-27" name="Set effect enabled" sid="720260447117337" type="Button">
+                            <param id="0" name="Mode">0</param>
+                            <param id="1" name="Effect">&quot;SELECTED&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
                 <event-block sid="860317192546298">
                     <conditions>
                         <condition id="-14" name="Pick by unique ID" sid="139780264364504" type="Button">
@@ -133,7 +151,7 @@
                                                 </condition>
                                             </conditions>
                                             <actions>
-                                                <action id="0" name="Call function" sid="731771115812123" type="Function">
+                                                <action id="0" name="Call function" sid="731771115812123" type="f">
                                                     <param id="0" name="Name">&quot;HideAll&quot;</param>
                                                     <param id="1" name="Parameter {n}"></param>
                                                 </action>
@@ -147,14 +165,14 @@
                                                 <action id="-16" name="Wait" sid="403921040631774" type="System">
                                                     <param id="0" name="Seconds">0</param>
                                                 </action>
-                                                <action id="0" name="Call function" sid="675439537919172" type="Function">
+                                                <action id="0" name="Call function" sid="675439537919172" type="f">
                                                     <param id="0" name="Name">&quot;ShowCredits&quot;</param>
                                                     <param id="1" name="Parameter {n}"></param>
                                                 </action>
                                                 <action id="-16" name="Wait" sid="415291068501520" type="System">
                                                     <param id="0" name="Seconds">0</param>
                                                 </action>
-                                                <action id="0" name="Call function" sid="434985889340293" type="Function">
+                                                <action id="0" name="Call function" sid="434985889340293" type="f">
                                                     <param id="0" name="Name">&quot;Reset All Buttons&quot;</param>
                                                     <param id="1" name="Parameter {n}"></param>
                                                 </action>
@@ -218,7 +236,7 @@
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="0" name="Call function" sid="974675675113128" type="Function">
+                                        <action id="0" name="Call function" sid="974675675113128" type="f">
                                             <param id="0" name="Name">&quot;HideAll&quot;</param>
                                             <param id="1" name="Parameter {n}"></param>
                                         </action>
@@ -235,6 +253,10 @@
                                         </action>
                                         <action id="-4" name="Set layer visible" sid="681731325696043" type="System">
                                             <param id="0" name="Layer">&quot;Log&quot;</param>
+                                            <param id="1" name="Visibility">1</param>
+                                        </action>
+                                        <action id="-4" name="Set layer visible" sid="352455514171405" type="System">
+                                            <param id="0" name="Layer">&quot;UI&quot;</param>
                                             <param id="1" name="Visibility">1</param>
                                         </action>
                                         <action id="0" name="Play" sid="491230756838937" type="Audio">
@@ -284,6 +306,61 @@
                         </event-block>
                     </sub-events>
                 </event-block>
+                <event-block sid="591102424450602">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="969431211360808" type="System">
+                            <param id="0" name="First value">LayoutName</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">&quot;Multiplayer&quot;</param>
+                        </condition>
+                        <condition id="-9" name="Layer is visible" sid="232024496594630" type="System">
+                            <param id="0" name="Layer">&quot;Pause Menu&quot;</param>
+                        </condition>
+                        <condition id="-9" inverted="1" name="Layer is visible" sid="110462604931708" type="System">
+                            <param id="0" name="Layer">&quot;Settings Text&quot;</param>
+                        </condition>
+                        <condition id="-9" inverted="1" name="Layer is visible" sid="827293924963924" type="System">
+                            <param id="0" name="Layer">&quot;Controls&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-4" name="Set layer visible" sid="136359486498994" type="System">
+                            <param id="0" name="Layer">&quot;Players List&quot;</param>
+                            <param id="1" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="316622211616184">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="286486805099499" type="System">
+                            <param id="0" name="First value">LayoutName</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">&quot;Multiplayer&quot;</param>
+                        </condition>
+                        <condition id="-9" name="Layer is visible" sid="198738792951036" type="System">
+                            <param id="0" name="Layer">&quot;Pause Menu&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block any="1" sid="985103739922649">
+                            <conditions>
+                                <condition id="-9" name="Layer is visible" sid="402334653128032" type="System">
+                                    <param id="0" name="Layer">&quot;Settings Text&quot;</param>
+                                </condition>
+                                <condition id="-9" name="Layer is visible" sid="421480117870004" type="System">
+                                    <param id="0" name="Layer">&quot;Controls&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-4" name="Set layer visible" sid="113952365412268" type="System">
+                                    <param id="0" name="Layer">&quot;Players List&quot;</param>
+                                    <param id="1" name="Visibility">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
                 <event-block any="1" sid="580581842575098">
                     <conditions>
                         <condition id="0" name="On key pressed" sid="475799734509102" type="Keyboard">
@@ -311,19 +388,23 @@
                                     <param id="0" name="Layer">&quot;Log&quot;</param>
                                     <param id="1" name="Visibility">1</param>
                                 </action>
+                                <action id="-4" name="Set layer visible" sid="792762230575777" type="System">
+                                    <param id="0" name="Layer">&quot;UI&quot;</param>
+                                    <param id="1" name="Visibility">1</param>
+                                </action>
                                 <action id="-4" name="Set layer visible" sid="636714025705764" type="System">
                                     <param id="0" name="Layer">&quot;Pause Menu&quot;</param>
                                     <param id="1" name="Visibility">0</param>
                                 </action>
-                                <action id="0" name="Call function" sid="332516134578317" type="Function">
+                                <action id="0" name="Call function" sid="332516134578317" type="f">
                                     <param id="0" name="Name">&quot;Hide Settings Menu&quot;</param>
                                     <param id="1" name="Parameter {n}"></param>
                                 </action>
-                                <action id="0" name="Call function" sid="375483089860570" type="Function">
+                                <action id="0" name="Call function" sid="375483089860570" type="f">
                                     <param id="0" name="Name">&quot;Reset All Buttons&quot;</param>
                                     <param id="1" name="Parameter {n}"></param>
                                 </action>
-                                <action id="0" name="Call function" sid="887624816933857" type="Function">
+                                <action id="0" name="Call function" sid="887624816933857" type="f">
                                     <param id="0" name="Name">&quot;HideAll&quot;</param>
                                     <param id="1" name="Parameter {n}"></param>
                                 </action>
@@ -381,6 +462,10 @@
                                     <param id="0" name="Layer">&quot;Log&quot;</param>
                                     <param id="1" name="Visibility">0</param>
                                 </action>
+                                <action id="-4" name="Set layer visible" sid="397700994715639" type="System">
+                                    <param id="0" name="Layer">&quot;UI&quot;</param>
+                                    <param id="1" name="Visibility">0</param>
+                                </action>
                                 <action id="-4" name="Set layer visible" sid="885547350983863" type="System">
                                     <param id="0" name="Layer">&quot;Pause Menu&quot;</param>
                                     <param id="1" name="Visibility">1</param>
@@ -391,21 +476,6 @@
                                 </action>
                             </actions>
                             <sub-events>
-                                <event-block sid="591102424450602">
-                                    <conditions>
-                                        <condition id="-8" name="Compare two values" sid="969431211360808" type="System">
-                                            <param id="0" name="First value">LayoutName</param>
-                                            <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Second value">&quot;Multiplayer&quot;</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="-4" name="Set layer visible" sid="136359486498994" type="System">
-                                            <param id="0" name="Layer">&quot;Players List&quot;</param>
-                                            <param id="1" name="Visibility">1</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
                                 <event-block sid="279422040173532">
                                     <conditions>
                                         <condition id="-8" name="Compare two values" sid="126824066715474" type="System">
@@ -447,15 +517,15 @@
                     <param id="0" name="Layer">&quot;Pause Menu&quot;</param>
                     <param id="1" name="Visibility">0</param>
                 </action>
-                <action id="0" name="Call function" sid="693399481943016" type="Function">
+                <action id="0" name="Call function" sid="693399481943016" type="f">
                     <param id="0" name="Name">&quot;Hide Settings Menu&quot;</param>
                     <param id="1" name="Parameter {n}"></param>
                 </action>
-                <action id="0" name="Call function" sid="707167051308817" type="Function">
+                <action id="0" name="Call function" sid="707167051308817" type="f">
                     <param id="0" name="Name">&quot;Reset All Buttons&quot;</param>
                     <param id="1" name="Parameter {n}"></param>
                 </action>
-                <action id="0" name="Call function" sid="662641178835252" type="Function">
+                <action id="0" name="Call function" sid="662641178835252" type="f">
                     <param id="0" name="Name">&quot;HideAll&quot;</param>
                     <param id="1" name="Parameter {n}"></param>
                 </action>

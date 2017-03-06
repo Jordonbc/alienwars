@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>OpenWorldCenter</name>
+    <events>
+        <variable constant="0" name="InventoryOpen" sid="870203651414180" static="0" type="number">0</variable>
+        <event-block sid="508399444006186">
+            <conditions>
+                <condition id="5" name="Key code is down" sid="183277050534716" type="Keyboard">
+                    <param id="0" name="Keycode">MoveUpKeyCode</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="8Direction" id="7" name="Simulate control" sid="923429391071769" type="Player">
+                    <param id="0" name="Control">2</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="931466717202044">
+            <conditions>
+                <condition id="5" name="Key code is down" sid="483875848655160" type="Keyboard">
+                    <param id="0" name="Keycode">MoveDownKeyCode</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="8Direction" id="7" name="Simulate control" sid="339794411971181" type="Player">
+                    <param id="0" name="Control">3</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="494626171647893">
+            <conditions>
+                <condition id="5" name="Key code is down" sid="333311440352676" type="Keyboard">
+                    <param id="0" name="Keycode">MoveLeftKeyCode</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="8Direction" id="7" name="Simulate control" sid="768110657700634" type="Player">
+                    <param id="0" name="Control">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="639507522256648">
+            <conditions>
+                <condition id="5" name="Key code is down" sid="980145419521714" type="Keyboard">
+                    <param id="0" name="Keycode">MoveRightKeyCode</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="8Direction" id="7" name="Simulate control" sid="184991610479056" type="Player">
+                    <param id="0" name="Control">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="990670397259714">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="618440417224781" type="Keyboard">
+                    <param id="0" name="Key">69 (E)</param>
+                </condition>
+                <condition id="1" name="Is overlapping another object" sid="858986841388215" type="Player">
+                    <param id="0" name="Object">AllSpaceStations</param>
+                </condition>
+            </conditions>
+            <actions />
+        </event-block>
+        <event-block sid="312630030721084">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="368626410317728" type="Keyboard">
+                    <param id="0" name="Key">69 (E)</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="725502762229157">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="447941755967075" type="System">
+                            <param id="0" name="Variable">InventoryOpen</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="804587433363626" type="System">
+                            <param id="0" name="Variable">InventoryOpen</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="659376852516389">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="195711168220233" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="599451883970153" type="System">
+                            <param id="0" name="Variable">InventoryOpen</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="611127603484732">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="452839896459094" type="System">
+                    <param id="0" name="Variable">InventoryOpen</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-4" name="Trigger once while true" sid="457721914274801" type="System" />
+            </conditions>
+            <actions>
+                <action id="-4" name="Set layer visible" sid="206761575490413" type="System">
+                    <param id="0" name="Layer">&quot;Inventory&quot;</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="194315704353176">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="182896462655375" type="System">
+                    <param id="0" name="Variable">InventoryOpen</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+                <condition id="-4" name="Trigger once while true" sid="937887173425183" type="System" />
+            </conditions>
+            <actions>
+                <action id="-4" name="Set layer visible" sid="571370879135976" type="System">
+                    <param id="0" name="Layer">&quot;Inventory&quot;</param>
+                    <param id="1" name="Visibility">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="119668803464876">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="349134278636802" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set cursor style" sid="933659950488862" type="Mouse">
+                    <param id="0" name="Cursor style">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="151058663661931">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="568669851241071" type="System" />
+            </conditions>
+            <actions>
+                <action id="-22" name="Set angle toward position" sid="165768025110721" type="Player">
+                    <param id="0" name="X">Mouse.X</param>
+                    <param id="1" name="Y">Mouse.Y</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

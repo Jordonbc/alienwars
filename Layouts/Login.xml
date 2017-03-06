@@ -331,6 +331,51 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
+                <instance type="Button" uid="194">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <effect-instances>
+                        <effect-instance type="DISABLED">
+                            <parameters>
+                                <blue>0.5</blue>
+                                <green>0.5</green>
+                                <red>0.5</red>
+                            </parameters>
+                        </effect-instance>
+                        <effect-instance type="SELECTED">
+                            <parameters>
+                                <blue>0</blue>
+                                <green>0.5</green>
+                                <red>0</red>
+                            </parameters>
+                        </effect-instance>
+                        <effect-instance type="AdjustHSL">
+                            <parameters>
+                                <hue>0</hue>
+                                <luminosity>1</luminosity>
+                                <saturation>1</saturation>
+                            </parameters>
+                        </effect-instance>
+                    </effect-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>1407</x>
+                        <y>852</y>
+                        <z>0</z>
+                        <width>190</width>
+                        <height>49</height>
+                        <depth>0</depth>
+                        <hotspotX>0.50526315</hotspotX>
+                        <hotspotY>0.551020384</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
             </instances>
             <effects />
         </layer>
@@ -459,6 +504,33 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
+                <instance type="OfflineButtonText" uid="195">
+                    <properties>
+                        <text>OFFLINE</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Arial,-32,400,0</font>
+                        <color>0,0,0</color>
+                        <horizontal-alignment>Center</horizontal-alignment>
+                        <vertical-alignment>Center</vertical-alignment>
+                        <hotspot>Center</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>1406.237426758</x>
+                        <y>849.753234863</y>
+                        <z>0</z>
+                        <width>189.485839844</width>
+                        <height>48.926635742</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
             </instances>
             <effects />
         </layer>
@@ -523,6 +595,24 @@
                     </world>
                 </instance>
             </instances>
+            <effects />
+        </layer>
+        <layer name="Developer Console" sid="224509889563339">
+            <initially-visible>1</initially-visible>
+            <background-color>255,255,255</background-color>
+            <transparent>1</transparent>
+            <parallax>
+                <x>1</x>
+                <y>1</y>
+            </parallax>
+            <zoom-rate>1</zoom-rate>
+            <opacity>1</opacity>
+            <force-own-texture>0</force-own-texture>
+            <global>0</global>
+            <use-render-cells>0</use-render-cells>
+            <blend-mode>0</blend-mode>
+            <effect-fallback>0</effect-fallback>
+            <instances />
             <effects />
         </layer>
     </layers>

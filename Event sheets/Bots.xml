@@ -1,0 +1,519 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Bots</name>
+    <events>
+        <event-group description="" inactive="1" sid="903568714326181" title="BotsHost">
+            <sub-events>
+                <event-block sid="443883000113057">
+                    <conditions>
+                        <condition id="0" name="On function" sid="692610879813680" type="f">
+                            <param id="0" name="Name">&quot;RecreateBots&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="293096486114131">
+                            <conditions>
+                                <condition id="-12" name="Repeat" sid="110337685107014" type="System">
+                                    <param id="0" name="Count">F.param(0)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="522108549780909" type="System">
+                                    <param id="0" name="Object to create">MPBot</param>
+                                    <param id="1" name="Layer">&quot;Players&quot;</param>
+                                    <param id="2" name="X">int(random(100, LayoutWidth-100))</param>
+                                    <param id="3" name="Y">int(random(100, LayoutHeight-100))</param>
+                                </action>
+                                <action id="-3" name="Set position" sid="188922690101739" type="BotUsernameText">
+                                    <param id="0" name="X">MPBot.X</param>
+                                    <param id="1" name="Y">MPBot.Y-150</param>
+                                </action>
+                                <action id="0" name="Set text" sid="546219557958618" type="BotUsernameText">
+                                    <param id="0" name="Text">MPBot.Name</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="763137005839947" type="MPBot">
+                                    <param id="0" name="Instance variable">Number</param>
+                                    <param id="1" name="Value">MPBot.Count</param>
+                                </action>
+                                <action behavior="Pathfinding" id="0" name="Find path" sid="859548301593263" type="MPBot">
+                                    <param id="0" name="X">int(random(100, LayoutWidth-100))</param>
+                                    <param id="1" name="Y">int(random(100, LayoutHeight-100))</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="268769903008395" type="MPBot">
+                                    <param id="0" name="Instance variable">Name</param>
+                                    <param id="1" name="Value">BotNames.Get(&quot;Bot_&quot;&amp;int(random(1, BotNames.KeyCount)))</param>
+                                </action>
+                                <action id="9" name="Broadcast message" sid="641085993985211" type="Multiplayer">
+                                    <param id="0" name="From ID">str(MPBot.Number)</param>
+                                    <param id="1" name="Tag">&quot;BotName&quot;</param>
+                                    <param id="2" name="Message">MPBot.Name</param>
+                                    <param id="3" name="Mode">0</param>
+                                </action>
+                                <action id="14" name="Log" sid="962766424918724" type="Browser">
+                                    <param id="0" name="Type">0</param>
+                                    <param id="1" name="Message">&quot;Creating Bot&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="416673500127175">
+                    <conditions>
+                        <condition id="-4" name="Is outside layout" sid="425785841854906" type="MPBot" />
+                        <condition id="10" name="Is host" sid="154410648601822" type="Multiplayer" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="592946596245568" type="MPBot" />
+                        <action id="14" name="Log" sid="962825402061657" type="Browser">
+                            <param id="0" name="Type">0</param>
+                            <param id="1" name="Message">&quot;Destroying Bot&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="455928478251114">
+                    <conditions>
+                        <condition behavior="Pathfinding" id="0" name="On path found" sid="740505427523924" type="MPBot" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Pathfinding" id="1" name="Move along path" sid="949931871705206" type="MPBot" />
+                        <action id="14" name="Log" sid="554320685706113" type="Browser">
+                            <param id="0" name="Type">0</param>
+                            <param id="1" name="Message">&quot;Bot found path&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="208705708586308">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="983159890552969" type="MPBot">
+                            <param id="0" name="Instance variable">Health</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="580831032083832" type="MPBot">
+                            <param id="0" name="Instance variable">IsExploding</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="132105460609151" type="System">
+                            <param id="0" name="Seconds">1.1</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="494313878781842" type="MPBot">
+                            <param id="0" name="Instance variable">IsExploding</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="257058557206339" type="System">
+                            <param id="0" name="Seconds">0</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="250573836490226" type="MPBot">
+                            <param id="0" name="X">int(random(100, LayoutWidth-100))</param>
+                            <param id="1" name="Y">int(random(100, LayoutHeight-100))</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="944899073964463" type="System">
+                            <param id="0" name="Seconds">0</param>
+                        </action>
+                        <action behavior="Pathfinding" id="0" name="Find path" sid="976664123659659" type="MPBot">
+                            <param id="0" name="X">int(random(100, LayoutWidth-100))</param>
+                            <param id="1" name="Y">int(random(100, LayoutHeight-100))</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="822770313685123" type="MPBot">
+                            <param id="0" name="Instance variable">Health</param>
+                            <param id="1" name="Value">100</param>
+                        </action>
+                        <action id="14" name="Log" sid="145732268430743" type="Browser">
+                            <param id="0" name="Type">0</param>
+                            <param id="1" name="Message">&quot;Bot Died&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="642166544153310">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="561887300611611" type="MPBot">
+                            <param id="0" name="Object">Asteroid</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Subtract from" sid="966107351642672" type="MPBot">
+                            <param id="0" name="Instance variable">Health</param>
+                            <param id="1" name="Value">10</param>
+                        </action>
+                        <action id="14" name="Log" sid="487614245161154" type="Browser">
+                            <param id="0" name="Type">0</param>
+                            <param id="1" name="Message">&quot;Bot collided with Asteroid&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="176095134193514">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="946266233345202" type="MPBot">
+                            <param id="0" name="Object">LittleAsteroid</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Subtract from" sid="625357340010795" type="MPBot">
+                            <param id="0" name="Instance variable">Health</param>
+                            <param id="1" name="Value">5</param>
+                        </action>
+                        <action id="14" name="Log" sid="743569997892348" type="Browser">
+                            <param id="0" name="Type">0</param>
+                            <param id="1" name="Message">&quot;Bot collided with LittleAsteroid&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="266534452177123">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="157050405998445" type="MPBot">
+                            <param id="0" name="Object">MPBot</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Subtract from" sid="792568064165282" type="MPBot">
+                            <param id="0" name="Instance variable">Health</param>
+                            <param id="1" name="Value">100</param>
+                        </action>
+                        <action id="14" name="Log" sid="693082348861130" type="Browser">
+                            <param id="0" name="Type">0</param>
+                            <param id="1" name="Message">&quot;Bot collided with another Bot&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="305516537694663">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="157789308923595" type="MPBot">
+                            <param id="0" name="Object">MPPlayer</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Subtract from" sid="267075442954808" type="MPBot">
+                            <param id="0" name="Instance variable">Health</param>
+                            <param id="1" name="Value">100</param>
+                        </action>
+                        <action id="14" name="Log" sid="331050556238831" type="Browser">
+                            <param id="0" name="Type">0</param>
+                            <param id="1" name="Message">&quot;Bot collided with a player&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="906322203548624">
+                    <conditions>
+                        <condition behavior="Pathfinding" id="5" name="On arrived" sid="578711669827362" type="MPBot" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Pathfinding" id="0" name="Find path" sid="760645845056997" type="MPBot">
+                            <param id="0" name="X">int(random(100, LayoutWidth-100))</param>
+                            <param id="1" name="Y">int(random(100, LayoutHeight-100))</param>
+                        </action>
+                        <action id="14" name="Log" sid="981449576619428" type="Browser">
+                            <param id="0" name="Type">0</param>
+                            <param id="1" name="Message">&quot;Bot arrived&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="524028504659317">
+                    <conditions>
+                        <condition behavior="Pathfinding" id="1" name="On failed to find path" sid="130308389919449" type="MPBot" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Pathfinding" id="0" name="Find path" sid="748277370226745" type="MPBot">
+                            <param id="0" name="X">int(random(100, LayoutWidth-100))</param>
+                            <param id="1" name="Y">int(random(100, LayoutHeight-100))</param>
+                        </action>
+                        <action id="14" name="Log" sid="132492063461607" type="Browser">
+                            <param id="0" name="Type">2</param>
+                            <param id="1" name="Message">&quot;Bot failed to find path&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="707068608184416">
+            <conditions>
+                <condition id="10" name="Is host" sid="638907076985044" type="Multiplayer" />
+                <condition id="-4" name="Trigger once while true" sid="248384957392824" type="System" />
+            </conditions>
+            <actions>
+                <action id="-12" name="Set group active" sid="332342731145850" type="System">
+                    <param id="0" name="Group name">&quot;BotsHost&quot;</param>
+                    <param id="1" name="State">1</param>
+                </action>
+                <action id="-12" name="Set group active" sid="196481127439483" type="System">
+                    <param id="0" name="Group name">&quot;BotsBoth&quot;</param>
+                    <param id="1" name="State">1</param>
+                </action>
+                <action id="-12" name="Set group active" sid="337500384989255" type="System">
+                    <param id="0" name="Group name">&quot;BotPeer&quot;</param>
+                    <param id="1" name="State">0</param>
+                </action>
+                <action id="-16" name="Wait" sid="775161076141061" type="System">
+                    <param id="0" name="Seconds">0</param>
+                </action>
+                <action id="0" name="Call function" sid="293152139519496" type="f">
+                    <param id="0" name="Name">&quot;RecreateBots&quot;</param>
+                    <param id="1" name="Parameter {n}">9</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="953746713025739">
+            <conditions>
+                <condition id="10" inverted="1" name="Is host" sid="805747163613191" type="Multiplayer" />
+                <condition id="-4" name="Trigger once while true" sid="960875131914258" type="System" />
+            </conditions>
+            <actions>
+                <action id="-12" name="Set group active" sid="858911664275407" type="System">
+                    <param id="0" name="Group name">&quot;BotsHost&quot;</param>
+                    <param id="1" name="State">0</param>
+                </action>
+                <action id="-12" name="Set group active" sid="784097306581959" type="System">
+                    <param id="0" name="Group name">&quot;BotsBoth&quot;</param>
+                    <param id="1" name="State">1</param>
+                </action>
+                <action id="-12" name="Set group active" sid="489697890982338" type="System">
+                    <param id="0" name="Group name">&quot;BotPeer&quot;</param>
+                    <param id="1" name="State">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="" inactive="1" sid="487346443751500" title="BotsBoth">
+            <sub-events>
+                <event-block sid="776670184277381">
+                    <conditions>
+                        <condition id="0" name="On function" sid="479888143433893" type="f">
+                            <param id="0" name="Name">&quot;Bot Explode&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="963917402905346">
+                            <conditions>
+                                <condition id="-11" name="For Each" sid="215557761608978" type="System">
+                                    <param id="0" name="Object">MPBot</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="304596138851503">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="629841211904617" type="MPBot">
+                                            <param id="0" name="Instance variable">Number</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">f.Param(0)</param>
+                                        </condition>
+                                        <condition id="-4" name="Trigger once while true" sid="207053383423209" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Pathfinding" id="2" name="Stop" sid="651118165183829" type="MPBot" />
+                                        <action id="-15" name="Set visible" sid="543722566154676" type="MPBot">
+                                            <param id="0" name="Visibility">0</param>
+                                        </action>
+                                        <action id="-3" name="Create object" sid="326649793564896" type="System">
+                                            <param id="0" name="Object to create">Explosion</param>
+                                            <param id="1" name="Layer">&quot;Players&quot;</param>
+                                            <param id="2" name="X">MPBot.X</param>
+                                            <param id="3" name="Y">MPBot.Y</param>
+                                        </action>
+                                        <action id="-16" name="Wait" sid="219491686498542" type="System">
+                                            <param id="0" name="Seconds">0</param>
+                                        </action>
+                                        <action id="0" name="Play" sid="679223459421041" type="Audio">
+                                            <param id="0" name="Audio file">Explosion 3</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">0</param>
+                                            <param id="1" name="Tag (optional)">&quot;Game&quot;</param>
+                                        </action>
+                                        <action id="14" name="Log" sid="799752671201003" type="Browser">
+                                            <param id="0" name="Type">0</param>
+                                            <param id="1" name="Message">&quot;Creating explosion at &quot;&amp;int(MPBot.X)&amp;&quot;. &quot;&amp;int(MPBot.Y)</param>
+                                        </action>
+                                        <action id="-9" name="Destroy" sid="679293347586162" type="Explosion" />
+                                        <action id="14" name="Log" sid="770460232944286" type="Browser">
+                                            <param id="0" name="Type">0</param>
+                                            <param id="1" name="Message">&quot;Destroying explosion&quot;</param>
+                                        </action>
+                                        <action id="-15" name="Set visible" sid="703888500797379" type="MPBot">
+                                            <param id="0" name="Visibility">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="364696487338311">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="733046333164678" type="MPBot">
+                            <param id="0" name="Instance variable">IsExploding</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="477751863837820" type="f">
+                            <param id="0" name="Name">&quot;Bot Explode&quot;</param>
+                            <param id="1" name="Parameter {n}">MPBot.Number</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="622342121998892">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="598083605090262" type="System" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="605175651869079">
+                    <conditions>
+                        <condition id="-11" name="For Each" sid="928157428177705" type="System">
+                            <param id="0" name="Object">MPBot</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="244536430641377" type="BotUsernameText">
+                            <param id="0" name="Text">MPBot.Name</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="186336580286533" type="BotUsernameText">
+                            <param id="0" name="X">MPBot.X</param>
+                            <param id="1" name="Y">MPBot.Y-150</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-group description="" inactive="1" sid="851131268729246" title="BotPeer">
+            <sub-events>
+                <event-block sid="711254307608154">
+                    <conditions>
+                        <condition id="15" name="On peer message" sid="885077371654530" type="Multiplayer">
+                            <param id="0" name="Tag">&quot;BotName&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="691730819617353">
+                            <conditions>
+                                <condition id="-11" name="For Each" sid="778275085313178" type="System">
+                                    <param id="0" name="Object">MPBot</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="328815508882450">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="430759182826379" type="MPBot">
+                                            <param id="0" name="Instance variable">Number</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">Multiplayer.FromID</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="260515659882390" type="MPBot">
+                                            <param id="0" name="Instance variable">Name</param>
+                                            <param id="1" name="Value">Multiplayer.Message</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="461818183676706">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="183529787741819" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Add key" sid="401656177251058" type="BotNames">
+                    <param id="0" name="Key">&quot;Bot_1&quot;</param>
+                    <param id="1" name="Value">&quot;Kmeirb&quot;</param>
+                </action>
+                <action id="0" name="Add key" sid="412284101636420" type="BotNames">
+                    <param id="0" name="Key">&quot;Bot_2&quot;</param>
+                    <param id="1" name="Value">&quot;Eprod&quot;</param>
+                </action>
+                <action id="0" name="Add key" sid="974109099003981" type="BotNames">
+                    <param id="0" name="Key">&quot;Bot_2&quot;</param>
+                    <param id="1" name="Value">&quot;Dubraks&quot;</param>
+                </action>
+                <action id="0" name="Add key" sid="869598048584046" type="BotNames">
+                    <param id="0" name="Key">&quot;Bot_3&quot;</param>
+                    <param id="1" name="Value">&quot;Rouigh&quot;</param>
+                </action>
+                <action id="0" name="Add key" sid="189982019822839" type="BotNames">
+                    <param id="0" name="Key">&quot;Bot_4&quot;</param>
+                    <param id="1" name="Value">&quot;Brevruhx&quot;</param>
+                </action>
+                <action id="0" name="Add key" sid="667889183118415" type="BotNames">
+                    <param id="0" name="Key">&quot;Bot_5&quot;</param>
+                    <param id="1" name="Value">&quot;Kruq&apos;ult&quot;</param>
+                </action>
+                <action id="0" name="Add key" sid="605979347530208" type="BotNames">
+                    <param id="0" name="Key">&quot;Bot_6&quot;</param>
+                    <param id="1" name="Value">&quot;Cuyvors&quot;</param>
+                </action>
+                <action id="0" name="Add key" sid="331000534831789" type="BotNames">
+                    <param id="0" name="Key">&quot;Bot_7&quot;</param>
+                    <param id="1" name="Value">&quot;Drokrarc&quot;</param>
+                </action>
+                <action id="0" name="Add key" sid="510417019211947" type="BotNames">
+                    <param id="0" name="Key">&quot;Bot_8&quot;</param>
+                    <param id="1" name="Value">&quot;Vlaeh&apos;ae&quot;</param>
+                </action>
+                <action id="0" name="Add key" sid="746208914421219" type="BotNames">
+                    <param id="0" name="Key">&quot;Bot_9&quot;</param>
+                    <param id="1" name="Value">&quot;Blath&quot;</param>
+                </action>
+                <action id="0" name="Add key" sid="228016499232782" type="BotNames">
+                    <param id="0" name="Key">&quot;Bot_10&quot;</param>
+                    <param id="1" name="Value">&quot;Bissuns&quot;</param>
+                </action>
+                <action id="0" name="Add key" sid="492488092931854" type="BotNames">
+                    <param id="0" name="Key">&quot;Bot_11&quot;</param>
+                    <param id="1" name="Value">&quot;Zuobhohz&quot;</param>
+                </action>
+                <action id="0" name="Add key" sid="174828150982812" type="BotNames">
+                    <param id="0" name="Key">&quot;Bot_12&quot;</param>
+                    <param id="1" name="Value">&quot;Cruytseins&quot;</param>
+                </action>
+                <action id="0" name="Add key" sid="636074518573234" type="BotNames">
+                    <param id="0" name="Key">&quot;Bot_13&quot;</param>
+                    <param id="1" name="Value">&quot;Streomselphoe&quot;</param>
+                </action>
+                <action id="0" name="Add key" sid="392942910427156" type="BotNames">
+                    <param id="0" name="Key">&quot;Bot_14&quot;</param>
+                    <param id="1" name="Value">&quot;Xraujyth&quot;</param>
+                </action>
+                <action id="0" name="Add key" sid="856133332010807" type="BotNames">
+                    <param id="0" name="Key">&quot;Bot_15&quot;</param>
+                    <param id="1" name="Value">&quot;Vruek&quot;</param>
+                </action>
+                <action id="0" name="Add key" sid="988360594611952" type="BotNames">
+                    <param id="0" name="Key">&quot;Bot_16&quot;</param>
+                    <param id="1" name="Value">&quot;Meagud&quot;</param>
+                </action>
+                <action id="0" name="Add key" sid="381382871075181" type="BotNames">
+                    <param id="0" name="Key">&quot;Bot_17&quot;</param>
+                    <param id="1" name="Value">&quot;Aohz&quot;</param>
+                </action>
+                <action id="0" name="Add key" sid="142101957876000" type="BotNames">
+                    <param id="0" name="Key">&quot;Bot_18&quot;</param>
+                    <param id="1" name="Value">&quot;Wruyzohz&quot;</param>
+                </action>
+                <action id="0" name="Add key" sid="662004761390045" type="BotNames">
+                    <param id="0" name="Key">&quot;Bot_19&quot;</param>
+                    <param id="1" name="Value">&quot;Qruxib&quot;</param>
+                </action>
+                <action id="0" name="Add key" sid="525038841723052" type="BotNames">
+                    <param id="0" name="Key">&quot;Bot_19&quot;</param>
+                    <param id="1" name="Value">&quot;Potato&quot;</param>
+                </action>
+                <action id="0" name="Add key" sid="499632883947366" type="BotNames">
+                    <param id="0" name="Key">&quot;Bot_20&quot;</param>
+                    <param id="1" name="Value">&quot;Steibbog&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

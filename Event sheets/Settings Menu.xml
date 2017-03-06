@@ -65,7 +65,7 @@
                         <condition id="-14" name="Compare variable" sid="935952254615015" type="System">
                             <param id="0" name="Variable">Selected</param>
                             <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Value">4</param>
+                            <param id="2" name="Value">5</param>
                         </condition>
                     </conditions>
                     <actions />
@@ -92,7 +92,7 @@
                                     <param id="0" name="Tag">&quot;MainMenuMusic&quot;</param>
                                     <param id="1" name="dB">int(MusicSoundBar.Value)</param>
                                 </action>
-                                <action id="0" name="Call function" sid="274965905415737" type="Function">
+                                <action id="0" name="Call function" sid="274965905415737" type="f">
                                     <param id="0" name="Name">&quot;Set and Save Settings&quot;</param>
                                     <param id="1" name="Parameter {n}"></param>
                                 </action>
@@ -134,7 +134,7 @@
                                     <param id="0" name="Variable">MusicVolume</param>
                                     <param id="1" name="Value">MusicSoundBar.Value</param>
                                 </action>
-                                <action id="0" name="Call function" sid="421000706433589" type="Function">
+                                <action id="0" name="Call function" sid="421000706433589" type="f">
                                     <param id="0" name="Name">&quot;Set and Save Settings&quot;</param>
                                     <param id="1" name="Parameter {n}"></param>
                                 </action>
@@ -152,7 +152,7 @@
                                     <param id="0" name="Key">&quot;MenuColour&quot;</param>
                                     <param id="1" name="Value">MenuColour</param>
                                 </action>
-                                <action id="0" name="Call function" sid="838379825653023" type="Function">
+                                <action id="0" name="Call function" sid="838379825653023" type="f">
                                     <param id="0" name="Name">&quot;SetMenuColour&quot;</param>
                                     <param id="1" name="Parameter {n}"></param>
                                 </action>

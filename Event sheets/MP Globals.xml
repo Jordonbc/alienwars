@@ -3,6 +3,11 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>MP Globals</name>
     <events>
+        <variable constant="0" name="RoundEnd" sid="225495774709892" static="0" type="number">0</variable>
+        <variable constant="0" name="MPTimeLimit" sid="578410513469416" static="0" type="number">120</variable>
+        <variable constant="0" name="EnginePercentage" sid="787687444388407" static="0" type="number">70</variable>
+        <variable constant="0" name="ChatBoxClicked" sid="337842827947434" static="0" type="number">0</variable>
+        <variable constant="0" name="Zoom" sid="429243116168157" static="0" type="number">1.15</variable>
         <variable constant="0" name="PlayerList" sid="755882596690703" static="0" type="text"></variable>
         <variable comment="Percentage required to level up" constant="0" name="LevelPercentage" sid="876546309406205" static="0" type="number">0.75</variable>
         <variable comment="Percentage of level used for attack damage" constant="0" name="AttackPercentage" sid="640223744592309" static="0" type="number">4</variable>

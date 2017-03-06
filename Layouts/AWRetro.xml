@@ -250,11 +250,11 @@
                         <x>936</x>
                         <y>500</y>
                         <z>0</z>
-                        <width>184.012985229</width>
-                        <height>178.552627563</height>
+                        <width>182.920913696</width>
+                        <height>228.787597656</height>
                         <depth>0</depth>
-                        <hotspotX>0.53709197</hotspotX>
-                        <hotspotY>0.501529038</hotspotY>
+                        <hotspotX>0.480597019</hotspotX>
+                        <hotspotY>0.503579974</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
@@ -449,7 +449,7 @@
                         <width>117.221000671</width>
                         <height>120.805999756</height>
                         <depth>0</depth>
-                        <hotspotX>0.501528978</hotspotX>
+                        <hotspotX>0.501529038</hotspotX>
                         <hotspotY>0.462908</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
@@ -478,7 +478,7 @@
                         <width>117.221000671</width>
                         <height>120.805999756</height>
                         <depth>0</depth>
-                        <hotspotX>0.501528978</hotspotX>
+                        <hotspotX>0.501529038</hotspotX>
                         <hotspotY>0.462908</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
@@ -923,6 +923,24 @@
             <effects />
         </layer>
         <layer name="Touch UI" sid="764643868222029">
+            <initially-visible>1</initially-visible>
+            <background-color>255,255,255</background-color>
+            <transparent>1</transparent>
+            <parallax>
+                <x>1</x>
+                <y>1</y>
+            </parallax>
+            <zoom-rate>1</zoom-rate>
+            <opacity>1</opacity>
+            <force-own-texture>0</force-own-texture>
+            <global>0</global>
+            <use-render-cells>0</use-render-cells>
+            <blend-mode>0</blend-mode>
+            <effect-fallback>0</effect-fallback>
+            <instances />
+            <effects />
+        </layer>
+        <layer name="Controls" sid="830371800060635">
             <initially-visible>1</initially-visible>
             <background-color>255,255,255</background-color>
             <transparent>1</transparent>

@@ -2,7 +2,7 @@
 <c2project>
     <name>Alien Wars</name>
     <description>Destroy the  Aliens</description>
-    <version>1.3.2.1 ALPHA</version>
+    <version>1.0.1.2 BETA</version>
     <author>Jordon Brooks</author>
     <author-email>Jordonbc@hotmail.co.uk</author-email>
     <author-website>https://jordonbc.github.io</author-website>
@@ -15,6 +15,7 @@
         <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
         <plugin author="Scirra" id="Browser" version="1">Browser</plugin>
         <plugin author="Scirra" id="Button" version="1">Button</plugin>
+        <plugin author="Scirra" id="Dictionary" version="1">Dictionary</plugin>
         <plugin author="Scirra" id="Function" version="1">Function</plugin>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
         <plugin author="Scirra" id="List" version="1">List</plugin>
@@ -27,6 +28,8 @@
         <plugin author="Scirra" id="TextBox" version="1">Text box</plugin>
         <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
         <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
+        <plugin author="Scirra" id="UserMedia" version="1">User Media</plugin>
+        <plugin author="Scirra" id="XML" version="1">XML</plugin>
         <plugin author="Scirra" id="gamepad" version="1">Gamepad</plugin>
         <plugin author="Scirra" id="sliderbar" version="1">Slider bar</plugin>
         <plugin author="Scirra" id="video" version="1">Video</plugin>
@@ -37,6 +40,8 @@
         <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
         <behavior author="Scirra" id="Fade" version="1">Fade</behavior>
         <behavior author="Scirra" id="Flash" version="1">Flash</behavior>
+        <behavior author="Scirra" id="Pathfinding" version="1">Pathfinding</behavior>
+        <behavior author="Scirra" id="Persist" version="1">Persist</behavior>
         <behavior author="Scirra" id="Pin" version="1">Pin</behavior>
         <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
         <behavior author="Scirra" id="destroy" version="1">Destroy outside layout</behavior>
@@ -65,7 +70,7 @@
     <use-loader-layout>1</use-loader-layout>
     <configuration-settings>
         <prop name="Clear background">Yes</prop>
-        <prop name="Downscaling">Low quality</prop>
+        <prop name="Downscaling">High quality</prop>
         <prop name="Enable WebGL">On</prop>
         <prop name="Fullscreen in browser">Letterbox scale</prop>
         <prop name="Fullscreen scaling">Low quality</prop>
@@ -353,7 +358,7 @@
             <object-type name="Mouse" sid="377145541952307">
                 <plugin id="Mouse" />
             </object-type>
-            <object-type name="Function" sid="520424225427235">
+            <object-type name="f" sid="520424225427235">
                 <plugin id="Function" />
             </object-type>
             <object-type name="Browser" sid="197373338401167">
@@ -558,10 +563,16 @@
                     <instance-variable name="Ping" sid="271360084597355" type="number" />
                     <instance-variable name="CanShoot" sid="405799207359997" type="number" />
                     <instance-variable name="Cheating" sid="612923039765541" type="number" />
-                    <instance-variable name="URL" sid="129662605167301" type="string" />
                     <instance-variable name="MPNumber" sid="626740436982120" type="number" />
                     <instance-variable name="Score" sid="215798259985097" type="number" />
                     <instance-variable name="Prefix" sid="767242040652534" type="string" />
+                    <instance-variable name="WeaponPower" sid="222275757761964" type="number" />
+                    <instance-variable name="EnginePower" sid="199902350872396" type="number" />
+                    <instance-variable name="MaxWeaponPower" sid="636148829422675" type="number" />
+                    <instance-variable name="MaxEnginePower" sid="253992891328098" type="number" />
+                    <instance-variable name="EndRound" sid="761672247730889" type="number" />
+                    <instance-variable name="HueValue" sid="198310965665260" type="number" />
+                    <instance-variable name="MaxHealth" sid="831754040245232" type="number" />
                 </instance-variables>
                 <behaviors>
                     <behavior-type name="8Direction" sid="578437888382124">
@@ -577,14 +588,19 @@
                         <behavior id="scrollto" />
                     </behavior-type>
                 </behaviors>
+                <effects>
+                    <effect-type name="AdjustHSL">
+                        <effect id="hsladjust" />
+                    </effect-type>
+                </effects>
                 <container>
                     <type>MPPlayer</type>
                     <type>AimSpot</type>
                     <type>PlayerUsernameText</type>
                 </container>
                 <animation-folder>
-                    <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="666810576614864" speed="0">
-                        <frame duration="1" hotspotX="0.537092" hotspotY="0.501529" original-source="C:\Users\Jordon\Downloads\blufighter\bluefighter0005.png">
+                    <animation framecount="25" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="787632550565014" speed="20">
+                        <frame duration="1" hotspotX="0.480597" hotspotY="0.50358" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\0001.png">
                             <collision-poly>
                                 <point x="1" y="0" />
                                 <point x="1" y="1" />
@@ -592,7 +608,595 @@
                                 <point x="0" y="0" />
                             </collision-poly>
                         </frame>
-                        <frame duration="1" hotspotX="0.625899" hotspotY="0.501529" original-source="C:\Users\Jordon\Downloads\blufighter\bluefighter0005 - Thrusters.png">
+                        <frame duration="1" hotspotX="0.480597" hotspotY="0.50358" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\0011.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.480597" hotspotY="0.50358" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\0021.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.480597" hotspotY="0.505967" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\0031.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.480597" hotspotY="0.505967" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\0041.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.477612" hotspotY="0.51074" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\0051.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.477612" hotspotY="0.513126" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\0061.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.477612" hotspotY="0.515513" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\0071.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.480597" hotspotY="0.5179" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\0081.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.480597" hotspotY="0.520286" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\0091.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.480597" hotspotY="0.520286" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\0101.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.480597" hotspotY="0.522673" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\0111.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.480597" hotspotY="0.522673" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\0121.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.480597" hotspotY="0.522673" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\0131.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.480597" hotspotY="0.522673" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\0141.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.480597" hotspotY="0.520286" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\0151.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.480597" hotspotY="0.520286" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\0161.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.480597" hotspotY="0.515513" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\0171.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.477612" hotspotY="0.515513" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\0181.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.477612" hotspotY="0.513126" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\0191.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.480597" hotspotY="0.51074" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\0201.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.480597" hotspotY="0.505967" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\0211.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.480597" hotspotY="0.505967" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\0221.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.480597" hotspotY="0.50358" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\0231.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.480597" hotspotY="0.50358" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\0241.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                    <animation framecount="25" loop="0" name="SpeedUp" pingpong="0" repeatcount="0" repeatto="0" sid="814709773108332" speed="20">
+                        <frame duration="1" hotspotX="0.483582" hotspotY="0.50358" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\ThrusterStart\0001.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.483582" hotspotY="0.50358" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\ThrusterStart\0011.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.486567" hotspotY="0.50358" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\ThrusterStart\0021.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.489552" hotspotY="0.505967" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\ThrusterStart\0031.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.489552" hotspotY="0.508353" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\ThrusterStart\0041.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.492537" hotspotY="0.51074" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\ThrusterStart\0051.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.492537" hotspotY="0.513126" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\ThrusterStart\0061.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.495522" hotspotY="0.515513" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\ThrusterStart\0071.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.495522" hotspotY="0.5179" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\ThrusterStart\0081.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.498507" hotspotY="0.520286" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\ThrusterStart\0091.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.501493" hotspotY="0.522673" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\ThrusterStart\0101.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.501493" hotspotY="0.522673" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\ThrusterStart\0111.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.504478" hotspotY="0.522673" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\ThrusterStart\0121.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.504478" hotspotY="0.522673" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\ThrusterStart\0131.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.504478" hotspotY="0.522673" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\ThrusterStart\0141.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.504478" hotspotY="0.522673" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\ThrusterStart\0151.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.501493" hotspotY="0.520286" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\ThrusterStart\0161.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.501493" hotspotY="0.5179" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\ThrusterStart\0171.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.501493" hotspotY="0.515513" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\ThrusterStart\0181.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.501493" hotspotY="0.513126" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\ThrusterStart\0191.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.504478" hotspotY="0.51074" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\ThrusterStart\0201.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.507463" hotspotY="0.508353" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\ThrusterStart\0211.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.507463" hotspotY="0.505967" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\ThrusterStart\0221.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.507463" hotspotY="0.50358" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\ThrusterStart\0231.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.507463" hotspotY="0.50358" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\ThrusterStart\0241.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                    <animation framecount="25" loop="0" name="SlowDown" pingpong="0" repeatcount="0" repeatto="0" sid="666810576614864" speed="20">
+                        <frame duration="1" hotspotX="0.504478" hotspotY="0.50358" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\ThrusterEnd\0001.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.507463" hotspotY="0.50358" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\ThrusterEnd\0011.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.507463" hotspotY="0.50358" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\ThrusterEnd\0021.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.507463" hotspotY="0.505967" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\ThrusterEnd\0031.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.504478" hotspotY="0.508353" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\ThrusterEnd\0041.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.507463" hotspotY="0.51074" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\ThrusterEnd\0051.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.504478" hotspotY="0.513126" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\ThrusterEnd\0061.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.504478" hotspotY="0.515513" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\ThrusterEnd\0071.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.504478" hotspotY="0.5179" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\ThrusterEnd\0081.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.504478" hotspotY="0.520286" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\ThrusterEnd\0091.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.504478" hotspotY="0.522673" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\ThrusterEnd\0101.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.504478" hotspotY="0.522673" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\ThrusterEnd\0111.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.504478" hotspotY="0.522673" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\ThrusterEnd\0121.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.504478" hotspotY="0.522673" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\ThrusterEnd\0131.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.504478" hotspotY="0.522673" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\ThrusterEnd\0141.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.504478" hotspotY="0.522673" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\ThrusterEnd\0151.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.504478" hotspotY="0.520286" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\ThrusterEnd\0161.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.501493" hotspotY="0.5179" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\ThrusterEnd\0171.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.501493" hotspotY="0.515513" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\ThrusterEnd\0181.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.501493" hotspotY="0.513126" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\ThrusterEnd\0191.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.504478" hotspotY="0.51074" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\ThrusterEnd\0201.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.507463" hotspotY="0.508353" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\ThrusterEnd\0211.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.507463" hotspotY="0.505967" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\ThrusterEnd\0221.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.507463" hotspotY="0.50358" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\ThrusterEnd\0231.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.483582" hotspotY="0.50358" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\ThrusterEnd\0241.png">
                             <collision-poly>
                                 <point x="1" y="0" />
                                 <point x="1" y="1" />
@@ -615,6 +1219,208 @@
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                    <animation framecount="25" loop="1" name="MaxSpeed" pingpong="1" repeatcount="1" repeatto="0" sid="997118448457006" speed="10">
+                        <frame duration="1" hotspotX="0.504478" hotspotY="0.50358" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\ThrusterMaxSpeed\0001.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.504478" hotspotY="0.50358" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\ThrusterMaxSpeed\0011.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.507463" hotspotY="0.50358" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\ThrusterMaxSpeed\0021.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.507463" hotspotY="0.505967" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\ThrusterMaxSpeed\0031.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.507463" hotspotY="0.508353" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\ThrusterMaxSpeed\0041.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.507463" hotspotY="0.51074" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\ThrusterMaxSpeed\0051.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.504478" hotspotY="0.513126" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\ThrusterMaxSpeed\0061.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.504478" hotspotY="0.515513" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\ThrusterMaxSpeed\0071.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.504478" hotspotY="0.5179" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\ThrusterMaxSpeed\0081.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.504478" hotspotY="0.520286" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\ThrusterMaxSpeed\0091.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.504478" hotspotY="0.522673" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\ThrusterMaxSpeed\0101.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.504478" hotspotY="0.522673" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\ThrusterMaxSpeed\0111.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.504478" hotspotY="0.522673" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\ThrusterMaxSpeed\0121.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.504478" hotspotY="0.522673" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\ThrusterMaxSpeed\0131.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.504478" hotspotY="0.522673" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\ThrusterMaxSpeed\0141.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.501493" hotspotY="0.522673" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\ThrusterMaxSpeed\0151.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.501493" hotspotY="0.520286" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\ThrusterMaxSpeed\0161.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.501493" hotspotY="0.5179" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\ThrusterMaxSpeed\0171.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.501493" hotspotY="0.515513" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\ThrusterMaxSpeed\0181.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.501493" hotspotY="0.513126" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\ThrusterMaxSpeed\0191.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.504478" hotspotY="0.51074" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\ThrusterMaxSpeed\0201.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.504478" hotspotY="0.508353" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\ThrusterMaxSpeed\0211.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.507463" hotspotY="0.505967" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\ThrusterMaxSpeed\0221.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.507463" hotspotY="0.50358" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\ThrusterMaxSpeed\0231.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.507463" hotspotY="0.50358" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\ThrusterMaxSpeed\0241.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
                     </animation>
                 </animation-folder>
             </object-type>
@@ -834,9 +1640,8 @@
                     </behavior-type>
                 </behaviors>
                 <animation-folder>
-                    <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="522036937425324" speed="0">
-                        <frame duration="1" hotspotX="0.537092" hotspotY="0.501529" original-source="C:\Users\Jordon\Downloads\blufighter\bluefighter0005.png">
-                            <image-point name="Gun" x="0.931751" y="0.501529" />
+                    <animation framecount="25" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="896536191284132" speed="20">
+                        <frame duration="1" hotspotX="0.480597" hotspotY="0.50358" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\0001.png">
                             <collision-poly>
                                 <point x="1" y="0" />
                                 <point x="1" y="1" />
@@ -844,8 +1649,191 @@
                                 <point x="0" y="0" />
                             </collision-poly>
                         </frame>
-                        <frame duration="1" hotspotX="0.625899" hotspotY="0.501529" original-source="C:\Users\Jordon\Downloads\blufighter\bluefighter0005 - Thrusters.png">
-                            <image-point name="Gun" x="0.942446" y="0.501529" />
+                        <frame duration="1" hotspotX="0.480597" hotspotY="0.50358" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\0011.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.480597" hotspotY="0.50358" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\0021.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.480597" hotspotY="0.505967" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\0031.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.480597" hotspotY="0.508353" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\0041.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.477612" hotspotY="0.51074" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\0051.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.477612" hotspotY="0.513126" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\0061.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.477612" hotspotY="0.515513" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\0071.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.477612" hotspotY="0.5179" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\0081.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.480597" hotspotY="0.520286" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\0091.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.480597" hotspotY="0.522673" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\0101.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.480597" hotspotY="0.522673" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\0111.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.480597" hotspotY="0.522673" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\0121.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.480597" hotspotY="0.522673" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\0131.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.480597" hotspotY="0.522673" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\0141.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.480597" hotspotY="0.522673" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\0151.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.480597" hotspotY="0.520286" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\0161.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.477612" hotspotY="0.5179" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\0171.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.477612" hotspotY="0.515513" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\0181.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.477612" hotspotY="0.513126" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\0191.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.477612" hotspotY="0.51074" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\0201.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.480597" hotspotY="0.508353" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\0211.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.480597" hotspotY="0.505967" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\0221.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.480597" hotspotY="0.50358" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\0231.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.480597" hotspotY="0.50358" original-source="E:\Programming\Construct 2\Free Assets\blufighter\Animation\Blender\0241.png">
                             <collision-poly>
                                 <point x="1" y="0" />
                                 <point x="1" y="1" />
@@ -962,22 +1950,198 @@
                 </behaviors>
                 <animation-folder>
                     <animation framecount="16" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="730309442218244" speed="15">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Software\Construct 2\freebundle\Sprites\Space\Rocks\rock_type_A0000.png" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Software\Construct 2\freebundle\Sprites\Space\Rocks\rock_type_A0001.png" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Software\Construct 2\freebundle\Sprites\Space\Rocks\rock_type_A0002.png" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Software\Construct 2\freebundle\Sprites\Space\Rocks\rock_type_A0003.png" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Software\Construct 2\freebundle\Sprites\Space\Rocks\rock_type_A0004.png" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Software\Construct 2\freebundle\Sprites\Space\Rocks\rock_type_A0005.png" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Software\Construct 2\freebundle\Sprites\Space\Rocks\rock_type_A0006.png" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Software\Construct 2\freebundle\Sprites\Space\Rocks\rock_type_A0007.png" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Software\Construct 2\freebundle\Sprites\Space\Rocks\rock_type_A0008.png" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Software\Construct 2\freebundle\Sprites\Space\Rocks\rock_type_A0009.png" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Software\Construct 2\freebundle\Sprites\Space\Rocks\rock_type_A0010.png" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Software\Construct 2\freebundle\Sprites\Space\Rocks\rock_type_A0011.png" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Software\Construct 2\freebundle\Sprites\Space\Rocks\rock_type_A0012.png" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Software\Construct 2\freebundle\Sprites\Space\Rocks\rock_type_A0013.png" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Software\Construct 2\freebundle\Sprites\Space\Rocks\rock_type_A0014.png" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Software\Construct 2\freebundle\Sprites\Space\Rocks\rock_type_A0015.png" />
+                        <frame duration="1" hotspotX="0.488372" hotspotY="0.5" original-source="D:\Software\Construct 2\freebundle\Sprites\Space\Rocks\rock_type_A0000.png">
+                            <collision-poly>
+                                <point x="0.255814" y="0.23913" />
+                                <point x="0.488372" y="0.0652174" />
+                                <point x="0.813953" y="0.173913" />
+                                <point x="0.906977" y="0.5" />
+                                <point x="0.767442" y="0.782609" />
+                                <point x="0.488372" y="0.913043" />
+                                <point x="0.186047" y="0.826087" />
+                                <point x="0.0465116" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.484848" hotspotY="0.5" original-source="D:\Software\Construct 2\freebundle\Sprites\Space\Rocks\rock_type_A0001.png">
+                            <collision-poly>
+                                <point x="0.255814" y="0.23913" />
+                                <point x="0.488372" y="0.0652174" />
+                                <point x="0.813953" y="0.173913" />
+                                <point x="0.906977" y="0.5" />
+                                <point x="0.767442" y="0.782609" />
+                                <point x="0.488372" y="0.913043" />
+                                <point x="0.186047" y="0.826087" />
+                                <point x="0.0465116" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Software\Construct 2\freebundle\Sprites\Space\Rocks\rock_type_A0002.png">
+                            <collision-poly>
+                                <point x="0.255814" y="0.23913" />
+                                <point x="0.488372" y="0.0652174" />
+                                <point x="0.813953" y="0.173913" />
+                                <point x="0.906977" y="0.5" />
+                                <point x="0.767442" y="0.782609" />
+                                <point x="0.488372" y="0.913043" />
+                                <point x="0.186047" y="0.826087" />
+                                <point x="0.0465116" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Software\Construct 2\freebundle\Sprites\Space\Rocks\rock_type_A0003.png">
+                            <collision-poly>
+                                <point x="0.255814" y="0.23913" />
+                                <point x="0.488372" y="0.0652174" />
+                                <point x="0.813953" y="0.173913" />
+                                <point x="0.906977" y="0.5" />
+                                <point x="0.767442" y="0.782609" />
+                                <point x="0.488372" y="0.913043" />
+                                <point x="0.186047" y="0.826087" />
+                                <point x="0.0465116" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.484848" hotspotY="0.5" original-source="D:\Software\Construct 2\freebundle\Sprites\Space\Rocks\rock_type_A0004.png">
+                            <collision-poly>
+                                <point x="0.255814" y="0.23913" />
+                                <point x="0.488372" y="0.0652174" />
+                                <point x="0.813953" y="0.173913" />
+                                <point x="0.906977" y="0.5" />
+                                <point x="0.767442" y="0.782609" />
+                                <point x="0.488372" y="0.913043" />
+                                <point x="0.186047" y="0.826087" />
+                                <point x="0.0465116" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.465116" hotspotY="0.5" original-source="D:\Software\Construct 2\freebundle\Sprites\Space\Rocks\rock_type_A0005.png">
+                            <collision-poly>
+                                <point x="0.255814" y="0.23913" />
+                                <point x="0.488372" y="0.0652174" />
+                                <point x="0.813953" y="0.173913" />
+                                <point x="0.906977" y="0.5" />
+                                <point x="0.767442" y="0.782609" />
+                                <point x="0.488372" y="0.913043" />
+                                <point x="0.186047" y="0.826087" />
+                                <point x="0.0465116" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.479167" hotspotY="0.5" original-source="D:\Software\Construct 2\freebundle\Sprites\Space\Rocks\rock_type_A0006.png">
+                            <collision-poly>
+                                <point x="0.255814" y="0.23913" />
+                                <point x="0.488372" y="0.0652174" />
+                                <point x="0.813953" y="0.173913" />
+                                <point x="0.906977" y="0.5" />
+                                <point x="0.767442" y="0.782609" />
+                                <point x="0.488372" y="0.913043" />
+                                <point x="0.186047" y="0.826087" />
+                                <point x="0.0465116" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Software\Construct 2\freebundle\Sprites\Space\Rocks\rock_type_A0007.png">
+                            <collision-poly>
+                                <point x="0.255814" y="0.23913" />
+                                <point x="0.488372" y="0.0652174" />
+                                <point x="0.813953" y="0.173913" />
+                                <point x="0.906977" y="0.5" />
+                                <point x="0.767442" y="0.782609" />
+                                <point x="0.488372" y="0.913043" />
+                                <point x="0.186047" y="0.826087" />
+                                <point x="0.0465116" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.52381" hotspotY="0.5" original-source="D:\Software\Construct 2\freebundle\Sprites\Space\Rocks\rock_type_A0008.png">
+                            <collision-poly>
+                                <point x="0.255814" y="0.23913" />
+                                <point x="0.488372" y="0.0652174" />
+                                <point x="0.813953" y="0.173913" />
+                                <point x="0.906977" y="0.5" />
+                                <point x="0.767442" y="0.782609" />
+                                <point x="0.488372" y="0.913043" />
+                                <point x="0.186047" y="0.826087" />
+                                <point x="0.0465116" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.529412" hotspotY="0.5" original-source="D:\Software\Construct 2\freebundle\Sprites\Space\Rocks\rock_type_A0009.png">
+                            <collision-poly>
+                                <point x="0.255814" y="0.23913" />
+                                <point x="0.488372" y="0.0652174" />
+                                <point x="0.813953" y="0.173913" />
+                                <point x="0.906977" y="0.5" />
+                                <point x="0.767442" y="0.782609" />
+                                <point x="0.488372" y="0.913043" />
+                                <point x="0.186047" y="0.826087" />
+                                <point x="0.0465116" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Software\Construct 2\freebundle\Sprites\Space\Rocks\rock_type_A0010.png">
+                            <collision-poly>
+                                <point x="0.255814" y="0.23913" />
+                                <point x="0.488372" y="0.0652174" />
+                                <point x="0.813953" y="0.173913" />
+                                <point x="0.906977" y="0.5" />
+                                <point x="0.767442" y="0.782609" />
+                                <point x="0.488372" y="0.913043" />
+                                <point x="0.186047" y="0.826087" />
+                                <point x="0.0465116" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Software\Construct 2\freebundle\Sprites\Space\Rocks\rock_type_A0011.png">
+                            <collision-poly>
+                                <point x="0.255814" y="0.23913" />
+                                <point x="0.488372" y="0.0652174" />
+                                <point x="0.813953" y="0.173913" />
+                                <point x="0.906977" y="0.5" />
+                                <point x="0.767442" y="0.782609" />
+                                <point x="0.488372" y="0.913043" />
+                                <point x="0.186047" y="0.826087" />
+                                <point x="0.0465116" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.515152" hotspotY="0.5" original-source="D:\Software\Construct 2\freebundle\Sprites\Space\Rocks\rock_type_A0012.png">
+                            <collision-poly>
+                                <point x="0.255814" y="0.23913" />
+                                <point x="0.488372" y="0.0652174" />
+                                <point x="0.813953" y="0.173913" />
+                                <point x="0.906977" y="0.5" />
+                                <point x="0.767442" y="0.782609" />
+                                <point x="0.488372" y="0.913043" />
+                                <point x="0.186047" y="0.826087" />
+                                <point x="0.0465116" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.534884" hotspotY="0.5" original-source="D:\Software\Construct 2\freebundle\Sprites\Space\Rocks\rock_type_A0013.png">
+                            <collision-poly>
+                                <point x="0.255814" y="0.23913" />
+                                <point x="0.488372" y="0.0652174" />
+                                <point x="0.813953" y="0.173913" />
+                                <point x="0.906977" y="0.5" />
+                                <point x="0.767442" y="0.782609" />
+                                <point x="0.488372" y="0.913043" />
+                                <point x="0.186047" y="0.826087" />
+                                <point x="0.0465116" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.530612" hotspotY="0.5" original-source="D:\Software\Construct 2\freebundle\Sprites\Space\Rocks\rock_type_A0014.png">
+                            <collision-poly>
+                                <point x="0.255814" y="0.23913" />
+                                <point x="0.488372" y="0.0652174" />
+                                <point x="0.813953" y="0.173913" />
+                                <point x="0.906977" y="0.5" />
+                                <point x="0.767442" y="0.782609" />
+                                <point x="0.488372" y="0.913043" />
+                                <point x="0.186047" y="0.826087" />
+                                <point x="0.0465116" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.510204" hotspotY="0.5" original-source="D:\Software\Construct 2\freebundle\Sprites\Space\Rocks\rock_type_A0015.png">
+                            <collision-poly>
+                                <point x="0.255814" y="0.23913" />
+                                <point x="0.488372" y="0.0652174" />
+                                <point x="0.813953" y="0.173913" />
+                                <point x="0.906977" y="0.5" />
+                                <point x="0.767442" y="0.782609" />
+                                <point x="0.488372" y="0.913043" />
+                                <point x="0.186047" y="0.826087" />
+                                <point x="0.0465116" y="0.5" />
+                            </collision-poly>
+                        </frame>
                     </animation>
                 </animation-folder>
             </object-type>
@@ -997,22 +2161,269 @@
                 </behaviors>
                 <animation-folder>
                     <animation framecount="16" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="158557595969915" speed="15">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Software\Construct 2\freebundle\Sprites\Space\Rocks\rock_type_A0000.png" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Software\Construct 2\freebundle\Sprites\Space\Rocks\rock_type_A0001.png" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Software\Construct 2\freebundle\Sprites\Space\Rocks\rock_type_A0002.png" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Software\Construct 2\freebundle\Sprites\Space\Rocks\rock_type_A0003.png" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Software\Construct 2\freebundle\Sprites\Space\Rocks\rock_type_A0004.png" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Software\Construct 2\freebundle\Sprites\Space\Rocks\rock_type_A0005.png" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Software\Construct 2\freebundle\Sprites\Space\Rocks\rock_type_A0006.png" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Software\Construct 2\freebundle\Sprites\Space\Rocks\rock_type_A0007.png" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Software\Construct 2\freebundle\Sprites\Space\Rocks\rock_type_A0008.png" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Software\Construct 2\freebundle\Sprites\Space\Rocks\rock_type_A0009.png" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Software\Construct 2\freebundle\Sprites\Space\Rocks\rock_type_A0010.png" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Software\Construct 2\freebundle\Sprites\Space\Rocks\rock_type_A0011.png" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Software\Construct 2\freebundle\Sprites\Space\Rocks\rock_type_A0012.png" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Software\Construct 2\freebundle\Sprites\Space\Rocks\rock_type_A0013.png" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Software\Construct 2\freebundle\Sprites\Space\Rocks\rock_type_A0014.png" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Software\Construct 2\freebundle\Sprites\Space\Rocks\rock_type_A0015.png" />
+                        <frame duration="1" hotspotX="0.488372" hotspotY="0.5" original-source="D:\Software\Construct 2\freebundle\Sprites\Space\Rocks\rock_type_A0000.png">
+                            <collision-poly>
+                                <point x="0.255814" y="0.23913" />
+                                <point x="0.488372" y="0.0652174" />
+                                <point x="0.813953" y="0.173913" />
+                                <point x="0.906977" y="0.5" />
+                                <point x="0.767442" y="0.782609" />
+                                <point x="0.488372" y="0.913043" />
+                                <point x="0.186047" y="0.826087" />
+                                <point x="0.0465116" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.484848" hotspotY="0.5" original-source="D:\Software\Construct 2\freebundle\Sprites\Space\Rocks\rock_type_A0001.png">
+                            <collision-poly>
+                                <point x="0.255814" y="0.23913" />
+                                <point x="0.488372" y="0.0652174" />
+                                <point x="0.813953" y="0.173913" />
+                                <point x="0.906977" y="0.5" />
+                                <point x="0.767442" y="0.782609" />
+                                <point x="0.488372" y="0.913043" />
+                                <point x="0.186047" y="0.826087" />
+                                <point x="0.0465116" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Software\Construct 2\freebundle\Sprites\Space\Rocks\rock_type_A0002.png">
+                            <collision-poly>
+                                <point x="0.255814" y="0.23913" />
+                                <point x="0.488372" y="0.0652174" />
+                                <point x="0.813953" y="0.173913" />
+                                <point x="0.906977" y="0.5" />
+                                <point x="0.767442" y="0.782609" />
+                                <point x="0.488372" y="0.913043" />
+                                <point x="0.186047" y="0.826087" />
+                                <point x="0.0465116" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Software\Construct 2\freebundle\Sprites\Space\Rocks\rock_type_A0003.png">
+                            <collision-poly>
+                                <point x="0.255814" y="0.23913" />
+                                <point x="0.488372" y="0.0652174" />
+                                <point x="0.813953" y="0.173913" />
+                                <point x="0.906977" y="0.5" />
+                                <point x="0.767442" y="0.782609" />
+                                <point x="0.488372" y="0.913043" />
+                                <point x="0.186047" y="0.826087" />
+                                <point x="0.0465116" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.484848" hotspotY="0.5" original-source="D:\Software\Construct 2\freebundle\Sprites\Space\Rocks\rock_type_A0004.png">
+                            <collision-poly>
+                                <point x="0.255814" y="0.23913" />
+                                <point x="0.488372" y="0.0652174" />
+                                <point x="0.813953" y="0.173913" />
+                                <point x="0.906977" y="0.5" />
+                                <point x="0.767442" y="0.782609" />
+                                <point x="0.488372" y="0.913043" />
+                                <point x="0.186047" y="0.826087" />
+                                <point x="0.0465116" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.465116" hotspotY="0.5" original-source="D:\Software\Construct 2\freebundle\Sprites\Space\Rocks\rock_type_A0005.png">
+                            <collision-poly>
+                                <point x="0.255814" y="0.23913" />
+                                <point x="0.488372" y="0.0652174" />
+                                <point x="0.813953" y="0.173913" />
+                                <point x="0.906977" y="0.5" />
+                                <point x="0.767442" y="0.782609" />
+                                <point x="0.488372" y="0.913043" />
+                                <point x="0.186047" y="0.826087" />
+                                <point x="0.0465116" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.479167" hotspotY="0.5" original-source="D:\Software\Construct 2\freebundle\Sprites\Space\Rocks\rock_type_A0006.png">
+                            <collision-poly>
+                                <point x="0.255814" y="0.23913" />
+                                <point x="0.488372" y="0.0652174" />
+                                <point x="0.813953" y="0.173913" />
+                                <point x="0.906977" y="0.5" />
+                                <point x="0.767442" y="0.782609" />
+                                <point x="0.488372" y="0.913043" />
+                                <point x="0.186047" y="0.826087" />
+                                <point x="0.0465116" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Software\Construct 2\freebundle\Sprites\Space\Rocks\rock_type_A0007.png">
+                            <collision-poly>
+                                <point x="0.255814" y="0.23913" />
+                                <point x="0.488372" y="0.0652174" />
+                                <point x="0.813953" y="0.173913" />
+                                <point x="0.906977" y="0.5" />
+                                <point x="0.767442" y="0.782609" />
+                                <point x="0.488372" y="0.913043" />
+                                <point x="0.186047" y="0.826087" />
+                                <point x="0.0465116" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.52381" hotspotY="0.5" original-source="D:\Software\Construct 2\freebundle\Sprites\Space\Rocks\rock_type_A0008.png">
+                            <collision-poly>
+                                <point x="0.255814" y="0.23913" />
+                                <point x="0.488372" y="0.0652174" />
+                                <point x="0.813953" y="0.173913" />
+                                <point x="0.906977" y="0.5" />
+                                <point x="0.767442" y="0.782609" />
+                                <point x="0.488372" y="0.913043" />
+                                <point x="0.186047" y="0.826087" />
+                                <point x="0.0465116" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.529412" hotspotY="0.5" original-source="D:\Software\Construct 2\freebundle\Sprites\Space\Rocks\rock_type_A0009.png">
+                            <collision-poly>
+                                <point x="0.255814" y="0.23913" />
+                                <point x="0.488372" y="0.0652174" />
+                                <point x="0.813953" y="0.173913" />
+                                <point x="0.906977" y="0.5" />
+                                <point x="0.767442" y="0.782609" />
+                                <point x="0.488372" y="0.913043" />
+                                <point x="0.186047" y="0.826087" />
+                                <point x="0.0465116" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Software\Construct 2\freebundle\Sprites\Space\Rocks\rock_type_A0010.png">
+                            <collision-poly>
+                                <point x="0.255814" y="0.23913" />
+                                <point x="0.488372" y="0.0652174" />
+                                <point x="0.813953" y="0.173913" />
+                                <point x="0.906977" y="0.5" />
+                                <point x="0.767442" y="0.782609" />
+                                <point x="0.488372" y="0.913043" />
+                                <point x="0.186047" y="0.826087" />
+                                <point x="0.0465116" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Software\Construct 2\freebundle\Sprites\Space\Rocks\rock_type_A0011.png">
+                            <collision-poly>
+                                <point x="0.255814" y="0.23913" />
+                                <point x="0.488372" y="0.0652174" />
+                                <point x="0.813953" y="0.173913" />
+                                <point x="0.906977" y="0.5" />
+                                <point x="0.767442" y="0.782609" />
+                                <point x="0.488372" y="0.913043" />
+                                <point x="0.186047" y="0.826087" />
+                                <point x="0.0465116" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.515152" hotspotY="0.5" original-source="D:\Software\Construct 2\freebundle\Sprites\Space\Rocks\rock_type_A0012.png">
+                            <collision-poly>
+                                <point x="0.255814" y="0.23913" />
+                                <point x="0.488372" y="0.0652174" />
+                                <point x="0.813953" y="0.173913" />
+                                <point x="0.906977" y="0.5" />
+                                <point x="0.767442" y="0.782609" />
+                                <point x="0.488372" y="0.913043" />
+                                <point x="0.186047" y="0.826087" />
+                                <point x="0.0465116" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.534884" hotspotY="0.5" original-source="D:\Software\Construct 2\freebundle\Sprites\Space\Rocks\rock_type_A0013.png">
+                            <collision-poly>
+                                <point x="0.255814" y="0.23913" />
+                                <point x="0.488372" y="0.0652174" />
+                                <point x="0.813953" y="0.173913" />
+                                <point x="0.906977" y="0.5" />
+                                <point x="0.767442" y="0.782609" />
+                                <point x="0.488372" y="0.913043" />
+                                <point x="0.186047" y="0.826087" />
+                                <point x="0.0465116" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.530612" hotspotY="0.5" original-source="D:\Software\Construct 2\freebundle\Sprites\Space\Rocks\rock_type_A0014.png">
+                            <collision-poly>
+                                <point x="0.255814" y="0.23913" />
+                                <point x="0.488372" y="0.0652174" />
+                                <point x="0.813953" y="0.173913" />
+                                <point x="0.906977" y="0.5" />
+                                <point x="0.767442" y="0.782609" />
+                                <point x="0.488372" y="0.913043" />
+                                <point x="0.186047" y="0.826087" />
+                                <point x="0.0465116" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.510204" hotspotY="0.5" original-source="D:\Software\Construct 2\freebundle\Sprites\Space\Rocks\rock_type_A0015.png">
+                            <collision-poly>
+                                <point x="0.255814" y="0.23913" />
+                                <point x="0.488372" y="0.0652174" />
+                                <point x="0.813953" y="0.173913" />
+                                <point x="0.906977" y="0.5" />
+                                <point x="0.767442" y="0.782609" />
+                                <point x="0.488372" y="0.913043" />
+                                <point x="0.186047" y="0.826087" />
+                                <point x="0.0465116" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="MPBot" sid="851395828420198">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="Health" sid="523162499018533" type="number" />
+                    <instance-variable name="OrbitAngle" sid="807290056808396" type="number" />
+                    <instance-variable name="Target" sid="811608455993405" type="number" />
+                    <instance-variable name="Number" sid="547851456905182" type="number" />
+                    <instance-variable name="IsExploding" sid="784222522395791" type="number" />
+                    <instance-variable name="Name" sid="334772682731291" type="string" />
+                </instance-variables>
+                <behaviors>
+                    <behavior-type name="BoundToLayout" sid="680975615025954">
+                        <behavior id="bound" />
+                    </behavior-type>
+                    <behavior-type name="Pathfinding" sid="593229645610284">
+                        <behavior id="Pathfinding" />
+                    </behavior-type>
+                </behaviors>
+                <effects>
+                    <effect-type name="AdjustHSL">
+                        <effect id="hsladjust" />
+                    </effect-type>
+                </effects>
+                <container>
+                    <type>MPBot</type>
+                    <type>BotUsernameText</type>
+                </container>
+                <animation-folder>
+                    <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="779110222965077" speed="0">
+                        <frame duration="1" hotspotX="0.537313" hotspotY="0.501538" original-source="C:\Users\Jordon\Downloads\blufighter\bluefighter0005.png">
+                            <collision-poly>
+                                <point x="0.0895522" y="0.0923077" />
+                                <point x="0.498507" y="0.0307692" />
+                                <point x="0.659701" y="0.350769" />
+                                <point x="0.943284" y="0.498462" />
+                                <point x="0.659701" y="0.649231" />
+                                <point x="0.498507" y="0.969231" />
+                                <point x="0.0895522" y="0.907692" />
+                                <point x="0.0567164" y="0.498462" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.626506" hotspotY="0.501538" original-source="C:\Users\Jordon\Downloads\blufighter\bluefighter0005 - Thrusters.png">
+                            <collision-poly>
+                                <point x="0.19759" y="0.101538" />
+                                <point x="0.498795" y="0" />
+                                <point x="0.725301" y="0.350769" />
+                                <point x="0.954217" y="0.498462" />
+                                <point x="0.725301" y="0.649231" />
+                                <point x="0.498795" y="1" />
+                                <point x="0.196386" y="0.890769" />
+                                <point x="0.195181" y="0.498462" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                    <animation framecount="13" loop="0" name="Blank" pingpong="0" repeatcount="1" repeatto="0" sid="159694456766472" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     </animation>
                 </animation-folder>
             </object-type>
@@ -1040,6 +2451,18 @@
             </object-type>
             <object-type name="RoomTextbox" sid="786046192609366">
                 <plugin id="TextBox" />
+            </object-type>
+            <object-type name="BotUsernameText" sid="883479355990393">
+                <plugin id="Text" />
+                <behaviors>
+                    <behavior-type name="Pin" sid="747003656079847">
+                        <behavior id="Pin" />
+                    </behavior-type>
+                </behaviors>
+                <container>
+                    <type>MPBot</type>
+                    <type>BotUsernameText</type>
+                </container>
             </object-type>
         </object-folder>
         <object-folder name="Credits">
@@ -1302,6 +2725,181 @@
         <object-type name="ConnectingText" sid="502968101915882">
             <plugin id="Text" />
         </object-type>
+        <object-type global="1" name="XML" sid="996501239481399">
+            <plugin id="XML" />
+        </object-type>
+        <object-type name="OfflineButtonText" sid="534368986872623">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="ControlsButtonText" sid="761984429531841">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="UPKBButtonText" sid="695128898976096">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="ControlsTitleText" sid="647944498581071">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="DownKBText" sid="813960572713638">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="LeftKBText" sid="318516459047701">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="RightKBText" sid="408205255945886">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="ChangeControlsText" sid="719698268731519">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="DevConsoleOutput" sid="981963579851347">
+            <plugin id="TextBox" />
+            <behaviors>
+                <behavior-type name="Persist" sid="936594770344044">
+                    <behavior id="Persist" />
+                </behavior-type>
+            </behaviors>
+        </object-type>
+        <object-type name="WeaponPowerText" sid="443901496161882">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="EnginePowerText" sid="812552082859366">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="MPPlayerHealthBarOutline" sid="943927890256784">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="Player" sid="479814290785102" type="string" />
+            </instance-variables>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="308376619799142" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0.5" original-source="D:\College\Level 3 Year 1\Graphics\Alien Wars\HealthBarOutline.png">
+                        <collision-poly>
+                            <point x="0.0300601" y="0.153061" />
+                            <point x="0.498998" y="0.0102041" />
+                            <point x="0.96994" y="0.142857" />
+                            <point x="0.997996" y="0.5" />
+                            <point x="0.96994" y="0.857143" />
+                            <point x="0.498998" y="0.989796" />
+                            <point x="0.0300601" y="0.846939" />
+                            <point x="0.00200401" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="MPPlayerHealthBarGreen" sid="303785105761103">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="InitialWidth" sid="495979428420889" type="number" />
+                <instance-variable name="Player" sid="780831730236976" type="string" />
+            </instance-variables>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="136659971873219" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0.5" original-source="D:\College\Level 3 Year 1\Graphics\Alien Wars\HealthBarGreen.png">
+                        <collision-poly>
+                            <point x="0.0243031" y="0.130916" />
+                            <point x="0.497978" y="0" />
+                            <point x="0.973677" y="0.120061" />
+                            <point x="1" y="0.5" />
+                            <point x="0.973677" y="0.879939" />
+                            <point x="0.497978" y="1" />
+                            <point x="0.0243031" y="0.869084" />
+                            <point x="0" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="MPPlayerHealthBarRed" sid="100448977219676">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="Player" sid="931238742715593" type="string" />
+            </instance-variables>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="342238387756507" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0.5" original-source="D:\College\Level 3 Year 1\Graphics\Alien Wars\HealthBarRed.png">
+                        <collision-poly>
+                            <point x="0.0243031" y="0.130916" />
+                            <point x="0.497978" y="0" />
+                            <point x="0.973677" y="0.120061" />
+                            <point x="1" y="0.5" />
+                            <point x="0.973677" y="0.879939" />
+                            <point x="0.497978" y="1" />
+                            <point x="0.0243031" y="0.869084" />
+                            <point x="0" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type global="1" name="BotNames" sid="687755150193587">
+            <plugin id="Dictionary" />
+        </object-type>
+        <object-type name="SpaceStation_1" sid="135084836832656">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="382660088743355" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type global="1" name="Arr_Inventory" sid="287727596310598">
+            <plugin id="Arr" />
+        </object-type>
+        <object-type name="Item" sid="501168781551332">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="254130707147276" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Inv_Slot" sid="698851683731047">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="SlotID" sid="196569832653266" type="number" />
+            </instance-variables>
+            <animation-folder>
+                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="878499610499219" speed="0">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Inv_SlotText" sid="255611684242846">
+            <plugin id="Text" />
+            <instance-variables>
+                <instance-variable name="SlotID" sid="691537455144076" type="number" />
+            </instance-variables>
+        </object-type>
+        <object-type name="StartTitleText" sid="344036211379265">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="LoadingAnimation" sid="801182620646217">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="989947238238846" speed="0">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="E:\College\Level 3 Year 1\3D\Spaceship\Animation\PNGs\0001.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="UserMedia" sid="955108355354945">
+            <plugin id="UserMedia" />
+        </object-type>
+        <object-type name="TTS_MPChatBar" sid="422943236054085">
+            <plugin id="sliderbar" />
+        </object-type>
+        <object-type name="TTS_MPChatBarText" sid="616687157685144">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="GameMusicSliderText" sid="552666614332826">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="GameSlider" sid="176153300016528">
+            <plugin id="sliderbar" />
+        </object-type>
     </object-folder>
     <families>
         <family name="AllText" plugin-id="Text" sid="760463930764342">
@@ -1309,10 +2907,14 @@
                 <member>AlienWarsCreditsText</member>
                 <member>ApplySettingsButtonText</member>
                 <member>BackButtonText</member>
+                <member>BotUsernameText</member>
                 <member>BradnumNetCreditsText</member>
                 <member>ChangeColourText</member>
+                <member>ChangeControlsText</member>
                 <member>ChangeSpriteText</member>
                 <member>ConnectingText</member>
+                <member>ControlsButtonText</member>
+                <member>ControlsTitleText</member>
                 <member>CPUText</member>
                 <member>CreateServerButtonText</member>
                 <member>CreditsButtonText</member>
@@ -1320,14 +2922,17 @@
                 <member>DemoText</member>
                 <member>DesignerCreditsText</member>
                 <member>DeveloperCreditsText</member>
+                <member>DownKBText</member>
                 <member>EasyButtonText</member>
                 <member>EffectsQualityListboxText</member>
+                <member>EnginePowerText</member>
                 <member>FeatureUnavailableText</member>
                 <member>FPSText</member>
                 <member>FullscreenText</member>
                 <member>GraphicsQualityListboxText</member>
                 <member>HardButtonText</member>
                 <member>ImportantText</member>
+                <member>LeftKBText</member>
                 <member>LoadingTitleText</member>
                 <member>LoginButtonText</member>
                 <member>LoginStatusText</member>
@@ -1345,6 +2950,7 @@
                 <member>MultiplayerTitleText</member>
                 <member>MusicSoundBarText</member>
                 <member>NetworkUsageText</member>
+                <member>OfflineButtonText</member>
                 <member>PlayButtonText</member>
                 <member>PlayerHealthText</member>
                 <member>PlayerUsernameText</member>
@@ -1359,6 +2965,7 @@
                 <member>RetroLevelText</member>
                 <member>RetroLooseText</member>
                 <member>RetroOpeningText</member>
+                <member>RightKBText</member>
                 <member>RoomText</member>
                 <member>RoomTextboxText</member>
                 <member>ScoreText</member>
@@ -1378,10 +2985,12 @@
                 <member>TitleScreenC2Text</member>
                 <member>TitleScreenTitleText</member>
                 <member>UnconqueredSunCreditsText</member>
+                <member>UPKBButtonText</member>
                 <member>UsernameTextboxText</member>
                 <member>VersionText</member>
                 <member>VideoQualityText</member>
                 <member>VRAMText</member>
+                <member>WeaponPowerText</member>
                 <member>XboxBackText</member>
                 <member>XboxBButton</member>
             </members>
@@ -1390,6 +2999,7 @@
             <members>
                 <member>ApplySettingsButtonText</member>
                 <member>BackButtonText</member>
+                <member>ControlsButtonText</member>
                 <member>CreateServerButtonText</member>
                 <member>CreditsButtonText</member>
                 <member>EasyButtonText</member>
@@ -1400,6 +3010,7 @@
                 <member>MPErrorBackButtonText</member>
                 <member>MPGoText</member>
                 <member>MultiplayerButtonText</member>
+                <member>OfflineButtonText</member>
                 <member>PlayButtonText</member>
                 <member>QuitButtonText</member>
                 <member>ResumeButtonText</member>
@@ -1411,6 +3022,7 @@
         </family>
         <family name="AllTitleText" plugin-id="Text" sid="811197225495572">
             <members>
+                <member>ControlsTitleText</member>
                 <member>CreditsTitleText</member>
                 <member>LoadingTitleText</member>
                 <member>LoginTitleText</member>
@@ -1436,10 +3048,13 @@
         <family name="AllMenuDescriptionText" plugin-id="Text" sid="896428122419930">
             <members>
                 <member>AlienWarsCreditsText</member>
+                <member>BotUsernameText</member>
                 <member>BradnumNetCreditsText</member>
                 <member>ChangeColourText</member>
+                <member>ChangeControlsText</member>
                 <member>DesignerCreditsText</member>
                 <member>DeveloperCreditsText</member>
+                <member>EnginePowerText</member>
                 <member>FeatureUnavailableText</member>
                 <member>FullscreenText</member>
                 <member>MasterSoundBarText</member>
@@ -1462,6 +3077,7 @@
                 <member>UsernameTextboxText</member>
                 <member>VersionText</member>
                 <member>VideoQualityText</member>
+                <member>WeaponPowerText</member>
             </members>
         </family>
         <family name="AllAimSpot" plugin-id="Sprite" sid="991910108800660">
@@ -1518,20 +3134,25 @@
         <family name="AllTextNoButtons" plugin-id="Text" sid="533919975026652">
             <members>
                 <member>AlienWarsCreditsText</member>
+                <member>BotUsernameText</member>
                 <member>BradnumNetCreditsText</member>
                 <member>ChangeColourText</member>
                 <member>ConnectingText</member>
+                <member>ControlsTitleText</member>
                 <member>CPUText</member>
                 <member>CreditsTitleText</member>
                 <member>DemoText</member>
                 <member>DesignerCreditsText</member>
                 <member>DeveloperCreditsText</member>
+                <member>DownKBText</member>
                 <member>EffectsQualityListboxText</member>
+                <member>EnginePowerText</member>
                 <member>FeatureUnavailableText</member>
                 <member>FPSText</member>
                 <member>FullscreenText</member>
                 <member>GraphicsQualityListboxText</member>
                 <member>ImportantText</member>
+                <member>LeftKBText</member>
                 <member>LoadingTitleText</member>
                 <member>LoginStatusText</member>
                 <member>LoginTitleText</member>
@@ -1543,7 +3164,6 @@
                 <member>MultiplayerTitleText</member>
                 <member>MusicSoundBarText</member>
                 <member>NetworkUsageText</member>
-                <member>PlayerHealthText</member>
                 <member>PlayerUsernameText</member>
                 <member>PlayTitleText</member>
                 <member>ProgrammerCreditsText</member>
@@ -1554,6 +3174,7 @@
                 <member>RetroLevelText</member>
                 <member>RetroLooseText</member>
                 <member>RetroOpeningText</member>
+                <member>RightKBText</member>
                 <member>RoomText</member>
                 <member>RoomTextboxText</member>
                 <member>ScoreText</member>
@@ -1569,10 +3190,12 @@
                 <member>TitleScreenC2Text</member>
                 <member>TitleScreenTitleText</member>
                 <member>UnconqueredSunCreditsText</member>
+                <member>UPKBButtonText</member>
                 <member>UsernameTextboxText</member>
                 <member>VersionText</member>
                 <member>VideoQualityText</member>
                 <member>VRAMText</member>
+                <member>WeaponPowerText</member>
                 <member>XboxBackText</member>
             </members>
             <effects>
@@ -1594,6 +3217,7 @@
                 <member>ChangeSpriteTextBox</member>
                 <member>ChatTextBox</member>
                 <member>DevConsole</member>
+                <member>DevConsoleOutput</member>
                 <member>MPUsernameBox</member>
                 <member>PasswordTextbox</member>
                 <member>RoomTextbox</member>
@@ -1616,6 +3240,7 @@
         </family>
         <family name="AllMPPlayers" plugin-id="Sprite" sid="817254652037456">
             <members>
+                <member>MPBot</member>
                 <member>MPPlayer</member>
             </members>
         </family>
@@ -1647,11 +3272,58 @@
         </family>
         <family name="AllPlayerSprites" plugin-id="Sprite" sid="801192904694689">
             <members>
+                <member>MPBot</member>
                 <member>MPPlayer</member>
                 <member>Player</member>
                 <member>RetroLive1</member>
                 <member>RetroLive2</member>
                 <member>RetroLive3</member>
+            </members>
+        </family>
+        <family name="AllBots" plugin-id="Sprite" sid="611774332790612">
+            <members>
+                <member>MPBot</member>
+            </members>
+        </family>
+        <family name="AllSpaceStations" plugin-id="Sprite" sid="195520481513167">
+            <members>
+                <member>SpaceStation_1</member>
+            </members>
+        </family>
+        <family name="AllSettingsText" plugin-id="Text" sid="347665952088489">
+            <members>
+                <member>ChangeColourText</member>
+                <member>EffectsQualityListboxText</member>
+                <member>FullscreenText</member>
+                <member>GraphicsQualityListboxText</member>
+                <member>MasterSoundBarText</member>
+                <member>MusicSoundBarText</member>
+                <member>ResolutionText</member>
+                <member>SettingsMenuTitleText</member>
+                <member>TTS_MPChatBarText</member>
+                <member>VersionText</member>
+                <member>VideoQualityText</member>
+            </members>
+        </family>
+        <family name="AllSettingsSliders" plugin-id="sliderbar" sid="565024338008829">
+            <members>
+                <member>ChangeColourSlider</member>
+                <member>MasterSoundBar</member>
+                <member>MusicSoundBar</member>
+                <member>TTS_MPChatBar</member>
+            </members>
+        </family>
+        <family name="AllSettingsListBoxes" plugin-id="List" sid="406835689512380">
+            <members>
+                <member>EffectsQualityListbox</member>
+                <member>GraphicsQualityListbox</member>
+                <member>UpscaleQualityListbox</member>
+                <member>VideoQualityList</member>
+            </members>
+        </family>
+        <family name="AllSettingsCheckboxes" plugin-id="Button" sid="362222188509428">
+            <members>
+                <member>FullscreenCheckbox</member>
             </members>
         </family>
     </families>
@@ -1660,6 +3332,7 @@
             <layout>Main Menu.xml</layout>
             <layout>Title Screen.xml</layout>
             <layout>Login.xml</layout>
+            <layout>Start.xml</layout>
         </layout-folder>
         <layout-folder name="Multiplayer">
             <layout>Multiplayer.xml</layout>
@@ -1668,7 +3341,10 @@
             <layout>Loading.xml</layout>
         </layout-folder>
         <layout-folder name="Singleplayer">
-            <layout>Tutorial.xml</layout>
+            <layout-folder name="OpenWorld">
+                <layout>OpenWorld.xml</layout>
+            </layout-folder>
+            <layout>Singleplayer.xml</layout>
         </layout-folder>
         <layout-folder name="Bonus">
             <layout>AWRetro.xml</layout>
@@ -1681,12 +3357,14 @@
         <event-folder name="Multiplayer">
             <event-sheet>Multiplayer Events.xml</event-sheet>
             <event-sheet>MP Globals.xml</event-sheet>
+            <event-sheet>Bots.xml</event-sheet>
         </event-folder>
         <event-folder name="Global">
             <event-sheet>GLOBAL EVENTS.xml</event-sheet>
             <event-sheet>Globals.xml</event-sheet>
             <event-sheet>Storage.xml</event-sheet>
             <event-sheet>Gameplay.xml</event-sheet>
+            <event-sheet>Controls.xml</event-sheet>
         </event-folder>
         <event-folder name="Menus">
             <event-folder name="TitleScreen">
@@ -1704,12 +3382,17 @@
             </event-folder>
         </event-folder>
         <event-folder name="Singleplayer">
-            <event-sheet>Tutorial.xml</event-sheet>
+            <event-folder name="OpenWorld">
+                <event-sheet>OpenWorld.xml</event-sheet>
+                <event-sheet>Inventory.xml</event-sheet>
+            </event-folder>
+            <event-sheet>Singleplayer.xml</event-sheet>
             <event-sheet>Weather Effects.xml</event-sheet>
         </event-folder>
         <event-folder name="Bonus">
             <event-sheet>AWRetro.xml</event-sheet>
         </event-folder>
+        <event-sheet>Start.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Audio" uid="2">
@@ -1727,7 +3410,7 @@
             </properties>
         </global-instance>
         <global-instance type="Mouse" uid="11" />
-        <global-instance type="Function" uid="18" />
+        <global-instance type="f" uid="18" />
         <global-instance type="Browser" uid="23" />
         <global-instance type="Touch" uid="30">
             <properties>
@@ -1787,11 +3470,12 @@
             <file name="loading-logo.png" />
         </file-folder>
         <file-folder name="Videos">
-            <file name="LoadingVideo.mp4" />
             <file name="mainmenubackground-HQ.mp4" />
             <file name="mainmenubackground-LQ.mp4" />
             <file name="mainmenubackground-LQ.ogv" />
             <file name="mainmenubackground-LQ.webm" />
+            <file name="LoadingVideo.mp4" />
+            <file name="LoadingVideo.webm" />
         </file-folder>
         <file-folder name="Fonts">
             <file name="munro.css" />

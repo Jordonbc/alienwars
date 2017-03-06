@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Start</name>
+    <events>
+        <event-block any="1" sid="675168617571493">
+            <conditions>
+                <condition id="1" name="On any key pressed" sid="629521687418729" type="Keyboard" />
+                <condition id="1" name="On any click" sid="410209839730797" type="Mouse" />
+                <condition id="8" name="On any button pressed" sid="773824556131239" type="Gamepad">
+                    <param id="0" name="Gamepad">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="147322431898779" type="System">
+                    <param id="0" name="Layout">Login</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

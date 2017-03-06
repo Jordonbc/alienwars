@@ -3,16 +3,22 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Globals</name>
     <events>
-        <variable constant="0" name="Prefix" sid="340408901450685" static="0" type="text"></variable>
-        <variable constant="0" name="Password" sid="518828128895035" static="0" type="text"></variable>
-        <variable constant="0" name="UserID" sid="793229974982067" static="0" type="number">0</variable>
-        <variable constant="0" name="Cheating" sid="614657705458155" static="0" type="number">0</variable>
-        <variable constant="0" name="SpaceshipURL" sid="308170126777885" static="0" type="text"></variable>
-        <variable constant="0" name="MoveTouchID" sid="138735399395155" static="0" type="number">0</variable>
-        <variable constant="0" name="AimTouchID" sid="369765734871004" static="0" type="number">0</variable>
-        <variable constant="0" name="MoveTouchXPosStart" sid="779789445004880" static="0" type="number">0</variable>
-        <variable constant="0" name="MoveTouchXPosEnd" sid="856262111228374" static="0" type="number">0</variable>
-        <variable constant="0" name="MoveSwipeDistanceX" sid="314017651626519" static="0" type="number">0</variable>
+        <variable constant="0" name="MPChatTTS" sid="557004222086217" static="0" type="number">0</variable>
+        <variable constant="0" name="RainbowMode" sid="850600922746138" static="0" type="number">0</variable>
+        <variable comment="Move up button keycode" constant="0" name="MoveUpKeyCode" sid="374733134637125" static="0" type="number">87</variable>
+        <variable comment="Move down button keycode" constant="0" name="MoveDownKeyCode" sid="201838917577662" static="0" type="number">83</variable>
+        <variable comment="Move left keycode" constant="0" name="MoveLeftKeyCode" sid="715433161130924" static="0" type="number">65</variable>
+        <variable comment="Move right keycode" constant="0" name="MoveRightKeyCode" sid="380604047471195" static="0" type="number">68</variable>
+        <variable comment="is not logged in" constant="0" name="Offline" sid="895865174681997" static="0" type="number">1</variable>
+        <variable comment="player prefix" constant="0" name="Prefix" sid="340408901450685" static="0" type="text"></variable>
+        <variable comment="player password" constant="0" name="Password" sid="518828128895035" static="0" type="text"></variable>
+        <variable comment="id of user database" constant="0" name="UserID" sid="793229974982067" static="0" type="number">0</variable>
+        <variable comment="if user has cheated" constant="0" name="Cheating" sid="614657705458155" static="0" type="number">0</variable>
+        <variable comment="id of move touch" constant="0" name="MoveTouchID" sid="138735399395155" static="0" type="number">0</variable>
+        <variable comment="id of aim touch" constant="0" name="AimTouchID" sid="369765734871004" static="0" type="number">0</variable>
+        <variable comment="X position of move start" constant="0" name="MoveTouchXPosStart" sid="779789445004880" static="0" type="number">0</variable>
+        <variable comment="X position of move end" constant="0" name="MoveTouchXPosEnd" sid="856262111228374" static="0" type="number">0</variable>
+        <variable comment="Move distance between start and end" constant="0" name="MoveSwipeDistanceX" sid="314017651626519" static="0" type="number">0</variable>
         <variable constant="0" name="MoveTouchYPosStart" sid="744848413620528" static="0" type="number">0</variable>
         <variable constant="0" name="MoveTouchYPosEnd" sid="357543800638049" static="0" type="number">0</variable>
         <variable constant="0" name="MoveSwipeDistanceY" sid="779708333370038" static="0" type="number">0</variable>
@@ -29,19 +35,19 @@
         <variable constant="0" name="EffectsDetail" sid="442564190098061" static="0" type="number">0</variable>
         <variable constant="0" name="EffectsQuality" sid="340375656261271" static="0" type="text">HIGH</variable>
         <variable constant="0" name="ParallaxEnabled" sid="707302189423685" static="0" type="number">1</variable>
-        <variable constant="0" name="GraphicsQuality" sid="343212604184567" static="0" type="text">LOW</variable>
+        <variable constant="0" name="GraphicsQuality" sid="343212604184567" static="0" type="text">HIGH</variable>
         <variable constant="0" name="MenuColour" sid="841999175355857" static="0" type="text"></variable>
         <variable constant="0" name="TotalKills" sid="752641048191002" static="0" type="number">0</variable>
         <variable constant="0" name="TotalDeaths" sid="203099041490003" static="0" type="number">0</variable>
-        <variable constant="0" name="ShowFPS" sid="644192668404062" static="0" type="number">0</variable>
+        <variable comment="show fps" constant="0" name="ShowFPS" sid="644192668404062" static="0" type="number">0</variable>
         <variable comment="Room to be joined" constant="0" name="ROOM" sid="652315021777226" static="0" type="text">ROOM1</variable>
-        <variable constant="0" name="NextLayout" sid="517908477827608" static="0" type="text">Login</variable>
+        <variable comment="Next layout to take user to" constant="0" name="NextLayout" sid="517908477827608" static="0" type="text">Login</variable>
         <variable constant="0" name="PixelRounding" sid="608519011798753" static="0" type="number">0</variable>
-        <variable constant="0" name="MPLevel" sid="942914330005684" static="0" type="number">1</variable>
+        <variable comment="Player level" constant="0" name="MPLevel" sid="942914330005684" static="0" type="number">1</variable>
         <variable comment="wss://multiplayer.scirra.com" constant="0" name="MPSignalingServer" sid="481241356820899" static="0" type="text">wss://multiplayer.scirra.com</variable>
-        <variable constant="0" name="MPRestart" sid="302180109042700" static="0" type="number">0</variable>
-        <variable constant="0" name="MPErrorMessage" sid="968461049134133" static="0" type="text"></variable>
-        <variable constant="0" name="MPError" sid="942525540791649" static="0" type="number">0</variable>
+        <variable comment="Multiplayer room reset" constant="0" name="MPRestart" sid="302180109042700" static="0" type="number">0</variable>
+        <variable comment="Multiplayer error message" constant="0" name="MPErrorMessage" sid="968461049134133" static="0" type="text"></variable>
+        <variable comment="Multiplayer has error" constant="0" name="MPError" sid="942525540791649" static="0" type="number">0</variable>
         <variable constant="0" name="MP_USERNAME" sid="935545513331999" static="0" type="text"></variable>
         <variable comment="POTATO, ULTRA LOW, LOW, MEDIUM, HIGH, ULTRA, SUPER COMPUTER, NATIVE" constant="0" name="Resolution" sid="103882498459293" static="0" type="text">NATIVE</variable>
         <variable comment="LQ (Low Quality)  or HQ (High Quality)" constant="0" name="VideoQuality" sid="913375351660569" static="0" type="text">LQ</variable>

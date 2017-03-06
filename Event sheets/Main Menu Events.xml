@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Main Menu Events</name>
     <events>
+        <include>Controls</include>
         <include>GLOBAL EVENTS</include>
         <include>Title</include>
         <include>Main Menu Buttons</include>
@@ -19,14 +20,14 @@
                 <action id="-16" name="Wait" sid="513850574799480" type="System">
                     <param id="0" name="Seconds">0</param>
                 </action>
-                <action id="0" name="Call function" sid="959091324629490" type="Function">
+                <action id="0" name="Call function" sid="959091324629490" type="f">
                     <param id="0" name="Name">&quot;Disable Singleplayer Blur&quot;</param>
                     <param id="1" name="Parameter {n}"></param>
                 </action>
                 <action id="-16" name="Wait" sid="855196775141235" type="System">
                     <param id="0" name="Seconds">0</param>
                 </action>
-                <action id="0" name="Call function" sid="337601066064074" type="Function">
+                <action id="0" name="Call function" sid="337601066064074" type="f">
                     <param id="0" name="Name">&quot;refreshMainMenuVideo&quot;</param>
                     <param id="1" name="Parameter {n}"></param>
                 </action>
@@ -62,7 +63,7 @@
                 <action id="-16" name="Wait" sid="320493796099121" type="System">
                     <param id="0" name="Seconds">0</param>
                 </action>
-                <action id="0" name="Call function" sid="432475808447618" type="Function">
+                <action id="0" name="Call function" sid="432475808447618" type="f">
                     <param id="0" name="Name">&quot;resetButtonSize&quot;</param>
                     <param id="1" name="Parameter {n}"></param>
                 </action>
@@ -141,14 +142,14 @@
                         <action id="-16" name="Wait" sid="471745163856193" type="System">
                             <param id="0" name="Seconds">0</param>
                         </action>
-                        <action id="0" name="Call function" sid="460476577879301" type="Function">
+                        <action id="0" name="Call function" sid="460476577879301" type="f">
                             <param id="0" name="Name">&quot;setMobile&quot;</param>
                             <param id="1" name="Parameter {n}"></param>
                         </action>
                         <action id="-16" name="Wait" sid="755144666615534" type="System">
                             <param id="0" name="Seconds">0</param>
                         </action>
-                        <action id="0" name="Call function" sid="808622609776078" type="Function">
+                        <action id="0" name="Call function" sid="808622609776078" type="f">
                             <param id="0" name="Name">&quot;SetMenuColour&quot;</param>
                             <param id="1" name="Parameter {n}"></param>
                         </action>
@@ -276,6 +277,9 @@
                                 <action id="-15" name="Set visible" sid="446622703611026" type="MPSupportText">
                                     <param id="0" name="Visibility">1</param>
                                 </action>
+                                <action id="0" name="Set text" sid="804974148930120" type="MPSupportText">
+                                    <param id="0" name="Text">&quot;ERROR: Your browser does not support webRTC!&quot;</param>
+                                </action>
                             </actions>
                         </event-block>
                     </sub-events>
@@ -380,7 +384,7 @@
                         <condition id="-20" inverted="1" name="Is on mobile device" sid="646115053452079" type="System" />
                     </conditions>
                     <actions>
-                        <action id="0" name="Call function" sid="600287535941427" type="Function">
+                        <action id="0" name="Call function" sid="600287535941427" type="f">
                             <param id="0" name="Name">&quot;Enable Singleplayer Blur&quot;</param>
                             <param id="1" name="Parameter {n}"></param>
                         </action>
@@ -426,7 +430,7 @@
                         <condition id="-20" inverted="1" name="Is on mobile device" sid="564708123115266" type="System" />
                     </conditions>
                     <actions>
-                        <action id="0" name="Call function" sid="241804418148085" type="Function">
+                        <action id="0" name="Call function" sid="241804418148085" type="f">
                             <param id="0" name="Name">&quot;Disable Singleplayer Blur&quot;</param>
                             <param id="1" name="Parameter {n}"></param>
                         </action>
@@ -519,23 +523,23 @@
             </conditions>
             <actions>
                 <action id="33" name="Stop all" sid="999991441841410" type="Audio" />
-                <action id="0" name="Call function" sid="794446217359817" type="Function">
+                <action id="0" name="Call function" sid="794446217359817" type="f">
                     <param id="0" name="Name">&quot;HideAll&quot;</param>
                     <param id="1" name="Parameter {n}"></param>
                 </action>
-                <action id="0" name="Call function" sid="861405042369346" type="Function">
+                <action id="0" name="Call function" sid="861405042369346" type="f">
                     <param id="0" name="Name">&quot;Reset All Buttons&quot;</param>
                     <param id="1" name="Parameter {n}"></param>
                 </action>
-                <action id="0" name="Call function" sid="487906827339185" type="Function">
+                <action id="0" name="Call function" sid="487906827339185" type="f">
                     <param id="0" name="Name">&quot;Disable Singleplayer Blur&quot;</param>
                     <param id="1" name="Parameter {n}"></param>
                 </action>
-                <action id="0" name="Call function" sid="322379764803127" type="Function">
+                <action id="0" name="Call function" sid="322379764803127" type="f">
                     <param id="0" name="Name">&quot;Hide Multiplayer&quot;</param>
                     <param id="1" name="Parameter {n}"></param>
                 </action>
-                <action id="0" name="Call function" sid="827742092085583" type="Function">
+                <action id="0" name="Call function" sid="827742092085583" type="f">
                     <param id="0" name="Name">&quot;Hide Singleplayer&quot;</param>
                     <param id="1" name="Parameter {n}"></param>
                 </action>
@@ -601,10 +605,6 @@
                 <action id="-9" name="Set value" sid="210518141163348" type="System">
                     <param id="0" name="Variable">MPLevel</param>
                     <param id="1" name="Value">AJAX.LastData</param>
-                </action>
-                <action id="0" name="Set item" sid="782072479910837" type="LocalStorage">
-                    <param id="0" name="Key">&quot;MP Level&quot;</param>
-                    <param id="1" name="Value">MPLevel</param>
                 </action>
                 <action id="0" name="Set text" sid="908482390103479" type="StatsLevelText">
                     <param id="0" name="Text">&quot;LEVEL: &quot;&amp;MPLevel</param>
@@ -680,6 +680,101 @@
                 <action id="14" name="Log" sid="753564867822588" type="Browser">
                     <param id="0" name="Type">0</param>
                     <param id="1" name="Message">&quot;AJAX recieved value: &quot;&amp;AJAX.LastData</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="254180701439320">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="511099037995447" type="System">
+                    <param id="0" name="Variable">Offline</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="922675423162568">
+                    <conditions>
+                        <condition id="-14" name="Pick by unique ID" sid="978577298587784" type="Button">
+                            <param id="0" name="Unique ID">40</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-27" name="Set effect enabled" sid="810687033492076" type="Button">
+                            <param id="0" name="Mode">0</param>
+                            <param id="1" name="Effect">&quot;DISABLED&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="291114356450216">
+                    <conditions>
+                        <condition id="-14" name="Pick by unique ID" sid="751861071102646" type="Button">
+                            <param id="0" name="Unique ID">126</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-27" name="Set effect enabled" sid="673361630336021" type="Button">
+                            <param id="0" name="Mode">0</param>
+                            <param id="1" name="Effect">&quot;DISABLED&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="179099523246320">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="597231359109593" type="System">
+                    <param id="0" name="Variable">Offline</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="724048798630439">
+                    <conditions>
+                        <condition id="-14" name="Pick by unique ID" sid="591315255636752" type="Button">
+                            <param id="0" name="Unique ID">40</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-27" name="Set effect enabled" sid="643826996912820" type="Button">
+                            <param id="0" name="Mode">1</param>
+                            <param id="1" name="Effect">&quot;DISABLED&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="441324846091733">
+                    <conditions>
+                        <condition id="-14" name="Pick by unique ID" sid="609501319575608" type="Button">
+                            <param id="0" name="Unique ID">126</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-27" name="Set effect enabled" sid="802875939764582" type="Button">
+                            <param id="0" name="Mode">1</param>
+                            <param id="1" name="Effect">&quot;DISABLED&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="668959138463141">
+            <conditions>
+                <condition id="-3" name="On end of layout" sid="687790466350180" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Call function" sid="200239438089311" type="f">
+                    <param id="0" name="Name">&quot;HideAll&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="619869789751382" type="System">
+                    <param id="0" name="Layer">&quot;XboxBackButtonRootMenu&quot;</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
+                <action id="0" name="Call function" sid="903184197813132" type="f">
+                    <param id="0" name="Name">&quot;Disable Singleplayer Blur&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
                 </action>
             </actions>
         </event-block>
